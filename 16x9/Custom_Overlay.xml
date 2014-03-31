@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="50">
+	<zorder>100</zorder>
+	<visible>!Window.IsVisible(startup)</visible>
+	<controls>
+
+		<control type="group">
+			<visible>[!Window.IsVisible(3000) | [Window.IsVisible(3000) + Window.IsVisible(script-videoextras-main.xml)]] + !Window.IsVisible(startup) + !Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation) + !Window.IsVisible(screencalibration) + !Window.IsVisible(screensaver) + !Window.IsVisible(slideshow) + !Window.IsVisible(karaoke)</visible>
+
+			<!--control type="label">
+				<left>46</left>
+				<top>100</top>
+				<width>1900</width>
+				<height>72</height>
+				<aligny>center</aligny>
+				<font>Font_Reg_Caps_52</font>
+				<textcolor>MedLight</textcolor>
+				<label>Window.IsVisible(videolibrary) + Control.IsEnabled(7000)</label>
+				<visible>Window.IsVisible(videolibrary) + Control.IsEnabled(7000)</visible>
+			</control>
+			<control type="label">
+				<left>46</left>
+				<top>150</top>
+				<width>1900</width>
+				<height>72</height>
+				<aligny>center</aligny>
+				<font>Font_Reg_Caps_52</font>
+				<textcolor>MedLight</textcolor>
+				<label>Window.IsVisible(videolibrary)</label>
+				<visible>Window.IsVisible(videolibrary)</visible>
+			</control-->
+			
+			<control type="group">
+				<visible>!SubString(Window(home).Property(Overlay.Hide),true)</visible>
+				<animation effect="fade" start="0" end="100" time="200">VisibleChange</animation>
+
+				<!-- Heading -->
+				<control type="group">
+					<top>36</top>
+					<left>46</left>
+					<visible>Window.IsVisible(videolibrary)</visible>
+					<animation type="Visible" reversible="false">
+						<effect type="slide" start="0,-100" end="0,0" time="400" tween="cubic" easing="out" />
+						<effect type="fade" start="0" end="100" time="400" tween="cubic" easing="out" />
+					</animation>
+					<animation type="Hidden">
+						<effect type="fade" start="100" end="0" time="200"/>
+					</animation>
+					<control type="group">
+						<visible>![Window.IsActive(extendedprogressdialog) | Window.IsActive(infodialog) | Window.IsActive(busydialog) | Window.IsActive(volumebar) | Window.IsActive(mutebug) | Window.IsActive(karaokeselector)]</visible>
+						<control type="label">
+							<width>1428</width>
+							<height>60</height>
+							<font>Font_Black_Caps_60</font>
+							<textcolor>Light</textcolor>
+							<label>$VAR[Global_HeadingLabels]</label>
+						</control>
+						<control type="label">
+							<top>54</top>
+							<width>1428</width>
+							<height>36</height>
+							<haspath>true</haspath>
+							<font>Font_Light_Caps_36</font>
+							<textcolor>Light</textcolor>
+							<label>$VAR[Global_HeadingDetails]</label>
+						</control>
+					</control>
+					<control type="group">
+						<visible>Window.IsActive(extendedprogressdialog) | Window.IsActive(infodialog) | Window.IsActive(busydialog) | Window.IsActive(volumebar) | Window.IsActive(mutebug) | Window.IsActive(karaokeselector)</visible>
+						<control type="label">
+							<width>1120</width>
+							<height>60</height>
+							<font>Font_Black_Caps_60</font>
+							<textcolor>Light</textcolor>
+							<label>$VAR[Global_HeadingLabels]</label>
+						</control>
+						<control type="label">
+							<top>54</top>
+							<width>1120</width>
+							<height>36</height>
+							<haspath>true</haspath>
+							<font>Font_Light_Caps_36</font>
+							<textcolor>Light</textcolor>
+							<label>$VAR[Global_HeadingDetails]</label>
+						</control>
+					</control>
+				</control>
+				
+				<!-- Date/Time -->
+				<control type="group">
+					<right>46</right>
+					<width>400</width>
+					<visible>!Window.IsActive(extendedprogressdialog) + !Window.IsActive(infodialog) + !Window.IsActive(busydialog) + !Window.IsActive(volumebar) + !Window.IsActive(mutebug) + !Window.IsActive(karaokeselector)</visible>
+					<animation type="Visible" reversible="false">
+						<effect type="slide" start="0,-180" end="0,0" time="400" delay="400" tween="cubic" easing="out" />
+						<effect type="fade" start="0" end="100" time="400" delay="400" />
+					</animation>
+					<animation type="Hidden">
+						<effect type="fade" start="100" end="0" time="200" />
+						<effect type="slide" start="0,0" end="0,-180" time="0" delay="200" />
+					</animation>
+					<control type="label">
+						<top>36</top>
+						<right>0</right>
+						<width>400</width>
+						<height>60</height>
+						<font>Font_Black_Caps_60</font>
+						<textcolor>Light</textcolor>
+						<info>System.Time</info>
+						<align>right</align>
+					</control>
+					<control type="label">
+						<top>90</top>
+						<right>0</right>
+						<width>400</width>
+						<height>36</height>
+						<font>Font_Light_Caps_36</font>
+						<textcolor>Light</textcolor>
+						<label>$INFO[System.Date(d)] $INFO[System.Date(MMM)] $INFO[System.Date(yyyy)]</label>
+						<align>right</align>
+					</control>
+				</control>
+
+				<!-- Now Playing -->
+				<control type="group">
+					<left>34</left>
+					<bottom>36</bottom>
+					<height>80</height>
+					<visible>[Player.HasVideo + !VideoPlayer.IsFullscreen] | [Player.HasAudio + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]</visible>
+					<animation type="Conditional" condition="Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(systeminfo) | Window.IsVisible(filemanager) | Window.IsVisible(skinsettings) | Window.IsVisible(addonsettings) | Window.IsVisible(mediasource) | Window.IsVisible(filebrowser) | Window.IsVisible(networksetup) | Window.IsVisible(selectdialog) | Window.IsVisible(numericinput) | Window.IsVisible(virtualkeyboard) | Window.IsVisible(peripherals) | Window.IsVisible(peripheralsettings) | Window.IsVisible(pictureinfo) | Window.IsVisible(loginscreen) | Window.IsVisible(profiles) | Window.IsVisible(profilesettings) | Window.IsVisible(locksettings) | Window.IsVisible(contentsettings) | Window.IsVisible(smartplaylisteditor)">
+						<effect type="fade" start="100" end="0" time="200" />
+					</animation>
+					<animation type="Visible">
+						<effect type="slide" start="-300,0" end="0,0" time="400" delay="400" tween="cubic" easing="out" />
+						<effect type="fade" start="0" end="100" time="400" delay="400" />
+					</animation>
+					<animation type="Hidden">
+						<effect type="fade" start="100" end="0" time="200"/>
+					</animation>
+					<control type="grouplist">
+						<bottom>0</bottom>
+						<height>90</height>
+						<itemgap>30</itemgap>
+						<orientation>horizontal</orientation>				
+						<usecontrolcoords>true</usecontrolcoords>
+						<control type="image">
+							<top>8</top>
+							<width>70</width>
+							<height>70</height>
+							<texture>$VAR[Player_Status_Icon]</texture>
+						</control>
+						<control type="group">
+							<control type="fadelabel">
+								<top>1</top>
+								<width>1140</width>
+								<height>46</height>
+								<font>Font_Black_Caps_46</font>
+								<label>$INFO[Player.Title]</label>
+								<textcolor>Heavy</textcolor>
+								<animation effect="slide" end="0,19" condition="IsEmpty(Control.GetLabel(8200))">Conditional</animation>
+							</control>
+							<control type="fadelabel" id="8200">
+								<top>46</top>
+								<width>1140</width>
+								<height>36</height>
+								<font>Font_Light_Caps_36</font>
+								<label>$VAR[Player_Status_Detail]</label>
+								<textcolor>MedLight</textcolor>
+							</control>
+						</control>
+					</control>
+				</control>
+
+				<!-- Media flags -->
+				<control type="grouplist">
+					<right>46</right>
+					<bottom>36</bottom>
+					<width>924</width>
+					<height>91</height>
+					<itemgap>24</itemgap>
+					<orientation>horizontal</orientation>
+					<usecontrolcoords>true</usecontrolcoords>
+					<visible>[SubString(Container.FolderPath,videodb://) | SubString(Container.FolderPath,special://) | SubString(Container.FolderPath,library://)] + ![IsEmpty(ListItem.Rating) + IsEmpty(ListItem.VideoResolution) + IsEmpty(ListItem.VideoCodec) + IsEmpty(ListItem.AudioCodec) + IsEmpty(ListItem.AudioChannels) + IsEmpty(ListItem.Studio)] + !SubString(Window(home).Property(Overlay.MediaFlags.Hide),true)</visible>
+					<animation effect="Conditional" condition="Player.HasAudio | Player.HasVideo | ListItem.IsFolder">
+						<effect type="slide" start="0,0" end="474,0" time="0" tween="cubic" easing="out" />
+					</animation>
+					<animation type="Visible" reversible="false">
+						<effect type="slide" start="0,100" end="0,0" time="400" tween="cubic" easing="out" />
+						<effect type="fade" start="0" end="100" time="400" tween="cubic" easing="out" />
+					</animation>
+					<!-- Rating flag -->
+					<control type="group">
+						<width>134</width>
+						<height>91</height>
+						<animation effect="slide" end="20" time="0" condition="true">Conditional</animation>
+						<control type="group">
+							<visible>!IsEmpty(ListItem.Rating)</visible>
+							<control type="image">
+								<include>MediaFlagsVars</include>
+								<texture>flags/rating.png</texture>
+							</control>
+							<control type="label">
+								<width>134</width>
+								<height>91</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<!--label fallback="?">$INFO[ListItem.Rating]</label-->
+								<label>$INFO[ListItem.Rating]</label>
+								<textcolor>MediaFlags</textcolor>
+								<font>Font_Cond_64</font>
+							</control>
+						</control>
+						<control type="group">
+							<visible>IsEmpty(ListItem.Rating)</visible>
+							<control type="image">
+								<include>MediaFlagsVars</include>
+								<texture>flags/defaultrating.png</texture>
+							</control>
+						</control>
+					</control>
+					<!-- Source flag -->
+					<control type="image">
+						<include>MediaFlagsVars</include>
+						<texture>$VAR[Video_Source].png</texture>
+					</control>
+					<!-- Resolution flag -->
+					<control type="image">
+						<include>MediaFlagsVars</include>
+						<include>MediaFlagsVars_Visibility</include>
+						<texture fallback="flags/resolution/default.png">$INFO[ListItem.VideoResolution,flags/resolutionx/,.png]</texture>
+					</control>
+					<!-- Video codec flag -->
+					<control type="image">
+						<include>MediaFlagsVars</include>
+						<include>MediaFlagsVars_Visibility</include>
+						<texture fallback="flags/videocodec/default.png">$INFO[ListItem.VideoCodec,flags/videocodecx/,.png]</texture>
+					</control>
+					<!-- Audio flag -->
+					<control type="group">
+						<width>134</width>
+						<height>91</height>
+						<include>MediaFlagsVars_Visibility</include>
+						<control type="image">
+							<include>MediaFlagsVars</include>
+							<texture fallback="flags/defaultsound.png">$INFO[ListItem.AudioCodec,flags/audiox/,.png]</texture>
+						</control>
+						<control type="image">
+							<include>MediaFlagsVars</include>
+							<texture>$INFO[ListItem.AudioChannels,flags/audiox/,ch.png]</texture>
+						</control>
+					</control>
+					<!-- Studio flag -->
+					<control type="group">
+						<width>134</width>
+						<height>91</height>
+						<control type="image" id="8201">
+							<include>HiddenControl</include>
+							<texture fallback="flags/default.png">$INFO[ListItem.Studio,special://skin/extras/studio/,.png]</texture>
+						</control>
+						<control type="image">
+							<top>10</top>
+							<width>109</width>
+							<height>70</height>
+							<aspectratio aligny="center">keep</aspectratio>
+							<colordiffuse>MediaFlags</colordiffuse>
+							<texture fallback="flags/default.png">$INFO[ListItem.Studio,special://skin/extras/studio/,.png]</texture>
+							<animation effect="zoom" end="88,88" center="auto" time="0" condition="StringCompare(Control.GetLabel(8201),flags/default.png)">Conditional</animation>
+						</control>
+					</control>
+				</control>
+			
+		  </control>
+		</control>
+
+	</controls>
+
+</window>
