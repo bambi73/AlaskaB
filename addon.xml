@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.alaska.anime" version="0.9.0" name="Alaska HD for Anime" provider-name="Hitcher + Bambi">
+<addon id="skin.alaskab" version="0.9.0" name="AlaskaB" provider-name="Hitcher + Bambi">
 	<requires>
 		<import addon="xbmc.gui" version="5.0.1"/>
 		<import addon="script.favourites" version="5.0.2"/>
