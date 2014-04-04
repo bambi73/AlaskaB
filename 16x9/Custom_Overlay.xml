@@ -126,13 +126,13 @@
 					<left>34</left>
 					<bottom>36</bottom>
 					<height>80</height>
-					<visible>[Player.HasVideo + !VideoPlayer.IsFullscreen] | [Player.HasAudio + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]</visible>
+					<visible>[[Player.HasVideo + !VideoPlayer.IsFullscreen] | [Player.HasAudio + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]]  + !SubString(Window(home).Property(Overlay.NowPlaying.Hide),true)</visible>
 					<animation type="Conditional" condition="Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(systeminfo) | Window.IsVisible(filemanager) | Window.IsVisible(skinsettings) | Window.IsVisible(addonsettings) | Window.IsVisible(mediasource) | Window.IsVisible(filebrowser) | Window.IsVisible(networksetup) | Window.IsVisible(selectdialog) | Window.IsVisible(numericinput) | Window.IsVisible(virtualkeyboard) | Window.IsVisible(peripherals) | Window.IsVisible(peripheralsettings) | Window.IsVisible(pictureinfo) | Window.IsVisible(loginscreen) | Window.IsVisible(profiles) | Window.IsVisible(profilesettings) | Window.IsVisible(locksettings) | Window.IsVisible(contentsettings) | Window.IsVisible(smartplaylisteditor)">
 						<effect type="fade" start="100" end="0" time="200" />
 					</animation>
 					<animation type="Visible">
-						<effect type="slide" start="-300,0" end="0,0" time="400" delay="400" tween="cubic" easing="out" />
-						<effect type="fade" start="0" end="100" time="400" delay="400" />
+						<effect type="slide" start="-300,0" end="0,0" time="400" tween="cubic" easing="out" />
+						<effect type="fade" start="0" end="100" time="400" />
 					</animation>
 					<animation type="Hidden">
 						<effect type="fade" start="100" end="0" time="200"/>
@@ -204,7 +204,6 @@
 								<height>91</height>
 								<align>center</align>
 								<aligny>center</aligny>
-								<!--label fallback="?">$INFO[ListItem.Rating]</label-->
 								<label>$INFO[ListItem.Rating]</label>
 								<textcolor>MediaFlags</textcolor>
 								<font>Font_Cond_64</font>
@@ -227,13 +226,13 @@
 					<control type="image">
 						<include>MediaFlagsVars</include>
 						<include>MediaFlagsVars_Visibility</include>
-						<texture fallback="flags/resolution/default.png">$INFO[ListItem.VideoResolution,flags/resolutionx/,.png]</texture>
+						<texture fallback="flags/resolution/default.png">$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
 					</control>
 					<!-- Video codec flag -->
 					<control type="image">
 						<include>MediaFlagsVars</include>
 						<include>MediaFlagsVars_Visibility</include>
-						<texture fallback="flags/videocodec/default.png">$INFO[ListItem.VideoCodec,flags/videocodecx/,.png]</texture>
+						<texture fallback="flags/videocodec/default.png">$INFO[ListItem.VideoCodec,flags/videocodec/,.png]</texture>
 					</control>
 					<!-- Audio flag -->
 					<control type="group">
@@ -242,11 +241,11 @@
 						<include>MediaFlagsVars_Visibility</include>
 						<control type="image">
 							<include>MediaFlagsVars</include>
-							<texture fallback="flags/defaultsound.png">$INFO[ListItem.AudioCodec,flags/audiox/,.png]</texture>
+							<texture fallback="flags/defaultsound.png">$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
 						</control>
 						<control type="image">
 							<include>MediaFlagsVars</include>
-							<texture>$INFO[ListItem.AudioChannels,flags/audiox/,ch.png]</texture>
+							<texture>$INFO[ListItem.AudioChannels,flags/audio/,ch.png]</texture>
 						</control>
 					</control>
 					<!-- Studio flag -->

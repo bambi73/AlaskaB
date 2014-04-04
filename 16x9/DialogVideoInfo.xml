@@ -1,66 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="2003">
-	<defaultcontrol always="true">9000</defaultcontrol>
+	<defaultcontrol always="true">9010</defaultcontrol>
+
+	<onload>ClearProperty(DialogVideoInfo.CurrentView,home)</onload>
+	<onload>ClearProperty(DialogVideoInfo.PreviousView,home)</onload>
+	
 	<onunload>ClearProperty(Overlay.Hide,home)</onunload>
+	<onunload>ClearProperty(Overlay.MediaFlags.Hide,home)</onunload>
+	<onunload>ClearProperty(Overlay.NowPlaying.Hide,home)</onunload>
+	<onunload>ClearProperty(DialogVideoInfo.CurrentView,home)</onunload>
+	<onunload>ClearProperty(DialogVideoInfo.PreviousView,home)</onunload>
 	
 	<!--onload condition="System.HasAddon(script.videoextras)">XBMC.RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
 	<onload condition="System.HasAddon(script.videoextras)">XBMC.RunScript(script.videoextras,hasExtras,flag,"$INFO[ListItem.FilenameAndPath]")</onload-->
 	
 	<controls>
-		<!--control type="label">
+		<control type="label">
 			<left>46</left>
 			<top>100</top>
-			<width>996</width>
+			<width>1900</width>
 			<height>72</height>
 			<aligny>center</aligny>
 			<font>Font_Reg_Caps_52</font>
 			<textcolor>MedLight</textcolor>
-			<label>$INFO[Container.ViewMode]</label>
-			<visible>Container.Content(tvshows)</visible>
-		</control-->
-
+			<label>$INFO[Window(home).Property(DialogVideoInfo.CurrentView)]</label>
+			<!--visible>Window.IsVisible(videolibrary) + Control.IsEnabled(7000)</visible-->
+		</control>
+		<control type="label">
+			<left>46</left>
+			<top>150</top>
+			<width>1900</width>
+			<height>72</height>
+			<aligny>center</aligny>
+			<font>Font_Reg_Caps_52</font>
+			<textcolor>MedLight</textcolor>
+			<label>$INFO[Window(home).Property(DialogVideoInfo.PreviousView)]</label>
+			<!--visible>Window.IsVisible(videolibrary)</visible-->
+		</control>
+			
+		<!-- Video info group -->
 		<control type="group" id="5000">
 			<!-- Hidden control buttons -->
 			<control type="group">
+				<!-- Fullscreen fanart -->
 				<control type="button" id="9000">
 					<include>HiddenControl</include>
+					<onup>SetProperty(DialogVideoInfo.PreviousView,9000,home)</onup>
 					<onup>7000</onup>
-					<ondown>7000</ondown>
-					<onleft>9001</onleft>
-					<onright>noop</onright>
-					<onclick>SendClick(movieinformation,8)</onclick>
-				</control>
-				<control type="button" id="9001">
-					<include>HiddenControl</include>
-					<onup>7000</onup>
+					<ondown>SetProperty(DialogVideoInfo.PreviousView,9000,home)</ondown>
 					<ondown>7000</ondown>
 					<onleft>noop</onleft>
-					<onright>9000</onright>
-					<onclick>SetFocus(9000)</onclick>
+					<onright>SetProperty(DialogVideoInfo.PreviousView,9000,home)</onright>
+					<onright>9010</onright>
+					<onclick>SetFocus(9010)</onclick>
 					<onfocus>SetProperty(Overlay.Hide,true,home)</onfocus>
-					<onunfocus>ClearProperty(Overlay.Hide,home)</onunfocus>
+					<onfocus>SetProperty(Overlay.NowPlaying.Hide,true,home)</onfocus>
+					<onfocus>SetProperty(Overlay.MediaFlags.Hide,true,home)</onfocus>
+					<onfocus>SetProperty(DialogVideoInfo.CurrentView,9000,home)</onfocus>
+					<!--onunfocus>SetProperty(DialogVideoInfo.PreviousView,9000,home)</onunfocus-->
 				</control>
-				<control type="button" id="9002">
+				<!-- Main info -->
+				<control type="button" id="9010">
 					<include>HiddenControl</include>
+					<onup>SetProperty(DialogVideoInfo.PreviousView,9010,home)</onup>
 					<onup>7000</onup>
+					<ondown>SetProperty(DialogVideoInfo.PreviousView,9010,home)</ondown>
 					<ondown>7000</ondown>
+					<onleft>SetProperty(DialogVideoInfo.PreviousView,9010,home)</onleft>
 					<onleft>9000</onleft>
+					<onright>SetProperty(DialogVideoInfo.PreviousView,9010,home)</onright>
+					<onright>9020</onright>
+					<onclick>SendClick(movieinformation,8)</onclick>
+					<onfocus>SetProperty(Overlay.Hide,false,home)</onfocus>
+					<onfocus>SetProperty(Overlay.NowPlaying.Hide,false,home)</onfocus>
+					<onfocus>SetProperty(Overlay.MediaFlags.Hide,false,home)</onfocus>
+					<onfocus>SetProperty(DialogVideoInfo.CurrentView,9010,home)</onfocus>
+					<!--onunfocus>SetProperty(DialogVideoInfo.PreviousView,9010,home)</onunfocus-->
+				</control>
+				<!-- Cast info -->
+				<control type="button" id="9020">
+					<include>HiddenControl</include>
+					<onup>SetProperty(DialogVideoInfo.PreviousView,9020,home)</onup>
+					<onup>7000</onup>
+					<ondown>SetProperty(DialogVideoInfo.PreviousView,9020,home)</ondown>
+					<ondown>7000</ondown>
+					<onleft>SetProperty(DialogVideoInfo.PreviousView,9020,home)</onleft>
+					<onleft>9010</onleft>
 					<onright>noop</onright>
+					<onfocus>SetProperty(Overlay.Hide,false,home)</onfocus>
+					<onfocus>SetProperty(Overlay.NowPlaying.Hide,false,home)</onfocus>
+					<onfocus>SetProperty(Overlay.MediaFlags.Hide,false,home)</onfocus>
+					<onfocus>SetProperty(DialogVideoInfo.CurrentView,9020,home)</onfocus>
+					<!--onunfocus>SetProperty(DialogVideoInfo.PreviousView,9020,home)</onunfocus-->
+				</control>
+				<!-- Init reset button - BUG? -->
+				<control type="button" id="9050">
+					<include>HiddenControl</include>
+					<onfocus>ClearProperty(DialogVideoInfo.CurrentView,home)</onfocus>
+					<onfocus>ClearProperty(DialogVideoInfo.PreviousView,home)</onfocus>
+					<onfocus>SetFocus(9010)</onfocus>
+					<!--animation effect="fade" start="0" end="100" time="0" delay="500">Focus</animation-->
 				</control>
 			</control>
 	
 			<!-- Fullscreen fanart -->
 			<control type="group">
+				<include>Animation_CommonFade</include>
 				<control type="image">
+					<visible>Control.HasFocus(9000)</visible>
 					<include>Dimensions_Fullscreen</include>
-					<visible>Control.HasFocus(9001)</visible>
 					<fadetime>400</fadetime>
 					<!--colordiffuse>FanartDiffuse</colordiffuse-->
 					<colordiffuse>C0FFFFFF</colordiffuse>
 					<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
 				</control>
 				<control type="group">
-					<visible>Control.HasFocus(9001)</visible>
+					<visible>Control.HasFocus(9000)</visible>
 					<animation effect="slide" start="-1920,0" end="0,0" time="200" delay="200" tween="cubic" easing="out">Visible</animation>
 					<control type="image">
 						<top>957</top>
@@ -81,18 +136,35 @@
 				</control>
 			</control>
 
+			<!-- VideoInfo main group -->
 			<control type="group">
 				<top>TopOffset</top>
 				<left>LeftOffset</left>
-				<include>Animation_ZoomedByMenu</include>
-
-				<animation type="Conditional" condition="Control.HasFocus(9001)" reversible="false">
-					<effect type="slide" start="0,0" end="-1920,0" time="200" tween="cubic" easing="out" />
-					<effect type="fade" start="100" end="0" time="200" />
+				<!--include>Animation_ZoomedByMenu</include-->
+				<!--visible>Control.HasFocus(9010) | Control.HasFocus(9020)</visible-->
+				
+				
+		<!--animation type="Conditional" condition="!ControlGroup(5000).HasFocus | Window.IsActive(contextmenu) | Window.IsActive(shutdownmenu) | Window.IsActive(filebrowser) | Window.IsActive(DialogSelect.xml) | Window.IsActive(DialogYesNo.xml) | Window.IsActive(progressdialog) | Window.IsActive(okdialog)">
+			<effect type="zoom" time="400" center="CenterX,CenterY" start="100" end="50" tween="cubic" easing="inout" />
+			<effect type="fade" time="400" start="100" end="0" tween="cubic" easing="out" />
+		</animation-->
+				
+				<!--animation type="Conditional" condition="StringCompare(Window(home).Property(DialogVideoInfo.CurrentView),9010M) | StringCompare(Window(home).Property(DialogVideoInfo.CurrentView),9020M)">
+					<effect type="zoom" time="400" center="CenterX,CenterY" start="100" end="50" tween="cubic" easing="inout" />
+					<effect type="fade" time="400" start="100" end="0" tween="cubic" easing="out" />
 				</animation>
-				<animation type="Conditional" condition="!Control.HasFocus(9001) + ControlGroup(5000).HasFocus" reversible="false">
-					<effect type="slide" start="-1920,0" end="0,0" time="200" tween="cubic" easing="in" />
-					<effect type="fade" start="0" end="100" time="200" />
+				<animation type="Conditional" condition="StringCompare(Window(home).Property(DialogVideoInfo.PreviousView),9010M) | StringCompare(Window(home).Property(DialogVideoInfo.PreviousView),9020M)">
+					<effect type="zoom" time="400" center="CenterX,CenterY" start="50" end="100" tween="cubic" easing="inout" />
+					<effect type="fade" time="400" start="0" end="100" tween="cubic" easing="in" />
+				</animation-->
+				
+				<animation type="Conditional" condition="StringCompare(Window(home).Property(DialogVideoInfo.CurrentView),9000) + StringCompare(Window(home).Property(DialogVideoInfo.PreviousView),9010)"  reversible="false">
+					<effect type="slide" start="0,0" end="-1920,0" time="250" tween="cubic" easing="out" />
+					<effect type="fade" start="100" end="0" time="250" />
+				</animation>
+				<animation type="Conditional" condition="StringCompare(Window(home).Property(DialogVideoInfo.CurrentView),9010) + StringCompare(Window(home).Property(DialogVideoInfo.PreviousView),9000)" reversible="false">
+					<effect type="slide" start="-1920,0" end="0,0" time="250" tween="cubic" easing="in" />
+					<effect type="fade" start="0" end="100" time="250" />
 				</animation>
 
 				<control type="group">
@@ -236,7 +308,7 @@
 								<font>Font_Reg_38</font>
 								<textcolor>MedLight</textcolor>
 								<label>$VAR[Plot]</label>
-								<visible>Control.HasFocus(9000)</visible>
+								<visible>!Control.HasFocus(9020)</visible>
 								<!--autoscroll time="4000" delay="12000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll-->
 								<autoscroll time="4000" delay="12000" repeat="8000">true</autoscroll>
 							</control>
@@ -333,8 +405,8 @@
 						<width>1485</width>
 						<onup>50</onup>
 						<ondown>50</ondown>
-						<onleft>9000</onleft>
-						<onright>9000</onright>
+						<onleft>9010</onleft>
+						<onright>9010</onright>
 						<focusposition>4</focusposition>
 						<orientation>vertical</orientation>
 						<viewtype label="535">list</viewtype>
@@ -411,32 +483,67 @@
 		</control>
 
 		<!-- Menu group -->
-		<control type="group">
+		<control type="group" id="5100">
 			<!-- Hidden control buttons for Menu -->
 			<control type="button" id="7000">
 				<include>HiddenControl</include>
+				<visible>SubString(Window(home).Property(DialogVideoInfo.CurrentView),9000)</visible>
+				<onfocus>SetProperty(Overlay.Hide,false,home)</onfocus>
+				<onfocus>SetProperty(Overlay.NowPlaying.Hide,true,home)</onfocus>
 				<onfocus>SetProperty(Overlay.MediaFlags.Hide,true,home)</onfocus>
-				<onfocus>SetFocus(7010)</onfocus>
+				<onfocus>SetProperty(DialogVideoInfo.CurrentView,9000M,home)</onfocus>
+				<onfocus>SetFocus(7100)</onfocus>
 			</control>
-			<control type="button" id="7001">
+			<control type="button" id="7000">
 				<include>HiddenControl</include>
-				<onfocus>ClearProperty(Overlay.MediaFlags.Hide,home)</onfocus>
+				<visible>SubString(Window(home).Property(DialogVideoInfo.CurrentView),9010)</visible>
+				<onfocus>SetProperty(Overlay.Hide,false,home)</onfocus>
+				<onfocus>SetProperty(Overlay.NowPlaying.Hide,true,home)</onfocus>
+				<onfocus>SetProperty(Overlay.MediaFlags.Hide,true,home)</onfocus>
+				<onfocus>SetProperty(DialogVideoInfo.CurrentView,9010M,home)</onfocus>
+				<onfocus>SetFocus(7100)</onfocus>
+			</control>
+			<control type="button" id="7000">
+				<include>HiddenControl</include>
+				<visible>SubString(Window(home).Property(DialogVideoInfo.CurrentView),9020)</visible>
+				<onfocus>SetProperty(Overlay.Hide,false,home)</onfocus>
+				<onfocus>SetProperty(Overlay.NowPlaying.Hide,true,home)</onfocus>
+				<onfocus>SetProperty(Overlay.MediaFlags.Hide,true,home)</onfocus>
+				<onfocus>SetProperty(DialogVideoInfo.CurrentView,9020M,home)</onfocus>
+				<onfocus>SetFocus(7100)</onfocus>
+			</control>
+			<control type="button" id="7010">
+				<include>HiddenControl</include>
+				<visible>SubString(Window(home).Property(DialogVideoInfo.CurrentView),9000)</visible>
+				<onfocus>SetProperty(DialogVideoInfo.PreviousView,9000M,home)</onfocus>
 				<onfocus>SetFocus(9000)</onfocus>
+			</control>
+			<control type="button" id="7010">
+				<include>HiddenControl</include>
+				<visible>SubString(Window(home).Property(DialogVideoInfo.CurrentView),9010)</visible>
+				<onfocus>SetProperty(DialogVideoInfo.PreviousView,9010M,home)</onfocus>
+				<onfocus>SetFocus(9010)</onfocus>
+			</control>
+			<control type="button" id="7010">
+				<include>HiddenControl</include>
+				<visible>SubString(Window(home).Property(DialogVideoInfo.CurrentView),9020)</visible>
+				<onfocus>SetProperty(DialogVideoInfo.PreviousView,9020M,home)</onfocus>
+				<onfocus>SetFocus(9020)</onfocus>
 			</control>
 
 			<!-- Menu -->
 			<control type="group">
 				<top>TopOffset</top>
 				<left>LeftOffset</left>
-				<include>Animation_ZoomInMenu7010</include>
+				<include>Animation_ZoomInMenu7100</include>
 
-				<control type="fixedlist" id="7010">
+				<control type="fixedlist" id="7100">
 					<include>Menu_Attributes</include>
-					<onup>7001</onup>
-					<ondown>7001</ondown>
+					<onup>7010</onup>
+					<ondown>7010</ondown>
 					<onleft>noop</onleft>
 					<onright>noop</onright>
-					<visible allowhiddenfocus="true">Control.HasFocus(7010) + !Window.IsActive(shutdownmenu) + !Window.IsActive(DialogYesNo.xml) + !Window.IsActive(progressdialog) + !Window.IsActive(okdialog)</visible>
+					<visible allowhiddenfocus="true">Control.HasFocus(7100) + !Window.IsActive(shutdownmenu) + !Window.IsActive(DialogYesNo.xml) + !Window.IsActive(progressdialog) + !Window.IsActive(okdialog)</visible>
 					<include>Menu_ItemLayout</include>
 					<include>Menu_FocusedLayout</include>
 					<content>
@@ -489,7 +596,7 @@
 						</item>
 						<!-- Images -->
 						<item id="5">
-							<onclick>SetFocus(9000)</onclick>
+							<onclick>SetFocus(9010)</onclick>
 							<onclick>SendClick(movieinformation,10)</onclick>
 							<label>31150</label>
 							<label2>31151</label2>
@@ -497,7 +604,7 @@
 						</item>
 						<!-- Artwork Downloader -->
 						<item id="6">
-							<onclick>SetFocus(9000)</onclick>
+							<onclick>SetFocus(9010)</onclick>
 							<onclick condition="Container.Content(tvshows)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
 							<onclick condition="Container.Content(movies)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
 							<label>31997</label>
@@ -506,7 +613,7 @@
 						</item>
 						<!-- Video extras -->
 						<!--item id="7">
-							<onclick>SetFocus(9000)</onclick>
+							<onclick>SetFocus(9010)</onclick>
 							<label>31119</label>
 							<label2>31164</label2>
 							<onclick>XBMC.RunScript(script.videoextras,display,$INFO[ListItem.FilenameAndPath])</onclick>
@@ -514,7 +621,7 @@
 						</item-->
 						<!-- Director's movies -->
 						<item id="9">
-							<onclick>SetFocus(9000)</onclick>
+							<onclick>SetFocus(9010)</onclick>
 							<onclick>SendClick(movieinformation,13)</onclick>
 							<label>31154</label>
 							<label2>20339</label2>

@@ -49,7 +49,7 @@
 		<control type="button" id="7000">
 			<include>HiddenControl</include>
 			<onfocus>SetProperty(Overlay.MediaFlags.Hide,true,home)</onfocus>
-			<onfocus>SetFocus(7010)</onfocus>
+			<onfocus>SetFocus(7100)</onfocus>
 		</control>
 		<control type="button" id="7001">
 			<include>HiddenControl</include>
@@ -61,15 +61,15 @@
 		<control type="group">
 			<top>TopOffset</top>
 			<left>LeftOffset</left>
-			<include>Animation_ZoomInMenu7010</include>
+			<include>Animation_ZoomInMenu7100</include>
 
-			<control type="fixedlist" id="7010">
+			<control type="fixedlist" id="7100">
 				<include>Menu_Attributes</include>
 				<onup>7001</onup>
 				<ondown>7001</ondown>
 				<onleft>noop</onleft>
 				<onright>noop</onright>
-				<visible allowhiddenfocus="true">Control.HasFocus(7010) + !Window.IsActive(shutdownmenu) + !Window.IsActive(DialogYesNo.xml) + !Window.IsActive(progressdialog) + !Window.IsActive(okdialog)</visible>
+				<visible allowhiddenfocus="true">Control.HasFocus(7100) + !Window.IsActive(shutdownmenu) + !Window.IsActive(DialogYesNo.xml) + !Window.IsActive(progressdialog) + !Window.IsActive(okdialog)</visible>
 				<include>Menu_ItemLayout</include>
 				<include>Menu_FocusedLayout</include>
 				<content>
