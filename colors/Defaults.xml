@@ -8,6 +8,7 @@
 	<!-- Diffuse colours -->
 	
 	<color name="FanartDiffuse">33FFFFFF</color>
+	<color name="FanartDiffuseLight">C0FFFFFF</color>
 	<color name="FilterDiffuse">f1FFFFFF</color>
 	<color name="PictureDiffuse">52FFFFFF</color>
 	<color name="MatteDiffuse">FF000000</color>
