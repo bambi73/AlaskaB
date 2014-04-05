@@ -126,7 +126,7 @@
 					<left>34</left>
 					<bottom>36</bottom>
 					<height>80</height>
-					<visible>[[Player.HasVideo + !VideoPlayer.IsFullscreen] | [Player.HasAudio + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]]  + !SubString(Window(home).Property(Overlay.NowPlaying.Hide),true)</visible>
+					<visible>[[Player.HasVideo + !VideoPlayer.IsFullscreen] | [Player.HasAudio + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]]  + !SubString(Window(home).Property(Overlay.NowPlaying.Hide),true) + !IsEmpty(Player.Title)</visible>
 					<animation type="Conditional" condition="Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(systeminfo) | Window.IsVisible(filemanager) | Window.IsVisible(skinsettings) | Window.IsVisible(addonsettings) | Window.IsVisible(mediasource) | Window.IsVisible(filebrowser) | Window.IsVisible(networksetup) | Window.IsVisible(selectdialog) | Window.IsVisible(numericinput) | Window.IsVisible(virtualkeyboard) | Window.IsVisible(peripherals) | Window.IsVisible(peripheralsettings) | Window.IsVisible(pictureinfo) | Window.IsVisible(loginscreen) | Window.IsVisible(profiles) | Window.IsVisible(profilesettings) | Window.IsVisible(locksettings) | Window.IsVisible(contentsettings) | Window.IsVisible(smartplaylisteditor)">
 						<effect type="fade" start="100" end="0" time="200" />
 					</animation>

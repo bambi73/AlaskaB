@@ -15,8 +15,8 @@
 			<aligny>center</aligny>
 			<font>Font_Reg_Caps_52</font>
 			<textcolor>MedLight</textcolor>
-			<label>$INFO[Window().Property(DialogVideoInfo.CurrentView)]</label>
-			<visible>Window.IsVisible(videolibrary) + Control.IsEnabled(7000)</visible>
+			<label>$VAR[VideoInfo_Image]</label>
+			<visible>true</visible>
 		</control>
 		<control type="label">
 			<left>46</left>
@@ -71,6 +71,7 @@
 					<onfocus>SetProperty(Overlay.NowPlaying.Hide,false,home)</onfocus>
 					<onfocus>SetProperty(Overlay.MediaFlags.Hide,false,home)</onfocus>
 					<onfocus>SetProperty(DialogVideoInfo.CurrentView,9020)</onfocus>
+					<onfocus>SetFocus(50)</onfocus>
 				</control>
 			</control>
 	
@@ -150,7 +151,6 @@
 
 					<!-- Info -->
 					<control type="group">
-						<include>Animation_CommonFade</include>
 						<control type="group">
 							<left>840</left>
 							<top>198</top>
@@ -258,14 +258,16 @@
 								</control>				
 							</control>
 							<control type="textbox">
+								<animation effect="fade" start="0" end="100" time="200">Visible</animation>
+								<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+								<visible>StringCompare(Window().Property(DialogVideoInfo.CurrentView),9010)</visible>
 								<left>0</left>
 								<top>360</top>
 								<width>1004</width>
-								<height>290</height>
+								<height>295</height>
 								<font>Font_Reg_38</font>
 								<textcolor>MedLight</textcolor>
 								<label>$VAR[Plot]</label>
-								<visible>!Control.HasFocus(9020)</visible>
 								<!--autoscroll time="4000" delay="12000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll-->
 								<autoscroll time="4000" delay="12000" repeat="8000">true</autoscroll>
 							</control>
@@ -275,8 +277,12 @@
 
 				<!-- Poster -->
 				<control type="group">
+					<control type="label" id="8200">
+						<include>HiddenControl</include>
+						<label>$VAR[VideoInfo_Image]</label>
+					</control>
 					<control type="group">
-						<visible>![IsEmpty(ListItem.Art(poster)) + IsEmpty(ListItem.Art(season.poster)) + IsEmpty(ListItem.Art(tvshow.poster))]</visible>
+						<visible>!IsEmpty(Control.GetLabel(8200))</visible>
 						<left>300</left>
 						<top>140</top>
 						<!--animation type="WindowOpen" condition="StringCompare(Container.ViewMode,$LOCALIZE[31120])" reversible="false">
@@ -296,8 +302,8 @@
 							<top>28</top>
 							<width>480</width>
 							<height>718</height>
-							<texture diffuse="poster/Poster_Matte_FO.png">$VAR[Video_Info_Image]</texture>
 							<fadetime>200</fadetime>
+							<texture diffuse="poster/Poster_Matte_FO.png">$VAR[VideoInfo_Image]</texture>
 							<aspectratio scalediffuse="false">stretch</aspectratio>
 						</control>
 						<control type="image">
@@ -315,7 +321,7 @@
 							<texture>$VAR[Status_Overlay]</texture>
 							<include>Animation_PosterInfoSlide</include>
 						</control>
-						<control type="image">
+						<control type="image">		<!-- ??? --->
 							<left>420</left>
 							<top>678</top>
 							<width>48</width>
@@ -325,114 +331,71 @@
 							<animation effect="slide" end="-54,0" condition="[!Skin.HasSetting(HideWatchedOverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)] | [!Skin.HasSetting(HideResumeOverlays) + ListItem.IsResumable]">Conditional</animation>
 						</control>
 					</control>
-				</control>
-				<control type="group">
-					<top>TopOffset</top>
-					<left>LeftOffset</left>
-					<include>Animation_ZoomedByMenu</include>
-					<control type="image">
-						<left>342</left>
-						<top>214</top>
-						<width>480</width>
-						<height>480</height>
-						<texture>dialogs/NoThumb.png</texture>
-						<fadetime>200</fadetime>
-						<aspectratio>keep</aspectratio>
-						<visible>IsEmpty(ListItem.Art(poster)) + IsEmpty(ListItem.Art(season.poster)) + IsEmpty(ListItem.Art(tvshow.poster))</visible>
-						<animation type="WindowOpen" reversible="false">
-							<effect type="fade" start="0" end="100" time="400" />
-						</animation>
-						<animation type="WindowClose" reversible="false">
-							<effect type="fade" start="100" end="0" time="0" />
-						</animation>
+					<control type="group">
+						<top>TopOffset</top>
+						<left>LeftOffset</left>
+						<include>Animation_ZoomedByMenu</include>
+						<control type="image">
+							<left>342</left>
+							<top>214</top>
+							<width>480</width>
+							<height>480</height>
+							<texture>dialogs/NoThumb.png</texture>
+							<fadetime>200</fadetime>
+							<aspectratio>keep</aspectratio>
+							<visible>IsEmpty(Control.GetLabel(8200))</visible>
+							<animation type="WindowOpen" reversible="false">
+								<effect type="fade" start="0" end="100" time="400" />
+							</animation>
+							<animation type="WindowClose" reversible="false">
+								<effect type="fade" start="100" end="0" time="0" />
+							</animation>
+						</control>
 					</control>
 				</control>
 				
 				<!-- Cast -->
 				<control type="group">
-					<top>TopOffset</top>
-					<left>LeftOffset</left>
-					<include>Animation_ZoomInMenu</include>
-					<visible>Control.HasFocus(50)</visible>
-
-					<control type="fixedlist" id="50">
-						<left>389</left>
-						<top>135</top>
-						<height>748</height>
-						<width>1485</width>
+					<include>Animation_CommonFade</include>
+					<visible>StringCompare(Window().Property(DialogVideoInfo.CurrentView),9020)</visible>
+					<control type="list" id="50">
+						<left>840</left>
+						<top>561</top>
+						<width>1004</width>
+						<height>290</height>
 						<onup>50</onup>
 						<ondown>50</ondown>
 						<onleft>9010</onleft>
-						<onright>9010</onright>
-						<focusposition>4</focusposition>
+						<onright>7000</onright>
 						<orientation>vertical</orientation>
 						<viewtype label="535">list</viewtype>
-						<scrolltime tween="sine" easing="out">320</scrolltime>
-
-						<itemlayout width="1691" height="74">
-
+						<scrolltime tween="sine" easing="out">200</scrolltime>
+						<itemlayout width="1004" height="42">
 							<control type="label">
-								<left>372</left>
-								<top>0</top>
-								<width>1113</width>
-								<height>74</height>
+								<width>1004</width>
+								<height>38</height>
 								<aligny>center</aligny>
-								<font>Font_Black_Caps_35</font>
-								<textcolor>Heavy</textcolor>
-								<selectedcolor>Heavy</selectedcolor>
+								<font>Font_Reg_38</font>
+								<textcolor>MedLight</textcolor>
+								<selectedcolor>MedLight</selectedcolor>
 								<label>$INFO[ListItem.Label]</label>
 							</control>
-
 						</itemlayout>
-
-						<focusedlayout width="1691" height="156">
-
-							<control type="image">
-								<left>276</left>
-								<top>0</top>
-								<width>156</width>
-								<height>156</height>
-								<aspectratio align="right">keep</aspectratio>
-								<texture>$INFO[ListItem.Icon]</texture>
-								<animation type="Focus" reversible="false">
-									<effect type="zoom" center="354,78" start="50" end="100" time="200" tween="cubic" easing="out" />
-									<effect type="fade" start="0" end="100" time="200" />
-								</animation>
-								<visible>SubString(ListItem.Icon,Default)</visible>
-							</control>
-							<control type="image">
-								<left>0</left>
-								<top>0</top>
-								<width>432</width>
-								<height>156</height>
-								<bordersize>6</bordersize>
-								<aspectratio align="right">keep</aspectratio>
-								<texture>$INFO[ListItem.Icon]</texture>
-								<bordertexture border="6">pics/Picture_Panel.png</bordertexture>
-								<animation type="Focus" reversible="false">
-									<effect type="zoom" center="354,78" start="50" end="100" time="200" tween="cubic" easing="out" />
-									<effect type="fade" start="0" end="100" time="200" />
-								</animation>
-								<visible>!SubString(ListItem.Icon,Default)</visible>
-							</control>
-
+						<focusedlayout width="1004" height="42">
 							<control type="group">
-								<animation type="Focus" reversible="false">
-									<effect type="fade" start="0" end="100" time="200" />
-								</animation>
+								<animation effect="fade" start="0" end="100" time="200" reversible="false">Focus</animation>
 								<control type="label">
-									<left>456</left>
-									<width>1029</width>
-									<height>156</height>
+									<top>1</top>
+									<width>1004</width>
+									<height>38</height>
 									<aligny>center</aligny>
 									<scroll>true</scroll>
-									<font>Font_Black_Caps_42</font>
+									<font>Font_Reg_Caps_38</font>
 									<textcolor>Heavy</textcolor>
 									<selectedcolor>Heavy</selectedcolor>
 									<label>$INFO[ListItem.Label]</label>
 								</control>
 							</control>
-
 						</focusedlayout>
 					</control>
 				</control>
