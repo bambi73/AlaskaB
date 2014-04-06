@@ -7,7 +7,7 @@
 	<onunload>ClearProperty(DialogVideoInfo.CurrentView)</onunload>
 	
 	<controls>
-		<!--control type="label">
+<!-- 		<control type="label">
 			<left>46</left>
 			<top>100</top>
 			<width>1900</width>
@@ -15,7 +15,7 @@
 			<aligny>center</aligny>
 			<font>Font_Reg_Caps_52</font>
 			<textcolor>MedLight</textcolor>
-			<label>$VAR[VideoInfo_Image]</label>
+			<label>$INFO[ListItem.Property(TotalSeasons)]</label>
 			<visible>true</visible>
 		</control>
 		<control type="label">
@@ -26,9 +26,9 @@
 			<aligny>center</aligny>
 			<font>Font_Reg_Caps_52</font>
 			<textcolor>MedLight</textcolor>
-			<label>$INFO[Window(home).Property(DialogVideoInfo.PreviousView)]</label>
-			<visible>Window.IsVisible(videolibrary)</visible>
-		</control-->
+			<label>seasons</label>
+			<visible>Container.Content(seasons)</visible>
+		</control> -->
 			
 		<!-- Video info group -->
 		<control type="group" id="5000">
@@ -37,6 +37,7 @@
 				<!-- Fullscreen fanart -->
 				<control type="button" id="9000">
 					<include>HiddenControl</include>
+					<visible>!IsEmpty(ListItem.Art(fanart))</visible>
 					<onup>7000</onup>
 					<ondown>7000</ondown>
 					<onleft>noop</onleft>
@@ -63,6 +64,7 @@
 				<!-- Cast info -->
 				<control type="button" id="9020">
 					<include>HiddenControl</include>
+					<visible>IntegerGreaterThan(Container(50).NumItems,0)</visible>
 					<onup>7000</onup>
 					<ondown>7000</ondown>
 					<onleft>9010</onleft>
@@ -146,6 +148,26 @@
 							<width>FullWidth</width>
 							<height>3</height>
 							<texture>dialogs/Video_Info_Line_Horizontal.png</texture>
+						</control>
+					</control>
+
+					<!-- Previous/Next -->
+					<control type="group">
+						<control type="image">
+							<left>20</left>
+							<top>302</top>
+							<width>30</width>
+							<height>60</height>
+							<texture>dialogs/available_left.png</texture>
+							<visible>[StringCompare(Window().Property(DialogVideoInfo.CurrentView),9010) + Control.IsVisible(9000)] | [StringCompare(Window().Property(DialogVideoInfo.CurrentView),9020) + Control.IsVisible(9010)]]</visible>
+						</control>
+						<control type="image">
+							<left>1870</left>
+							<top>302</top>
+							<width>30</width>
+							<height>60</height>
+							<texture>dialogs/available_right.png</texture>
+							<visible>StringCompare(Window().Property(DialogVideoInfo.CurrentView),9010) + Control.IsVisible(9020)</visible>
 						</control>
 					</control>
 
@@ -366,7 +388,7 @@
 						<onup>50</onup>
 						<ondown>50</ondown>
 						<onleft>9010</onleft>
-						<onright>7000</onright>
+						<onright>noop</onright>
 						<orientation>vertical</orientation>
 						<viewtype label="535">list</viewtype>
 						<scrolltime tween="sine" easing="out">200</scrolltime>

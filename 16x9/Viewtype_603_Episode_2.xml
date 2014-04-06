@@ -114,12 +114,10 @@
 								<textcolor>Heavy</textcolor>
 							</control>
 						</control>
-						<!-- HACK: Solution for ListItem.FolderName problem -->
 						<control type="button">
 							<include>HiddenControl</include>
-							<onfocus>SetProperty(ListItem.SourceName,$ESCINFO[ListItem.FileName],home)</onfocus>
+							<onfocus>SetProperty(ListItem.AlaskaB.SourceName,$ESCINFO[ListItem.FileName],home)</onfocus>
 						</control>
-						<!-- HACK -->
 					</focusedlayout>
 
 				</control>
