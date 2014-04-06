@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="2003">
 	<defaultcontrol always="true">9010</defaultcontrol>
-	<onunload>ClearProperty(Overlay.Hide,home)</onunload>
-	<onunload>ClearProperty(Overlay.MediaFlags.Hide,home)</onunload>
-	<onunload>ClearProperty(Overlay.NowPlaying.Hide,home)</onunload>
-	<onunload>ClearProperty(DialogVideoInfo.CurrentView)</onunload>
+
+	<!--onload>SetProperty(AlaskaB.Animation_ZoomedByMenu.Skip,1,home)</onload-->
+	<!--onunload>ClearProperty(AlaskaB.Animation_ZoomedByMenu.Skip,home)</onunload-->
+
+	<onunload>ClearProperty(AlaskaB.Overlay.Hide,home)</onunload>
+	<onunload>ClearProperty(AlaskaB.Overlay.MediaFlags.Hide,home)</onunload>
+	<onunload>ClearProperty(AlaskaB.Overlay.NowPlaying.Hide,home)</onunload>
+	<!--onunload>ClearProperty(AlaskaB.Animation_ZoomedByMenu.Skip,home)</onunload-->
+	<onunload>ClearProperty(AlaskaB.DialogVideoInfo.CurrentView,movieinformation)</onunload>
 	
 	<controls>
-<!-- 		<control type="label">
+		<!--control type="label">
 			<left>46</left>
 			<top>100</top>
 			<width>1900</width>
@@ -15,8 +20,8 @@
 			<aligny>center</aligny>
 			<font>Font_Reg_Caps_52</font>
 			<textcolor>MedLight</textcolor>
-			<label>$INFO[ListItem.Property(TotalSeasons)]</label>
-			<visible>true</visible>
+			<label>-$INFO[Window(Home).Property(AlaskaB.Animation_ZoomedByMenu.Skip)]-</label>
+			<visible>!StringCompare(Window(Home).Property(AlaskaB.Animation_ZoomedByMenu.Skip),true)</visible>
 		</control>
 		<control type="label">
 			<left>46</left>
@@ -26,9 +31,9 @@
 			<aligny>center</aligny>
 			<font>Font_Reg_Caps_52</font>
 			<textcolor>MedLight</textcolor>
-			<label>seasons</label>
-			<visible>Container.Content(seasons)</visible>
-		</control> -->
+			<label>+$INFO[Window(Home).Property(AlaskaB.Animation_ZoomedByMenu.Skip)]+</label>
+			<visible>StringCompare(Window(Home).Property(AlaskaB.Animation_ZoomedByMenu.Skip),true)</visible>
+		</control--> 
 			
 		<!-- Video info group -->
 		<control type="group" id="5000">
@@ -43,10 +48,10 @@
 					<onleft>noop</onleft>
 					<onright>9010</onright>
 					<onclick>SetFocus(9010)</onclick>
-					<onfocus>SetProperty(Overlay.Hide,true,home)</onfocus>
-					<onfocus>SetProperty(Overlay.NowPlaying.Hide,true,home)</onfocus>
-					<onfocus>SetProperty(Overlay.MediaFlags.Hide,true,home)</onfocus>
-					<onfocus>SetProperty(DialogVideoInfo.CurrentView,9000)</onfocus>
+					<onfocus>SetProperty(AlaskaB.Overlay.Hide,true,home)</onfocus>
+					<onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,true,home)</onfocus>
+					<onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,true,home)</onfocus>
+					<onfocus>SetProperty(AlaskaB.DialogVideoInfo.CurrentView,9000)</onfocus>
 				</control>
 				<!-- Main info -->
 				<control type="button" id="9010">
@@ -56,10 +61,10 @@
 					<onleft>9000</onleft>
 					<onright>9020</onright>
 					<onclick>SendClick(movieinformation,8)</onclick>
-					<onfocus>SetProperty(Overlay.Hide,false,home)</onfocus>
-					<onfocus>SetProperty(Overlay.NowPlaying.Hide,false,home)</onfocus>
-					<onfocus>SetProperty(Overlay.MediaFlags.Hide,false,home)</onfocus>
-					<onfocus>SetProperty(DialogVideoInfo.CurrentView,9010)</onfocus>
+					<onfocus>SetProperty(AlaskaB.Overlay.Hide,false,home)</onfocus>
+					<onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,false,home)</onfocus>
+					<onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,false,home)</onfocus>
+					<onfocus>SetProperty(AlaskaB.DialogVideoInfo.CurrentView,9010)</onfocus>
 				</control>
 				<!-- Cast info -->
 				<control type="button" id="9020">
@@ -69,10 +74,10 @@
 					<ondown>7000</ondown>
 					<onleft>9010</onleft>
 					<onright>noop</onright>
-					<onfocus>SetProperty(Overlay.Hide,false,home)</onfocus>
-					<onfocus>SetProperty(Overlay.NowPlaying.Hide,false,home)</onfocus>
-					<onfocus>SetProperty(Overlay.MediaFlags.Hide,false,home)</onfocus>
-					<onfocus>SetProperty(DialogVideoInfo.CurrentView,9020)</onfocus>
+					<onfocus>SetProperty(AlaskaB.Overlay.Hide,false,home)</onfocus>
+					<onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,false,home)</onfocus>
+					<onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,false,home)</onfocus>
+					<onfocus>SetProperty(AlaskaB.DialogVideoInfo.CurrentView,9020)</onfocus>
 					<onfocus>SetFocus(50)</onfocus>
 				</control>
 			</control>
@@ -116,7 +121,7 @@
 				<top>TopOffset</top>
 				<left>LeftOffset</left>
 				<include>Animation_ZoomedByMenu</include>
-				<visible>![Control.HasFocus(9000) | [ControlGroup(5100).HasFocus + StringCompare(Window().Property(DialogVideoInfo.CurrentView),9000)]]</visible>
+				<visible>![Control.HasFocus(9000) | [ControlGroup(5100).HasFocus + StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9000)]]</visible>
 				
 				<animation type="Visible" condition="ControlGroup(5000).HasFocus">
 					<effect type="slide" start="-1920,0" end="0,0" time="250" tween="cubic" easing="in" />
@@ -159,7 +164,7 @@
 							<width>30</width>
 							<height>60</height>
 							<texture>dialogs/available_left.png</texture>
-							<visible>[StringCompare(Window().Property(DialogVideoInfo.CurrentView),9010) + Control.IsVisible(9000)] | [StringCompare(Window().Property(DialogVideoInfo.CurrentView),9020) + Control.IsVisible(9010)]]</visible>
+							<visible>[StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010) + Control.IsVisible(9000)] | [StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9020) + Control.IsVisible(9010)]]</visible>
 						</control>
 						<control type="image">
 							<left>1870</left>
@@ -167,7 +172,7 @@
 							<width>30</width>
 							<height>60</height>
 							<texture>dialogs/available_right.png</texture>
-							<visible>StringCompare(Window().Property(DialogVideoInfo.CurrentView),9010) + Control.IsVisible(9020)</visible>
+							<visible>StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010) + Control.IsVisible(9020)</visible>
 						</control>
 					</control>
 
@@ -280,7 +285,7 @@
 							<control type="textbox">
 								<animation effect="fade" start="0" end="100" time="200">Visible</animation>
 								<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
-								<visible>StringCompare(Window().Property(DialogVideoInfo.CurrentView),9010)</visible>
+								<visible>StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010)</visible>
 								<left>0</left>
 								<top>360</top>
 								<width>1004</width>
@@ -377,7 +382,7 @@
 				<!-- Cast -->
 				<control type="group">
 					<include>Animation_CommonFade</include>
-					<visible>StringCompare(Window().Property(DialogVideoInfo.CurrentView),9020)</visible>
+					<visible>StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9020)</visible>
 					<control type="list" id="50">
 						<left>840</left>
 						<top>561</top>
@@ -427,41 +432,41 @@
 			<!-- Hidden control buttons for Menu -->
 			<control type="button" id="7000">
 				<include>HiddenControl</include>
-				<visible>SubString(Window().Property(DialogVideoInfo.CurrentView),9000)</visible>
-				<onfocus>SetProperty(Overlay.Hide,false,home)</onfocus>
-				<onfocus>SetProperty(Overlay.NowPlaying.Hide,true,home)</onfocus>
-				<onfocus>SetProperty(Overlay.MediaFlags.Hide,true,home)</onfocus>
+				<visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9000)</visible>
+				<onfocus>SetProperty(AlaskaB.Overlay.Hide,false,home)</onfocus>
+				<onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,true,home)</onfocus>
+				<onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,true,home)</onfocus>
 				<onfocus>SetFocus(7100)</onfocus>
 			</control>
 			<control type="button" id="7000">
 				<include>HiddenControl</include>
-				<visible>SubString(Window().Property(DialogVideoInfo.CurrentView),9010)</visible>
-				<onfocus>SetProperty(Overlay.Hide,false,home)</onfocus>
-				<onfocus>SetProperty(Overlay.NowPlaying.Hide,true,home)</onfocus>
-				<onfocus>SetProperty(Overlay.MediaFlags.Hide,true,home)</onfocus>
+				<visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010)</visible>
+				<onfocus>SetProperty(AlaskaB.Overlay.Hide,false,home)</onfocus>
+				<onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,true,home)</onfocus>
+				<onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,true,home)</onfocus>
 				<onfocus>SetFocus(7100)</onfocus>
 			</control>
 			<control type="button" id="7000">
 				<include>HiddenControl</include>
-				<visible>SubString(Window().Property(DialogVideoInfo.CurrentView),9020)</visible>
-				<onfocus>SetProperty(Overlay.Hide,false,home)</onfocus>
-				<onfocus>SetProperty(Overlay.NowPlaying.Hide,true,home)</onfocus>
-				<onfocus>SetProperty(Overlay.MediaFlags.Hide,true,home)</onfocus>
+				<visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9020)</visible>
+				<onfocus>SetProperty(AlaskaB.Overlay.Hide,false,home)</onfocus>
+				<onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,true,home)</onfocus>
+				<onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,true,home)</onfocus>
 				<onfocus>SetFocus(7100)</onfocus>
 			</control>
 			<control type="button" id="7010">
 				<include>HiddenControl</include>
-				<visible>SubString(Window().Property(DialogVideoInfo.CurrentView),9000)</visible>
+				<visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9000)</visible>
 				<onfocus>SetFocus(9000)</onfocus>
 			</control>
 			<control type="button" id="7010">
 				<include>HiddenControl</include>
-				<visible>SubString(Window().Property(DialogVideoInfo.CurrentView),9010)</visible>
+				<visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010)</visible>
 				<onfocus>SetFocus(9010)</onfocus>
 			</control>
 			<control type="button" id="7010">
 				<include>HiddenControl</include>
-				<visible>SubString(Window().Property(DialogVideoInfo.CurrentView),9020)</visible>
+				<visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9020)</visible>
 				<onfocus>SetFocus(9020)</onfocus>
 			</control>
 

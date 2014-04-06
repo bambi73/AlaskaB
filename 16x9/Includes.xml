@@ -39,7 +39,7 @@
 			<fadetime>400</fadetime>
 			<colordiffuse>FanartDiffuse</colordiffuse>
 			<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-			<include>Animation_CommonFade</include>
+			<include>Animation_FanartFade</include>
 		</control>
 	</include>
 
@@ -789,29 +789,31 @@
 	</include>
 	
 	<!-- DialogVideoInfo -->
-	<include name="VideoInfo_OtherInfo">
-		<aligny>center</aligny>
-		<font>Font_Reg_Caps_38</font>
-		<textcolor>MedLight</textcolor>
-	</include>
-	
 	<include name="VideoInfo_OtherInfo_LabelBlock">
-		<include>VideoInfo_OtherInfo</include>
+		<aligny>center</aligny>
+		<textcolor>MedLight</textcolor>
+		<font>Font_Reg_Caps_38</font>
 	</include>
 
 	<include name="VideoInfo_OtherInfo_LabelBlock_Widest">
 		<width>auto</width>
-		<include>VideoInfo_OtherInfo</include>
+		<aligny>center</aligny>
+		<textcolor>MedLight</textcolor>
+		<font>Font_Reg_Caps_38</font>
 	</include>
 
 	<include name="VideoInfo_OtherInfo_DelimiterBlock">
 		<align>center</align>
-		<include>VideoInfo_OtherInfo</include>
+		<aligny>center</aligny>
+		<textcolor>MedLight</textcolor>
+		<font>Font_Reg_Caps_38</font>
 		<label>•</label>
 	</include>
 
 	<include name="VideoInfo_OtherInfo_ValueBlock">
-		<include>VideoInfo_OtherInfo</include>
+		<aligny>center</aligny>
+		<textcolor>MedLight</textcolor>
+		<font>Font_Reg_38</font>
 	</include>
 
 

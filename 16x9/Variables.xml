@@ -192,13 +192,13 @@
 
 	<!-- HACK: Solution for ListItem.FolderName problem -->
 	<variable name="Video_Source">
-		<value condition="SubString(Window(home).Property(ListItem.AlaskaB.SourceName),-hdtv)">flags/source/hdtv</value>
-		<value condition="SubString(Window(home).Property(ListItem.AlaskaB.SourceName),-hd) | SubString(Window(home).Property(ListItem.AlaskaB.SourceName),.evo,Right)">flags/source/hddvd</value>
-		<value condition="SubString(Window(home).Property(ListItem.AlaskaB.SourceName),-br) | SubString(Window(home).Property(ListItem.AlaskaB.SourceName),.m2ts,Right) | SubString(Window(home).Property(ListItem.AlaskaB.SourceName),.bdmv,Right)">flags/source/bluray</value>
-		<value condition="SubString(Window(home).Property(ListItem.AlaskaB.SourceName),dvdrip) | SubString(Window(home).Property(ListItem.AlaskaB.SourceName),.ifo,Right) | SubString(Window(home).Property(ListItem.AlaskaB.SourceName),.iso,Right)">flags/source/dvd</value>
-		<value condition="SubString(Window(home).Property(ListItem.AlaskaB.SourceName),vhsrip)">flags/source/vhs</value>
-		<value condition="SubString(Window(home).Property(ListItem.AlaskaB.SourceName),ldrip)">flags/source/dvhs</value>
-		<value condition="SubString(Window(home).Property(ListItem.AlaskaB.SourceName),dtheater)">flags/source/dtheater</value>
+		<value condition="SubString(Window(home).Property(AlaskaB.ListItem.SourceName),-hdtv)">flags/source/hdtv</value>
+		<value condition="SubString(Window(home).Property(AlaskaB.ListItem.SourceName),-hd) | SubString(Window(home).Property(AlaskaB.ListItem.SourceName),.evo,Right)">flags/source/hddvd</value>
+		<value condition="SubString(Window(home).Property(AlaskaB.ListItem.SourceName),-br) | SubString(Window(home).Property(AlaskaB.ListItem.SourceName),.m2ts,Right) | SubString(Window(home).Property(AlaskaB.ListItem.SourceName),.bdmv,Right)">flags/source/bluray</value>
+		<value condition="SubString(Window(home).Property(AlaskaB.ListItem.SourceName),dvdrip) | SubString(Window(home).Property(AlaskaB.ListItem.SourceName),.ifo,Right) | SubString(Window(home).Property(AlaskaB.ListItem.SourceName),.iso,Right)">flags/source/dvd</value>
+		<value condition="SubString(Window(home).Property(AlaskaB.ListItem.SourceName),vhsrip)">flags/source/vhs</value>
+		<value condition="SubString(Window(home).Property(AlaskaB.ListItem.SourceName),ldrip)">flags/source/dvhs</value>
+		<value condition="SubString(Window(home).Property(AlaskaB.ListItem.SourceName),dtheater)">flags/source/dtheater</value>
 		<value>flags/source/sdtv</value>
 	</variable>
 	<!-- HACK -->
@@ -326,6 +326,7 @@
 	</variable>
 	
 	<variable name="VideoInfo_Main_Title_EpisodeNumber">
+		<value condition="Container.Content(episodes) + ListItem.Property(IsSpecial)">$INFO[ListItem.Episode]</value>
 		<value condition="Container.Content(episodes) + !IntegerGreaterThan(ListItem.Episode,9)">$INFO[ListItem.Episode,0,]</value>
 		<value condition="Container.Content(episodes)">$INFO[ListItem.Episode]</value>
 	</variable>
@@ -338,6 +339,7 @@
 		<value condition="Container.Content(episodes)">$VAR[VideoInfo_Main_Title_EpisodeNumberAndDelimiter]$INFO[ListItem.Title]</value>
 		<value>$INFO[ListItem.Title]</value>
 	</variable>
+	
 
 	<variable name="VideoInfo_Year_Insert">
 		<value condition="Container.Content(tvshows) + !IsEmpty(ListItem.Year) + !IsEmpty(ListItem.Property(TotalEpisodes))"> • </value>
@@ -352,9 +354,9 @@
 	</variable>
 	
 	<variable name="VideoInfo_OtherInfo_WidestLabel">
-		<value condition="Container.Content(tvshows) + Substring(System.Language,english)">2</value>
+		<value condition="Container.Content(tvshows) + SubString(System.Language,english)">2</value>
 		<value condition="Container.Content(tvshows)">2</value>
-		<value condition="Substring(System.Language,english)">3</value>
+		<value condition="SubString(System.Language,english)">3</value>
 		<value>3</value>
 	</variable>
 	
@@ -389,9 +391,9 @@
 	</variable>
 	
 	<variable name="VideoInfo_Image">
-		<value condition="StringCompare(Window(movieinformation).Property(DialogVideoInfo.CurrentView),9020)">$INFO[Container(50).ListItem(0).Icon]</value>
+		<value condition="StringCompare(Window(movieinformation).Property(AlaskaB.DialogVideoInfo.CurrentView),9020)">$INFO[Container(50).ListItem(0).Icon]</value>
 		<value condition="!IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
-		<!--value condition="!IsEmpty(ListItem.Art(season.poster))">$INFO[ListItem.Art(season.poster)]</value-->
+		<value condition="!IsEmpty(ListItem.Art(season.poster)) + !IsEmpty(Window(movieinformation).Property(ListItem.AlaskaB.Season))">$INFO[ListItem.Art(season.poster)]</value>
 		<value condition="!IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>

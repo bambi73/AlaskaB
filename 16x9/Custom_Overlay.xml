@@ -31,7 +31,7 @@
 			</control-->
 			
 			<control type="group">
-				<visible>!SubString(Window(home).Property(Overlay.Hide),true)</visible>
+				<visible>!SubString(Window(home).Property(AlaskaB.Overlay.Hide),true)</visible>
 				<animation effect="fade" start="0" end="100" time="200">VisibleChange</animation>
 
 				<!-- Heading -->
@@ -126,7 +126,7 @@
 					<left>34</left>
 					<bottom>36</bottom>
 					<height>80</height>
-					<visible>[[Player.HasVideo + !VideoPlayer.IsFullscreen] | [Player.HasAudio + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]]  + !SubString(Window(home).Property(Overlay.NowPlaying.Hide),true) + !IsEmpty(Player.Title)</visible>
+					<visible>[[Player.HasVideo + !VideoPlayer.IsFullscreen] | [Player.HasAudio + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)]]  + !SubString(Window(home).Property(AlaskaB.Overlay.NowPlaying.Hide),true) + !IsEmpty(Player.Title)</visible>
 					<animation type="Conditional" condition="Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(systeminfo) | Window.IsVisible(filemanager) | Window.IsVisible(skinsettings) | Window.IsVisible(addonsettings) | Window.IsVisible(mediasource) | Window.IsVisible(filebrowser) | Window.IsVisible(networksetup) | Window.IsVisible(selectdialog) | Window.IsVisible(numericinput) | Window.IsVisible(virtualkeyboard) | Window.IsVisible(peripherals) | Window.IsVisible(peripheralsettings) | Window.IsVisible(pictureinfo) | Window.IsVisible(loginscreen) | Window.IsVisible(profiles) | Window.IsVisible(profilesettings) | Window.IsVisible(locksettings) | Window.IsVisible(contentsettings) | Window.IsVisible(smartplaylisteditor)">
 						<effect type="fade" start="100" end="0" time="200" />
 					</animation>
@@ -180,7 +180,7 @@
 					<itemgap>24</itemgap>
 					<orientation>horizontal</orientation>
 					<usecontrolcoords>true</usecontrolcoords>
-					<visible>[SubString(Container.FolderPath,videodb://) | SubString(Container.FolderPath,special://) | SubString(Container.FolderPath,library://)] + ![IsEmpty(ListItem.Rating) + IsEmpty(ListItem.VideoResolution) + IsEmpty(ListItem.VideoCodec) + IsEmpty(ListItem.AudioCodec) + IsEmpty(ListItem.AudioChannels) + IsEmpty(ListItem.Studio)] + !SubString(Window(home).Property(Overlay.MediaFlags.Hide),true)</visible>
+					<visible>[SubString(Container.FolderPath,videodb://) | SubString(Container.FolderPath,special://) | SubString(Container.FolderPath,library://)] + ![IsEmpty(ListItem.Rating) + IsEmpty(ListItem.VideoResolution) + IsEmpty(ListItem.VideoCodec) + IsEmpty(ListItem.AudioCodec) + IsEmpty(ListItem.AudioChannels) + IsEmpty(ListItem.Studio)] + !SubString(Window(home).Property(AlaskaB.Overlay.MediaFlags.Hide),true)</visible>
 					<animation effect="Conditional" condition="Player.HasAudio | Player.HasVideo | ListItem.IsFolder">
 						<effect type="slide" start="0,0" end="474,0" time="0" tween="cubic" easing="out" />
 					</animation>

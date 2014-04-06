@@ -5,8 +5,12 @@
 	<views>503,501,502,514,504,508,500,603,650</views>
 
 	<onload condition="System.HasAddon(script.tv.show.next.aired) + Container.Content(tvshows)">RunScript(script.tv.show.next.aired,backend=True)</onload>
-	<onunload>ClearProperty(Overlay.MediaFlags.Hide,home)</onunload>
+	<onunload>ClearProperty(AlaskaB.Overlay.MediaFlags.Hide,home)</onunload>
+	<onunload>ClearProperty(AlaskaB.Overlay.NowPlaying.Hide,home)</onunload>
 
+	<!--onunload condition="!IsEmpty(Window(movieinformation).Property(IsSeason)">ClearProperty(IsSeason,movieinformation)</onunload>	
+	<onunload condition="!IsEmpty(Window(movieinformation).Property(IsSpecial)">ClearProperty(IsSpecial,movieinformation)</onunload-->
+	
 	<controls>
 
 		<!-- Background -->
@@ -20,15 +24,18 @@
 
 		<!-- Views -->
 
-		<include>Viewtype_500_List</include>
-		<include>Viewtype_501_Poster_No_Wrap</include>
-		<include>Viewtype_502_Poster_Wrap</include>
-		<include>Viewtype_503_Episode</include>
-		<include>Viewtype_504_Fanart</include>
-		<include>Viewtype_508_Landscape</include>
-		<include>Viewtype_514_Season_Poster</include>
-		<include>Viewtype_603_Episode_2</include>
-		<include>Viewtype_650_Info_List_2</include>
+		<control type="group">
+			<include>Animation_ZoomInZoomOut</include>
+			<include>Viewtype_500_List</include>
+			<include>Viewtype_501_Poster_No_Wrap</include>
+			<include>Viewtype_502_Poster_Wrap</include>
+			<include>Viewtype_503_Episode</include>
+			<include>Viewtype_504_Fanart</include>
+			<include>Viewtype_508_Landscape</include>
+			<include>Viewtype_514_Season_Poster</include>
+			<include>Viewtype_603_Episode_2</include>
+			<include>Viewtype_650_Info_List_2</include>
+		</control>
 
 		<!-- Heading -->
 
@@ -48,12 +55,14 @@
 		<!-- Hidden buttons for Menu -->
 		<control type="button" id="7000">
 			<include>HiddenControl</include>
-			<onfocus>SetProperty(Overlay.MediaFlags.Hide,true,home)</onfocus>
+			<onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,true,home)</onfocus>
+			<onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,true,home)</onfocus>
 			<onfocus>SetFocus(7100)</onfocus>
 		</control>
 		<control type="button" id="7001">
 			<include>HiddenControl</include>
-			<onfocus>ClearProperty(Overlay.MediaFlags.Hide,home)</onfocus>
+			<onfocus>ClearProperty(AlaskaB.Overlay.NowPlaying.Hide,home)</onfocus>
+			<onfocus>ClearProperty(AlaskaB.Overlay.MediaFlags.Hide,home)</onfocus>
 			<onfocus>SetFocus(500)</onfocus>
 		</control>
 

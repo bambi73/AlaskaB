@@ -6,12 +6,33 @@
 		<control type="group">
 			<visible>Control.IsVisible(603)</visible>
 
+			<!-- <control type="label">
+				<left>46</left>
+				<top>100</top>
+				<width>1900</width>
+				<height>72</height>
+				<aligny>center</aligny>
+				<font>Font_Reg_Caps_52</font>
+				<textcolor>MedLight</textcolor>
+				<label>-$INFO[Window(Home).Property(AlaskaB.Animation_ZoomInZoomOut.Skip)]-</label>
+				<visible>!SubString(Window(Home).Property(AlaskaB.Animation_ZoomInZoomOut.Skip),true)</visible>
+			</control>
+			<control type="label">
+				<left>46</left>
+				<top>150</top>
+				<width>1900</width>
+				<height>72</height>
+				<aligny>center</aligny>
+				<font>Font_Reg_Caps_52</font>
+				<textcolor>MedLight</textcolor>
+				<label>+$INFO[Window(Home).Property(AlaskaB.Animation_ZoomInZoomOut.Skip)]+</label>
+				<visible>SubString(Window(Home).Property(AlaskaB.Animation_ZoomInZoomOut.Skip),true)</visible>
+			</control>  -->
+			
 			<!-- Browser -->
-
 			<control type="group" id="5000">
 				<top>TopOffset</top>
 				<left>LeftOffset</left>
-				<include>Animation_ZoomInZoomOut</include>
 				<include>Animation_ZoomedByMenu</include>
 				<include>Animation_HiddenByInfo</include>
 				<include>Animation_EpisodeFloat_2</include>
@@ -116,7 +137,7 @@
 						</control>
 						<control type="button">
 							<include>HiddenControl</include>
-							<onfocus>SetProperty(ListItem.AlaskaB.SourceName,$ESCINFO[ListItem.FileName],home)</onfocus>
+							<onfocus>SetProperty(AlaskaB.ListItem.SourceName,$ESCINFO[ListItem.FileName],home)</onfocus>
 						</control>
 					</focusedlayout>
 
