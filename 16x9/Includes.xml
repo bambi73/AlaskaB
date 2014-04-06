@@ -788,4 +788,31 @@
 		</focusedlayout>
 	</include>
 	
+	<!-- DialogVideoInfo -->
+	<include name="VideoInfo_OtherInfo">
+		<aligny>center</aligny>
+		<font>Font_Reg_Caps_38</font>
+		<textcolor>MedLight</textcolor>
+	</include>
+	
+	<include name="VideoInfo_OtherInfo_LabelBlock">
+		<include>VideoInfo_OtherInfo</include>
+	</include>
+
+	<include name="VideoInfo_OtherInfo_LabelBlock_Widest">
+		<width>auto</width>
+		<include>VideoInfo_OtherInfo</include>
+	</include>
+
+	<include name="VideoInfo_OtherInfo_DelimiterBlock">
+		<align>center</align>
+		<include>VideoInfo_OtherInfo</include>
+		<label>•</label>
+	</include>
+
+	<include name="VideoInfo_OtherInfo_ValueBlock">
+		<include>VideoInfo_OtherInfo</include>
+	</include>
+
+
 </includes>

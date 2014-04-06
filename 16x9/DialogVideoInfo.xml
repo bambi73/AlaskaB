@@ -193,92 +193,90 @@
 								<textcolor>MedLight</textcolor>
 								<label>$VAR[VideoInfo_Year]</label>
 							</control>
-							<control type="grouplist">
+
+							<control type="group">
 								<top>187</top>
-								<width>1004</width>
-								<height>136</height>
-								<itemgap>7</itemgap>
-								<orientation>horizontal</orientation>
-								<usecontrolcoords>true</usecontrolcoords>
-								<control type="group">
-									<width>192</width>
-									<control type="label">
-										<top>0</top>
-										<align>left</align>
-										<aligny>center</aligny>
-										<font>Font_Reg_Caps_38</font>
-										<textcolor>MedLight</textcolor>
-										<label>$VAR[VideoInfo_OtherInfo_LabelBlock_Line1]</label>
-									</control>
-									<control type="label">
-										<top>42</top>
-										<align>left</align>
-										<aligny>center</aligny>
-										<font>Font_Reg_Caps_38</font>
-										<textcolor>MedLight</textcolor>
-										<label>$VAR[VideoInfo_OtherInfo_LabelBlock_Line2]</label>
-									</control>
-									<control type="label">
-										<top>84</top>
-										<align>left</align>
-										<aligny>center</aligny>
-										<font>Font_Reg_Caps_38</font>
-										<textcolor>MedLight</textcolor>
-										<label>$VAR[VideoInfo_OtherInfo_LabelBlock_Line3]</label>
-									</control>
+								<control type="label" id="8201">
+									<include>HiddenControl</include>
+									<label>$VAR[VideoInfo_OtherInfo_WidestLabel]</label>
 								</control>
-								<control type="group">
-									<width>30</width>
+								<control type="label">
+									<include>VideoInfo_OtherInfo_LabelBlock</include>
+									<label>$VAR[VideoInfo_OtherInfo_LabelBlock_Line1]</label>
+									<visible>!StringCompare(Control.GetLabel(8201),1)</visible>
+								</control>
+								<control type="label">
+									<top>42</top>
+									<include>VideoInfo_OtherInfo_LabelBlock</include>
+									<label>$VAR[VideoInfo_OtherInfo_LabelBlock_Line2]</label>
+									<visible>!StringCompare(Control.GetLabel(8201),2)</visible>
+								</control>
+								<control type="label">
+									<top>84</top>
+									<include>VideoInfo_OtherInfo_LabelBlock</include>
+									<label>$VAR[VideoInfo_OtherInfo_LabelBlock_Line3]</label>
+									<visible>!StringCompare(Control.GetLabel(8201),3)</visible>
+								</control>
+								<control type="grouplist">
+									<top>0</top>
+									<width>1004</width>
+									<height>136</height>
+									<itemgap>7</itemgap>
+									<orientation>horizontal</orientation>
+									<usecontrolcoords>true</usecontrolcoords>
 									<control type="label">
-										<top>0</top>
-										<align>center</align>
-										<aligny>center</aligny>
-										<font>Font_Reg_Caps_38</font>
-										<textcolor>MedLight</textcolor>
-										<label>•</label>
+										<include>VideoInfo_OtherInfo_LabelBlock_Widest</include>
+										<label>$VAR[VideoInfo_OtherInfo_LabelBlock_Line1]</label>
+										<visible>StringCompare(Control.GetLabel(8201),1)</visible>
 									</control>
 									<control type="label">
 										<top>42</top>
-										<align>center</align>
-										<aligny>center</aligny>
-										<font>Font_Reg_Caps_38</font>
-										<textcolor>MedLight</textcolor>
-										<label>•</label>
+										<include>VideoInfo_OtherInfo_LabelBlock_Widest</include>
+										<label>$VAR[VideoInfo_OtherInfo_LabelBlock_Line2]</label>
+										<visible>StringCompare(Control.GetLabel(8201),2)</visible>
 									</control>
 									<control type="label">
 										<top>84</top>
-										<align>center</align>
-										<aligny>center</aligny>
-										<font>Font_Reg_Caps_38</font>
-										<textcolor>MedLight</textcolor>
-										<label>•</label>
+										<include>VideoInfo_OtherInfo_LabelBlock_Widest</include>
+										<label>$VAR[VideoInfo_OtherInfo_LabelBlock_Line3]</label>
+										<visible>StringCompare(Control.GetLabel(8201),3)</visible>
 									</control>
-								</control>				
-								<control type="group">
-									<width>768</width>
-									<control type="label">
-										<top>0</top>
-										<aligny>center</aligny>
-										<font>Font_Reg_38</font>
-										<textcolor>MedLight</textcolor>
-										<label fallback="161">$VAR[VideoInfo_OtherInfo_ValueBlock_Line1]</label>
-									</control>
-									<control type="label">
-										<top>42</top>
-										<aligny>center</aligny>
-										<font>Font_Reg_38</font>
-										<textcolor>MedLight</textcolor>
-										<label fallback="161">$VAR[VideoInfo_OtherInfo_ValueBlock_Line2]</label>
-									</control>
-									<control type="label">
-										<top>84</top>
-										<aligny>center</aligny>
-										<font>Font_Reg_38</font>
-										<textcolor>MedLight</textcolor>
-										<label fallback="161">$VAR[VideoInfo_OtherInfo_ValueBlock_Line3]</label>
-									</control>
-								</control>				
+									<control type="group">
+										<width>30</width>
+										<control type="label">
+											<top>0</top>
+											<include>VideoInfo_OtherInfo_DelimiterBlock</include>
+										</control>
+										<control type="label">
+											<top>42</top>
+											<include>VideoInfo_OtherInfo_DelimiterBlock</include>
+										</control>
+										<control type="label">
+											<top>84</top>
+											<include>VideoInfo_OtherInfo_DelimiterBlock</include>
+										</control>
+									</control>				
+									<control type="group">
+										<width>768</width>
+										<control type="label">
+											<top>0</top>
+											<include>VideoInfo_OtherInfo_ValueBlock</include>
+											<label fallback="161">$VAR[VideoInfo_OtherInfo_ValueBlock_Line1]</label>
+										</control>
+										<control type="label">
+											<top>42</top>
+											<include>VideoInfo_OtherInfo_ValueBlock</include>
+											<label fallback="161">$VAR[VideoInfo_OtherInfo_ValueBlock_Line2]</label>
+										</control>
+										<control type="label">
+											<top>84</top>
+											<include>VideoInfo_OtherInfo_ValueBlock</include>
+											<label fallback="161">$VAR[VideoInfo_OtherInfo_ValueBlock_Line3]</label>
+										</control>
+									</control>				
+								</control>
 							</control>
+
 							<control type="textbox">
 								<animation effect="fade" start="0" end="100" time="200">Visible</animation>
 								<animation effect="fade" start="100" end="0" time="200">Hidden</animation>

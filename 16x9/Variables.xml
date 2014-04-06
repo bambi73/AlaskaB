@@ -351,6 +351,13 @@
 		<value>$INFO[ListItem.Year]</value>
 	</variable>
 	
+	<variable name="VideoInfo_OtherInfo_WidestLabel">
+		<value condition="Container.Content(tvshows) + Substring(System.Language,english)">2</value>
+		<value condition="Container.Content(tvshows)">2</value>
+		<value condition="Substring(System.Language,english)">3</value>
+		<value>3</value>
+	</variable>
+	
 	<variable name="VideoInfo_OtherInfo_LabelBlock_Line1">
 		<value condition="Container.Content(tvshows)">Genre</value>
 		<value>Director</value>
