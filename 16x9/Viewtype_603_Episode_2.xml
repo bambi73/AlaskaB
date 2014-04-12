@@ -14,8 +14,8 @@
 				<aligny>center</aligny>
 				<font>Font_Reg_Caps_52</font>
 				<textcolor>MedLight</textcolor>
-				<label>-$INFO[Window(Home).Property(AlaskaB.Animation_ZoomInZoomOut.Skip)]-</label>
-				<visible>!SubString(Window(Home).Property(AlaskaB.Animation_ZoomInZoomOut.Skip),true)</visible>
+				<label>-$INFO[Container.FolderPath]-</label>
+				<visible>true</visible>
 			</control>
 			<control type="label">
 				<left>46</left>
@@ -25,8 +25,8 @@
 				<aligny>center</aligny>
 				<font>Font_Reg_Caps_52</font>
 				<textcolor>MedLight</textcolor>
-				<label>+$INFO[Window(Home).Property(AlaskaB.Animation_ZoomInZoomOut.Skip)]+</label>
-				<visible>SubString(Window(Home).Property(AlaskaB.Animation_ZoomInZoomOut.Skip),true)</visible>
+				<label>+$INFO[Container.FolderName]+</label>
+				<visible>true</visible>
 			</control>  -->
 			
 			<!-- Browser -->

@@ -6,27 +6,30 @@
 		<control type="group">
 			<visible>Control.IsVisible(650)</visible>
 
-			<!-- <control type="label">
+<!-- 			<control type="label">
 				<left>46</left>
-				<top>100</top>
+				<top>110</top>
 				<width>1900</width>
 				<height>72</height>
 				<aligny>center</aligny>
-				<font>Font_Reg_Caps_52</font>
+				<font>Font_Reg_Caps_36</font>
 				<textcolor>MedLight</textcolor>
-				<label>-$INFO[Window(Home).Property(AlaskaB.Animation_ZoomInZoomOut.Skip)]-</label>
-				<visible>!SubString(Window(Home).Property(AlaskaB.Animation_ZoomInZoomOut.Skip),true)</visible>
+				<label>$INFO[Container.FolderPath]</label>
+				<scroll>true</scroll>
+				<scrollspeed>50</scrollspeed>
+				<visible>true</visible>
 			</control>
-			<control type="label">
+			<control type="image">
 				<left>46</left>
 				<top>150</top>
 				<width>1900</width>
 				<height>72</height>
 				<aligny>center</aligny>
-				<font>Font_Reg_Caps_52</font>
+				<font>Font_Reg_Caps_36</font>
 				<textcolor>MedLight</textcolor>
-				<label>+$INFO[Window(Home).Property(AlaskaB.Animation_ZoomInZoomOut.Skip)]+</label>
-				<visible>SubString(Window(Home).Property(AlaskaB.Animation_ZoomInZoomOut.Skip),true)</visible>
+				<label>$INFO[Container.ShowPlot]</label>
+				<visible>true</visible>
+				<texture>$INFO[Container.FolderThumb]</texture>
 			</control>  -->
 		
 			<!-- Browser -->
@@ -49,7 +52,7 @@
 					<orientation>vertical</orientation>
 					<viewtype label="Info List">list</viewtype>
 					<scrolltime>0</scrolltime>
-					<visible>[Container.Content(movies) + SubString(Container.FolderPath,videodb://movies/titles/)] | [Container.Content(tvshows) + SubString(Container.FolderPath,videodb://tvshows/titles/)] | [Container.Content(seasons) + SubString(Container.FolderPath,videodb://tvshows/titles/)]</visible>
+					<visible>[Container.Content(movies) + SubString(Container.FolderPath,videodb://movies/titles/)] | [[Container.Content(tvshows) | Container.Content(seasons)] + [SubString(Container.FolderPath,videodb://tvshows/titles/) | SubString(Container.FolderPath,special://profile/playlists/personal/)]]</visible>
 					<itemlayout width="1691" height="82">
 						<control type="group">
 							<left>30</left>

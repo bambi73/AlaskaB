@@ -7,6 +7,7 @@
 	<onload condition="System.HasAddon(script.tv.show.next.aired) + Container.Content(tvshows)">RunScript(script.tv.show.next.aired,backend=True)</onload>
 	<onunload>ClearProperty(AlaskaB.Overlay.MediaFlags.Hide,home)</onunload>
 	<onunload>ClearProperty(AlaskaB.Overlay.NowPlaying.Hide,home)</onunload>
+	<onunload>ClearProperty(AlaskaB.HeadingLabel,home)</onunload>
 
 	<!--onunload condition="!IsEmpty(Window(movieinformation).Property(IsSeason)">ClearProperty(IsSeason,movieinformation)</onunload>	
 	<onunload condition="!IsEmpty(Window(movieinformation).Property(IsSpecial)">ClearProperty(IsSpecial,movieinformation)</onunload-->
@@ -14,9 +15,33 @@
 	<controls>
 
 		<!-- Background -->
-
 		<include>Global_Background</include>
 
+		<!-- <control type="label">
+			<left>46</left>
+			<top>110</top>
+			<width>1900</width>
+			<height>72</height>
+			<aligny>center</aligny>
+			<font>Font_Reg_Caps_36</font>
+			<textcolor>MedLight</textcolor>
+			<label>$INFO[Container.FolderPath ]</label>
+			<scroll>true</scroll>
+			<scrollspeed>50</scrollspeed>
+			<visible>true</visible>
+		</control>
+		<control type="label">
+			<left>46</left>
+			<top>150</top>
+			<width>1900</width>
+			<height>72</height>
+			<aligny>center</aligny>
+			<font>Font_Reg_Caps_36</font>
+			<textcolor>MedLight</textcolor>
+			<label>files</label>
+			<visible>Container.Content(files)</visible>
+		</control> 	 -->	
+		
 		<control type="group">
 			<include>Fanart</include>
 			<visible>[!Skin.HasSetting(Disable_Movie_Fanart) + Container.Content(Movies)] | [!Skin.HasSetting(Disable_TV_Fanart) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] | [!Skin.HasSetting(Disable_Music_Fanart) + Container.Content(Music)] | [!Skin.HasSetting(Disable_Addon_Fanart) + Container.Content(Addons)]</visible>

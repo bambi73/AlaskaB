@@ -7,25 +7,32 @@
 	<include condition="!Library.HasContent(Movies)">HomeDefaultControl_3300</include>
 
 	<controls>
-
 		<!-- Background -->
-
 		<include>Global_Background</include>
 
 		<!-- Main menu -->
+		<!-- <control type="label">
+			<left>682</left>
+			<top>100</top>
+			<label>BBB</label>
+		</control> -->
 
 		<control type="group" id="5000">
 			<top>TopOffset</top>
 			<left>LeftOffset</left>
 			<include>Animation_ZoomedByMenu</include>
 			<visible>!Window.IsVisible(favourites)</visible>
-			<animation type="Visible">
+			<!-- <animation type="Visible">
 				<effect type="zoom" time="400" center="3072,540" start="180" end="100" tween="cubic" easing="out" delay="600" />
 				<effect type="fade" time="400" center="3072,540" start="0" end="100" delay="600" />
+			</animation> -->
+			<animation type="Visible">
+				<effect type="zoom" time="400" center="3350,540" start="180" end="100" tween="cubic" easing="out" delay="600" />
+				<effect type="fade" time="400" center="3350,540" start="0" end="100" delay="600" />
 			</animation>
 			<animation type="Hidden">
-				<effect type="zoom" time="400" center="3072,540" start="100" end="180" tween="cubic" easing="in" />
-				<effect type="fade" time="400" center="3072,540" start="100" end="0" />
+				<effect type="zoom" time="400" center="3350,540" start="100" end="180" tween="cubic" easing="in" />
+				<effect type="fade" time="400" center="3350,540" start="100" end="0" />
 			</animation>
 
 			<control type="grouplist" id="300">
@@ -37,12 +44,12 @@
 				<orientation>horizontal</orientation>
 				<include>Animation_HomeSlide</include>
 				<animation type="WindowOpen">
-					<effect type="zoom" time="400" center="3072,540" start="180" end="100" tween="cubic" easing="out" />
-					<effect type="fade" time="400" center="3072,540" start="0" end="100" />
+					<effect type="zoom" time="400" center="3350,540" start="180" end="100" tween="cubic" easing="out" />
+					<effect type="fade" time="400" center="3350,540" start="0" end="100" />
 				</animation>
 				<animation type="WindowClose">
-					<effect type="zoom" time="400" center="3072,540" start="100" end="180" tween="cubic" easing="in" />
-					<effect type="fade" time="400" center="3072,540" start="100" end="0" />
+					<effect type="zoom" time="400" center="3350,540" start="100" end="180" tween="cubic" easing="in" />
+					<effect type="fade" time="400" center="3350,540" start="100" end="0" />
 				</animation>
 
 				<!-- Favourites -->
@@ -242,7 +249,6 @@
 				</control>
 
 				<!-- Addons -->
-
 				<control type="group">
 					<width>498</width>
 					<height>480</height>
@@ -924,7 +930,7 @@
 						<onleft>3400</onleft>
 						<onright>SetFocus(3500,11)</onright>
 						<onright condition="!Skin.HasSetting(HideHomeTVShows) + Library.HasContent(TVShows)">Control.Move(310,1)</onright>
-						<onright>3600</onright>
+						<onright>3525</onright>
 						<viewtype>list</viewtype>
 						<scrolltime>0</scrolltime>
 						<defaultcontrol always="true">11</defaultcontrol>
@@ -941,15 +947,181 @@
 							<include condition="Skin.HasSetting(WatchlistEpisodes)">WatchlistEpisodes</include>
 							<item id="11">
 								<icon>$INFO[Skin.String(CustomTVShows)]</icon>
-								<onclick>ActivateWindow(Videos,TvShowTitles,return)</onclick>
+								<!-- <onclick>SetProperty(AlaskaB.HeadingLabel,$LOCALIZE[20343],home)</onclick> -->
+								<onclick>SetProperty(AlaskaB.HeadingLabel,Shows,home)</onclick>
+								<onclick>ActivateWindow(Videos,library://video/tvshows/titles.xml,return)</onclick>
 								<label>20343</label>
 							</item>
+							<!--item id="11">
+								<icon>$INFO[Skin.String(CustomTVShows)]</icon>
+								<onclick>ActivateWindow(Videos,TvShowTitles,return)</onclick>
+								<label>20343</label>
+							</item-->
 							<item id="12">
 								<label>31122</label>
 								<icon>$INFO[Skin.String(CustomTVShows)]</icon>
 								<onclick>ActivateWindow(51)</onclick>
 								<visible>SubString(Window(home).Property(SkinWidgets_Recommended),true) + !IsEmpty(Window(home).Property(RecommendedEpisode.1.Title))</visible>
 							</item>
+							<item id="13">
+								<label>31108</label>
+								<icon>$INFO[Skin.String(CustomTVShows)]</icon>
+								<onclick>ActivateWindow(Videos,videodb://recentlyaddedepisodes/,return)</onclick>
+								<visible>!Skin.HasSetting(HideNewTV)</visible>
+							</item>
+							<item id="14">
+								<label>Kids TV Shows</label>
+								<icon>$INFO[Skin.String(CustomTVShows)]</icon>
+								<onclick>ActivateWindow(Videos,library://video/kidstvshows.xml,return)</onclick>
+								<visible>!Skin.HasSetting(HideNewTV)</visible>
+							</item>
+							<!--item id="14">
+								<label>31105</label>
+								<icon>$INFO[Skin.String(CustomTVShows)]</icon>
+								<onclick>PlayMedia($ESCINFO[Window.Property(RandomEpisode.1.File)])</onclick>
+								<onclick>SetProperty(SkinWidgets_RandomItems_Update,true)</onclick>
+								<visible>SubString(Window(home).Property(SkinWidgets_RandomItems),true)</visible>
+							</item-->
+							<item id="15">
+								<label>20388</label>
+								<icon>$INFO[Skin.String(CustomTVShows)]</icon>
+								<onclick>ActivateWindow(Videos,TvShowStudios,return)</onclick>
+								<visible>!Skin.HasSetting(HideTVShowStudios)</visible>
+							</item>
+							<item id="16">
+								<label>135</label>
+								<icon>$INFO[Skin.String(CustomTVShows)]</icon>
+								<onclick>ActivateWindow(Videos,tvshowgenres,return)</onclick>
+								<visible>!Skin.HasSetting(HideTVShowGenres)</visible>
+							</item>
+							<item id="17">
+								<label>344</label>
+								<icon>$INFO[Skin.String(CustomTVShows)]</icon>
+								<onclick>ActivateWindow(Videos,tvshowactors,return)</onclick>
+								<visible>!Skin.HasSetting(HideTVShowActors)</visible>
+							</item>
+							<item id="18">
+								<label>652</label>
+								<icon>$INFO[Skin.String(CustomTVShows)]</icon>
+								<onclick>ActivateWindow(Videos,tvshowyears,return)</onclick>
+								<visible>!Skin.HasSetting(HideTVShowYears)</visible>
+							</item>
+							<item id="19">
+								<label>$INFO[Skin.String(TVShowButtonName_1)]</label>
+								<icon>$INFO[Skin.String(CustomTVShows)]</icon>
+								<thumb>$INFO[Skin.String(TVShowButtonImage_1)]</thumb>
+								<onclick>$INFO[Skin.String(TVShowButtonPath_1)]</onclick>
+								<visible>!IsEmpty(Skin.String(TVShowButtonName_1))</visible>
+							</item>
+							<item id="20">
+								<label>$INFO[Skin.String(TVShowButtonName_2)]</label>
+								<icon>$INFO[Skin.String(CustomTVShows)]</icon>
+								<thumb>$INFO[Skin.String(TVShowButtonImage_2)]</thumb>
+								<onclick>$INFO[Skin.String(TVShowButtonPath_2)]</onclick>
+								<visible>!IsEmpty(Skin.String(TVShowButtonName_2))</visible>
+							</item>
+							<item id="21">
+								<label>$INFO[Skin.String(TVShowButtonName_3)]</label>
+								<icon>$INFO[Skin.String(CustomTVShows)]</icon>
+								<thumb>$INFO[Skin.String(TVShowButtonImage_3)]</thumb>
+								<onclick>$INFO[Skin.String(TVShowButtonPath_3)]</onclick>
+								<visible>!IsEmpty(Skin.String(TVShowButtonName_3))</visible>
+							</item>
+							<item id="22">
+								<label>$INFO[Skin.String(TVShowButtonName_4)]</label>
+								<icon>$INFO[Skin.String(CustomTVShows)]</icon>
+								<thumb>$INFO[Skin.String(TVShowButtonImage_4)]</thumb>
+								<onclick>$INFO[Skin.String(TVShowButtonPath_4)]</onclick>
+								<visible>!IsEmpty(Skin.String(TVShowButtonName_4))</visible>
+							</item>
+							<item id="23">
+								<label>$INFO[Skin.String(TVShowButtonName_5)]</label>
+								<icon>$INFO[Skin.String(CustomTVShows)]</icon>
+								<thumb>$INFO[Skin.String(TVShowButtonImage_5)]</thumb>
+								<onclick>$INFO[Skin.String(TVShowButtonPath_5)]</onclick>
+								<visible>!IsEmpty(Skin.String(TVShowButtonName_5))</visible>
+							</item>
+							<item id="24">
+								<label>$INFO[Skin.String(TVShowButtonName_6)]</label>
+								<icon>$INFO[Skin.String(CustomTVShows)]</icon>
+								<thumb>$INFO[Skin.String(TVShowButtonImage_6)]</thumb>
+								<onclick>$INFO[Skin.String(TVShowButtonPath_6)]</onclick>
+								<visible>!IsEmpty(Skin.String(TVShowButtonName_6))</visible>
+							</item>
+						</content>
+					</control>
+				</control>
+
+				<!-- Anime -->
+				<control type="group">
+					<width>498</width>
+					<height>480</height>
+					<include condition="!Skin.HasSetting(HideHomeTVShows) + !Library.HasContent(TVShows)">Home_TVShows_Visible</include>
+					<animation type="conditional" condition="!Control.HasFocus(3525)">
+						<effect type="zoom" center="288,240" tween="cubic" easing="in" time="200" start="100" end="84" />
+					</animation>
+					<control type="multiimage">
+						<include>Object_MainMenuIconF</include>
+						<imagepath fallback="home/tvshows/" diffuse="home/Matte.png" background="true">$INFO[Container(3525).ListItem.Icon]</imagepath>
+					</control>
+					<include>Object_MainMenuFrame</include>
+					<control type="fadelabel">
+						<include>Object_MainMenuLabel</include>
+						<label>$INFO[Container(3525).ListItem.Label]</label>
+					</control>
+					<include>Object_MainMenuShade</include>
+
+					<control type="list" id="3525">
+						<left>0</left>
+						<top>0</top>
+						<width>1</width>
+						<height>1</height>
+						<include>HomeFix</include>
+						<!--onup condition="Player.HasMedia">ActivateWindow(playercontrols)</onup-->
+						<onup>noop</onup>
+						<ondown>noop</ondown>
+						<onleft>SetFocus(3525,11)</onleft>
+						<onleft condition="!Skin.HasSetting(HideHomeTVShows) + Library.HasContent(TVShows)">Control.Move(310,-1)</onleft>
+						<onleft>3500</onleft>
+						<onright>SetFocus(3525,11)</onright>
+						<onright condition="!Skin.HasSetting(HideHomeTVShows) + Library.HasContent(TVShows)">Control.Move(310,1)</onright>
+						<onright>3600</onright>
+						<viewtype>list</viewtype>
+						<scrolltime>0</scrolltime>
+						<defaultcontrol always="true">11</defaultcontrol>
+						<orientation>vertical</orientation>
+						<itemlayout width="1" height="1">
+						</itemlayout>
+						<focusedlayout width="1" height="1">
+							<control type="label">
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+						</focusedlayout>
+						<content>
+							<item id="11">
+								<icon>$INFO[Skin.String(CustomTVShows)]</icon>
+								<onclick>SetProperty(AlaskaB.HeadingLabel,Anime,home)</onclick>
+								<onclick>ActivateWindow(Videos,special://profile/playlists/personal/Anime-Titles.xsp,return)</onclick>
+								<label>Anime</label>
+							</item>
+							<!--item id="11">
+								<icon>$INFO[Skin.String(CustomTVShows)]</icon>
+								<onclick>SetProperty(AlaskaB.HeadingLabel,Anime,home)</onclick>
+								<onclick>ActivateWindow(Videos,library://video/anime/titles.xml,return)</onclick>
+								<label>Anime</label>
+							</item-->
+							<item id="12">
+								<label>In progress</label>
+								<icon>$INFO[Skin.String(CustomTVShows)]</icon>
+								<onclick>SetProperty(AlaskaB.HeadingLabel,Anime in progress,home)</onclick>
+								<onclick>ActivateWindow(Videos,special://profile/playlists/personal/Anime-InProgress.xsp,return)</onclick>
+							</item>
+							<!--item id="12">
+								<label>31122</label>
+								<icon>$INFO[Skin.String(CustomTVShows)]</icon>
+								<onclick>ActivateWindow(51)</onclick>
+								<visible>SubString(Window(home).Property(SkinWidgets_Recommended),true) + !IsEmpty(Window(home).Property(RecommendedEpisode.1.Title))</visible>
+							</item-->
 							<item id="13">
 								<label>31108</label>
 								<icon>$INFO[Skin.String(CustomTVShows)]</icon>
@@ -1070,7 +1242,7 @@
 						<ondown>noop</ondown>
 						<onleft>SetFocus(3600,1)</onleft>
 						<onleft condition="!Skin.HasSetting(HideHomePictures)">Control.Move(310,-1)</onleft>
-						<onleft>3500</onleft>
+						<onleft>3525</onleft>
 						<onright>SetFocus(3600,1)</onright>
 						<onright condition="!Skin.HasSetting(HideHomePictures)">Control.Move(310,1)</onright>
 						<onright>3700</onright>
@@ -1426,59 +1598,64 @@
 			<viewtype>list</viewtype>
 			<scrolltime>0</scrolltime>
 			<orientation>horizontal</orientation>
-			<include condition="Library.HasContent(Movies)">HomeDefaultControl_11</include>
-			<include condition="!Library.HasContent(Movies)">HomeDefaultControl_7</include>
+			<include condition="Library.HasContent(Movies)">HomeDefaultControl_60</include>
+			<include condition="!Library.HasContent(Movies)">HomeDefaultControl_40</include>
 			<itemlayout width="1" height="1">
 			</itemlayout>
 			<focusedlayout width="1" height="1">
 			</focusedlayout>
 			<content>
-				<item id="1">
+				<item id="10">
 					<!-- Favourites -->
 					<onclick>noop</onclick>
 					<visible>!Skin.HasSetting(HideHomeFavourites) + !StringCompare(Window(Home).Property(favourite.count),0)</visible>
 				</item>
-				<item id="3">
+				<item id="20">
 					<!-- Apps -->
 					<onclick>noop</onclick>
 					<visible>!Skin.HasSetting(HideHomeApps)</visible>
 				</item>
-				<item id="5">
+				<item id="30">
 					<!-- Videos -->
 					<onclick>noop</onclick>
 					<visible>!Skin.HasSetting(HideHomeVideos)</visible>
 				</item>
-				<item id="7">
+				<item id="40">
 					<!-- Music -->
 					<onclick>noop</onclick>
 					<visible>!Skin.HasSetting(HideHomeMusic)</visible>
 				</item>
-				<item id="9">
+				<item id="50">
 					<!-- Play disc -->
 					<onclick>noop</onclick>
 					<visible>System.HasMediadvd</visible>
 				</item>
-				<item id="11">
+				<item id="60">
 					<!-- Movies -->
 					<onclick>noop</onclick>
 					<include condition="!Skin.HasSetting(HideHomeMovies) + !Library.HasContent(Movies)">Home_Movies_Visible</include>
 				</item>
-				<item id="13">
+				<item id="70">
 					<!-- TV Shows -->
 					<onclick>noop</onclick>
 					<include condition="!Skin.HasSetting(HideHomeTVShows) + !Library.HasContent(TVShows)">Home_TVShows_Visible</include>
 				</item>
-				<item id="15">
+				<item id="73">
+					<!-- Anime -->
+					<onclick>noop</onclick>
+					<include condition="!Skin.HasSetting(HideHomeTVShows) + !Library.HasContent(TVShows)">Home_TVShows_Visible</include>
+				</item>
+				<item id="80">
 					<!-- Pictures -->
 					<onclick>noop</onclick>
 					<visible>!Skin.HasSetting(HideHomePictures)</visible>
 				</item>
-				<item id="17">
+				<item id="90">
 					<!-- Weather -->
 					<onclick>noop</onclick>
 					<visible>!Skin.HasSetting(HideHomeWeather)</visible>
 				</item>
-				<item id="19">
+				<item id="100">
 					<!-- Settings -->
 					<onclick>noop</onclick>
 					<visible>!Skin.HasSetting(HideHomeSettings)</visible>

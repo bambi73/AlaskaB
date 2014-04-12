@@ -124,12 +124,12 @@
 		<defaultcontrol>3300</defaultcontrol>
 	</include>
 
-	<include name="HomeDefaultControl_11">
-		<defaultcontrol>11</defaultcontrol>
+	<include name="HomeDefaultControl_60">
+		<defaultcontrol>60</defaultcontrol>
 	</include>
 
-	<include name="HomeDefaultControl_7">
-		<defaultcontrol>7</defaultcontrol>
+	<include name="HomeDefaultControl_40">
+		<defaultcontrol>40</defaultcontrol>
 	</include>
 
 	<include name="Object_MainMenuIconF">
@@ -179,16 +179,17 @@
 	</include>
 
 	<include name="HomeFix">
-		<onback condition="Container(310).HasFocus(1)">3000</onback>
-		<onback condition="Container(310).HasFocus(3)">3100</onback>
-		<onback condition="Container(310).HasFocus(5)">3200</onback>
-		<onback condition="Container(310).HasFocus(7)">3300</onback>
-		<onback condition="Container(310).HasFocus(9)">3350</onback>
-		<onback condition="Container(310).HasFocus(11)">3400</onback>
-		<onback condition="Container(310).HasFocus(13)">3500</onback>
-		<onback condition="Container(310).HasFocus(15)">3600</onback>
-		<onback condition="Container(310).HasFocus(17)">3700</onback>
-		<onback condition="Container(310).HasFocus(19)">3800</onback>
+		<onback condition="Container(310).HasFocus(10)">3000</onback>
+		<onback condition="Container(310).HasFocus(20)">3100</onback>
+		<onback condition="Container(310).HasFocus(30)">3200</onback>
+		<onback condition="Container(310).HasFocus(40)">3300</onback>
+		<onback condition="Container(310).HasFocus(50)">3350</onback>
+		<onback condition="Container(310).HasFocus(60)">3400</onback>
+		<onback condition="Container(310).HasFocus(70)">3500</onback>
+		<onback condition="Container(310).HasFocus(73)">3525</onback>
+		<onback condition="Container(310).HasFocus(80)">3600</onback>
+		<onback condition="Container(310).HasFocus(90)">3700</onback>
+		<onback condition="Container(310).HasFocus(100)">3800</onback>
 	</include>
 
 	<include name="RecentAlbums">

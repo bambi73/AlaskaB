@@ -2,10 +2,12 @@
 <includes>
 
 	<variable name="Global_HeadingLabels">
+		<value condition="!IsEmpty(Window(Home).Property(AlaskaB.HeadingLabel)) + [Container.Content(seasons) | Container.Content(episodes)]">$INFO[Window(Home).Property(AlaskaB.HeadingLabel)]$INFO[ListItem.TVShowTitle,: ]</value>
+		<value condition="!IsEmpty(Window(Home).Property(AlaskaB.HeadingLabel))">$INFO[Window(Home).Property(AlaskaB.HeadingLabel)]</value>
 		<value condition="SubString(Container.FolderPath,plugin://)">$INFO[Container.FolderName]</value>
 		<value condition="Container.Content(movies)">$LOCALIZE[342]</value>
-		<value condition="Container.Content(tvshows) | Container.Content(seasons)">$LOCALIZE[20343]</value>
-		<value condition="Container.Content(episodes)">$LOCALIZE[20343]$INFO[ListItem.TVShowTitle,: ]</value>
+		<value condition="Container.Content(tvshows)">$LOCALIZE[20343]</value>
+		<value condition="Container.Content(seasons) | Container.Content(episodes)">$LOCALIZE[20343]$INFO[ListItem.TVShowTitle,: ]</value>
 		<value condition="Container.Content(musicvideos)">$LOCALIZE[20389]</value>
 		<value condition="SubString(Container.FolderPath,addons://sources/video/)">$LOCALIZE[1037]</value>
 		<value condition="SubString(Container.FolderPath,addons://sources/audio/)">$LOCALIZE[1038]</value>
