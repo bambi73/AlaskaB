@@ -116,20 +116,28 @@
 		<visible>false</visible>
 	</include>
 
+	<include name="HomeDefaultControl_3200">
+		<defaultcontrol>3200</defaultcontrol>
+	</include>
+
 	<include name="HomeDefaultControl_3400">
 		<defaultcontrol>3400</defaultcontrol>
 	</include>
 
-	<include name="HomeDefaultControl_3300">
-		<defaultcontrol>3300</defaultcontrol>
+	<include name="HomeDefaultControl_3500">
+		<defaultcontrol>3500</defaultcontrol>
+	</include>
+
+	<include name="HomeDefaultControl_30">
+		<defaultcontrol>30</defaultcontrol>
+	</include>
+
+	<include name="HomeDefaultControl_50">
+		<defaultcontrol>50</defaultcontrol>
 	</include>
 
 	<include name="HomeDefaultControl_60">
 		<defaultcontrol>60</defaultcontrol>
-	</include>
-
-	<include name="HomeDefaultControl_40">
-		<defaultcontrol>40</defaultcontrol>
 	</include>
 
 	<include name="Object_MainMenuIconF">
@@ -183,13 +191,12 @@
 		<onback condition="Container(310).HasFocus(20)">3100</onback>
 		<onback condition="Container(310).HasFocus(30)">3200</onback>
 		<onback condition="Container(310).HasFocus(40)">3300</onback>
-		<onback condition="Container(310).HasFocus(50)">3350</onback>
-		<onback condition="Container(310).HasFocus(60)">3400</onback>
-		<onback condition="Container(310).HasFocus(70)">3500</onback>
-		<onback condition="Container(310).HasFocus(73)">3525</onback>
-		<onback condition="Container(310).HasFocus(80)">3600</onback>
-		<onback condition="Container(310).HasFocus(90)">3700</onback>
-		<onback condition="Container(310).HasFocus(100)">3800</onback>
+		<onback condition="Container(310).HasFocus(50)">3400</onback>
+		<onback condition="Container(310).HasFocus(60)">3500</onback>
+		<onback condition="Container(310).HasFocus(70)">3600</onback>
+		<onback condition="Container(310).HasFocus(80)">3700</onback>
+		<onback condition="Container(310).HasFocus(90)">3800</onback>
+		<onback condition="Container(310).HasFocus(100)">3900</onback>
 	</include>
 
 	<include name="RecentAlbums">
@@ -817,5 +824,24 @@
 		<font>Font_Reg_38</font>
 	</include>
 
+	<!-- Viewtype -->
+	<include name="ViewTypeButton_FillHeadingCategory">
+		<control type="button">
+			<include>HiddenControl</include>
+			<visible>!Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + !Container.Content(musicvideos)</visible>
+			<onfocus condition="SubString(Window(home).Property(AlaskaB.IsHeadingCategorySelection),true) + ![SubString(ListItem.Label,$LOCALIZE[20386]) | SubString(ListItem.Label,$LOCALIZE[20387]) | SubString(ListItem.Label,$LOCALIZE[20390]) | SubString(ListItem.Label,$LOCALIZE[626])]">SetProperty(AlaskaB.HeadingCategory,$INFO[ListItem.Label],home)</onfocus>
+			<onfocus condition="SubString(Window(home).Property(AlaskaB.IsHeadingCategorySelection),true) + [SubString(ListItem.Label,$LOCALIZE[20386]) | SubString(ListItem.Label,$LOCALIZE[20387]) | SubString(ListItem.Label,$LOCALIZE[20390])]">SetProperty(AlaskaB.HeadingCategory,Recently added,home)</onfocus>
+			<onfocus condition="SubString(Window(home).Property(AlaskaB.IsHeadingCategorySelection),true) + SubString(ListItem.Label,$LOCALIZE[626])">SetProperty(AlaskaB.HeadingCategory,$LOCALIZE[575],home)</onfocus>
+		</control>
+	</include>
+
+	<!-- <include name="ViewTypeButton_FillHeadingCategory">
+		<control type="button">
+			<include>HiddenControl</include>
+			<visible>!Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + !Container.Content(musicvideos)</visible>
+			<onfocus condition="SubString(Window(home).Property(AlaskaB.IsHeadingCategorySelection),true) | SubString(Container.FolderPath,videodb://movies/genres/) | SubString(Container.FolderPath,videodb://movies/years/) | SubString(Container.FolderPath,videodb://movies/actors/) | SubString(Container.FolderPath,videodb://movies/directors/) | SubString(Container.FolderPath,videodb://movies/studios/) | SubString(Container.FolderPath,videodb://movies/countries/) | SubString(Container.FolderPath,videodb://movies/tags/) | SubString(Container.FolderPath,videodb://tvshows/genres/) | SubString(Container.FolderPath,videodb://tvshows/years/) | SubString(Container.FolderPath,videodb://tvshows/actors/) | SubString(Container.FolderPath,videodb://tvshows/studios/) | SubString(Container.FolderPath,videodb://tvshows/tags/) | SubString(Container.FolderPath,videodb://musicvideos/genres/) | SubString(Container.FolderPath,videodb://musicvideos/years/) | SubString(Container.FolderPath,videodb://musicvideos/artists/) | SubString(Container.FolderPath,videodb://musicvideos/albums/) | SubString(Container.FolderPath,videodb://musicvideos/directors/) | SubString(Container.FolderPath,videodb://musicvideos/studios/) | SubString(Container.FolderPath,videodb://musicvideos/tags/)">SetProperty(AlaskaB.HeadingCategory,$INFO[ListItem.Label],home)</onfocus>
+			<onfocus condition="![SubString(Window(home).Property(AlaskaB.IsHeadingCategorySelection),true) | SubString(Container.FolderPath,videodb://movies/genres/) | SubString(Container.FolderPath,videodb://movies/years/) | SubString(Container.FolderPath,videodb://movies/actors/) | SubString(Container.FolderPath,videodb://movies/directors/) | SubString(Container.FolderPath,videodb://movies/studios/) | SubString(Container.FolderPath,videodb://movies/countries/) | SubString(Container.FolderPath,videodb://movies/tags/) | SubString(Container.FolderPath,videodb://tvshows/genres/) | SubString(Container.FolderPath,videodb://tvshows/years/) | SubString(Container.FolderPath,videodb://tvshows/actors/) | SubString(Container.FolderPath,videodb://tvshows/studios/) | SubString(Container.FolderPath,videodb://tvshows/tags/) | SubString(Container.FolderPath,videodb://musicvideos/genres/) | SubString(Container.FolderPath,videodb://musicvideos/years/) | SubString(Container.FolderPath,videodb://musicvideos/artists/) | SubString(Container.FolderPath,videodb://musicvideos/albums/) | SubString(Container.FolderPath,videodb://musicvideos/directors/) | SubString(Container.FolderPath,videodb://musicvideos/studios/) | SubString(Container.FolderPath,videodb://musicvideos/tags/)]">ClearProperty(AlaskaB.HeadingCategory,home)</onfocus>
+		</control>
+	</include> -->
 
 </includes>

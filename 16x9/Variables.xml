@@ -31,6 +31,9 @@
 		<value condition="Window.IsVisible(videoplaylist)">$LOCALIZE[20012]</value>
 	</variable>
 
+	<variable name="Global_HeadingCategory">
+	</variable>
+	
 	<variable name="Global_HeadingDetails">
 		<value condition="Window.IsVisible(picturessettings)">[B]$LOCALIZE[1][/B]</value>
 		<value condition="Window.IsVisible(weathersettings)">[B]$LOCALIZE[8][/B]</value>
@@ -44,15 +47,24 @@
 		<value condition="Window.IsVisible(PVRSettings)">[B]$LOCALIZE[31161][/B]</value>
 		<value condition="Window.IsVisible(systeminfo)">[B]$LOCALIZE[130][/B]</value>
 		<value condition="Window.IsVisible(skinsettings)">[B]ALASKA[/B]</value>
-		<value condition="substring(Container.FolderName,$LOCALIZE[20373]) + !IntegerGreaterThan(Container.NumItems,1)">$INFO[Container.FolderName] • $INFO[Container.NumItems,, $LOCALIZE[20359]]</value>
-		<value condition="substring(Container.FolderName,$LOCALIZE[20373]) + IntegerGreaterThan(Container.NumItems,1)">$INFO[Container.FolderName] • $INFO[Container.NumItems,, $LOCALIZE[20360]]</value>
-		<value condition="Container.Content(episodes) + !Container.HasFolders + !substring(Container.FolderName,$LOCALIZE[20387]) + !IntegerGreaterThan(ListItem.Property(TotalSeasons),1) + !IntegerGreaterThan(Container.NumItems,1)">$INFO[Container.NumItems,, $LOCALIZE[20359]]</value>
-		<value condition="Container.Content(episodes) + !Container.HasFolders + !substring(Container.FolderName,$LOCALIZE[20387]) + !IntegerGreaterThan(ListItem.Property(TotalSeasons),1) + IntegerGreaterThan(Container.NumItems,1)">$INFO[Container.NumItems,, $LOCALIZE[20360]]</value>
-		<value condition="Container.Content(episodes) + !Container.HasFolders + !substring(Container.FolderName,$LOCALIZE[20387]) + !IntegerGreaterThan(Container.NumItems,1)">$INFO[ListItem.Season,$LOCALIZE[20373] , • ]$INFO[Container.NumItems,, $LOCALIZE[20359]]</value>
-		<value condition="Container.Content(episodes) + !Container.HasFolders + !substring(Container.FolderName,$LOCALIZE[20387]) + IntegerGreaterThan(Container.NumItems,1)">$INFO[ListItem.Season,$LOCALIZE[20373] , • ]$INFO[Container.NumItems,, $LOCALIZE[20360]]</value>
+
 		<value condition="Window.IsVisible(musiclibrary) + !SubString(ListItem.Icon,Default) + StringCompare(Container.Viewmode,$LOCALIZE[31121])">[B]$INFO[ListItem.Album][/B]</value>
 		<value condition="Window.IsVisible(weather) + !StringCompare(Weather.Location,$LOCALIZE[503])">[B]$INFO[Window(Weather).Property(Location)][/B]</value>
 		<value condition="Window.IsVisible(weather) + StringCompare(Weather.Location,$LOCALIZE[503])">[B]$LOCALIZE[503][/B]</value>
+		
+		<!-- $LOCALIZE[20373] = Season, $LOCALIZE[20359] = Episode, $LOCALIZE[20360] = Episodes -->
+		<value condition="Container.Content(episodes) + SubString(Container.FolderName,$LOCALIZE[20373]) + !IntegerGreaterThan(Container.NumItems,1)">$INFO[Window(Home).Property(AlaskaB.HeadingCategory),, • ]$INFO[Container.FolderName] • $INFO[Container.NumItems,, $LOCALIZE[20359]]</value>
+		<value condition="Container.Content(episodes) + SubString(Container.FolderName,$LOCALIZE[20373]) + IntegerGreaterThan(Container.NumItems,1)">$INFO[Window(Home).Property(AlaskaB.HeadingCategory),, • ]$INFO[Container.FolderName] • $INFO[Container.NumItems,, $LOCALIZE[20360]]</value>
+		<value condition="Container.Content(episodes) + !IntegerGreaterThan(Container.NumItems,1)">$INFO[Window(Home).Property(AlaskaB.HeadingCategory),, • ]$INFO[Container.NumItems,, $LOCALIZE[20359]]</value>
+		<value condition="Container.Content(episodes) + IntegerGreaterThan(Container.NumItems,1)">$INFO[Window(Home).Property(AlaskaB.HeadingCategory),, • ]$INFO[Container.NumItems,, $LOCALIZE[20360]]</value>
+
+		<!-- $LOCALIZE[20373] = Season, $LOCALIZE[33054] = Seasons -->
+		<value condition="Container.Content(seasons) + !IntegerGreaterThan(Container.NumItems,1)">$INFO[Window(Home).Property(AlaskaB.HeadingCategory),, • ]$INFO[Container.NumItems,, $LOCALIZE[20373]]</value>
+		<value condition="Container.Content(seasons) + IntegerGreaterThan(Container.NumItems,1)">$INFO[Window(Home).Property(AlaskaB.HeadingCategory),, • ]$INFO[Container.NumItems,, $LOCALIZE[33054]]</value>
+		
+		<!-- $LOCALIZE[31157] = Item, $LOCALIZE[31100] = Items -->
+		<value condition="[Container.Content(movies) | Container.Content(tvshows) | Container.Content(musicvideos)] + !IntegerGreaterThan(Container.NumItems,1)">$INFO[Window(Home).Property(AlaskaB.HeadingCategory),, • ]$INFO[Container.NumItems,, $LOCALIZE[31157]]</value>
+		<value condition="[Container.Content(movies) | Container.Content(tvshows) | Container.Content(musicvideos)] + IntegerGreaterThan(Container.NumItems,1)">$INFO[Window(Home).Property(AlaskaB.HeadingCategory),, • ]$INFO[Container.NumItems,, $LOCALIZE[31100]]</value>
 		<value condition="!IntegerGreaterThan(Container.NumItems,1)">$INFO[Container.NumItems,, $LOCALIZE[31157]]</value>
 		<value condition="IntegerGreaterThan(Container.NumItems,1)">$INFO[Container.NumItems,, $LOCALIZE[31100]]</value>
 	</variable>

@@ -8,7 +8,6 @@
 			<visible>Control.IsVisible(500)</visible>
 
 			<!-- Browser -->
-
 			<control type="group" id="5000">
 				<top>TopOffset</top>
 				<left>LeftOffset</left>
@@ -109,6 +108,7 @@
 							</control>
 						</control>
 
+						<include>ViewTypeButton_FillHeadingCategory</include>
 					</focusedlayout>
 
 				</control>

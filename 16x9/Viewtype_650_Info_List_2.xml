@@ -52,7 +52,7 @@
 					<orientation>vertical</orientation>
 					<viewtype label="Info List">list</viewtype>
 					<scrolltime>0</scrolltime>
-					<visible>[Container.Content(movies) + SubString(Container.FolderPath,videodb://movies/titles/)] | [[Container.Content(tvshows) | Container.Content(seasons)] + [SubString(Container.FolderPath,videodb://tvshows/titles/) | SubString(Container.FolderPath,special://profile/playlists/personal/)]]</visible>
+					<visible>[Container.Content(movies) + SubString(Container.FolderPath,videodb://movies/)] | [[Container.Content(tvshows) | Container.Content(seasons)] + [SubString(Container.FolderPath,videodb://tvshows/) | SubString(Container.FolderPath,special://skin/extras/playlists/)]]</visible>
 					<itemlayout width="1691" height="82">
 						<control type="group">
 							<left>30</left>

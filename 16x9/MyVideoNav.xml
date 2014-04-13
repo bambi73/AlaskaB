@@ -7,7 +7,7 @@
 	<onload condition="System.HasAddon(script.tv.show.next.aired) + Container.Content(tvshows)">RunScript(script.tv.show.next.aired,backend=True)</onload>
 	<onunload>ClearProperty(AlaskaB.Overlay.MediaFlags.Hide,home)</onunload>
 	<onunload>ClearProperty(AlaskaB.Overlay.NowPlaying.Hide,home)</onunload>
-	<onunload>ClearProperty(AlaskaB.HeadingLabel,home)</onunload>
+	<!--onunload>ClearProperty(AlaskaB.HeadingLabel,home)</onunload-->
 
 	<!--onunload condition="!IsEmpty(Window(movieinformation).Property(IsSeason)">ClearProperty(IsSeason,movieinformation)</onunload>	
 	<onunload condition="!IsEmpty(Window(movieinformation).Property(IsSpecial)">ClearProperty(IsSpecial,movieinformation)</onunload-->
@@ -25,10 +25,19 @@
 			<aligny>center</aligny>
 			<font>Font_Reg_Caps_36</font>
 			<textcolor>MedLight</textcolor>
-			<label>$INFO[Container.FolderPath ]</label>
-			<scroll>true</scroll>
-			<scrollspeed>50</scrollspeed>
-			<visible>true</visible>
+			<label>Container.HasFolders</label>
+			<visible>Container.HasFolders</visible>
+		</control>
+		<control type="label">
+			<left>46</left>
+			<top>110</top>
+			<width>1900</width>
+			<height>72</height>
+			<aligny>center</aligny>
+			<font>Font_Reg_Caps_36</font>
+			<textcolor>MedLight</textcolor>
+			<label>!Container.HasFolders</label>
+			<visible>!Container.HasFolders</visible>
 		</control>
 		<control type="label">
 			<left>46</left>
@@ -38,8 +47,8 @@
 			<aligny>center</aligny>
 			<font>Font_Reg_Caps_36</font>
 			<textcolor>MedLight</textcolor>
-			<label>files</label>
-			<visible>Container.Content(files)</visible>
+			<label>Container.Content(episodes)</label>
+			<visible>Container.Content(episodes)</visible>
 		</control> 	 -->	
 		
 		<control type="group">

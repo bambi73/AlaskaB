@@ -55,6 +55,16 @@
 							<textcolor>Light</textcolor>
 							<label>$VAR[Global_HeadingLabels]</label>
 						</control>
+						<control type="label" id="8200">
+							<top>54</top>
+							<width>1428</width>
+							<height>36</height>
+							<haspath>true</haspath>
+							<font>Font_Light_Caps_36</font>
+							<textcolor>Light</textcolor>
+							<label>$VAR[Global_HeadingCategory]</label>
+							<visible>!IsEmpty(Control.GetLabel(8200))</visible>
+						</control>
 						<control type="label">
 							<top>54</top>
 							<width>1428</width>
@@ -63,6 +73,7 @@
 							<font>Font_Light_Caps_36</font>
 							<textcolor>Light</textcolor>
 							<label>$VAR[Global_HeadingDetails]</label>
+							<animation effect="slide" end="0,32" condition="Control.IsVisible(8200)">Conditional</animation>
 						</control>
 					</control>
 					<control type="group">
@@ -74,6 +85,16 @@
 							<textcolor>Light</textcolor>
 							<label>$VAR[Global_HeadingLabels]</label>
 						</control>
+						<control type="label" id="8200">
+							<top>54</top>
+							<width>1428</width>
+							<height>36</height>
+							<haspath>true</haspath>
+							<font>Font_Light_Caps_36</font>
+							<textcolor>Light</textcolor>
+							<label>$VAR[Global_HeadingCategory]</label>
+							<visible>!IsEmpty(Control.GetLabel(8200))</visible>
+						</control>
 						<control type="label">
 							<top>54</top>
 							<width>1120</width>
@@ -82,6 +103,7 @@
 							<font>Font_Light_Caps_36</font>
 							<textcolor>Light</textcolor>
 							<label>$VAR[Global_HeadingDetails]</label>
+							<animation effect="slide" end="0,32" condition="Control.IsVisible(8200)">Conditional</animation>
 						</control>
 					</control>
 				</control>
@@ -157,9 +179,9 @@
 								<font>Font_Black_Caps_46</font>
 								<label>$INFO[Player.Title]</label>
 								<textcolor>Heavy</textcolor>
-								<animation effect="slide" end="0,19" condition="IsEmpty(Control.GetLabel(8200))">Conditional</animation>
+								<animation effect="slide" end="0,19" condition="IsEmpty(Control.GetLabel(8300))">Conditional</animation>
 							</control>
-							<control type="fadelabel" id="8200">
+							<control type="fadelabel" id="8300">
 								<top>46</top>
 								<width>1140</width>
 								<height>36</height>
@@ -252,7 +274,7 @@
 					<control type="group">
 						<width>134</width>
 						<height>91</height>
-						<control type="image" id="8201">
+						<control type="image" id="8350">
 							<include>HiddenControl</include>
 							<texture fallback="flags/default.png">$INFO[ListItem.Studio,special://skin/extras/studio/,.png]</texture>
 						</control>
@@ -263,7 +285,7 @@
 							<aspectratio aligny="center">keep</aspectratio>
 							<colordiffuse>MediaFlags</colordiffuse>
 							<texture fallback="flags/default.png">$INFO[ListItem.Studio,special://skin/extras/studio/,.png]</texture>
-							<animation effect="zoom" end="88,88" center="auto" time="0" condition="StringCompare(Control.GetLabel(8201),flags/default.png)">Conditional</animation>
+							<animation effect="zoom" end="88,88" center="auto" time="0" condition="StringCompare(Control.GetLabel(8350),flags/default.png)">Conditional</animation>
 						</control>
 					</control>
 				</control>
