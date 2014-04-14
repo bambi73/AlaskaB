@@ -39,7 +39,7 @@
 
 				<control type="list" id="603">
 					<left>320</left>
-					<top>166</top>
+					<top>176</top>
 					<width>1550</width>
 					<height>696</height>
 					<onup>603</onup>
@@ -144,10 +144,9 @@
 				</control>
 
 				<!-- Plot label -->
-
 				<control type="textbox">
 					<left>785</left>
-					<top>264</top>
+					<top>274</top>
 					<width>950</width>
 					<height>120</height>
 					<align>left</align>
