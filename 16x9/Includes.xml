@@ -24,6 +24,10 @@
 	<include file="Viewtype_650_Info_List_2.xml" />
 	<include file="Variables.xml" />
 
+	<include file="Home_Original.xml" />
+	<include file="Home_OriginalMod.xml" />
+	<include file="Home_AlaskaB.xml" />
+	
 	<!-- Global objects -->
 
 	<include name="Global_Background">
@@ -120,12 +124,24 @@
 		<defaultcontrol>3200</defaultcontrol>
 	</include>
 
+	<include name="HomeDefaultControl_3300">
+		<defaultcontrol>3300</defaultcontrol>
+	</include>
+	
 	<include name="HomeDefaultControl_3400">
 		<defaultcontrol>3400</defaultcontrol>
 	</include>
 
 	<include name="HomeDefaultControl_3500">
 		<defaultcontrol>3500</defaultcontrol>
+	</include>
+
+	<include name="HomeDefaultControl_7">
+		<defaultcontrol>7</defaultcontrol>
+	</include>
+
+	<include name="HomeDefaultControl_11">
+		<defaultcontrol>11</defaultcontrol>
 	</include>
 
 	<include name="HomeDefaultControl_30">
@@ -140,6 +156,20 @@
 		<defaultcontrol>60</defaultcontrol>
 	</include>
 
+	
+	<include name="VideoNav_DefaultControl_500">
+		<defaultcontrol always="true">500</defaultcontrol>
+	</include>
+
+	<include name="VideoNav_DefaultControl_8000">
+		<defaultcontrol always="true">8000</defaultcontrol>
+	</include>
+
+	
+	
+	
+	
+	
 	<include name="Object_MainMenuIconF">
 		<width>525</width>
 		<height>384</height>
@@ -186,6 +216,38 @@
 		<textcolor>Home</textcolor>
 	</include>
 
+	<include name="Home_AlaskaB_MenuButton">
+		<left>100</left>
+		<top>406</top>
+		<width>453</width>
+		<height>51</height>
+		<align>right</align>
+		<aligny>center</aligny>
+		<font>Font_Reg_Caps_46</font>
+		<textcolor>Home</textcolor>
+		<focusedcolor>Home</focusedcolor>
+		<texturefocus>-</texturefocus>
+		<include>HomeFix</include>
+	</include>
+
+	<include name="Home_AlaskaB_UpActionArrow">
+		<left>45</left>
+		<top>412</top>
+		<width>36</width>
+		<height>16</height>
+		<colordiffuse>Home</colordiffuse>
+		<texture>home/available_up.png</texture>
+	</include>
+	
+	<include name="Home_AlaskaB_DownActionArrow">
+		<left>45</left>
+		<top>432</top>
+		<width>36</width>
+		<height>16</height>
+		<colordiffuse>Home</colordiffuse>
+		<texture>home/available_down.png</texture>
+	</include>
+	
 	<include name="HomeFix">
 		<onback condition="Container(310).HasFocus(10)">3000</onback>
 		<onback condition="Container(310).HasFocus(20)">3100</onback>

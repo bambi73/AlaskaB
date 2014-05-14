@@ -1,1 +1,0 @@
-- kdyz se z kontextoveho menu na MyVideoInfo.xml vybere nejaky dialog (treba Search Title) potom se nevymaze properta Overlay.MediaFlags.Hide

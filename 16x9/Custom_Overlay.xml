@@ -202,7 +202,7 @@
 					<itemgap>24</itemgap>
 					<orientation>horizontal</orientation>
 					<usecontrolcoords>true</usecontrolcoords>
-					<visible>[SubString(Container.FolderPath,videodb://) | SubString(Container.FolderPath,special://) | SubString(Container.FolderPath,library://)] + ![IsEmpty(ListItem.Rating) + IsEmpty(ListItem.VideoResolution) + IsEmpty(ListItem.VideoCodec) + IsEmpty(ListItem.AudioCodec) + IsEmpty(ListItem.AudioChannels) + IsEmpty(ListItem.Studio)] + !SubString(Window(home).Property(AlaskaB.Overlay.MediaFlags.Hide),true)</visible>
+					<visible>[SubString(Container.FolderPath,videodb://) | SubString(Container.FolderPath,special://) | SubString(Container.FolderPath,library://)] + ![IsEmpty(ListItem.Rating) + IsEmpty(ListItem.VideoResolution) + IsEmpty(ListItem.VideoCodec) + IsEmpty(ListItem.AudioCodec) + IsEmpty(ListItem.AudioChannels) + IsEmpty(ListItem.Studio)] + !SubString(Window(home).Property(AlaskaB.Overlay.MediaFlags.Hide),true) + !SubString(Window(home).Property(AlaskaB.VideoNav.ShowHub),true)</visible>
 					<animation effect="Conditional" condition="Player.HasAudio | Player.HasVideo | ListItem.IsFolder">
 						<effect type="slide" start="0,0" end="474,0" time="0" tween="cubic" easing="out" />
 					</animation>

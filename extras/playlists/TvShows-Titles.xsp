@@ -3,5 +3,4 @@
   <name>TvShows (Titles)</name>
   <match>all</match>
   <rule field="tag" operator="doesnotcontain">Anime</rule>
-  <order direction="ascending">sorttitle</order>
 </smartplaylist>

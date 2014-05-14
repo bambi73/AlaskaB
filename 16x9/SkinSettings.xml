@@ -45,6 +45,7 @@
 				<onright condition="Control.HasFocus(11)">110</onright>
 				<onright condition="Control.HasFocus(12)">120</onright>
 				<onright condition="Control.HasFocus(13)">130</onright>
+				<onright condition="Control.HasFocus(14)">140</onright>
 				<onup>noop</onup>
 				<ondown>noop</ondown>
 				<orientation>vertical</orientation>
@@ -71,6 +72,14 @@
 					<onclick>SetFocus(130)</onclick>
 					<width>360</width>
 					<animation effect="fade" start="100" end="0" condition="ControlGroup(130).HasFocus()">Conditional</animation>
+				</control>
+
+				<!-- AlaskaB -->
+				<control type="button" id="14">
+					<label>AlaskaB</label>
+					<onclick>SetFocus(140)</onclick>
+					<width>360</width>
+					<animation effect="fade" start="100" end="0" condition="ControlGroup(140).HasFocus()">Conditional</animation>
 				</control>
 
 			</control>
@@ -108,12 +117,23 @@
 				<control type="button" id="13">
 					<!-- Debug -->
 					<label>31033</label>
-					<onclick>-)</onclick>
+					<onclick>-</onclick>
 					<width>360</width>
 					<textcolor>ButtonLabel</textcolor>
 					<texturefocus>-</texturefocus>
 					<texturenofocus>common/Button_NF.png</texturenofocus>
 					<animation effect="fade" start="100" end="0" condition="!ControlGroup(130).HasFocus()">Conditional</animation>
+				</control>
+
+				<control type="button" id="14">
+					<!-- Debug -->
+					<label>AlaskaB</label>
+					<onclick>-</onclick>
+					<width>360</width>
+					<textcolor>ButtonLabel</textcolor>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>common/Button_NF.png</texturenofocus>
+					<animation effect="fade" start="100" end="0" condition="!ControlGroup(140).HasFocus()">Conditional</animation>
 				</control>
 
 			</control>
@@ -326,6 +346,31 @@
 				</control>
 
 			</control>
+
+			<control type="grouplist" id="140">
+				<left>544</left>
+				<top>228</top>
+				<width>1260</width>
+				<height>594</height>
+				<itemgap>0</itemgap>
+				<onleft>1</onleft>
+				<onright>noop</onright>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<orientation>vertical</orientation>
+				<scrolltime tween="sine" easing="out">320</scrolltime>
+				<visible>Control.HasFocus(14) | ControlGroup(140).HasFocus()</visible>
+
+				<control type="button" id="141">
+					<!-- Home menu style -->
+					<width>1260</width>
+					<label>Home menu style</label>
+					<label2>$VAR[AlaskaBSetting_HomeMenuStyleLabel]</label2>
+					<onclick>$VAR[AlaskaBSetting_HomeMenuStyleOnClick]</onclick>
+				</control>
+
+			</control>
+
 		</control>
 
 	</controls>

@@ -507,4 +507,21 @@
 		<value condition="substring(listitem.mpaa,Australia:G)">flags/rating/australia_g.png</value>
 	</variable>
 
+	
+	<!-- Tady je Bambiho -->
+	
+	<variable name="AlaskaBSetting_HomeMenuStyleOnClick">
+		<value condition="StringCompare(Skin.String(HomeMenu.Style),Original)">Skin.SetString(HomeMenu.Style,OriginalMod)</value>
+		<value condition="StringCompare(Skin.String(HomeMenu.Style),OriginalMod)">Skin.SetString(HomeMenu.Style,AlaskaB)</value>
+		<value condition="StringCompare(Skin.String(HomeMenu.Style),AlaskaB)">Skin.SetString(HomeMenu.Style,Original)</value>
+		<value>Skin.SetString(HomeMenu.Style,OriginalMod)</value>
+	</variable>
+
+	<variable name="AlaskaBSetting_HomeMenuStyleLabel">
+		<value condition="StringCompare(Skin.String(HomeMenu.Style),Original)">Alaska Original</value>
+		<value condition="StringCompare(Skin.String(HomeMenu.Style),OriginalMod)">Alaska Original Mod</value>
+		<value condition="StringCompare(Skin.String(HomeMenu.Style),AlaskaB)">AlaskaB</value>
+		<value>Alaska Original</value>
+	</variable>	
+	
 </includes>

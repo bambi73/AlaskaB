@@ -1,59 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="6">
+	<include condition="!SubString(Window(home).Property(AlaskaB.VideoNav.ShowHub),true)">VideoNav_DefaultControl_500</include>
+	<include condition="SubString(Window(home).Property(AlaskaB.VideoNav.ShowHub),true)">VideoNav_DefaultControl_8000</include>
+
 	<backgroundcolor>0</backgroundcolor>
-	<defaultcontrol always="true">500</defaultcontrol>
+	<!-- <defaultcontrol always="true">8000</defaultcontrol> -->
 	<views>503,501,502,514,504,508,500,603,650</views>
 
-	<onload condition="System.HasAddon(script.tv.show.next.aired) + Container.Content(tvshows)">RunScript(script.tv.show.next.aired,backend=True)</onload>
+	<!-- <onload condition="System.HasAddon(script.tv.show.next.aired) + Container.Content(tvshows)">RunScript(script.tv.show.next.aired,backend=True)</onload> -->
 	<onunload>ClearProperty(AlaskaB.Overlay.MediaFlags.Hide,home)</onunload>
 	<onunload>ClearProperty(AlaskaB.Overlay.NowPlaying.Hide,home)</onunload>
 	<!--onunload>ClearProperty(AlaskaB.HeadingLabel,home)</onunload-->
 
-	<!--onunload condition="!IsEmpty(Window(movieinformation).Property(IsSeason)">ClearProperty(IsSeason,movieinformation)</onunload>	
-	<onunload condition="!IsEmpty(Window(movieinformation).Property(IsSpecial)">ClearProperty(IsSpecial,movieinformation)</onunload-->
-	
+	<!--onunload condition="!IsEmpty(Window(movieinformation).Property(IsSeason)">ClearProperty(IsSeason,movieinformation)</onunload>
+  <onunload condition="!IsEmpty(Window(movieinformation).Property(IsSpecial)">ClearProperty(IsSpecial,movieinformation)</onunload-->
+
 	<controls>
 
 		<!-- Background -->
 		<include>Global_Background</include>
 
 		<!-- <control type="label">
-			<left>46</left>
-			<top>110</top>
-			<width>1900</width>
-			<height>72</height>
-			<aligny>center</aligny>
-			<font>Font_Reg_Caps_36</font>
-			<textcolor>MedLight</textcolor>
-			<label>Container.HasFolders</label>
-			<visible>Container.HasFolders</visible>
-		</control>
-		<control type="label">
-			<left>46</left>
-			<top>110</top>
-			<width>1900</width>
-			<height>72</height>
-			<aligny>center</aligny>
-			<font>Font_Reg_Caps_36</font>
-			<textcolor>MedLight</textcolor>
-			<label>!Container.HasFolders</label>
-			<visible>!Container.HasFolders</visible>
-		</control>
-		<control type="label">
-			<left>46</left>
-			<top>150</top>
-			<width>1900</width>
-			<height>72</height>
-			<aligny>center</aligny>
-			<font>Font_Reg_Caps_36</font>
-			<textcolor>MedLight</textcolor>
-			<label>Container.Content(episodes)</label>
-			<visible>Container.Content(episodes)</visible>
-		</control> 	 -->	
-		
+      <left>46</left>
+      <top>110</top>
+      <width>1900</width>
+      <height>72</height>
+      <aligny>center</aligny>
+      <font>Font_Reg_Caps_36</font>
+      <textcolor>MedLight</textcolor>
+      <label>Container.HasFolders</label>
+      <visible>Container.HasFolders</visible>
+    </control>
+    <control type="label">
+      <left>46</left>
+      <top>110</top>
+      <width>1900</width>
+      <height>72</height>
+      <aligny>center</aligny>
+      <font>Font_Reg_Caps_36</font>
+      <textcolor>MedLight</textcolor>
+      <label>!Container.HasFolders</label>
+      <visible>!Container.HasFolders</visible>
+    </control>
+    <control type="label">
+      <left>46</left>
+      <top>150</top>
+      <width>1900</width>
+      <height>72</height>
+      <aligny>center</aligny>
+      <font>Font_Reg_Caps_36</font>
+      <textcolor>MedLight</textcolor>
+      <label>Container.Content(episodes)</label>
+      <visible>Container.Content(episodes)</visible>
+    </control>   -->
+
 		<control type="group">
 			<include>Fanart</include>
-			<visible>[!Skin.HasSetting(Disable_Movie_Fanart) + Container.Content(Movies)] | [!Skin.HasSetting(Disable_TV_Fanart) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] | [!Skin.HasSetting(Disable_Music_Fanart) + Container.Content(Music)] | [!Skin.HasSetting(Disable_Addon_Fanart) + Container.Content(Addons)]</visible>
+			<visible>!SubString(Window(home).Property(AlaskaB.VideoNav.ShowHub),true) + [[!Skin.HasSetting(Disable_Movie_Fanart) + Container.Content(Movies)] | [!Skin.HasSetting(Disable_TV_Fanart) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] | [!Skin.HasSetting(Disable_Music_Fanart) + Container.Content(Music)] | [!Skin.HasSetting(Disable_Addon_Fanart) + Container.Content(Addons)]]</visible>
 		</control>
 
 		<!-- Views -->
@@ -74,30 +77,269 @@
 		<!-- Heading -->
 
 		<!--control type="group">
-			<left>46</left>
-			<include>Animation_SlideDownFadeOut</include>
-			<control type="label">
-				<label>$VAR[Global_HeadingLabels]</label>
-				<include>Global_HeadingSectionVars</include>
+      <left>46</left>
+      <include>Animation_SlideDownFadeOut</include>
+      <control type="label">
+        <label>$VAR[Global_HeadingLabels]</label>
+        <include>Global_HeadingSectionVars</include>
+      </control>
+      <control type="label">
+        <label>$VAR[Global_HeadingDetails]</label>
+        <include>Global_HeadingDetailVars</include>
+      </control>
+    </control-->
+
+		<control type="group">
+			<visible allowhiddenfocus="true">Control.HasFocus(8000)</visible>
+
+			<!-- <control type="button" id="8000">
+        <left>200</left>
+        <top>200</top>
+        <label>Anime View</label>
+        <onright>ClearProperty(AlaskaB.VideoNav.ShowHub,home)</onright>
+        <onright>SetFocus(500)</onright>
+      </control> -->
+
+			<control type="group">
+				<left>120</left>
+				<top>275</top>
+				<visible>!SubString(ListItem.Icon,Default)</visible>
+				<control type="group">
+					<visible>!Window.IsActive(movieinformation)</visible>
+					<!--include>Animation_PosterInfoSlide</include-->
+					<!-- ??? -->
+					<control type="image">
+						<left>3</left>
+						<top>3</top>
+						<width>896</width>
+						<height>504</height>
+						<fadetime>200</fadetime>
+						<colordiffuse>FanartDiffuseLight</colordiffuse>
+						<texture background="true" diffuse="fanart/fanart_matte_fo.png">$INFO[ListItem.Art(fanart)]</texture>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+					</control>
+					<control type="image">
+						<top>430</top>
+						<left>4</left>
+						<width>894</width>
+						<height>58</height>
+						<texture>dialogs/video_info_title_bg.png</texture>
+					</control>
+					<control type="label">
+						<top>435</top>
+						<left>30</left>
+						<width>842</width>
+						<height>48</height>
+						<font>Font_Cond_48</font>
+						<textcolor>MedLight</textcolor>
+						<label>$VAR[VideoInfo_Fullscreen_Title]</label>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>902</width>
+						<height>510</height>
+						<texture>fanart/fanart_frame_fo.png</texture>
+					</control>
+					
+					<!-- <control type="image">
+						<left>420</left>
+						<top>678</top>
+						<width>48</width>
+						<height>48</height>
+						<texture>$VAR[Status_Overlay]</texture>
+					</control> -->
+					<!-- <control type="image">
+						<left>420</left>
+						<top>678</top>
+						<width>48</width>
+						<height>48</height>
+						<texture>common/Overlay_New.png</texture>
+						<visible>SubString(Window(movieinformation).Property(flag),true)</visible>
+						<animation effect="slide" end="-54,0" condition="[!Skin.HasSetting(HideWatchedOverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)] | [!Skin.HasSetting(HideResumeOverlays) + ListItem.IsResumable]">Conditional</animation>
+					</control> -->
+				</control>
+			</control>					
+
+
+			<control type="list" id="8000">
+				<left>1140</left>
+				<top>235</top>
+				<width>700</width>
+				<height>600</height>
+				<onright>ClearProperty(AlaskaB.VideoNav.ShowHub,home)</onright>
+				<onright>500</onright>
+				<!--onleft>9501</onleft-->
+				<onup>8000</onup>
+				<ondown>8000</ondown>
+				<scrolltime>0</scrolltime>
+				<!-- <focusposition>2</focusposition> -->
+				<orientation>vertical</orientation>
+				<itemlayout width="700" height="100">
+					<control type="image">
+						<left>0</left>
+						<top>10</top>
+						<width>80</width>
+						<height>80</height>
+						<texture>$INFO[ListItem.Icon]</texture>
+					</control>
+					<control type="label">
+						<left>120</left>
+						<top>28</top>
+						<width>400</width>
+						<height>44</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>Light</textcolor>
+						<font>Font_Black_Caps_44</font>
+						<label>$INFO[ListItem.Label]</label>
+						<!-- <animation effect="slide" end="0,16" condition="IsEmpty(ListItem.Label2)">Conditional</animation> -->
+					</control>
+					<!-- <control type="label">
+						<left>120</left>
+						<top>48</top>
+						<width>400</width>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>Light</textcolor>
+						<font>Font_Black_Caps_44</font>
+						<label>$INFO[ListItem.Label2]</label>
+					</control> -->
+				</itemlayout>
+				<focusedlayout width="700" height="100">
+					<!-- <control type="image">
+						<width>450</width>
+						<height>130</height>
+						<texture border="12" colordiffuse="PosterHighlight">common/border-inner.png</texture>
+						<visible>Control.HasFocus(9500)</visible>
+						<animation condition="Container(9500).OnNext" reversible="false" effect="slide" start="0,-33" end="0,0" time="300" tween="back" easing="out">Focus</animation>
+						<animation condition="Container(9500).OnPrevious" reversible="false" effect="slide" start="0,33" end="0,0" time="300" tween="back" easing="out">Focus</animation>
+					</control> -->
+					<!-- <control type="image">
+						<width>450</width>
+						<height>130</height>
+						<texture colordiffuse="PosterBorder" border="5">common/border-inner.png</texture>
+						<visible>!Control.HasFocus(9500)</visible>
+					</control> -->
+					<control type="image">
+						<left>0</left>
+						<top>10</top>
+						<width>80</width>
+						<height>80</height>
+						<texture>$INFO[ListItem.Icon]</texture>
+					</control>
+					<control type="image">
+						<left>100</left>
+						<top>5</top>
+						<width>500</width>
+						<height>90</height>
+						<aligny>center</aligny>
+						<texture>InfoListButton.png</texture>
+					</control>
+					<control type="label">
+						<left>120</left>
+						<top>28</top>
+						<width>400</width>
+						<height>44</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>Heavy</textcolor>
+						<font>Font_Black_Caps_44</font>
+						<label>$INFO[ListItem.Label]</label>
+						<!-- <animation effect="slide" end="0,16" condition="IsEmpty(ListItem.Label2)">Conditional</animation> -->
+					</control>
+					<!-- <control type="label">
+						<left>120</left>
+						<top>48</top>
+						<width>400</width>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>Heavy</textcolor>
+						<font>Font_Black_Caps_44</font>
+						<label>$INFO[ListItem.Label2]</label>
+					</control> -->
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<!-- <label>31109</label> -->
+						<label>Recenty added</label>
+						<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
+						<icon>special://skin/media/fanart/x/png/128x128/rss.png</icon>
+						<property name="Color">1</property>
+					</item>
+					<item id="8">
+						<label>136</label>
+						<onclick>ActivateWindow(videos,special://videoplaylists/,return)</onclick>
+						<icon>special://skin/media/fanart/x/png/128x128/database.png</icon>
+						<property name="Color">1</property>
+					</item>
+					<item id="3">
+						<!-- <label>31157</label> -->
+						<label>All Anime</label>
+						<onclick>ActivateWindow(Videos,TvShowTitles,return)</onclick>
+						<icon>special://skin/media/fanart/x/png/128x128/monitor.png</icon>
+						<property name="Color">1</property>
+					</item>
+					<item id="4">
+						<label>135</label>
+						<onclick>ActivateWindow(Videos,TvShowGenres,return)</onclick>
+						<icon>special://skin/media/fanart/x/png/128x128/timer.png</icon>
+						<property name="Color">1</property>
+					</item>
+					<item id="5">
+						<label>20388</label>
+						<onclick>ActivateWindow(Videos,TvShowStudios,return)</onclick>
+						<icon>special://skin/media/fanart/x/png/128x128/film.png</icon>
+						<property name="Color">1</property>
+					</item>
+					<item id="6">
+						<label>344</label>
+						<onclick>ActivateWindow(Videos,TvShowActors,return)</onclick>
+						<icon>special://skin/media/fanart/x/png/128x128/users.png</icon>
+						<property name="Color">1</property>
+					</item>
+					<item id="7">
+						<label>652</label>
+						<onclick>ActivateWindow(Videos,TvShowYears,return)</onclick>
+						<icon>special://skin/media/fanart/x/png/128x128/calendar.png</icon>
+						<property name="Color">1</property>
+					</item>
+					<item id="9">
+						<label>1214</label>
+						<onclick>ActivateWindow(Videos,Files,return)</onclick>
+						<icon>special://skin/media/fanart/x/png/128x128/save.png</icon>
+						<property name="Color">1</property>
+					</item>
+					<!-- <item id="2">
+						<label>Search</label>
+						<icon>special://skin/media/fanart/x/png/128x128/search.png</icon>
+						<property name="Color">1</property>
+					</item> -->
+					<item id="10">
+						<label>653</label>
+						<onclick>UpdateLibrary(video)</onclick>
+						<icon>special://skin/media/fanart/x/png/128x128/refresh.png</icon>
+						<property name="Color">1</property>
+					</item>
+				</content>
 			</control>
-			<control type="label">
-				<label>$VAR[Global_HeadingDetails]</label>
-				<include>Global_HeadingDetailVars</include>
-			</control>
-		</control-->
+		</control>
+
 
 		<!-- Hidden buttons for Menu -->
-		<control type="button" id="7000">
-			<include>HiddenControl</include>
-			<onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,true,home)</onfocus>
-			<onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,true,home)</onfocus>
-			<onfocus>SetFocus(7100)</onfocus>
-		</control>
-		<control type="button" id="7001">
-			<include>HiddenControl</include>
-			<onfocus>ClearProperty(AlaskaB.Overlay.NowPlaying.Hide,home)</onfocus>
-			<onfocus>ClearProperty(AlaskaB.Overlay.MediaFlags.Hide,home)</onfocus>
-			<onfocus>SetFocus(500)</onfocus>
+		<control type="group">
+			<control type="button" id="7000">
+				<include>HiddenControl</include>
+				<onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,true,home)</onfocus>
+				<onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,true,home)</onfocus>
+				<onfocus>SetFocus(7100)</onfocus>
+			</control>
+			<control type="button" id="7001">
+				<include>HiddenControl</include>
+				<onfocus>ClearProperty(AlaskaB.Overlay.NowPlaying.Hide,home)</onfocus>
+				<onfocus>ClearProperty(AlaskaB.Overlay.MediaFlags.Hide,home)</onfocus>
+				<onfocus>SetFocus(500)</onfocus>
+			</control>
 		</control>
 
 		<!-- Menu -->

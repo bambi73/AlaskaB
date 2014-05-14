@@ -3,5 +3,4 @@
   <name>Anime (Titles)</name>
   <match>all</match>
   <rule field="tag" operator="contains">Anime</rule>
-  <order direction="ascending">sorttitle</order>
 </smartplaylist>

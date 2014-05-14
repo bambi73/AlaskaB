@@ -6,7 +6,7 @@
 		<control type="group">
 			<visible>Control.IsVisible(650)</visible>
 
-<!-- 			<control type="label">
+			<!-- <control type="label">
 				<left>46</left>
 				<top>110</top>
 				<width>1900</width>
@@ -14,12 +14,10 @@
 				<aligny>center</aligny>
 				<font>Font_Reg_Caps_36</font>
 				<textcolor>MedLight</textcolor>
-				<label>$INFO[Container.FolderPath]</label>
-				<scroll>true</scroll>
-				<scrollspeed>50</scrollspeed>
-				<visible>true</visible>
+				<label>false</label>
+				<visible>!SubString(Window(home).Property(AlaskaB.VideoNav.ShowHub),true)</visible>
 			</control>
-			<control type="image">
+			<control type="label">
 				<left>46</left>
 				<top>150</top>
 				<width>1900</width>
@@ -27,9 +25,8 @@
 				<aligny>center</aligny>
 				<font>Font_Reg_Caps_36</font>
 				<textcolor>MedLight</textcolor>
-				<label>$INFO[Container.ShowPlot]</label>
-				<visible>true</visible>
-				<texture>$INFO[Container.FolderThumb]</texture>
+				<label>true</label>
+				<visible>SubString(Window(home).Property(AlaskaB.VideoNav.ShowHub),true)</visible>
 			</control>  -->
 		
 			<!-- Browser -->
@@ -78,7 +75,7 @@
 							<width>1032</width>
 							<height>143</height>
 							<aligny>center</aligny>
-							<texture>InfoListButton.png</texture>
+							<texture colordiffuse="C0FFFFFF">InfoListButton.png</texture>
 						</control>
 						<control type="group">
 							<left>30</left>
