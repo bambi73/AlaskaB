@@ -164,28 +164,28 @@
 
 			<control type="list" id="8000">
 				<left>1140</left>
-				<top>235</top>
+				<top>250</top>
 				<width>700</width>
-				<height>600</height>
+				<height>564</height>
 				<onright>ClearProperty(AlaskaB.VideoNav.ShowHub,home)</onright>
 				<onright>500</onright>
 				<!--onleft>9501</onleft-->
 				<onup>8000</onup>
 				<ondown>8000</ondown>
-				<scrolltime>0</scrolltime>
+				<scrolltime>200</scrolltime>
 				<!-- <focusposition>2</focusposition> -->
 				<orientation>vertical</orientation>
-				<itemlayout width="700" height="100">
+				<itemlayout width="700" height="94">
 					<control type="image">
-						<left>0</left>
-						<top>10</top>
+						<left>10</left>
+						<top>7</top>
 						<width>80</width>
 						<height>80</height>
-						<texture>$INFO[ListItem.Icon]</texture>
+						<texture colordiffuse="MedLight">$INFO[ListItem.Icon]</texture>
 					</control>
 					<control type="label">
-						<left>120</left>
-						<top>28</top>
+						<left>108</left>
+						<top>25</top>
 						<width>400</width>
 						<height>44</height>
 						<align>left</align>
@@ -206,7 +206,7 @@
 						<label>$INFO[ListItem.Label2]</label>
 					</control> -->
 				</itemlayout>
-				<focusedlayout width="700" height="100">
+				<focusedlayout width="700" height="94">
 					<!-- <control type="image">
 						<width>450</width>
 						<height>130</height>
@@ -223,22 +223,22 @@
 					</control> -->
 					<control type="image">
 						<left>0</left>
-						<top>10</top>
-						<width>80</width>
+						<top>7</top>
+						<width>500</width>
 						<height>80</height>
-						<texture>$INFO[ListItem.Icon]</texture>
+						<aligny>center</aligny>
+						<texture>fanart/hub_button.png</texture>
 					</control>
 					<control type="image">
-						<left>100</left>
-						<top>5</top>
-						<width>500</width>
-						<height>90</height>
-						<aligny>center</aligny>
-						<texture>InfoListButton.png</texture>
+						<left>10</left>
+						<top>7</top>
+						<width>80</width>
+						<height>80</height>
+						<texture colordiffuse="Heavy">$INFO[ListItem.Icon]</texture>
 					</control>
 					<control type="label">
-						<left>120</left>
-						<top>28</top>
+						<left>108</left>
+						<top>25</top>
 						<width>400</width>
 						<height>44</height>
 						<align>left</align>
@@ -264,20 +264,20 @@
 						<!-- <label>31109</label> -->
 						<label>Recenty added</label>
 						<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
-						<icon>special://skin/media/fanart/x/png/128x128/rss.png</icon>
+						<icon>special://skin/media/fanart/x/png/work/rss.png</icon>
 						<property name="Color">1</property>
 					</item>
 					<item id="8">
 						<label>136</label>
 						<onclick>ActivateWindow(videos,special://videoplaylists/,return)</onclick>
-						<icon>special://skin/media/fanart/x/png/128x128/database.png</icon>
+						<icon>special://skin/media/fanart/x/png/work/database.png</icon>
 						<property name="Color">1</property>
 					</item>
 					<item id="3">
 						<!-- <label>31157</label> -->
 						<label>All Anime</label>
 						<onclick>ActivateWindow(Videos,TvShowTitles,return)</onclick>
-						<icon>special://skin/media/fanart/x/png/128x128/monitor.png</icon>
+						<icon>special://skin/media/fanart/x/png/work/monitor.png</icon>
 						<property name="Color">1</property>
 					</item>
 					<item id="4">
@@ -289,13 +289,13 @@
 					<item id="5">
 						<label>20388</label>
 						<onclick>ActivateWindow(Videos,TvShowStudios,return)</onclick>
-						<icon>special://skin/media/fanart/x/png/128x128/film.png</icon>
+						<icon>special://skin/media/fanart/x/png/work/film.png</icon>
 						<property name="Color">1</property>
 					</item>
 					<item id="6">
 						<label>344</label>
 						<onclick>ActivateWindow(Videos,TvShowActors,return)</onclick>
-						<icon>special://skin/media/fanart/x/png/128x128/users.png</icon>
+						<icon>special://skin/media/fanart/x/png/work/users.png</icon>
 						<property name="Color">1</property>
 					</item>
 					<item id="7">
