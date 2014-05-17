@@ -101,7 +101,7 @@
       </control> -->
 
 			<control type="group">
-				<left>120</left>
+				<left>210</left>
 				<top>275</top>
 				<visible>!SubString(ListItem.Icon,Default)</visible>
 				<control type="group">
@@ -163,10 +163,10 @@
 
 
 			<control type="list" id="8000">
-				<left>1140</left>
-				<top>250</top>
+				<left>1190</left>
+				<top>271</top>
 				<width>700</width>
-				<height>564</height>
+				<height>516</height>
 				<onright>ClearProperty(AlaskaB.VideoNav.ShowHub,home)</onright>
 				<onright>500</onright>
 				<!--onleft>9501</onleft-->
@@ -175,17 +175,17 @@
 				<scrolltime>200</scrolltime>
 				<!-- <focusposition>2</focusposition> -->
 				<orientation>vertical</orientation>
-				<itemlayout width="700" height="94">
+				<itemlayout width="700" height="86">
 					<control type="image">
 						<left>10</left>
-						<top>7</top>
+						<top>5</top>
 						<width>80</width>
 						<height>80</height>
 						<texture colordiffuse="MedLight">$INFO[ListItem.Icon]</texture>
 					</control>
 					<control type="label">
 						<left>108</left>
-						<top>25</top>
+						<top>23</top>
 						<width>400</width>
 						<height>44</height>
 						<align>left</align>
@@ -206,7 +206,7 @@
 						<label>$INFO[ListItem.Label2]</label>
 					</control> -->
 				</itemlayout>
-				<focusedlayout width="700" height="94">
+				<focusedlayout width="700" height="86">
 					<!-- <control type="image">
 						<width>450</width>
 						<height>130</height>
@@ -223,7 +223,7 @@
 					</control> -->
 					<control type="image">
 						<left>0</left>
-						<top>7</top>
+						<top>5</top>
 						<width>500</width>
 						<height>80</height>
 						<aligny>center</aligny>
@@ -231,14 +231,14 @@
 					</control>
 					<control type="image">
 						<left>10</left>
-						<top>7</top>
+						<top>5</top>
 						<width>80</width>
 						<height>80</height>
 						<texture colordiffuse="Heavy">$INFO[ListItem.Icon]</texture>
 					</control>
 					<control type="label">
 						<left>108</left>
-						<top>25</top>
+						<top>23</top>
 						<width>400</width>
 						<height>44</height>
 						<align>left</align>
@@ -248,16 +248,6 @@
 						<label>$INFO[ListItem.Label]</label>
 						<!-- <animation effect="slide" end="0,16" condition="IsEmpty(ListItem.Label2)">Conditional</animation> -->
 					</control>
-					<!-- <control type="label">
-						<left>120</left>
-						<top>48</top>
-						<width>400</width>
-						<align>left</align>
-						<aligny>center</aligny>
-						<textcolor>Heavy</textcolor>
-						<font>Font_Black_Caps_44</font>
-						<label>$INFO[ListItem.Label2]</label>
-					</control> -->
 				</focusedlayout>
 				<content>
 					<item id="1">
@@ -283,7 +273,7 @@
 					<item id="4">
 						<label>135</label>
 						<onclick>ActivateWindow(Videos,TvShowGenres,return)</onclick>
-						<icon>special://skin/media/fanart/x/png/128x128/timer.png</icon>
+						<icon>special://skin/media/fanart/x/png/work/theatre_masks.png</icon>
 						<property name="Color">1</property>
 					</item>
 					<item id="5">
@@ -301,13 +291,13 @@
 					<item id="7">
 						<label>652</label>
 						<onclick>ActivateWindow(Videos,TvShowYears,return)</onclick>
-						<icon>special://skin/media/fanart/x/png/128x128/calendar.png</icon>
+						<icon>special://skin/media/fanart/x/png/work/calendar_year.png</icon>
 						<property name="Color">1</property>
 					</item>
 					<item id="9">
 						<label>1214</label>
 						<onclick>ActivateWindow(Videos,Files,return)</onclick>
-						<icon>special://skin/media/fanart/x/png/128x128/save.png</icon>
+						<icon>special://skin/media/fanart/x/png/work/save.png</icon>
 						<property name="Color">1</property>
 					</item>
 					<!-- <item id="2">
@@ -318,7 +308,7 @@
 					<item id="10">
 						<label>653</label>
 						<onclick>UpdateLibrary(video)</onclick>
-						<icon>special://skin/media/fanart/x/png/128x128/refresh.png</icon>
+						<icon>special://skin/media/fanart/x/png/work/refresh.png</icon>
 						<property name="Color">1</property>
 					</item>
 				</content>
