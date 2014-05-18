@@ -341,6 +341,13 @@
 		</font>
 
 		<font>
+			<name>Font_Cond_56</name>
+			<filename>alaska_condblack.ttf</filename>
+			<linespacing>0.64</linespacing>
+			<size>56</size>
+		</font>
+
+		<font>
 			<name>Font_Cond_48</name>
 			<filename>alaska_condblack.ttf</filename>
 			<linespacing>0.64</linespacing>

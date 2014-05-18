@@ -75,7 +75,7 @@
 							<width>1032</width>
 							<height>143</height>
 							<aligny>center</aligny>
-							<texture colordiffuse="C0FFFFFF">InfoListButton.png</texture>
+							<texture colordiffuse="D0FFFFFF">InfoListButton.png</texture>
 						</control>
 						<control type="group">
 							<left>30</left>
