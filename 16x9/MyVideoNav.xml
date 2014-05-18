@@ -143,9 +143,9 @@
 
 				<control type="image">
 					<left>0</left>
-					<top>1</top>
+					<top>-2</top>
 					<width>545</width>
-					<height>580</height>
+					<height>586</height>
 					<texture>fanart/hub_menu_bg.png</texture>
 				</control>
 
