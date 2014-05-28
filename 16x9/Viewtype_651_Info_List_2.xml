@@ -1,10 +1,10 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
-	<include name="Viewtype_650_Info_List_2">
+	<include name="Viewtype_651_Info_List_2">
 
 		<control type="group">
-			<visible>Control.IsVisible(650)</visible>
+			<visible>Control.IsVisible(651)</visible>
 
 			<!-- <control type="label">
 				<left>46</left>
@@ -36,18 +36,18 @@
 				<include>Animation_ZoomedByMenu</include>
 				<include>Animation_HiddenByInfo</include>
 
-				<control type="fixedlist" id="650">
+				<control type="fixedlist" id="651">
 					<left>840</left>
 					<top>207</top>
 					<height>648</height>
 					<width>1032</width>
-					<onup>650</onup>
-					<ondown>650</ondown>
+					<onup>651</onup>
+					<ondown>651</ondown>
 					<onleft>7000</onleft>
 					<onright>7000</onright>
 					<focusposition>3</focusposition>
 					<orientation>vertical</orientation>
-					<viewtype label="Info List">list</viewtype>
+					<viewtype label="Info List 2">list</viewtype>
 					<scrolltime>0</scrolltime>
 					<visible>[Container.Content(movies) + SubString(Container.FolderPath,videodb://movies/)] | [[Container.Content(tvshows) | Container.Content(seasons)] + [SubString(Container.FolderPath,videodb://tvshows/) | SubString(Container.FolderPath,special://skin/extras/playlists/)]]</visible>
 					<itemlayout width="1691" height="82">
@@ -99,7 +99,7 @@
 								<top>78</top>
 								<width>972</width>
 								<height>34</height>
-								<label>$INFO[ListItem.Property(TotalEpisodes)] Episodes • $INFO[ListItem.Property(UnWatchedEpisodes)] Unwatched</label>
+								<label>$INFO[ListItem.Property(TotalEpisodes)] Episodes � $INFO[ListItem.Property(UnWatchedEpisodes)] Unwatched</label>
 								<font>Font_Light_Caps_34</font>
 								<textcolor>MedLight</textcolor>
 							</control>

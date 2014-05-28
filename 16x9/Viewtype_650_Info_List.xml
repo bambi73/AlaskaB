@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<include name="Viewtype_650_Info_List">
+
+		<control type="group">
+			<visible>Control.IsVisible(650)</visible>
+
+			<!-- <control type="label">
+				<left>46</left>
+				<top>110</top>
+				<width>1900</width>
+				<height>72</height>
+				<aligny>center</aligny>
+				<font>Font_Reg_Caps_36</font>
+				<textcolor>MedLight</textcolor>
+				<label>false</label>
+				<visible>!SubString(Window(home).Property(AlaskaB.VideoNav.ShowHub),true)</visible>
+			</control>
+			<control type="label">
+				<left>46</left>
+				<top>150</top>
+				<width>1900</width>
+				<height>72</height>
+				<aligny>center</aligny>
+				<font>Font_Reg_Caps_36</font>
+				<textcolor>MedLight</textcolor>
+				<label>true</label>
+				<visible>SubString(Window(home).Property(AlaskaB.VideoNav.ShowHub),true)</visible>
+			</control>  -->
+		
+			<!-- Browser -->
+			<control type="group" id="5000">
+				<top>TopOffset</top>
+				<left>LeftOffset</left>
+				<include>Animation_ZoomedByMenu</include>
+				<include>Animation_HiddenByInfo</include>
+
+				<control type="image">
+					<left>820</left>
+					<top>164</top>
+					<width>1050</width>
+					<height>724</height>
+					<texture>fanart/list_bg.png</texture>
+				</control>
+				
+				<control type="fixedlist" id="650">
+					<left>874</left>
+					<top>207</top>
+					<height>648</height>
+					<width>942</width>
+					<onup>650</onup>
+					<ondown>650</ondown>
+					<onleft>7000</onleft>
+					<onright>7000</onright>
+					<focusposition>3</focusposition>
+					<orientation>vertical</orientation>
+					<viewtype label="Info List">list</viewtype>
+					<scrolltime>0</scrolltime>
+					<visible>[Container.Content(movies) + SubString(Container.FolderPath,videodb://movies/)] | [[Container.Content(tvshows) | Container.Content(seasons)] + [SubString(Container.FolderPath,videodb://tvshows/) | SubString(Container.FolderPath,special://skin/extras/playlists/)]]</visible>
+					<itemlayout width="942" height="82">
+						<control type="group">
+							<control type="label">
+								<height>42</height>
+								<label>$VAR[Title_Detail]</label>
+								<font>Font_Black_Caps_42</font>
+								<textcolor>MedLight</textcolor>
+							</control>
+							<control type="label">
+								<top>38</top>
+								<height>32</height>
+								<label>$INFO[ListItem.Property(TotalEpisodes)] Episodes</label>
+								<font>Font_Light_Caps_32</font>
+								<textcolor>MedLight</textcolor>
+							</control>
+						</control>
+					</itemlayout>
+					<focusedlayout width="942" height="157">
+						<control type="group">
+							<top>16</top>
+							<control type="fadelabel">
+								<height>46</height>
+								<label>$VAR[Title_Detail]</label>
+								<font>Font_Black_Caps_53</font>
+								<textcolor>Heavy</textcolor>
+							</control>
+							<control type="label">
+								<top>50</top>
+								<height>34</height>
+								<label>$INFO[ListItem.Genre]</label>
+								<font>Font_Light_Caps_34</font>
+								<textcolor>MedLight</textcolor>
+							</control>
+							<control type="label">
+								<top>80</top>
+								<height>34</height>
+								<label>$INFO[ListItem.Property(TotalEpisodes)] Episodes • $INFO[ListItem.Property(UnWatchedEpisodes)] Unwatched</label>
+								<font>Font_Light_Caps_34</font>
+								<textcolor>MedLight</textcolor>
+							</control>
+						</control>
+						<control type="button">
+							<include>HiddenControl</include>
+							<onfocus>SetProperty(AlaskaB.ListItem.SourceName,$ESCINFO[ListItem.FolderName],home)</onfocus>
+							<onfocus condition="Container.Content(seasons)">SetProperty(ListItem.AlaskaB.Season,$INFO[ListItem.Season],movieinformation)</onfocus>
+							<onfocus condition="!Container.Content(seasons)">ClearProperty(ListItem.AlaskaB.Season,movieinformation)</onfocus>
+						</control>
+					</focusedlayout>
+				</control>
+
+				<control type="group">
+					<left>300</left>
+					<top>140</top>
+					<visible>!SubString(ListItem.Icon,Default)</visible>
+					<control type="group">
+						<visible>!Window.IsActive(movieinformation)</visible>
+						<!--include>Animation_PosterInfoSlide</include-->  <!-- ??? -->
+						<control type="image">
+							<left>6</left>
+							<top>28</top>
+							<width>480</width>
+							<height>718</height>
+							<texture background="true" diffuse="poster/Poster_Matte_FO.png">$INFO[ListItem.Icon]</texture>
+							<fadetime>200</fadetime>
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+						</control>
+						<control type="image">
+							<left>-23</left>
+							<top>0</top>
+							<width>538</width>
+							<height>772</height>
+							<texture>poster/Poster_Frame_FO.png</texture>
+						</control>
+						<control type="image">
+							<left>420</left>
+							<top>678</top>
+							<width>48</width>
+							<height>48</height>
+							<texture>$VAR[Status_Overlay]</texture>
+						</control>
+						<control type="image">
+							<left>420</left>
+							<top>678</top>
+							<width>48</width>
+							<height>48</height>
+							<texture>common/Overlay_New.png</texture>
+							<visible>SubString(Window(movieinformation).Property(flag),true)</visible>
+							<animation effect="slide" end="-54,0" condition="[!Skin.HasSetting(HideWatchedOverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)] | [!Skin.HasSetting(HideResumeOverlays) + ListItem.IsResumable]">Conditional</animation>
+						</control>
+					</control>
+				</control>					
+				
+			</control>
+		</control>
+
+	</include>
+
+</includes>

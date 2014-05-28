@@ -5,7 +5,7 @@
 
 	<backgroundcolor>0</backgroundcolor>
 	<!-- <defaultcontrol always="true">8000</defaultcontrol> -->
-	<views>503,501,502,514,504,508,500,603,650</views>
+	<views>503,501,502,514,504,508,500,603,650,651</views>
 
 	<!-- <onload condition="System.HasAddon(script.tv.show.next.aired) + Container.Content(tvshows)">RunScript(script.tv.show.next.aired,backend=True)</onload> -->
 	<onunload>ClearProperty(AlaskaB.Overlay.MediaFlags.Hide,home)</onunload>
@@ -72,7 +72,8 @@
 			<include>Viewtype_508_Landscape</include>
 			<include>Viewtype_514_Season_Poster</include>
 			<include>Viewtype_603_Episode_2</include>
-			<include>Viewtype_650_Info_List_2</include>
+			<include>Viewtype_650_Info_List</include>
+			<include>Viewtype_651_Info_List_2</include>
 		</control>
 
 		<!-- Heading -->
@@ -94,6 +95,7 @@
 			<left>142</left>
 			<top>250</top>
 			<visible allowhiddenfocus="true">Control.HasFocus(8000)</visible>
+			<include>Animation_ZoomInZoomOut</include>
 
 			<control type="group">
 				<visible>!SubString(ListItem.Icon,Default)</visible>
@@ -159,7 +161,7 @@
 					<!--onleft>9501</onleft-->
 					<onup>8000</onup>
 					<ondown>8000</ondown>
-					<scrolltime>200</scrolltime>
+					<scrolltime>150</scrolltime>
 					<focusposition>3</focusposition>
 					<orientation>vertical</orientation>
 					<itemlayout width="485" height="76">

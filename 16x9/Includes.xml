@@ -21,7 +21,8 @@
 	<include file="Viewtype_511_Music_Wall.xml" />
 	<include file="Viewtype_514_Season_Poster.xml" />
 	<include file="Viewtype_603_Episode_2.xml" />
-	<include file="Viewtype_650_Info_List_2.xml" />
+	<include file="Viewtype_650_Info_List.xml" />
+	<include file="Viewtype_651_Info_List_2.xml" />
 	<include file="Variables.xml" />
 
 	<include file="Home_Original.xml" />

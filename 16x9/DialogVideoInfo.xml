@@ -176,6 +176,25 @@
 						</control>
 					</control>
 
+					<!-- <control type="group">
+						<control type="image">
+							<left>20</left>
+							<top>302</top>
+							<width>30</width>
+							<height>60</height>
+							<texture>dialogs/available_left.png</texture>
+							<visible>[StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010) + Control.IsVisible(9000)] | [StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9020) + Control.IsVisible(9010)]]</visible>
+						</control>
+						<control type="image">
+							<left>1870</left>
+							<top>302</top>
+							<width>30</width>
+							<height>60</height>
+							<texture>dialogs/available_right.png</texture>
+							<visible>StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010) + Control.IsVisible(9020)</visible>
+						</control>
+					</control> -->
+
 					<!-- Info -->
 					<control type="group">
 						<control type="group">
