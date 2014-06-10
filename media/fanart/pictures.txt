@@ -1,0 +1,9 @@
+hub_menu_bg
+-----------
+- left/right border   -  0,-30  30x642
+- upper/lower border  -  -30,0  605x10
+- corner              -  8,2    24x20
+
+
+
+corner - 11,2 30x26

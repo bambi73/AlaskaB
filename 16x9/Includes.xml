@@ -43,7 +43,8 @@
 			<include>Dimensions_Fullscreen</include>
 			<fadetime>400</fadetime>
 			<colordiffuse>FanartDiffuse</colordiffuse>
-			<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+			<texture background="true">$VAR[AlaskaB_BackgroundFanart]</texture>
+			<!-- <texture background="true">$INFO[ListItem.Art(fanart)]</texture> -->
 			<include>Animation_FanartFade</include>
 		</control>
 	</include>

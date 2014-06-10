@@ -28,10 +28,10 @@
       <aligny>center</aligny>
       <font>Font_Reg_Caps_36</font>
       <textcolor>MedLight</textcolor>
-      <label>Container.HasFolders</label>
-      <visible>Container.HasFolders</visible>
-    </control>
-    <control type="label">
+      <visible>Control.IsVisible(6588)</visible>
+      <label>AA $INFO[Container(6588).ListItem(0).Art(fanart)] BB</label>
+    </control> -->
+		<!-- <control type="label">
       <left>46</left>
       <top>110</top>
       <width>1900</width>
@@ -52,12 +52,12 @@
       <textcolor>MedLight</textcolor>
       <label>Container.Content(episodes)</label>
       <visible>Container.Content(episodes)</visible>
-    </control>   -->
+    </control>  --> 
 
 		<control type="group">
 			<include>Fanart</include>
-			<!-- <visible>[[!Skin.HasSetting(Disable_Movie_Fanart) + Container.Content(Movies)] | [!Skin.HasSetting(Disable_TV_Fanart) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] | [!Skin.HasSetting(Disable_Music_Fanart) + Container.Content(Music)] | [!Skin.HasSetting(Disable_Addon_Fanart) + Container.Content(Addons)]]</visible> -->
-			<visible>!SubString(Window(home).Property(AlaskaB.VideoNav.ShowHub),true) + [[!Skin.HasSetting(Disable_Movie_Fanart) + Container.Content(Movies)] | [!Skin.HasSetting(Disable_TV_Fanart) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] | [!Skin.HasSetting(Disable_Music_Fanart) + Container.Content(Music)] | [!Skin.HasSetting(Disable_Addon_Fanart) + Container.Content(Addons)]]</visible>
+			<visible>[[!Skin.HasSetting(Disable_Movie_Fanart) + Container.Content(Movies)] | [!Skin.HasSetting(Disable_TV_Fanart) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] | [!Skin.HasSetting(Disable_Music_Fanart) + Container.Content(Music)] | [!Skin.HasSetting(Disable_Addon_Fanart) + Container.Content(Addons)]]</visible>
+			<!-- <visible>!SubString(Window(home).Property(AlaskaB.VideoNav.ShowHub),true) + [[!Skin.HasSetting(Disable_Movie_Fanart) + Container.Content(Movies)] | [!Skin.HasSetting(Disable_TV_Fanart) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] | [!Skin.HasSetting(Disable_Music_Fanart) + Container.Content(Music)] | [!Skin.HasSetting(Disable_Addon_Fanart) + Container.Content(Addons)]]</visible> -->
 		</control>
 
 		<!-- Views -->
@@ -93,17 +93,123 @@
 
 		<control type="group">
 			<left>142</left>
-			<top>250</top>
+			<top>240</top>
 			<visible allowhiddenfocus="true">Control.HasFocus(8000)</visible>
 			<include>Animation_ZoomInZoomOut</include>
 
 			<control type="group">
+				<width>1030</width>
 				<visible>!SubString(ListItem.Icon,Default)</visible>
 				<control type="group">
 					<visible>!Window.IsActive(movieinformation)</visible>
 					<!--include>Animation_PosterInfoSlide</include-->
 					<!-- ??? -->
-					<control type="image">
+
+					<control type="wraplist" id="8001">
+						<posx>3</posx>
+						<posy>3</posy>
+						<width>1024</width>
+						<height>576</height>
+						<!-- <onright>9500</onright> -->
+						<orientation>vertical</orientation>
+						<preloaditems>1</preloaditems>
+						<!-- <autoscroll time="7000">!Control.HasFocus(9501)</autoscroll> -->
+						<autoscroll time="15000">true</autoscroll>
+						<scrolltime tween="cubic">750</scrolltime>
+						<itemlayout width="1024" height="576">
+							<control type="image">
+								<width>1024</width>
+								<height>576</height>
+								<texture background="true" diffuse="fanart/fanart_matte_fo.png">$INFO[ListItem.Art(fanart)]</texture>
+								<aspectratio>scale</aspectratio>
+							</control>
+							<control type="group">
+								<top>493</top>
+								<left>4</left>
+								<width>1022</width>
+								<height>65</height>
+								<control type="image">
+									<texture>fanart/fanart_title_bg.png</texture>
+								</control>
+								<control type="label">
+									<left>30</left>
+									<width>874</width>
+									<height>65</height>
+									<aligny>center</aligny>
+									<font>Font_Cond_56</font>
+									<textcolor>MedLight</textcolor>
+									<label>$VAR[VideoInfo_Fullscreen_Title]</label>
+								</control>
+								<control type="image">
+									<left>932</left>
+									<top>6</top>
+									<width>54</width>
+									<height>53</height>
+									<aspectratio aligny="center">keep</aspectratio>
+									<colordiffuse>MediaFlags</colordiffuse>
+									<texture>fanart/rating_background.png</texture>
+								</control>
+								<control type="label">
+									<left>959</left>
+									<width>80</width>
+									<height>65</height>
+									<align>center</align>
+									<aligny>center</aligny>
+									<label>$VAR[AlaskaB_Rating]</label>
+									<textcolor>MedLight</textcolor>
+									<font>Font_Cond_56</font>
+								</control>
+							</control>							
+						</itemlayout>
+						<focusedlayout width="1024" height="576">
+							<control type="image">
+								<width>1024</width>
+								<height>576</height>
+								<texture background="true" diffuse="fanart/fanart_matte_fo.png">$INFO[ListItem.Art(fanart)]</texture>
+								<aspectratio>scale</aspectratio>
+							</control>
+							<control type="group">
+								<top>493</top>
+								<left>4</left>
+								<width>1022</width>
+								<height>65</height>
+								<control type="image">
+									<texture>fanart/fanart_title_bg.png</texture>
+								</control>
+								<control type="label">
+									<left>30</left>
+									<width>874</width>
+									<height>65</height>
+									<aligny>center</aligny>
+									<font>Font_Cond_56</font>
+									<textcolor>MedLight</textcolor>
+									<label>$VAR[VideoInfo_Fullscreen_Title]</label>
+								</control>
+								<control type="image">
+									<left>932</left>
+									<top>6</top>
+									<width>54</width>
+									<height>53</height>
+									<aspectratio aligny="center">keep</aspectratio>
+									<colordiffuse>MediaFlags</colordiffuse>
+									<texture>fanart/rating_background.png</texture>
+								</control>
+								<control type="label">
+									<left>959</left>
+									<width>80</width>
+									<height>65</height>
+									<align>center</align>
+									<aligny>center</aligny>
+									<label>$VAR[AlaskaB_Rating]</label>
+									<textcolor>MedLight</textcolor>
+									<font>Font_Cond_56</font>
+								</control>
+							</control>							
+						</focusedlayout>
+						<content target="video">special://skin/extras/playlists/RandomEpisodes.xsp</content>
+					</control>
+
+					<!-- <control type="image">
 						<left>3</left>
 						<top>3</top>
 						<width>1024</width>
@@ -112,13 +218,16 @@
 						<colordiffuse>FanartDiffuseLight</colordiffuse>
 						<texture background="true" diffuse="fanart/fanart_matte_fo.png">$INFO[ListItem.Art(fanart)]</texture>
 						<aspectratio scalediffuse="false">stretch</aspectratio>
-					</control>
-					<control type="image">
+					</control> -->
+
+
+
+					<!-- 					<control type="image">
 						<top>493</top>
 						<left>4</left>
 						<width>1022</width>
 						<height>65</height>
-						<texture>dialogs/video_info_title_bg.png</texture>
+						<texture>fanart/fanart_title_bg.png</texture>
 					</control>
 					<control type="label">
 						<top>498</top>
@@ -129,6 +238,45 @@
 						<textcolor>MedLight</textcolor>
 						<label>$VAR[VideoInfo_Fullscreen_Title]</label>
 					</control>
+ -->
+					<!-- <control type="group">
+						<top>498</top>
+						<right>20</right>
+						<width>84</width>
+						<height>56</height>
+						<control type="group">
+							<visible>!IsEmpty(ListItem.Rating)</visible>
+							<control type="image">
+								<top>-8</top>
+								<left>-10</left>
+								<width>109</width>
+								<height>74</height>
+								<aspectratio aligny="center">keep</aspectratio>
+								<colordiffuse>MediaFlags</colordiffuse>
+								<texture>flags/rating.png</texture>
+							</control>
+							<control type="label">
+								<width>84</width>
+								<height>56</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>$INFO[ListItem.Rating]</label>
+								<textcolor>MedLight</textcolor>
+								<font>Font_Cond_56</font>
+							</control>
+						</control>
+						<control type="group">
+							<visible>IsEmpty(ListItem.Rating)</visible>
+							<control type="image">
+								<width>134</width>
+								<height>91</height>
+								<aspectratio aligny="center">keep</aspectratio>
+								<colordiffuse>MedLight</colordiffuse>
+								<texture>flags/defaultrating.png</texture>
+							</control>
+						</control>
+					</control> -->
+
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
@@ -145,15 +293,15 @@
 
 				<control type="image">
 					<left>0</left>
-					<top>-2</top>
+					<top>1</top>
 					<width>545</width>
-					<height>586</height>
+					<height>582</height>
 					<texture>fanart/hub_menu_bg.png</texture>
 				</control>
 
 				<control type="fixedlist" id="8000">
 					<left>30</left>
-					<top>16</top>
+					<top>18</top>
 					<width>485</width>
 					<height>546</height>
 					<onright>ClearProperty(AlaskaB.VideoNav.ShowHub,home)</onright>
@@ -164,7 +312,7 @@
 					<scrolltime>150</scrolltime>
 					<focusposition>3</focusposition>
 					<orientation>vertical</orientation>
-					<itemlayout width="485" height="76">
+					<itemlayout width="485" height="75">
 						<control type="image">
 							<left>4</left>
 							<top>1</top>
@@ -184,17 +332,17 @@
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout width="485" height="90">
+					<focusedlayout width="485" height="93">
 						<control type="image">
 							<left>4</left>
-							<top>8</top>
+							<top>9</top>
 							<width>80</width>
 							<height>80</height>
 							<texture colordiffuse="Heavy">$INFO[ListItem.Icon]</texture>
 						</control>
 						<control type="label">
 							<left>96</left>
-							<top>21</top>
+							<top>22</top>
 							<width>374</width>
 							<height>53</height>
 							<align>left</align>

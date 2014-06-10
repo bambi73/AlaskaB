@@ -524,4 +524,22 @@
 		<value>Alaska Original</value>
 	</variable>	
 	
+	<variable name="AlaskaB_BackgroundFanart">
+		<value condition="SubString(Window(home).Property(AlaskaB.VideoNav.ShowHub),true) + !IsEmpty(Container(8001).ListItem(0).Art(fanart))">$INFO[Container(8001).ListItem(0).Art(fanart)]</value>
+		<value condition="!SubString(Window(home).Property(AlaskaB.VideoNav.ShowHub),true)">$INFO[ListItem.Art(fanart)]</value>
+	</variable>
+
+	<variable name="AlaskaB_BackgroundFanart_Bak">
+		<value condition="!IsEmpty(Window(Home).Property(AlaskaB.BackgroundFanart))">$INFO[Window(Home).Property(AlaskaB.BackgroundFanart)]</value>
+		<value>$INFO[ListItem.Art(fanart)]</value>
+	</variable>
+
+	<variable name="AlaskaB_Rating">
+		<value condition="!IsEmpty(ListItem.Rating)">$INFO[ListItem.Rating]</value>
+		<value>?</value>
+	</variable>
+
+	
+	
+	
 </includes>

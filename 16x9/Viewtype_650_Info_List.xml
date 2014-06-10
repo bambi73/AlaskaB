@@ -38,15 +38,15 @@
 
 				<control type="image">
 					<left>820</left>
-					<top>164</top>
+					<top>175</top>
 					<width>1050</width>
-					<height>724</height>
+					<height>720</height>
 					<texture>fanart/list_bg.png</texture>
 				</control>
 				
 				<control type="fixedlist" id="650">
 					<left>874</left>
-					<top>207</top>
+					<top>213</top>
 					<height>648</height>
 					<width>942</width>
 					<onup>650</onup>
@@ -58,7 +58,7 @@
 					<viewtype label="Info List">list</viewtype>
 					<scrolltime>0</scrolltime>
 					<visible>[Container.Content(movies) + SubString(Container.FolderPath,videodb://movies/)] | [[Container.Content(tvshows) | Container.Content(seasons)] + [SubString(Container.FolderPath,videodb://tvshows/) | SubString(Container.FolderPath,special://skin/extras/playlists/)]]</visible>
-					<itemlayout width="942" height="82">
+					<itemlayout width="942" height="83">
 						<control type="group">
 							<control type="label">
 								<height>42</height>
@@ -75,7 +75,7 @@
 							</control>
 						</control>
 					</itemlayout>
-					<focusedlayout width="942" height="157">
+					<focusedlayout width="942" height="158">
 						<control type="group">
 							<top>16</top>
 							<control type="fadelabel">
@@ -109,8 +109,8 @@
 				</control>
 
 				<control type="group">
-					<left>300</left>
-					<top>140</top>
+					<left>277</left>
+					<top>149</top>
 					<visible>!SubString(ListItem.Icon,Default)</visible>
 					<control type="group">
 						<visible>!Window.IsActive(movieinformation)</visible>
