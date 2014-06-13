@@ -41,7 +41,7 @@
 					<top>175</top>
 					<width>1050</width>
 					<height>720</height>
-					<texture>fanart/list_bg.png</texture>
+					<texture>hub/list_bg.png</texture>
 				</control>
 				
 				<control type="fixedlist" id="650">
