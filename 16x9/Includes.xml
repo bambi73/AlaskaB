@@ -917,15 +917,15 @@
 		</control>
 		<control type="group">
 			<top>493</top>
-			<left>4</left>
+			<left>2</left>
 			<width>1022</width>
 			<height>65</height>
 			<control type="image">
 				<texture>hub/video/fanart_title_bg.png</texture>
 			</control>
 			<control type="label">
-				<left>30</left>
-				<width>874</width>
+				<left>34</left>
+				<width>870</width>
 				<height>65</height>
 				<aligny>center</aligny>
 				<font>Font_Cond_56</font>
@@ -933,13 +933,13 @@
 				<label>$VAR[AlaskaB_VideoNav_HubTitle]</label>
 			</control>
 			<control type="image">
-				<left>932</left>
+				<left>934</left>
 				<top>6</top>
 				<width>54</width>
 				<height>53</height>
 				<aspectratio aligny="center">keep</aspectratio>
 				<colordiffuse>MediaFlags</colordiffuse>
-				<texture>hub/video/rating_background.png</texture>
+				<texture>hub/rating_background.png</texture>
 			</control>
 			<control type="label">
 				<left>959</left>
