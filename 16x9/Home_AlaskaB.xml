@@ -891,8 +891,9 @@
 						<label>Anime</label>
 		
 						<onup>SetProperty(AlaskaB.HeadingLabel,Anime,home)</onup>
-						<onup>SetProperty(AlaskaB.VideoNav.ShowHub,true,home)</onup>
-						<onup>ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)</onup>
+						<!-- <onup>SetProperty(AlaskaB.VideoNav.ShowHub,true,home)</onup> -->
+						<onup>ActivateWindow(54,return)</onup>
+						<!-- <onup>ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)</onup> -->
 						<onup>noop</onup>
 
 						<ondown>noop</ondown>

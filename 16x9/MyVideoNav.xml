@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="6">
-	<include condition="!SubString(Window(home).Property(AlaskaB.VideoNav.ShowHub),true)">VideoNav_DefaultControl_500</include>
-	<include condition="SubString(Window(home).Property(AlaskaB.VideoNav.ShowHub),true)">VideoNav_DefaultControl_8000</include>
-
 	<backgroundcolor>0</backgroundcolor>
-	<!-- <defaultcontrol always="true">8000</defaultcontrol> -->
+	<defaultcontrol always="true">500</defaultcontrol>
 	<views>503,501,502,514,504,508,500,603,650,651</views>
 
 	<!-- <onload condition="System.HasAddon(script.tv.show.next.aired) + Container.Content(tvshows)">RunScript(script.tv.show.next.aired,backend=True)</onload> -->
 	<onunload>ClearProperty(AlaskaB.Overlay.MediaFlags.Hide,home)</onunload>
 	<onunload>ClearProperty(AlaskaB.Overlay.NowPlaying.Hide,home)</onunload>
 	<!--onunload>ClearProperty(AlaskaB.HeadingLabel,home)</onunload-->
-	<onunload>ClearProperty(AlaskaB.VideoNav.ShowHub,home)</onunload>
 
 	<!--onunload condition="!IsEmpty(Window(movieinformation).Property(IsSeason)">ClearProperty(IsSeason,movieinformation)</onunload>
   <onunload condition="!IsEmpty(Window(movieinformation).Property(IsSpecial)">ClearProperty(IsSpecial,movieinformation)</onunload-->
@@ -58,7 +54,6 @@
 		<control type="group">
 			<include>Fanart</include>
 			<visible>[[!Skin.HasSetting(Disable_Movie_Fanart) + Container.Content(Movies)] | [!Skin.HasSetting(Disable_TV_Fanart) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] | [!Skin.HasSetting(Disable_Music_Fanart) + Container.Content(Music)] | [!Skin.HasSetting(Disable_Addon_Fanart) + Container.Content(Addons)]]</visible>
-			<!-- <visible>!SubString(Window(home).Property(AlaskaB.VideoNav.ShowHub),true) + [[!Skin.HasSetting(Disable_Movie_Fanart) + Container.Content(Movies)] | [!Skin.HasSetting(Disable_TV_Fanart) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] | [!Skin.HasSetting(Disable_Music_Fanart) + Container.Content(Music)] | [!Skin.HasSetting(Disable_Addon_Fanart) + Container.Content(Addons)]]</visible> -->
 		</control>
 
 		<!-- Views -->
@@ -75,239 +70,6 @@
 			<include>Viewtype_603_Episode_2</include>
 			<include>Viewtype_650_Info_List</include>
 			<include>Viewtype_651_Info_List_2</include>
-		</control>
-
-		<!-- Heading -->
-
-		<!--control type="group">
-      <left>46</left>
-      <include>Animation_SlideDownFadeOut</include>
-      <control type="label">
-        <label>$VAR[Global_HeadingLabels]</label>
-        <include>Global_HeadingSectionVars</include>
-      </control>
-      <control type="label">
-        <label>$VAR[Global_HeadingDetails]</label>
-        <include>Global_HeadingDetailVars</include>
-      </control>
-    </control-->
-
-		<control type="group">
-			<left>142</left>
-			<top>240</top>
-			<visible allowhiddenfocus="true">Control.HasFocus(8000) | Control.HasFocus(8001)</visible>
-			<include>Animation_ZoomInZoomOut</include>
-
-			<control type="group">
-				<width>1030</width>
-				<visible>!SubString(ListItem.Icon,Default)</visible>
-				<control type="group">
-					<visible>!Window.IsActive(movieinformation)</visible>
-					<!--include>Animation_PosterInfoSlide</include-->
-					<!-- ??? -->
-
-					<control type="wraplist" id="8001">
-						<posx>3</posx>
-						<posy>3</posy>
-						<width>1024</width>
-						<height>576</height>
-						<onright>8000</onright>
-						<orientation>vertical</orientation>
-						<preloaditems>1</preloaditems>
-						<autoscroll time="7000">!Control.HasFocus(8001)</autoscroll>
-						<!-- <autoscroll time="15000">true</autoscroll> -->
-						<scrolltime tween="cubic">750</scrolltime>
-						<itemlayout width="1024" height="576">
-							<include>AlaskaB_VideoNav_HubListLayout</include>
-						</itemlayout>
-						<focusedlayout width="1024" height="576">
-							<include>AlaskaB_VideoNav_HubListLayout</include>
-						</focusedlayout>
-						<!-- <content target="video">special://skin/extras/playlists/RandomEpisodes.xsp</content> -->
-						<content target="video">special://skin/extras/playlists/RandomTVShows.xsp</content>
-						<!-- <content target="video">special://skin/extras/playlists/RandomMovies.xsp</content> -->
-					</control>
-
-					<control type="image">
-						<left>0</left>
-						<top>0</top>
-						<width>1030</width>
-						<height>582</height>
-						<texture>hub/video/fanart_frame_fo.png</texture>
-						<visible>Control.HasFocus(8001)</visible>
-					</control>
-					<control type="image">
-						<left>0</left>
-						<top>0</top>
-						<width>1030</width>
-						<height>582</height>
-						<texture>hub/video/fanart_frame_nf.png</texture>
-						<visible>!Control.HasFocus(8001)</visible>
-					</control>
-				</control>
-			</control>					
-
-			<control type="group">
-				<left>1090</left>
-				<top>1</top>
-
-				<control type="image">
-					<left>0</left>
-					<top>1</top>
-					<width>545</width>
-					<height>582</height>
-					<texture>hub/hub_menu_bg.png</texture>
-				</control>
-
-				<control type="fixedlist" id="8000">
-					<left>30</left>
-					<top>18</top>
-					<width>485</width>
-					<height>546</height>
-					<onright>ClearProperty(AlaskaB.VideoNav.ShowHub,home)</onright>
-					<onright>500</onright>
-					<onleft>8001</onleft>
-					<onup>8000</onup>
-					<ondown>8000</ondown>
-					<scrolltime>150</scrolltime>
-					<focusposition>3</focusposition>
-					<orientation>vertical</orientation>
-					<itemlayout width="485" height="75">
-						<control type="image">
-							<left>4</left>
-							<top>1</top>
-							<width>80</width>
-							<height>80</height>
-							<texture colordiffuse="MedLight">$INFO[ListItem.Icon]</texture>
-						</control>
-						<control type="label">
-							<left>96</left>
-							<top>18</top>
-							<width>374</width>
-							<height>44</height>
-							<align>left</align>
-							<aligny>center</aligny>
-							<textcolor>Light</textcolor>
-							<font>Font_Black_Caps_44</font>
-							<label>$INFO[ListItem.Label]</label>
-						</control>
-					</itemlayout>
-					<focusedlayout width="485" height="93">
-						<control type="group">
-							<visible>Control.HasFocus(8000)</visible>
-							<control type="image">
-								<left>4</left>
-								<top>9</top>
-								<width>80</width>
-								<height>80</height>
-								<texture colordiffuse="Heavy">$INFO[ListItem.Icon]</texture>
-							</control>
-							<control type="label">
-								<left>96</left>
-								<top>22</top>
-								<width>374</width>
-								<height>53</height>
-								<align>left</align>
-								<aligny>center</aligny>
-								<textcolor>Heavy</textcolor>
-								<font>Font_Black_Caps_44</font>
-								<label>$INFO[ListItem.Label]</label>
-							</control>
-						</control>
-						<control type="group">
-							<visible>!Control.HasFocus(8000)</visible>
-							<control type="image">
-								<left>4</left>
-								<top>9</top>
-								<width>80</width>
-								<height>80</height>
-								<texture colordiffuse="Light">$INFO[ListItem.Icon]</texture>
-							</control>
-							<control type="label">
-								<left>96</left>
-								<top>22</top>
-								<width>374</width>
-								<height>53</height>
-								<align>left</align>
-								<aligny>center</aligny>
-								<textcolor>Light</textcolor>
-								<font>Font_Black_Caps_44</font>
-								<label>$INFO[ListItem.Label]</label>
-							</control>
-						</control>
-					</focusedlayout>
-					<content>
-						<item id="1">
-							<!-- <label>31109</label> -->
-							<label>Recenty added</label>
-							<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
-							<icon>hub/icons/recently_added.png</icon>
-							<property name="Color">1</property>
-						</item>
-						<item id="2">
-							<!-- <label>31109</label> -->
-							<label>Recenty updated</label>
-							<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
-							<icon>hub/icons/recently_added.png</icon>
-							<property name="Color">1</property>
-						</item>
-						<item id="3">
-							<label>136</label>
-							<onclick>ActivateWindow(videos,special://videoplaylists/,return)</onclick>
-							<icon>hub/icons/playlists.png</icon>
-							<property name="Color">1</property>
-						</item>
-						<item id="10">
-							<!-- <label>31157</label> -->
-							<label>All Anime</label>
-							<onclick>ActivateWindow(Videos,TvShowTitles,return)</onclick>
-							<icon>hub/icons/titles.png</icon>
-							<property name="Color">1</property>
-						</item>
-						<item id="11">
-							<label>135</label>
-							<onclick>ActivateWindow(Videos,TvShowGenres,return)</onclick>
-							<icon>hub/icons/genres.png</icon>
-							<property name="Color">1</property>
-						</item>
-						<item id="12">
-							<label>20388</label>
-							<onclick>ActivateWindow(Videos,TvShowStudios,return)</onclick>
-							<icon>hub/icons/studios.png</icon>
-							<property name="Color">1</property>
-						</item>
-						<item id="13">
-							<label>344</label>
-							<onclick>ActivateWindow(Videos,TvShowActors,return)</onclick>
-							<icon>hub/icons/actors.png</icon>
-							<property name="Color">1</property>
-						</item>
-						<item id="14">
-							<label>652</label>
-							<onclick>ActivateWindow(Videos,TvShowYears,return)</onclick>
-							<icon>hub/icons/years.png</icon>
-							<property name="Color">1</property>
-						</item>
-						<item id="20">
-							<label>1214</label>
-							<onclick>ActivateWindow(Videos,Files,return)</onclick>
-							<icon>hub/icons/files.png</icon>
-							<property name="Color">1</property>
-						</item>
-						<!-- <item id="2">
-							<label>Search</label>
-							<icon>special://skin/media/fanart/x/png/128x128/search.png</icon>
-							<property name="Color">1</property>
-						</item> -->
-						<item id="21">
-							<label>653</label>
-							<onclick>UpdateLibrary(video)</onclick>
-							<icon>hub/icons/library_update.png</icon>
-							<property name="Color">1</property>
-						</item>
-					</content>
-				</control>
-			</control>
 		</control>
 
 		<!-- Hidden buttons for Menu -->

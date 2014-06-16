@@ -1,0 +1,219 @@
+<includes>
+	<include name="AlaskaB_Overlay_Heading">
+		<control type="group">
+			<visible>!SubString(Window(home).Property(AlaskaB.Overlay.Hide),true)</visible>
+			<animation effect="fade" start="0" end="100" time="200">VisibleChange</animation>
+			<control type="group">
+				<top>36</top>
+				<left>46</left>
+				<animation type="Visible" reversible="false">
+					<effect type="slide" start="0,-100" end="0,0" time="400" tween="cubic" easing="out" />
+					<effect type="fade" start="0" end="100" time="400" tween="cubic" easing="out" />
+				</animation>
+				<animation type="Hidden">
+					<effect type="fade" start="100" end="0" time="200"/>
+				</animation>
+				<control type="group">
+					<visible>![Window.IsActive(extendedprogressdialog) | Window.IsActive(infodialog) | Window.IsActive(busydialog) | Window.IsActive(volumebar) | Window.IsActive(mutebug) | Window.IsActive(karaokeselector)]</visible>
+					<control type="label">
+						<width>1428</width>
+						<height>60</height>
+						<font>Font_Black_Caps_60</font>
+						<textcolor>Light</textcolor>
+						<label>$VAR[Global_HeadingLabels]</label>
+					</control>
+					<control type="label">
+						<top>54</top>
+						<width>1428</width>
+						<height>36</height>
+						<haspath>true</haspath>
+						<font>Font_Light_Caps_36</font>
+						<textcolor>Light</textcolor>
+						<label>$VAR[Global_HeadingDetails]</label>
+					</control>
+				</control>
+				<control type="group">
+					<visible>Window.IsActive(extendedprogressdialog) | Window.IsActive(infodialog) | Window.IsActive(busydialog) | Window.IsActive(volumebar) | Window.IsActive(mutebug) | Window.IsActive(karaokeselector)</visible>
+					<control type="label">
+						<width>1120</width>
+						<height>60</height>
+						<font>Font_Black_Caps_60</font>
+						<textcolor>Light</textcolor>
+						<label>$VAR[Global_HeadingLabels]</label>
+					</control>
+					<control type="label">
+						<top>54</top>
+						<width>1120</width>
+						<height>36</height>
+						<haspath>true</haspath>
+						<font>Font_Light_Caps_36</font>
+						<textcolor>Light</textcolor>
+						<label>$VAR[Global_HeadingDetails]</label>
+					</control>
+				</control>
+			</control>
+		</control>
+	</include>
+
+	<include name="Menu_Attributes">
+		<left>-330</left>
+		<top>432</top>
+		<width>2580</width>
+		<height>104</height>
+		<viewtype>list</viewtype>
+		<focusposition>3</focusposition>
+		<orientation>horizontal</orientation>
+		<defaultcontrol always="true">1</defaultcontrol>
+		<scrolltime tween="sine" easing="out">320</scrolltime>
+	</include>
+
+	<include name="Menu_ItemLayout">
+		<itemlayout width="330" height="104">
+			<control type="group">
+				<top>18</top>
+				<left>165</left>
+				<width>300</width>
+				<control type="label">
+					<height>32</height>
+					<align>center</align>
+					<info>ListItem.Label</info>
+					<font>Font_Light_Caps_32</font>
+					<textcolor>Light</textcolor>
+				</control>
+				<control type="label">
+					<top>26</top>
+					<height>44</height>
+					<align>center</align>
+					<info>ListItem.Label2</info>
+					<font>Font_Black_Caps_44</font>
+					<textcolor>Light</textcolor>
+				</control>
+			</control>
+		</itemlayout>
+	</include>
+
+	<include name="Menu_FocusedLayout">
+		<focusedlayout width="600" height="104">
+			<control type="group">
+				<left>300</left>
+				<width>570</width>
+				<animation type="Focus" reversible="false">
+					<effect type="zoom" center="300,52" start="60" end="100" time="200" tween="cubic" easing="out" />
+					<effect type="fade" start="40" end="100" time="200" />
+				</animation>
+				<control type="label">
+					<height>44</height>
+					<align>center</align>
+					<info>ListItem.Label</info>
+					<font>Font_Light_Caps_44</font>
+					<textcolor>MedLight</textcolor>
+				</control>
+				<control type="label">
+					<top>34</top>
+					<height>76</height>
+					<align>center</align>
+					<info>ListItem.Label2</info>
+					<font>Font_Black_Caps_76</font>
+					<scroll>true</scroll>
+					<scrollspeed>30</scrollspeed>
+					<textcolor>MedLight</textcolor>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+
+	<!-- DialogVideoInfo -->
+	<include name="VideoInfo_OtherInfo_LabelBlock">
+		<aligny>center</aligny>
+		<textcolor>MedLight</textcolor>
+		<font>Font_Reg_Caps_38</font>
+	</include>
+
+	<include name="VideoInfo_OtherInfo_LabelBlock_Widest">
+		<width>auto</width>
+		<aligny>center</aligny>
+		<textcolor>MedLight</textcolor>
+		<font>Font_Reg_Caps_38</font>
+	</include>
+
+	<include name="VideoInfo_OtherInfo_DelimiterBlock">
+		<align>center</align>
+		<aligny>center</aligny>
+		<textcolor>MedLight</textcolor>
+		<font>Font_Reg_Caps_38</font>
+		<label>•</label>
+	</include>
+
+	<include name="VideoInfo_OtherInfo_ValueBlock">
+		<aligny>center</aligny>
+		<textcolor>MedLight</textcolor>
+		<font>Font_Reg_38</font>
+	</include>
+
+	<!-- Viewtype -->
+	<include name="ViewTypeButton_FillHeadingCategory">
+		<control type="button">
+			<include>HiddenControl</include>
+			<visible>!Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + !Container.Content(musicvideos)</visible>
+			<onfocus condition="SubString(Window(home).Property(AlaskaB.IsHeadingCategorySelection),true) + ![SubString(ListItem.Label,$LOCALIZE[20386]) | SubString(ListItem.Label,$LOCALIZE[20387]) | SubString(ListItem.Label,$LOCALIZE[20390]) | SubString(ListItem.Label,$LOCALIZE[626])]">SetProperty(AlaskaB.HeadingCategory,$INFO[ListItem.Label],home)</onfocus>
+			<onfocus condition="SubString(Window(home).Property(AlaskaB.IsHeadingCategorySelection),true) + [SubString(ListItem.Label,$LOCALIZE[20386]) | SubString(ListItem.Label,$LOCALIZE[20387]) | SubString(ListItem.Label,$LOCALIZE[20390])]">SetProperty(AlaskaB.HeadingCategory,Recently added,home)</onfocus>
+			<onfocus condition="SubString(Window(home).Property(AlaskaB.IsHeadingCategorySelection),true) + SubString(ListItem.Label,$LOCALIZE[626])">SetProperty(AlaskaB.HeadingCategory,$LOCALIZE[575],home)</onfocus>
+		</control>
+	</include>
+
+	<!-- <include name="ViewTypeButton_FillHeadingCategory">
+		<control type="button">
+			<include>HiddenControl</include>
+			<visible>!Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + !Container.Content(musicvideos)</visible>
+			<onfocus condition="SubString(Window(home).Property(AlaskaB.IsHeadingCategorySelection),true) | SubString(Container.FolderPath,videodb://movies/genres/) | SubString(Container.FolderPath,videodb://movies/years/) | SubString(Container.FolderPath,videodb://movies/actors/) | SubString(Container.FolderPath,videodb://movies/directors/) | SubString(Container.FolderPath,videodb://movies/studios/) | SubString(Container.FolderPath,videodb://movies/countries/) | SubString(Container.FolderPath,videodb://movies/tags/) | SubString(Container.FolderPath,videodb://tvshows/genres/) | SubString(Container.FolderPath,videodb://tvshows/years/) | SubString(Container.FolderPath,videodb://tvshows/actors/) | SubString(Container.FolderPath,videodb://tvshows/studios/) | SubString(Container.FolderPath,videodb://tvshows/tags/) | SubString(Container.FolderPath,videodb://musicvideos/genres/) | SubString(Container.FolderPath,videodb://musicvideos/years/) | SubString(Container.FolderPath,videodb://musicvideos/artists/) | SubString(Container.FolderPath,videodb://musicvideos/albums/) | SubString(Container.FolderPath,videodb://musicvideos/directors/) | SubString(Container.FolderPath,videodb://musicvideos/studios/) | SubString(Container.FolderPath,videodb://musicvideos/tags/)">SetProperty(AlaskaB.HeadingCategory,$INFO[ListItem.Label],home)</onfocus>
+			<onfocus condition="![SubString(Window(home).Property(AlaskaB.IsHeadingCategorySelection),true) | SubString(Container.FolderPath,videodb://movies/genres/) | SubString(Container.FolderPath,videodb://movies/years/) | SubString(Container.FolderPath,videodb://movies/actors/) | SubString(Container.FolderPath,videodb://movies/directors/) | SubString(Container.FolderPath,videodb://movies/studios/) | SubString(Container.FolderPath,videodb://movies/countries/) | SubString(Container.FolderPath,videodb://movies/tags/) | SubString(Container.FolderPath,videodb://tvshows/genres/) | SubString(Container.FolderPath,videodb://tvshows/years/) | SubString(Container.FolderPath,videodb://tvshows/actors/) | SubString(Container.FolderPath,videodb://tvshows/studios/) | SubString(Container.FolderPath,videodb://tvshows/tags/) | SubString(Container.FolderPath,videodb://musicvideos/genres/) | SubString(Container.FolderPath,videodb://musicvideos/years/) | SubString(Container.FolderPath,videodb://musicvideos/artists/) | SubString(Container.FolderPath,videodb://musicvideos/albums/) | SubString(Container.FolderPath,videodb://musicvideos/directors/) | SubString(Container.FolderPath,videodb://musicvideos/studios/) | SubString(Container.FolderPath,videodb://musicvideos/tags/)]">ClearProperty(AlaskaB.HeadingCategory,home)</onfocus>
+		</control>
+	</include> -->
+
+	<include name="AlaskaB_VideoHub_Layout">
+		<control type="image">
+			<width>1024</width>
+			<height>576</height>
+			<texture background="true" diffuse="hub/video/fanart_matte.png">$VAR[AlaskaB_VideoHub_Fanart]</texture>
+			<aspectratio>scale</aspectratio>
+		</control>
+		<control type="group">
+			<top>493</top>
+			<left>2</left>
+			<width>1022</width>
+			<height>65</height>
+			<control type="image">
+				<texture>hub/video/fanart_title_bg.png</texture>
+			</control>
+			<control type="label">
+				<left>34</left>
+				<width>870</width>
+				<height>65</height>
+				<aligny>center</aligny>
+				<font>Font_Cond_56</font>
+				<textcolor>MedLight</textcolor>
+				<label>$VAR[AlaskaB_VideoNav_HubTitle]</label>
+			</control>
+			<control type="image">
+				<left>934</left>
+				<top>6</top>
+				<width>54</width>
+				<height>53</height>
+				<aspectratio aligny="center">keep</aspectratio>
+				<colordiffuse>MediaFlags</colordiffuse>
+				<texture>hub/rating_background.png</texture>
+			</control>
+			<control type="label">
+				<left>959</left>
+				<width>80</width>
+				<height>65</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$VAR[AlaskaB_VideoNav_HubRating]</label>
+				<textcolor>MedLight</textcolor>
+				<font>Font_Cond_56</font>
+			</control>
+		</control>
+	</include>
+
+</includes>
