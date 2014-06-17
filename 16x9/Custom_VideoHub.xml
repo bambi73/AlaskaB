@@ -13,7 +13,7 @@
 		<include>AlaskaB_Overlay_Heading</include>
 
 
-		<control type="label">
+		<!-- <control type="label">
       <left>46</left>
       <top>110</top>
       <width>1900</width>
@@ -45,9 +45,9 @@
       <textcolor>MedLight</textcolor>
       <visible>Container(8015).HasFocus(2)</visible>
       <label>Container 8015: Focus 2</label>
-    </control>
+    </control> -->
 		
-		<control type="label">
+		<!-- <control type="label">
       <left>46</left>
       <top>150</top>
       <width>1900</width>
@@ -79,7 +79,7 @@
       <textcolor>MedLight</textcolor>
       <visible>Container(8016).HasFocus(2)</visible>
       <label>Container 8016: Focus 2</label>
-    </control>
+    </control> -->
 		
     <!-- <control type="label">
       <left>46</left>
@@ -136,8 +136,8 @@
 						<posy>3</posy>
 						<width>1024</width>
 						<height>576</height>
-						<onleft>SetProperty(AlaskaB.VideoHub.ActiveWidget,8010,54)</onleft>
-						<onleft>8010</onleft>
+						<onleft>SetProperty(AlaskaB.VideoHub.ActiveWidget,8025,54)</onleft>
+						<onleft>8026</onleft>
 						<onright>8000</onright>
 						<orientation>vertical</orientation>
 						<preloaditems>1</preloaditems>
@@ -155,6 +155,29 @@
 						<!-- <content target="video">special://skin/extras/playlists/RandomEpisodes.xsp</content> -->
 						<!-- <content target="video">special://skin/extras/playlists/RandomTVShows.xsp</content> -->
 						<!-- <content target="video">special://skin/extras/playlists/RandomMovies.xsp</content> -->
+					</control>
+
+					<control type="wraplist" id="8030">
+						<posx>3</posx>
+						<posy>3</posy>
+						<width>1024</width>
+						<height>576</height>
+						<onleft>SetProperty(AlaskaB.VideoHub.ActiveWidget,8035,54)</onleft>
+						<onleft>8036</onleft>
+						<onright>8000</onright>
+						<orientation>vertical</orientation>
+						<preloaditems>1</preloaditems>
+						<autoscroll time="7000">!Control.HasFocus(8030)</autoscroll>
+						<!-- <autoscroll time="15000">true</autoscroll> -->
+						<scrolltime tween="cubic">750</scrolltime>
+						<visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8030)</visible>
+						<itemlayout width="1024" height="576">
+							<include>AlaskaB_VideoHub_Layout</include>
+						</itemlayout>
+						<focusedlayout width="1024" height="576">
+							<include>AlaskaB_VideoHub_Layout</include>
+						</focusedlayout>
+						<content target="video">special://skin/extras/playlists/RandomAnime.xsp</content>
 					</control>
 
 					<control type="wraplist" id="8015">
@@ -234,13 +257,167 @@
 						</content>
 					</control>
 
+					<control type="wraplist" id="8025">
+						<posx>3</posx>
+						<posy>3</posy>
+						<width>1024</width>
+						<height>576</height>
+						<orientation>horizontal</orientation>
+						<scrolltime tween="cubic">750</scrolltime>
+						<visible>SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8025)</visible>
+						<itemlayout width="1024" height="576">
+							<include>AlaskaB_VideoHub_Layout</include>
+						</itemlayout>
+						<focusedlayout width="1024" height="576">
+							<include>AlaskaB_VideoHub_Layout</include>
+						</focusedlayout>
+						<content>
+							<item id="1">
+								<onclick>noop</onclick>
+								<visible>Container(8025).HasFocus(1)</visible>
+								<label>$INFO[Container(8030).ListItem(0).Label]</label>
+								<property name="Rating">$INFO[Container(8030).ListItem(0).Rating]</property>
+								<property name="Fanart">$INFO[Container(8030).ListItem(0).Art(fanart)]</property>
+							</item>
+							<item id="1">
+								<onclick>noop</onclick>
+								<visible>!Container(8025).HasFocus(1)</visible>
+								<label>$INFO[Container(8020).ListItem(0).Label]</label>
+								<property name="Rating">$INFO[Container(8020).ListItem(0).Rating]</property>
+								<property name="Fanart">$INFO[Container(8020).ListItem(0).Art(fanart)]</property>
+							</item>
+							<item id="2">
+								<onclick>noop</onclick>
+								<visible>Container(8025).HasFocus(1)</visible>
+								<label>$INFO[Container(8020).ListItem(0).Label]</label>
+								<property name="Rating">$INFO[Container(8020).ListItem(0).Rating]</property>
+								<property name="Fanart">$INFO[Container(8020).ListItem(0).Art(fanart)]</property>
+							</item>
+							<item id="2">
+								<onclick>noop</onclick>
+								<visible>!Container(8025).HasFocus(1)</visible>
+								<label>$INFO[Container(8030).ListItem(0).Label]</label>
+								<property name="Rating">$INFO[Container(8030).ListItem(0).Rating]</property>
+								<property name="Fanart">$INFO[Container(8030).ListItem(0).Art(fanart)]</property>
+							</item>
+						</content>
+					</control>
+					
+					<control type="fixedlist" id="8026">
+						<posx>3</posx>
+						<posy>3</posy>
+						<width>1024</width>
+						<height>576</height>
+						<orientation>horizontal</orientation>
+						<preloaditems>1</preloaditems>
+						<focusposition>2</focusposition>
+						<autoscroll time="750">true</autoscroll>
+						<scrolltime>0</scrolltime>
+						<visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8025)</visible>
+						<itemlayout width="1024" height="576">
+						</itemlayout>
+						<focusedlayout width="1024" height="576">
+							<control type="button">
+								<include>HiddenControl</include>
+								<onfocus condition="Container(8026).HasFocus(2)">Control.Move(8025,-1)</onfocus>
+								<onfocus condition="Container(8026).HasFocus(1)">SetProperty(AlaskaB.VideoHub.ActiveWidget,8030,54)</onfocus>
+								<onfocus condition="Container(8026).HasFocus(1)">SetFocus(8030)</onfocus>
+							</control>
+						</focusedlayout>
+						<content>
+							<item id="1">
+								<onclick>noop</onclick>
+							</item>
+							<item id="2">
+								<onclick>noop</onclick>
+							</item>
+						</content>
+					</control>
+
+					<control type="wraplist" id="8035">
+						<posx>3</posx>
+						<posy>3</posy>
+						<width>1024</width>
+						<height>576</height>
+						<orientation>horizontal</orientation>
+						<scrolltime tween="cubic">750</scrolltime>
+						<visible>SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8035)</visible>
+						<itemlayout width="1024" height="576">
+							<include>AlaskaB_VideoHub_Layout</include>
+						</itemlayout>
+						<focusedlayout width="1024" height="576">
+							<include>AlaskaB_VideoHub_Layout</include>
+						</focusedlayout>
+						<content>
+							<item id="1">
+								<onclick>noop</onclick>
+								<visible>Container(8035).HasFocus(1)</visible>
+								<label>$INFO[Container(8010).ListItem(0).Label]</label>
+								<property name="Rating">$INFO[Container(8010).ListItem(0).Rating]</property>
+								<property name="Fanart">$INFO[Container(8010).ListItem(0).Art(fanart)]</property>
+							</item>
+							<item id="1">
+								<onclick>noop</onclick>
+								<visible>!Container(8035).HasFocus(1)</visible>
+								<label>$INFO[Container(8030).ListItem(0).Label]</label>
+								<property name="Rating">$INFO[Container(8030).ListItem(0).Rating]</property>
+								<property name="Fanart">$INFO[Container(8030).ListItem(0).Art(fanart)]</property>
+							</item>
+							<item id="2">
+								<onclick>noop</onclick>
+								<visible>Container(8035).HasFocus(1)</visible>
+								<label>$INFO[Container(8030).ListItem(0).Label]</label>
+								<property name="Rating">$INFO[Container(8030).ListItem(0).Rating]</property>
+								<property name="Fanart">$INFO[Container(8030).ListItem(0).Art(fanart)]</property>
+							</item>
+							<item id="2">
+								<onclick>noop</onclick>
+								<visible>!Container(8035).HasFocus(1)</visible>
+								<label>$INFO[Container(8010).ListItem(0).Label]</label>
+								<property name="Rating">$INFO[Container(8010).ListItem(0).Rating]</property>
+								<property name="Fanart">$INFO[Container(8010).ListItem(0).Art(fanart)]</property>
+							</item>
+						</content>
+					</control>
+					
+					<control type="fixedlist" id="8036">
+						<posx>3</posx>
+						<posy>3</posy>
+						<width>1024</width>
+						<height>576</height>
+						<orientation>horizontal</orientation>
+						<preloaditems>1</preloaditems>
+						<focusposition>2</focusposition>
+						<autoscroll time="750">true</autoscroll>
+						<scrolltime>0</scrolltime>
+						<visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8035)</visible>
+						<itemlayout width="1024" height="576">
+						</itemlayout>
+						<focusedlayout width="1024" height="576">
+							<control type="button">
+								<include>HiddenControl</include>
+								<onfocus condition="Container(8036).HasFocus(2)">Control.Move(8035,-1)</onfocus>
+								<onfocus condition="Container(8036).HasFocus(1)">SetProperty(AlaskaB.VideoHub.ActiveWidget,8010,54)</onfocus>
+								<onfocus condition="Container(8036).HasFocus(1)">SetFocus(8010)</onfocus>
+							</control>
+						</focusedlayout>
+						<content>
+							<item id="1">
+								<onclick>noop</onclick>
+							</item>
+							<item id="2">
+								<onclick>noop</onclick>
+							</item>
+						</content>
+					</control>
+
 					<control type="image">
 						<left>0</left>
 						<top>0</top>
 						<width>1030</width>
 						<height>582</height>
 						<texture>hub/video/fanart_frame_fo.png</texture>
-						<visible>Control.HasFocus(8010) | Control.HasFocus(8020)</visible>
+						<visible>Control.HasFocus(8010) | Control.HasFocus(8016) | Control.HasFocus(8020) | Control.HasFocus(8026) | Control.HasFocus(8030) | Control.HasFocus(8036)</visible>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -248,7 +425,7 @@
 						<width>1030</width>
 						<height>582</height>
 						<texture>hub/video/fanart_frame_nf.png</texture>
-						<visible>!Control.HasFocus(8010) + !Control.HasFocus(8020)</visible>
+						<visible>![Control.HasFocus(8010) | Control.HasFocus(8016) | Control.HasFocus(8020) | Control.HasFocus(8026) | Control.HasFocus(8030) | Control.HasFocus(8036)]</visible>
 					</control>
 				</control>
 			</control>					
@@ -272,6 +449,7 @@
 					<onright>500</onright>
 					<onleft condition="SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8010)">8010</onleft>
 					<onleft condition="SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8020)">8020</onleft>
+					<onleft condition="SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8030)">8030</onleft>
 					<onup>8000</onup>
 					<ondown>8000</ondown>
 					<scrolltime>150</scrolltime>
