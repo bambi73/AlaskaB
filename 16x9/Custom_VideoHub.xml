@@ -21,17 +21,6 @@
       <aligny>center</aligny>
       <font>Font_Reg_Caps_36</font>
       <textcolor>MedLight</textcolor>
-      <visible>Container(8015).HasFocus(0)</visible>
-      <label>Container 8015: Focus 0</label>
-    </control>
-		<control type="label">
-      <left>46</left>
-      <top>110</top>
-      <width>1900</width>
-      <height>72</height>
-      <aligny>center</aligny>
-      <font>Font_Reg_Caps_36</font>
-      <textcolor>MedLight</textcolor>
       <visible>Container(8015).HasFocus(1)</visible>
       <label>Container 8015: Focus 1</label>
     </control>
@@ -55,17 +44,6 @@
       <aligny>center</aligny>
       <font>Font_Reg_Caps_36</font>
       <textcolor>MedLight</textcolor>
-      <visible>Container(8016).HasFocus(0)</visible>
-      <label>Container 8016: Focus 0</label>
-    </control>
-		<control type="label">
-      <left>46</left>
-      <top>150</top>
-      <width>1900</width>
-      <height>72</height>
-      <aligny>center</aligny>
-      <font>Font_Reg_Caps_36</font>
-      <textcolor>MedLight</textcolor>
       <visible>Container(8016).HasFocus(1)</visible>
       <label>Container 8016: Focus 1</label>
     </control>
@@ -80,6 +58,19 @@
       <visible>Container(8016).HasFocus(2)</visible>
       <label>Container 8016: Focus 2</label>
     </control> -->
+
+		<!-- <control type="label">
+      <left>46</left>
+      <top>190</top>
+      <width>1900</width>
+      <height>72</height>
+      <aligny>center</aligny>
+      <font>Font_Reg_Caps_36</font>
+      <textcolor>MedLight</textcolor>
+      <visible>Control.HasFocus(8020)</visible>
+      <label>XXXX</label>
+    </control> -->
+
 		
     <!-- <control type="label">
       <left>46</left>
@@ -115,7 +106,7 @@
 						<onleft>8016</onleft>
 						<onright>8000</onright>
 						<orientation>vertical</orientation>
-						<preloaditems>1</preloaditems>
+						<preloaditems>5</preloaditems>
 						<autoscroll time="7000">!Control.HasFocus(8010)</autoscroll>
 						<!-- <autoscroll time="15000">true</autoscroll> -->
 						<scrolltime tween="cubic">750</scrolltime>
@@ -140,7 +131,7 @@
 						<onleft>8026</onleft>
 						<onright>8000</onright>
 						<orientation>vertical</orientation>
-						<preloaditems>1</preloaditems>
+						<preloaditems>5</preloaditems>
 						<autoscroll time="7000">!Control.HasFocus(8020)</autoscroll>
 						<!-- <autoscroll time="15000">true</autoscroll> -->
 						<scrolltime tween="cubic">750</scrolltime>
@@ -166,7 +157,7 @@
 						<onleft>8036</onleft>
 						<onright>8000</onright>
 						<orientation>vertical</orientation>
-						<preloaditems>1</preloaditems>
+						<preloaditems>5</preloaditems>
 						<autoscroll time="7000">!Control.HasFocus(8030)</autoscroll>
 						<!-- <autoscroll time="15000">true</autoscroll> -->
 						<scrolltime tween="cubic">750</scrolltime>
@@ -197,29 +188,21 @@
 						<content>
 							<item id="1">
 								<onclick>noop</onclick>
-								<visible>Container(8015).HasFocus(1)</visible>
+								<label>$INFO[Container(8010).ListItem(0).Label]</label>
+								<property name="Title">$INFO[Container(8010).ListItem(0).Title]</property>
+								<property name="TVShowTitle">$INFO[Container(8010).ListItem(0).TVShowTitle]</property>
+								<property name="Season">$INFO[Container(8010).ListItem(0).Season]</property>
+								<property name="Episode">$INFO[Container(8010).ListItem(0).Episode]</property>
+								<property name="Rating">$INFO[Container(8010).ListItem(0).Rating]</property>
+								<property name="Fanart">$INFO[Container(8010).ListItem(0).Art(fanart)]</property>
+							</item>
+							<item id="2">
+								<onclick>noop</onclick>
 								<label>$INFO[Container(8020).ListItem(0).Label]</label>
-								<property name="Rating">$INFO[Container(8020).ListItem(0).Rating]</property>
-								<property name="Fanart">$INFO[Container(8020).ListItem(0).Art(fanart)]</property>
-							</item>
-							<item id="1">
-								<onclick>noop</onclick>
-								<visible>!Container(8015).HasFocus(1)</visible>
-								<label>$INFO[Container(8010).ListItem(0).Label]</label>
-								<property name="Rating">$INFO[Container(8010).ListItem(0).Rating]</property>
-								<property name="Fanart">$INFO[Container(8010).ListItem(0).Art(fanart)]</property>
-							</item>
-							<item id="2">
-								<onclick>noop</onclick>
-								<visible>Container(8015).HasFocus(1)</visible>
-								<label>$INFO[Container(8010).ListItem(0).Label]</label>
-								<property name="Rating">$INFO[Container(8010).ListItem(0).Rating]</property>
-								<property name="Fanart">$INFO[Container(8010).ListItem(0).Art(fanart)]</property>
-							</item>
-							<item id="2">
-								<onclick>noop</onclick>
-								<visible>!Container(8015).HasFocus(1)</visible>
-								<label>$INFO[Container(8010).ListItem(0).Label]</label>
+								<property name="Title">$INFO[Container(8020).ListItem(0).Title]</property>
+								<property name="TVShowTitle">$INFO[Container(8020).ListItem(0).TVShowTitle]</property>
+								<property name="Season">$INFO[Container(8020).ListItem(0).Season]</property>
+								<property name="Episode">$INFO[Container(8020).ListItem(0).Episode]</property>
 								<property name="Rating">$INFO[Container(8020).ListItem(0).Rating]</property>
 								<property name="Fanart">$INFO[Container(8020).ListItem(0).Art(fanart)]</property>
 							</item>
@@ -232,8 +215,6 @@
 						<width>1024</width>
 						<height>576</height>
 						<orientation>horizontal</orientation>
-						<preloaditems>1</preloaditems>
-						<focusposition>2</focusposition>
 						<autoscroll time="750">true</autoscroll>
 						<scrolltime>0</scrolltime>
 						<visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8015)</visible>
@@ -242,9 +223,10 @@
 						<focusedlayout width="1024" height="576">
 							<control type="button">
 								<include>HiddenControl</include>
+								<onfocus condition="Container(8016).HasFocus(1)">Control.Move(8015,-1)</onfocus>
+								<onfocus condition="Container(8016).HasFocus(2)">SetProperty(AlaskaB.VideoHub.ActiveWidget,8020,54)</onfocus>
 								<onfocus condition="Container(8016).HasFocus(2)">Control.Move(8015,-1)</onfocus>
-								<onfocus condition="Container(8016).HasFocus(1)">SetProperty(AlaskaB.VideoHub.ActiveWidget,8020,54)</onfocus>
-								<onfocus condition="Container(8016).HasFocus(1)">SetFocus(8020)</onfocus>
+								<onfocus condition="Container(8016).HasFocus(2)">SetFocus(8020)</onfocus>
 							</control>
 						</focusedlayout>
 						<content>
@@ -274,29 +256,21 @@
 						<content>
 							<item id="1">
 								<onclick>noop</onclick>
-								<visible>Container(8025).HasFocus(1)</visible>
-								<label>$INFO[Container(8030).ListItem(0).Label]</label>
-								<property name="Rating">$INFO[Container(8030).ListItem(0).Rating]</property>
-								<property name="Fanart">$INFO[Container(8030).ListItem(0).Art(fanart)]</property>
-							</item>
-							<item id="1">
-								<onclick>noop</onclick>
-								<visible>!Container(8025).HasFocus(1)</visible>
 								<label>$INFO[Container(8020).ListItem(0).Label]</label>
+								<property name="Title">$INFO[Container(8020).ListItem(0).Title]</property>
+								<property name="TVShowTitle">$INFO[Container(8020).ListItem(0).TVShowTitle]</property>
+								<property name="Season">$INFO[Container(8020).ListItem(0).Season]</property>
+								<property name="Episode">$INFO[Container(8020).ListItem(0).Episode]</property>
 								<property name="Rating">$INFO[Container(8020).ListItem(0).Rating]</property>
 								<property name="Fanart">$INFO[Container(8020).ListItem(0).Art(fanart)]</property>
 							</item>
 							<item id="2">
 								<onclick>noop</onclick>
-								<visible>Container(8025).HasFocus(1)</visible>
-								<label>$INFO[Container(8020).ListItem(0).Label]</label>
-								<property name="Rating">$INFO[Container(8020).ListItem(0).Rating]</property>
-								<property name="Fanart">$INFO[Container(8020).ListItem(0).Art(fanart)]</property>
-							</item>
-							<item id="2">
-								<onclick>noop</onclick>
-								<visible>!Container(8025).HasFocus(1)</visible>
 								<label>$INFO[Container(8030).ListItem(0).Label]</label>
+								<property name="Title">$INFO[Container(8030).ListItem(0).Title]</property>
+								<property name="TVShowTitle">$INFO[Container(8030).ListItem(0).TVShowTitle]</property>
+								<property name="Season">$INFO[Container(8030).ListItem(0).Season]</property>
+								<property name="Episode">$INFO[Container(8030).ListItem(0).Episode]</property>
 								<property name="Rating">$INFO[Container(8030).ListItem(0).Rating]</property>
 								<property name="Fanart">$INFO[Container(8030).ListItem(0).Art(fanart)]</property>
 							</item>
@@ -309,8 +283,6 @@
 						<width>1024</width>
 						<height>576</height>
 						<orientation>horizontal</orientation>
-						<preloaditems>1</preloaditems>
-						<focusposition>2</focusposition>
 						<autoscroll time="750">true</autoscroll>
 						<scrolltime>0</scrolltime>
 						<visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8025)</visible>
@@ -319,9 +291,10 @@
 						<focusedlayout width="1024" height="576">
 							<control type="button">
 								<include>HiddenControl</include>
+								<onfocus condition="Container(8026).HasFocus(1)">Control.Move(8025,-1)</onfocus>
+								<onfocus condition="Container(8026).HasFocus(2)">SetProperty(AlaskaB.VideoHub.ActiveWidget,8030,54)</onfocus>
 								<onfocus condition="Container(8026).HasFocus(2)">Control.Move(8025,-1)</onfocus>
-								<onfocus condition="Container(8026).HasFocus(1)">SetProperty(AlaskaB.VideoHub.ActiveWidget,8030,54)</onfocus>
-								<onfocus condition="Container(8026).HasFocus(1)">SetFocus(8030)</onfocus>
+								<onfocus condition="Container(8026).HasFocus(2)">SetFocus(8030)</onfocus>
 							</control>
 						</focusedlayout>
 						<content>
@@ -351,29 +324,21 @@
 						<content>
 							<item id="1">
 								<onclick>noop</onclick>
-								<visible>Container(8035).HasFocus(1)</visible>
-								<label>$INFO[Container(8010).ListItem(0).Label]</label>
-								<property name="Rating">$INFO[Container(8010).ListItem(0).Rating]</property>
-								<property name="Fanart">$INFO[Container(8010).ListItem(0).Art(fanart)]</property>
-							</item>
-							<item id="1">
-								<onclick>noop</onclick>
-								<visible>!Container(8035).HasFocus(1)</visible>
 								<label>$INFO[Container(8030).ListItem(0).Label]</label>
+								<property name="Title">$INFO[Container(8030).ListItem(0).Title]</property>
+								<property name="TVShowTitle">$INFO[Container(8030).ListItem(0).TVShowTitle]</property>
+								<property name="Season">$INFO[Container(8030).ListItem(0).Season]</property>
+								<property name="Episode">$INFO[Container(8030).ListItem(0).Episode]</property>
 								<property name="Rating">$INFO[Container(8030).ListItem(0).Rating]</property>
 								<property name="Fanart">$INFO[Container(8030).ListItem(0).Art(fanart)]</property>
 							</item>
 							<item id="2">
 								<onclick>noop</onclick>
-								<visible>Container(8035).HasFocus(1)</visible>
-								<label>$INFO[Container(8030).ListItem(0).Label]</label>
-								<property name="Rating">$INFO[Container(8030).ListItem(0).Rating]</property>
-								<property name="Fanart">$INFO[Container(8030).ListItem(0).Art(fanart)]</property>
-							</item>
-							<item id="2">
-								<onclick>noop</onclick>
-								<visible>!Container(8035).HasFocus(1)</visible>
 								<label>$INFO[Container(8010).ListItem(0).Label]</label>
+								<property name="Title">$INFO[Container(8010).ListItem(0).Title]</property>
+								<property name="TVShowTitle">$INFO[Container(8010).ListItem(0).TVShowTitle]</property>
+								<property name="Season">$INFO[Container(8010).ListItem(0).Season]</property>
+								<property name="Episode">$INFO[Container(8010).ListItem(0).Episode]</property>
 								<property name="Rating">$INFO[Container(8010).ListItem(0).Rating]</property>
 								<property name="Fanart">$INFO[Container(8010).ListItem(0).Art(fanart)]</property>
 							</item>
@@ -386,8 +351,6 @@
 						<width>1024</width>
 						<height>576</height>
 						<orientation>horizontal</orientation>
-						<preloaditems>1</preloaditems>
-						<focusposition>2</focusposition>
 						<autoscroll time="750">true</autoscroll>
 						<scrolltime>0</scrolltime>
 						<visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8035)</visible>
@@ -396,9 +359,10 @@
 						<focusedlayout width="1024" height="576">
 							<control type="button">
 								<include>HiddenControl</include>
+								<onfocus condition="Container(8036).HasFocus(1)">Control.Move(8035,-1)</onfocus>
+								<onfocus condition="Container(8036).HasFocus(2)">SetProperty(AlaskaB.VideoHub.ActiveWidget,8010,54)</onfocus>
 								<onfocus condition="Container(8036).HasFocus(2)">Control.Move(8035,-1)</onfocus>
-								<onfocus condition="Container(8036).HasFocus(1)">SetProperty(AlaskaB.VideoHub.ActiveWidget,8010,54)</onfocus>
-								<onfocus condition="Container(8036).HasFocus(1)">SetFocus(8010)</onfocus>
+								<onfocus condition="Container(8036).HasFocus(2)">SetFocus(8010)</onfocus>
 							</control>
 						</focusedlayout>
 						<content>
@@ -445,8 +409,6 @@
 					<top>18</top>
 					<width>485</width>
 					<height>546</height>
-					<!-- <onright>ClearProperty(AlaskaB.VideoNav.ShowHub,home)</onright> -->
-					<onright>500</onright>
 					<onleft condition="SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8010)">8010</onleft>
 					<onleft condition="SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8020)">8020</onleft>
 					<onleft condition="SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8030)">8030</onleft>

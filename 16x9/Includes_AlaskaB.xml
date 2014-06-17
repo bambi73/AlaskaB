@@ -174,7 +174,7 @@
 		<control type="image">
 			<width>1024</width>
 			<height>576</height>
-			<texture background="true" diffuse="hub/video/fanart_matte.png">$VAR[AlaskaB_VideoHub_Fanart]</texture>
+			<texture background="true" diffuse="hub/video/fanart_matte.png">$VAR[AlaskaB_VideoHub_WidgetFanart]</texture>
 			<aspectratio>scale</aspectratio>
 		</control>
 		<control type="group">
@@ -192,7 +192,7 @@
 				<aligny>center</aligny>
 				<font>Font_Cond_56</font>
 				<textcolor>MedLight</textcolor>
-				<label>$VAR[AlaskaB_VideoNav_HubTitle]</label>
+				<label>$VAR[AlaskaB_VideoHub_WidgetTitle]</label>
 			</control>
 			<control type="image">
 				<left>934</left>
@@ -204,12 +204,12 @@
 				<texture>hub/rating_background.png</texture>
 			</control>
 			<control type="label">
-				<left>959</left>
+				<left>962</left>
 				<width>80</width>
 				<height>65</height>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label>$VAR[AlaskaB_VideoNav_HubRating]</label>
+				<label>$VAR[AlaskaB_VideoHub_WidgetRating]</label>
 				<textcolor>MedLight</textcolor>
 				<font>Font_Cond_56</font>
 			</control>

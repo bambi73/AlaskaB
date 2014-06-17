@@ -541,33 +541,53 @@
 		<value condition="!Window.IsActive(54)">$INFO[ListItem.Art(fanart)]</value>
 	</variable>
 
-	<variable name="AlaskaB_VideoHub_Fanart">
+	<variable name="AlaskaB_VideoHub_WidgetFanart">
 		<value condition="[Control.IsVisible(8010) | Control.IsVisible(8020) | Control.IsVisible(8030)] + !IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="[Control.IsVisible(8015) | Control.IsVisible(8025) | Control.IsVisible(8035)] + !IsEmpty(ListItem.Property(fanart))">$INFO[ListItem.Property(fanart)]</value>
 	</variable>
 
-	<variable name="AlaskaB_VideoNav_HubRating">
+	<variable name="AlaskaB_VideoHub_WidgetRating">
 		<value condition="[Control.IsVisible(8010) | Control.IsVisible(8020) | Control.IsVisible(8030)] + !IsEmpty(ListItem.Rating)">$INFO[ListItem.Rating]</value>
 		<value condition="[Control.IsVisible(8015) | Control.IsVisible(8025) | Control.IsVisible(8035)] + !IsEmpty(ListItem.Property(Rating))">$INFO[ListItem.Property(Rating)]</value>
 		<value>?</value>
 	</variable>
 
-	<variable name="AlaskaB_VideoNav_HubSeasonNr">
+	<variable name="AlaskaB_VideoHub_WidgetList_SeasonNr">
 		<value condition="!IntegerGreaterThan(ListItem.Season,9)">$INFO[ListItem.Season,S0,]</value>
 		<value>$INFO[ListItem.Season,S,]</value>
 	</variable>
 
-	<variable name="AlaskaB_VideoNav_HubEpisodeNr">
+	<variable name="AlaskaB_VideoHub_WidgetSlide_SeasonNr">
+		<value condition="!IntegerGreaterThan(ListItem.Property(Season),9)">$INFO[ListItem.Property(Season),S0,]</value>
+		<value>$INFO[ListItem.Property(Season),S,]</value>
+	</variable>
+
+	<variable name="AlaskaB_VideoHub_WidgetList_EpisodeNr">
 		<value condition="!IntegerGreaterThan(ListItem.Episode,9)">$INFO[ListItem.Episode,E0,]</value>
 		<value>$INFO[ListItem.Episode,E,]</value>
 	</variable>
 
-	<variable name="AlaskaB_VideoNav_HubTitle">
+	<variable name="AlaskaB_VideoHub_WidgetSlide_EpisodeNr">
+		<value condition="!IntegerGreaterThan(ListItem.Property(Episode),9)">$INFO[ListItem.Property(Episode),E0,]</value>
+		<value>$INFO[ListItem.Property(Episode),E,]</value>
+	</variable>
+	
+	<variable name="AlaskaB_VideoHub_WidgetTitle">
+		<value condition="[Control.IsVisible(8010) | Control.IsVisible(8020) | Control.IsVisible(8030)] + !IsEmpty(ListItem.TVShowTitle) + !IsEmpty(ListItem.Season) + !SubString(Window(home).Property(AlaskaB.VideoNav.IgnoreSeason),true)">$INFO[ListItem.TVShowTitle] • $VAR[AlaskaB_VideoHub_WidgetList_SeasonNr]$VAR[AlaskaB_VideoHub_WidgetList_EpisodeNr]</value>
+		<value condition="[Control.IsVisible(8010) | Control.IsVisible(8020) | Control.IsVisible(8030)] + !IsEmpty(ListItem.TVShowTitle) + !IsEmpty(ListItem.Season)">$INFO[ListItem.TVShowTitle] • $VAR[AlaskaB_VideoHub_WidgetList_EpisodeNr]</value>
+		<value condition="[Control.IsVisible(8015) | Control.IsVisible(8025) | Control.IsVisible(8035)] + !IsEmpty(ListItem.Property(TVShowTitle)) + !IsEmpty(ListItem.Property(Season)) + !SubString(Window(home).Property(AlaskaB.VideoNav.IgnoreSeason),true)">$INFO[ListItem.Property(TVShowTitle)] • $VAR[AlaskaB_VideoHub_WidgetSlide_SeasonNr]$VAR[AlaskaB_VideoHub_WidgetSlide_EpisodeNr]</value>
+		<value condition="[Control.IsVisible(8015) | Control.IsVisible(8025) | Control.IsVisible(8035)] + !IsEmpty(ListItem.Property(TVShowTitle)) + !IsEmpty(ListItem.Property(Season))">$INFO[ListItem.Property(TVShowTitle)] • $VAR[AlaskaB_VideoHub_WidgetSlide_EpisodeNr]</value>
+		<value condition="[Control.IsVisible(8010) | Control.IsVisible(8020) | Control.IsVisible(8030)] + !IsEmpty(ListItem.TVShowTitle)">$INFO[ListItem.TVShowTitle]</value>
+		<value condition="[Control.IsVisible(8015) | Control.IsVisible(8025) | Control.IsVisible(8035)] + !IsEmpty(ListItem.Property(TVShowTitle))">$INFO[ListItem.Property(TVShowTitle)]</value>
+		<value condition="Control.IsVisible(8010) | Control.IsVisible(8020) | Control.IsVisible(8030)">$INFO[ListItem.Title]</value>
+		<value condition="Control.IsVisible(8015) | Control.IsVisible(8025) | Control.IsVisible(8035)">$INFO[ListItem.Property(Title)]</value>
+	</variable>
+
+	<!-- <variable name="AlaskaB_VideoNav_HubTitle">
 		<value condition="!IsEmpty(ListItem.TVShowTitle) + !IsEmpty(ListItem.TVShowTitle) + !IsEmpty(ListItem.Season) + !SubString(Window(home).Property(AlaskaB.VideoNav.IgnoreSeason),true)">$INFO[ListItem.TVShowTitle] • $VAR[AlaskaB_VideoNav_HubSeasonNr]$VAR[AlaskaB_VideoNav_HubEpisodeNr]</value>
 		<value condition="!IsEmpty(ListItem.TVShowTitle) + !IsEmpty(ListItem.TVShowTitle) + !IsEmpty(ListItem.Season)">$INFO[ListItem.TVShowTitle] • $VAR[AlaskaB_VideoNav_HubEpisodeNr]</value>
 		<value condition="!IsEmpty(ListItem.TVShowTitle) + !IsEmpty(ListItem.TVShowTitle)">$INFO[ListItem.TVShowTitle]</value>
 		<value>$INFO[ListItem.Title]</value>
-	</variable>
-
+	</variable> -->
 
 </includes>
