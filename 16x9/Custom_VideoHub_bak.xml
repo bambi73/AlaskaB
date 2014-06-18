@@ -35,7 +35,7 @@
       <visible>Container(8015).HasFocus(2)</visible>
       <label>Container 8015: Focus 2</label>
     </control> -->
-
+		
 		<!-- <control type="label">
       <left>46</left>
       <top>150</top>
@@ -71,8 +71,8 @@
       <label>XXXX</label>
     </control> -->
 
-
-		<!-- <control type="label">
+		
+    <!-- <control type="label">
       <left>46</left>
       <top>150</top>
       <width>1900</width>
@@ -98,15 +98,59 @@
 				<width>1030</width>
 				<control type="group">
 					<control type="wraplist" id="8010">
-						<include>AlaskaB_VideoHub_Widget</include>
+						<posx>3</posx>
+						<posy>3</posy>
+						<width>1024</width>
+						<height>576</height>
 						<onleft>SetProperty(AlaskaB.VideoHub.ActiveWidget,8015,54)</onleft>
 						<onleft>8016</onleft>
 						<onright>8000</onright>
+						<orientation>vertical</orientation>
+						<preloaditems>5</preloaditems>
 						<autoscroll time="7000">!Control.HasFocus(8010)</autoscroll>
+						<!-- <autoscroll time="15000">true</autoscroll> -->
+						<scrolltime tween="cubic">750</scrolltime>
 						<visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8010)</visible>
-						<content target="video">special://skin/extras/playlists/RandomTVShows.xsp</content>
+						<itemlayout width="1024" height="576">
+							<include>AlaskaB_VideoHub_WidgetLayout</include>
+						</itemlayout>
+						<focusedlayout width="1024" height="576">
+							<include>AlaskaB_VideoHub_WidgetLayout</include>
+							<control type="button">
+								<include>HiddenControl</include>
+								<onfocus>AlarmClock(ReturnToMenu,SetFocus(8000),01:00,true)</onfocus>
+							</control>
+						</focusedlayout>
 						<!-- <content target="video">special://skin/extras/playlists/RandomEpisodes.xsp</content> -->
+						<content target="video">special://skin/extras/playlists/RandomTVShows.xsp</content>
+						<!-- <content target="video">special://skin/extras/playlists/RandomMovies.xsp</content> -->
 					</control>
+
+					<!-- <control type="wraplist" id="8020">
+						<posx>3</posx>
+						<posy>3</posy>
+						<width>1024</width>
+						<height>576</height>
+						<onleft>SetProperty(AlaskaB.VideoHub.ActiveWidget,8025,54)</onleft>
+						<onleft>8026</onleft>
+						<onright>8000</onright>
+						<orientation>vertical</orientation>
+						<preloaditems>5</preloaditems>
+						<autoscroll time="7000">!Control.HasFocus(8020)</autoscroll>
+						<scrolltime tween="cubic">750</scrolltime>
+						<visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8020)</visible>
+						<itemlayout width="1024" height="576">
+							<include>AlaskaB_VideoHub_WidgetLayout</include>
+						</itemlayout>
+						<focusedlayout width="1024" height="576">
+							<include>AlaskaB_VideoHub_WidgetLayout</include>
+							<control type="button">
+								<include>HiddenControl</include>
+								<onfocus>AlarmClock(ReturnToMenu,SetFocus(8000),01:00,true)</onfocus>
+							</control>
+						</focusedlayout>
+						<content target="video">special://skin/extras/playlists/Anime-InProgress.xsp</content>
+					</control> -->
 
 					<control type="wraplist" id="8020">
 						<include>AlaskaB_VideoHub_Widget</include>
@@ -119,31 +163,81 @@
 					</control>
 
 					<control type="wraplist" id="8030">
-						<include>AlaskaB_VideoHub_Widget</include>
+						<posx>3</posx>
+						<posy>3</posy>
+						<width>1024</width>
+						<height>576</height>
 						<onleft>SetProperty(AlaskaB.VideoHub.ActiveWidget,8035,54)</onleft>
 						<onleft>8036</onleft>
 						<onright>8000</onright>
+						<orientation>vertical</orientation>
+						<preloaditems>5</preloaditems>
 						<autoscroll time="7000">!Control.HasFocus(8030)</autoscroll>
+						<!-- <autoscroll time="15000">true</autoscroll> -->
+						<scrolltime tween="cubic">750</scrolltime>
 						<visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8030)</visible>
+						<itemlayout width="1024" height="576">
+							<include>AlaskaB_VideoHub_WidgetLayout</include>
+						</itemlayout>
+						<focusedlayout width="1024" height="576">
+							<include>AlaskaB_VideoHub_WidgetLayout</include>
+							<control type="button">
+								<include>HiddenControl</include>
+								<onfocus>AlarmClock(ReturnToMenu,SetFocus(8000),01:00,true)</onfocus>
+							</control>
+						</focusedlayout>
 						<content target="video">special://skin/extras/playlists/RandomAnime.xsp</content>
 					</control>
 
 					<control type="wraplist" id="8015">
-						<include>AlaskaB_VideoHub_WidgetSlide</include>
+						<posx>3</posx>
+						<posy>3</posy>
+						<width>1024</width>
+						<height>576</height>
+						<orientation>horizontal</orientation>
+						<scrolltime tween="cubic">500</scrolltime>
 						<visible>SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8015)</visible>
+						<itemlayout width="1024" height="576">
+							<include>AlaskaB_VideoHub_WidgetLayout</include>
+						</itemlayout>
+						<focusedlayout width="1024" height="576">
+							<include>AlaskaB_VideoHub_WidgetLayout</include>
+						</focusedlayout>
 						<content>
 							<item id="1">
-								<include>AlaskaB_VideoHub_WidgetSlide_Content8010</include>
+								<onclick>noop</onclick>
+								<label>$INFO[Container(8010).ListItem(0).Label]</label>
+								<property name="Title">$INFO[Container(8010).ListItem(0).Title]</property>
+								<property name="TVShowTitle">$INFO[Container(8010).ListItem(0).TVShowTitle]</property>
+								<property name="Season">$INFO[Container(8010).ListItem(0).Season]</property>
+								<property name="Episode">$INFO[Container(8010).ListItem(0).Episode]</property>
+								<property name="Rating">$INFO[Container(8010).ListItem(0).Rating]</property>
+								<property name="Fanart">$INFO[Container(8010).ListItem(0).Art(fanart)]</property>
 							</item>
 							<item id="2">
-								<include>AlaskaB_VideoHub_WidgetSlide_Content8020</include>
+								<onclick>noop</onclick>
+								<label>$INFO[Container(8020).ListItem(0).Label]</label>
+								<property name="Title">$INFO[Container(8020).ListItem(0).Title]</property>
+								<property name="TVShowTitle">$INFO[Container(8020).ListItem(0).TVShowTitle]</property>
+								<property name="Season">$INFO[Container(8020).ListItem(0).Season]</property>
+								<property name="Episode">$INFO[Container(8020).ListItem(0).Episode]</property>
+								<property name="Rating">$INFO[Container(8020).ListItem(0).Rating]</property>
+								<property name="Fanart">$INFO[Container(8020).ListItem(0).Art(fanart)]</property>
 							</item>
 						</content>
 					</control>
-
+					
 					<control type="fixedlist" id="8016">
-						<include>AlaskaB_VideoHub_WidgetSlideControl</include>
+						<posx>3</posx>
+						<posy>3</posy>
+						<width>1024</width>
+						<height>576</height>
+						<orientation>horizontal</orientation>
+						<autoscroll time="500">true</autoscroll>
+						<scrolltime>0</scrolltime>
 						<visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8015)</visible>
+						<itemlayout width="1024" height="576">
+						</itemlayout>
 						<focusedlayout width="1024" height="576">
 							<control type="button">
 								<include>HiddenControl</include>
@@ -153,24 +247,65 @@
 								<onfocus condition="Container(8016).HasFocus(2)">SetFocus(8020)</onfocus>
 							</control>
 						</focusedlayout>
-					</control>
-
-					<control type="wraplist" id="8025">
-						<include>AlaskaB_VideoHub_WidgetSlide</include>
-						<visible>SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8025)</visible>
 						<content>
 							<item id="1">
-								<include>AlaskaB_VideoHub_WidgetSlide_Content8020</include>
+								<onclick>noop</onclick>
 							</item>
 							<item id="2">
-								<include>AlaskaB_VideoHub_WidgetSlide_Content8030</include>
+								<onclick>noop</onclick>
 							</item>
 						</content>
 					</control>
 
+					<control type="wraplist" id="8025">
+						<posx>3</posx>
+						<posy>3</posy>
+						<width>1024</width>
+						<height>576</height>
+						<orientation>horizontal</orientation>
+						<scrolltime tween="cubic">500</scrolltime>
+						<visible>SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8025)</visible>
+						<itemlayout width="1024" height="576">
+							<include>AlaskaB_VideoHub_WidgetLayout</include>
+						</itemlayout>
+						<focusedlayout width="1024" height="576">
+							<include>AlaskaB_VideoHub_WidgetLayout</include>
+						</focusedlayout>
+						<content>
+							<item id="1">
+								<onclick>noop</onclick>
+								<label>$INFO[Container(8020).ListItem(0).Label]</label>
+								<property name="Title">$INFO[Container(8020).ListItem(0).Title]</property>
+								<property name="TVShowTitle">$INFO[Container(8020).ListItem(0).TVShowTitle]</property>
+								<property name="Season">$INFO[Container(8020).ListItem(0).Season]</property>
+								<property name="Episode">$INFO[Container(8020).ListItem(0).Episode]</property>
+								<property name="Rating">$INFO[Container(8020).ListItem(0).Rating]</property>
+								<property name="Fanart">$INFO[Container(8020).ListItem(0).Art(fanart)]</property>
+							</item>
+							<item id="2">
+								<onclick>noop</onclick>
+								<label>$INFO[Container(8030).ListItem(0).Label]</label>
+								<property name="Title">$INFO[Container(8030).ListItem(0).Title]</property>
+								<property name="TVShowTitle">$INFO[Container(8030).ListItem(0).TVShowTitle]</property>
+								<property name="Season">$INFO[Container(8030).ListItem(0).Season]</property>
+								<property name="Episode">$INFO[Container(8030).ListItem(0).Episode]</property>
+								<property name="Rating">$INFO[Container(8030).ListItem(0).Rating]</property>
+								<property name="Fanart">$INFO[Container(8030).ListItem(0).Art(fanart)]</property>
+							</item>
+						</content>
+					</control>
+					
 					<control type="fixedlist" id="8026">
-						<include>AlaskaB_VideoHub_WidgetSlideControl</include>
+						<posx>3</posx>
+						<posy>3</posy>
+						<width>1024</width>
+						<height>576</height>
+						<orientation>horizontal</orientation>
+						<autoscroll time="500">true</autoscroll>
+						<scrolltime>0</scrolltime>
 						<visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8025)</visible>
+						<itemlayout width="1024" height="576">
+						</itemlayout>
 						<focusedlayout width="1024" height="576">
 							<control type="button">
 								<include>HiddenControl</include>
@@ -180,24 +315,65 @@
 								<onfocus condition="Container(8026).HasFocus(2)">SetFocus(8030)</onfocus>
 							</control>
 						</focusedlayout>
-					</control>
-
-					<control type="wraplist" id="8035">
-						<include>AlaskaB_VideoHub_WidgetSlide</include>
-						<visible>SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8035)</visible>
 						<content>
 							<item id="1">
-								<include>AlaskaB_VideoHub_WidgetSlide_Content8030</include>
+								<onclick>noop</onclick>
 							</item>
 							<item id="2">
-								<include>AlaskaB_VideoHub_WidgetSlide_Content8010</include>
+								<onclick>noop</onclick>
 							</item>
 						</content>
 					</control>
 
+					<control type="wraplist" id="8035">
+						<posx>3</posx>
+						<posy>3</posy>
+						<width>1024</width>
+						<height>576</height>
+						<orientation>horizontal</orientation>
+						<scrolltime tween="cubic">500</scrolltime>
+						<visible>SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8035)</visible>
+						<itemlayout width="1024" height="576">
+							<include>AlaskaB_VideoHub_WidgetLayout</include>
+						</itemlayout>
+						<focusedlayout width="1024" height="576">
+							<include>AlaskaB_VideoHub_WidgetLayout</include>
+						</focusedlayout>
+						<content>
+							<item id="1">
+								<onclick>noop</onclick>
+								<label>$INFO[Container(8030).ListItem(0).Label]</label>
+								<property name="Title">$INFO[Container(8030).ListItem(0).Title]</property>
+								<property name="TVShowTitle">$INFO[Container(8030).ListItem(0).TVShowTitle]</property>
+								<property name="Season">$INFO[Container(8030).ListItem(0).Season]</property>
+								<property name="Episode">$INFO[Container(8030).ListItem(0).Episode]</property>
+								<property name="Rating">$INFO[Container(8030).ListItem(0).Rating]</property>
+								<property name="Fanart">$INFO[Container(8030).ListItem(0).Art(fanart)]</property>
+							</item>
+							<item id="2">
+								<onclick>noop</onclick>
+								<label>$INFO[Container(8010).ListItem(0).Label]</label>
+								<property name="Title">$INFO[Container(8010).ListItem(0).Title]</property>
+								<property name="TVShowTitle">$INFO[Container(8010).ListItem(0).TVShowTitle]</property>
+								<property name="Season">$INFO[Container(8010).ListItem(0).Season]</property>
+								<property name="Episode">$INFO[Container(8010).ListItem(0).Episode]</property>
+								<property name="Rating">$INFO[Container(8010).ListItem(0).Rating]</property>
+								<property name="Fanart">$INFO[Container(8010).ListItem(0).Art(fanart)]</property>
+							</item>
+						</content>
+					</control>
+					
 					<control type="fixedlist" id="8036">
-						<include>AlaskaB_VideoHub_WidgetSlideControl</include>
+						<posx>3</posx>
+						<posy>3</posy>
+						<width>1024</width>
+						<height>576</height>
+						<orientation>horizontal</orientation>
+						<autoscroll time="500">true</autoscroll>
+						<scrolltime>0</scrolltime>
 						<visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8035)</visible>
+						<itemlayout width="1024" height="576">
+						</itemlayout>
 						<focusedlayout width="1024" height="576">
 							<control type="button">
 								<include>HiddenControl</include>
@@ -207,6 +383,14 @@
 								<onfocus condition="Container(8036).HasFocus(2)">SetFocus(8010)</onfocus>
 							</control>
 						</focusedlayout>
+						<content>
+							<item id="1">
+								<onclick>noop</onclick>
+							</item>
+							<item id="2">
+								<onclick>noop</onclick>
+							</item>
+						</content>
 					</control>
 
 					<control type="image">

@@ -170,7 +170,7 @@
 		</control>
 	</include> -->
 
-	<include name="AlaskaB_VideoHub_Layout">
+	<include name="AlaskaB_VideoHub_WidgetLayout">
 		<control type="image">
 			<width>1024</width>
 			<height>576</height>
@@ -214,6 +214,92 @@
 				<font>Font_Cond_56</font>
 			</control>
 		</control>
+	</include>
+
+	<include name="AlaskaB_VideoHub_WidgetPos">
+		<posx>3</posx>
+		<posy>3</posy>
+		<width>1024</width>
+		<height>576</height>
+	</include>
+
+	<include name="AlaskaB_VideoHub_Widget">
+		<include>AlaskaB_VideoHub_WidgetPos</include>
+		<orientation>vertical</orientation>
+		<preloaditems>5</preloaditems>
+		<scrolltime tween="cubic">750</scrolltime>
+		<itemlayout width="1024" height="576">
+			<include>AlaskaB_VideoHub_WidgetLayout</include>
+		</itemlayout>
+		<focusedlayout width="1024" height="576">
+			<include>AlaskaB_VideoHub_WidgetLayout</include>
+			<control type="button">
+				<include>HiddenControl</include>
+				<onfocus>AlarmClock(ReturnToMenu,SetFocus(8000),01:00,true)</onfocus>
+			</control>
+		</focusedlayout>
+	</include>
+
+	<include name="AlaskaB_VideoHub_WidgetSlide">
+		<include>AlaskaB_VideoHub_WidgetPos</include>
+		<orientation>horizontal</orientation>
+		<scrolltime tween="cubic">500</scrolltime>
+		<itemlayout width="1024" height="576">
+			<include>AlaskaB_VideoHub_WidgetLayout</include>
+		</itemlayout>
+		<focusedlayout width="1024" height="576">
+			<include>AlaskaB_VideoHub_WidgetLayout</include>
+		</focusedlayout>
+	</include>
+
+	<include name="AlaskaB_VideoHub_WidgetSlide_Content8010">
+		<onclick>noop</onclick>
+		<label>$INFO[Container(8010).ListItem(0).Label]</label>
+		<property name="Title">$INFO[Container(8010).ListItem(0).Title]</property>
+		<property name="TVShowTitle">$INFO[Container(8010).ListItem(0).TVShowTitle]</property>
+		<property name="Season">$INFO[Container(8010).ListItem(0).Season]</property>
+		<property name="Episode">$INFO[Container(8010).ListItem(0).Episode]</property>
+		<property name="Rating">$INFO[Container(8010).ListItem(0).Rating]</property>
+		<property name="Fanart">$INFO[Container(8010).ListItem(0).Art(fanart)]</property>
+	</include>
+
+	<include name="AlaskaB_VideoHub_WidgetSlide_Content8020">
+		<onclick>noop</onclick>
+		<label>$INFO[Container(8020).ListItem(0).Label]</label>
+		<property name="Title">$INFO[Container(8020).ListItem(0).Title]</property>
+		<property name="TVShowTitle">$INFO[Container(8020).ListItem(0).TVShowTitle]</property>
+		<property name="Season">$INFO[Container(8020).ListItem(0).Season]</property>
+		<property name="Episode">$INFO[Container(8020).ListItem(0).Episode]</property>
+		<property name="Rating">$INFO[Container(8020).ListItem(0).Rating]</property>
+		<property name="Fanart">$INFO[Container(8020).ListItem(0).Art(fanart)]</property>
+	</include>
+
+	<include name="AlaskaB_VideoHub_WidgetSlide_Content8030">
+		<onclick>noop</onclick>
+		<label>$INFO[Container(8030).ListItem(0).Label]</label>
+		<property name="Title">$INFO[Container(8030).ListItem(0).Title]</property>
+		<property name="TVShowTitle">$INFO[Container(8030).ListItem(0).TVShowTitle]</property>
+		<property name="Season">$INFO[Container(8030).ListItem(0).Season]</property>
+		<property name="Episode">$INFO[Container(8030).ListItem(0).Episode]</property>
+		<property name="Rating">$INFO[Container(8030).ListItem(0).Rating]</property>
+		<property name="Fanart">$INFO[Container(8030).ListItem(0).Art(fanart)]</property>
+	</include>
+
+	<include name="AlaskaB_VideoHub_WidgetSlideControl">
+		<include>AlaskaB_VideoHub_WidgetPos</include>
+		<orientation>horizontal</orientation>
+		<autoscroll time="500">true</autoscroll>
+		<scrolltime>0</scrolltime>
+		<content>
+			<item id="1">
+				<onclick>noop</onclick>
+			</item>
+			<item id="2">
+				<onclick>noop</onclick>
+			</item>
+		</content>
+		<itemlayout width="1024" height="576">
+		</itemlayout>
 	</include>
 
 </includes>
