@@ -4,6 +4,7 @@
 	<defaultcontrol always="true">8000</defaultcontrol>
 	<onload>SetProperty(AlaskaB.VideoHub.ActiveWidget,8010)</onload>
 	<onunload>ClearProperty(AlaskaB.VideoHub.ActiveWidget)</onunload>
+	<onunload>CancelAlarm(ReturnToMenu,true)</onunload>
 
 	<controls>
 		<include>Global_Background</include>
@@ -103,9 +104,18 @@
 						<onleft>8016</onleft>
 						<onright>8000</onright>
 						<autoscroll time="7000">!Control.HasFocus(8010)</autoscroll>
-						<visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8010)</visible>
+						<visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8010) + IntegerGreaterThan(Container(8010).NumItems,0)</visible>
 						<content target="video">special://skin/extras/playlists/RandomTVShows.xsp</content>
-						<!-- <content target="video">special://skin/extras/playlists/RandomEpisodes.xsp</content> -->
+						<!-- <content target="video">special://skin/extras/playlists/RandomAnime.xsp</content> -->
+						<!-- <!-- <content target="video">special://skin/extras/playlists/RandomEpisodes.xsp</content> --> -->
+					</control>
+
+					<control type="fixedlist" id="8011">
+						<include>AlaskaB_VideoHub_WidgetEmpty</include>
+						<onleft>SetProperty(AlaskaB.VideoHub.ActiveWidget,8015,54)</onleft>
+						<onleft>8016</onleft>
+						<onright>8000</onright>
+						<visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8010) + !IntegerGreaterThan(Container(8010).NumItems,0)</visible>
 					</control>
 
 					<control type="wraplist" id="8020">
@@ -114,8 +124,17 @@
 						<onleft>8026</onleft>
 						<onright>8000</onright>
 						<autoscroll time="7000">!Control.HasFocus(8020)</autoscroll>
-						<visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8020)</visible>
+						<visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8020) + IntegerGreaterThan(Container(8020).NumItems,0)</visible>
+						<!-- <content target="video">special://skin/extras/playlists/RandomTVShows.xsp</content> -->
 						<content target="video">special://skin/extras/playlists/Anime-InProgress.xsp</content>
+					</control>
+
+					<control type="fixedlist" id="8021">
+						<include>AlaskaB_VideoHub_WidgetEmpty</include>
+						<onleft>SetProperty(AlaskaB.VideoHub.ActiveWidget,8025,54)</onleft>
+						<onleft>8026</onleft>
+						<onright>8000</onright>
+						<visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8020) + !IntegerGreaterThan(Container(8020).NumItems,0)</visible>
 					</control>
 
 					<control type="wraplist" id="8030">
@@ -124,8 +143,17 @@
 						<onleft>8036</onleft>
 						<onright>8000</onright>
 						<autoscroll time="7000">!Control.HasFocus(8030)</autoscroll>
-						<visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8030)</visible>
+						<visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8030) + IntegerGreaterThan(Container(8030).NumItems,0)</visible>
+						<!-- <content target="video">special://skin/extras/playlists/RandomTVShows.xsp</content> -->
 						<content target="video">special://skin/extras/playlists/RandomAnime.xsp</content>
+					</control>
+
+					<control type="fixedlist" id="8031">
+						<include>AlaskaB_VideoHub_WidgetEmpty</include>
+						<onleft>SetProperty(AlaskaB.VideoHub.ActiveWidget,8035,54)</onleft>
+						<onleft>8036</onleft>
+						<onright>8000</onright>
+						<visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8030) + !IntegerGreaterThan(Container(8030).NumItems,0)</visible>
 					</control>
 
 					<control type="wraplist" id="8015">
@@ -133,10 +161,20 @@
 						<visible>SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8015)</visible>
 						<content>
 							<item id="1">
+								<visible>IntegerGreaterThan(Container(8010).NumItems,0)</visible>
 								<include>AlaskaB_VideoHub_WidgetSlide_Content8010</include>
 							</item>
+							<item id="1">
+								<visible>!IntegerGreaterThan(Container(8010).NumItems,0)</visible>
+								<include>AlaskaB_VideoHub_WidgetSlide_Content8011</include>
+							</item>
 							<item id="2">
+								<visible>IntegerGreaterThan(Container(8020).NumItems,0)</visible>
 								<include>AlaskaB_VideoHub_WidgetSlide_Content8020</include>
+							</item>
+							<item id="2">
+								<visible>!IntegerGreaterThan(Container(8020).NumItems,0)</visible>
+								<include>AlaskaB_VideoHub_WidgetSlide_Content8021</include>
 							</item>
 						</content>
 					</control>
@@ -150,7 +188,8 @@
 								<onfocus condition="Container(8016).HasFocus(1)">Control.Move(8015,-1)</onfocus>
 								<onfocus condition="Container(8016).HasFocus(2)">SetProperty(AlaskaB.VideoHub.ActiveWidget,8020,54)</onfocus>
 								<onfocus condition="Container(8016).HasFocus(2)">Control.Move(8015,-1)</onfocus>
-								<onfocus condition="Container(8016).HasFocus(2)">SetFocus(8020)</onfocus>
+								<onfocus condition="Container(8016).HasFocus(2) + IntegerGreaterThan(Container(8020).NumItems,0)">SetFocus(8020)</onfocus>
+								<onfocus condition="Container(8016).HasFocus(2) + !IntegerGreaterThan(Container(8020).NumItems,0)">SetFocus(8021)</onfocus>
 							</control>
 						</focusedlayout>
 					</control>
@@ -160,10 +199,20 @@
 						<visible>SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8025)</visible>
 						<content>
 							<item id="1">
+								<visible>IntegerGreaterThan(Container(8020).NumItems,0)</visible>
 								<include>AlaskaB_VideoHub_WidgetSlide_Content8020</include>
 							</item>
+							<item id="1">
+								<visible>!IntegerGreaterThan(Container(8020).NumItems,0)</visible>
+								<include>AlaskaB_VideoHub_WidgetSlide_Content8021</include>
+							</item>
 							<item id="2">
+								<visible>IntegerGreaterThan(Container(8030).NumItems,0)</visible>
 								<include>AlaskaB_VideoHub_WidgetSlide_Content8030</include>
+							</item>
+							<item id="2">
+								<visible>!IntegerGreaterThan(Container(8030).NumItems,0)</visible>
+								<include>AlaskaB_VideoHub_WidgetSlide_Content8031</include>
 							</item>
 						</content>
 					</control>
@@ -177,7 +226,8 @@
 								<onfocus condition="Container(8026).HasFocus(1)">Control.Move(8025,-1)</onfocus>
 								<onfocus condition="Container(8026).HasFocus(2)">SetProperty(AlaskaB.VideoHub.ActiveWidget,8030,54)</onfocus>
 								<onfocus condition="Container(8026).HasFocus(2)">Control.Move(8025,-1)</onfocus>
-								<onfocus condition="Container(8026).HasFocus(2)">SetFocus(8030)</onfocus>
+								<onfocus condition="Container(8026).HasFocus(2) + IntegerGreaterThan(Container(8030).NumItems,0)">SetFocus(8030)</onfocus>
+								<onfocus condition="Container(8026).HasFocus(2) + !IntegerGreaterThan(Container(8030).NumItems,0)">SetFocus(8031)</onfocus>
 							</control>
 						</focusedlayout>
 					</control>
@@ -187,10 +237,20 @@
 						<visible>SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8035)</visible>
 						<content>
 							<item id="1">
+								<visible>IntegerGreaterThan(Container(8030).NumItems,0)</visible>
 								<include>AlaskaB_VideoHub_WidgetSlide_Content8030</include>
 							</item>
+							<item id="1">
+								<visible>!IntegerGreaterThan(Container(8030).NumItems,0)</visible>
+								<include>AlaskaB_VideoHub_WidgetSlide_Content8031</include>
+							</item>
 							<item id="2">
+								<visible>IntegerGreaterThan(Container(8010).NumItems,0)</visible>
 								<include>AlaskaB_VideoHub_WidgetSlide_Content8010</include>
+							</item>
+							<item id="2">
+								<visible>!IntegerGreaterThan(Container(8010).NumItems,0)</visible>
+								<include>AlaskaB_VideoHub_WidgetSlide_Content8011</include>
 							</item>
 						</content>
 					</control>
@@ -204,7 +264,8 @@
 								<onfocus condition="Container(8036).HasFocus(1)">Control.Move(8035,-1)</onfocus>
 								<onfocus condition="Container(8036).HasFocus(2)">SetProperty(AlaskaB.VideoHub.ActiveWidget,8010,54)</onfocus>
 								<onfocus condition="Container(8036).HasFocus(2)">Control.Move(8035,-1)</onfocus>
-								<onfocus condition="Container(8036).HasFocus(2)">SetFocus(8010)</onfocus>
+								<onfocus condition="Container(8036).HasFocus(2) + IntegerGreaterThan(Container(8010).NumItems,0)">SetFocus(8010)</onfocus>
+								<onfocus condition="Container(8036).HasFocus(2) + !IntegerGreaterThan(Container(8010).NumItems,0)">SetFocus(8011)</onfocus>
 							</control>
 						</focusedlayout>
 					</control>
@@ -215,7 +276,7 @@
 						<width>1030</width>
 						<height>582</height>
 						<texture>hub/video/fanart_frame_fo.png</texture>
-						<visible>Control.HasFocus(8010) | Control.HasFocus(8016) | Control.HasFocus(8020) | Control.HasFocus(8026) | Control.HasFocus(8030) | Control.HasFocus(8036)</visible>
+						<visible>Control.HasFocus(8010) | Control.HasFocus(8011) | Control.HasFocus(8016) | Control.HasFocus(8020) | Control.HasFocus(8021) | Control.HasFocus(8026) | Control.HasFocus(8030) | Control.HasFocus(8031) | Control.HasFocus(8036)</visible>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -223,7 +284,7 @@
 						<width>1030</width>
 						<height>582</height>
 						<texture>hub/video/fanart_frame_nf.png</texture>
-						<visible>![Control.HasFocus(8010) | Control.HasFocus(8016) | Control.HasFocus(8020) | Control.HasFocus(8026) | Control.HasFocus(8030) | Control.HasFocus(8036)]</visible>
+						<visible>![Control.HasFocus(8010) | Control.HasFocus(8011) | Control.HasFocus(8016) | Control.HasFocus(8020) | Control.HasFocus(8021) | Control.HasFocus(8026) | Control.HasFocus(8030) | Control.HasFocus(8031) | Control.HasFocus(8036)]</visible>
 					</control>
 				</control>
 			</control>					
@@ -243,9 +304,12 @@
 					<top>18</top>
 					<width>485</width>
 					<height>546</height>
-					<onleft condition="SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8010)">8010</onleft>
-					<onleft condition="SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8020)">8020</onleft>
-					<onleft condition="SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8030)">8030</onleft>
+					<onleft condition="SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8010) + IntegerGreaterThan(Container(8010).NumItems,0)">8010</onleft>
+					<onleft condition="SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8010) + !IntegerGreaterThan(Container(8010).NumItems,0)">8011</onleft>
+					<onleft condition="SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8020) + IntegerGreaterThan(Container(8020).NumItems,0)">8020</onleft>
+					<onleft condition="SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8020) + !IntegerGreaterThan(Container(8020).NumItems,0)">8021</onleft>
+					<onleft condition="SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8030) + IntegerGreaterThan(Container(8030).NumItems,0)">8030</onleft>
+					<onleft condition="SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8030) + !IntegerGreaterThan(Container(8030).NumItems,0)">8031</onleft>
 					<onup>8000</onup>
 					<ondown>8000</ondown>
 					<scrolltime>150</scrolltime>

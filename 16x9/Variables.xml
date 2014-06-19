@@ -53,10 +53,12 @@
 		<value condition="Window.IsVisible(weather) + !StringCompare(Weather.Location,$LOCALIZE[503])">[B]$INFO[Window(Weather).Property(Location)][/B]</value>
 		<value condition="Window.IsVisible(weather) + StringCompare(Weather.Location,$LOCALIZE[503])">[B]$LOCALIZE[503][/B]</value>
 		
-		<value condition="Window.IsVisible(54) + [Control.IsVisible(8010) | Control.IsVisible(8015)] + IntegerGreaterThan(Container(8010).NumItems,0) + !IntegerGreaterThan(Container(8010).NumItems,1)">Random$INFO[Container(8010).NumItems, • , $LOCALIZE[31157]]</value>
-		<value condition="Window.IsVisible(54) + [Control.IsVisible(8010) | Control.IsVisible(8015)] + IntegerGreaterThan(Container(8010).NumItems,0)">Random$INFO[Container.FolderName]$INFO[Container(8010).NumItems, • , $LOCALIZE[31100]]</value>
-		<value condition="Window.IsVisible(54) + [Control.IsVisible(8020) | Control.IsVisible(8025)] + IntegerGreaterThan(Container(8020).NumItems,0) + !IntegerGreaterThan(Container(8020).NumItems,1)">In progress$INFO[Container(8010).NumItems, • , $LOCALIZE[31157]]</value>
-		<value condition="Window.IsVisible(54) + [Control.IsVisible(8020) | Control.IsVisible(8025)] + IntegerGreaterThan(Container(8020).NumItems,0)">In progress$INFO[Container.FolderName]$INFO[Container(8020).NumItems, • , $LOCALIZE[31100]]</value>
+		<value condition="Window.IsVisible(54) + [Control.IsVisible(8010) | Control.IsVisible(8011) | Control.IsVisible(8015)] + IntegerGreaterThan(Container(8010).NumItems,0) + !IntegerGreaterThan(Container(8010).NumItems,1)">Random$INFO[Container(8010).NumItems, • , $LOCALIZE[31157]]</value>
+		<value condition="Window.IsVisible(54) + [Control.IsVisible(8010) | Control.IsVisible(8011) | Control.IsVisible(8015)]">Random$INFO[Container.FolderName]$INFO[Container(8010).NumItems, • , $LOCALIZE[31100]]</value>
+		<value condition="Window.IsVisible(54) + [Control.IsVisible(8020) | Control.IsVisible(8021) | Control.IsVisible(8025)] + IntegerGreaterThan(Container(8020).NumItems,0) + !IntegerGreaterThan(Container(8020).NumItems,1)">In progress$INFO[Container(8010).NumItems, • , $LOCALIZE[31157]]</value>
+		<value condition="Window.IsVisible(54) + [Control.IsVisible(8020) | Control.IsVisible(8021) | Control.IsVisible(8025)]">In progress$INFO[Container.FolderName]$INFO[Container(8020).NumItems, • , $LOCALIZE[31100]]</value>
+		<value condition="Window.IsVisible(54) + [Control.IsVisible(8030) | Control.IsVisible(8031) | Control.IsVisible(8035)] + IntegerGreaterThan(Container(8030).NumItems,0) + !IntegerGreaterThan(Container(8030).NumItems,1)">Random 2$INFO[Container(8030).NumItems, • , $LOCALIZE[31157]]</value>
+		<value condition="Window.IsVisible(54) + [Control.IsVisible(8030) | Control.IsVisible(8031) | Control.IsVisible(8035)]">Random 2$INFO[Container.FolderName]$INFO[Container(8030).NumItems, • , $LOCALIZE[31100]]</value>
 		<value condition="Window.IsVisible(54)"/>
 
 		<!-- $LOCALIZE[20373] = Season, $LOCALIZE[20359] = Episode, $LOCALIZE[20360] = Episodes -->
@@ -544,6 +546,7 @@
 	<variable name="AlaskaB_VideoHub_WidgetFanart">
 		<value condition="[Control.IsVisible(8010) | Control.IsVisible(8020) | Control.IsVisible(8030)] + !IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="[Control.IsVisible(8015) | Control.IsVisible(8025) | Control.IsVisible(8035)] + !IsEmpty(ListItem.Property(fanart))">$INFO[ListItem.Property(fanart)]</value>
+		<value condition="[Control.IsVisible(8011) | Control.IsVisible(8015) | Control.IsVisible(8021) | Control.IsVisible(8025) | Control.IsVisible(8031) | Control.IsVisible(8035)] + !IsEmpty(ListItem.Property(fanart2))">$INFO[ListItem.Property(fanart2)]</value>
 	</variable>
 
 	<variable name="AlaskaB_VideoHub_WidgetRating">
