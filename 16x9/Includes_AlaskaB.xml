@@ -188,12 +188,13 @@
 			</control>
 			<control type="label">
 				<left>34</left>
-				<width>870</width>
+				<width>860</width>
 				<height>65</height>
 				<aligny>center</aligny>
 				<font>Font_Cond_56</font>
 				<textcolor>MedLight</textcolor>
 				<label>$VAR[AlaskaB_VideoHub_WidgetTitle]</label>
+				<scroll>false</scroll>
 			</control>
 			<control type="image">
 				<left>934</left>
