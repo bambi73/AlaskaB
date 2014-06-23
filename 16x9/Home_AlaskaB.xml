@@ -878,7 +878,7 @@
 					</animation>
 					<control type="multiimage">
 						<include>Object_MainMenuIconF</include>
-						<imagepath fallback="home/tvshows/" diffuse="home/Matte.png" background="true">$INFO[Container(3600).ListItem.Icon]</imagepath>
+						<imagepath fallback="home/anime/" diffuse="home/Matte.png" background="true">$INFO[Container(3600).ListItem.Icon]</imagepath>
 					</control>
 					<include>Object_MainMenuFrame</include>
 					<!-- <control type="fadelabel">
