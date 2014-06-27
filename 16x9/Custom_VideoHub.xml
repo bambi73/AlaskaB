@@ -2,8 +2,8 @@
 <window type="window" id="54">
 	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">8000</defaultcontrol>
-	<onload>SetProperty(AlaskaB.VideoHub.ActiveWidget,8010)</onload>
-	<onunload>ClearProperty(AlaskaB.VideoHub.ActiveWidget)</onunload>
+	<onload condition="IsEmpty(Window.Property(AlaskaB.VideoHub.ActiveWidget))">SetProperty(AlaskaB.VideoHub.ActiveWidget,8010)</onload>
+	<!-- <onunload>ClearProperty(AlaskaB.VideoHub.ActiveWidget)</onunload> -->
 	<onunload>CancelAlarm(ReturnToMenu,true)</onunload>
 
 	<controls>
@@ -384,15 +384,14 @@
 						</control>
 					</focusedlayout>
 					<content>
-						<item id="1">
-							<!-- <label>31109</label> -->
+						<include>skinshortcuts-group-videohub</include>
+						<!-- <item id="1">
 							<label>Recenty added</label>
 							<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 							<icon>hub/icons/recently_added.png</icon>
 							<property name="Color">1</property>
 						</item>
 						<item id="2">
-							<!-- <label>31109</label> -->
 							<label>Recenty updated</label>
 							<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 							<icon>hub/icons/recently_added.png</icon>
@@ -404,54 +403,48 @@
 							<icon>hub/icons/playlists.png</icon>
 							<property name="Color">1</property>
 						</item>
-						<item id="10">
-							<!-- <label>31157</label> -->
+						<item id="4">
 							<label>All Anime</label>
 							<onclick>ActivateWindow(Videos,TvShowTitles,return)</onclick>
 							<icon>hub/icons/titles.png</icon>
 							<property name="Color">1</property>
 						</item>
-						<item id="11">
+						<item id="5">
 							<label>135</label>
 							<onclick>ActivateWindow(Videos,TvShowGenres,return)</onclick>
 							<icon>hub/icons/genres.png</icon>
 							<property name="Color">1</property>
 						</item>
-						<item id="12">
+						<item id="6">
 							<label>20388</label>
 							<onclick>ActivateWindow(Videos,TvShowStudios,return)</onclick>
 							<icon>hub/icons/studios.png</icon>
 							<property name="Color">1</property>
 						</item>
-						<item id="13">
+						<item id="7">
 							<label>344</label>
 							<onclick>ActivateWindow(Videos,TvShowActors,return)</onclick>
 							<icon>hub/icons/actors.png</icon>
 							<property name="Color">1</property>
 						</item>
-						<item id="14">
+						<item id="8">
 							<label>652</label>
 							<onclick>ActivateWindow(Videos,TvShowYears,return)</onclick>
 							<icon>hub/icons/years.png</icon>
 							<property name="Color">1</property>
 						</item>
-						<item id="20">
+						<item id="9">
 							<label>1214</label>
 							<onclick>ActivateWindow(Videos,Files,return)</onclick>
 							<icon>hub/icons/files.png</icon>
 							<property name="Color">1</property>
 						</item>
-						<!-- <item id="2">
-							<label>Search</label>
-							<icon>special://skin/media/fanart/x/png/128x128/search.png</icon>
-							<property name="Color">1</property>
-						</item> -->
-						<item id="21">
+						<item id="10">
 							<label>653</label>
 							<onclick>UpdateLibrary(video)</onclick>
 							<icon>hub/icons/library_update.png</icon>
 							<property name="Color">1</property>
-						</item>
+						</item> -->
 					</content>
 				</control>
 			</control>

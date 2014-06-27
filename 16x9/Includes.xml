@@ -30,6 +30,8 @@
 	<include file="Home_OriginalMod.xml" />
 	<include file="Home_AlaskaB.xml" />
 
+	<include file="script-skinshortcuts-includes.xml"/>
+	
 	<!-- Global objects -->
 
 	<include name="Global_Background">
