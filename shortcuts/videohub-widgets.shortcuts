@@ -1,0 +1,5 @@
+[
+['Widget #1', '', '', '', 'ActivateWindow(Videos,RecentlyAddedEpisodes,return)'],
+['Widget #2', '', '', '', 'ActivateWindow(Videos,RecentlyAddedEpisodes,return)'],
+['Widget #3', '', '', '', 'ActivateWindow(videos,special://videoplaylists/,return)']
+]

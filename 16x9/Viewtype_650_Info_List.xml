@@ -14,10 +14,9 @@
 				<aligny>center</aligny>
 				<font>Font_Reg_Caps_36</font>
 				<textcolor>MedLight</textcolor>
-				<label>false</label>
-				<visible>!SubString(Window(home).Property(AlaskaB.VideoNav.ShowHub),true)</visible>
-			</control>
-			<control type="label">
+				<label>$INFO[Container.FolderPath]</label>
+			</control> -->
+			<!-- <control type="label">
 				<left>46</left>
 				<top>150</top>
 				<width>1900</width>
@@ -25,7 +24,7 @@
 				<aligny>center</aligny>
 				<font>Font_Reg_Caps_36</font>
 				<textcolor>MedLight</textcolor>
-				<label>true</label>
+				<label>$INFO[Container.FolderPath]</label>
 				<visible>SubString(Window(home).Property(AlaskaB.VideoNav.ShowHub),true)</visible>
 			</control>  -->
 		
@@ -57,7 +56,7 @@
 					<orientation>vertical</orientation>
 					<viewtype label="Info List">list</viewtype>
 					<scrolltime>0</scrolltime>
-					<visible>[Container.Content(movies) + SubString(Container.FolderPath,videodb://movies/)] | [[Container.Content(tvshows) | Container.Content(seasons)] + [SubString(Container.FolderPath,videodb://tvshows/) | SubString(Container.FolderPath,special://skin/extras/playlists/)]]</visible>
+					<visible>[Container.Content(movies) + SubString(Container.FolderPath,videodb://movies/)] | [[Container.Content(tvshows) | Container.Content(seasons)] + [SubString(Container.FolderPath,videodb://tvshows/) | SubString(Container.FolderPath,.xsp)]]</visible>
 					<itemlayout width="942" height="83">
 						<control type="group">
 							<control type="label">

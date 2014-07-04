@@ -2,7 +2,7 @@
 <window id="56">
 	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">1</defaultcontrol>
-  <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=5000&amp;group=videohub)</onunload>
+  <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=5000&amp;group=videohub-list|videohub-widgets)</onunload>
 
 	<controls>
 
@@ -376,7 +376,17 @@
 					<textoffsetx>30</textoffsetx>
 					<label>VideoHub Menu</label>
 					<!-- <texturenofocus border="1">separator5.png</texturenofocus> -->
-					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=videohub)</onclick>
+					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=videohub-list)</onclick>
+					<visible>System.HasAddon(script.skinshortcuts)</visible>
+				</control>				
+
+				<control type="button" id="143">
+					<width>1260</width>
+					<!-- <height>90</height> -->
+					<textoffsetx>30</textoffsetx>
+					<label>VideoHub Widgets</label>
+					<!-- <texturenofocus border="1">separator5.png</texturenofocus> -->
+					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=videohub-widgets)</onclick>
 					<visible>System.HasAddon(script.skinshortcuts)</visible>
 				</control>				
 			</control>

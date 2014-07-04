@@ -1,408 +1,316 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<window type="dialog" id="97000">
-	<zorder>1</zorder>
-	<allowoverlay>yes</allowoverlay>
-	<defaultcontrol always="true">100</defaultcontrol>
-	<coordinates>
+<window>
+	<defaultcontrol always="true">300</defaultcontrol>
+	<include>transition_Dialog</include>
+	<!-- <coordinates>
 		<system>1</system>
-		<posx>0</posx>
-		<posy>0</posy>
-	</coordinates>
-	<animation type="WindowOpen" reversible="false">
-		<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
-		<effect type="fade" start="0" end="100" time="300" />
-	</animation>
-	<animation type="WindowClose" reversible="false">
-		<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
-		<effect type="fade" start="100" end="0" time="300" />
-	</animation>
+		<left>190</left>
+		<top>28</top>
+	</coordinates> -->
 	<controls>
 		<include>Global_Background</include>
-
-		<!-- <control type="image">
-			<include>screen_Dimensions</include>
-			<texture colordiffuse="base_1">overlays/base_color.png</texture>
-			<include>transition_Dialog</include>
-		</control> -->
-
-		<control type="group" id="200">
-			<left>50</left>
-			<top>50</top>
-			<!-- Background -->
-			
-			<!-- id 211 - Current shortcuts -->
-			<control type="list" id="211">
-				<top>50</top>
-				<left>30</left>
-				<width>400</width>
-				<height>550</height>
-				<onright>300</onright>
-				<onleft>260</onleft>
-				<orientation>vertical</orientation>
-				<viewtype label="535">list</viewtype>
-				<preloaditems>2</preloaditems>
-				<pagecontrol>260</pagecontrol>
-				<itemlayout width="450" height="60">
-					<control type="image">
-						<width>445</width>
-						<height>54</height>
-						<texture colordiffuse="column2">views/focus.png</texture>
-					</control>
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>50</width>
-						<height>50</height>
-						<texture background="true" fallback="DefaultShortcut.png">$INFO[ListItem.Icon]</texture>
-					</control>
-					<control type="label">
-						<posx>55</posx>
-						<posy>0</posy>
-						<label>$INFO[ListItem.Label]</label>
-						<include>settings_Skinshortcuts</include>
-					</control>
-					<control type="label">
-						<posx>55</posx>
-						<posy>25</posy>
-						<label>$INFO[ListItem.Label2]</label>
-						<font>light_HomeSub</font>
-						<include>settings_Skinshortcuts</include>
-					</control>
-				</itemlayout>
-				<focusedlayout width="450" height="60">
-					<control type="image">
-						<width>445</width>
-						<height>54</height>
-						<texture colordiffuse="Color1">views/focus.png</texture>
-						<visible>Control.HasFocus(211)</visible>
-					</control>
-					<control type="image">
-						<width>445</width>
-						<height>54</height>
-						<texture colordiffuse="Color3">views/focus.png</texture>
-						<visible>!Control.HasFocus(211)</visible>
-					</control>
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>50</width>
-						<height>50</height>
-						<texture background="true" colordiffuse="Focused" fallback="DefaultShortcut.png">$INFO[ListItem.Icon]</texture>
-					</control>
-					<control type="label">
-						<posx>55</posx>
-						<posy>0</posy>
-						<width>445</width>
-						<label>$INFO[ListItem.Label]</label>
-						<textcolor>Focused</textcolor>
-						<include>settings_Skinshortcuts</include>
-					</control>
-					<control type="label">
-						<posx>55</posx>
-						<posy>25</posy>
-						<width>445</width>
-						<label>$INFO[ListItem.Label2]</label>
-						<font>light_HomeSub</font>
-						<textcolor>Focused</textcolor>
-						<include>settings_Skinshortcuts</include>
-					</control>
-				</focusedlayout>
+		<control type="group">
+			<left>285</left>
+			<top>41</top>
+			<visible>!Window.IsVisible(yesnodialog)</visible>
+			<control type="image">
+				<width>1350</width>
+				<height>998</height>
+				<colordiffuse>FanartDiffuse</colordiffuse>
+				<texture border="10">refocus/dialogs/frame/window.png</texture>
+			</control>
+			<control type="label" id="500">
+				<label>-</label>
+				<!-- <width>1338</width> -->
+				<width>800</width>
+				<left>6</left>
+				<top>8</top>
+				<font>light_Dialog</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<height>75</height>
+				<textcolor>Heavy</textcolor>
+				<scroll>false</scroll>
 			</control>
 
-			<control type="scrollbar" id="260">
-				<top>50</top>
-				<left>15</left>
-				<width>10</width>
-				<height>550</height>
-				<include>dialog_Scrollbar</include>
-				<onright>211</onright>
-				<showonepage>false</showonepage>
-				<orientation>vertical</orientation>
+			<control type="label">
+				<label>$INFO[Window.Property(AlaskaB.Settings.CurrentWidgetName)]</label>
+				<width>538</width>
+				<left>806</left>
+				<top>8</top>
+				<font>light_Dialog</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<height>75</height>
+				<textcolor>Heavy</textcolor>
+				<scroll>false</scroll>
 			</control>
-		</control>
 
-		<control type="grouplist" id="300">
-			<left>490</left>
-			<align>center</align>
-			<width>300</width>
-			<itemgap>5</itemgap>
-			<control type="button" id="301">
-				<description>Add a new shortcut</description>
-				<left>0</left>
-				<top>0</top>
-				<width>300</width>
-				<align>center</align>
-				<include>dialog_MenuButton</include>
-				<ondown>302</ondown>
-				<onleft>211</onleft>
-				<onright>111</onright>
-				<onclick>noop</onclick>
-				<label>$ADDON[script.skinshortcuts 32000]</label>
+
+			<control type="group">
+				<left>6</left>
+				<top>90</top>		
+				<control type="image">
+					<width>1338</width>
+					<height>1</height>
+					<texture>refocus/dialogs/separator/horizontal.png</texture>
+				</control>
+				<control type="image">
+					<left>600</left>
+					<height>780</height>
+					<width>1</width>
+					<texture>refocus/dialogs/separator/vertical.png</texture>
+				</control>
+				<control type="image">
+					<top>780</top>
+					<width>1338</width>
+					<height>1</height>
+					<texture>refocus/dialogs/separator/horizontal.png</texture>
+				</control>
+				<!--shortcuts-->	
+				<control type="list" id="211">
+					<width>600</width>
+					<height>780</height>
+					<itemgap>0</itemgap>
+					<onleft>300</onleft>
+					<onright>303</onright>
+					<onup>211</onup>
+					<ondown>211</ondown>
+					<scrolltime tween="Quadratic" easing="Out">300</scrolltime>
+					<itemlayout width="600" height="60">
+						<control type="image">
+							<width>600</width>
+							<height>60</height>
+							<texture border="3">refocus/dialogs/select-nf.png</texture>
+						</control>
+						<control type="label">
+							<left>23</left>
+							<width>405</width>
+							<height>60</height>
+							<font>regular</font>
+							<textcolor>Light</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout width="600" height="60">
+						<control type="image">
+							<width>422</width>
+							<height>60</height>
+							<texture border="3">refocus/dialogs/select-fo.png</texture>
+							<visible>Control.HasFocus(211)</visible>
+						</control>
+						<control type="image">
+							<width>600</width>
+							<height>60</height>
+							<texture border="3">refocus/dialogs/select-nf.png</texture>
+						</control>
+						<control type="label">
+							<left>23</left>
+							<width>405</width>
+							<height>60</height>
+							<font>regular</font>
+							<textcolor>Heavy</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>Control.HasFocus(211)</visible>
+						</control>
+						<control type="label">
+							<left>23</left>
+							<width>405</width>
+							<height>60</height>
+							<font>regular</font>
+							<textcolor>Heavy</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>!Control.HasFocus(211)</visible>
+						</control>
+					</focusedlayout>
+				</control>
+				<!--inline controls-->
+				<control type="group" id="1000">
+					<left>420</left>
+					<animation effect="slide" end="0,60" time="0" condition="Container(211).Row(1)">Conditional</animation>
+					<animation effect="slide" end="0,120" time="0" condition="Container(211).Row(2)">Conditional</animation>
+					<animation effect="slide" end="0,180" time="0" condition="Container(211).Row(3)">Conditional</animation>
+					<animation effect="slide" end="0,240" time="0" condition="Container(211).Row(4)">Conditional</animation>
+					<animation effect="slide" end="0,300" time="0" condition="Container(211).Row(5)">Conditional</animation>
+					<animation effect="slide" end="0,360" time="0" condition="Container(211).Row(6)">Conditional</animation>
+					<animation effect="slide" end="0,420" time="0" condition="Container(211).Row(7)">Conditional</animation>
+					<animation effect="slide" end="0,480" time="0" condition="Container(211).Row(8)">Conditional</animation>
+					<animation effect="slide" end="0,540" time="0" condition="Container(211).Row(9)">Conditional</animation>
+					<animation effect="slide" end="0,600" time="0" condition="Container(211).Row(10)">Conditional</animation>
+					<animation effect="slide" end="0,660" time="0" condition="Container(211).Row(11)">Conditional</animation>
+					<animation effect="slide" end="0,720" time="0" condition="Container(211).Row(12)">Conditional</animation>
+					<animation effect="slide" end="0,780" time="0" condition="Container(211).Row(13)">Conditional</animation>
+					<animation effect="slide" end="0,840" time="0" condition="Container(211).Row(14)">Conditional</animation>
+					<animation effect="slide" end="0,900" time="0" condition="Container(211).Row(15)">Conditional</animation>
+					<animation effect="slide" end="0,960" time="0" condition="Container(211).Row(16)">Conditional</animation>
+					<animation effect="slide" end="0,1020" time="0" condition="Container(211).Row(17)">Conditional</animation>
+					<animation effect="slide" end="0,1080" time="0" condition="Container(211).Row(18)">Conditional</animation>
+					<animation effect="slide" end="0,1140" time="0" condition="Container(211).Row(19)">Conditional</animation>
+					<animation effect="slide" end="0,1200" time="0" condition="Container(211).Row(20)">Conditional</animation>
+					<control type="image">
+						<height>60</height>
+						<width>1</width>
+						<texture>refocus/dialogs/separator/vertical.png</texture>
+					</control>
+					<control type="image">
+						<left>60</left>
+						<height>60</height>
+						<width>1</width>
+						<texture>refocus/dialogs/separator/vertical.png</texture>
+					</control>
+					<control type="image">
+						<left>120</left>
+						<height>60</height>
+						<width>1</width>
+						<texture>refocus/dialogs/separator/vertical.png</texture>
+					</control>
+					<!--move up-->
+					<control type="button" id="303">
+						<label>-</label>
+						<onup>211</onup>
+						<onleft>211</onleft>
+						<onright>304</onright>
+						<ondown>211</ondown>
+						<width>60</width>
+						<height>60</height>
+						<texturenofocus colordiffuse="Light">refocus/dialogs/inline/up-nf.png</texturenofocus>
+						<texturefocus colordiffuse="Heavy">refocus/dialogs/inline/up-fo.png</texturefocus>
+					</control>
+					<!--move down-->
+					<control type="button" id="304">
+						<left>60</left>
+						<label>-</label>
+						<onup>211</onup>
+						<onleft>303</onleft>
+						<onright>302</onright>
+						<ondown>211</ondown>
+						<width>60</width>
+						<height>60</height>
+						<texturenofocus colordiffuse="Light">refocus/dialogs/inline/down-nf.png</texturenofocus>
+						<texturefocus colordiffuse="Heavy">refocus/dialogs/inline/down-fo.png</texturefocus>
+					</control>
+					<!--remove-->
+					<control type="button" id="302">
+						<left>120</left>
+						<label>-</label>
+						<onup>211</onup>
+						<onleft>304</onleft>
+						<onright>300</onright>
+						<ondown>211</ondown>
+						<width>60</width>
+						<height>60</height>
+						<texturenofocus colordiffuse="Light">refocus/dialogs/inline/remove-nf.png</texturenofocus>
+						<texturefocus colordiffuse="Heavy">refocus/dialogs/inline/remove-fo.png</texturefocus>
+					</control>
+				</control>
+				<!---control area-->	
+				<control type="grouplist" id="300">
+					<left>600</left>
+					<width>738</width>
+					<height>780</height>
+					<onleft>302</onleft>
+					<onright>10</onright>
+					<onup>300</onup>
+					<ondown>300</ondown>
+					<itemgap>0</itemgap>
+					<scrolltime tween="Quadratic" easing="Out">300</scrolltime>
+					<!--change shortcut-->
+					<control type="button" id="401">
+						<width>738</width>
+						<height>60</height>
+						<label>$ADDON[script.skinshortcuts 32048]</label>
+						<include>dialog_Radio</include>
+					</control>
+					<!--change label-->
+					<control type="button" id="305">
+						<width>738</width>
+						<height>60</height>
+						<label>$ADDON[script.skinshortcuts 32025]</label>
+						<label2>$INFO[Container(211).ListItem.Label]</label2>
+						<include>dialog_Radio</include>
+					</control>			
+					<!--change thumbnail-->
+					<control type="button" id="306">
+						<width>738</width>
+						<height>60</height>
+						<label>$ADDON[script.skinshortcuts 32026]</label>
+						<include>dialog_Radio</include>
+					</control>			
+					<!--change widget-->
+					<control type="button" id="309">
+						<width>738</width>
+						<height>60</height>
+						<label>$ADDON[script.skinshortcuts 32044]</label>
+						<include>dialog_Radio</include>
+						<onclick>SetProperty(useWidgetNameAsLabel,true)</onclick>
+						<!-- <onfocus>ClearProperty(useWidgetNameAsLabel)</onfocus> -->
+					</control>			
+					<!--change action-->
+					<control type="button" id="307">
+						<width>738</width>
+						<height>60</height>
+						<label>$ADDON[script.skinshortcuts 32027]</label>
+						<label2>$INFO[Container(211).ListItem.Property(displaypath)]</label2>
+						<include>dialog_Radio</include>
+					</control>
+					<!--edit sub-menu-->
+					<control type="button" id="405">
+						<width>738</width>
+						<height>60</height>
+						<label>Edit submenu</label>
+						<include>dialog_Radio</include>
+						<visible>StringCompare(Window.Property("groupname"),mainmenu)</visible>
+					</control>
+					<!--add item-->
+					<control type="button" id="301">
+						<width>738</width>
+						<height>60</height>
+						<label>$ADDON[script.skinshortcuts 32000]</label>
+						<include>dialog_Radio</include>
+					</control>
+				</control>
 			</control>
-			<control type="button" id="302">
-				<description>Delete shortcut</description>
-				<left>0</left>
-				<top>30</top>
-				<width>300</width>
-				<align>center</align>
-				<include>dialog_MenuButton</include>
-				<onup>301</onup>
-				<ondown>303</ondown>
-				<onleft>211</onleft>
-				<onright>111</onright>
-				<onclick>noop</onclick>
-				<label>$ADDON[script.skinshortcuts 32001]</label>
-			</control>
-			<control type="button" id="303">
-				<description>Move shortcut up</description>
-				<left>0</left>
-				<top>80</top>
-				<width>300</width>
-				<align>center</align>
-				<include>dialog_MenuButton</include>
-				<onup>302</onup>
-				<ondown>304</ondown>
-				<onleft>211</onleft>
-				<onright>111</onright>
-				<onclick>noop</onclick>
-				<label>$ADDON[script.skinshortcuts 32002]</label>
-			</control>
-			<control type="button" id="304">
-				<description>Move shortcut down</description>
-				<left>0</left>
-				<top>110</top>
-				<width>300</width>
-				<align>center</align>
-				<include>dialog_MenuButton</include>
-				<onup>303</onup>
-				<ondown>305</ondown>
-				<onleft>211</onleft>
-				<onright>111</onright>
-				<onclick>noop</onclick>
-				<label>$ADDON[script.skinshortcuts 32003]</label>
-			</control>
-			<control type="button" id="305">
-				<description>Change shortcut label</description>
-				<left>0</left>
-				<top>140</top>
-				<width>300</width>
-				<align>center</align>
-				<include>dialog_MenuButton</include>
-				<onup>304</onup>
-				<ondown>306</ondown>
-				<onleft>211</onleft>
-				<onright>111</onright>
-				<onclick>noop</onclick>
-				<label>$ADDON[script.skinshortcuts 32025]</label>
-			</control>
-			<control type="button" id="306">
-				<description>Change shortcut thumbnail</description>
-				<left>0</left>
-				<top>170</top>
-				<width>300</width>
-				<align>center</align>
-				<include>dialog_MenuButton</include>
-				<onup>305</onup>
-				<ondown>307</ondown>
-				<onleft>211</onleft>
-				<onright>111</onright>
-				<onclick>noop</onclick>
-				<label>$ADDON[script.skinshortcuts 32026]</label>
-			</control>
-			<control type="button" id="307">
-				<description>Change shortcut action</description>
-				<left>0</left>
-				<top>200</top>
-				<width>300</width>
-				<align>center</align>
-				<include>dialog_MenuButton</include>
-				<onup>306</onup>
-				<ondown>308</ondown>
-				<onleft>211</onleft>
-				<onright>111</onright>
-				<onclick>noop</onclick>
-				<label>$ADDON[script.skinshortcuts 32027]</label>
-			</control>
+			<!--reset-->
 			<control type="button" id="308">
-				<description>Reset shortcuts</description>
-				<left>0</left>
-				<top>230</top>
-				<width>300</width>
-				<align>center</align>
-				<include>dialog_MenuButton</include>
-				<onup>307</onup>
-				<ondown>309</ondown>
-				<onleft>211</onleft>
-				<onright>111</onright>
-				<onclick>noop</onclick>
+				<left>29</left>
+				<top>900</top>
+				<width>375</width>
 				<label>$ADDON[script.skinshortcuts 32028]</label>
-			</control>	
-			<control type="button" id="309">
-				<description>Set widgets</description>
-				<left>0</left>
-				<top>230</top>
-				<width>300</width>
-				<align>center</align>
-				<include>dialog_MenuButton</include>
-				<onup>308</onup>
-				<ondown>405</ondown>
-				<onleft>211</onleft>
-				<onright>111</onright>
-				<onclick>noop</onclick>
-				<label>$ADDON[script.skinshortcuts 32029]</label>
-			</control>	
-		</control>
-
-		<control type="group" id="100">
-			<left>795</left>
-			<top>50</top>
-			<!-- Background -->
-			
-			<!-- id's 101, 102, 103 - label of current shortcut type, buttons to change shortcut type -->
-			<control type="label" id="101">
-				<left>10</left>
-				<top>10</top>
-				<width>400</width>
-				<height>30</height>
+				<onup>211</onup>
+				<ondown>-</ondown>
+				<onleft>-</onleft>
+				<onright>10</onright>
+				<include>dialog_WindowButton</include>
 			</control>
-			<control type="button" id="102">
-				<left>370</left>
-				<top>10</top>
-				<width>30</width>
-				<height>30</height>
-				<onclick>-</onclick>
-				<texturefocus>settings/spin/down-fo.png</texturefocus>
-				<texturenofocus>settings/spin/down-nf.png</texturenofocus>
-				<onleft>300</onleft>
-				<onright>103</onright>
-				<ondown>111</ondown>
+			<!--apply-->
+			<control type="button" id="10">
+				<left>1134</left>
+				<top>900</top>
+				<label>$LOCALIZE[186]</label>
+				<onup>301</onup>
+				<onleft>308</onleft>
+				<onright>-</onright>
+				<ondown>401</ondown>
+				<onback>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=5000&amp;group=videohub-list|videohub-widgets)</onback>
+				<onclick>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=5000&amp;group=videohub-list|videohub-widgets)</onclick>
+				<!-- <onback>RunScript(script.skinshortcuts,type=buildxml&amp;mode=single&amp;mainmenuID=9110)</onback> -->
+				<!-- <onclick>RunScript(script.skinshortcuts,type=buildxml&amp;mode=single&amp;mainmenuID=9110)</onclick> -->
+				<onclick>Close</onclick>
+				<include>dialog_WindowButton</include>
+				<visible>StringCompare(Window.Property("groupname"),mainmenu)</visible>
 			</control>
-			<control type="button" id="103">
-				<left>400</left>
-				<top>10</top>
-				<width>30</width>
-				<height>30</height>
-				<onclick>-</onclick>
-				<texturefocus>settings/spin/up-fo.png</texturefocus>
-				<texturenofocus>settings/spin/up-nf.png</texturenofocus>
-				<onleft>102</onleft>
-				<ondown>111</ondown>
-			</control>
-
-			<!-- id 111 - List of available plugins -->
-			<control type="list" id="111">
-				<top>50</top>
-				<left>10</left>
-				<width>400</width>
-				<height>550</height>
-				<onleft>300</onleft>
-				<onright>160</onright>
-				<onup>103</onup>
-				<pagecontrol>160</pagecontrol>
-				<orientation>vertical</orientation>
-				<viewtype label="535">list</viewtype>
-				<preloaditems>2</preloaditems>
-				<itemgap>5</itemgap>
-				<itemlayout width="450" height="60">
-					<control type="image">
-						<width>445</width>
-						<height>54</height>
-						<texture colordiffuse="column2">views/focus.png</texture>
-					</control>
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>50</width>
-						<height>50</height>
-						<texture background="true" fallback="DefaultShortcut.png">$INFO[ListItem.Icon]</texture>
-					</control>
-					<control type="label">
-						<posx>55</posx>
-						<posy>0</posy>
-						<label>$INFO[ListItem.Label]</label>
-						<include>settings_Skinshortcuts</include>
-					</control>
-					<control type="label">
-						<posx>55</posx>
-						<posy>25</posy>
-						<label>$INFO[ListItem.Label2]</label>
-						<font>light_HomeSub</font>
-						<include>settings_Skinshortcuts</include>
-					</control>
-				</itemlayout>
-				<focusedlayout width="450" height="60">
-					<control type="image">
-						<width>445</width>
-						<height>54</height>
-						<texture colordiffuse="Color1">views/focus.png</texture>
-						<visible>Control.HasFocus(111)</visible>
-					</control>
-					<control type="image">
-						<width>445</width>
-						<height>54</height>
-						<texture colordiffuse="Color3">views/focus.png</texture>
-						<visible>!Control.HasFocus(111)</visible>
-					</control>
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>50</width>
-						<height>50</height>
-						<texture background="true" colordiffuse="Focused" fallback="DefaultShortcut.png">$INFO[ListItem.Icon]</texture>
-					</control>
-					<control type="group">
-						<control type="label">
-							<posx>55</posx>
-							<posy>0</posy>
-							<width>445</width>
-							<label>$INFO[ListItem.Label]</label>
-							<textcolor>Focused</textcolor>
-							<include>settings_Skinshortcuts</include>
-						</control>
-						<control type="label">
-							<posx>55</posx>
-							<posy>25</posy>
-							<width>445</width>
-							<label>$INFO[ListItem.Label2]</label>
-							<font>light_HomeSub</font>
-							<textcolor>Focused</textcolor>
-							<include>settings_Skinshortcuts</include>
-						</control>
-						<visible>Control.HasFocus(111)</visible>
-					</control>
-					<control type="group">
-						<control type="label">
-							<posx>55</posx>
-							<posy>0</posy>
-							<width>445</width>
-							<label>$INFO[ListItem.Label]</label>
-							<textcolor>Focused</textcolor>
-							<include>settings_Skinshortcuts</include>
-						</control>
-						<control type="label">
-							<posx>55</posx>
-							<posy>25</posy>
-							<width>445</width>
-							<label>$INFO[ListItem.Label2]</label>
-							<font>light_HomeSub</font>
-							<textcolor>Focused</textcolor>
-							<include>settings_Skinshortcuts</include>
-						</control>
-						<visible>!Control.HasFocus(111)</visible>
-					</control>
-				</focusedlayout>
-			</control>
-
-			<control type="scrollbar" id="160">
-				<top>50</top>
-				<left>415</left>
-				<width>10</width>
-				<height>550</height>
-				<include>dialog_Scrollbar</include>
-				<onleft>111</onleft>
-				<onright>102</onright>
-				<showonepage>false</showonepage>
-				<orientation>vertical</orientation>
+			<!--close-->
+			<control type="button" id="10">
+				<left>1134</left>
+				<top>900</top>
+				<label>$LOCALIZE[186]</label>
+				<onup>301</onup>
+				<onleft>308</onleft>
+				<onright>-</onright>
+				<ondown>401</ondown>
+				<onclick>Close</onclick>
+				<include>dialog_WindowButton</include>
+				<visible>!StringCompare(Window.Property("groupname"),mainmenu)</visible>
 			</control>
 		</control>
 	</controls>

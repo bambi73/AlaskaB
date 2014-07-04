@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <overrides>
-	<widget label="VideoHub #1">VideoHubWidged1</widget>
+	<!-- <widget label="VideoHub #1">VideoHubWidged1</widget>
 	<widget label="VideoHub #2">VideoHubWidged2</widget>
 	<widget label="VideoHub #3">VideoHubWidged3</widget>
 	<widgetdefault labelID="Label1" group="videohub">VideoHubWidged1</widgetdefault>
 	<widgetdefault labelID="Label2" group="videohub">VideoHubWidged2</widgetdefault>
-	<widgetdefault labelID="Label3" group="videohub">VideoHubWidged3</widgetdefault>
+	<widgetdefault labelID="Label3" group="videohub">VideoHubWidged3</widgetdefault> -->
 	<widgetPlaylists>True</widgetPlaylists>
 </overrides>

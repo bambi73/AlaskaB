@@ -333,4 +333,38 @@
 		</itemlayout>
 	</include>
 
+
+
+
+	<include name="dialog_Radio">
+		<height>60</height>
+		<font>regular</font>
+		<textoffsetx>15</textoffsetx>
+		<textoffsety>5</textoffsety>
+		<radiowidth>48</radiowidth>
+		<radioheight>24</radioheight>
+		<textureradioonnofocus colordiffuse="Light">refocus/dialogs/radio/on-nf.png</textureradioonnofocus>
+		<textureradiooffnofocus colordiffuse="Light">refocus/dialogs/radio/off-nf.png</textureradiooffnofocus>
+		<textureradioonfocus colordiffuse="Heavy">refocus/dialogs/radio/on-fo.png</textureradioonfocus>
+		<textureradioofffocus colordiffuse="Heavy">refocus/dialogs/radio/off-fo.png</textureradioofffocus>
+		<texturefocus border="3">refocus/dialogs/select-fo.png</texturefocus>
+		<texturenofocus border="3">refocus/dialogs/select-nf.png</texturenofocus>
+		<textcolor>Light</textcolor>
+		<focusedcolor>Heavy</focusedcolor>
+		<disabledcolor>Disabled</disabledcolor>
+		<selectedcolor>Selected</selectedcolor>
+	</include>	
+
+	<include name="dialog_WindowButton">	
+		<width>180</width>
+		<height>61</height>
+		<font>regular</font>
+		<align>center</align>
+		<textoffsety>5</textoffsety>
+		<textcolor>Light</textcolor>
+		<focusedcolor>Heavy</focusedcolor>
+		<texturenofocus>refocus/dialogs/button-nf.png</texturenofocus>
+		<texturefocus>refocus/dialogs/button-fo.png</texturefocus>
+	</include>
+
 </includes>

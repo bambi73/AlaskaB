@@ -3,6 +3,6 @@
     <name>Random Anime</name>
     <match>all</match>
     <rule field="tag" operator="contains">Anime</rule>
-    <limit>20</limit>
+    <limit>50</limit>
     <order direction="ascending">random</order>
 </smartplaylist>

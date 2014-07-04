@@ -10,8 +10,8 @@
 			<icon>hub/icons/recently_added.png</icon>
 			<thumb />
 			<property name="labelID">recentyadded</property>
-			<property name="group">videohub</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(5000).ListItem.Property(submenuVisibility),videohub)]</visible>
+			<property name="group">videohub-list</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(5000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="2">
@@ -21,8 +21,8 @@
 			<icon>hub/icons/recently_added.png</icon>
 			<thumb />
 			<property name="labelID">recentyupdated</property>
-			<property name="group">videohub</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(5000).ListItem.Property(submenuVisibility),videohub)]</visible>
+			<property name="group">videohub-list</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(5000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
@@ -32,19 +32,19 @@
 			<icon>hub/icons/playlists.png</icon>
 			<thumb />
 			<property name="labelID">136</property>
-			<property name="group">videohub</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(5000).ListItem.Property(submenuVisibility),videohub)]</visible>
+			<property name="group">videohub-list</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(5000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="4">
-			<onclick>ActivateWindow(Videos,TvShowTitles,return)</onclick>
-			<label>Title</label>
-			<label2 />
-			<icon>hub/icons/titles.png</icon>
-			<thumb />
-			<property name="labelID">369</property>
-			<property name="group">videohub</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(5000).ListItem.Property(submenuVisibility),videohub)]</visible>
+			<onclick>ActivateWindow(VideoLibrary,C:\Users\Bambi\AppData\Roaming\XBMC\addons\skin.alaskab\extras\playlists/Anime-Titles.xsp, return)</onclick>
+			<label>Titles</label>
+			<label2>Skin Playlist</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>C:\Users\Bambi\AppData\Roaming\XBMC\addons\skin.alaskab\media\hub\icons\titles.png</thumb>
+			<property name="labelID">titles</property>
+			<property name="group">videohub-list</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(5000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="5">
@@ -54,8 +54,8 @@
 			<icon>hub/icons/genres.png</icon>
 			<thumb />
 			<property name="labelID">135</property>
-			<property name="group">videohub</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(5000).ListItem.Property(submenuVisibility),videohub)]</visible>
+			<property name="group">videohub-list</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(5000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="6">
@@ -65,8 +65,8 @@
 			<icon>hub/icons/studios.png</icon>
 			<thumb />
 			<property name="labelID">20388</property>
-			<property name="group">videohub</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(5000).ListItem.Property(submenuVisibility),videohub)]</visible>
+			<property name="group">videohub-list</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(5000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="7">
@@ -76,8 +76,8 @@
 			<icon>hub/icons/actors.png</icon>
 			<thumb />
 			<property name="labelID">344</property>
-			<property name="group">videohub</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(5000).ListItem.Property(submenuVisibility),videohub)]</visible>
+			<property name="group">videohub-list</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(5000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="8">
@@ -87,19 +87,19 @@
 			<icon>hub/icons/years.png</icon>
 			<thumb />
 			<property name="labelID">652</property>
-			<property name="group">videohub</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(5000).ListItem.Property(submenuVisibility),videohub)]</visible>
+			<property name="group">videohub-list</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(5000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="9">
 			<onclick>ActivateWindow(Videos,Files,return)</onclick>
 			<label>Files</label>
-			<label2 />
+			<label2>Custom shortcut</label2>
 			<icon>hub/icons/files.png</icon>
 			<thumb />
-			<property name="labelID">1214</property>
-			<property name="group">videohub</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(5000).ListItem.Property(submenuVisibility),videohub)]</visible>
+			<property name="labelID">files</property>
+			<property name="group">videohub-list</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(5000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="10">
@@ -108,13 +108,55 @@
 			<label2 />
 			<icon>hub/icons/library_update.png</icon>
 			<thumb />
-			<property name="labelID">653</property>
-			<property name="group">videohub</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(5000).ListItem.Property(submenuVisibility),videohub)]</visible>
+			<property name="labelID">updatelibrary</property>
+			<property name="group">videohub-list</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(5000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
 			<property name="isSubmenu">True</property>
 		</item>
+		<item id="1">
+			<onclick>noop</onclick>
+			<label>Random</label>
+			<label2 />
+			<icon />
+			<thumb />
+			<property name="labelID">random</property>
+			<property name="group">videohub-widgets</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(5000).ListItem.Property(submenuVisibility),videohub-widgets)]</visible>
+			<property name="isSubmenu">True</property>
+			<property name="widget">Playlist</property>
+			<property name="widgetName">Random Anime</property>
+			<property name="widgetPlaylist">C:\Users\Bambi\AppData\Roaming\XBMC\addons\skin.alaskab\extras\playlists/RandomTVShows.xsp</property>
+		</item>
+		<item id="2">
+			<onclick>noop</onclick>
+			<label>Random 2</label>
+			<label2 />
+			<icon />
+			<thumb />
+			<property name="labelID">random2</property>
+			<property name="group">videohub-widgets</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(5000).ListItem.Property(submenuVisibility),videohub-widgets)]</visible>
+			<property name="isSubmenu">True</property>
+			<property name="widget">Playlist</property>
+			<property name="widgetName">Random Anime 2</property>
+			<property name="widgetPlaylist">C:\Users\Bambi\AppData\Roaming\XBMC\addons\skin.alaskab\extras\playlists/RandomAnime.xsp</property>
+		</item>
+		<item id="3">
+			<onclick>noop</onclick>
+			<label>In progress</label>
+			<label2 />
+			<icon />
+			<thumb />
+			<property name="labelID">inprogress</property>
+			<property name="group">videohub-widgets</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(5000).ListItem.Property(submenuVisibility),videohub-widgets)]</visible>
+			<property name="isSubmenu">True</property>
+			<property name="widget">Playlist</property>
+			<property name="widgetName">Anime (In progress)</property>
+			<property name="widgetPlaylist">C:\Users\Bambi\AppData\Roaming\XBMC\addons\skin.alaskab\extras\playlists/Anime-InProgress.xsp</property>
+		</item>
 	</include>
-	<include name="skinshortcuts-group-videohub">
+	<include name="skinshortcuts-group-videohub-list">
 		<item id="1">
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<label>Recenty added</label>
@@ -122,7 +164,7 @@
 			<icon>hub/icons/recently_added.png</icon>
 			<thumb />
 			<property name="labelID">recentyadded</property>
-			<property name="group">videohub</property>
+			<property name="group">videohub-list</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 		</item>
 		<item id="2">
@@ -132,7 +174,7 @@
 			<icon>hub/icons/recently_added.png</icon>
 			<thumb />
 			<property name="labelID">recentyupdated</property>
-			<property name="group">videohub</property>
+			<property name="group">videohub-list</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 		</item>
 		<item id="3">
@@ -142,17 +184,17 @@
 			<icon>hub/icons/playlists.png</icon>
 			<thumb />
 			<property name="labelID">136</property>
-			<property name="group">videohub</property>
+			<property name="group">videohub-list</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 		</item>
 		<item id="4">
-			<onclick>ActivateWindow(Videos,TvShowTitles,return)</onclick>
-			<label>Title</label>
-			<label2 />
-			<icon>hub/icons/titles.png</icon>
-			<thumb />
-			<property name="labelID">369</property>
-			<property name="group">videohub</property>
+			<onclick>ActivateWindow(VideoLibrary,C:\Users\Bambi\AppData\Roaming\XBMC\addons\skin.alaskab\extras\playlists/Anime-Titles.xsp, return)</onclick>
+			<label>Titles</label>
+			<label2>Skin Playlist</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>C:\Users\Bambi\AppData\Roaming\XBMC\addons\skin.alaskab\media\hub\icons\titles.png</thumb>
+			<property name="labelID">titles</property>
+			<property name="group">videohub-list</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 		</item>
 		<item id="5">
@@ -162,7 +204,7 @@
 			<icon>hub/icons/genres.png</icon>
 			<thumb />
 			<property name="labelID">135</property>
-			<property name="group">videohub</property>
+			<property name="group">videohub-list</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 		</item>
 		<item id="6">
@@ -172,7 +214,7 @@
 			<icon>hub/icons/studios.png</icon>
 			<thumb />
 			<property name="labelID">20388</property>
-			<property name="group">videohub</property>
+			<property name="group">videohub-list</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 		</item>
 		<item id="7">
@@ -182,7 +224,7 @@
 			<icon>hub/icons/actors.png</icon>
 			<thumb />
 			<property name="labelID">344</property>
-			<property name="group">videohub</property>
+			<property name="group">videohub-list</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 		</item>
 		<item id="8">
@@ -192,17 +234,17 @@
 			<icon>hub/icons/years.png</icon>
 			<thumb />
 			<property name="labelID">652</property>
-			<property name="group">videohub</property>
+			<property name="group">videohub-list</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 		</item>
 		<item id="9">
 			<onclick>ActivateWindow(Videos,Files,return)</onclick>
 			<label>Files</label>
-			<label2 />
+			<label2>Custom shortcut</label2>
 			<icon>hub/icons/files.png</icon>
 			<thumb />
-			<property name="labelID">1214</property>
-			<property name="group">videohub</property>
+			<property name="labelID">files</property>
+			<property name="group">videohub-list</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 		</item>
 		<item id="10">
@@ -211,12 +253,12 @@
 			<label2 />
 			<icon>hub/icons/library_update.png</icon>
 			<thumb />
-			<property name="labelID">653</property>
-			<property name="group">videohub</property>
+			<property name="labelID">updatelibrary</property>
+			<property name="group">videohub-list</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 		</item>
 	</include>
-	<include name="skinshortcuts-group-alt-videohub">
+	<include name="skinshortcuts-group-alt-videohub-list">
 		<item id="1">
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<label>Recenty added</label>
@@ -224,8 +266,8 @@
 			<icon>hub/icons/recently_added.png</icon>
 			<thumb />
 			<property name="labelID">recentyadded</property>
-			<property name="group">videohub</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub)]</visible>
+			<property name="group">videohub-list</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="2">
@@ -235,8 +277,8 @@
 			<icon>hub/icons/recently_added.png</icon>
 			<thumb />
 			<property name="labelID">recentyupdated</property>
-			<property name="group">videohub</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub)]</visible>
+			<property name="group">videohub-list</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="3">
@@ -246,19 +288,19 @@
 			<icon>hub/icons/playlists.png</icon>
 			<thumb />
 			<property name="labelID">136</property>
-			<property name="group">videohub</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub)]</visible>
+			<property name="group">videohub-list</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="4">
-			<onclick>ActivateWindow(Videos,TvShowTitles,return)</onclick>
-			<label>Title</label>
-			<label2 />
-			<icon>hub/icons/titles.png</icon>
-			<thumb />
-			<property name="labelID">369</property>
-			<property name="group">videohub</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub)]</visible>
+			<onclick>ActivateWindow(VideoLibrary,C:\Users\Bambi\AppData\Roaming\XBMC\addons\skin.alaskab\extras\playlists/Anime-Titles.xsp, return)</onclick>
+			<label>Titles</label>
+			<label2>Skin Playlist</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>C:\Users\Bambi\AppData\Roaming\XBMC\addons\skin.alaskab\media\hub\icons\titles.png</thumb>
+			<property name="labelID">titles</property>
+			<property name="group">videohub-list</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="5">
@@ -268,8 +310,8 @@
 			<icon>hub/icons/genres.png</icon>
 			<thumb />
 			<property name="labelID">135</property>
-			<property name="group">videohub</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub)]</visible>
+			<property name="group">videohub-list</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="6">
@@ -279,8 +321,8 @@
 			<icon>hub/icons/studios.png</icon>
 			<thumb />
 			<property name="labelID">20388</property>
-			<property name="group">videohub</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub)]</visible>
+			<property name="group">videohub-list</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="7">
@@ -290,8 +332,8 @@
 			<icon>hub/icons/actors.png</icon>
 			<thumb />
 			<property name="labelID">344</property>
-			<property name="group">videohub</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub)]</visible>
+			<property name="group">videohub-list</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="8">
@@ -301,19 +343,19 @@
 			<icon>hub/icons/years.png</icon>
 			<thumb />
 			<property name="labelID">652</property>
-			<property name="group">videohub</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub)]</visible>
+			<property name="group">videohub-list</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="9">
 			<onclick>ActivateWindow(Videos,Files,return)</onclick>
 			<label>Files</label>
-			<label2 />
+			<label2>Custom shortcut</label2>
 			<icon>hub/icons/files.png</icon>
 			<thumb />
-			<property name="labelID">1214</property>
-			<property name="group">videohub</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub)]</visible>
+			<property name="labelID">files</property>
+			<property name="group">videohub-list</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="10">
@@ -322,10 +364,95 @@
 			<label2 />
 			<icon>hub/icons/library_update.png</icon>
 			<thumb />
-			<property name="labelID">653</property>
-			<property name="group">videohub</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub)]</visible>
+			<property name="labelID">updatelibrary</property>
+			<property name="group">videohub-list</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
 			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-videohub-widgets">
+		<item id="1">
+			<onclick>noop</onclick>
+			<label>Random</label>
+			<label2 />
+			<icon />
+			<thumb />
+			<property name="labelID">random</property>
+			<property name="group">videohub-widgets</property>
+			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<property name="widget">Playlist</property>
+			<property name="widgetName">Random Anime</property>
+			<property name="widgetPlaylist">C:\Users\Bambi\AppData\Roaming\XBMC\addons\skin.alaskab\extras\playlists/RandomTVShows.xsp</property>
+		</item>
+		<item id="2">
+			<onclick>noop</onclick>
+			<label>Random 2</label>
+			<label2 />
+			<icon />
+			<thumb />
+			<property name="labelID">random2</property>
+			<property name="group">videohub-widgets</property>
+			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<property name="widget">Playlist</property>
+			<property name="widgetName">Random Anime 2</property>
+			<property name="widgetPlaylist">C:\Users\Bambi\AppData\Roaming\XBMC\addons\skin.alaskab\extras\playlists/RandomAnime.xsp</property>
+		</item>
+		<item id="3">
+			<onclick>noop</onclick>
+			<label>In progress</label>
+			<label2 />
+			<icon />
+			<thumb />
+			<property name="labelID">inprogress</property>
+			<property name="group">videohub-widgets</property>
+			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<property name="widget">Playlist</property>
+			<property name="widgetName">Anime (In progress)</property>
+			<property name="widgetPlaylist">C:\Users\Bambi\AppData\Roaming\XBMC\addons\skin.alaskab\extras\playlists/Anime-InProgress.xsp</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-alt-videohub-widgets">
+		<item id="1">
+			<onclick>noop</onclick>
+			<label>Random</label>
+			<label2 />
+			<icon />
+			<thumb />
+			<property name="labelID">random</property>
+			<property name="group">videohub-widgets</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-widgets)]</visible>
+			<property name="isSubmenu">True</property>
+			<property name="widget">Playlist</property>
+			<property name="widgetName">Random Anime</property>
+			<property name="widgetPlaylist">C:\Users\Bambi\AppData\Roaming\XBMC\addons\skin.alaskab\extras\playlists/RandomTVShows.xsp</property>
+		</item>
+		<item id="2">
+			<onclick>noop</onclick>
+			<label>Random 2</label>
+			<label2 />
+			<icon />
+			<thumb />
+			<property name="labelID">random2</property>
+			<property name="group">videohub-widgets</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-widgets)]</visible>
+			<property name="isSubmenu">True</property>
+			<property name="widget">Playlist</property>
+			<property name="widgetName">Random Anime 2</property>
+			<property name="widgetPlaylist">C:\Users\Bambi\AppData\Roaming\XBMC\addons\skin.alaskab\extras\playlists/RandomAnime.xsp</property>
+		</item>
+		<item id="3">
+			<onclick>noop</onclick>
+			<label>In progress</label>
+			<label2 />
+			<icon />
+			<thumb />
+			<property name="labelID">inprogress</property>
+			<property name="group">videohub-widgets</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-widgets)]</visible>
+			<property name="isSubmenu">True</property>
+			<property name="widget">Playlist</property>
+			<property name="widgetName">Anime (In progress)</property>
+			<property name="widgetPlaylist">C:\Users\Bambi\AppData\Roaming\XBMC\addons\skin.alaskab\extras\playlists/Anime-InProgress.xsp</property>
 		</item>
 	</include>
 </includes>
