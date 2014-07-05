@@ -13,14 +13,10 @@
 		<include>AlaskaB_Overlay_Heading</include>
 
 		<control type="group">
-			<include>Fanart</include>
-			<visible>[[!Skin.HasSetting(Disable_Movie_Fanart) + Container.Content(Movies)] | [!Skin.HasSetting(Disable_TV_Fanart) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] | [!Skin.HasSetting(Disable_Music_Fanart) + Container.Content(Music)] | [!Skin.HasSetting(Disable_Addon_Fanart) + Container.Content(Addons)]]</visible>
-		</control>
-
-		<control type="group">
 			<left>142</left>
 			<top>240</top>
-			<include>Animation_ZoomInZoomOut</include>
+			<include>Animation_ZoomInZoomOutToHome</include>
+			<include>Animation_ZoomOutZoomInToVideoLibrary</include>
 			<control type="group">
 				<width>1030</width>
 				<control type="group">
@@ -36,7 +32,7 @@
 						<onleft condition="IntegerGreaterThan(Container(8099).NumItems,1)">SetProperty(AlaskaB.VideoHub.ActiveWidget,8015,54)</onleft>
 						<onleft condition="IntegerGreaterThan(Container(8099).NumItems,1)">8016</onleft>
 						<onright>8000</onright>
-						<autoscroll time="7000">!Control.HasFocus(8010) + IntegerGreaterThan(Container(8010).NumItems,1)</autoscroll>
+						<autoscroll time="15000">!Control.HasFocus(8010) + IntegerGreaterThan(Container(8010).NumItems,1)</autoscroll>
 						<visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8010) + IntegerGreaterThan(Container(8010).NumItems,0)</visible>
 						<content target="video">$INFO[Container(8099).ListItem(0).Property(widgetPlaylist)]</content>
 					</control>
@@ -56,7 +52,7 @@
 						<onleft condition="!IntegerGreaterThan(Container(8099).NumItems,2)">SetProperty(AlaskaB.VideoHub.ActiveWidget,8027,54)</onleft>
 						<onleft condition="!IntegerGreaterThan(Container(8099).NumItems,2)">8028</onleft>
 						<onright>8000</onright>
-						<autoscroll time="7000">!Control.HasFocus(8020) + IntegerGreaterThan(Container(8020).NumItems,1)</autoscroll>
+						<autoscroll time="15000">!Control.HasFocus(8020) + IntegerGreaterThan(Container(8020).NumItems,1)</autoscroll>
 						<visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8020) + IntegerGreaterThan(Container(8020).NumItems,0)</visible>
 						<content target="video">$INFO[Container(8099).ListItem(1).Property(widgetPlaylist)]</content>
 					</control>
@@ -76,7 +72,7 @@
 						<onleft>SetProperty(AlaskaB.VideoHub.ActiveWidget,8035,54)</onleft>
 						<onleft>8036</onleft>
 						<onright>8000</onright>
-						<autoscroll time="7000">!Control.HasFocus(8030) + IntegerGreaterThan(Container(8030).NumItems,1)</autoscroll>
+						<autoscroll time="15000">!Control.HasFocus(8030) + IntegerGreaterThan(Container(8030).NumItems,1)</autoscroll>
 						<visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8030) + IntegerGreaterThan(Container(8030).NumItems,0)</visible>
 						<content target="video">$INFO[Container(8099).ListItem(2).Property(widgetPlaylist)]</content>
 					</control>

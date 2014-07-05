@@ -2,7 +2,7 @@
 ['Recenty added', '', 'hub/icons/recently_added.png', '', 'ActivateWindow(Videos,RecentlyAddedEpisodes,return)'],
 ['Recenty updated', '', 'hub/icons/recently_added.png', '', 'ActivateWindow(Videos,RecentlyAddedEpisodes,return)'],
 ['::LOCAL::136', '', 'hub/icons/playlists.png', '', 'ActivateWindow(videos,special://videoplaylists/,return)'],
-['::LOCAL::369', '', 'hub/icons/titles.png', '', 'ActivateWindow(Videos,TvShowTitles,return)'],
+['::LOCAL::369', '', 'hub/icons/titles.png', '', 'ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)'],
 ['::LOCAL::135', '', 'hub/icons/genres.png', '', 'ActivateWindow(Videos,TvShowGenres,return)'],
 ['::LOCAL::20388', '', 'hub/icons/studios.png', '', 'ActivateWindow(Videos,TvShowStudios,return)'],
 ['::LOCAL::344', '', 'hub/icons/actors.png', '', 'ActivateWindow(Videos,TvShowActors,return)'],

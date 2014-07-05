@@ -17,20 +17,42 @@
 	</include>
 
 	<include name="Animation_FanartFade">
-		<animation effect="fade" start="0" end="100" time="200" condition="![Window.IsActive(videolibrary) + Window.Previous(videolibrary)]">WindowOpen</animation>
-		<animation effect="fade" start="100" end="0" time="200" condition="![Window.IsActive(videolibrary) + Window.Next(videolibrary)]">WindowClose</animation>
-		<animation effect="fade" start="0" end="100" time="200">Visible</animation>
-		<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+		<animation effect="fade" start="0" end="100" time="400" condition="![Window.IsActive(videolibrary) + Window.Previous(videolibrary)]">WindowOpen</animation>
+		<animation effect="fade" start="100" end="0" time="400" condition="![Window.IsActive(videolibrary) + Window.Next(videolibrary)]">WindowClose</animation>
+		<animation effect="fade" start="0" end="100" time="400">Visible</animation>
+		<animation effect="fade" start="100" end="0" time="400">Hidden</animation>
 	</include>
 
 	<!-- Window transition animations -->
 
-	<include name="Animation_ZoomInZoomOut">
+	<include name="Animation_ZoomInZoomOutToHome">
 		<animation type="WindowOpen" condition="Window.Previous(home)">
+			<effect type="zoom" time="400" center="CenterX,CenterY" start="50" end="100" tween="cubic" easing="out" />
+			<effect type="fade" time="400" start="0" end="100" />
+		</animation>
+		<animation type="WindowClose" condition="Window.Next(home)">
+			<effect type="zoom" time="400" center="CenterX,CenterY" start="100" end="50" tween="cubic" easing="in" />
+			<effect type="fade" time="400" start="100" end="0" />
+		</animation>
+	</include>
+
+	<include name="Animation_ZoomOutZoomInToVideoLibrary">
+		<animation type="WindowOpen" condition="Window.Previous(videolibrary)">
+			<effect type="zoom" time="400" center="CenterX,CenterY" start="180" end="100" tween="cubic" easing="out" />
+			<effect type="fade" time="400" start="0" end="100" />
+		</animation>
+		<animation type="WindowClose" condition="Window.Next(videolibrary)">
+			<effect type="zoom" time="400" center="CenterX,CenterY" start="100" end="180" tween="cubic" easing="in" />
+			<effect type="fade" time="400" start="100" end="0" />
+		</animation>
+	</include>
+
+	<include name="Animation_ZoomInZoomOut">
+		<animation type="WindowOpen" condition="Window.Previous(home) | Window.Previous(54) | Window.Previous(videolibrary)">
 			<effect type="zoom" time="400" center="CenterX,CenterY" start="50" end="100" tween="cubic" easing="out" />
 			<effect type="fade" time="400" start="0" end="100" tween="cubic" easing="out" />
 		</animation>
-		<animation type="WindowClose" condition="Window.Next(home)">
+		<animation type="WindowClose" condition="Window.Next(home) | Window.Next(54) | Window.Next(videolibrary)">
 			<effect type="zoom" time="400" center="CenterX,CenterY" start="100" end="50" tween="cubic" easing="in" />
 			<effect type="fade" time="400" start="100" end="0" />
 		</animation>
