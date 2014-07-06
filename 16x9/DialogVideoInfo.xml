@@ -137,19 +137,26 @@
 					<!-- Info Lines -->
 					<control type="group">
 						<control type="image">
-							<top>282</top>
+							<left>820</left>
+							<top>175</top>
+							<width>1050</width>
+							<height>720</height>
+							<texture>hub/videoinfo_bg.png</texture>
+						</control>
+						<control type="image">
+							<top>290</top>
 							<width>FullWidth</width>
 							<height>3</height>
 							<texture>dialogs/Video_Info_Line_Horizontal.png</texture>
 						</control>
 						<control type="image">
-							<top>378</top>
+							<top>386</top>
 							<width>FullWidth</width>
 							<height>3</height>
 							<texture>dialogs/Video_Info_Line_Horizontal.png</texture>
 						</control>
 						<control type="image">
-							<top>539</top>
+							<top>547</top>
 							<width>FullWidth</width>
 							<height>3</height>
 							<texture>dialogs/Video_Info_Line_Horizontal.png</texture>
@@ -157,7 +164,7 @@
 					</control>
 
 					<!-- Previous/Next -->
-					<control type="group">
+					<!-- <control type="group">
 						<control type="image">
 							<left>20</left>
 							<top>302</top>
@@ -174,7 +181,7 @@
 							<texture>dialogs/available_right.png</texture>
 							<visible>StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010) + Control.IsVisible(9020)</visible>
 						</control>
-					</control>
+					</control> -->
 
 					<!-- <control type="group">
 						<control type="image">
@@ -198,10 +205,13 @@
 					<!-- Info -->
 					<control type="group">
 						<control type="group">
-							<left>840</left>
-							<top>198</top>
+							<left>874</left>
+							<top>206</top>
+							<!-- <left>840</left> -->
+							<!-- <top>198</top> -->
 							<control type="fadelabel">
-								<width>1004</width>
+								<width>936</width>
+								<!-- <width>1004</width> -->
 								<height>72</height>
 								<aligny>center</aligny>
 								<font>Font_Cond_76</font>
@@ -210,7 +220,8 @@
 							</control>
 							<control type="label">
 								<top>102</top>
-								<width>1004</width>
+								<width>936</width>
+								<!-- <width>1004</width> -->
 								<height>64</height>
 								<aligny>center</aligny>
 								<font>Font_Reg_Caps_68</font>
@@ -243,7 +254,8 @@
 								</control>
 								<control type="grouplist">
 									<top>0</top>
-									<width>1004</width>
+									<width>936</width>
+									<!-- <width>1004</width> -->
 									<height>136</height>
 									<itemgap>7</itemgap>
 									<orientation>horizontal</orientation>
@@ -281,7 +293,8 @@
 										</control>
 									</control>				
 									<control type="group">
-										<width>768</width>
+										<width>700</width>
+										<!-- <width>768</width> -->
 										<control type="label">
 											<top>0</top>
 											<include>VideoInfo_OtherInfo_ValueBlock</include>
@@ -307,7 +320,8 @@
 								<visible>StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010)</visible>
 								<left>0</left>
 								<top>360</top>
-								<width>1004</width>
+								<width>936</width>
+								<!-- <width>1004</width> -->
 								<height>295</height>
 								<font>Font_Reg_38</font>
 								<textcolor>MedLight</textcolor>
@@ -327,8 +341,10 @@
 					</control>
 					<control type="group">
 						<visible>!IsEmpty(Control.GetLabel(8200))</visible>
-						<left>300</left>
-						<top>140</top>
+						<left>277</left>
+						<top>149</top>
+						<!-- <left>300</left> -->
+						<!-- <top>140</top> -->
 						<!--animation type="WindowOpen" condition="StringCompare(Container.ViewMode,$LOCALIZE[31120])" reversible="false">
 							<effect type="slide" start="338,0" end="0,0" time="400" tween="cubic" easing="inout" />
 						</animation>
@@ -403,8 +419,10 @@
 					<include>Animation_CommonFade</include>
 					<visible>StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9020)</visible>
 					<control type="list" id="50">
-						<left>840</left>
-						<top>561</top>
+						<left>874</left>
+						<top>569</top>
+						<!-- <left>840</left> -->
+						<!-- <top>561</top> -->
 						<width>1004</width>
 						<height>290</height>
 						<onup>50</onup>
