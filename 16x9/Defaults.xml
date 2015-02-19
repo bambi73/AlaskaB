@@ -216,7 +216,6 @@
 		<height>66</height>
 		<aligny>center</aligny>
 		<font>Font_Reg_44</font>
-		<hinttext>...</hinttext>
 		<textoffsetx>20</textoffsetx>
 		<textcolor>Light</textcolor>
 		<focusedcolor>ButtonLabel</focusedcolor>

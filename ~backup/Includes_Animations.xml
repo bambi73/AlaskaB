@@ -52,7 +52,7 @@
 		</animation>
 	</include>
 
-	<include name="Animation_ZoomInMenu7010">
+	<include name="Animation_ZoomInMenu7000">
 		<animation type="Conditional" condition="Control.IsVisible(7000)">
 			<effect delay="200" type="zoom" time="600" center="CenterX,CenterY" start="50" end="100" tween="cubic" easing="out" />
 			<effect delay="200" type="fade" time="600" start="0" end="100" tween="cubic" easing="out" />

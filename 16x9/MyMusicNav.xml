@@ -173,14 +173,15 @@
 					<item id="7">
 						<onclick>SendClick(19)</onclick>
 						<label>587</label>
-						<label2>231</label2>
-						<visible>Control.IsEnabled(19) + IsEmpty(Window.Property(filter))</visible>
+						<label2>31100</label2>
+						<visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
 					</item>
 					<item id="7">
-						<onclick>SendClick(19)</onclick>
+						<onclick>Up</onclick>
+						<onclick>Filter</onclick>
 						<label>587</label>
-						<label2>$INFO[Window.Property(filter)]</label2>
-						<visible>Control.IsEnabled(19) + !IsEmpty(Window.Property(filter))</visible>
+						<label2>31100</label2>
+						<visible>Container.CanFilterAdvanced</visible>
 					</item>
 				</content>
 			</control>

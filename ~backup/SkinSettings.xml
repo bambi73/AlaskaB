@@ -65,6 +65,14 @@
 					<animation effect="fade" start="100" end="0" condition="ControlGroup(110).HasFocus()">Conditional</animation>
 				</control>
 
+				<!-- Home -->
+				<control type="button" id="12">
+					<label>Home Settings</label>
+					<onclick>SetFocus(120)</onclick>
+					<width>360</width>
+					<animation effect="fade" start="100" end="0" condition="ControlGroup(110).HasFocus()">Conditional</animation>
+				</control>
+
 				<!-- Debug -->
 				<control type="button" id="13">
 					<label>31033</label>
@@ -103,6 +111,17 @@
 					<texturefocus>-</texturefocus>
 					<texturenofocus>common/Button_NF.png</texturenofocus>
 					<animation effect="fade" start="100" end="0" condition="!ControlGroup(110).HasFocus()">Conditional</animation>
+				</control>
+
+				<control type="button" id="12">
+					<!-- Home -->
+					<label>Home Settings</label>
+					<onclick>noop</onclick>
+					<width>360</width>
+					<textcolor>ButtonLabel</textcolor>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>common/Button_NF.png</texturenofocus>
+					<animation effect="fade" start="100" end="0" condition="!ControlGroup(120).HasFocus()">Conditional</animation>
 				</control>
 
 				<control type="button" id="13">
@@ -279,18 +298,76 @@
 				<scrolltime tween="sine" easing="out">320</scrolltime>
 				<visible>Control.HasFocus(12) | ControlGroup(120).HasFocus()</visible>
 
-				<control type="button" id="121">
-					<!-- Default Button -->
+				<control type="radiobutton" id="121">
+					<!-- Hide Favourites Button -->
 					<width>1260</width>
-					<label>31025</label>
-					<onclick>Skin.SetAddon(LyricAddon,xbmc.python.lyrics)</onclick>
+					<label>Hide Favourites</label>
+					<onclick>Skin.ToggleSetting(HideHomeFavourites)</onclick>
+					<selected>Skin.HasSetting(HideHomeFavourites)</selected>
 				</control>
 
-				<control type="button" id="122">
-					<!-- Default Button -->
+				<control type="radiobutton" id="122">
+					<!-- Hide Apps Button -->
 					<width>1260</width>
-					<label>31026</label>
-					<onclick>Skin.SetAddon(SubtitleAddon,xbmc.python.subtitles)</onclick>
+					<label>Hide Apps</label>
+					<onclick>Skin.ToggleSetting(HideHomeApps)</onclick>
+					<selected>Skin.HasSetting(HideHomeApps)</selected>
+				</control>
+
+				<control type="radiobutton" id="123">
+					<!-- Hide Videos Button -->
+					<width>1260</width>
+					<label>Hide Videos</label>
+					<onclick>Skin.ToggleSetting(HideHomeVideos)</onclick>
+					<selected>Skin.HasSetting(HideHomeVideos)</selected>
+				</control>
+
+				<control type="radiobutton" id="124">
+					<!-- Hide Music Button -->
+					<width>1260</width>
+					<label>Hide Music</label>
+					<onclick>Skin.ToggleSetting(HideHomeMusic)</onclick>
+					<selected>Skin.HasSetting(HideHomeMusic)</selected>
+				</control>
+
+				<control type="radiobutton" id="125">
+					<!-- Hide Movies Button -->
+					<width>1260</width>
+					<label>Hide Movies</label>
+					<onclick>Skin.ToggleSetting(HideHomeMovies)</onclick>
+					<selected>Skin.HasSetting(HideHomeMovies)</selected>
+				</control>
+
+				<control type="radiobutton" id="126">
+					<!-- Hide TV Shows Button -->
+					<width>1260</width>
+					<label>Hide TV Shows</label>
+					<onclick>Skin.ToggleSetting(HideHomeTVShows)</onclick>
+					<selected>Skin.HasSetting(HideHomeTVShows)</selected>
+				</control>
+
+				<control type="radiobutton" id="127">
+					<!-- Hide Pictures Button -->
+					<width>1260</width>
+					<label>Hide Pictures</label>
+					<onclick>Skin.ToggleSetting(HideHomePictures)</onclick>
+					<selected>Skin.HasSetting(HideHomePictures)</selected>
+				</control>
+
+				<control type="radiobutton" id="128">
+					<!-- Hide Weather Button -->
+					<width>1260</width>
+					<label>Hide Weather</label>
+					<onclick>Skin.ToggleSetting(HideHomeWeather)</onclick>
+					<selected>Skin.HasSetting(HideHomeWeather)</selected>
+				</control>
+
+				<control type="radiobutton" id="129">
+					<!-- Hide Settings Button -->
+					<width>1260</width>
+					<label>Hide Settings</label>
+					<onclick>Skin.ToggleSetting(HideHomeSettings)</onclick>
+					<selected>Skin.HasSetting(HideHomeSettings)</selected>
 				</control>
 
 			</control>
@@ -326,6 +403,30 @@
 				</control>
 
 			</control>
+
+			<!-- Divider -->
+
+			<control type="image">
+				<left>544</left>
+				<top>906</top>
+				<width>1260</width>
+				<height>1</height>
+				<texture>common/Button_NF.png</texture>
+			</control>
+
+			<!-- Settings button description -->
+
+			<control type="textbox">
+				<left>544</left>
+				<top>928</top>
+				<width>1260</width>
+				<height>132</height>
+				<label>Note: 'Settings' are now available from the Shutdown menu</label>
+				<font>Font_Light_36</font>
+				<textcolor>Red</textcolor>
+				<visible>Skin.HasSetting(HideHomeSettings)</visible>
+			</control>
+
 		</control>
 
 	</controls>

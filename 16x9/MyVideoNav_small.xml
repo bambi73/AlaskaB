@@ -340,14 +340,12 @@
 			<include>Animation_ZoomInMenu7100</include>
 
 			<control type="fixedlist" id="7100">
-				<include>Menu_Attributes</include>
+				<include>ViewMenu_List</include>
 				<onup>7001</onup>
 				<ondown>7001</ondown>
 				<onleft>noop</onleft>
 				<onright>noop</onright>
 				<visible allowhiddenfocus="true">Control.HasFocus(7100) + !Window.IsActive(shutdownmenu) + !Window.IsActive(DialogYesNo.xml) + !Window.IsActive(progressdialog) + !Window.IsActive(okdialog)</visible>
-				<include>Menu_ItemLayout</include>
-				<include>Menu_FocusedLayout</include>
 				<content>
 					<!-- Filter -->
 					<item id="1">

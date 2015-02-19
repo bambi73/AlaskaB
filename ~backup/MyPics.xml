@@ -63,7 +63,7 @@
 		<control type="group">
 			<top>TopOffset</top>
 			<left>LeftOffset</left>
-			<include>Animation_ZoomInMenu7010</include>
+			<include>Animation_ZoomInMenu7000</include>
 
 			<control type="fixedlist" id="7000">
 				<left>-480</left>
@@ -174,7 +174,7 @@
 						<onclick>SendClick(7)</onclick>
 						<label>335</label>
 						<label2>108</label2>
-						<visible>!ListItem.IsFolder + Control.IsEnabled(7)</visible>
+						<visible>ListItem.IsFolder + Control.IsEnabled(7)</visible>
 					</item>
 					<!-- Randomise -->
 					<item id="6">
@@ -190,6 +190,20 @@
 						<label>13319</label>
 						<label2>305</label2>
 						<visible>!IsEmpty(Window.Property(PicturesRandom))</visible>
+					</item>
+					<!-- Filter -->
+					<item id="7">
+						<onclick>SendClick(19)</onclick>
+						<label>587</label>
+						<label2>31100</label2>
+						<visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
+					</item>
+					<item id="7">
+						<onclick>Up</onclick>
+						<onclick>Filter</onclick>
+						<label>587</label>
+						<label2>31100</label2>
+						<visible>Container.CanFilterAdvanced</visible>
 					</item>
 				</content>
 			</control>

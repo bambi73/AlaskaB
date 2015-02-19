@@ -12,6 +12,12 @@
 	</include>
 
 	<include name="Home_Original_Control">
+		<!-- Hidden control to load weather conditions -->
+		<control type="label">
+			<font>-</font>
+			<label>$INFO[Weather.Conditions]</label>
+		</control>
+
 		<!-- Main menu -->
 		
 		<control type="group" id="5000">
@@ -734,7 +740,7 @@
 				<control type="group">
 					<width>498</width>
 					<height>480</height>
-					<include condition="!Skin.HasSetting(HideHomeMovies) + !Library.HasContent(Movies)">Home_Movies_Visible</include>
+					<visible>!Skin.HasSetting(HideHomeMovies) + Library.HasContent(Movies)</visible>
 					<animation type="conditional" condition="!Control.HasFocus(3400)">
 						<effect type="zoom" center="288,240" tween="cubic" easing="in" time="200" start="100" end="84" />
 					</animation>
@@ -895,7 +901,7 @@
 				<control type="group">
 					<width>498</width>
 					<height>480</height>
-					<include condition="!Skin.HasSetting(HideHomeTVShows) + !Library.HasContent(TVShows)">Home_TVShows_Visible</include>
+					<visible>!Skin.HasSetting(HideHomeTVShows) + Library.HasContent(TVShows)</visible>
 					<animation type="conditional" condition="!Control.HasFocus(3500)">
 						<effect type="zoom" center="288,240" tween="cubic" easing="in" time="200" start="100" end="84" />
 					</animation>
@@ -1461,12 +1467,12 @@
 				<item id="11">
 					<!-- Movies -->
 					<onclick>noop</onclick>
-					<include condition="!Skin.HasSetting(HideHomeMovies) + !Library.HasContent(Movies)">Home_Movies_Visible</include>
+					<visible>!Skin.HasSetting(HideHomeMovies) + Library.HasContent(Movies)</visible>
 				</item>
 				<item id="13">
 					<!-- TV Shows -->
 					<onclick>noop</onclick>
-					<include condition="!Skin.HasSetting(HideHomeTVShows) + !Library.HasContent(TVShows)">Home_TVShows_Visible</include>
+					<visible>!Skin.HasSetting(HideHomeTVShows) + Library.HasContent(TVShows)</visible>
 				</item>
 				<item id="15">
 					<!-- Pictures -->

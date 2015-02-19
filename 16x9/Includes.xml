@@ -733,7 +733,17 @@
 		<height>76</height>
 		<align>center</align>
 		<font>Font_Black_Caps_76</font>
-		<textcolor>Medium</textcolor>
+		<textcolor>Light</textcolor>
+	</include>
+
+	<include name="ContextMenuValue_Focus">
+		<left>0</left>
+		<top>33</top>
+		<width>1600</width>
+		<height>76</height>
+		<align>center</align>
+		<font>Font_Black_Caps_76</font>
+		<textcolor>Heavy</textcolor>
 	</include>
 
 	<!-- Dialog menu button -->
@@ -757,7 +767,17 @@
 		<height>76</height>
 		<align>center</align>
 		<font>Font_Black_Caps_76</font>
-		<textcolor>Medium</textcolor>
+		<textcolor>Light</textcolor>
+	</include>
+
+	<include name="ShutdownMenuValue_Focus">
+		<left>0</left>
+		<top>33</top>
+		<width>1600</width>
+		<height>76</height>
+		<align>center</align>
+		<font>Font_Black_Caps_76</font>
+		<textcolor>Heavy</textcolor>
 	</include>
 
 	<!-- Settings objects -->

@@ -7,7 +7,7 @@
 
 		<!-- Filter -->
 
-		<include>Global_DialogFilter</include>
+		<!-- <include>Global_DialogFilter</include> -->
 
 		<!-- Menu -->
 
@@ -18,23 +18,34 @@
 
 			<control type="grouplist" id="3110">
 				<left>160</left>
-				<top>466</top>
+				<top>496</top>
 				<width>1600</width>
 				<height>836</height>
 				<itemgap>0</itemgap>
 				<orientation>vertical</orientation>
 				<include>Animation_ShutdownMenuSlide</include>
 				<scrolltime tween="sine" easing="out">320</scrolltime>
-				<control type="label" id="3111">
-					<include>ShutdownMenuValue</include>
+				<control type="label">
+					<include>ShutdownMenuValue_Focus</include>
 					<label>13012</label>
-					<visible>System.ShowExitButton</visible>
+					<!-- <visible>System.ShowExitButton</visible> -->
+					<visible>Control(3200).IsVisible(1) + Container(3200).HasFocus(1)</visible>
 					<animation type="conditional" condition="!Container(3200).HasFocus(1)">
 						<effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
-						<effect type="fade" start="100" end="50" time="200" />
 					</animation>
 				</control>
-				<control type="label" id="3112">
+				<control type="label">
+					<include>ShutdownMenuValue</include>
+					<label>13012</label>
+					<visible>Control(3200).IsVisible(1) + !Container(3200).HasFocus(1)</visible>
+					<animation type="conditional" condition="!Container(3200).HasFocus(1)">
+						<effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
+					</animation>
+					<animation type="conditional" condition="ControlGroup(3200).Position(3) | ControlGroup(3200).Position(4)">
+						<effect type="fade" start="100" end="0" time="200" tween="cubic" easing="in" />
+					</animation>
+				</control>
+				<control type="label">
 					<include>ShutdownMenuValue</include>
 					<label>31156</label>
 					<visible>System.HasLocks</visible>
@@ -43,7 +54,7 @@
 						<effect type="fade" start="100" end="50" time="200" />
 					</animation>
 				</control>
-				<control type="label" id="3113">
+				<control type="label">
 					<include>ShutdownMenuValue</include>
 					<label>$LOCALIZE[20126] $INFO[system.profilename]</label>
 					<visible>System.Loggedon + System.HasLoginScreen</visible>
@@ -52,7 +63,7 @@
 						<effect type="fade" start="100" end="50" time="200" />
 					</animation>
 				</control>
-				<control type="label" id="3114">
+				<control type="label">
 					<include>ShutdownMenuValue</include>
 					<label>$LOCALIZE[222] (T-$INFO[System.Alarmpos])</label>
 					<visible>System.HasAlarm(shutdowntimer)</visible>
@@ -61,7 +72,7 @@
 						<effect type="fade" start="100" end="50" time="200" />
 					</animation>
 				</control>
-				<control type="label" id="3115">
+				<control type="label">
 					<include>ShutdownMenuValue</include>
 					<label>20144</label>
 					<visible>!System.HasAlarm(shutdowntimer)</visible>
@@ -70,7 +81,7 @@
 						<effect type="fade" start="100" end="50" time="200" />
 					</animation>
 				</control>
-				<control type="label" id="3116">
+				<control type="label">
 					<include>ShutdownMenuValue</include>
 					<label>13005</label>
 					<visible>System.CanPowerDown</visible>
@@ -79,7 +90,7 @@
 						<effect type="fade" start="100" end="50" time="200" />
 					</animation>
 				</control>
-				<control type="label" id="3117">
+				<control type="label">
 					<include>ShutdownMenuValue</include>
 					<label>13011</label>
 					<visible>System.CanSuspend</visible>
@@ -88,7 +99,7 @@
 						<effect type="fade" start="100" end="50" time="200" />
 					</animation>
 				</control>
-				<control type="label" id="3118">
+				<control type="label">
 					<include>ShutdownMenuValue</include>
 					<label>13010</label>
 					<visible>System.CanHibernate</visible>
@@ -97,7 +108,7 @@
 						<effect type="fade" start="100" end="50" time="200" />
 					</animation>
 				</control>
-				<control type="label" id="3119">
+				<control type="label">
 					<include>ShutdownMenuValue</include>
 					<label>13013</label>
 					<visible>System.CanReboot</visible>
@@ -106,7 +117,7 @@
 						<effect type="fade" start="100" end="50" time="200" />
 					</animation>
 				</control>
-				<control type="label" id="3120">
+				<control type="label">
 					<include>ShutdownMenuValue</include>
 					<label>13017</label>
 					<visible>System.HasShutdown + !System.IsInhibit</visible>
@@ -115,7 +126,7 @@
 						<effect type="fade" start="100" end="50" time="200" />
 					</animation>
 				</control>
-				<control type="label" id="3121">
+				<control type="label">
 					<include>ShutdownMenuValue</include>
 					<label>13018</label>
 					<visible>System.HasShutdown + System.IsInhibit</visible>
@@ -124,7 +135,7 @@
 						<effect type="fade" start="100" end="50" time="200" />
 					</animation>
 				</control>
-				<control type="label" id="3122">
+				<control type="label">
 					<include>ShutdownMenuValue</include>
 					<label>13350</label>
 					<visible>Player.HasMedia</visible>
@@ -133,7 +144,7 @@
 						<effect type="fade" start="100" end="50" time="200" />
 					</animation>
 				</control>
-				<control type="label" id="3122">
+				<control type="label">
 					<include>ShutdownMenuValue</include>
 					<label>5</label>
 					<visible>Skin.HasSetting(HideHomeSettings)</visible>
@@ -148,10 +159,10 @@
 
 		<!-- Filter -->
 
-		<control type="group">
+		<!-- <control type="group">
 			<include>Animation_CommonFade</include>
 			<include>List_Filter</include>
-		</control>
+		</control> -->
 
 		<!-- Hidden menu -->
 

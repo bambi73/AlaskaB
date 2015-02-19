@@ -486,7 +486,7 @@
 		<control type="group">
 			<top>TopOffset</top>
 			<left>LeftOffset</left>
-			<include>Animation_ZoomInMenu7010</include>
+			<include>Animation_ZoomInMenu7000</include>
 
 			<control type="fixedlist" id="7000">
 				<left>-480</left>
