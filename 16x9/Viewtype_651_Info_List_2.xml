@@ -36,12 +36,34 @@
 				<include>Animation_ZoomedByMenu</include>
 				<include>Animation_HiddenByInfo</include>
 
-				<control type="image">
+				<!-- <control type="image">
 					<left>-90</left>
 					<top>75</top>
 					<width>2100</width>
 					<height>1020</height>
 					<texture>hub/bg_list.png</texture>
+				</control> -->
+
+				<control type="image">
+					<left>0</left>
+					<top>147</top>
+					<width>1920</width>
+					<height>15</height>
+					<texture>hub/list_bg_border_up.png</texture>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>162</top>
+					<width>1920</width>
+					<height>732</height>
+					<texture>hub/list_bg.png</texture>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>894</top>
+					<width>1920</width>
+					<height>15</height>
+					<texture>hub/list_bg_border_down.png</texture>
 				</control>
 
 				<control type="fixedlist" id="651">
