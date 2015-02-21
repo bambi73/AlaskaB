@@ -36,14 +36,6 @@
 				<include>Animation_ZoomedByMenu</include>
 				<include>Animation_HiddenByInfo</include>
 
-				<control type="image">
-					<left>-90</left>
-					<top>75</top>
-					<width>2100</width>
-					<height>1020</height>
-					<texture>hub/bg_list.png</texture>
-				</control>
-
 				<control type="fixedlist" id="651">
 					<left>840</left>
 					<top>207</top>
@@ -122,21 +114,17 @@
 				</control>
 
 				<control type="group">
-					<!-- <left>300</left> -->
-					<!-- <top>140</top> -->
-					<left>280</left>
-					<top>175</top>
+					<left>300</left>
+					<top>140</top>
 					<visible>!SubString(ListItem.Icon,Default)</visible>
 					<control type="group">
 						<visible>!Window.IsActive(movieinformation)</visible>
 						<!--include>Animation_PosterInfoSlide</include-->  <!-- ??? -->
 						<control type="image">
-							<left>5</left>
+							<left>6</left>
 							<top>28</top>
-							<!-- <width>480</width> -->
-							<!-- <height>718</height> -->
-							<width>434</width>
-							<height>650</height>
+							<width>480</width>
+							<height>718</height>
 							<texture background="true" diffuse="poster/Poster_Matte_FO.png">$INFO[ListItem.Icon]</texture>
 							<fadetime>200</fadetime>
 							<aspectratio scalediffuse="false">stretch</aspectratio>
@@ -144,8 +132,8 @@
 						<control type="image">
 							<left>-23</left>
 							<top>0</top>
-							<width>486</width>
-							<height>699</height>
+							<width>538</width>
+							<height>772</height>
 							<texture>poster/Poster_Frame_FO.png</texture>
 						</control>
 						<control type="image">

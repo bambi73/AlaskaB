@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
-	<include name="Viewtype_651_Info_List_2">
+	<include name="Viewtype_650_Info_List">
 
 		<control type="group">
-			<visible>Control.IsVisible(651)</visible>
+			<visible>Control.IsVisible(650)</visible>
 
 			<!-- <control type="label">
 				<left>46</left>
@@ -14,10 +14,9 @@
 				<aligny>center</aligny>
 				<font>Font_Reg_Caps_36</font>
 				<textcolor>MedLight</textcolor>
-				<label>false</label>
-				<visible>!SubString(Window(home).Property(AlaskaB.VideoNav.ShowHub),true)</visible>
-			</control>
-			<control type="label">
+				<label>$INFO[Container.FolderPath]</label>
+			</control> -->
+			<!-- <control type="label">
 				<left>46</left>
 				<top>150</top>
 				<width>1900</width>
@@ -25,7 +24,7 @@
 				<aligny>center</aligny>
 				<font>Font_Reg_Caps_36</font>
 				<textcolor>MedLight</textcolor>
-				<label>true</label>
+				<label>$INFO[Container.FolderPath]</label>
 				<visible>SubString(Window(home).Property(AlaskaB.VideoNav.ShowHub),true)</visible>
 			</control>  -->
 		
@@ -37,32 +36,30 @@
 				<include>Animation_HiddenByInfo</include>
 
 				<control type="image">
-					<left>-90</left>
-					<top>75</top>
-					<width>2100</width>
-					<height>1020</height>
-					<texture>hub/bg_list.png</texture>
+					<left>820</left>
+					<top>175</top>
+					<width>1050</width>
+					<height>720</height>
+					<texture>hub/list_bg.png</texture>
 				</control>
-
-				<control type="fixedlist" id="651">
-					<left>840</left>
-					<top>207</top>
+				
+				<control type="fixedlist" id="650">
+					<left>874</left>
+					<top>213</top>
 					<height>648</height>
-					<width>1032</width>
-					<onup>651</onup>
-					<ondown>651</ondown>
+					<width>942</width>
+					<onup>650</onup>
+					<ondown>650</ondown>
 					<onleft>7000</onleft>
 					<onright>7000</onright>
 					<focusposition>3</focusposition>
 					<orientation>vertical</orientation>
-					<viewtype label="Info List 2">list</viewtype>
+					<viewtype label="Info List">list</viewtype>
 					<scrolltime>0</scrolltime>
-					<visible>[Container.Content(movies) + SubString(Container.FolderPath,videodb://movies/)] | [[Container.Content(tvshows) | Container.Content(seasons)] + [SubString(Container.FolderPath,videodb://tvshows/) | SubString(Container.FolderPath,special://skin/extras/playlists/)]]</visible>
-					<itemlayout width="1691" height="82">
+					<visible>[Container.Content(movies) + SubString(Container.FolderPath,videodb://movies/)] | [[Container.Content(tvshows) | Container.Content(seasons)] + [SubString(Container.FolderPath,videodb://tvshows/) | SubString(Container.FolderPath,.xsp)]]</visible>
+					<itemlayout width="942" height="83">
 						<control type="group">
-							<left>30</left>
 							<control type="label">
-								<width>972</width>
 								<height>42</height>
 								<label>$VAR[Title_Detail]</label>
 								<font>Font_Black_Caps_42</font>
@@ -70,7 +67,6 @@
 							</control>
 							<control type="label">
 								<top>38</top>
-								<width>972</width>
 								<height>32</height>
 								<label>$INFO[ListItem.Property(TotalEpisodes)] Episodes</label>
 								<font>Font_Light_Caps_32</font>
@@ -78,36 +74,26 @@
 							</control>
 						</control>
 					</itemlayout>
-					<focusedlayout width="1691" height="156">
-						<control type="image">
-							<width>1032</width>
-							<height>143</height>
-							<aligny>center</aligny>
-							<texture colordiffuse="D0FFFFFF">InfoListButton.png</texture>
-						</control>
+					<focusedlayout width="942" height="158">
 						<control type="group">
-							<left>30</left>
-							<top>14</top>
+							<top>16</top>
 							<control type="fadelabel">
-								<width>972</width>
 								<height>46</height>
 								<label>$VAR[Title_Detail]</label>
 								<font>Font_Black_Caps_53</font>
 								<textcolor>Heavy</textcolor>
 							</control>
 							<control type="label">
-								<top>48</top>
-								<width>972</width>
+								<top>50</top>
 								<height>34</height>
 								<label>$INFO[ListItem.Genre]</label>
 								<font>Font_Light_Caps_34</font>
 								<textcolor>MedLight</textcolor>
 							</control>
 							<control type="label">
-								<top>78</top>
-								<width>972</width>
+								<top>80</top>
 								<height>34</height>
-								<label>$INFO[ListItem.Property(TotalEpisodes)] Episodes � $INFO[ListItem.Property(UnWatchedEpisodes)] Unwatched</label>
+								<label>$INFO[ListItem.Property(TotalEpisodes)] Episodes • $INFO[ListItem.Property(UnWatchedEpisodes)] Unwatched</label>
 								<font>Font_Light_Caps_34</font>
 								<textcolor>MedLight</textcolor>
 							</control>
@@ -122,21 +108,17 @@
 				</control>
 
 				<control type="group">
-					<!-- <left>300</left> -->
-					<!-- <top>140</top> -->
-					<left>280</left>
-					<top>175</top>
+					<left>277</left>
+					<top>149</top>
 					<visible>!SubString(ListItem.Icon,Default)</visible>
 					<control type="group">
 						<visible>!Window.IsActive(movieinformation)</visible>
 						<!--include>Animation_PosterInfoSlide</include-->  <!-- ??? -->
 						<control type="image">
-							<left>5</left>
+							<left>6</left>
 							<top>28</top>
-							<!-- <width>480</width> -->
-							<!-- <height>718</height> -->
-							<width>434</width>
-							<height>650</height>
+							<width>480</width>
+							<height>718</height>
 							<texture background="true" diffuse="poster/Poster_Matte_FO.png">$INFO[ListItem.Icon]</texture>
 							<fadetime>200</fadetime>
 							<aspectratio scalediffuse="false">stretch</aspectratio>
@@ -144,8 +126,8 @@
 						<control type="image">
 							<left>-23</left>
 							<top>0</top>
-							<width>486</width>
-							<height>699</height>
+							<width>538</width>
+							<height>772</height>
 							<texture>poster/Poster_Frame_FO.png</texture>
 						</control>
 						<control type="image">
