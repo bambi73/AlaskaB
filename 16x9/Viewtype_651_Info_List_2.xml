@@ -33,38 +33,31 @@
       <control type="group" id="5000">
         <left>LeftOffset</left>
         <top>TopOffset</top>
-        <include>Animation_ZoomedByMenu</include>
-        <include>Animation_HiddenByInfo</include>
+        <!-- <include>Animation_ZoomedByMenu</include> -->
+        <!-- <include>Animation_HiddenByInfo</include> -->
 
         <control type="group">
           <left>0</left>
           <top>152</top>
 
           <control type="image">
-            <left>-160</left>
             <top>0</top>
-            <width>2240</width>
-            <height>14</height>
-            <texture>hub/list_bg_border4.png</texture>
+            <include>Background_List_Border_Up</include>
           </control>
           <control type="image">
-            <left>-160</left>
             <top>14</top>
-            <width>2240</width>
-            <height>750</height>
-            <texture>hub/list_bg4.png</texture>
+            <height>748</height>
+            <include>Background_List</include>
           </control>
           <control type="image">
-            <left>-160</left>
-            <top>764</top>
-            <width>2240</width>
-            <height>14</height>
-            <texture flipy="true">hub/list_bg_border4.png</texture>
+            <top>762</top>
+            <include>Background_List_Border_Down</include>
           </control>
 
           <control type="fixedlist" id="651">
+            <include>Animation_HiddenByInfo</include>
             <left>820</left>
-            <top>57</top>
+            <top>56</top>
             <height>654</height>
             <width>1032</width>
             <onup>651</onup>
@@ -143,7 +136,7 @@
 
           <control type="group">
             <left>270</left>
-            <top>30</top>
+            <top>29</top>
             <visible>!SubString(ListItem.Icon,Default)</visible>
             <control type="group">
               <visible>!Window.IsActive(movieinformation)</visible>

@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="6">
-	<backgroundcolor>0</backgroundcolor>
-	<defaultcontrol always="true">500</defaultcontrol>
-	<views>503,501,502,514,504,508,500,603,650,651</views>
+  <backgroundcolor>0</backgroundcolor>
+  <defaultcontrol always="true">500</defaultcontrol>
+  <views>503,501,502,514,504,508,500,603,650,651</views>
 
-	<!-- <onload condition="System.HasAddon(script.tv.show.next.aired) + Container.Content(tvshows)">RunScript(script.tv.show.next.aired,backend=True)</onload> -->
-	<onunload>ClearProperty(AlaskaB.Overlay.MediaFlags.Hide,home)</onunload>
-	<onunload>ClearProperty(AlaskaB.Overlay.NowPlaying.Hide,home)</onunload>
-	<!--onunload>ClearProperty(AlaskaB.HeadingLabel,home)</onunload-->
+  <!-- <onload condition="System.HasAddon(script.tv.show.next.aired) + Container.Content(tvshows)">RunScript(script.tv.show.next.aired,backend=True)</onload> -->
+  <onunload>ClearProperty(AlaskaB.Overlay.MediaFlags.Hide,home)</onunload>
+  <onunload>ClearProperty(AlaskaB.Overlay.NowPlaying.Hide,home)</onunload>
+  <!--onunload>ClearProperty(AlaskaB.HeadingLabel,home)</onunload-->
 
-	<!--onunload condition="!IsEmpty(Window(movieinformation).Property(IsSeason)">ClearProperty(IsSeason,movieinformation)</onunload>
+  <!--onunload condition="!IsEmpty(Window(movieinformation).Property(IsSeason)">ClearProperty(IsSeason,movieinformation)</onunload>
   <onunload condition="!IsEmpty(Window(movieinformation).Property(IsSpecial)">ClearProperty(IsSpecial,movieinformation)</onunload-->
 
-	<controls>
+  <controls>
 
-		<!-- Background -->
-		<include>Global_Background</include>
+    <!-- Background -->
+    <include>Global_Background</include>
 
-		<!-- <control type="label">
+    <!-- <control type="label">
       <left>46</left>
       <top>110</top>
       <width>1900</width>
@@ -28,7 +28,7 @@
       <visible>Container(6588).Content(episodes)</visible>
       <label>AA $INFO[Container(6588).ListItem(0).Art(fanart)] BB</label>
     </control> -->
-		<!-- <control type="label">
+    <!-- <control type="label">
       <left>46</left>
       <top>110</top>
       <width>1900</width>
@@ -51,180 +51,202 @@
       <visible>Container.Content(episodes)</visible>
     </control>  --> 
 
-		<control type="group">
-			<include>Fanart</include>
-			<visible>[[!Skin.HasSetting(Disable_Movie_Fanart) + Container.Content(Movies)] | [!Skin.HasSetting(Disable_TV_Fanart) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] | [!Skin.HasSetting(Disable_Music_Fanart) + Container.Content(Music)] | [!Skin.HasSetting(Disable_Addon_Fanart) + Container.Content(Addons)]]</visible>
-		</control>
+    <control type="group">
+      <include>Fanart</include>
+      <visible>[[!Skin.HasSetting(Disable_Movie_Fanart) + Container.Content(Movies)] | [!Skin.HasSetting(Disable_TV_Fanart) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] | [!Skin.HasSetting(Disable_Music_Fanart) + Container.Content(Music)] | [!Skin.HasSetting(Disable_Addon_Fanart) + Container.Content(Addons)]]</visible>
+    </control>
 
-		<!-- Views -->
+    <!-- Views -->
 
-		<control type="group">
-			<include>Animation_ZoomInZoomOut</include>
-			<include>Viewtype_500_List</include>
-			<include>Viewtype_501_Poster_No_Wrap</include>
-			<include>Viewtype_502_Poster_Wrap</include>
-			<include>Viewtype_503_Episode</include>
-			<include>Viewtype_504_Fanart</include>
-			<include>Viewtype_508_Landscape</include>
-			<include>Viewtype_514_Season_Poster</include>
-			<include>Viewtype_603_Episode_2</include>
-			<include>Viewtype_650_Info_List</include>
-			<include>Viewtype_651_Info_List_2</include>
-		</control>
+    <control type="group">
+      <include>Animation_ZoomInZoomOut</include>
+      <include>Animation_ZoomedByMenu</include>
+      
+      <include>Viewtype_500_List</include>
+      <include>Viewtype_501_Poster_No_Wrap</include>
+      <include>Viewtype_502_Poster_Wrap</include>
+      <include>Viewtype_503_Episode</include>
+      <include>Viewtype_504_Fanart</include>
+      <include>Viewtype_508_Landscape</include>
+      <include>Viewtype_514_Season_Poster</include>
+      <include>Viewtype_603_Episode_2</include>
+      <include>Viewtype_650_Info_List</include>
+      <include>Viewtype_651_Info_List_2</include>
+    </control>
 
-		<!-- Hidden buttons for Menu -->
-		<control type="group">
-			<control type="button" id="7000">
-				<include>HiddenControl</include>
-				<onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,true,home)</onfocus>
-				<onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,true,home)</onfocus>
-				<onfocus>SetFocus(7100)</onfocus>
-			</control>
-			<control type="button" id="7001">
-				<include>HiddenControl</include>
-				<onfocus>ClearProperty(AlaskaB.Overlay.NowPlaying.Hide,home)</onfocus>
-				<onfocus>ClearProperty(AlaskaB.Overlay.MediaFlags.Hide,home)</onfocus>
-				<onfocus>SetFocus(500)</onfocus>
-			</control>
-		</control>
+    <!-- Hidden buttons for Menu -->
+    <control type="group">
+      <control type="button" id="7000">
+        <include>HiddenControl</include>
+        <onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,true,home)</onfocus>
+        <onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,true,home)</onfocus>
+        <onfocus>SetFocus(7100)</onfocus>
+      </control>
+      <control type="button" id="7001">
+        <include>HiddenControl</include>
+        <onfocus>ClearProperty(AlaskaB.Overlay.NowPlaying.Hide,home)</onfocus>
+        <onfocus>ClearProperty(AlaskaB.Overlay.MediaFlags.Hide,home)</onfocus>
+        <onfocus>SetFocus(500)</onfocus>
+      </control>
+    </control>
 
-		<!-- Menu -->
-		<control type="group">
-			<top>TopOffset</top>
-			<left>LeftOffset</left>
-			<include>Animation_ZoomInMenu7100</include>
+    <!-- Menu -->
+    <control type="group">
+      <top>TopOffset</top>
+      <left>LeftOffset</left>
+      <include>Animation_ZoomInMenu7100</include>
 
-			<control type="fixedlist" id="7100">
-				<include>ViewMenu_List</include>
-				<onup>7001</onup>
-				<ondown>7001</ondown>
-				<onleft>noop</onleft>
-				<onright>noop</onright>
-				<visible allowhiddenfocus="true">Control.HasFocus(7100) + !Window.IsActive(shutdownmenu) + !Window.IsActive(DialogYesNo.xml) + !Window.IsActive(progressdialog) + !Window.IsActive(okdialog)</visible>
-				<content>
-					<!-- Filter -->
-					<item id="1">
-						<onclick>SendClick(19)</onclick>
-						<label>587</label>
-						<label2>31100</label2>
-						<visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
-					</item>
-					<item id="1">
-						<onclick>Up</onclick>
-						<onclick>Filter</onclick>
-						<label>587</label>
-						<label2>31100</label2>
-						<visible>Container.CanFilterAdvanced</visible>
-					</item>
-					<!-- Search -->
-					<item id="2">
-						<onclick>SendClick(8)</onclick>
-						<label>137</label>
-						<label2>31115</label2>
-						<visible>Control.IsEnabled(8)</visible>
-					</item>
-					<!-- Sort by -->
-					<item id="3">
-						<onclick>SendClick(3)</onclick>
-						<label>31110</label>
-						<label2>$INFO[Container.SortMethod]</label2>
-						<visible>Control.IsEnabled(3)</visible>
-					</item>
-					<!-- Order by -->
-					<item id="4">
-						<onclick>SendClick(4)</onclick>
-						<label>31111</label>
-						<label2>$INFO[Control.GetLabel(4)]</label2>
-						<visible>Control.IsEnabled(4)</visible>
-					</item>
-					<!-- Show All videos/Watched/Unwatched -->
-					<item id="5">
-						<onclick>SendClick(10)</onclick>
-						<label>Show</label>
-						<label2>$INFO[Control.GetLabel(10)]</label2>
-						<visible>Control.IsEnabled(10)</visible>
-					</item>
-					<!-- Fanart -->
-					<item id="6">
-						<onclick>Skin.ToggleSetting(Disable_Movie_Fanart)</onclick>
-						<label>20445</label>
-						<label2>351</label2>
-						<visible>Skin.HasSetting(Disable_Movie_Fanart) + Container.Content(Movies)</visible>
-					</item>
-					<item id="6">
-						<onclick>Skin.ToggleSetting(Disable_Movie_Fanart)</onclick>
-						<label>20445</label>
-						<label2>16041</label2>
-						<visible>!Skin.HasSetting(Disable_Movie_Fanart) + Container.Content(Movies)</visible>
-					</item>
-					<item id="6">
-						<onclick>Skin.ToggleSetting(Disable_TV_Fanart)</onclick>
-						<label>20445</label>
-						<label2>351</label2>
-						<visible>Skin.HasSetting(Disable_TV_Fanart) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
-					</item>
-					<item id="6">
-						<onclick>Skin.ToggleSetting(Disable_TV_Fanart)</onclick>
-						<label>20445</label>
-						<label2>16041</label2>
-						<visible>!Skin.HasSetting(Disable_TV_Fanart) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
-					</item>
-					<item id="6">
-						<onclick>Skin.ToggleSetting(Disable_Addon_Fanart)</onclick>
-						<label>20445</label>
-						<label2>351</label2>
-						<visible>Skin.HasSetting(Disable_Addon_Fanart) + Container.Content(Addons)</visible>
-					</item>
-					<item id="6">
-						<onclick>Skin.ToggleSetting(Disable_Addon_Fanart)</onclick>
-						<label>20445</label>
-						<label2>16041</label2>
-						<visible>!Skin.HasSetting(Disable_Addon_Fanart) + Container.Content(Addons)</visible>
-					</item>
-					<!-- Viewmode -->
-					<item id="7">
-						<onclick>Container.NextViewMode</onclick>
-						<label>31119</label>
-						<label2>$VAR[Viewmode]</label2>
-					</item>
-					<!-- Library update -->
-					<item id="8">
-						<onclick>SendClick(20)</onclick>
-						<onclick>Up</onclick>
-						<label>Library</label>
-						<label2>$INFO[Control.GetLabel(20)]</label2>
-						<visible>Control.IsEnabled(20)</visible>
-					</item>
-				</content>
-			</control>
+      <control type="group">
+        <left>0</left>
+        <top>376</top>
 
-		</control>
+        <control type="image">
+          <top>0</top>
+          <include>Background_List_Border_Up</include>
+        </control>
+        <control type="image">
+          <top>14</top>
+          <height>198</height>
+          <include>Background_List</include>
+        </control>
+        <control type="image">
+          <top>212</top>
+          <include>Background_List_Border_Down</include>
+        </control>
 
-		<!-- Hidden buttons for Menu -->
-		<control type="button" id="3">
-			<include>HiddenControl</include>
-		</control>
-		<control type="togglebutton" id="4">
-			<label>584</label>
-			<altlabel>585</altlabel>
-			<include>HiddenControl</include>
-		</control>
-		<control type="button" id="8">
-			<include>HiddenControl</include>
-		</control>
-		<control type="togglebutton" id="10">
-			<include>HiddenControl</include>
-		</control>
-		<control type="radiobutton" id="19">
-			<include>HiddenControl</include>
-		</control>
-		<control type="togglebutton" id="20">
-			<label>102</label>
-			<altlabel>14056</altlabel>
-			<include>HiddenControl</include>
-			<usealttexture>Library.IsScanningVideo</usealttexture>
-		</control>
+        <control type="fixedlist" id="7100">
+          <top>56</top>
+          <include>ViewMenu_List</include>
+          <onup>7001</onup>
+          <ondown>7001</ondown>
+          <onleft>7100</onleft>
+          <onright>7100</onright>
+          <visible allowhiddenfocus="true">Control.HasFocus(7100) + !Window.IsActive(shutdownmenu) + !Window.IsActive(DialogYesNo.xml) + !Window.IsActive(progressdialog) + !Window.IsActive(okdialog)</visible>
+          <content>
+            <!-- Filter -->
+            <item id="1">
+              <onclick>SendClick(19)</onclick>
+              <label>587</label>
+              <label2>31100</label2>
+              <visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
+            </item>
+            <item id="1">
+              <onclick>Up</onclick>
+              <onclick>Filter</onclick>
+              <label>587</label>
+              <label2>31100</label2>
+              <visible>Container.CanFilterAdvanced</visible>
+            </item>
+            <!-- Search -->
+            <item id="2">
+              <onclick>SendClick(8)</onclick>
+              <label>137</label>
+              <label2>31115</label2>
+              <visible>Control.IsEnabled(8)</visible>
+            </item>
+            <!-- Sort by -->
+            <item id="3">
+              <onclick>SendClick(3)</onclick>
+              <label>31110</label>
+              <label2>$INFO[Container.SortMethod]</label2>
+              <visible>Control.IsEnabled(3)</visible>
+            </item>
+            <!-- Order by -->
+            <item id="4">
+              <onclick>SendClick(4)</onclick>
+              <label>31111</label>
+              <label2>$INFO[Control.GetLabel(4)]</label2>
+              <visible>Control.IsEnabled(4)</visible>
+            </item>
+            <!-- Show All videos/Watched/Unwatched -->
+            <item id="5">
+              <onclick>SendClick(10)</onclick>
+              <label>Show</label>
+              <label2>$INFO[Control.GetLabel(10)]</label2>
+              <visible>Control.IsEnabled(10)</visible>
+            </item>
+            <!-- Fanart -->
+            <item id="6">
+              <onclick>Skin.ToggleSetting(Disable_Movie_Fanart)</onclick>
+              <label>20445</label>
+              <label2>351</label2>
+              <visible>Skin.HasSetting(Disable_Movie_Fanart) + Container.Content(Movies)</visible>
+            </item>
+            <item id="6">
+              <onclick>Skin.ToggleSetting(Disable_Movie_Fanart)</onclick>
+              <label>20445</label>
+              <label2>16041</label2>
+              <visible>!Skin.HasSetting(Disable_Movie_Fanart) + Container.Content(Movies)</visible>
+            </item>
+            <item id="6">
+              <onclick>Skin.ToggleSetting(Disable_TV_Fanart)</onclick>
+              <label>20445</label>
+              <label2>351</label2>
+              <visible>Skin.HasSetting(Disable_TV_Fanart) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
+            </item>
+            <item id="6">
+              <onclick>Skin.ToggleSetting(Disable_TV_Fanart)</onclick>
+              <label>20445</label>
+              <label2>16041</label2>
+              <visible>!Skin.HasSetting(Disable_TV_Fanart) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
+            </item>
+            <item id="6">
+              <onclick>Skin.ToggleSetting(Disable_Addon_Fanart)</onclick>
+              <label>20445</label>
+              <label2>351</label2>
+              <visible>Skin.HasSetting(Disable_Addon_Fanart) + Container.Content(Addons)</visible>
+            </item>
+            <item id="6">
+              <onclick>Skin.ToggleSetting(Disable_Addon_Fanart)</onclick>
+              <label>20445</label>
+              <label2>16041</label2>
+              <visible>!Skin.HasSetting(Disable_Addon_Fanart) + Container.Content(Addons)</visible>
+            </item>
+            <!-- Viewmode -->
+            <item id="7">
+              <onclick>Container.NextViewMode</onclick>
+              <label>31119</label>
+              <label2>$VAR[Viewmode]</label2>
+            </item>
+            <!-- Library update -->
+            <item id="8">
+              <onclick>SendClick(20)</onclick>
+              <onclick>Up</onclick>
+              <label>Library</label>
+              <label2>$INFO[Control.GetLabel(20)]</label2>
+              <visible>Control.IsEnabled(20)</visible>
+            </item>
+          </content>
+        </control>
+      </control>
 
-	</controls>
+    </control>
+
+    <!-- Hidden buttons for Menu -->
+    <control type="button" id="3">
+      <include>HiddenControl</include>
+    </control>
+    <control type="togglebutton" id="4">
+      <label>584</label>
+      <altlabel>585</altlabel>
+      <include>HiddenControl</include>
+    </control>
+    <control type="button" id="8">
+      <include>HiddenControl</include>
+    </control>
+    <control type="togglebutton" id="10">
+      <include>HiddenControl</include>
+    </control>
+    <control type="radiobutton" id="19">
+      <include>HiddenControl</include>
+    </control>
+    <control type="togglebutton" id="20">
+      <label>102</label>
+      <altlabel>14056</altlabel>
+      <include>HiddenControl</include>
+      <usealttexture>Library.IsScanningVideo</usealttexture>
+    </control>
+
+  </controls>
 
 </window>
