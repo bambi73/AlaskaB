@@ -55,24 +55,66 @@
     </control>
   </include>
 
-  <include name="Background_List">
+  <include name="AlaskaB_Background_List">
     <left>-160</left>
     <width>2240</width>
     <texture>hub/list_bg4.png</texture>
   </include>
 
-  <include name="Background_List_Border_Up">
+  <include name="AlaskaB_Background_List_Border_Up">
     <left>-160</left>
     <width>2240</width>
     <height>14</height>
     <texture>hub/list_bg_border4.png</texture>
   </include>
 
-  <include name="Background_List_Border_Down">
+  <include name="AlaskaB_Background_List_Border_Down">
     <left>-160</left>
     <width>2240</width>
     <height>14</height>
     <texture flipy="true">hub/list_bg_border4.png</texture>
+  </include>
+
+  <constant name="AlaskaB_MyVideoNav_Base_Left">0</constant>
+  <constant name="AlaskaB_MyVideoNav_Base_Top">152</constant>
+  
+  <include name="AlaskaB_MyVideoNav_Base">
+    <control type="group">
+      <left>AlaskaB_MyVideoNav_Base_Left</left>
+      <top>AlaskaB_MyVideoNav_Base_Top</top>
+      <control type="image">
+        <include>AlaskaB_Background_List_Border_Up</include>
+      </control>
+      <control type="image">
+        <top>14</top>
+        <height>748</height>
+        <include>AlaskaB_Background_List</include>
+      </control>
+      <control type="image">
+        <top>762</top>
+        <include>AlaskaB_Background_List_Border_Down</include>
+      </control>
+    </control>
+  </include>
+
+  <constant name="AlaskaB_MyVideoNav_Menu_Left">0</constant>
+  <constant name="AlaskaB_MyVideoNav_Menu_Top">376</constant>
+  
+  <include name="AlaskaB_MyVideoNav_Menu">
+    <control type="group">
+      <control type="image">
+        <include>AlaskaB_Background_List_Border_Up</include>
+      </control>
+      <control type="image">
+        <top>14</top>
+        <height>198</height>
+        <include>AlaskaB_Background_List</include>
+      </control>
+      <control type="image">
+        <top>212</top>
+        <include>AlaskaB_Background_List_Border_Down</include>
+      </control>
+    </control>
   </include>
 
   <include name="ViewMenu_List">
