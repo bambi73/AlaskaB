@@ -61,6 +61,13 @@
     <texture>hub/list_bg4.png</texture>
   </include>
 
+  <include name="AlaskaB_Background_List_Delimiter">
+    <left>-160</left>
+    <width>2240</width>
+    <height>3</height>
+    <texture>hub/list_bg_delimiter4.png</texture>
+  </include>
+
   <include name="AlaskaB_Background_List_Border_Up">
     <left>-160</left>
     <width>2240</width>
@@ -77,29 +84,75 @@
 
   <constant name="AlaskaB_MyVideoNav_Base_Left">0</constant>
   <constant name="AlaskaB_MyVideoNav_Base_Top">152</constant>
-  
+
   <include name="AlaskaB_MyVideoNav_Base">
     <control type="group">
       <left>AlaskaB_MyVideoNav_Base_Left</left>
       <top>AlaskaB_MyVideoNav_Base_Top</top>
-      <control type="image">
-        <include>AlaskaB_Background_List_Border_Up</include>
+      <control type="group">
+        <visible>!Window.IsActive(movieinformation)</visible>
+        <control type="image">
+          <include>AlaskaB_Background_List_Border_Up</include>
+        </control>
+        <control type="image">
+          <top>14</top>
+          <height>748</height>
+          <include>AlaskaB_Background_List</include>
+        </control>
+        <control type="image">
+          <top>762</top>
+          <include>AlaskaB_Background_List_Border_Down</include>
+        </control>
       </control>
-      <control type="image">
-        <top>14</top>
-        <height>748</height>
-        <include>AlaskaB_Background_List</include>
-      </control>
-      <control type="image">
-        <top>762</top>
-        <include>AlaskaB_Background_List_Border_Down</include>
+      <control type="group">
+        <include>Animation_SlideLeftByFullscreenFanart</include>
+        <visible>Window.IsActive(movieinformation) + !StringCompare(Window(movieinformation).Property(AlaskaB.DialogVideoInfo.CurrentView),9000)</visible>
+        <control type="image">
+          <include>AlaskaB_Background_List_Border_Up</include>
+        </control>
+        <control type="image">
+          <top>14</top>
+          <height>124</height>
+          <include>AlaskaB_Background_List</include>
+        </control>
+        <control type="image">
+          <top>138</top>
+          <include>AlaskaB_Background_List_Delimiter</include>
+        </control>
+        <control type="image">
+          <top>141</top>
+          <height>93</height>
+          <include>AlaskaB_Background_List</include>
+        </control>
+        <control type="image">
+          <top>234</top>
+          <include>AlaskaB_Background_List_Delimiter</include>
+        </control>
+        <control type="image">
+          <top>237</top>
+          <height>158</height>
+          <include>AlaskaB_Background_List</include>
+        </control>
+        <control type="image">
+          <top>395</top>
+          <include>AlaskaB_Background_List_Delimiter</include>
+        </control>
+        <control type="image">
+          <top>398</top>
+          <height>364</height>
+          <include>AlaskaB_Background_List</include>
+        </control>
+        <control type="image">
+          <top>762</top>
+          <include>AlaskaB_Background_List_Border_Down</include>
+        </control>
       </control>
     </control>
   </include>
 
   <constant name="AlaskaB_MyVideoNav_Menu_Left">0</constant>
   <constant name="AlaskaB_MyVideoNav_Menu_Top">376</constant>
-  
+
   <include name="AlaskaB_MyVideoNav_Menu">
     <control type="group">
       <control type="image">
@@ -217,7 +270,7 @@
           <label>$INFO[ListItem.Label]</label>
         </control>
       </control>
-    </focusedlayout>	
+    </focusedlayout>  
   </include>
 
   <!-- DialogVideoInfo -->
@@ -260,13 +313,13 @@
   </include>
 
   <!-- <include name="ViewTypeButton_FillHeadingCategory">
-		<control type="button">
-			<include>HiddenControl</include>
-			<visible>!Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + !Container.Content(musicvideos)</visible>
-			<onfocus condition="SubString(Window(home).Property(AlaskaB.IsHeadingCategorySelection),true) | SubString(Container.FolderPath,videodb://movies/genres/) | SubString(Container.FolderPath,videodb://movies/years/) | SubString(Container.FolderPath,videodb://movies/actors/) | SubString(Container.FolderPath,videodb://movies/directors/) | SubString(Container.FolderPath,videodb://movies/studios/) | SubString(Container.FolderPath,videodb://movies/countries/) | SubString(Container.FolderPath,videodb://movies/tags/) | SubString(Container.FolderPath,videodb://tvshows/genres/) | SubString(Container.FolderPath,videodb://tvshows/years/) | SubString(Container.FolderPath,videodb://tvshows/actors/) | SubString(Container.FolderPath,videodb://tvshows/studios/) | SubString(Container.FolderPath,videodb://tvshows/tags/) | SubString(Container.FolderPath,videodb://musicvideos/genres/) | SubString(Container.FolderPath,videodb://musicvideos/years/) | SubString(Container.FolderPath,videodb://musicvideos/artists/) | SubString(Container.FolderPath,videodb://musicvideos/albums/) | SubString(Container.FolderPath,videodb://musicvideos/directors/) | SubString(Container.FolderPath,videodb://musicvideos/studios/) | SubString(Container.FolderPath,videodb://musicvideos/tags/)">SetProperty(AlaskaB.HeadingCategory,$INFO[ListItem.Label],home)</onfocus>
-			<onfocus condition="![SubString(Window(home).Property(AlaskaB.IsHeadingCategorySelection),true) | SubString(Container.FolderPath,videodb://movies/genres/) | SubString(Container.FolderPath,videodb://movies/years/) | SubString(Container.FolderPath,videodb://movies/actors/) | SubString(Container.FolderPath,videodb://movies/directors/) | SubString(Container.FolderPath,videodb://movies/studios/) | SubString(Container.FolderPath,videodb://movies/countries/) | SubString(Container.FolderPath,videodb://movies/tags/) | SubString(Container.FolderPath,videodb://tvshows/genres/) | SubString(Container.FolderPath,videodb://tvshows/years/) | SubString(Container.FolderPath,videodb://tvshows/actors/) | SubString(Container.FolderPath,videodb://tvshows/studios/) | SubString(Container.FolderPath,videodb://tvshows/tags/) | SubString(Container.FolderPath,videodb://musicvideos/genres/) | SubString(Container.FolderPath,videodb://musicvideos/years/) | SubString(Container.FolderPath,videodb://musicvideos/artists/) | SubString(Container.FolderPath,videodb://musicvideos/albums/) | SubString(Container.FolderPath,videodb://musicvideos/directors/) | SubString(Container.FolderPath,videodb://musicvideos/studios/) | SubString(Container.FolderPath,videodb://musicvideos/tags/)]">ClearProperty(AlaskaB.HeadingCategory,home)</onfocus>
-		</control>
-	</include> -->
+    <control type="button">
+      <include>HiddenControl</include>
+      <visible>!Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + !Container.Content(musicvideos)</visible>
+      <onfocus condition="SubString(Window(home).Property(AlaskaB.IsHeadingCategorySelection),true) | SubString(Container.FolderPath,videodb://movies/genres/) | SubString(Container.FolderPath,videodb://movies/years/) | SubString(Container.FolderPath,videodb://movies/actors/) | SubString(Container.FolderPath,videodb://movies/directors/) | SubString(Container.FolderPath,videodb://movies/studios/) | SubString(Container.FolderPath,videodb://movies/countries/) | SubString(Container.FolderPath,videodb://movies/tags/) | SubString(Container.FolderPath,videodb://tvshows/genres/) | SubString(Container.FolderPath,videodb://tvshows/years/) | SubString(Container.FolderPath,videodb://tvshows/actors/) | SubString(Container.FolderPath,videodb://tvshows/studios/) | SubString(Container.FolderPath,videodb://tvshows/tags/) | SubString(Container.FolderPath,videodb://musicvideos/genres/) | SubString(Container.FolderPath,videodb://musicvideos/years/) | SubString(Container.FolderPath,videodb://musicvideos/artists/) | SubString(Container.FolderPath,videodb://musicvideos/albums/) | SubString(Container.FolderPath,videodb://musicvideos/directors/) | SubString(Container.FolderPath,videodb://musicvideos/studios/) | SubString(Container.FolderPath,videodb://musicvideos/tags/)">SetProperty(AlaskaB.HeadingCategory,$INFO[ListItem.Label],home)</onfocus>
+      <onfocus condition="![SubString(Window(home).Property(AlaskaB.IsHeadingCategorySelection),true) | SubString(Container.FolderPath,videodb://movies/genres/) | SubString(Container.FolderPath,videodb://movies/years/) | SubString(Container.FolderPath,videodb://movies/actors/) | SubString(Container.FolderPath,videodb://movies/directors/) | SubString(Container.FolderPath,videodb://movies/studios/) | SubString(Container.FolderPath,videodb://movies/countries/) | SubString(Container.FolderPath,videodb://movies/tags/) | SubString(Container.FolderPath,videodb://tvshows/genres/) | SubString(Container.FolderPath,videodb://tvshows/years/) | SubString(Container.FolderPath,videodb://tvshows/actors/) | SubString(Container.FolderPath,videodb://tvshows/studios/) | SubString(Container.FolderPath,videodb://tvshows/tags/) | SubString(Container.FolderPath,videodb://musicvideos/genres/) | SubString(Container.FolderPath,videodb://musicvideos/years/) | SubString(Container.FolderPath,videodb://musicvideos/artists/) | SubString(Container.FolderPath,videodb://musicvideos/albums/) | SubString(Container.FolderPath,videodb://musicvideos/directors/) | SubString(Container.FolderPath,videodb://musicvideos/studios/) | SubString(Container.FolderPath,videodb://musicvideos/tags/)]">ClearProperty(AlaskaB.HeadingCategory,home)</onfocus>
+    </control>
+  </include> -->
 
   <include name="AlaskaB_VideoHub_WidgetLayout">
     <control type="image">
@@ -451,9 +504,9 @@
     <focusedcolor>Heavy</focusedcolor>
     <disabledcolor>Disabled</disabledcolor>
     <selectedcolor>Selected</selectedcolor>
-  </include>	
+  </include>  
 
-  <include name="dialog_WindowButton">	
+  <include name="dialog_WindowButton">  
     <width>180</width>
     <height>61</height>
     <font>regular</font>

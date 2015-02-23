@@ -37,7 +37,7 @@
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="4">
-			<onclick>ActivateWindow(Videos,C:\Users\Bambi\AppData\Roaming\XBMC\addons\skin.alaskab\extras/playlists/Anime-Titles.xsp,return)</onclick>
+			<onclick>ActivateWindow(Videos,C:\Users\Bambi\AppData\Roaming\Kodi\addons\skin.alaskab\extras/playlists/Anime-Titles.xsp,return)</onclick>
 			<label>Titles</label>
 			<label2>Custom shortcut</label2>
 			<icon>hub/icons/titles.png</icon>
@@ -125,7 +125,7 @@
 			<property name="isSubmenu">True</property>
 			<property name="widget">Playlist</property>
 			<property name="widgetName">Random Anime</property>
-			<property name="widgetPlaylist">C:\Users\Bambi\AppData\Roaming\XBMC\addons\skin.alaskab\extras\playlists/RandomTVShows.xsp</property>
+			<property name="widgetPlaylist">C:\Users\Bambi\AppData\Roaming\Kodi\addons\skin.alaskab\extras\playlists/RandomTVShows.xsp</property>
 		</item>
 		<item id="2">
 			<onclick>noop</onclick>
@@ -139,7 +139,7 @@
 			<property name="isSubmenu">True</property>
 			<property name="widget">Playlist</property>
 			<property name="widgetName">Random Anime 2</property>
-			<property name="widgetPlaylist">C:\Users\Bambi\AppData\Roaming\XBMC\addons\skin.alaskab\extras\playlists/RandomAnime.xsp</property>
+			<property name="widgetPlaylist">C:\Users\Bambi\AppData\Roaming\Kodi\addons\skin.alaskab\extras\playlists/RandomAnime.xsp</property>
 		</item>
 		<item id="3">
 			<onclick>noop</onclick>
@@ -153,7 +153,7 @@
 			<property name="isSubmenu">True</property>
 			<property name="widget">Playlist</property>
 			<property name="widgetName">Anime (In progress)</property>
-			<property name="widgetPlaylist">C:\Users\Bambi\AppData\Roaming\XBMC\addons\skin.alaskab\extras\playlists/Anime-InProgress.xsp</property>
+			<property name="widgetPlaylist">C:\Users\Bambi\AppData\Roaming\Kodi\addons\skin.alaskab\extras\playlists/Anime-InProgress.xsp</property>
 		</item>
 	</include>
 	<include name="skinshortcuts-group-videohub-list">
@@ -293,7 +293,7 @@
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="4">
-			<onclick>ActivateWindow(Videos,C:\Users\Bambi\AppData\Roaming\XBMC\addons\skin.alaskab\extras/playlists/Anime-Titles.xsp,return)</onclick>
+			<onclick>ActivateWindow(Videos,C:\Users\Bambi\AppData\Roaming\Kodi\addons\skin.alaskab\extras/playlists/Anime-Titles.xsp,return)</onclick>
 			<label>Titles</label>
 			<label2>Custom shortcut</label2>
 			<icon>hub/icons/titles.png</icon>
@@ -382,7 +382,7 @@
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="widget">Playlist</property>
 			<property name="widgetName">Random Anime</property>
-			<property name="widgetPlaylist">C:\Users\Bambi\AppData\Roaming\XBMC\addons\skin.alaskab\extras\playlists/RandomTVShows.xsp</property>
+			<property name="widgetPlaylist">C:\Users\Bambi\AppData\Roaming\Kodi\addons\skin.alaskab\extras\playlists/RandomTVShows.xsp</property>
 		</item>
 		<item id="2">
 			<onclick>noop</onclick>
@@ -395,7 +395,7 @@
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="widget">Playlist</property>
 			<property name="widgetName">Random Anime 2</property>
-			<property name="widgetPlaylist">C:\Users\Bambi\AppData\Roaming\XBMC\addons\skin.alaskab\extras\playlists/RandomAnime.xsp</property>
+			<property name="widgetPlaylist">C:\Users\Bambi\AppData\Roaming\Kodi\addons\skin.alaskab\extras\playlists/RandomAnime.xsp</property>
 		</item>
 		<item id="3">
 			<onclick>noop</onclick>
@@ -408,7 +408,7 @@
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="widget">Playlist</property>
 			<property name="widgetName">Anime (In progress)</property>
-			<property name="widgetPlaylist">C:\Users\Bambi\AppData\Roaming\XBMC\addons\skin.alaskab\extras\playlists/Anime-InProgress.xsp</property>
+			<property name="widgetPlaylist">C:\Users\Bambi\AppData\Roaming\Kodi\addons\skin.alaskab\extras\playlists/Anime-InProgress.xsp</property>
 		</item>
 	</include>
 	<include name="skinshortcuts-group-alt-videohub-widgets">
@@ -424,7 +424,7 @@
 			<property name="isSubmenu">True</property>
 			<property name="widget">Playlist</property>
 			<property name="widgetName">Random Anime</property>
-			<property name="widgetPlaylist">C:\Users\Bambi\AppData\Roaming\XBMC\addons\skin.alaskab\extras\playlists/RandomTVShows.xsp</property>
+			<property name="widgetPlaylist">C:\Users\Bambi\AppData\Roaming\Kodi\addons\skin.alaskab\extras\playlists/RandomTVShows.xsp</property>
 		</item>
 		<item id="2">
 			<onclick>noop</onclick>
@@ -438,7 +438,7 @@
 			<property name="isSubmenu">True</property>
 			<property name="widget">Playlist</property>
 			<property name="widgetName">Random Anime 2</property>
-			<property name="widgetPlaylist">C:\Users\Bambi\AppData\Roaming\XBMC\addons\skin.alaskab\extras\playlists/RandomAnime.xsp</property>
+			<property name="widgetPlaylist">C:\Users\Bambi\AppData\Roaming\Kodi\addons\skin.alaskab\extras\playlists/RandomAnime.xsp</property>
 		</item>
 		<item id="3">
 			<onclick>noop</onclick>
@@ -452,7 +452,7 @@
 			<property name="isSubmenu">True</property>
 			<property name="widget">Playlist</property>
 			<property name="widgetName">Anime (In progress)</property>
-			<property name="widgetPlaylist">C:\Users\Bambi\AppData\Roaming\XBMC\addons\skin.alaskab\extras\playlists/Anime-InProgress.xsp</property>
+			<property name="widgetPlaylist">C:\Users\Bambi\AppData\Roaming\Kodi\addons\skin.alaskab\extras\playlists/Anime-InProgress.xsp</property>
 		</item>
 	</include>
 </includes>

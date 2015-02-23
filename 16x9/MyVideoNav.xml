@@ -99,24 +99,6 @@
       <include>AlaskaB_MyVideoNav_Menu</include>
       <include>Animation_ZoomInMenu7100</include>
 
-      <!--       <control type="group">
-        <left>0</left>
-        <top>376</top>
- -->
-      <!-- <control type="image">
-        <top>0</top>
-        <include>Background_List_Border_Up</include>
-      </control>
-      <control type="image">
-        <top>14</top>
-        <height>198</height>
-        <include>Background_List</include>
-      </control>
-      <control type="image">
-        <top>212</top>
-        <include>Background_List_Border_Down</include>
-      </control> -->
-
       <control type="fixedlist" id="7100">
         <top>56</top>
         <include>ViewMenu_List</include>
@@ -221,8 +203,6 @@
           </item>
         </content>
       </control>
-      <!--       </control> -->
-
     </control>
 
     <!-- Hidden buttons for Menu -->

@@ -1,638 +1,642 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="2003">
-	<defaultcontrol always="true">9010</defaultcontrol>
+  <defaultcontrol always="true">9010</defaultcontrol>
 
-	<!--onload>SetProperty(AlaskaB.Animation_ZoomedByMenu.Skip,1,home)</onload-->
-	<!--onunload>ClearProperty(AlaskaB.Animation_ZoomedByMenu.Skip,home)</onunload-->
+  <!--onload>SetProperty(AlaskaB.Animation_ZoomedByMenu.Skip,1,home)</onload-->
+  <!--onunload>ClearProperty(AlaskaB.Animation_ZoomedByMenu.Skip,home)</onunload-->
 
-	<onunload>ClearProperty(AlaskaB.Overlay.Hide,home)</onunload>
-	<onunload>ClearProperty(AlaskaB.Overlay.MediaFlags.Hide,home)</onunload>
-	<onunload>ClearProperty(AlaskaB.Overlay.NowPlaying.Hide,home)</onunload>
-	<!--onunload>ClearProperty(AlaskaB.Animation_ZoomedByMenu.Skip,home)</onunload-->
-	<onunload>ClearProperty(AlaskaB.DialogVideoInfo.CurrentView,movieinformation)</onunload>
-	
-	<controls>
-		<!--control type="label">
-			<left>46</left>
-			<top>100</top>
-			<width>1900</width>
-			<height>72</height>
-			<aligny>center</aligny>
-			<font>Font_Reg_Caps_52</font>
-			<textcolor>MedLight</textcolor>
-			<label>-$INFO[Window(Home).Property(AlaskaB.Animation_ZoomedByMenu.Skip)]-</label>
-			<visible>!StringCompare(Window(Home).Property(AlaskaB.Animation_ZoomedByMenu.Skip),true)</visible>
-		</control>
-		<control type="label">
-			<left>46</left>
-			<top>150</top>
-			<width>1900</width>
-			<height>72</height>
-			<aligny>center</aligny>
-			<font>Font_Reg_Caps_52</font>
-			<textcolor>MedLight</textcolor>
-			<label>+$INFO[Window(Home).Property(AlaskaB.Animation_ZoomedByMenu.Skip)]+</label>
-			<visible>StringCompare(Window(Home).Property(AlaskaB.Animation_ZoomedByMenu.Skip),true)</visible>
-		</control--> 
-			
-		<!-- Video info group -->
-		<control type="group" id="5000">
-			<!-- Hidden control buttons -->
-			<control type="group">
-				<!-- Fullscreen fanart -->
-				<control type="button" id="9000">
-					<include>HiddenControl</include>
-					<visible>!IsEmpty(ListItem.Art(fanart))</visible>
-					<onup>7000</onup>
-					<ondown>7000</ondown>
-					<onleft>noop</onleft>
-					<onright>9010</onright>
-					<onclick>SetFocus(9010)</onclick>
-					<onfocus>SetProperty(AlaskaB.Overlay.Hide,true,home)</onfocus>
-					<onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,true,home)</onfocus>
-					<onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,true,home)</onfocus>
-					<onfocus>SetProperty(AlaskaB.DialogVideoInfo.CurrentView,9000)</onfocus>
-				</control>
-				<!-- Main info -->
-				<control type="button" id="9010">
-					<include>HiddenControl</include>
-					<onup>7000</onup>
-					<ondown>7000</ondown>
-					<onleft>9000</onleft>
-					<onright>9020</onright>
-					<onclick>SendClick(movieinformation,8)</onclick>
-					<onfocus>SetProperty(AlaskaB.Overlay.Hide,false,home)</onfocus>
-					<onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,false,home)</onfocus>
-					<onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,false,home)</onfocus>
-					<onfocus>SetProperty(AlaskaB.DialogVideoInfo.CurrentView,9010)</onfocus>
-				</control>
-				<!-- Cast info -->
-				<control type="button" id="9020">
-					<include>HiddenControl</include>
-					<visible>IntegerGreaterThan(Container(50).NumItems,0)</visible>
-					<onup>7000</onup>
-					<ondown>7000</ondown>
-					<onleft>9010</onleft>
-					<onright>noop</onright>
-					<onfocus>SetProperty(AlaskaB.Overlay.Hide,false,home)</onfocus>
-					<onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,false,home)</onfocus>
-					<onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,false,home)</onfocus>
-					<onfocus>SetProperty(AlaskaB.DialogVideoInfo.CurrentView,9020)</onfocus>
-					<onfocus>SetFocus(50)</onfocus>
-				</control>
-			</control>
-	
-			<!-- Fullscreen fanart -->
-			<control type="group">
-				<top>TopOffset</top>
-				<left>LeftOffset</left>
-				<control type="image">
-					<include>Dimensions_Fullscreen</include>
-					<include>Animation_CommonFade</include>
-					<visible>Control.HasFocus(9000)</visible>
-					<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-					<colordiffuse>FanartDiffuseLight</colordiffuse>
-					<fadetime>400</fadetime>
-				</control>
-				<control type="group">
-					<visible>Control.HasFocus(9000)</visible>
-					<animation effect="slide" start="-1920,0" end="0,0" time="200" delay="200" tween="cubic" easing="out">Visible</animation>
-					<control type="image">
-						<top>957</top>
-						<left>0</left>
-						<width>FullWidth</width>
-						<height>96</height>
-						<texture>dialogs/video_info_title_bg.png</texture>
-					</control>
-					<control type="label">
-						<top>968</top>
-						<left>46</left>
-						<width>1828</width>
-						<height>76</height>
-						<font>Font_Cond_76</font>
-						<textcolor>MedLight</textcolor>
-						<label>$VAR[VideoInfo_Fullscreen_Title]</label>
-					</control>
-				</control>
-			</control>
+  <!-- <onload>SetProperty(AlaskaB.DialogVideoInfo.Active,666,movieinformation)</onload> -->
+  <!-- <onunload>ClearProperty(AlaskaB.DialogVideoInfo.Active,movieinformation)</onunload> -->
 
-			<!-- VideoInfo main group -->
-			<control type="group">
-				<top>TopOffset</top>
-				<left>LeftOffset</left>
-				<include>Animation_ZoomedByMenu</include>
-				<visible>![Control.HasFocus(9000) | [ControlGroup(5100).HasFocus + StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9000)]]</visible>
-				
-				<animation type="Visible" condition="ControlGroup(5000).HasFocus">
-					<effect type="slide" start="-1920,0" end="0,0" time="250" tween="cubic" easing="in" />
-					<effect type="fade" start="0" end="100" time="250" />
-				</animation>
-				<animation type="Hidden" condition="ControlGroup(5000).HasFocus">
-					<effect type="slide" start="0,0" end="-1920,0" time="250" tween="cubic" easing="out" />
-					<effect type="fade" start="100" end="0" time="250" />
-				</animation>
 
-				<control type="group">
-					<include>Animation_CommonFade</include>
-					<!-- Info Lines -->
-					<control type="group">
-						<!-- <control type="image">
-							<left>820</left>
-							<top>175</top>
-							<width>1050</width>
-							<height>720</height>
-							<texture>hub/videoinfo_bg.png</texture>
-						</control> -->
-						<control type="image">
-							<top>290</top>
-							<width>FullWidth</width>
-							<height>3</height>
-							<texture>dialogs/Video_Info_Line_Horizontal.png</texture>
-						</control>
-						<control type="image">
-							<top>386</top>
-							<width>FullWidth</width>
-							<height>3</height>
-							<texture>dialogs/Video_Info_Line_Horizontal.png</texture>
-						</control>
-						<control type="image">
-							<top>547</top>
-							<width>FullWidth</width>
-							<height>3</height>
-							<texture>dialogs/Video_Info_Line_Horizontal.png</texture>
-						</control>
-					</control>
+  <onunload>ClearProperty(AlaskaB.Overlay.Hide,home)</onunload>
+  <onunload>ClearProperty(AlaskaB.Overlay.MediaFlags.Hide,home)</onunload>
+  <onunload>ClearProperty(AlaskaB.Overlay.NowPlaying.Hide,home)</onunload>
+  <!-- <onunload>ClearProperty(AlaskaB.Animation_ZoomedByMenu.Skip,home)</onunload> -->
+  <onunload>ClearProperty(AlaskaB.DialogVideoInfo.CurrentView,movieinformation)</onunload>
+  <onunload>ClearProperty(AlaskaB.DialogVideoInfo.PreviousView,movieinformation)</onunload>
+  
+  <controls>
+    <!--control type="label">
+      <left>46</left>
+      <top>100</top>
+      <width>1900</width>
+      <height>72</height>
+      <aligny>center</aligny>
+      <font>Font_Reg_Caps_52</font>
+      <textcolor>MedLight</textcolor>
+      <label>-$INFO[Window(Home).Property(AlaskaB.Animation_ZoomedByMenu.Skip)]-</label>
+      <visible>!StringCompare(Window(Home).Property(AlaskaB.Animation_ZoomedByMenu.Skip),true)</visible>
+    </control>
+    <control type="label">
+      <left>46</left>
+      <top>150</top>
+      <width>1900</width>
+      <height>72</height>
+      <aligny>center</aligny>
+      <font>Font_Reg_Caps_52</font>
+      <textcolor>MedLight</textcolor>
+      <label>+$INFO[Window(Home).Property(AlaskaB.Animation_ZoomedByMenu.Skip)]+</label>
+      <visible>StringCompare(Window(Home).Property(AlaskaB.Animation_ZoomedByMenu.Skip),true)</visible>
+    </control--> 
+      
+    <!-- Video info group -->
+    <control type="group" id="5000">
+      <!-- Hidden control buttons -->
+      <control type="group">
+        <!-- Fullscreen fanart -->
+        <control type="button" id="9000">
+          <include>HiddenControl</include>
+          <visible>!IsEmpty(ListItem.Art(fanart))</visible>
+          <onup>7000</onup>
+          <ondown>7000</ondown>
+          <onleft>noop</onleft>
+          <onright>9010</onright>
+          <onright>SetProperty(AlaskaB.DialogVideoInfo.PreviousView,9000)</onright>
+          <onclick>SetFocus(9010)</onclick>
+          <onfocus>SetProperty(AlaskaB.Overlay.Hide,true,home)</onfocus>
+          <onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,true,home)</onfocus>
+          <onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,true,home)</onfocus>
+          <onfocus>SetProperty(AlaskaB.DialogVideoInfo.CurrentView,9000)</onfocus>
+        </control>
+        <!-- Main info -->
+        <control type="button" id="9010">
+          <include>HiddenControl</include>
+          <onup>7000</onup>
+          <ondown>7000</ondown>
+          <onleft>9000</onleft>
+          <onleft>SetProperty(AlaskaB.DialogVideoInfo.PreviousView,9010)</onleft>
+          <onright>9020</onright>
+          <onright>SetProperty(AlaskaB.DialogVideoInfo.PreviousView,9010)</onright>
+          <onclick>SendClick(movieinformation,8)</onclick>
+          <onfocus>SetProperty(AlaskaB.Overlay.Hide,false,home)</onfocus>
+          <onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,false,home)</onfocus>
+          <onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,false,home)</onfocus>
+          <onfocus>SetProperty(AlaskaB.DialogVideoInfo.CurrentView,9010)</onfocus>
+        </control>
+        <!-- Cast info -->
+        <control type="button" id="9020">
+          <include>HiddenControl</include>
+          <visible>IntegerGreaterThan(Container(50).NumItems,0)</visible>
+          <onup>7000</onup>
+          <ondown>7000</ondown>
+          <onleft>9010</onleft>
+          <onleft>SetProperty(AlaskaB.DialogVideoInfo.PreviousView,9020)</onleft>
+          <onright>noop</onright>
+          <onfocus>SetProperty(AlaskaB.Overlay.Hide,false,home)</onfocus>
+          <onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,false,home)</onfocus>
+          <onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,false,home)</onfocus>
+          <onfocus>SetProperty(AlaskaB.DialogVideoInfo.CurrentView,9020)</onfocus>
+          <onfocus>SetFocus(50)</onfocus>
+          <onunfocus>SetProperty(AlaskaB.DialogVideoInfo.PreviousView,9020)</onunfocus>
+        </control>
+      </control>
+  
+      <!-- Fullscreen fanart -->
+      <control type="group">
+        <top>TopOffset</top>
+        <left>LeftOffset</left>
+        <control type="image">
+          <include>Dimensions_Fullscreen</include>
+          <include>Animation_CommonFade</include>
+          <visible>Control.HasFocus(9000)</visible>
+          <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+          <colordiffuse>FanartDiffuseLight</colordiffuse>
+          <fadetime>400</fadetime>
+        </control>
+        <control type="group">
+          <visible>Control.HasFocus(9000)</visible>
+          <animation effect="slide" start="-1920,0" end="0,0" time="200" delay="200" tween="cubic" easing="out">Visible</animation>
+          <control type="image">
+            <top>957</top>
+            <left>0</left>
+            <width>FullWidth</width>
+            <height>96</height>
+            <texture>dialogs/video_info_title_bg.png</texture>
+          </control>
+          <control type="label">
+            <top>968</top>
+            <left>46</left>
+            <width>1828</width>
+            <height>76</height>
+            <font>Font_Cond_76</font>
+            <textcolor>MedLight</textcolor>
+            <label>$VAR[VideoInfo_Fullscreen_Title]</label>
+          </control>
+        </control>
+      </control>
 
-					<!-- Previous/Next -->
-					<!-- <control type="group">
-						<control type="image">
-							<left>20</left>
-							<top>302</top>
-							<width>30</width>
-							<height>60</height>
-							<texture>dialogs/available_left.png</texture>
-							<visible>[StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010) + Control.IsVisible(9000)] | [StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9020) + Control.IsVisible(9010)]]</visible>
-						</control>
-						<control type="image">
-							<left>1870</left>
-							<top>302</top>
-							<width>30</width>
-							<height>60</height>
-							<texture>dialogs/available_right.png</texture>
-							<visible>StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010) + Control.IsVisible(9020)</visible>
-						</control>
-					</control> -->
+      <!-- VideoInfo main group -->
+      <control type="group">
+        <top>TopOffset</top>
+        <left>LeftOffset</left>
+        <include>Animation_ZoomedByMenu</include>
+        <include>Animation_SlideLeftByFullscreenFanart</include>
+        <!-- <visible>![Control.HasFocus(9000) | [ControlGroup(5100).HasFocus + StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9000)]]</visible> -->
+        <visible>!StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9000)</visible>
+        
+        <control type="group">
+          <include>Animation_CommonFade</include>
+          
+          <!-- Info Lines -->
+          <!-- <control type="group"> -->
+            <!-- <control type="image">
+              <left>820</left>
+              <top>175</top>
+              <width>1050</width>
+              <height>720</height>
+              <texture>hub/videoinfo_bg.png</texture>
+            </control> -->
+            <!-- <control type="image">
+              <top>290</top>
+              <width>FullWidth</width>
+              <height>3</height>
+              <texture>dialogs/Video_Info_Line_Horizontal.png</texture>
+            </control>
+            <control type="image">
+              <top>386</top>
+              <width>FullWidth</width>
+              <height>3</height>
+              <texture>dialogs/Video_Info_Line_Horizontal.png</texture>
+            </control>
+            <control type="image">
+              <top>547</top>
+              <width>FullWidth</width>
+              <height>3</height>
+              <texture>dialogs/Video_Info_Line_Horizontal.png</texture>
+            </control> -->
+          <!-- </control> -->
 
-					<!-- <control type="group">
-						<control type="image">
-							<left>20</left>
-							<top>302</top>
-							<width>30</width>
-							<height>60</height>
-							<texture>dialogs/available_left.png</texture>
-							<visible>[StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010) + Control.IsVisible(9000)] | [StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9020) + Control.IsVisible(9010)]]</visible>
-						</control>
-						<control type="image">
-							<left>1870</left>
-							<top>302</top>
-							<width>30</width>
-							<height>60</height>
-							<texture>dialogs/available_right.png</texture>
-							<visible>StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010) + Control.IsVisible(9020)</visible>
-						</control>
-					</control> -->
+          <!-- Previous/Next -->
+          <!-- <control type="group">
+            <control type="image">
+              <left>20</left>
+              <top>302</top>
+              <width>30</width>
+              <height>60</height>
+              <texture>dialogs/available_left.png</texture>
+              <visible>[StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010) + Control.IsVisible(9000)] | [StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9020) + Control.IsVisible(9010)]]</visible>
+            </control>
+            <control type="image">
+              <left>1870</left>
+              <top>302</top>
+              <width>30</width>
+              <height>60</height>
+              <texture>dialogs/available_right.png</texture>
+              <visible>StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010) + Control.IsVisible(9020)</visible>
+            </control>
+          </control> -->
 
-					<!-- Info -->
-					<control type="group">
-						<control type="group">
-							<left>874</left>
-							<top>206</top>
-							<!-- <left>840</left> -->
-							<!-- <top>198</top> -->
-							<control type="fadelabel">
-								<width>936</width>
-								<!-- <width>1004</width> -->
-								<height>72</height>
-								<aligny>center</aligny>
-								<font>Font_Cond_76</font>
-								<textcolor>Heavy</textcolor>
-								<label>$VAR[VideoInfo_Main_Title]</label>
-							</control>
-							<control type="label">
-								<top>102</top>
-								<width>936</width>
-								<!-- <width>1004</width> -->
-								<height>64</height>
-								<aligny>center</aligny>
-								<font>Font_Reg_Caps_68</font>
-								<textcolor>MedLight</textcolor>
-								<label>$VAR[VideoInfo_Year]</label>
-							</control>
+          <!-- <control type="group">
+            <control type="image">
+              <left>20</left>
+              <top>302</top>
+              <width>30</width>
+              <height>60</height>
+              <texture>dialogs/available_left.png</texture>
+              <visible>[StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010) + Control.IsVisible(9000)] | [StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9020) + Control.IsVisible(9010)]]</visible>
+            </control>
+            <control type="image">
+              <left>1870</left>
+              <top>302</top>
+              <width>30</width>
+              <height>60</height>
+              <texture>dialogs/available_right.png</texture>
+              <visible>StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010) + Control.IsVisible(9020)</visible>
+            </control>
+          </control> -->
 
-							<control type="group">
-								<top>187</top>
-								<control type="label" id="8201">
-									<include>HiddenControl</include>
-									<label>$VAR[VideoInfo_OtherInfo_WidestLabel]</label>
-								</control>
-								<control type="label">
-									<include>VideoInfo_OtherInfo_LabelBlock</include>
-									<label>$VAR[VideoInfo_OtherInfo_LabelBlock_Line1]</label>
-									<visible>!StringCompare(Control.GetLabel(8201),1)</visible>
-								</control>
-								<control type="label">
-									<top>42</top>
-									<include>VideoInfo_OtherInfo_LabelBlock</include>
-									<label>$VAR[VideoInfo_OtherInfo_LabelBlock_Line2]</label>
-									<visible>!StringCompare(Control.GetLabel(8201),2)</visible>
-								</control>
-								<control type="label">
-									<top>84</top>
-									<include>VideoInfo_OtherInfo_LabelBlock</include>
-									<label>$VAR[VideoInfo_OtherInfo_LabelBlock_Line3]</label>
-									<visible>!StringCompare(Control.GetLabel(8201),3)</visible>
-								</control>
-								<control type="grouplist">
-									<top>0</top>
-									<width>936</width>
-									<!-- <width>1004</width> -->
-									<height>136</height>
-									<itemgap>7</itemgap>
-									<orientation>horizontal</orientation>
-									<usecontrolcoords>true</usecontrolcoords>
-									<control type="label">
-										<include>VideoInfo_OtherInfo_LabelBlock_Widest</include>
-										<label>$VAR[VideoInfo_OtherInfo_LabelBlock_Line1]</label>
-										<visible>StringCompare(Control.GetLabel(8201),1)</visible>
-									</control>
-									<control type="label">
-										<top>42</top>
-										<include>VideoInfo_OtherInfo_LabelBlock_Widest</include>
-										<label>$VAR[VideoInfo_OtherInfo_LabelBlock_Line2]</label>
-										<visible>StringCompare(Control.GetLabel(8201),2)</visible>
-									</control>
-									<control type="label">
-										<top>84</top>
-										<include>VideoInfo_OtherInfo_LabelBlock_Widest</include>
-										<label>$VAR[VideoInfo_OtherInfo_LabelBlock_Line3]</label>
-										<visible>StringCompare(Control.GetLabel(8201),3)</visible>
-									</control>
-									<control type="group">
-										<width>30</width>
-										<control type="label">
-											<top>0</top>
-											<include>VideoInfo_OtherInfo_DelimiterBlock</include>
-										</control>
-										<control type="label">
-											<top>42</top>
-											<include>VideoInfo_OtherInfo_DelimiterBlock</include>
-										</control>
-										<control type="label">
-											<top>84</top>
-											<include>VideoInfo_OtherInfo_DelimiterBlock</include>
-										</control>
-									</control>				
-									<control type="group">
-										<width>700</width>
-										<!-- <width>768</width> -->
-										<control type="label">
-											<top>0</top>
-											<include>VideoInfo_OtherInfo_ValueBlock</include>
-											<label fallback="161">$VAR[VideoInfo_OtherInfo_ValueBlock_Line1]</label>
-										</control>
-										<control type="label">
-											<top>42</top>
-											<include>VideoInfo_OtherInfo_ValueBlock</include>
-											<label fallback="161">$VAR[VideoInfo_OtherInfo_ValueBlock_Line2]</label>
-										</control>
-										<control type="label">
-											<top>84</top>
-											<include>VideoInfo_OtherInfo_ValueBlock</include>
-											<label fallback="161">$VAR[VideoInfo_OtherInfo_ValueBlock_Line3]</label>
-										</control>
-									</control>				
-								</control>
-							</control>
+          <!-- Info -->
+          <control type="group">
+            <control type="group">
+              <left>874</left>
+              <top>206</top>
+              <!-- <left>840</left> -->
+              <!-- <top>198</top> -->
+              <control type="fadelabel">
+                <width>936</width>
+                <!-- <width>1004</width> -->
+                <height>72</height>
+                <aligny>center</aligny>
+                <font>Font_Cond_76</font>
+                <textcolor>Heavy</textcolor>
+                <label>$VAR[VideoInfo_Main_Title]</label>
+              </control>
+              <control type="label">
+                <top>102</top>
+                <width>936</width>
+                <!-- <width>1004</width> -->
+                <height>64</height>
+                <aligny>center</aligny>
+                <font>Font_Reg_Caps_68</font>
+                <textcolor>MedLight</textcolor>
+                <label>$VAR[VideoInfo_Year]</label>
+              </control>
 
-							<control type="textbox">
-								<animation effect="fade" start="0" end="100" time="200">Visible</animation>
-								<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
-								<visible>StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010)</visible>
-								<left>0</left>
-								<top>360</top>
-								<width>936</width>
-								<!-- <width>1004</width> -->
-								<height>295</height>
-								<font>Font_Reg_38</font>
-								<textcolor>MedLight</textcolor>
-								<label>$VAR[Plot]</label>
-								<!--autoscroll time="4000" delay="12000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll-->
-								<autoscroll time="4000" delay="12000" repeat="8000">true</autoscroll>
-							</control>
-						</control>
-					</control>
-				</control>
+              <control type="group">
+                <top>187</top>
+                <control type="label" id="8201">
+                  <include>HiddenControl</include>
+                  <label>$VAR[VideoInfo_OtherInfo_WidestLabel]</label>
+                </control>
+                <control type="label">
+                  <include>VideoInfo_OtherInfo_LabelBlock</include>
+                  <label>$VAR[VideoInfo_OtherInfo_LabelBlock_Line1]</label>
+                  <visible>!StringCompare(Control.GetLabel(8201),1)</visible>
+                </control>
+                <control type="label">
+                  <top>42</top>
+                  <include>VideoInfo_OtherInfo_LabelBlock</include>
+                  <label>$VAR[VideoInfo_OtherInfo_LabelBlock_Line2]</label>
+                  <visible>!StringCompare(Control.GetLabel(8201),2)</visible>
+                </control>
+                <control type="label">
+                  <top>84</top>
+                  <include>VideoInfo_OtherInfo_LabelBlock</include>
+                  <label>$VAR[VideoInfo_OtherInfo_LabelBlock_Line3]</label>
+                  <visible>!StringCompare(Control.GetLabel(8201),3)</visible>
+                </control>
+                <control type="grouplist">
+                  <top>0</top>
+                  <width>936</width>
+                  <!-- <width>1004</width> -->
+                  <height>136</height>
+                  <itemgap>7</itemgap>
+                  <orientation>horizontal</orientation>
+                  <usecontrolcoords>true</usecontrolcoords>
+                  <control type="label">
+                    <include>VideoInfo_OtherInfo_LabelBlock_Widest</include>
+                    <label>$VAR[VideoInfo_OtherInfo_LabelBlock_Line1]</label>
+                    <visible>StringCompare(Control.GetLabel(8201),1)</visible>
+                  </control>
+                  <control type="label">
+                    <top>42</top>
+                    <include>VideoInfo_OtherInfo_LabelBlock_Widest</include>
+                    <label>$VAR[VideoInfo_OtherInfo_LabelBlock_Line2]</label>
+                    <visible>StringCompare(Control.GetLabel(8201),2)</visible>
+                  </control>
+                  <control type="label">
+                    <top>84</top>
+                    <include>VideoInfo_OtherInfo_LabelBlock_Widest</include>
+                    <label>$VAR[VideoInfo_OtherInfo_LabelBlock_Line3]</label>
+                    <visible>StringCompare(Control.GetLabel(8201),3)</visible>
+                  </control>
+                  <control type="group">
+                    <width>30</width>
+                    <control type="label">
+                      <top>0</top>
+                      <include>VideoInfo_OtherInfo_DelimiterBlock</include>
+                    </control>
+                    <control type="label">
+                      <top>42</top>
+                      <include>VideoInfo_OtherInfo_DelimiterBlock</include>
+                    </control>
+                    <control type="label">
+                      <top>84</top>
+                      <include>VideoInfo_OtherInfo_DelimiterBlock</include>
+                    </control>
+                  </control>        
+                  <control type="group">
+                    <width>700</width>
+                    <!-- <width>768</width> -->
+                    <control type="label">
+                      <top>0</top>
+                      <include>VideoInfo_OtherInfo_ValueBlock</include>
+                      <label fallback="161">$VAR[VideoInfo_OtherInfo_ValueBlock_Line1]</label>
+                    </control>
+                    <control type="label">
+                      <top>42</top>
+                      <include>VideoInfo_OtherInfo_ValueBlock</include>
+                      <label fallback="161">$VAR[VideoInfo_OtherInfo_ValueBlock_Line2]</label>
+                    </control>
+                    <control type="label">
+                      <top>84</top>
+                      <include>VideoInfo_OtherInfo_ValueBlock</include>
+                      <label fallback="161">$VAR[VideoInfo_OtherInfo_ValueBlock_Line3]</label>
+                    </control>
+                  </control>        
+                </control>
+              </control>
 
-				<!-- Poster -->
-				<control type="group">
-					<control type="label" id="8200">
-						<include>HiddenControl</include>
-						<label>$VAR[VideoInfo_Image]</label>
-					</control>
-					<control type="group">
-						<visible>!IsEmpty(Control.GetLabel(8200))</visible>
-						<left>277</left>
-						<top>149</top>
-						<!-- <left>300</left> -->
-						<!-- <top>140</top> -->
-						<!--animation type="WindowOpen" condition="StringCompare(Container.ViewMode,$LOCALIZE[31120])" reversible="false">
-							<effect type="slide" start="338,0" end="0,0" time="400" tween="cubic" easing="inout" />
-						</animation>
-						<animation type="WindowClose" condition="StringCompare(Container.ViewMode,$LOCALIZE[31120])" reversible="false">
-							<effect type="fade" start="100" end="0" time="0" />
-						</animation-->
-						<animation type="WindowOpen" condition="!StringCompare(Container.ViewMode,Info List 2)" reversible="false">
-							<effect type="fade" start="0" end="100" time="400" />
-						</animation>
-						<animation type="WindowClose" condition="!StringCompare(Container.ViewMode,Info List 2)" reversible="false">
-							<effect type="fade" start="100" end="0" time="200" />
-						</animation>
-						<control type="image">
-							<left>6</left>
-							<top>28</top>
-							<width>480</width>
-							<height>718</height>
-							<fadetime>200</fadetime>
-							<texture diffuse="poster/Poster_Matte_FO.png">$VAR[VideoInfo_Image]</texture>
-							<aspectratio scalediffuse="false">stretch</aspectratio>
-						</control>
-						<control type="image">
-							<left>-23</left>
-							<top>0</top>
-							<width>538</width>
-							<height>772</height>
-							<texture>poster/Poster_Frame_FO.png</texture>
-						</control>
-						<control type="image">
-							<left>420</left>
-							<top>678</top>
-							<width>48</width>
-							<height>48</height>
-							<texture>$VAR[Status_Overlay]</texture>
-							<include>Animation_PosterInfoSlide</include>
-						</control>
-						<control type="image">		<!-- ??? --->
-							<left>420</left>
-							<top>678</top>
-							<width>48</width>
-							<height>48</height>
-							<texture>common/Overlay_New.png</texture>
-							<visible>SubString(Window(movieinformation).Property(flag),true)</visible>
-							<animation effect="slide" end="-54,0" condition="[!Skin.HasSetting(HideWatchedOverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)] | [!Skin.HasSetting(HideResumeOverlays) + ListItem.IsResumable]">Conditional</animation>
-						</control>
-					</control>
-					<control type="group">
-						<top>TopOffset</top>
-						<left>LeftOffset</left>
-						<include>Animation_ZoomedByMenu</include>
-						<control type="image">
-							<left>342</left>
-							<top>214</top>
-							<width>480</width>
-							<height>480</height>
-							<texture>dialogs/NoThumb.png</texture>
-							<fadetime>200</fadetime>
-							<aspectratio>keep</aspectratio>
-							<visible>IsEmpty(Control.GetLabel(8200))</visible>
-							<animation type="WindowOpen" reversible="false">
-								<effect type="fade" start="0" end="100" time="400" />
-							</animation>
-							<animation type="WindowClose" reversible="false">
-								<effect type="fade" start="100" end="0" time="0" />
-							</animation>
-						</control>
-					</control>
-				</control>
-				
-				<!-- Cast -->
-				<control type="group">
-					<include>Animation_CommonFade</include>
-					<visible>StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9020)</visible>
-					<control type="list" id="50">
-						<left>874</left>
-						<top>569</top>
-						<!-- <left>840</left> -->
-						<!-- <top>561</top> -->
-						<width>1004</width>
-						<height>290</height>
-						<onup>50</onup>
-						<ondown>50</ondown>
-						<onleft>9010</onleft>
-						<onright>noop</onright>
-						<orientation>vertical</orientation>
-						<viewtype label="535">list</viewtype>
-						<scrolltime tween="sine" easing="out">200</scrolltime>
-						<itemlayout width="1004" height="42">
-							<control type="label">
-								<width>1004</width>
-								<height>38</height>
-								<aligny>center</aligny>
-								<font>Font_Reg_38</font>
-								<textcolor>MedLight</textcolor>
-								<selectedcolor>MedLight</selectedcolor>
-								<label>$INFO[ListItem.Label]</label>
-							</control>
-						</itemlayout>
-						<focusedlayout width="1004" height="42">
-							<control type="group">
-								<animation effect="fade" start="0" end="100" time="200" reversible="false">Focus</animation>
-								<control type="label">
-									<top>1</top>
-									<width>1004</width>
-									<height>38</height>
-									<aligny>center</aligny>
-									<scroll>true</scroll>
-									<font>Font_Reg_Caps_38</font>
-									<textcolor>Heavy</textcolor>
-									<selectedcolor>Heavy</selectedcolor>
-									<label>$INFO[ListItem.Label]</label>
-								</control>
-							</control>
-						</focusedlayout>
-					</control>
-				</control>
-			</control>
-		</control>
+              <control type="textbox">
+                <animation effect="fade" start="0" end="100" time="200">Visible</animation>
+                <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+                <visible>StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010)</visible>
+                <left>0</left>
+                <top>360</top>
+                <width>936</width>
+                <!-- <width>1004</width> -->
+                <height>295</height>
+                <font>Font_Reg_38</font>
+                <textcolor>MedLight</textcolor>
+                <label>$VAR[Plot]</label>
+                <!--autoscroll time="4000" delay="12000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll-->
+                <autoscroll time="4000" delay="12000" repeat="8000">true</autoscroll>
+              </control>
+            </control>
+          </control>
+        </control>
 
-		<!-- Menu group -->
-		<control type="group" id="5100">
-			<!-- Hidden control buttons for Menu -->
-			<control type="button" id="7000">
-				<include>HiddenControl</include>
-				<visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9000)</visible>
-				<onfocus>SetProperty(AlaskaB.Overlay.Hide,false,home)</onfocus>
-				<onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,true,home)</onfocus>
-				<onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,true,home)</onfocus>
-				<onfocus>SetFocus(7100)</onfocus>
-			</control>
-			<control type="button" id="7000">
-				<include>HiddenControl</include>
-				<visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010)</visible>
-				<onfocus>SetProperty(AlaskaB.Overlay.Hide,false,home)</onfocus>
-				<onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,true,home)</onfocus>
-				<onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,true,home)</onfocus>
-				<onfocus>SetFocus(7100)</onfocus>
-			</control>
-			<control type="button" id="7000">
-				<include>HiddenControl</include>
-				<visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9020)</visible>
-				<onfocus>SetProperty(AlaskaB.Overlay.Hide,false,home)</onfocus>
-				<onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,true,home)</onfocus>
-				<onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,true,home)</onfocus>
-				<onfocus>SetFocus(7100)</onfocus>
-			</control>
-			<control type="button" id="7010">
-				<include>HiddenControl</include>
-				<visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9000)</visible>
-				<onfocus>SetFocus(9000)</onfocus>
-			</control>
-			<control type="button" id="7010">
-				<include>HiddenControl</include>
-				<visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010)</visible>
-				<onfocus>SetFocus(9010)</onfocus>
-			</control>
-			<control type="button" id="7010">
-				<include>HiddenControl</include>
-				<visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9020)</visible>
-				<onfocus>SetFocus(9020)</onfocus>
-			</control>
+        <!-- Poster -->
+        <!--<control type="group">
+          <control type="label" id="8200">
+            <include>HiddenControl</include>
+            <label>$VAR[VideoInfo_Image]</label>
+          </control>
+          <control type="group">
+            <visible>!IsEmpty(Control.GetLabel(8200))</visible>
+            <left>277</left>
+            <top>149</top>
+            <!{1}** <left>300</left> **{1}>
+            <!{1}** <top>140</top> **{1}>
+            <!{1}**animation type="WindowOpen" condition="StringCompare(Container.ViewMode,$LOCALIZE[31120])" reversible="false">
+              <effect type="slide" start="338,0" end="0,0" time="400" tween="cubic" easing="inout" />
+            </animation>
+            <animation type="WindowClose" condition="StringCompare(Container.ViewMode,$LOCALIZE[31120])" reversible="false">
+              <effect type="fade" start="100" end="0" time="0" />
+            </animation**{1}>
+            <animation type="WindowOpen" condition="!StringCompare(Container.ViewMode,Info List 2)" reversible="false">
+              <effect type="fade" start="0" end="100" time="400" />
+            </animation>
+            <animation type="WindowClose" condition="!StringCompare(Container.ViewMode,Info List 2)" reversible="false">
+              <effect type="fade" start="100" end="0" time="200" />
+            </animation>
+            <control type="image">
+              <left>6</left>
+              <top>28</top>
+              <width>480</width>
+              <height>718</height>
+              <fadetime>200</fadetime>
+              <texture diffuse="poster/Poster_Matte_FO.png">$VAR[VideoInfo_Image]</texture>
+              <aspectratio scalediffuse="false">stretch</aspectratio>
+            </control>
+            <control type="image">
+              <left>-23</left>
+              <top>0</top>
+              <width>538</width>
+              <height>772</height>
+              <texture>poster/Poster_Frame_FO.png</texture>
+            </control>
+            <control type="image">
+              <left>420</left>
+              <top>678</top>
+              <width>48</width>
+              <height>48</height>
+              <texture>$VAR[Status_Overlay]</texture>
+              <include>Animation_PosterInfoSlide</include>
+            </control>
+            <control type="image">    <!{1}** ??? -**{1}>
+              <left>420</left>
+              <top>678</top>
+              <width>48</width>
+              <height>48</height>
+              <texture>common/Overlay_New.png</texture>
+              <visible>SubString(Window(movieinformation).Property(flag),true)</visible>
+              <animation effect="slide" end="-54,0" condition="[!Skin.HasSetting(HideWatchedOverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)] | [!Skin.HasSetting(HideResumeOverlays) + ListItem.IsResumable]">Conditional</animation>
+            </control>
+          </control>
+          <control type="group">
+            <top>TopOffset</top>
+            <left>LeftOffset</left>
+            <include>Animation_ZoomedByMenu</include>
+            <control type="image">
+              <left>342</left>
+              <top>214</top>
+              <width>480</width>
+              <height>480</height>
+              <texture>dialogs/NoThumb.png</texture>
+              <fadetime>200</fadetime>
+              <aspectratio>keep</aspectratio>
+              <visible>IsEmpty(Control.GetLabel(8200))</visible>
+              <animation type="WindowOpen" reversible="false">
+                <effect type="fade" start="0" end="100" time="400" />
+              </animation>
+              <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="0" />
+              </animation>
+            </control>
+          </control>
+        </control>-->
+        
+        <!-- Cast -->
+        <control type="group">
+          <include>Animation_CommonFade</include>
+          <visible>StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9020)</visible>
+          <control type="list" id="50">
+            <left>874</left>
+            <top>569</top>
+            <!-- <left>840</left> -->
+            <!-- <top>561</top> -->
+            <width>1004</width>
+            <height>290</height>
+            <onup>50</onup>
+            <ondown>50</ondown>
+            <onleft>9010</onleft>
+            <onright>noop</onright>
+            <orientation>vertical</orientation>
+            <viewtype label="535">list</viewtype>
+            <scrolltime tween="sine" easing="out">200</scrolltime>
+            <itemlayout width="1004" height="42">
+              <control type="label">
+                <width>1004</width>
+                <height>38</height>
+                <aligny>center</aligny>
+                <font>Font_Reg_38</font>
+                <textcolor>MedLight</textcolor>
+                <selectedcolor>MedLight</selectedcolor>
+                <label>$INFO[ListItem.Label]</label>
+              </control>
+            </itemlayout>
+            <focusedlayout width="1004" height="42">
+              <control type="group">
+                <animation effect="fade" start="0" end="100" time="200" reversible="false">Focus</animation>
+                <control type="label">
+                  <top>1</top>
+                  <width>1004</width>
+                  <height>38</height>
+                  <aligny>center</aligny>
+                  <scroll>true</scroll>
+                  <font>Font_Reg_Caps_38</font>
+                  <textcolor>Heavy</textcolor>
+                  <selectedcolor>Heavy</selectedcolor>
+                  <label>$INFO[ListItem.Label]</label>
+                </control>
+              </control>
+            </focusedlayout>
+          </control>
+        </control>
+      </control>
+    </control>
 
-			<!-- Menu -->
-			<control type="group">
-				<top>TopOffset</top>
-				<left>LeftOffset</left>
-				<include>Animation_ZoomInMenu7100</include>
+    <!-- Menu group -->
+    <control type="group" id="5100">
+      <!-- Hidden control buttons for Menu -->
+      <control type="button" id="7000">
+        <include>HiddenControl</include>
+        <visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9000)</visible>
+        <onfocus>SetProperty(AlaskaB.Overlay.Hide,false,home)</onfocus>
+        <onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,true,home)</onfocus>
+        <onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,true,home)</onfocus>
+        <onfocus>SetFocus(7100)</onfocus>
+      </control>
+      <control type="button" id="7000">
+        <include>HiddenControl</include>
+        <visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010)</visible>
+        <onfocus>SetProperty(AlaskaB.Overlay.Hide,false,home)</onfocus>
+        <onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,true,home)</onfocus>
+        <onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,true,home)</onfocus>
+        <onfocus>SetFocus(7100)</onfocus>
+      </control>
+      <control type="button" id="7000">
+        <include>HiddenControl</include>
+        <visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9020)</visible>
+        <onfocus>SetProperty(AlaskaB.Overlay.Hide,false,home)</onfocus>
+        <onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,true,home)</onfocus>
+        <onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,true,home)</onfocus>
+        <onfocus>SetFocus(7100)</onfocus>
+      </control>
+      <control type="button" id="7010">
+        <include>HiddenControl</include>
+        <visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9000)</visible>
+        <onfocus>SetFocus(9000)</onfocus>
+      </control>
+      <control type="button" id="7010">
+        <include>HiddenControl</include>
+        <visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010)</visible>
+        <onfocus>SetFocus(9010)</onfocus>
+      </control>
+      <control type="button" id="7010">
+        <include>HiddenControl</include>
+        <visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9020)</visible>
+        <onfocus>SetFocus(9020)</onfocus>
+      </control>
 
-				<control type="fixedlist" id="7100">
-					<include>ViewMenu_List</include>
-					<onup>7010</onup>
-					<ondown>7010</ondown>
-					<onleft>noop</onleft>
-					<onright>noop</onright>
-					<visible allowhiddenfocus="true">Control.HasFocus(7100) + !Window.IsActive(shutdownmenu) + !Window.IsActive(DialogYesNo.xml) + !Window.IsActive(progressdialog) + !Window.IsActive(okdialog)</visible>
-					<content>
-						<!-- Play -->
-						<item id="1">
-							<onclick>SendClick(movieinformation,8)</onclick>
-							<label>208</label>
-							<label2>20338</label2>
-							<visible>Container.Content(Movies)</visible>
-						</item>
-						<item id="1">
-							<onclick>SendClick(movieinformation,8)</onclick>
-							<label>208</label>
-							<label2>20359</label2>
-							<visible>Container.Content(Episodes)</visible>
-						</item>
-						<item id="1">
-							<onclick>SendClick(movieinformation,8)</onclick>
-							<label>208</label>
-							<label2>157</label2>
-							<visible>!Container.Content(TVShows) + !Container.Content(Movies) + !Container.Content(Episodes)</visible>
-						</item>
-						<!-- Browse -->
-						<item id="1">
-							<onclick>SendClick(movieinformation,8)</onclick>
-							<label>1024</label>
-							<label2>31148</label2>
-							<visible>Container.Content(TVShows)</visible>
-						</item>
-						<!-- Trailer -->
-						<item id="2">
-							<onclick>SendClick(movieinformation,11)</onclick>
-							<label>208</label>
-							<label2>20410</label2>
-							<visible>!IsEmpty(ListItem.Trailer)</visible>
-						</item>
-						<!-- Cast -->
-						<!--item id="3">
-							<onclick>SetFocus(50)</onclick>
-							<label>31119</label>
-							<label2>206</label2>
-							<visible>!IsEmpty(ListItem.Cast)</visible>
-						</item-->
-						<!-- Refresh -->
-						<item id="4">
-							<onclick>Up</onclick>
-							<onclick>SendClick(movieinformation,6)</onclick>
-							<label>184</label>
-							<label2>31149</label2>
-						</item>
-						<!-- Images -->
-						<item id="5">
-							<onclick>SetFocus(9010)</onclick>
-							<onclick>SendClick(movieinformation,10)</onclick>
-							<label>31150</label>
-							<label2>31151</label2>
-							<visible>Container.Content(movies) | Container.Content(tvshows)</visible>
-						</item>
-						<!-- Artwork Downloader -->
-						<item id="6">
-							<onclick>SetFocus(9010)</onclick>
-							<onclick condition="Container.Content(tvshows)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
-							<onclick condition="Container.Content(movies)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
-							<label>31997</label>
-							<label2>31998</label2>
-							<visible>Container.Content(movies) | Container.Content(tvshows)</visible>
-						</item>
-						<!-- Video extras -->
-						<!--item id="7">
-							<onclick>SetFocus(9010)</onclick>
-							<label>31119</label>
-							<label2>31164</label2>
-							<onclick>XBMC.RunScript(script.videoextras,display,$INFO[ListItem.FilenameAndPath])</onclick>
-							<visible>SubString(Window(movieinformation).Property(flag),true) + IsEmpty(Window(movieinformation).Property("HideVideoExtrasButton"))</visible>
-						</item-->
-						<!-- Director's movies -->
-						<item id="9">
-							<onclick>SetFocus(9010)</onclick>
-							<onclick>SendClick(movieinformation,13)</onclick>
-							<label>31154</label>
-							<label2>20339</label2>
-							<visible>Control.IsEnabled(13)</visible>
-						</item>
-						<!-- Cinema Experience -->
-						<item id="10">
-							<onclick>SendClick(movieinformation,20)</onclick>
-							<label>31152</label>
-							<label2>31153</label2>
-							<onclick>Playlist.Clear</onclick>
-							<onclick>Dialog.Close(movieinformation)</onclick>
-							<onclick>RunAddon(script.cinema.experience)</onclick>
-							<visible>Container.Content(Movies) + system.hasaddon(script.cinema.experience) + !SubString(Container.FolderPath,plugin)</visible>
-						</item>
-					</content>
-				</control>
-			</control>
+      <!-- Menu -->
+      <control type="group">
+        <top>TopOffset</top>
+        <left>LeftOffset</left>
+        <include>Animation_ZoomInMenu7100</include>
 
-			<!-- Hidden buttons for Menu -->
-			<control type="button" id="6">
-				<include>HiddenControl</include>
-			</control>
-			<control type="togglebutton" id="8">
-				<include>HiddenControl</include>
-			</control>
-			<control type="button" id="10">
-				<include>HiddenControl</include>
-			</control>
-			<control type="button" id="11">
-				<include>HiddenControl</include>
-			</control>
-			<control type="button" id="13">
-				<include>HiddenControl</include>
-			</control>
-		</control>
+        <control type="fixedlist" id="7100">
+          <include>ViewMenu_List</include>
+          <onup>7010</onup>
+          <ondown>7010</ondown>
+          <onleft>noop</onleft>
+          <onright>noop</onright>
+          <visible allowhiddenfocus="true">Control.HasFocus(7100) + !Window.IsActive(shutdownmenu) + !Window.IsActive(DialogYesNo.xml) + !Window.IsActive(progressdialog) + !Window.IsActive(okdialog)</visible>
+          <content>
+            <!-- Play -->
+            <item id="1">
+              <onclick>SendClick(movieinformation,8)</onclick>
+              <label>208</label>
+              <label2>20338</label2>
+              <visible>Container.Content(Movies)</visible>
+            </item>
+            <item id="1">
+              <onclick>SendClick(movieinformation,8)</onclick>
+              <label>208</label>
+              <label2>20359</label2>
+              <visible>Container.Content(Episodes)</visible>
+            </item>
+            <item id="1">
+              <onclick>SendClick(movieinformation,8)</onclick>
+              <label>208</label>
+              <label2>157</label2>
+              <visible>!Container.Content(TVShows) + !Container.Content(Movies) + !Container.Content(Episodes)</visible>
+            </item>
+            <!-- Browse -->
+            <item id="1">
+              <onclick>SendClick(movieinformation,8)</onclick>
+              <label>1024</label>
+              <label2>31148</label2>
+              <visible>Container.Content(TVShows)</visible>
+            </item>
+            <!-- Trailer -->
+            <item id="2">
+              <onclick>SendClick(movieinformation,11)</onclick>
+              <label>208</label>
+              <label2>20410</label2>
+              <visible>!IsEmpty(ListItem.Trailer)</visible>
+            </item>
+            <!-- Cast -->
+            <!--item id="3">
+              <onclick>SetFocus(50)</onclick>
+              <label>31119</label>
+              <label2>206</label2>
+              <visible>!IsEmpty(ListItem.Cast)</visible>
+            </item-->
+            <!-- Refresh -->
+            <item id="4">
+              <onclick>Up</onclick>
+              <onclick>SendClick(movieinformation,6)</onclick>
+              <label>184</label>
+              <label2>31149</label2>
+            </item>
+            <!-- Images -->
+            <item id="5">
+              <onclick>SetFocus(9010)</onclick>
+              <onclick>SendClick(movieinformation,10)</onclick>
+              <label>31150</label>
+              <label2>31151</label2>
+              <visible>Container.Content(movies) | Container.Content(tvshows)</visible>
+            </item>
+            <!-- Artwork Downloader -->
+            <item id="6">
+              <onclick>SetFocus(9010)</onclick>
+              <onclick condition="Container.Content(tvshows)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
+              <onclick condition="Container.Content(movies)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
+              <label>31997</label>
+              <label2>31998</label2>
+              <visible>Container.Content(movies) | Container.Content(tvshows)</visible>
+            </item>
+            <!-- Video extras -->
+            <!--item id="7">
+              <onclick>SetFocus(9010)</onclick>
+              <label>31119</label>
+              <label2>31164</label2>
+              <onclick>XBMC.RunScript(script.videoextras,display,$INFO[ListItem.FilenameAndPath])</onclick>
+              <visible>SubString(Window(movieinformation).Property(flag),true) + IsEmpty(Window(movieinformation).Property("HideVideoExtrasButton"))</visible>
+            </item-->
+            <!-- Director's movies -->
+            <item id="9">
+              <onclick>SetFocus(9010)</onclick>
+              <onclick>SendClick(movieinformation,13)</onclick>
+              <label>31154</label>
+              <label2>20339</label2>
+              <visible>Control.IsEnabled(13)</visible>
+            </item>
+            <!-- Cinema Experience -->
+            <item id="10">
+              <onclick>SendClick(movieinformation,20)</onclick>
+              <label>31152</label>
+              <label2>31153</label2>
+              <onclick>Playlist.Clear</onclick>
+              <onclick>Dialog.Close(movieinformation)</onclick>
+              <onclick>RunAddon(script.cinema.experience)</onclick>
+              <visible>Container.Content(Movies) + system.hasaddon(script.cinema.experience) + !SubString(Container.FolderPath,plugin)</visible>
+            </item>
+          </content>
+        </control>
+      </control>
 
-	</controls>
+      <!-- Hidden buttons for Menu -->
+      <control type="button" id="6">
+        <include>HiddenControl</include>
+      </control>
+      <control type="togglebutton" id="8">
+        <include>HiddenControl</include>
+      </control>
+      <control type="button" id="10">
+        <include>HiddenControl</include>
+      </control>
+      <control type="button" id="11">
+        <include>HiddenControl</include>
+      </control>
+      <control type="button" id="13">
+        <include>HiddenControl</include>
+      </control>
+    </control>
+
+  </controls>
 
 </window>
