@@ -150,10 +150,13 @@
     </control>
   </include>
 
-  <constant name="AlaskaB_MyVideoNav_Menu_Left">0</constant>
-  <constant name="AlaskaB_MyVideoNav_Menu_Top">376</constant>
+  <constant name="AlaskaB_Menu_Left">0</constant>
+  <constant name="AlaskaB_Menu_Top">376</constant>
 
-  <include name="AlaskaB_MyVideoNav_Menu">
+  <include name="AlaskaB_Menu_Base">
+    <left>AlaskaB_Menu_Left</left>
+    <top>AlaskaB_Menu_Top</top>
+    <include>Animation_ZoomInMenu7100</include>
     <control type="group">
       <control type="image">
         <include>AlaskaB_Background_List_Border_Up</include>
@@ -170,11 +173,15 @@
     </control>
   </include>
 
-  <include name="ViewMenu_List">
+  <include name="AlaskaB_Menu_List">
+    <top>56</top>
     <left>-330</left>
-    <top>432</top>
     <width>2580</width>
     <height>104</height>
+    <onup>7010</onup>
+    <ondown>7010</ondown>
+    <onleft>7100</onleft>
+    <onright>7100</onright>
     <viewtype>list</viewtype>
     <focusposition>3</focusposition>
     <orientation>horizontal</orientation>

@@ -9,6 +9,9 @@
   <onunload>ClearProperty(AlaskaB.Overlay.NowPlaying.Hide,home)</onunload>
   <!--onunload>ClearProperty(AlaskaB.HeadingLabel,home)</onunload-->
 
+  <onload>ClearProperty(AlaskaB.MyVideoNav.Menu,home)</onload>
+  <onunload>ClearProperty(AlaskaB.MyVideoNav.Menu,home)</onunload>
+
   <!--onunload condition="!IsEmpty(Window(movieinformation).Property(IsSeason)">ClearProperty(IsSeason,movieinformation)</onunload>
   <onunload condition="!IsEmpty(Window(movieinformation).Property(IsSpecial)">ClearProperty(IsSpecial,movieinformation)</onunload-->
 
@@ -56,11 +59,9 @@
       <visible>[[!Skin.HasSetting(Disable_Movie_Fanart) + Container.Content(Movies)] | [!Skin.HasSetting(Disable_TV_Fanart) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] | [!Skin.HasSetting(Disable_Music_Fanart) + Container.Content(Music)] | [!Skin.HasSetting(Disable_Addon_Fanart) + Container.Content(Addons)]]</visible>
     </control>
 
-    <!-- Views -->
-
     <control type="group">
       <include>Animation_ZoomInZoomOut</include>
-      <include>Animation_ZoomedByMenu</include>
+      <include>Animation_ZoomedByProperty</include>
 
       <include>AlaskaB_MyVideoNav_Base</include>
 
@@ -76,36 +77,30 @@
       <include>Viewtype_651_Info_List_2</include>
     </control>
 
-    <!-- Hidden buttons for Menu -->
+    <!-- Hidden control buttons for Menu -->
     <control type="group">
       <control type="button" id="7000">
         <include>HiddenControl</include>
         <onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,true,home)</onfocus>
         <onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,true,home)</onfocus>
+        <onfocus>SetProperty(AlaskaB.MyVideoNav.Menu,true,home)</onfocus>
         <onfocus>SetFocus(7100)</onfocus>
       </control>
-      <control type="button" id="7001">
+      <control type="button" id="7010">
         <include>HiddenControl</include>
         <onfocus>ClearProperty(AlaskaB.Overlay.NowPlaying.Hide,home)</onfocus>
         <onfocus>ClearProperty(AlaskaB.Overlay.MediaFlags.Hide,home)</onfocus>
+        <onfocus>ClearProperty(AlaskaB.MyVideoNav.Menu,home)</onfocus>
         <onfocus>SetFocus(500)</onfocus>
       </control>
     </control>
 
     <!-- Menu -->
     <control type="group">
-      <left>AlaskaB_MyVideoNav_Menu_Left</left>
-      <top>AlaskaB_MyVideoNav_Menu_Top</top>
-      <include>AlaskaB_MyVideoNav_Menu</include>
-      <include>Animation_ZoomInMenu7100</include>
+      <include>AlaskaB_Menu_Base</include>
 
       <control type="fixedlist" id="7100">
-        <top>56</top>
-        <include>ViewMenu_List</include>
-        <onup>7001</onup>
-        <ondown>7001</ondown>
-        <onleft>7100</onleft>
-        <onright>7100</onright>
+        <include>AlaskaB_Menu_List</include>
         <visible allowhiddenfocus="true">Control.HasFocus(7100) + !Window.IsActive(shutdownmenu) + !Window.IsActive(DialogYesNo.xml) + !Window.IsActive(progressdialog) + !Window.IsActive(okdialog)</visible>
         <content>
           <!-- Filter -->

@@ -15,7 +15,10 @@
   <!-- <onunload>ClearProperty(AlaskaB.Animation_ZoomedByMenu.Skip,home)</onunload> -->
   <onunload>ClearProperty(AlaskaB.DialogVideoInfo.CurrentView,movieinformation)</onunload>
   <onunload>ClearProperty(AlaskaB.DialogVideoInfo.PreviousView,movieinformation)</onunload>
-  
+
+  <onload>ClearProperty(AlaskaB.DialogVideoInfo.Menu,home)</onload>
+  <onunload>ClearProperty(AlaskaB.DialogVideoInfo.Menu,home)</onunload>
+
   <controls>
     <!--control type="label">
       <left>46</left>
@@ -39,7 +42,7 @@
       <label>+$INFO[Window(Home).Property(AlaskaB.Animation_ZoomedByMenu.Skip)]+</label>
       <visible>StringCompare(Window(Home).Property(AlaskaB.Animation_ZoomedByMenu.Skip),true)</visible>
     </control--> 
-      
+
     <!-- Video info group -->
     <control type="group" id="5000">
       <!-- Hidden control buttons -->
@@ -91,7 +94,7 @@
           <onunfocus>SetProperty(AlaskaB.DialogVideoInfo.PreviousView,9020)</onunfocus>
         </control>
       </control>
-  
+
       <!-- Fullscreen fanart -->
       <control type="group">
         <top>TopOffset</top>
@@ -134,20 +137,20 @@
         <include>Animation_SlideLeftByFullscreenFanart</include>
         <!-- <visible>![Control.HasFocus(9000) | [ControlGroup(5100).HasFocus + StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9000)]]</visible> -->
         <visible>!StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9000)</visible>
-        
+
         <control type="group">
           <include>Animation_CommonFade</include>
-          
+
           <!-- Info Lines -->
           <!-- <control type="group"> -->
-            <!-- <control type="image">
+          <!-- <control type="image">
               <left>820</left>
               <top>175</top>
               <width>1050</width>
               <height>720</height>
               <texture>hub/videoinfo_bg.png</texture>
             </control> -->
-            <!-- <control type="image">
+          <!-- <control type="image">
               <top>290</top>
               <width>FullWidth</width>
               <height>3</height>
@@ -417,7 +420,7 @@
             </control>
           </control>
         </control>-->
-        
+
         <!-- Cast -->
         <control type="group">
           <include>Animation_CommonFade</include>
@@ -468,155 +471,133 @@
       </control>
     </control>
 
-    <!-- Menu group -->
-    <control type="group" id="5100">
-      <!-- Hidden control buttons for Menu -->
-      <control type="button" id="7000">
-        <include>HiddenControl</include>
-        <visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9000)</visible>
-        <onfocus>SetProperty(AlaskaB.Overlay.Hide,false,home)</onfocus>
-        <onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,true,home)</onfocus>
-        <onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,true,home)</onfocus>
-        <onfocus>SetFocus(7100)</onfocus>
-      </control>
-      <control type="button" id="7000">
-        <include>HiddenControl</include>
-        <visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010)</visible>
-        <onfocus>SetProperty(AlaskaB.Overlay.Hide,false,home)</onfocus>
-        <onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,true,home)</onfocus>
-        <onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,true,home)</onfocus>
-        <onfocus>SetFocus(7100)</onfocus>
-      </control>
-      <control type="button" id="7000">
-        <include>HiddenControl</include>
-        <visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9020)</visible>
-        <onfocus>SetProperty(AlaskaB.Overlay.Hide,false,home)</onfocus>
-        <onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,true,home)</onfocus>
-        <onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,true,home)</onfocus>
-        <onfocus>SetFocus(7100)</onfocus>
-      </control>
-      <control type="button" id="7010">
-        <include>HiddenControl</include>
-        <visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9000)</visible>
-        <onfocus>SetFocus(9000)</onfocus>
-      </control>
-      <control type="button" id="7010">
-        <include>HiddenControl</include>
-        <visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010)</visible>
-        <onfocus>SetFocus(9010)</onfocus>
-      </control>
-      <control type="button" id="7010">
-        <include>HiddenControl</include>
-        <visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9020)</visible>
-        <onfocus>SetFocus(9020)</onfocus>
-      </control>
+    <!-- Hidden control buttons for Menu -->
+    <control type="button" id="7000">
+      <include>HiddenControl</include>
+      <onfocus>SetProperty(AlaskaB.Overlay.Hide,false,home)</onfocus>
+      <onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,true,home)</onfocus>
+      <onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,true,home)</onfocus>
+      <onfocus>SetProperty(AlaskaB.DialogVideoInfo.Menu,true,home)</onfocus>
+      <onfocus>SetFocus(7100)</onfocus>
+    </control>
+    <control type="button" id="7010">
+      <include>HiddenControl</include>
+      <visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9000)</visible>
+      <onfocus>ClearProperty(AlaskaB.DialogVideoInfo.Menu,home)</onfocus>
+      <onfocus>SetFocus(9000)</onfocus>
+    </control>
+    <control type="button" id="7010">
+      <include>HiddenControl</include>
+      <visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010)</visible>
+      <onfocus>ClearProperty(AlaskaB.DialogVideoInfo.Menu,home)</onfocus>
+      <onfocus>SetFocus(9010)</onfocus>
+    </control>
+    <control type="button" id="7010">
+      <include>HiddenControl</include>
+      <visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9020)</visible>
+      <onfocus>ClearProperty(AlaskaB.DialogVideoInfo.Menu,home)</onfocus>
+      <onfocus>SetFocus(9020)</onfocus>
+    </control>
 
-      <!-- Menu -->
-      <control type="group">
-        <top>TopOffset</top>
-        <left>LeftOffset</left>
-        <include>Animation_ZoomInMenu7100</include>
+    <!-- Menu -->
+    <control type="group">
+      <include>AlaskaB_Menu_Base</include>
 
-        <control type="fixedlist" id="7100">
-          <include>ViewMenu_List</include>
-          <onup>7010</onup>
-          <ondown>7010</ondown>
-          <onleft>noop</onleft>
-          <onright>noop</onright>
-          <visible allowhiddenfocus="true">Control.HasFocus(7100) + !Window.IsActive(shutdownmenu) + !Window.IsActive(DialogYesNo.xml) + !Window.IsActive(progressdialog) + !Window.IsActive(okdialog)</visible>
-          <content>
-            <!-- Play -->
-            <item id="1">
-              <onclick>SendClick(movieinformation,8)</onclick>
-              <label>208</label>
-              <label2>20338</label2>
-              <visible>Container.Content(Movies)</visible>
-            </item>
-            <item id="1">
-              <onclick>SendClick(movieinformation,8)</onclick>
-              <label>208</label>
-              <label2>20359</label2>
-              <visible>Container.Content(Episodes)</visible>
-            </item>
-            <item id="1">
-              <onclick>SendClick(movieinformation,8)</onclick>
-              <label>208</label>
-              <label2>157</label2>
-              <visible>!Container.Content(TVShows) + !Container.Content(Movies) + !Container.Content(Episodes)</visible>
-            </item>
-            <!-- Browse -->
-            <item id="1">
-              <onclick>SendClick(movieinformation,8)</onclick>
-              <label>1024</label>
-              <label2>31148</label2>
-              <visible>Container.Content(TVShows)</visible>
-            </item>
-            <!-- Trailer -->
-            <item id="2">
-              <onclick>SendClick(movieinformation,11)</onclick>
-              <label>208</label>
-              <label2>20410</label2>
-              <visible>!IsEmpty(ListItem.Trailer)</visible>
-            </item>
-            <!-- Cast -->
-            <!--item id="3">
+      <control type="fixedlist" id="7100">
+        <include>AlaskaB_Menu_List</include>
+        <visible allowhiddenfocus="true">Control.HasFocus(7100) + !Window.IsActive(shutdownmenu) + !Window.IsActive(DialogYesNo.xml) + !Window.IsActive(progressdialog) + !Window.IsActive(okdialog)</visible>
+        <content>
+          <!-- Play -->
+          <item id="1">
+            <onclick>SendClick(movieinformation,8)</onclick>
+            <label>208</label>
+            <label2>20338</label2>
+            <visible>Container.Content(Movies)</visible>
+          </item>
+          <item id="1">
+            <onclick>SendClick(movieinformation,8)</onclick>
+            <label>208</label>
+            <label2>20359</label2>
+            <visible>Container.Content(Episodes)</visible>
+          </item>
+          <item id="1">
+            <onclick>SendClick(movieinformation,8)</onclick>
+            <label>208</label>
+            <label2>157</label2>
+            <visible>!Container.Content(TVShows) + !Container.Content(Movies) + !Container.Content(Episodes)</visible>
+          </item>
+          <!-- Browse -->
+          <item id="1">
+            <onclick>SendClick(movieinformation,8)</onclick>
+            <label>1024</label>
+            <label2>31148</label2>
+            <visible>Container.Content(TVShows)</visible>
+          </item>
+          <!-- Trailer -->
+          <item id="2">
+            <onclick>SendClick(movieinformation,11)</onclick>
+            <label>208</label>
+            <label2>20410</label2>
+            <visible>!IsEmpty(ListItem.Trailer)</visible>
+          </item>
+          <!-- Cast -->
+          <!--item id="3">
               <onclick>SetFocus(50)</onclick>
               <label>31119</label>
               <label2>206</label2>
               <visible>!IsEmpty(ListItem.Cast)</visible>
             </item-->
-            <!-- Refresh -->
-            <item id="4">
-              <onclick>Up</onclick>
-              <onclick>SendClick(movieinformation,6)</onclick>
-              <label>184</label>
-              <label2>31149</label2>
-            </item>
-            <!-- Images -->
-            <item id="5">
-              <onclick>SetFocus(9010)</onclick>
-              <onclick>SendClick(movieinformation,10)</onclick>
-              <label>31150</label>
-              <label2>31151</label2>
-              <visible>Container.Content(movies) | Container.Content(tvshows)</visible>
-            </item>
-            <!-- Artwork Downloader -->
-            <item id="6">
-              <onclick>SetFocus(9010)</onclick>
-              <onclick condition="Container.Content(tvshows)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
-              <onclick condition="Container.Content(movies)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
-              <label>31997</label>
-              <label2>31998</label2>
-              <visible>Container.Content(movies) | Container.Content(tvshows)</visible>
-            </item>
-            <!-- Video extras -->
-            <!--item id="7">
+          <!-- Refresh -->
+          <item id="4">
+            <onclick>Up</onclick>
+            <onclick>SendClick(movieinformation,6)</onclick>
+            <label>184</label>
+            <label2>31149</label2>
+          </item>
+          <!-- Images -->
+          <item id="5">
+            <!-- <onclick>SetFocus(9010)</onclick> -->
+            <onclick>SendClick(movieinformation,10)</onclick>
+            <label>31150</label>
+            <label2>31151</label2>
+            <visible>Container.Content(movies) | Container.Content(tvshows)</visible>
+          </item>
+          <!-- Artwork Downloader -->
+          <item id="6">
+            <onclick>SetFocus(9010)</onclick>
+            <onclick condition="Container.Content(tvshows)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
+            <onclick condition="Container.Content(movies)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
+            <label>31997</label>
+            <label2>31998</label2>
+            <visible>Container.Content(movies) | Container.Content(tvshows)</visible>
+          </item>
+          <!-- Video extras -->
+          <!--item id="7">
               <onclick>SetFocus(9010)</onclick>
               <label>31119</label>
               <label2>31164</label2>
               <onclick>XBMC.RunScript(script.videoextras,display,$INFO[ListItem.FilenameAndPath])</onclick>
               <visible>SubString(Window(movieinformation).Property(flag),true) + IsEmpty(Window(movieinformation).Property("HideVideoExtrasButton"))</visible>
             </item-->
-            <!-- Director's movies -->
-            <item id="9">
-              <onclick>SetFocus(9010)</onclick>
-              <onclick>SendClick(movieinformation,13)</onclick>
-              <label>31154</label>
-              <label2>20339</label2>
-              <visible>Control.IsEnabled(13)</visible>
-            </item>
-            <!-- Cinema Experience -->
-            <item id="10">
-              <onclick>SendClick(movieinformation,20)</onclick>
-              <label>31152</label>
-              <label2>31153</label2>
-              <onclick>Playlist.Clear</onclick>
-              <onclick>Dialog.Close(movieinformation)</onclick>
-              <onclick>RunAddon(script.cinema.experience)</onclick>
-              <visible>Container.Content(Movies) + system.hasaddon(script.cinema.experience) + !SubString(Container.FolderPath,plugin)</visible>
-            </item>
-          </content>
-        </control>
+          <!-- Director's movies -->
+          <item id="9">
+            <onclick>SetFocus(9010)</onclick>
+            <onclick>SendClick(movieinformation,13)</onclick>
+            <label>31154</label>
+            <label2>20339</label2>
+            <visible>Control.IsEnabled(13)</visible>
+          </item>
+          <!-- Cinema Experience -->
+          <item id="10">
+            <onclick>SendClick(movieinformation,20)</onclick>
+            <label>31152</label>
+            <label2>31153</label2>
+            <onclick>Playlist.Clear</onclick>
+            <onclick>Dialog.Close(movieinformation)</onclick>
+            <onclick>RunAddon(script.cinema.experience)</onclick>
+            <visible>Container.Content(Movies) + system.hasaddon(script.cinema.experience) + !SubString(Container.FolderPath,plugin)</visible>
+          </item>
+        </content>
       </control>
 
       <!-- Hidden buttons for Menu -->
