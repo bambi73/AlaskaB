@@ -120,13 +120,22 @@
   <constant name="AlaskaB_MyVideoNav_Base_Left">0</constant>
   <constant name="AlaskaB_MyVideoNav_Base_Top">152</constant>
 
+  <include name="AlaskaB_MyVideoNav_List_Background">
+    <control type="image">
+      <left>-160</left>
+      <width>2240</width>
+      <height>776</height>
+      <texture>video/list-background.png</texture>
+    </control>
+  </include>
+
   <include name="AlaskaB_MyVideoNav_Base">
     <control type="group">
       <left>AlaskaB_MyVideoNav_Base_Left</left>
       <top>AlaskaB_MyVideoNav_Base_Top</top>
       <control type="group">
         <visible>!Window.IsActive(movieinformation)</visible>
-        <include>AlaskaB_Common_Background_Base</include>
+        <include>AlaskaB_MyVideoNav_List_Background</include>
       </control>
       <control type="group">
         <include>Animation_SlideLeftByFullscreenFanart</include>

@@ -41,7 +41,8 @@
           <onup>651</onup>
           <ondown>651</ondown>
           <onleft>7000</onleft>
-          <onright>7000</onright>
+          <onright>8800</onright>
+          <pagecontrol>8800</pagecontrol>
           <focusposition>3</focusposition>
           <orientation>vertical</orientation>
           <viewtype label="Info List 2">list</viewtype>
@@ -111,6 +112,22 @@
               <onfocus condition="!Container.Content(seasons)">ClearProperty(ListItem.AlaskaB.Season,movieinformation)</onfocus>
             </control>
           </focusedlayout>
+        </control>
+
+        <control type="scrollbar" id="8800">
+          <left>1902</left>
+          <top>60</top>
+          <height>658</height>
+          <width>8</width>
+          <onleft>500</onleft>
+          <onright>7000</onright>
+          <!-- <texturesliderbackground border="0,9,0,9" colordiffuse="Light">osd/progress_bar.png</texturesliderbackground> -->
+          <texturesliderbar border="0,4,0,4" colordiffuse="Light">video/scrollbar.png</texturesliderbar>
+          <texturesliderbarfocus border="0,4,0,4" colordiffuse="Heavy">video/scrollbar.png</texturesliderbarfocus>
+          <textureslidernib colordiffuse="Light">video/scrollbar-nib.png</textureslidernib>
+          <textureslidernibfocus colordiffuse="Heavy">video/scrollbar-nib.png</textureslidernibfocus>
+          <showonepage>true</showonepage>
+          <orientation>vertical</orientation>
         </control>
 
         <control type="group">

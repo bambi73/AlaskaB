@@ -193,7 +193,7 @@
 		<overlaytexture>-</overlaytexture>
 	</default>
 
-	<default type="scrollbar">
+	<!-- <default type="scrollbar">
 		<width>38</width>
 		<texturesliderbackground border="0,14,0,14">other_textures/ScrollBarV.png</texturesliderbackground>
 		<texturesliderbar border="0,14,0,14">other_textures/ScrollBarV_bar_focus.png</texturesliderbar>
@@ -202,7 +202,7 @@
 		<textureslidernibfocus>other_textures/ScrollBarNib.png</textureslidernibfocus>
 		<showonepage>false</showonepage>
 		<orientation>vertical</orientation>
-	</default>
+	</default> -->
 
 	<default type="textbox">
 		<label>-</label>
