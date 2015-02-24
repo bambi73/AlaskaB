@@ -55,31 +55,66 @@
     </control>
   </include>
 
-  <include name="AlaskaB_Background_List">
+  <include name="AlaskaB_Common_Background">
     <left>-160</left>
     <width>2240</width>
     <texture>hub/list_bg4.png</texture>
   </include>
 
-  <include name="AlaskaB_Background_List_Delimiter">
+  <include name="AlaskaB_Common_Background_Delimiter">
     <left>-160</left>
     <width>2240</width>
     <height>3</height>
     <texture>hub/list_bg_delimiter4.png</texture>
   </include>
 
-  <include name="AlaskaB_Background_List_Border_Up">
+  <include name="AlaskaB_Common_Background_Border_Up">
     <left>-160</left>
     <width>2240</width>
     <height>14</height>
     <texture>hub/list_bg_border4.png</texture>
   </include>
 
-  <include name="AlaskaB_Background_List_Border_Down">
+  <include name="AlaskaB_Common_Background_Border_Down">
     <left>-160</left>
     <width>2240</width>
     <height>14</height>
     <texture flipy="true">hub/list_bg_border4.png</texture>
+  </include>
+
+  <include name="AlaskaB_Common_Background_Base">
+    <control type="image">
+      <include>AlaskaB_Common_Background_Border_Up</include>
+    </control>
+    <control type="image">
+      <top>14</top>
+      <height>748</height>
+      <include>AlaskaB_Common_Background</include>
+    </control>
+    <control type="image">
+      <top>762</top>
+      <include>AlaskaB_Common_Background_Border_Down</include>
+    </control>
+  </include>
+
+  <constant name="AlaskaB_VideoHub_Base_Left">0</constant>
+  <constant name="AlaskaB_VideoHub_Base_Top">185</constant>
+
+  <include name="AlaskaB_VideoHub_Base">
+    <left>AlaskaB_VideoHub_Base_Left</left>
+    <top>AlaskaB_VideoHub_Base_Top</top>
+    <control type="image">
+      <include>AlaskaB_Common_Background_Border_Up</include>
+    </control>
+    <control type="image">
+      <top>14</top>
+      <height>680</height>
+      <include>AlaskaB_Common_Background</include>
+    </control>
+    <control type="image">
+      <top>694</top>
+      <include>AlaskaB_Common_Background_Border_Down</include>
+    </control>
   </include>
 
   <constant name="AlaskaB_MyVideoNav_Base_Left">0</constant>
@@ -91,60 +126,49 @@
       <top>AlaskaB_MyVideoNav_Base_Top</top>
       <control type="group">
         <visible>!Window.IsActive(movieinformation)</visible>
-        <control type="image">
-          <include>AlaskaB_Background_List_Border_Up</include>
-        </control>
-        <control type="image">
-          <top>14</top>
-          <height>748</height>
-          <include>AlaskaB_Background_List</include>
-        </control>
-        <control type="image">
-          <top>762</top>
-          <include>AlaskaB_Background_List_Border_Down</include>
-        </control>
+        <include>AlaskaB_Common_Background_Base</include>
       </control>
       <control type="group">
         <include>Animation_SlideLeftByFullscreenFanart</include>
         <visible>Window.IsActive(movieinformation) + !StringCompare(Window(movieinformation).Property(AlaskaB.DialogVideoInfo.CurrentView),9000)</visible>
         <control type="image">
-          <include>AlaskaB_Background_List_Border_Up</include>
+          <include>AlaskaB_Common_Background_Border_Up</include>
         </control>
         <control type="image">
           <top>14</top>
           <height>124</height>
-          <include>AlaskaB_Background_List</include>
+          <include>AlaskaB_Common_Background</include>
         </control>
         <control type="image">
           <top>138</top>
-          <include>AlaskaB_Background_List_Delimiter</include>
+          <include>AlaskaB_Common_Background_Delimiter</include>
         </control>
         <control type="image">
           <top>141</top>
           <height>93</height>
-          <include>AlaskaB_Background_List</include>
+          <include>AlaskaB_Common_Background</include>
         </control>
         <control type="image">
           <top>234</top>
-          <include>AlaskaB_Background_List_Delimiter</include>
+          <include>AlaskaB_Common_Background_Delimiter</include>
         </control>
         <control type="image">
           <top>237</top>
           <height>158</height>
-          <include>AlaskaB_Background_List</include>
+          <include>AlaskaB_Common_Background</include>
         </control>
         <control type="image">
           <top>395</top>
-          <include>AlaskaB_Background_List_Delimiter</include>
+          <include>AlaskaB_Common_Background_Delimiter</include>
         </control>
         <control type="image">
           <top>398</top>
           <height>364</height>
-          <include>AlaskaB_Background_List</include>
+          <include>AlaskaB_Common_Background</include>
         </control>
         <control type="image">
           <top>762</top>
-          <include>AlaskaB_Background_List_Border_Down</include>
+          <include>AlaskaB_Common_Background_Border_Down</include>
         </control>
       </control>
     </control>
@@ -159,16 +183,16 @@
     <include>Animation_ZoomInMenu7100</include>
     <control type="group">
       <control type="image">
-        <include>AlaskaB_Background_List_Border_Up</include>
+        <include>AlaskaB_Common_Background_Border_Up</include>
       </control>
       <control type="image">
         <top>14</top>
         <height>198</height>
-        <include>AlaskaB_Background_List</include>
+        <include>AlaskaB_Common_Background</include>
       </control>
       <control type="image">
         <top>212</top>
-        <include>AlaskaB_Background_List_Border_Down</include>
+        <include>AlaskaB_Common_Background_Border_Down</include>
       </control>
     </control>
   </include>
@@ -346,7 +370,7 @@
       </control>
       <control type="label">
         <left>34</left>
-        <width>860</width>
+        <width>840</width>
         <height>65</height>
         <aligny>center</aligny>
         <font>Font_Cond_56</font>
@@ -354,24 +378,26 @@
         <label>$VAR[AlaskaB_VideoHub_WidgetTitle]</label>
         <scroll>false</scroll>
       </control>
-      <control type="image">
-        <left>934</left>
-        <top>6</top>
-        <width>54</width>
-        <height>53</height>
-        <aspectratio aligny="center">keep</aspectratio>
-        <colordiffuse>MediaFlags</colordiffuse>
-        <texture>hub/rating_background.png</texture>
-      </control>
-      <control type="label">
-        <left>962</left>
-        <width>80</width>
-        <height>65</height>
-        <align>center</align>
-        <aligny>center</aligny>
-        <label>$VAR[AlaskaB_VideoHub_WidgetRating]</label>
-        <textcolor>MedLight</textcolor>
-        <font>Font_Cond_56</font>
+      <control type="group">
+        <left>922</left>
+        <control type="image">
+          <left>10</left>
+          <top>6</top>
+          <width>54</width>
+          <height>53</height>
+          <aspectratio aligny="center">keep</aspectratio>
+          <colordiffuse>MediaFlags</colordiffuse>
+          <texture>hub/rating_background.png</texture>
+        </control>
+        <control type="label">
+          <width>80</width>
+          <height>65</height>
+          <align>center</align>
+          <aligny>center</aligny>
+          <label>$VAR[AlaskaB_VideoHub_WidgetRating]</label>
+          <textcolor>MedLight</textcolor>
+          <font>Font_Cond_56</font>
+        </control>
       </control>
     </control>
   </include>
