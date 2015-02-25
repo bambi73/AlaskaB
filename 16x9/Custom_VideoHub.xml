@@ -19,7 +19,7 @@
 
       <control type="group">
         <left>135</left>
-        <top>62</top>
+        <top>63</top>
         <width>1030</width>
         <control type="group">
           <control type="list" id="8099">
@@ -255,9 +255,9 @@
       </control>          
 
       <control type="fixedlist" id="8000">
-        <left>1254</left>
+        <left>1240</left>
         <top>81</top>
-        <width>530</width>
+        <width>585</width>
         <height>546</height>
         <onleft condition="SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8010) + IntegerGreaterThan(Container(8010).NumItems,0)">8010</onleft>
         <onleft condition="SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8010) + !IntegerGreaterThan(Container(8010).NumItems,0)">8011</onleft>
@@ -265,23 +265,25 @@
         <onleft condition="IntegerGreaterThan(Container(8099).NumItems,1) + SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8020) + !IntegerGreaterThan(Container(8020).NumItems,0)">8021</onleft>
         <onleft condition="IntegerGreaterThan(Container(8099).NumItems,2) + SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8030) + IntegerGreaterThan(Container(8030).NumItems,0)">8030</onleft>
         <onleft condition="IntegerGreaterThan(Container(8099).NumItems,2) + SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8030) + !IntegerGreaterThan(Container(8030).NumItems,0)">8031</onleft>
+        <onright condition="Control.IsVisible(8800)">8800</onright>
         <onup>8000</onup>
         <ondown>8000</ondown>
         <scrolltime tween="sine" easing="out">200</scrolltime>
+        <pagecontrol>8800</pagecontrol>
         <focusposition>3</focusposition>
         <orientation>vertical</orientation>
-        <itemlayout width="530" height="75">
+        <itemlayout width="585" height="75">
           <control type="image">
-            <left>10</left>
+            <left>12</left>
             <top>1</top>
             <width>80</width>
             <height>80</height>
             <texture colordiffuse="MedLight">$INFO[ListItem.Icon]</texture>
           </control>
           <control type="label">
-            <left>100</left>
+            <left>102</left>
             <top>18</top>
-            <width>374</width>
+            <width>470</width>
             <height>44</height>
             <align>left</align>
             <aligny>center</aligny>
@@ -290,10 +292,10 @@
             <label>$INFO[ListItem.Label]</label>
           </control>
         </itemlayout>
-        <focusedlayout width="530" height="93">
+        <focusedlayout width="585" height="93">
           <control type="image">
             <top>9</top>
-            <width>530</width>
+            <width>585</width>
             <height>80</height>
             <aligny>center</aligny>
             <texture colordiffuse="D0FFFFFF">hub/hub_button.png</texture>
@@ -301,16 +303,16 @@
           <control type="group">
             <visible>Control.HasFocus(8000)</visible>
             <control type="image">
-              <left>10</left>
+              <left>12</left>
               <top>9</top>
               <width>80</width>
               <height>80</height>
               <texture colordiffuse="Heavy">$INFO[ListItem.Icon]</texture>
             </control>
             <control type="label">
-              <left>100</left>
+              <left>102</left>
               <top>22</top>
-              <width>374</width>
+              <width>470</width>
               <height>53</height>
               <align>left</align>
               <aligny>center</aligny>
@@ -322,16 +324,16 @@
           <control type="group">
             <visible>!Control.HasFocus(8000)</visible>
             <control type="image">
-              <left>10</left>
+              <left>12</left>
               <top>9</top>
               <width>80</width>
               <height>80</height>
               <texture colordiffuse="Light">$INFO[ListItem.Icon]</texture>
             </control>
             <control type="label">
-              <left>100</left>
+              <left>102</left>
               <top>22</top>
-              <width>374</width>
+              <width>470</width>
               <height>53</height>
               <align>left</align>
               <aligny>center</aligny>
@@ -348,6 +350,15 @@
         <content>
           <include>skinshortcuts-group-videohub-list</include>
         </content>
+      </control>
+
+      <control type="scrollbar" id="8800">
+        <description>VideoHub scrollbar</description>
+        <left>1902</left>
+        <top>96</top>
+        <height>516</height>
+        <onleft>8000</onleft>
+        <include>AlaskaB_VideoHub_Scrollbar_Visible</include>
       </control>
     </control>
 

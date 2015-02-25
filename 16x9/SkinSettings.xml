@@ -474,6 +474,14 @@
 					<onclick>Skin.ToggleSetting(AlaskaB.Settings.EnableVideoLibraryScrollbar)</onclick>
 					<selected>Skin.HasSetting(AlaskaB.Settings.EnableVideoLibraryScrollbar)</selected>
 				</control>
+        
+				<control type="radiobutton" id="145">
+					<!-- Home menu style -->
+					<width>1260</width>
+					<label>Enable Video hub scrollbar</label>
+					<onclick>Skin.ToggleSetting(AlaskaB.Settings.EnableVideoHubScrollbar)</onclick>
+					<selected>Skin.HasSetting(AlaskaB.Settings.EnableVideoHubScrollbar)</selected>
+				</control>
 			</control>
 
 			<!-- Divider -->
