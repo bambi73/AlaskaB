@@ -116,12 +116,11 @@
 
         <control type="scrollbar" id="8800">
           <left>1902</left>
-          <top>60</top>
-          <height>658</height>
+          <top>63</top>
+          <height>650</height>
           <width>8</width>
           <onleft>500</onleft>
           <onright>7000</onright>
-          <!-- <texturesliderbackground border="0,9,0,9" colordiffuse="Light">osd/progress_bar.png</texturesliderbackground> -->
           <texturesliderbar border="0,4,0,4" colordiffuse="Light">video/scrollbar.png</texturesliderbar>
           <texturesliderbarfocus border="0,4,0,4" colordiffuse="Heavy">video/scrollbar.png</texturesliderbarfocus>
           <textureslidernib colordiffuse="Light">video/scrollbar-nib.png</textureslidernib>
