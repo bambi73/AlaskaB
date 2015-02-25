@@ -466,6 +466,14 @@
 					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=videohub-widgets)</onclick>
 					<visible>System.HasAddon(script.skinshortcuts)</visible>
 				</control>				
+        
+				<control type="radiobutton" id="144">
+					<!-- Home menu style -->
+					<width>1260</width>
+					<label>Enable Video library scrollbar</label>
+					<onclick>Skin.ToggleSetting(AlaskaB.Settings.EnableVideoLibraryScrollbar)</onclick>
+					<selected>Skin.HasSetting(AlaskaB.Settings.EnableVideoLibraryScrollbar)</selected>
+				</control>
 			</control>
 
 			<!-- Divider -->

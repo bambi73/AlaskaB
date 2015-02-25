@@ -126,6 +126,14 @@
       <width>2240</width>
       <height>776</height>
       <texture>video/list-background.png</texture>
+      <visible>!Control.IsVisible(8800)</visible>
+    </control>
+    <control type="image">
+      <left>-160</left>
+      <width>2240</width>
+      <height>776</height>
+      <texture>video/list-background-scrollbar.png</texture>
+      <visible>Control.IsVisible(8800)</visible>
     </control>
   </include>
 
@@ -183,6 +191,10 @@
     </control>
   </include>
 
+  <include name="AlaskaB_MyVideoNav_Scrollbar_Visible">
+    <visible>Skin.HasSetting(AlaskaB.Settings.EnableVideoLibraryScrollbar)</visible>
+  </include>
+  
   <constant name="AlaskaB_Menu_Left">0</constant>
   <constant name="AlaskaB_Menu_Top">376</constant>
 

@@ -41,7 +41,8 @@
           <onup>651</onup>
           <ondown>651</ondown>
           <onleft>7000</onleft>
-          <onright>8800</onright>
+          <onright condition="Control.IsVisible(8800)">8800</onright>
+          <onright condition="!Control.IsVisible(8800)">7000</onright>
           <pagecontrol>8800</pagecontrol>
           <focusposition>3</focusposition>
           <orientation>vertical</orientation>
@@ -115,18 +116,14 @@
         </control>
 
         <control type="scrollbar" id="8800">
+          <description>InfoList scrollbar</description>
           <left>1902</left>
           <top>63</top>
           <height>650</height>
-          <width>8</width>
           <onleft>500</onleft>
           <onright>7000</onright>
-          <texturesliderbar border="0,4,0,4" colordiffuse="Light">video/scrollbar.png</texturesliderbar>
-          <texturesliderbarfocus border="0,4,0,4" colordiffuse="Heavy">video/scrollbar.png</texturesliderbarfocus>
-          <textureslidernib colordiffuse="Light">video/scrollbar-nib.png</textureslidernib>
-          <textureslidernibfocus colordiffuse="Heavy">video/scrollbar-nib.png</textureslidernibfocus>
-          <showonepage>true</showonepage>
-          <orientation>vertical</orientation>
+          <include>Animation_HiddenByInfo</include>
+          <include>AlaskaB_MyVideoNav_Scrollbar_Visible</include>
         </control>
 
         <control type="group">
