@@ -377,40 +377,81 @@
   </variable>
 
   <variable name="VideoInfo_OtherInfo_WidestLabel">
-    <value condition="Container.Content(tvshows) + SubString(System.Language,english)">2</value>
+    <value condition="Container.Content(tvshows) + SubString(System.Language,english)">14</value>
     <value condition="Container.Content(tvshows)">2</value>
     <value condition="SubString(System.Language,english)">3</value>
     <value>3</value>
   </variable>
 
   <variable name="VideoInfo_OtherInfo_LabelBlock_Line1">
+    <value condition="Container.Content(tvshows)">Title</value>
+    <value>Title</value>
+  </variable>
+
+  <variable name="VideoInfo_OtherInfo_ValueBlock_Line1">
+    <value condition="Container.Content(tvshows) + !IsEmpty(ListItem.OriginalTitle)">$INFO[ListItem.OriginalTitle]</value>
+    <value condition="Container.Content(tvshows)">$VAR[VideoInfo_Main_Title]</value>
+    <value>$INFO[ListItem.OriginalTitle]</value>
+  </variable>
+
+  <variable name="VideoInfo_OtherInfo_LabelBlock_Line2">
     <value condition="Container.Content(tvshows)">Genre</value>
     <value>Director</value>
   </variable>
 
-  <variable name="VideoInfo_OtherInfo_ValueBlock_Line1">
+  <variable name="VideoInfo_OtherInfo_ValueBlock_Line2">
     <value condition="Container.Content(tvshows)">$INFO[ListItem.Genre]</value>
     <value>$INFO[ListItem.Director]</value>
   </variable>
 
-  <variable name="VideoInfo_OtherInfo_LabelBlock_Line2">
+  <variable name="VideoInfo_OtherInfo_LabelBlock_Line11">
     <value condition="Container.Content(tvshows)">First aired</value>
     <value>Writer</value>
   </variable>
 
-  <variable name="VideoInfo_OtherInfo_ValueBlock_Line2">
+  <variable name="VideoInfo_OtherInfo_ValueBlock_Line11">
     <value condition="Container.Content(tvshows)">$INFO[ListItem.Premiered]</value>
     <value>$INFO[ListItem.Writer]</value>
   </variable>
 
-  <variable name="VideoInfo_OtherInfo_LabelBlock_Line3">
+  <variable name="VideoInfo_OtherInfo_LabelBlock_Line12">
     <value condition="Container.Content(tvshows)">Next aired</value>
     <value>First aired</value>
   </variable>
 
-  <variable name="VideoInfo_OtherInfo_ValueBlock_Line3">
+  <variable name="VideoInfo_OtherInfo_ValueBlock_Line12">
     <value condition="Container.Content(tvshows)">$INFO[Window(Home).Property(NextAired.NextDate)]</value>
     <value>$INFO[ListItem.Premiered]</value>
+  </variable>
+
+  <variable name="VideoInfo_OtherInfo_LabelBlock_Line13">
+    <value condition="Container.Content(tvshows)">Date added</value>
+    <value>First aired</value>
+  </variable>
+
+  <variable name="VideoInfo_OtherInfo_ValueBlock_Line13">
+    <value condition="Container.Content(tvshows)">$INFO[ListItem.DateAdded]</value>
+    <value>$INFO[ListItem.Premiered]</value>
+  </variable>
+
+  <variable name="VideoInfo_OtherInfo_LabelBlock_Line14">
+    <value condition="Container.Content(tvshows)">Last played</value>
+    <value>First aired</value>
+  </variable>
+
+  <variable name="VideoInfo_OtherInfo_ValueBlock_Line14">
+    <value condition="Container.Content(tvshows)">$INFO[ListItem.LastPlayed]</value>
+    <value>$INFO[ListItem.Premiered]</value>
+  </variable>
+
+  <variable name="VideoInfo_OtherInfo_LabelBlock_Line21">
+    <value condition="Container.Content(tvshows)">Directory</value>
+    <value>Writer</value>
+  </variable>
+
+  <variable name="VideoInfo_OtherInfo_ValueBlock_Line21">
+    <value condition="Container.Content(tvshows)">$INFO[ListItem.FileNameAndPath]</value>
+    <value>$INFO[ListItem.Writer]</value>
   </variable>
 
   <variable name="VideoInfo_Image">
