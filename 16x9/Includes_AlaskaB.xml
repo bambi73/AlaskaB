@@ -110,9 +110,19 @@
     <visible>Control.IsVisible(8800)</visible>
   </include>
 
+  <include name="AlaskaB_Background_Base_Scrollbar_Property_Enabled">
+    <include>AlaskaB_Background_Base</include>
+    <visible>SubString(Window(home).Property(AlaskaB.Scrollbar.Visible),true)</visible>
+  </include>
+
   <include name="AlaskaB_Background_Base_Scrollbar_Disabled">
     <include>AlaskaB_Background_Base</include>
     <visible>!Control.IsVisible(8800)</visible>
+  </include>
+
+  <include name="AlaskaB_Background_Base_Scrollbar_Property_Disabled">
+    <include>AlaskaB_Background_Base</include>
+    <visible>!SubString(Window(home).Property(AlaskaB.Scrollbar.Visible),true)</visible>
   </include>
 
   <constant name="AlaskaB_VideoHub_Base_Left">0</constant>
@@ -137,34 +147,112 @@
     <visible>Skin.HasSetting(AlaskaB.Settings.EnableVideoHubScrollbar)</visible>
   </include>
 
-  <constant name="AlaskaB_MyVideoNav_Base_Left">0</constant>
-  <constant name="AlaskaB_MyVideoNav_Base_Top">152</constant>
-  <constant name="AlaskaB_MyVideoNav_InfoList_Width">942</constant>
+  <constant name="AlaskaB_VideoNav_Base_Left">0</constant>
+  <constant name="AlaskaB_VideoNav_Base_Top">152</constant>
+  <constant name="AlaskaB_VideoNav_InfoList_Width">942</constant>
 
-  <include name="AlaskaB_MyVideoNav_List_Background">
+  <include name="AlaskaB_VideoNav_List_Background">
     <control type="image">
+      <height>776</height>
       <include>AlaskaB_Background_Base_Scrollbar_Disabled</include>
       <texture>video/list-background.png</texture>
-      <height>776</height>
     </control>
     <control type="image">
+      <height>776</height>
       <include>AlaskaB_Background_Base_Scrollbar_Enabled</include>
       <texture>video/list-background-scrollbar.png</texture>
-      <height>776</height>
     </control>
   </include>
 
-  <include name="AlaskaB_MyVideoNav_Base">
+  <include name="AlaskaB_VideoInfo_Main_Background">
+    <control type="image">
+      <height>776</height>
+      <include>AlaskaB_Background_Base_Scrollbar_Property_Enabled</include>
+      <texture>video/info-main-background.png</texture>
+    </control>
+    <control type="image">
+      <height>776</height>
+      <include>AlaskaB_Background_Base_Scrollbar_Property_Disabled</include>
+      <texture>video/info-main-background-scrollbar.png</texture>
+    </control>
+  </include>
+
+  <include name="AlaskaB_VideoNav_Base">
     <control type="group">
-      <left>AlaskaB_MyVideoNav_Base_Left</left>
-      <top>AlaskaB_MyVideoNav_Base_Top</top>
+      <left>AlaskaB_VideoNav_Base_Left</left>
+      <top>AlaskaB_VideoNav_Base_Top</top>
       <control type="group">
         <visible>!Window.IsActive(movieinformation)</visible>
-        <include>AlaskaB_MyVideoNav_List_Background</include>
+        <include>AlaskaB_VideoNav_List_Background</include>
       </control>
       <control type="group">
         <include>Animation_SlideLeftByFullscreenFanart</include>
-        <visible>Window.IsActive(movieinformation) + !StringCompare(Window(movieinformation).Property(AlaskaB.DialogVideoInfo.CurrentView),9000)</visible>
+        <visible>Window.IsActive(movieinformation) + StringCompare(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9010)</visible>
+        <include>AlaskaB_VideoInfo_Main_Background</include>
+      </control>
+      <control type="group">
+        <visible>Window.IsActive(movieinformation) + StringCompare(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9100)</visible>
+        <include>AlaskaB_VideoInfo_Main_Background</include>
+      </control>
+
+
+
+      <control type="group">
+        <include>Animation_SlideLeftByFullscreenFanart</include>
+        <visible>Window.IsActive(movieinformation) + StringCompare(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9020)</visible>
+        <control type="image">
+          <include>AlaskaB_Common_Background_Border_Up</include>
+        </control>
+        <control type="image">
+          <top>14</top>
+          <height>124</height>
+          <include>AlaskaB_Common_Background</include>
+        </control>
+        <control type="image">
+          <top>138</top>
+          <include>AlaskaB_Common_Background_Delimiter</include>
+        </control>
+        <control type="image">
+          <top>141</top>
+          <height>93</height>
+          <include>AlaskaB_Common_Background</include>
+        </control>
+        <control type="image">
+          <top>234</top>
+          <include>AlaskaB_Common_Background_Delimiter</include>
+        </control>
+        <control type="image">
+          <top>237</top>
+          <height>116</height>
+          <include>AlaskaB_Common_Background</include>
+        </control>
+        <control type="image">
+          <top>353</top>
+          <include>AlaskaB_Common_Background_Delimiter</include>
+        </control>
+        <control type="image">
+          <top>356</top>
+          <height>200</height>
+          <include>AlaskaB_Common_Background</include>
+        </control>
+        <control type="image">
+          <top>556</top>
+          <include>AlaskaB_Common_Background_Delimiter</include>
+        </control>
+        <control type="image">
+          <top>559</top>
+          <height>203</height>
+          <include>AlaskaB_Common_Background</include>
+        </control>
+        <control type="image">
+          <top>762</top>
+          <include>AlaskaB_Common_Background_Border_Down</include>
+        </control>
+      </control>
+
+      <!-- <control type="group">
+        <include>Animation_SlideLeftByFullscreenFanart</include>
+        <visible>Window.IsActive(movieinformation) + !StringCompare(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9000)</visible>
         <control type="image">
           <include>AlaskaB_Common_Background_Border_Up</include>
         </control>
@@ -187,7 +275,7 @@
           <include>AlaskaB_Common_Background_Delimiter</include>
         </control>
         <control type="group">
-          <visible>StringCompare(Window(movieinformation).Property(AlaskaB.DialogVideoInfo.CurrentView),9020)</visible>
+          <visible>StringCompare(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9020)</visible>
           <control type="image">
             <top>237</top>
             <height>116</height>
@@ -213,7 +301,7 @@
           </control>
         </control>
         <control type="group">
-          <visible>!StringCompare(Window(movieinformation).Property(AlaskaB.DialogVideoInfo.CurrentView),9020)</visible>
+          <visible>!StringCompare(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9020)</visible>
           <control type="image">
             <top>237</top>
             <height>525</height>
@@ -224,11 +312,11 @@
           <top>762</top>
           <include>AlaskaB_Common_Background_Border_Down</include>
         </control>
-      </control>
+      </control> -->      
     </control>
   </include>
 
-  <include name="AlaskaB_MyVideoNav_Scrollbar_Visible">
+  <include name="AlaskaB_VideoNav_Scrollbar_Visible">
     <visible>Skin.HasSetting(AlaskaB.Settings.EnableVideoLibraryScrollbar)</visible>
   </include>
 

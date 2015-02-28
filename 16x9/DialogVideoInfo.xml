@@ -5,15 +5,14 @@
   <onunload>ClearProperty(AlaskaB.Overlay.Hide,home)</onunload>
   <onunload>ClearProperty(AlaskaB.Overlay.MediaFlags.Hide,home)</onunload>
   <onunload>ClearProperty(AlaskaB.Overlay.NowPlaying.Hide,home)</onunload>
-  <onunload>ClearProperty(AlaskaB.DialogVideoInfo.CurrentView,movieinformation)</onunload>
-  <onunload>ClearProperty(AlaskaB.DialogVideoInfo.PreviousView,movieinformation)</onunload>
-
-  <onload>ClearProperty(AlaskaB.DialogVideoInfo.Menu,home)</onload>
-  <onunload>ClearProperty(AlaskaB.DialogVideoInfo.Menu,home)</onunload>
+  <onunload>ClearProperty(AlaskaB.Scrollbar.Visible,home)</onunload>
+  <onunload>ClearProperty(AlaskaB.VideoInfo.CurrentView,home)</onunload>
+  <onunload>ClearProperty(AlaskaB.VideoInfo.PreviousView,home)</onunload>
+  <onunload>ClearProperty(AlaskaB.VideoInfo.Menu,home)</onunload>
 
   <controls>
 
-    <!-- <control type="label">
+    <control type="label">
       <left>46</left>
       <top>110</top>
       <width>1900</width>
@@ -21,10 +20,10 @@
       <aligny>center</aligny>
       <font>Font_Reg_Caps_36</font>
       <textcolor>MedLight</textcolor>
-      <label>$INFO[Window().Property(AlaskaB.DialogVideoInfo.CurrentView)]</label>
-      <visible>!SubString(Window(home).Property(AlaskaB.VideoNav.ShowHub),true)</visible>
-    </control> -->
-    <!-- <control type="label">
+      <label>$INFO[Window(home).Property(AlaskaB.VideoInfo.CurrentView)]</label>
+      <visible>Control.IsVisible(8810)</visible>
+    </control>
+    <control type="label">
       <left>46</left>
       <top>150</top>
       <width>1900</width>
@@ -32,9 +31,9 @@
       <aligny>center</aligny>
       <font>Font_Reg_Caps_36</font>
       <textcolor>MedLight</textcolor>
-      <label>$INFO[Window().Property(AlaskaB.DialogVideoInfo.PreviousView)]</label>
-      <visible>SubString(Window(home).Property(AlaskaB.VideoNav.ShowHub),true)</visible>
-    </control>  -->
+      <label>$INFO[Window(home).Property(AlaskaB.Scrollbar.Visible]</label>
+      <!-- <visible>SubString(Window(home).Property(AlaskaB.Scrollbar.Visible),true)</visible> -->
+    </control> 
 
     <control type="group">
       <!-- Fullscreen fanart hidden control button -->
@@ -44,44 +43,46 @@
         <onup>7000</onup>
         <ondown>7000</ondown>
         <onleft>noop</onleft>
-        <onright>SetProperty(AlaskaB.DialogVideoInfo.PreviousView,9000)</onright>
+        <onright>SetProperty(AlaskaB.VideoInfo.PreviousView,9000,home)</onright>
         <onright>9010</onright>
-        <onclick>SetProperty(AlaskaB.DialogVideoInfo.PreviousView,9000)</onclick>
+        <onclick>SetProperty(AlaskaB.VideoInfo.PreviousView,9000,home)</onclick>
         <onclick>SetFocus(9010)</onclick>
         <onfocus>SetProperty(AlaskaB.Overlay.Hide,true,home)</onfocus>
         <onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,true,home)</onfocus>
         <onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,true,home)</onfocus>
-        <onfocus>SetProperty(AlaskaB.DialogVideoInfo.CurrentView,9000)</onfocus>
+        <onfocus>SetProperty(AlaskaB.VideoInfo.CurrentView,9000,home)</onfocus>
       </control>
       <!-- Plot hidden control button  -->
       <control type="button" id="9010">
         <include>HiddenControl</include>
         <onup>7000</onup>
         <ondown>7000</ondown>
-        <onleft>SetProperty(AlaskaB.DialogVideoInfo.PreviousView,9010)</onleft>
+        <onleft>SetProperty(AlaskaB.VideoInfo.PreviousView,9010,home)</onleft>
         <onleft>9000</onleft>
-        <onright>SetProperty(AlaskaB.DialogVideoInfo.PreviousView,9010)</onright>
+        <onright>SetProperty(AlaskaB.VideoInfo.PreviousView,9010,home)</onright>
         <onright>9020</onright>
         <onclick>SendClick(movieinformation,8)</onclick>
         <onfocus>SetProperty(AlaskaB.Overlay.Hide,false,home)</onfocus>
         <onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,false,home)</onfocus>
         <onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,false,home)</onfocus>
-        <onfocus>SetProperty(AlaskaB.DialogVideoInfo.CurrentView,9010)</onfocus>
+        <onfocus>SetProperty(AlaskaB.VideoInfo.CurrentView,9010,home)</onfocus>
+        <!-- <onfocus condition="Control.IsEnabled(8810)">SetProperty(AlaskaB.Scrollbar.Visible,true,home)</onfocus> -->
+        <!-- <onfocus condition="!Control.IsEnabled(8810)">ClearProperty(AlaskaB.Scrollbar.Visible,home)</onfocus> -->
       </control>
       <!-- Info hidden control button  -->
       <control type="button" id="9020">
         <include>HiddenControl</include>
         <onup>7000</onup>
         <ondown>7000</ondown>
-        <onleft>SetProperty(AlaskaB.DialogVideoInfo.PreviousView,9020)</onleft>
+        <onleft>SetProperty(AlaskaB.VideoInfo.PreviousView,9020,home)</onleft>
         <onleft>9010</onleft>
-        <onright>SetProperty(AlaskaB.DialogVideoInfo.PreviousView,9020)</onright>
+        <onright>SetProperty(AlaskaB.VideoInfo.PreviousView,9020,home)</onright>
         <onright>9100</onright>
         <onclick>SendClick(movieinformation,8)</onclick>
         <onfocus>SetProperty(AlaskaB.Overlay.Hide,false,home)</onfocus>
         <onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,false,home)</onfocus>
         <onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,false,home)</onfocus>
-        <onfocus>SetProperty(AlaskaB.DialogVideoInfo.CurrentView,9020)</onfocus>
+        <onfocus>SetProperty(AlaskaB.VideoInfo.CurrentView,9020,home)</onfocus>
       </control>
       <!-- Cast info hidden control button  -->
       <control type="button" id="9100">
@@ -90,7 +91,9 @@
         <onfocus>SetProperty(AlaskaB.Overlay.Hide,false,home)</onfocus>
         <onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,false,home)</onfocus>
         <onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,false,home)</onfocus>
-        <onfocus>SetProperty(AlaskaB.DialogVideoInfo.CurrentView,9100)</onfocus>
+        <onfocus>SetProperty(AlaskaB.VideoInfo.CurrentView,9100,home)</onfocus>
+        <onfocus condition="Control.IsVisible(8820)">SetProperty(AlaskaB.Scrollbar.Visible,true,home)</onfocus>
+        <onfocus condition="!Control.IsVisible(8820)">ClearProperty(AlaskaB.Scrollbar.Visible,home)</onfocus>
         <onfocus>SetFocus(50)</onfocus>
       </control>
     </control>
@@ -109,6 +112,7 @@
       </control>
       <control type="group">
         <visible>Control.HasFocus(9000)</visible>
+        <animation effect="fade" start="100" end="0" time="100">WindowClose</animation>
         <animation effect="slide" start="-1920,0" end="0,0" time="200" delay="200" tween="cubic" easing="out">Visible</animation>
         <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
         <control type="image">
@@ -132,8 +136,8 @@
 
     <!-- Video info group -->
     <control type="group">
-      <left>AlaskaB_MyVideoNav_Base_Left</left>
-      <top>AlaskaB_MyVideoNav_Base_Top</top>
+      <left>AlaskaB_VideoNav_Base_Left</left>
+      <top>AlaskaB_VideoNav_Base_Top</top>
       <include>Animation_ZoomedByProperty</include>
       <include>Animation_OpenInfoDialog</include>
 
@@ -143,10 +147,10 @@
 
         <!-- Shared group -->
         <control type="group">
-          <visible>!StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9000)</visible>
+          <visible>!StringCompare(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9000)</visible>
           <include>Animation_SlideLeftByFullscreenFanart</include>
           <control type="fadelabel">
-            <width>AlaskaB_MyVideoNav_InfoList_Width</width>
+            <width>AlaskaB_VideoNav_InfoList_Width</width>
             <height>72</height>
             <aligny>center</aligny>
             <font>Font_Cond_76</font>
@@ -155,7 +159,7 @@
           </control>
           <control type="label">
             <top>102</top>
-            <width>AlaskaB_MyVideoNav_InfoList_Width</width>
+            <width>AlaskaB_VideoNav_InfoList_Width</width>
             <height>64</height>
             <aligny>center</aligny>
             <font>Font_Reg_Caps_68</font>
@@ -167,24 +171,30 @@
         <!-- Plot group -->
         <control type="group">
           <top>199</top>
-          <include>Animation_SlideLeftByFullscreenFanart</include>
-          <visible>StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010)</visible>
-          <control type="group">
-            <control type="textbox">
-              <width>AlaskaB_MyVideoNav_InfoList_Width</width>
-              <height>456</height>
-              <font>Font_Reg_38</font>
-              <textcolor>MedLight</textcolor>
-              <label>$VAR[Plot]</label>
-              <autoscroll time="4000" delay="12000" repeat="8000">true</autoscroll>
-            </control>
+          <control type="textbox">
+            <width>AlaskaB_VideoNav_InfoList_Width</width>
+            <height>456</height>
+            <include>Animation_SlideLeftByFullscreenFanart</include>
+            <visible>StringCompare(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9010)</visible>
+            <autoscroll time="4000" delay="12000" repeat="8000">true</autoscroll>
+            <pagecontrol>8810</pagecontrol>
+            <font>Font_Reg_38</font>
+            <textcolor>MedLight</textcolor>
+            <label>$VAR[Plot]</label>
+          </control>
+          <control type="scrollbar" id="8810">
+            <top>8</top>
+            <left>1050</left>
+            <height>440</height>
+            <include>Animation_SlideLeftByFullscreenFanartFastFade</include>
+            <visible>StringCompare(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9010)</visible>
           </control>
         </control>
 
         <!-- Info group -->
         <control type="group">
           <top>187</top>
-          <visible>StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9020)</visible>
+          <visible>StringCompare(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9020)</visible>
           <control type="label" id="8201">
             <include>HiddenControl</include>
             <label>$VAR[VideoInfo_OtherInfo_WidestLabel]</label>
@@ -232,7 +242,7 @@
             <visible>!StringCompare(Control.GetLabel(8201),21)</visible>
           </control>
           <control type="grouplist">
-            <width>AlaskaB_MyVideoNav_InfoList_Width</width>
+            <width>AlaskaB_VideoNav_InfoList_Width</width>
             <itemgap>7</itemgap>
             <orientation>horizontal</orientation>
             <usecontrolcoords>true</usecontrolcoords>
@@ -359,21 +369,22 @@
         <!-- Cast group -->
         <control type="group">
           <top>199</top>
-          <visible>StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9100)</visible>
+          <visible>StringCompare(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9100)</visible>
           <control type="list" id="50">
-            <width>AlaskaB_MyVideoNav_InfoList_Width</width>
+            <width>AlaskaB_VideoNav_InfoList_Width</width>
             <height>456</height>
             <onup>50</onup>
             <ondown>50</ondown>
-            <onleft>SetProperty(AlaskaB.DialogVideoInfo.PreviousView,9100)</onleft>
+            <onleft>SetProperty(AlaskaB.VideoInfo.PreviousView,9100,home)</onleft>
             <onleft>9020</onleft>
             <onright>noop</onright>
+            <pagecontrol>8820</pagecontrol>
             <orientation>vertical</orientation>
             <viewtype label="535">list</viewtype>
             <scrolltime tween="sine" easing="out">200</scrolltime>
-            <itemlayout width="AlaskaB_MyVideoNav_InfoList_Width" height="42">
+            <itemlayout width="AlaskaB_VideoNav_InfoList_Width" height="42">
               <control type="label">
-                <width>AlaskaB_MyVideoNav_InfoList_Width</width>
+                <width>AlaskaB_VideoNav_InfoList_Width</width>
                 <height>38</height>
                 <aligny>center</aligny>
                 <font>Font_Reg_38</font>
@@ -382,12 +393,12 @@
                 <label>$INFO[ListItem.Label]</label>
               </control>
             </itemlayout>
-            <focusedlayout width="AlaskaB_MyVideoNav_InfoList_Width" height="42">
+            <focusedlayout width="AlaskaB_VideoNav_InfoList_Width" height="42">
               <control type="group">
                 <animation effect="fade" start="0" end="100" time="200" reversible="false">Focus</animation>
                 <control type="label">
                   <top>1</top>
-                  <width>AlaskaB_MyVideoNav_InfoList_Width</width>
+                  <width>AlaskaB_VideoNav_InfoList_Width</width>
                   <height>38</height>
                   <aligny>center</aligny>
                   <scroll>true</scroll>
@@ -398,6 +409,11 @@
                 </control>
               </control>
             </focusedlayout>
+          </control>
+          <control type="scrollbar" id="8820">
+            <top>8</top>
+            <left>1050</left>
+            <height>440</height>
           </control>
         </control>
       </control>
@@ -444,7 +460,7 @@
               <width>30</width>
               <height>60</height>
               <texture>dialogs/available_left.png</texture>
-              <visible>[StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010) + Control.IsVisible(9000)] | [StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9020) + Control.IsVisible(9010)]]</visible>
+              <visible>[StringCompare(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9010) + Control.IsVisible(9000)] | [StringCompare(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9020) + Control.IsVisible(9010)]]</visible>
             </control>
             <control type="image">
               <left>1870</left>
@@ -452,7 +468,7 @@
               <width>30</width>
               <height>60</height>
               <texture>dialogs/available_right.png</texture>
-              <visible>StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010) + Control.IsVisible(9020)</visible>
+              <visible>StringCompare(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9010) + Control.IsVisible(9020)</visible>
             </control>
           </control> -->
 
@@ -463,7 +479,7 @@
               <width>30</width>
               <height>60</height>
               <texture>dialogs/available_left.png</texture>
-              <visible>[StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010) + Control.IsVisible(9000)] | [StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9020) + Control.IsVisible(9010)]]</visible>
+              <visible>[StringCompare(Window().Property(AlaskaB.VideoInfo.CurrentView),9010) + Control.IsVisible(9000)] | [StringCompare(Window().Property(AlaskaB.VideoInfo.CurrentView),9020) + Control.IsVisible(9010)]]</visible>
             </control>
             <control type="image">
               <left>1870</left>
@@ -471,7 +487,7 @@
               <width>30</width>
               <height>60</height>
               <texture>dialogs/available_right.png</texture>
-              <visible>StringCompare(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010) + Control.IsVisible(9020)</visible>
+              <visible>StringCompare(Window().Property(AlaskaB.VideoInfo.CurrentView),9010) + Control.IsVisible(9020)</visible>
             </control>
           </control> -->
 
@@ -715,31 +731,31 @@
       <onfocus>SetProperty(AlaskaB.Overlay.Hide,false,home)</onfocus>
       <onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,true,home)</onfocus>
       <onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,true,home)</onfocus>
-      <onfocus>SetProperty(AlaskaB.DialogVideoInfo.Menu,true,home)</onfocus>
+      <onfocus>SetProperty(AlaskaB.VideoInfo.Menu,true,home)</onfocus>
       <onfocus>SetFocus(7100)</onfocus>
     </control>
     <control type="button" id="7010">
       <include>HiddenControl</include>
-      <visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9000)</visible>
-      <onfocus>ClearProperty(AlaskaB.DialogVideoInfo.Menu,home)</onfocus>
+      <visible>SubString(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9000)</visible>
+      <onfocus>ClearProperty(AlaskaB.VideoInfo.Menu,home)</onfocus>
       <onfocus>SetFocus(9000)</onfocus>
     </control>
     <control type="button" id="7010">
       <include>HiddenControl</include>
-      <visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9010)</visible>
-      <onfocus>ClearProperty(AlaskaB.DialogVideoInfo.Menu,home)</onfocus>
+      <visible>SubString(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9010)</visible>
+      <onfocus>ClearProperty(AlaskaB.VideoInfo.Menu,home)</onfocus>
       <onfocus>SetFocus(9010)</onfocus>
     </control>
     <control type="button" id="7010">
       <include>HiddenControl</include>
-      <visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9020)</visible>
-      <onfocus>ClearProperty(AlaskaB.DialogVideoInfo.Menu,home)</onfocus>
+      <visible>SubString(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9020)</visible>
+      <onfocus>ClearProperty(AlaskaB.VideoInfo.Menu,home)</onfocus>
       <onfocus>SetFocus(9020)</onfocus>
     </control>
     <control type="button" id="7010">
       <include>HiddenControl</include>
-      <visible>SubString(Window().Property(AlaskaB.DialogVideoInfo.CurrentView),9100)</visible>
-      <onfocus>ClearProperty(AlaskaB.DialogVideoInfo.Menu,home)</onfocus>
+      <visible>SubString(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9100)</visible>
+      <onfocus>ClearProperty(AlaskaB.VideoInfo.Menu,home)</onfocus>
       <onfocus>SetFocus(9100)</onfocus>
     </control>
 

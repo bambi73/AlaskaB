@@ -353,7 +353,6 @@
       </control>
 
       <control type="scrollbar" id="8800">
-        <description>VideoHub scrollbar</description>
         <left>1902</left>
         <top>96</top>
         <height>516</height>

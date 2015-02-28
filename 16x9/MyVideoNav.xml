@@ -9,8 +9,8 @@
   <onunload>ClearProperty(AlaskaB.Overlay.NowPlaying.Hide,home)</onunload>
   <!--onunload>ClearProperty(AlaskaB.HeadingLabel,home)</onunload-->
 
-  <onload>ClearProperty(AlaskaB.MyVideoNav.Menu,home)</onload>
-  <onunload>ClearProperty(AlaskaB.MyVideoNav.Menu,home)</onunload>
+  <onload>ClearProperty(AlaskaB.VideoNav.Menu,home)</onload>
+  <onunload>ClearProperty(AlaskaB.VideoNav.Menu,home)</onunload>
 
   <!--onunload condition="!IsEmpty(Window(movieinformation).Property(IsSeason)">ClearProperty(IsSeason,movieinformation)</onunload>
   <onunload condition="!IsEmpty(Window(movieinformation).Property(IsSpecial)">ClearProperty(IsSpecial,movieinformation)</onunload-->
@@ -63,7 +63,7 @@
       <include>Animation_ZoomInZoomOut</include>
       <include>Animation_ZoomedByProperty</include>
 
-      <include>AlaskaB_MyVideoNav_Base</include>
+      <include>AlaskaB_VideoNav_Base</include>
 
       <include>Viewtype_500_List</include>
       <include>Viewtype_501_Poster_No_Wrap</include>
@@ -83,14 +83,14 @@
         <include>HiddenControl</include>
         <onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,true,home)</onfocus>
         <onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,true,home)</onfocus>
-        <onfocus>SetProperty(AlaskaB.MyVideoNav.Menu,true,home)</onfocus>
+        <onfocus>SetProperty(AlaskaB.VideoNav.Menu,true,home)</onfocus>
         <onfocus>SetFocus(7100)</onfocus>
       </control>
       <control type="button" id="7010">
         <include>HiddenControl</include>
         <onfocus>ClearProperty(AlaskaB.Overlay.NowPlaying.Hide,home)</onfocus>
         <onfocus>ClearProperty(AlaskaB.Overlay.MediaFlags.Hide,home)</onfocus>
-        <onfocus>ClearProperty(AlaskaB.MyVideoNav.Menu,home)</onfocus>
+        <onfocus>ClearProperty(AlaskaB.VideoNav.Menu,home)</onfocus>
         <onfocus>SetFocus(500)</onfocus>
       </control>
     </control>

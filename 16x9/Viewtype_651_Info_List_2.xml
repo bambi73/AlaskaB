@@ -30,8 +30,8 @@
       </control>  -->
 
       <control type="group" id="5000">
-        <left>AlaskaB_MyVideoNav_Base_Left</left>
-        <top>AlaskaB_MyVideoNav_Base_Top</top>
+        <left>AlaskaB_VideoNav_Base_Left</left>
+        <top>AlaskaB_VideoNav_Base_Top</top>
 
         <control type="fixedlist" id="651">
           <left>820</left>
@@ -55,7 +55,7 @@
               <top>2</top>
               <left>32</left>
               <control type="label">
-                <width>AlaskaB_MyVideoNav_InfoList_Width</width>
+                <width>AlaskaB_VideoNav_InfoList_Width</width>
                 <height>42</height>
                 <label>$VAR[Title_Detail]</label>
                 <font>Font_Black_Caps_42</font>
@@ -63,7 +63,7 @@
               </control>
               <control type="label">
                 <top>40</top>
-                <width>AlaskaB_MyVideoNav_InfoList_Width</width>
+                <width>AlaskaB_VideoNav_InfoList_Width</width>
                 <height>32</height>
                 <label>$INFO[ListItem.Property(TotalEpisodes)] Episodes</label>
                 <font>Font_Light_Caps_32</font>
@@ -83,7 +83,7 @@
               <left>32</left>
               <top>16</top>
               <control type="fadelabel">
-                <width>AlaskaB_MyVideoNav_InfoList_Width</width>
+                <width>AlaskaB_VideoNav_InfoList_Width</width>
                 <height>46</height>
                 <textcolor>Heavy</textcolor>
                 <font>Font_Black_Caps_53</font>
@@ -91,7 +91,7 @@
                 <visible>!Control.HasFocus(8800)</visible>
               </control>
               <control type="fadelabel">
-                <width>AlaskaB_MyVideoNav_InfoList_Width</width>
+                <width>AlaskaB_VideoNav_InfoList_Width</width>
                 <height>46</height>
                 <textcolor>Light</textcolor>
                 <font>Font_Black_Caps_53</font>
@@ -100,7 +100,7 @@
               </control>
               <control type="label">
                 <top>48</top>
-                <width>AlaskaB_MyVideoNav_InfoList_Width</width>
+                <width>AlaskaB_VideoNav_InfoList_Width</width>
                 <height>34</height>
                 <label>$INFO[ListItem.Genre]</label>
                 <font>Font_Light_Caps_34</font>
@@ -108,7 +108,7 @@
               </control>
               <control type="label">
                 <top>80</top>
-                <width>AlaskaB_MyVideoNav_InfoList_Width</width>
+                <width>AlaskaB_VideoNav_InfoList_Width</width>
                 <height>34</height>
                 <label>$INFO[ListItem.Property(TotalEpisodes)] Episodes • $INFO[ListItem.Property(UnWatchedEpisodes)] Unwatched</label>
                 <font>Font_Light_Caps_34</font>
@@ -132,7 +132,7 @@
           <onleft>500</onleft>
           <onright>7000</onright>
           <include>Animation_HiddenByInfo</include>
-          <include>AlaskaB_MyVideoNav_Scrollbar_Visible</include>
+          <include>AlaskaB_VideoNav_Scrollbar_Visible</include>
         </control>
 
         <control type="group">
@@ -140,7 +140,7 @@
           <top>29</top>
           <include>Animation_SlideLeftByFullscreenFanart</include>
           <visible>!SubString(ListItem.Icon,Default)</visible>
-          <visible>!Window.IsActive(movieinformation) | !StringCompare(Window(movieinformation).Property(AlaskaB.DialogVideoInfo.CurrentView),9000)</visible>
+          <visible>!Window.IsActive(movieinformation) | !StringCompare(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9000)</visible>
           <control type="image">
             <left>27</left>
             <top>26</top>

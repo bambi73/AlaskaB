@@ -69,7 +69,7 @@
   </include>
 
   <include name="Animation_ZoomedByProperty">
-    <animation type="Conditional" condition="!StringCompare(Window(home).Property(AlaskaB.MyVideoNav.Menu),true) | !StringCompare(Window(home).Property(AlaskaB.DialogVideoInfo.Menu),true) | Window.IsActive(contextmenu) | Window.IsActive(shutdownmenu) | Window.IsActive(filebrowser) | Window.IsActive(DialogSelect.xml) | Window.IsActive(DialogYesNo.xml) | Window.IsActive(progressdialog) | Window.IsActive(okdialog)">
+    <animation type="Conditional" condition="!StringCompare(Window(home).Property(AlaskaB.VideoNav.Menu),true) | !StringCompare(Window(home).Property(AlaskaB.VideoInfo.Menu),true) | Window.IsActive(contextmenu) | Window.IsActive(shutdownmenu) | Window.IsActive(filebrowser) | Window.IsActive(DialogSelect.xml) | Window.IsActive(DialogYesNo.xml) | Window.IsActive(progressdialog) | Window.IsActive(okdialog)">
       <effect type="zoom" time="400" center="CenterX,CenterY" start="100" end="50" tween="cubic" easing="inout" />
       <effect type="fade" time="400" start="100" end="0" tween="cubic" easing="out" />
     </animation>
@@ -147,13 +147,24 @@
   </include>
 
   <include name="Animation_SlideLeftByFullscreenFanart">
-    <animation type="Visible" condition="StringCompare(Window(movieinformation).Property(AlaskaB.DialogVideoInfo.PreviousView),9000)">
+    <animation type="Visible" condition="StringCompare(Window(home).Property(AlaskaB.VideoInfo.PreviousView),9000)" reversible="false">
       <effect type="slide" start="-1920,0" end="0,0" time="250" tween="cubic" easing="in" />
       <effect type="fade" start="0" end="100" time="250" />
     </animation>
-    <animation type="Hidden" condition="StringCompare(Window(movieinformation).Property(AlaskaB.DialogVideoInfo.CurrentView),9000)">
+    <animation type="Hidden" condition="StringCompare(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9000)" reversible="false">
       <effect type="slide" start="0,0" end="-1920,0" time="250" tween="cubic" easing="out" />
       <effect type="fade" start="100" end="0" time="250" />
+    </animation>
+  </include>
+
+  <include name="Animation_SlideLeftByFullscreenFanartFastFade">
+    <animation type="Visible" condition="StringCompare(Window(home).Property(AlaskaB.VideoInfo.PreviousView),9000)" reversible="false">
+      <effect type="slide" start="-1920,0" end="0,0" time="250" tween="cubic" easing="in" />
+      <effect type="fade" delay="250" start="0" end="100" time="0" />
+    </animation>
+    <animation type="Hidden" condition="StringCompare(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9000)" reversible="false">
+      <effect type="slide" start="0,0" end="-1920,0" time="250" tween="cubic" easing="out" />
+      <effect type="fade" start="100" end="0" time="0" />
     </animation>
   </include>
 
