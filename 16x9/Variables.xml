@@ -640,5 +640,5 @@
     <!-- <value condition="Window.IsActive(movieinformation) + StringCompare(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9100)">$INFO[ListItem.Icon]</value> -->
     <value>$INFO[ListItem.Icon]</value>
   </variable>
-  
+
 </includes>

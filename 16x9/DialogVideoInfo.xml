@@ -131,12 +131,13 @@
     <!-- Video info group -->
     <control type="group">
       <include>AlaskaB_VideoNav_Region_TopLeft</include>
-      <include>Animation_ZoomedByProperty</include>
+      <include>Animation_ZoomedByMenuOrProperty</include>
       <include>Animation_OpenInfoDialog</include>
       <control type="group">
         <left>852</left>
         <top>54</top>
-        <!-- Shared group -->
+
+        <!-- Shared title group -->
         <control type="group">
           <visible>!StringCompare(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9000)</visible>
           <include>Animation_SlideToFullscreenFanart</include>
@@ -176,27 +177,16 @@
           <control type="group">
             <visible>Skin.HasSetting(AlaskaB.Settings.VideoInfo.Plot.Scrollbar.Enable)</visible>
             <control type="group">
-              <!-- <include>Animation_SlideToFullscreenFanart_FastFade</include> -->
               <include>Animation_SlideToFullscreenFanart</include>
+              <include>AlaskaB_VideoInfo_Main_Scrollbar_Background</include>
               <visible>StringCompare(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9010)</visible>
-              <control type="image">
-                <include>AlaskaB_VideoInfo_Main_Scrollbar_Size</include>
-                <texture>video/info-main-scrollbar.png</texture>
-                <visible>Control.IsVisible(8800)</visible>
-              </control>
-              <control type="image">
-                <include>AlaskaB_VideoInfo_Main_Scrollbar_Size</include>
-                <texture>video/info-main-no-scrollbar.png</texture>
-                <visible>!Control.IsVisible(8800)</visible>
-              </control>
             </control>
             <control type="group">
               <include>AlaskaB_VideoInfo_Main_Scrollbar_Size</include>
               <control type="scrollbar" id="8800">
                 <left>2</left>
-                <include>Animation_ZoomedByProperty_FastFade</include>
                 <include>Animation_SlideToFullscreenFanart_FastFade</include>
-                <animation effect="fade" start="100" end="0" time="0" condition="SubString(Window(home).Property(AlaskaB.VideoInfo.Menu),true)">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="0">WindowClose</animation>
                 <visible>StringCompare(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9010)</visible>
               </control>
             </control>
@@ -389,7 +379,7 @@
             <ondown>50</ondown>
             <onleft>SetProperty(AlaskaB.VideoInfo.PreviousView,9100,home)</onleft>
             <onleft>9020</onleft>
-            <onright>noop</onright>
+            <onright>8800</onright>
             <pagecontrol>8800</pagecontrol>
             <orientation>vertical</orientation>
             <viewtype label="535">list</viewtype>
@@ -407,7 +397,18 @@
             </itemlayout>
             <focusedlayout width="AlaskaB_VideoNav_InfoList_Width" height="42">
               <control type="group">
-                <animation effect="fade" start="0" end="100" time="200" reversible="false">Focus</animation>
+                <control type="label">
+                  <top>1</top>
+                  <width>AlaskaB_VideoNav_InfoList_Width</width>
+                  <height>38</height>
+                  <aligny>center</aligny>
+                  <scroll>true</scroll>
+                  <font>Font_Reg_Caps_38</font>
+                  <textcolor>Light</textcolor>
+                  <selectedcolor>Light</selectedcolor>
+                  <label>$INFO[ListItem.Label]$INFO[ListItem.Label2, • ]</label>
+                  <visible>!Control.HasFocus(50)</visible>
+                </control>
                 <control type="label">
                   <top>1</top>
                   <width>AlaskaB_VideoNav_InfoList_Width</width>
@@ -417,33 +418,27 @@
                   <font>Font_Reg_Caps_38</font>
                   <textcolor>Heavy</textcolor>
                   <selectedcolor>Heavy</selectedcolor>
-                  <label>$INFO[ListItem.Label]</label>
+                  <label>$INFO[ListItem.Label]$INFO[ListItem.Label2, • ]</label>
+                  <visible>Control.HasFocus(50)</visible>
                 </control>
               </control>
             </focusedlayout>
           </control>
           <control type="group">
+            <include>AlaskaB_VideoInfo_Main_Scrollbar_Background</include>
             <visible>Skin.HasSetting(AlaskaB.Settings.VideoInfo.Cast.Scrollbar.Enable)</visible>
-            <control type="image">
-              <include>AlaskaB_VideoInfo_Main_Scrollbar_Size</include>
-              <texture>video/info-main-scrollbar.png</texture>
-              <visible>Control.IsVisible(8800)</visible>
-            </control>
-            <control type="image">
-              <include>AlaskaB_VideoInfo_Main_Scrollbar_Size</include>
-              <texture>video/info-main-no-scrollbar.png</texture>
-              <visible>!Control.IsVisible(8800)</visible>
-            </control>
             <control type="group">
               <include>AlaskaB_VideoInfo_Main_Scrollbar_Size</include>
               <control type="scrollbar" id="8800">
                 <left>2</left>
+                <onleft>50</onleft>
+                <animation effect="fade" start="100" end="0" time="0">WindowClose</animation>
               </control>
             </control>
           </control>
         </control>
       </control>
-      
+
       <!-- Cast poster -->
       <control type="group">
         <include>AlaskaB_VideoNav_Poster_VisibilityLabel</include>

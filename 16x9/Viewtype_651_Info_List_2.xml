@@ -121,6 +121,8 @@
             </control>
           </focusedlayout>
         </control>
+        
+        <!-- Scrollbar -->
         <control type="scrollbar" id="8800">
           <description>InfoList scrollbar</description>
           <left>1902</left>
@@ -131,6 +133,7 @@
           <include>Animation_HiddenByInfo</include>
           <visible>Skin.HasSetting(AlaskaB.Settings.VideoNav.Scrollbar.Enable)</visible>
         </control>
+        
         <!-- Poster -->
         <control type="group">
           <include>AlaskaB_VideoNav_Poster_VisibilityLabel</include>

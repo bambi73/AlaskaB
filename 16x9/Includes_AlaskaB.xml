@@ -391,6 +391,19 @@
     <height>440</height>
   </include>
 
+  <include name="AlaskaB_VideoInfo_Main_Scrollbar_Background">
+    <control type="image">
+      <include>AlaskaB_VideoInfo_Main_Scrollbar_Size</include>
+      <texture>video/info-main-scrollbar.png</texture>
+      <visible>Control.IsVisible(8800)</visible>
+    </control>
+    <control type="image">
+      <include>AlaskaB_VideoInfo_Main_Scrollbar_Size</include>
+      <texture>video/info-main-no-scrollbar.png</texture>
+      <visible>!Control.IsVisible(8800)</visible>
+    </control>
+  </include>
+
   <constant name="AlaskaB_Menu_Left">0</constant>
   <constant name="AlaskaB_Menu_Top">376</constant>
 

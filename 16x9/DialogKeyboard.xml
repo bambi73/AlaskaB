@@ -405,7 +405,7 @@
 
 				<!-- Edit Text -->
 
-				<control type="label" id="310">
+				<control type="label" id="312">
 					<left>20</left>
 					<top>480</top>
 					<width>1220</width>
