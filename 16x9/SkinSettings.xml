@@ -456,7 +456,6 @@
 					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=videohub-list)</onclick>
 					<visible>System.HasAddon(script.skinshortcuts)</visible>
 				</control>				
-
 				<control type="button" id="143">
 					<width>1260</width>
 					<!-- <height>90</height> -->
@@ -466,21 +465,29 @@
 					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=videohub-widgets)</onclick>
 					<visible>System.HasAddon(script.skinshortcuts)</visible>
 				</control>				
-        
 				<control type="radiobutton" id="144">
-					<!-- Home menu style -->
 					<width>1260</width>
 					<label>Enable Video library scrollbar</label>
-					<onclick>Skin.ToggleSetting(AlaskaB.Settings.EnableVideoLibraryScrollbar)</onclick>
-					<selected>Skin.HasSetting(AlaskaB.Settings.EnableVideoLibraryScrollbar)</selected>
+					<onclick>Skin.ToggleSetting(AlaskaB.Settings.VideoNav.Scrollbar.Enable)</onclick>
+					<selected>Skin.HasSetting(AlaskaB.Settings.VideoNav.Scrollbar.Enable)</selected>
 				</control>
-        
 				<control type="radiobutton" id="145">
-					<!-- Home menu style -->
 					<width>1260</width>
 					<label>Enable Video hub scrollbar</label>
-					<onclick>Skin.ToggleSetting(AlaskaB.Settings.EnableVideoHubScrollbar)</onclick>
-					<selected>Skin.HasSetting(AlaskaB.Settings.EnableVideoHubScrollbar)</selected>
+					<onclick>Skin.ToggleSetting(AlaskaB.Settings.VideoHub.Scrollbar.Enable)</onclick>
+					<selected>Skin.HasSetting(AlaskaB.Settings.VideoHub.Scrollbar.Enable)</selected>
+				</control>
+				<control type="radiobutton" id="146">
+					<width>1260</width>
+					<label>Enable Video hub scrollbar</label>
+					<onclick>Skin.ToggleSetting(AlaskaB.Settings.VideoInfo.Plot.Scrollbar.Enable)</onclick>
+					<selected>Skin.HasSetting(AlaskaB.Settings.VideoInfo.Plot.Scrollbar.Enable)</selected>
+				</control>
+				<control type="radiobutton" id="147">
+					<width>1260</width>
+					<label>Enable Video hub scrollbar</label>
+					<onclick>Skin.ToggleSetting(AlaskaB.Settings.VideoInfo.Cast.Scrollbar.Enable)</onclick>
+					<selected>Skin.HasSetting(AlaskaB.Settings.VideoInfo.Cast.Scrollbar.Enable)</selected>
 				</control>
 			</control>
 

@@ -30,9 +30,7 @@
       </control>  -->
 
       <control type="group" id="5000">
-        <left>AlaskaB_VideoNav_Base_Left</left>
-        <top>AlaskaB_VideoNav_Base_Top</top>
-
+        <include>AlaskaB_VideoNav_Region_TopLeft</include>
         <control type="fixedlist" id="651">
           <left>820</left>
           <top>56</top>
@@ -123,7 +121,6 @@
             </control>
           </focusedlayout>
         </control>
-
         <control type="scrollbar" id="8800">
           <description>InfoList scrollbar</description>
           <left>1902</left>
@@ -132,46 +129,19 @@
           <onleft>500</onleft>
           <onright>7000</onright>
           <include>Animation_HiddenByInfo</include>
-          <include>AlaskaB_VideoNav_Scrollbar_Visible</include>
+          <visible>Skin.HasSetting(AlaskaB.Settings.VideoNav.Scrollbar.Enable)</visible>
         </control>
-
+        <!-- Poster -->
         <control type="group">
-          <left>270</left>
-          <top>29</top>
-          <include>Animation_SlideLeftByFullscreenFanart</include>
-          <visible>!SubString(ListItem.Icon,Default)</visible>
-          <visible>!Window.IsActive(movieinformation) | !StringCompare(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9000)</visible>
-          <control type="image">
-            <left>27</left>
-            <top>26</top>
-            <width>447</width>
-            <height>667</height>
-            <texture background="true" diffuse="poster/Poster_Matte_FO.png">$INFO[ListItem.Icon]</texture>
-            <fadetime>200</fadetime>
-            <aspectratio scalediffuse="false">stretch</aspectratio>
-          </control>
-          <control type="image">
-            <left>0</left>
-            <top>0</top>
-            <width>500</width>
-            <height>718</height>
-            <texture>poster/Poster_Frame_FO.png</texture>
-          </control>
-          <control type="image">
-            <left>415</left>
-            <top>636</top>
-            <width>40</width>
-            <height>40</height>
-            <texture>$VAR[Status_Overlay]</texture>
-          </control>
-          <control type="image">
-            <left>415</left>
-            <top>636</top>
-            <width>40</width>
-            <height>40</height>
-            <texture>common/Overlay_New.png</texture>
-            <visible>SubString(Window(movieinformation).Property(flag),true)</visible>
-            <animation effect="slide" end="-54,0" condition="[!Skin.HasSetting(HideWatchedOverlays) + StringCompare(ListItem.Overlay,OverlayWatched.png)] | [!Skin.HasSetting(HideResumeOverlays) + ListItem.IsResumable]">Conditional</animation>
+          <include>AlaskaB_VideoNav_Poster_VisibilityLabel</include>
+          <control type="group">
+            <include>AlaskaB_VideoNav_Poster_TopLeft</include>
+            <include>Animation_SlideToFullscreenFanart</include>
+            <visible>!Window.IsActive(movieinformation) | [!StringCompare(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9000) + !StringCompare(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9100)]</visible>
+            <include>AlaskaB_VideoNav_Poster_Visibility</include>
+            <include>AlaskaB_VideoNav_Poster_Image</include>
+            <include>AlaskaB_VideoNav_Poster_Frame</include>
+            <include>AlaskaB_VideoNav_Poster_Overlay</include>
           </control>
         </control>
       </control>

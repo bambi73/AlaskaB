@@ -635,4 +635,10 @@
     <value>$INFO[ListItem.Title]</value>
   </variable> -->
 
+  <variable name="AlaskaB_VideoNav_Poster_Icon">
+    <value condition="Window.IsActive(movieinformation) + StringCompare(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9100) + !SubString(Container(50).ListItem(0).Icon,Default)">$INFO[Container(50).ListItem(0).Icon]</value>
+    <!-- <value condition="Window.IsActive(movieinformation) + StringCompare(Window(home).Property(AlaskaB.VideoInfo.CurrentView),9100)">$INFO[ListItem.Icon]</value> -->
+    <value>$INFO[ListItem.Icon]</value>
+  </variable>
+  
 </includes>

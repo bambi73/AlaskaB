@@ -60,11 +60,9 @@
     </control>
 
     <control type="group">
+      <include>AlaskaB_VideoNav_Background</include>
       <include>Animation_ZoomInZoomOut</include>
       <include>Animation_ZoomedByProperty</include>
-
-      <include>AlaskaB_VideoNav_Base</include>
-
       <include>Viewtype_500_List</include>
       <include>Viewtype_501_Poster_No_Wrap</include>
       <include>Viewtype_502_Poster_Wrap</include>

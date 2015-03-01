@@ -13,7 +13,7 @@
     <include>AlaskaB_Overlay_Heading</include>
 
     <control type="group">
-      <include>AlaskaB_VideoHub_Base</include>
+      <include>AlaskaB_VideoHub_Background</include>
       <include>Animation_ZoomInZoomOutToHome</include>
       <include>Animation_ZoomOutZoomInToVideoLibrary</include>
 
@@ -351,13 +351,12 @@
           <include>skinshortcuts-group-videohub-list</include>
         </content>
       </control>
-
       <control type="scrollbar" id="8800">
         <left>1902</left>
         <top>96</top>
         <height>516</height>
         <onleft>8000</onleft>
-        <include>AlaskaB_VideoHub_Scrollbar_Visible</include>
+        <visible>Skin.HasSetting(AlaskaB.Settings.VideoHub.Scrollbar.Enable)</visible>
       </control>
     </control>
 
