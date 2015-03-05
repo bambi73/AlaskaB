@@ -428,7 +428,7 @@
   </include>
 
   <include name="AlaskaB_Menu_List">
-    <top>56</top>
+    <top>60</top>
     <left>-330</left>
     <width>2580</width>
     <height>104</height>

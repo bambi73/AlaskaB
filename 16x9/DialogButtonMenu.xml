@@ -1,337 +1,215 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="buttonMenu" id="111">
   <defaultcontrol always="true">3200</defaultcontrol>
-  
-  <onload>SetProperty(AlaskaB.DialogButtonMenu.ListItem_1.Label,$LOCALIZE[13012])</onload>
-  <onload>SetProperty(AlaskaB.DialogButtonMenu.ListItem_1.Visible,System.ShowExitButton)</onload>
-  <onload>SetProperty(AlaskaB.DialogButtonMenu.ListItem_1.OnClick_1,Quit())</onload>
-
-  <onload>SetProperty(AlaskaB.DialogButtonMenu.ListItem_2.Label,$LOCALIZE[20144])</onload>
-  <onload>SetProperty(AlaskaB.DialogButtonMenu.ListItem_2.Visible,!System.HasAlarm(shutdowntimer))</onload>
-  <onload>SetProperty(AlaskaB.DialogButtonMenu.ListItem_2.OnClick_1,XBMC.AlarmClock(shutdowntimer,XBMC.Shutdown()))</onload>
-
-  <onload>SetProperty(AlaskaB.DialogButtonMenu.ListItem_3.Label,$LOCALIZE[13005])</onload>
-  <onload>SetProperty(AlaskaB.DialogButtonMenu.ListItem_3.Visible,System.CanPowerDown)</onload>
-  <onload>SetProperty(AlaskaB.DialogButtonMenu.ListItem_3.OnClick_1,ShutDown())</onload>
-
-  <onload>RunScript(special://skin/extras/scripts/alaskab_utils.py,prepareShutdownMenu2,3300,1,3)</onload>
-  <!-- <onload>RunScript(script.bambi.utilities,?type=loadShutdownMenu&windowId=10111&startButtonId=1001&endButtonId=1013)</onload> -->
-
   <zorder>2</zorder>
 
-  <controls>
+  <!-- <onload>Control.SetFocus(3200,2)</onload> -->
+  <!-- <onload>Control.Move(3200,-2)</onload> -->
 
-    <!-- Menu -->
+  <controls>
+    <control type="image">
+      <left>AlaskaB_Background_Left</left>
+      <width>AlaskaB_Background_Width</width>
+      <top>47</top>
+      <height>3</height>
+      <texture>hub/list_bg_delimiter4.png</texture>
+    </control>
+    <control type="textbox" id="33333">
+      <top>50</top>
+      <left>810</left>
+      <width>300</width>
+      <height>201</height>
+      <!-- <centerbottom>200</centerbottom> -->
+      <!-- <bottom>250</bottom> -->
+      <align>center</align>
+      <aligny>center</aligny>
+      <label>TV Show Informations TV Show Informations</label>
+      <font>Font_Black_Caps_44</font>
+      <textcolor>Light</textcolor>
+      <!-- <wrapmultiline>true</wrapmultiline> -->
+    </control>
+    <control type="textbox" id="33334">
+      <top>50</top>
+      <left>1250</left>
+      <width>300</width>
+      <height>201</height>
+      <!-- <centerbottom>200</centerbottom> -->
+      <!-- <bottom>250</bottom> -->
+      <align>center</align>
+      <!-- <aligny>center</aligny> -->
+      <label>TV Show Informations TV Show Informations</label>
+      <font>Font_Black_Caps_44</font>
+      <textcolor>Light</textcolor>
+      <wrapmultiline>true</wrapmultiline>
+    </control>
+    <control type="image">
+      <left>AlaskaB_Background_Left</left>
+      <width>AlaskaB_Background_Width</width>
+      <top>251</top>
+      <height>3</height>
+      <texture>hub/list_bg_delimiter4.png</texture>
+    </control>
 
     <control type="group">
-      <top>TopOffset</top>
-      <left>LeftOffset</left>
+      <!-- <top>211</top> -->
+
+
+
+      <!-- <control type="image">
+        <left>350</left>
+        <width>1220</width>
+        <height>658</height>
+        <texture>dialogs/button-menu-background.png</texture>
+      </control> -->
+
+
+      <!-- <control type="image">
+        <include>AlaskaB_Common_Background_Border_Up</include>
+      </control>
+      <control type="image">
+        <top>14</top>
+        <height>630</height>
+        <include>AlaskaB_Common_Background</include>
+      </control>
+      <control type="image">
+        <top>644</top>
+        <include>AlaskaB_Common_Background_Border_Down</include>
+      </control> -->
+
+      <left>AlaskaB_Menu_Left</left>
+      <top>391</top>
       <include>Animation_ZoomInMenu</include>
 
-      <control type="grouplist" id="3110">
-        <left>160</left>
-        <top>496</top>
-        <width>1600</width>
-        <height>836</height>
-        <itemgap>0</itemgap>
-        <orientation>vertical</orientation>
-        <include>Animation_ShutdownMenuSlide</include>
-        <scrolltime tween="sine" easing="out">320</scrolltime>
-        <control type="label">
-          <include>ShutdownMenuValue_Focus</include>
-          <label>$INFO[Container(3300).ListItem(0).Label]</label>
-          <visible>IntegerGreaterThan(Container(3300).NumItems,0) + Container(3200).HasFocus(1)</visible>
-          <animation type="conditional" condition="!Container(3200).HasFocus(1)">
-            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
-          </animation>
+      <control type="group">
+        <control type="image">
+          <include>AlaskaB_Common_Background_Border_Up</include>
         </control>
-        <control type="label">
-          <include>ShutdownMenuValue</include>
-          <label>$INFO[Container(3300).ListItem(0).Label]</label>
-          <visible>IntegerGreaterThan(Container(3300).NumItems,0) + !Container(3200).HasFocus(1)</visible>
-          <animation type="conditional" condition="!Container(3200).HasFocus(1)">
-            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
-          </animation>
-          <!-- <animation type="conditional" condition="ControlGroup(3200).Position(3) | ControlGroup(3200).Position(4)">
-            <effect type="fade" start="100" end="0" time="200" tween="cubic" easing="in" />
-          </animation> -->
+        <control type="image">
+          <top>14</top>
+          <height>160</height>
+          <include>AlaskaB_Common_Background</include>
         </control>
-        <control type="label">
-          <include>ShutdownMenuValue_Focus</include>
-          <label>$INFO[Container(3300).ListItem(1).Label]</label>
-          <visible>IntegerGreaterThan(Container(3300).NumItems,1) + Container(3200).HasFocus(2)</visible>
-          <animation type="conditional" condition="!Container(3200).HasFocus(2)">
-            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
-          </animation>
-        </control>
-        <control type="label">
-          <include>ShutdownMenuValue</include>
-          <label>$INFO[Container(3300).ListItem(1).Label]</label>
-          <visible>IntegerGreaterThan(Container(3300).NumItems,1) + !Container(3200).HasFocus(2)</visible>
-          <animation type="conditional" condition="!Container(3200).HasFocus(2)">
-            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
-          </animation>
-          <!-- <animation type="conditional" condition="ControlGroup(3200).Position(3) | ControlGroup(3200).Position(4)">
-            <effect type="fade" start="100" end="0" time="200" tween="cubic" easing="in" />
-          </animation> -->
-        </control>
-        <control type="label">
-          <include>ShutdownMenuValue_Focus</include>
-          <label>$INFO[Container(3300).ListItem(2).Label]</label>
-          <visible>IntegerGreaterThan(Container(3300).NumItems,2) + Container(3200).HasFocus(3)</visible>
-          <animation type="conditional" condition="!Container(3200).HasFocus(3)">
-            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
-          </animation>
-        </control>
-        <control type="label">
-          <include>ShutdownMenuValue</include>
-          <label>$INFO[Container(3300).ListItem(2).Label]</label>
-          <visible>IntegerGreaterThan(Container(3300).NumItems,2) + !Container(3200).HasFocus(3)</visible>
-          <animation type="conditional" condition="!Container(3200).HasFocus(3)">
-            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
-          </animation>
-          <!-- <animation type="conditional" condition="ControlGroup(3200).Position(3) | ControlGroup(3200).Position(4)">
-            <effect type="fade" start="100" end="0" time="200" tween="cubic" easing="in" />
-          </animation> -->
-        </control>
-        <control type="label">
-          <include>ShutdownMenuValue_Focus</include>
-          <label>$INFO[Container(3300).ListItem(3).Label]</label>
-          <visible>IntegerGreaterThan(Container(3300).NumItems,3) + Container(3200).HasFocus(4)</visible>
-          <animation type="conditional" condition="!Container(3200).HasFocus(4)">
-            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
-          </animation>
-        </control>
-        <control type="label">
-          <include>ShutdownMenuValue</include>
-          <label>$INFO[Container(3300).ListItem(3).Label]</label>
-          <visible>IntegerGreaterThan(Container(3300).NumItems,3) + !Container(3200).HasFocus(4)</visible>
-          <animation type="conditional" condition="!Container(3200).HasFocus(4)">
-            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
-          </animation>
-          <!-- <animation type="conditional" condition="ControlGroup(3200).Position(3) | ControlGroup(3200).Position(4)">
-            <effect type="fade" start="100" end="0" time="200" tween="cubic" easing="in" />
-          </animation> -->
-        </control>
-        <control type="label">
-          <include>ShutdownMenuValue_Focus</include>
-          <label>$INFO[Container(3300).ListItem(4).Label]</label>
-          <visible>IntegerGreaterThan(Container(3300).NumItems,4) + Container(3200).HasFocus(5)</visible>
-          <animation type="conditional" condition="!Container(3200).HasFocus(5)">
-            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
-          </animation>
-        </control>
-        <control type="label">
-          <include>ShutdownMenuValue</include>
-          <label>$INFO[Container(3300).ListItem(4).Label]</label>
-          <visible>IntegerGreaterThan(Container(3300).NumItems,4) + !Container(3200).HasFocus(5)</visible>
-          <animation type="conditional" condition="!Container(3200).HasFocus(5)">
-            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
-          </animation>
-          <!-- <animation type="conditional" condition="ControlGroup(3200).Position(3) | ControlGroup(3200).Position(4)">
-            <effect type="fade" start="100" end="0" time="200" tween="cubic" easing="in" />
-          </animation> -->
+        <control type="image">
+          <top>174</top>
+          <include>AlaskaB_Common_Background_Border_Down</include>
         </control>
       </control>
 
-    </control>
 
-    <!-- Filter -->
-
-    <!-- <control type="group">
-      <include>Animation_CommonFade</include>
-      <include>List_Filter</include>
-    </control> -->
-
-    <!-- Hidden menu -->
-
-    <control type="button" id="1001">
-      <include>HiddenControl</include>
-      <label>13012</label>
-      <!-- <onclick>Quit()</onclick> -->
-      <onclick>Notification(XXX,BBB)</onclick>
-      <!-- <visible>System.ShowExitButton</visible> -->
+      <control type="fixedlist" id="3200">
+        <top>42</top>
+        <left>-330</left>
+        <width>2580</width>
+        <height>104</height>
+        <onup>close</onup>
+        <ondown>close</ondown>
+        <onleft>3200</onleft>
+        <onright>3200</onright>
+        <viewtype>list</viewtype>
+        <focusposition>3</focusposition>
+        <orientation>horizontal</orientation>
+        <defaultcontrol always="true">1</defaultcontrol>
+        <scrolltime tween="sine" easing="out">320</scrolltime>
+        <itemlayout width="330" height="104">
+          <control type="label">
+            <centerleft>50%</centerleft>
+            <width>310</width>
+            <height>104</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <textcolor>Light</textcolor>
+            <font>Font_Black_Caps_44</font>
+            <label>$INFO[ListItem.Label]</label>
+          </control>
+        </itemlayout>
+        <focusedlayout width="600" height="104">
+          <control type="label">
+            <animation type="Focus" reversible="false">
+              <effect type="zoom" center="auto" start="60" end="100" time="200" tween="cubic" easing="out" />
+              <effect type="fade" start="40" end="100" time="200" />
+            </animation>
+            <centerleft>50%</centerleft>
+            <width>580</width>
+            <height>104</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <textcolor>Heavy</textcolor>
+            <font>Font_Black_Caps_76</font>
+            <label>$INFO[ListItem.Label]</label>
+          </control>
+        </focusedlayout>
+        <content>
+          <item id="1">
+            <label>13012</label>
+            <onclick>Quit()</onclick>
+            <visible>System.ShowExitButton</visible>
+          </item>
+          <item id="2">
+            <label>Master Mode</label>
+            <onclick>xbmc.mastermode</onclick>
+            <visible>System.HasLocks</visible>
+          </item>
+          <item id="3">
+            <label>$LOCALIZE[20126] $INFO[system.profilename]</label>
+            <onclick>Dialog.Close(all,true)</onclick>
+            <onclick>System.LogOff</onclick>
+            <visible>System.Loggedon + System.HasLoginScreen</visible>
+          </item>
+          <item id="6">
+            <label>13005</label>
+            <onclick>ShutDown()</onclick>
+            <visible>System.CanPowerDown</visible>
+          </item>
+          <item id="4">
+            <label>Timer • $INFO[System.AlarmPos]</label>
+            <onclick>XBMC.CancelAlarm(shutdowntimer)</onclick>
+            <visible>System.HasAlarm(shutdowntimer)</visible>
+          </item>
+          <item id="5">
+            <label>Timer</label>
+            <onclick>XBMC.AlarmClock(shutdowntimer,XBMC.Shutdown())</onclick>
+            <visible>!System.HasAlarm(shutdowntimer)</visible>
+          </item>
+          <item id="9">
+            <label>13013</label>
+            <onclick>XBMC.Reset()</onclick>
+            <visible>System.CanReboot</visible>
+          </item>
+          <item id="7">
+            <label>13011</label>
+            <onclick>XBMC.Suspend()</onclick>
+            <visible>System.CanSuspend</visible>
+          </item>
+          <item id="8">
+            <label>13010</label>
+            <onclick>XBMC.Hibernate()</onclick>
+            <visible>System.CanHibernate</visible>
+          </item>
+          <item id="10">
+            <label>13017</label>
+            <onclick>XBMC.InhibitIdleShutdown(true)</onclick>
+            <visible>System.HasShutdown +!System.IsInhibit</visible>
+          </item>
+          <item id="11">
+            <label>13018</label>
+            <onclick>XBMC.InhibitIdleShutdown(false)</onclick>
+            <visible>System.HasShutdown + System.IsInhibit</visible>
+          </item>
+          <item id="12">
+            <label>13350</label>
+            <onclick>Fullscreen</onclick>
+            <onclick>Dialog.Close(all,true)</onclick>
+            <visible>Player.HasMedia</visible>
+          </item>
+          <item id="13">
+            <label>5</label>
+            <onclick>Dialog.Close(all,true)</onclick>
+            <onclick>ActivateWindow(Settings)</onclick>
+            <visible>Skin.HasSetting(HideHomeSettings)</visible>
+          </item>
+        </content>
+      </control>
     </control>
-    <control type="button" id="1002">
-      <include>HiddenControl</include>
-      <label>Master Mode</label>
-      <onclick>xbmc.mastermode</onclick>
-      <visible>System.HasLocks</visible>
-    </control>
-    <control type="button" id="1003">
-      <include>HiddenControl</include>
-      <label>$LOCALIZE[20126] $INFO[system.profilename]</label>
-      <onclick>Dialog.Close(all,true)</onclick>
-      <onclick>System.LogOff</onclick>
-      <visible>System.Loggedon + System.HasLoginScreen</visible>
-    </control>
-    <control type="button" id="1004">
-      <include>HiddenControl</include>
-      <label>$LOCALIZE[222] - $INFO[System.AlarmPos]</label>
-      <onclick>XBMC.CancelAlarm(shutdowntimer)</onclick>
-      <visible>System.HasAlarm(shutdowntimer)</visible>
-    </control>
-    <control type="button" id="1005">
-      <include>HiddenControl</include>
-      <label>20144</label>
-      <onclick>XBMC.AlarmClock(shutdowntimer,XBMC.Shutdown())</onclick>
-      <visible>!System.HasAlarm(shutdowntimer)</visible>
-    </control>
-    <control type="button" id="1006">
-      <include>HiddenControl</include>
-      <label>13005</label>
-      <onclick>ShutDown()</onclick>
-      <visible>System.CanPowerDown</visible>
-    </control>
-    <control type="button" id="1007">
-      <include>HiddenControl</include>
-      <label>13011</label>
-      <onclick>XBMC.Suspend()</onclick>
-      <visible>System.CanSuspend</visible>
-    </control>
-    <control type="button" id="1008">
-      <include>HiddenControl</include>
-      <label>13010</label>
-      <onclick>XBMC.Hibernate()</onclick>
-      <visible>System.CanHibernate</visible>
-    </control>
-    <control type="button" id="1009">
-      <include>HiddenControl</include>
-      <label>13013</label>
-      <onclick>XBMC.Reset()</onclick>
-      <visible>System.CanReboot</visible>
-    </control>
-    <control type="button" id="1010">
-      <include>HiddenControl</include>
-      <label>13017</label>
-      <onclick>XBMC.InhibitIdleShutdown(true)</onclick>
-      <visible>System.HasShutdown +!System.IsInhibit</visible>
-    </control>
-    <control type="button" id="1011">
-      <include>HiddenControl</include>
-      <label>13018</label>
-      <onclick>XBMC.InhibitIdleShutdown(false)</onclick>
-      <visible>System.HasShutdown + System.IsInhibit</visible>
-    </control>
-    <control type="button" id="1012">
-      <include>HiddenControl</include>
-      <label>13350</label>
-      <onclick>Fullscreen</onclick>
-      <onclick>Dialog.Close(all,true)</onclick>
-      <visible>Player.HasMedia</visible>
-    </control>
-    <control type="button" id="1013">
-      <include>HiddenControl</include>
-      <label>5</label>
-      <onclick>Dialog.Close(all,true)</onclick>
-      <onclick>ActivateWindow(Settings)</onclick>
-      <visible>Skin.HasSetting(HideHomeSettings)</visible>
-    </control> 
-
-    <control type="panel" id="3200">
-      <left>0</left>
-      <top>0</top>
-      <height>30</height>
-      <width>1</width>
-      <onleft>Close</onleft>
-      <onright>Close</onright>
-      <viewtype>list</viewtype>
-      <scrolltime>0</scrolltime>
-      <orientation>horizontal</orientation>
-      <defaultcontrol>1</defaultcontrol>
-      <itemlayout width="1" height="1">
-      </itemlayout>
-      <focusedlayout width="1" height="1">
-      </focusedlayout>
-      <content>
-        <item id="1">
-          <label>$INFO[Container(3300).ListItem(0).Label]</label>
-          <onclick>$INFO[Container(3300).ListItem(0).Property(onClick1)]</onclick>
-          <onclick>$INFO[Container(3300).ListItem(0).Property(onClick2)]</onclick>
-          <visible>IntegerGreaterThan(Container(3300).NumItems,0)</visible>
-        </item>
-        <item id="2">
-          <label>$INFO[Container(3300).ListItem(1).Label]</label>
-          <onclick>$INFO[Container(3300).ListItem(1).Property(onClick1)]</onclick>
-          <onclick>$INFO[Container(3300).ListItem(1).Property(onClick2)]</onclick>
-          <visible>IntegerGreaterThan(Container(3300).NumItems,1)</visible>
-        </item>
-        <item id="3">
-          <label>$INFO[Container(3300).ListItem(2).Label]</label>
-          <onclick>$INFO[Container(3300).ListItem(2).Property(onClick1)]</onclick>
-          <onclick>$INFO[Container(3300).ListItem(2).Property(onClick2)]</onclick>
-          <visible>IntegerGreaterThan(Container(3300).NumItems,2)</visible>
-        </item>
-        <item id="4">
-          <label>$INFO[Container(3300).ListItem(3).Label]</label>
-          <onclick>$INFO[Container(3300).ListItem(3).Property(onClick1)]</onclick>
-          <onclick>$INFO[Container(3300).ListItem(3).Property(onClick2)]</onclick>
-          <visible>IntegerGreaterThan(Container(3300).NumItems,3)</visible>
-        </item>
-        <item id="5">
-          <label>$INFO[Container(3300).ListItem(4).Label]</label>
-          <onclick>$INFO[Container(3300).ListItem(4).Property(onClick1)]</onclick>
-          <onclick>$INFO[Container(3300).ListItem(4).Property(onClick2)]</onclick>
-          <visible>IntegerGreaterThan(Container(3300).NumItems,4)</visible>
-        </item>
-        <item id="6">
-          <label>$INFO[Container(3300).ListItem(5).Label]</label>
-          <onclick>$INFO[Container(3300).ListItem(5).Property(onClick1)]</onclick>
-          <onclick>$INFO[Container(3300).ListItem(5).Property(onClick2)]</onclick>
-          <visible>IntegerGreaterThan(Container(3300).NumItems,5)</visible>
-        </item>
-        <item id="7">
-          <label>$INFO[Container(3300).ListItem(6).Label]</label>
-          <onclick>$INFO[Container(3300).ListItem(6).Property(onClick1)]</onclick>
-          <onclick>$INFO[Container(3300).ListItem(6).Property(onClick2)]</onclick>
-          <visible>IntegerGreaterThan(Container(3300).NumItems,6)</visible>
-        </item>
-        <item id="8">
-          <label>$INFO[Container(3300).ListItem(7).Label]</label>
-          <onclick>$INFO[Container(3300).ListItem(7).Property(onClick1)]</onclick>
-          <onclick>$INFO[Container(3300).ListItem(7).Property(onClick2)]</onclick>
-          <visible>IntegerGreaterThan(Container(3300).NumItems,7)</visible>
-        </item>
-        <item id="9">
-          <label>$INFO[Container(3300).ListItem(8).Label]</label>
-          <onclick>$INFO[Container(3300).ListItem(8).Property(onClick1)]</onclick>
-          <onclick>$INFO[Container(3300).ListItem(8).Property(onClick2)]</onclick>
-          <visible>IntegerGreaterThan(Container(3300).NumItems,8)</visible>
-        </item>
-        <item id="10">
-          <label>$INFO[Container(3300).ListItem(9).Label]</label>
-          <onclick>$INFO[Container(3300).ListItem(9).Property(onClick1)]</onclick>
-          <onclick>$INFO[Container(3300).ListItem(9).Property(onClick2)]</onclick>
-          <visible>IntegerGreaterThan(Container(3300).NumItems,9)</visible>
-        </item>
-        <item id="11">
-          <label>$INFO[Container(3300).ListItem(10).Label]</label>
-          <onclick>$INFO[Container(3300).ListItem(10).Property(onClick1)]</onclick>
-          <onclick>$INFO[Container(3300).ListItem(10).Property(onClick2)]</onclick>
-          <visible>IntegerGreaterThan(Container(3300).NumItems,10)</visible>
-        </item>
-        <item id="12">
-          <label>$INFO[Container(3300).ListItem(11).Label]</label>
-          <onclick>$INFO[Container(3300).ListItem(11).Property(onClick1)]</onclick>
-          <onclick>$INFO[Container(3300).ListItem(11).Property(onClick2)]</onclick>
-          <visible>IntegerGreaterThan(Container(3300).NumItems,11)</visible>
-        </item>
-        <item id="13">
-          <label>$INFO[Container(3300).ListItem(12).Label]</label>
-          <onclick>$INFO[Container(3300).ListItem(12).Property(onClick1)]</onclick>
-          <onclick>$INFO[Container(3300).ListItem(12).Property(onClick2)]</onclick>
-          <visible>IntegerGreaterThan(Container(3300).NumItems,12)</visible>
-        </item>
-      </content>
-    </control>
-
-    <control type="panel" id="3300">
-      <include>HiddenControl</include>
-      <itemlayout width="1" height="1"/>
-      <focusedlayout width="1" height="1"/>
-      <content/>
-    </control>
-
   </controls>
 
 </window>
