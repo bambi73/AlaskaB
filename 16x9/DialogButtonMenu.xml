@@ -3,11 +3,8 @@
   <defaultcontrol always="true">3200</defaultcontrol>
   <zorder>2</zorder>
 
-  <!-- <onload>Control.SetFocus(3200,2)</onload> -->
-  <!-- <onload>Control.Move(3200,-2)</onload> -->
-
   <controls>
-    <control type="image">
+    <!-- <control type="image">
       <left>AlaskaB_Background_Left</left>
       <width>AlaskaB_Background_Width</width>
       <top>47</top>
@@ -19,24 +16,20 @@
       <left>810</left>
       <width>300</width>
       <height>201</height>
-      <!-- <centerbottom>200</centerbottom> -->
-      <!-- <bottom>250</bottom> -->
       <align>center</align>
       <aligny>center</aligny>
       <label>TV Show Informations TV Show Informations</label>
       <font>Font_Black_Caps_44</font>
       <textcolor>Light</textcolor>
-      <!-- <wrapmultiline>true</wrapmultiline> -->
+      <wrapmultiline>true</wrapmultiline>
     </control>
     <control type="textbox" id="33334">
       <top>50</top>
       <left>1250</left>
       <width>300</width>
       <height>201</height>
-      <!-- <centerbottom>200</centerbottom> -->
-      <!-- <bottom>250</bottom> -->
       <align>center</align>
-      <!-- <aligny>center</aligny> -->
+      <aligny>center</aligny>
       <label>TV Show Informations TV Show Informations</label>
       <font>Font_Black_Caps_44</font>
       <textcolor>Light</textcolor>
@@ -48,36 +41,11 @@
       <top>251</top>
       <height>3</height>
       <texture>hub/list_bg_delimiter4.png</texture>
-    </control>
+    </control> -->
 
     <control type="group">
-      <!-- <top>211</top> -->
-
-
-
-      <!-- <control type="image">
-        <left>350</left>
-        <width>1220</width>
-        <height>658</height>
-        <texture>dialogs/button-menu-background.png</texture>
-      </control> -->
-
-
-      <!-- <control type="image">
-        <include>AlaskaB_Common_Background_Border_Up</include>
-      </control>
-      <control type="image">
-        <top>14</top>
-        <height>630</height>
-        <include>AlaskaB_Common_Background</include>
-      </control>
-      <control type="image">
-        <top>644</top>
-        <include>AlaskaB_Common_Background_Border_Down</include>
-      </control> -->
-
+      <top>426</top>
       <left>AlaskaB_Menu_Left</left>
-      <top>391</top>
       <include>Animation_ZoomInMenu</include>
 
       <control type="group">
@@ -94,7 +62,6 @@
           <include>AlaskaB_Common_Background_Border_Down</include>
         </control>
       </control>
-
 
       <control type="fixedlist" id="3200">
         <top>42</top>

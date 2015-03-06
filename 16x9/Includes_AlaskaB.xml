@@ -405,7 +405,7 @@
   </include>
 
   <constant name="AlaskaB_Menu_Left">0</constant>
-  <constant name="AlaskaB_Menu_Top">376</constant>
+  <constant name="AlaskaB_Menu_Top">407</constant>
 
   <include name="AlaskaB_Menu_Base">
     <left>AlaskaB_Menu_Left</left>
