@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="106">
-  <!-- <defaultcontrol always="true">3200</defaultcontrol> -->
-
-  <!-- <onload>RunScript(special://skin/extras/scripts/alaskab_utils.py,prepareContextMenu,1001,1014)</onload> -->
-
-  <!-- <onload>Control.Message(7000,close,videolibrary)</onload> -->
+  <defaultcontrol always="true">1000</defaultcontrol>
+  <onload>Control.Message(7000,close,videolibrary)</onload>
 
   <controls>
+    <!-- Default controls (hidden) -->
+    <control type="grouplist" id="996">
+      <include>HiddenControl</include>
+      <orientation>horizontal</orientation>
+      <control type="button" id="1000">
+        <include>HiddenControl</include>
+        <onup>close</onup>
+        <ondown>close</ondown>
+      </control>
+    </control>
+
+    <!-- Menu -->
     <control type="group">
-      <top>426</top>
+      <top>400</top>
       <left>AlaskaB_Menu_Left</left>
       <include>Animation_ZoomInMenu</include>
 
@@ -18,1183 +27,309 @@
         </control>
         <control type="image">
           <top>14</top>
-          <height>160</height>
+          <height>210</height>
           <include>AlaskaB_Common_Background</include>
         </control>
         <control type="image">
-          <top>174</top>
+          <top>224</top>
           <include>AlaskaB_Common_Background_Border_Down</include>
         </control>
       </control>
 
-      <control type="grouplist" id="996">
-        <include>HiddenControl</include>
-        <onup>close</onup>
-        <ondown>close</ondown>
-        <onleft>996</onleft>
-        <onright>996</onright>
-        <orientation>horizontal</orientation>
-        <scrolltime tween="sine" easing="out">320</scrolltime>
-
-        <!-- <itemgap>20</itemgap>
-        <orientation>horizontal</orientation>
-        <scrolltime tween="sine" easing="out">320</scrolltime>
-        <focusposition>3</focusposition>
-        <defaultcontrol always="true">1</defaultcontrol> -->
-
-        <control type="button" id="1000">
-          <include>HiddenControl</include>
-          <onup>close</onup>
-          <ondown>close</ondown>
-          <onfocus>Control.SetFocus(3200)</onfocus>
-          <!-- <onleft>Control.Message(3200,moveleft)</onleft> -->
-          <!-- <onright>Control.Message(3200,moveright)</onright> -->
-          <!-- <onfocus>Control.SetFocus(3200)</onfocus> -->
-          <!-- <centerleft>50%</centerleft>
-          <width>310</width>
-          <height>104</height>
-          <align>center</align>
-          <aligny>center</aligny>
-          <textcolor>Light</textcolor>
-          <font>Font_Black_Caps_44</font> -->
-        </control>
-      </control>
-
-      <control type="group">
-        <visible>Control.IsVisible(1001)</visible>
-        <control type="button" id="2001">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[208]</label>
-          <visible>StringCompare(Control.GetLabel(1001),$LOCALIZE[208])</visible>
-        </control>
-        <control type="button" id="2001">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[13347]</label>
-          <visible>StringCompare(Control.GetLabel(1001),$LOCALIZE[13347])</visible>
-        </control>
-        <control type="button" id="2001">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[586]</label>
-          <visible>StringCompare(Control.GetLabel(1001),$LOCALIZE[586])</visible>
-        </control>
-        <control type="button" id="2001">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[14076]</label>
-          <visible>StringCompare(Control.GetLabel(1001),$LOCALIZE[14076])</visible>
-        </control>
-        <control type="button" id="2001">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[20351]</label>
-          <visible>StringCompare(Control.GetLabel(1001),$LOCALIZE[20351])</visible>
-        </control>
-        <control type="button" id="2001">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16103]</label>
-          <visible>StringCompare(Control.GetLabel(1001),$LOCALIZE[16103])</visible>
-        </control>
-        <control type="button" id="2001">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16104]</label>
-          <visible>StringCompare(Control.GetLabel(1001),$LOCALIZE[16104])</visible>
-        </control>
-        <control type="button" id="2001">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16105]</label>
-          <visible>StringCompare(Control.GetLabel(1001),$LOCALIZE[16105])</visible>
-        </control>
-        <control type="button" id="2001">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16106]</label>
-          <visible>StringCompare(Control.GetLabel(1001),$LOCALIZE[16106])</visible>
-        </control>
-        <control type="button" id="2001">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16107]</label>
-          <visible>StringCompare(Control.GetLabel(1001),$LOCALIZE[16107])</visible>
-        </control>
-        <control type="button" id="2001">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[646]</label>
-          <visible>StringCompare(Control.GetLabel(1001),$LOCALIZE[646])</visible>
-        </control>
-      </control>
-      <control type="group">
-        <visible>Control.IsVisible(1002)</visible>
-        <control type="button" id="2002">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[208]</label>
-          <visible>StringCompare(Control.GetLabel(1002),$LOCALIZE[208])</visible>
-        </control>
-        <control type="button" id="2002">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[13347]</label>
-          <visible>StringCompare(Control.GetLabel(1002),$LOCALIZE[13347])</visible>
-        </control>
-        <control type="button" id="2002">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[586]</label>
-          <visible>StringCompare(Control.GetLabel(1002),$LOCALIZE[586])</visible>
-        </control>
-        <control type="button" id="2002">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[14076]</label>
-          <visible>StringCompare(Control.GetLabel(1002),$LOCALIZE[14076])</visible>
-        </control>
-        <control type="button" id="2002">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[20351]</label>
-          <visible>StringCompare(Control.GetLabel(1002),$LOCALIZE[20351])</visible>
-        </control>
-        <control type="button" id="2002">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16103]</label>
-          <visible>StringCompare(Control.GetLabel(1002),$LOCALIZE[16103])</visible>
-        </control>
-        <control type="button" id="2002">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16104]</label>
-          <visible>StringCompare(Control.GetLabel(1002),$LOCALIZE[16104])</visible>
-        </control>
-        <control type="button" id="2002">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16105]</label>
-          <visible>StringCompare(Control.GetLabel(1002),$LOCALIZE[16105])</visible>
-        </control>
-        <control type="button" id="2002">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16106]</label>
-          <visible>StringCompare(Control.GetLabel(1002),$LOCALIZE[16106])</visible>
-        </control>
-        <control type="button" id="2002">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16107]</label>
-          <visible>StringCompare(Control.GetLabel(1002),$LOCALIZE[16107])</visible>
-        </control>
-        <control type="button" id="2002">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[646]</label>
-          <visible>StringCompare(Control.GetLabel(1002),$LOCALIZE[646])</visible>
-        </control>
-      </control>
-      <control type="group">
-        <visible>Control.IsVisible(1003)</visible>
-        <control type="button" id="2003">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[208]</label>
-          <visible>StringCompare(Control.GetLabel(1003),$LOCALIZE[208])</visible>
-        </control>
-        <control type="button" id="2003">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[13347]</label>
-          <visible>StringCompare(Control.GetLabel(1003),$LOCALIZE[13347])</visible>
-        </control>
-        <control type="button" id="2003">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[586]</label>
-          <visible>StringCompare(Control.GetLabel(1003),$LOCALIZE[586])</visible>
-        </control>
-        <control type="button" id="2003">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[14076]</label>
-          <visible>StringCompare(Control.GetLabel(1003),$LOCALIZE[14076])</visible>
-        </control>
-        <control type="button" id="2003">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[20351]</label>
-          <visible>StringCompare(Control.GetLabel(1003),$LOCALIZE[20351])</visible>
-        </control>
-        <control type="button" id="2003">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16103]</label>
-          <visible>StringCompare(Control.GetLabel(1003),$LOCALIZE[16103])</visible>
-        </control>
-        <control type="button" id="2003">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16104]</label>
-          <visible>StringCompare(Control.GetLabel(1003),$LOCALIZE[16104])</visible>
-        </control>
-        <control type="button" id="2003">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16105]</label>
-          <visible>StringCompare(Control.GetLabel(1003),$LOCALIZE[16105])</visible>
-        </control>
-        <control type="button" id="2003">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16106]</label>
-          <visible>StringCompare(Control.GetLabel(1003),$LOCALIZE[16106])</visible>
-        </control>
-        <control type="button" id="2003">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16107]</label>
-          <visible>StringCompare(Control.GetLabel(1003),$LOCALIZE[16107])</visible>
-        </control>
-        <control type="button" id="2003">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[646]</label>
-          <visible>StringCompare(Control.GetLabel(1003),$LOCALIZE[646])</visible>
-        </control>
-      </control>
-      <control type="group">
-        <visible>Control.IsVisible(1004)</visible>
-        <control type="button" id="2004">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[208]</label>
-          <visible>StringCompare(Control.GetLabel(1004),$LOCALIZE[208])</visible>
-        </control>
-        <control type="button" id="2004">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[13347]</label>
-          <visible>StringCompare(Control.GetLabel(1004),$LOCALIZE[13347])</visible>
-        </control>
-        <control type="button" id="2004">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[586]</label>
-          <visible>StringCompare(Control.GetLabel(1004),$LOCALIZE[586])</visible>
-        </control>
-        <control type="button" id="2004">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[14076]</label>
-          <visible>StringCompare(Control.GetLabel(1004),$LOCALIZE[14076])</visible>
-        </control>
-        <control type="button" id="2004">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[20351]</label>
-          <visible>StringCompare(Control.GetLabel(1004),$LOCALIZE[20351])</visible>
-        </control>
-        <control type="button" id="2004">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16103]</label>
-          <visible>StringCompare(Control.GetLabel(1004),$LOCALIZE[16103])</visible>
-        </control>
-        <control type="button" id="2004">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16104]</label>
-          <visible>StringCompare(Control.GetLabel(1004),$LOCALIZE[16104])</visible>
-        </control>
-        <control type="button" id="2004">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16105]</label>
-          <visible>StringCompare(Control.GetLabel(1004),$LOCALIZE[16105])</visible>
-        </control>
-        <control type="button" id="2004">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16106]</label>
-          <visible>StringCompare(Control.GetLabel(1004),$LOCALIZE[16106])</visible>
-        </control>
-        <control type="button" id="2004">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16107]</label>
-          <visible>StringCompare(Control.GetLabel(1004),$LOCALIZE[16107])</visible>
-        </control>
-        <control type="button" id="2004">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[646]</label>
-          <visible>StringCompare(Control.GetLabel(1004),$LOCALIZE[646])</visible>
-        </control>
-      </control>
-      <control type="group">
-        <visible>Control.IsVisible(1005)</visible>
-        <control type="button" id="2005">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[208]</label>
-          <visible>StringCompare(Control.GetLabel(1005),$LOCALIZE[208])</visible>
-        </control>
-        <control type="button" id="2005">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[13347]</label>
-          <visible>StringCompare(Control.GetLabel(1005),$LOCALIZE[13347])</visible>
-        </control>
-        <control type="button" id="2005">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[586]</label>
-          <visible>StringCompare(Control.GetLabel(1005),$LOCALIZE[586])</visible>
-        </control>
-        <control type="button" id="2005">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[14076]</label>
-          <visible>StringCompare(Control.GetLabel(1005),$LOCALIZE[14076])</visible>
-        </control>
-        <control type="button" id="2005">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[20351]</label>
-          <visible>StringCompare(Control.GetLabel(1005),$LOCALIZE[20351])</visible>
-        </control>
-        <control type="button" id="2005">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16103]</label>
-          <visible>StringCompare(Control.GetLabel(1005),$LOCALIZE[16103])</visible>
-        </control>
-        <control type="button" id="2005">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16104]</label>
-          <visible>StringCompare(Control.GetLabel(1005),$LOCALIZE[16104])</visible>
-        </control>
-        <control type="button" id="2005">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16105]</label>
-          <visible>StringCompare(Control.GetLabel(1005),$LOCALIZE[16105])</visible>
-        </control>
-        <control type="button" id="2005">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16106]</label>
-          <visible>StringCompare(Control.GetLabel(1005),$LOCALIZE[16106])</visible>
-        </control>
-        <control type="button" id="2005">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16107]</label>
-          <visible>StringCompare(Control.GetLabel(1005),$LOCALIZE[16107])</visible>
-        </control>
-        <control type="button" id="2005">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[646]</label>
-          <visible>StringCompare(Control.GetLabel(1005),$LOCALIZE[646])</visible>
-        </control>
-      </control>
-      <control type="group">
-        <visible>Control.IsVisible(1006)</visible>
-        <control type="button" id="2006">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[208]</label>
-          <visible>StringCompare(Control.GetLabel(1006),$LOCALIZE[208])</visible>
-        </control>
-        <control type="button" id="2006">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[13347]</label>
-          <visible>StringCompare(Control.GetLabel(1006),$LOCALIZE[13347])</visible>
-        </control>
-        <control type="button" id="2006">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[586]</label>
-          <visible>StringCompare(Control.GetLabel(1006),$LOCALIZE[586])</visible>
-        </control>
-        <control type="button" id="2006">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[14076]</label>
-          <visible>StringCompare(Control.GetLabel(1006),$LOCALIZE[14076])</visible>
-        </control>
-        <control type="button" id="2006">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[20351]</label>
-          <visible>StringCompare(Control.GetLabel(1006),$LOCALIZE[20351])</visible>
-        </control>
-        <control type="button" id="2006">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16103]</label>
-          <visible>StringCompare(Control.GetLabel(1006),$LOCALIZE[16103])</visible>
-        </control>
-        <control type="button" id="2006">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16104]</label>
-          <visible>StringCompare(Control.GetLabel(1006),$LOCALIZE[16104])</visible>
-        </control>
-        <control type="button" id="2006">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16105]</label>
-          <visible>StringCompare(Control.GetLabel(1006),$LOCALIZE[16105])</visible>
-        </control>
-        <control type="button" id="2006">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16106]</label>
-          <visible>StringCompare(Control.GetLabel(1006),$LOCALIZE[16106])</visible>
-        </control>
-        <control type="button" id="2006">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16107]</label>
-          <visible>StringCompare(Control.GetLabel(1006),$LOCALIZE[16107])</visible>
-        </control>
-        <control type="button" id="2006">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[646]</label>
-          <visible>StringCompare(Control.GetLabel(1006),$LOCALIZE[646])</visible>
-        </control>
-      </control>
-      <control type="group">
-        <visible>Control.IsVisible(1007)</visible>
-        <control type="button" id="2007">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[208]</label>
-          <visible>StringCompare(Control.GetLabel(1007),$LOCALIZE[208])</visible>
-        </control>
-        <control type="button" id="2007">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[13347]</label>
-          <visible>StringCompare(Control.GetLabel(1007),$LOCALIZE[13347])</visible>
-        </control>
-        <control type="button" id="2007">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[586]</label>
-          <visible>StringCompare(Control.GetLabel(1007),$LOCALIZE[586])</visible>
-        </control>
-        <control type="button" id="2007">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[14076]</label>
-          <visible>StringCompare(Control.GetLabel(1007),$LOCALIZE[14076])</visible>
-        </control>
-        <control type="button" id="2007">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[20351]</label>
-          <visible>StringCompare(Control.GetLabel(1007),$LOCALIZE[20351])</visible>
-        </control>
-        <control type="button" id="2007">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16103]</label>
-          <visible>StringCompare(Control.GetLabel(1007),$LOCALIZE[16103])</visible>
-        </control>
-        <control type="button" id="2007">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16104]</label>
-          <visible>StringCompare(Control.GetLabel(1007),$LOCALIZE[16104])</visible>
-        </control>
-        <control type="button" id="2007">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16105]</label>
-          <visible>StringCompare(Control.GetLabel(1007),$LOCALIZE[16105])</visible>
-        </control>
-        <control type="button" id="2007">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16106]</label>
-          <visible>StringCompare(Control.GetLabel(1007),$LOCALIZE[16106])</visible>
-        </control>
-        <control type="button" id="2007">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16107]</label>
-          <visible>StringCompare(Control.GetLabel(1007),$LOCALIZE[16107])</visible>
-        </control>
-        <control type="button" id="2007">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[646]</label>
-          <visible>StringCompare(Control.GetLabel(1007),$LOCALIZE[646])</visible>
-        </control>
-      </control>
-      <control type="group">
-        <visible>Control.IsVisible(1008)</visible>
-        <control type="button" id="2008">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[208]</label>
-          <visible>StringCompare(Control.GetLabel(1008),$LOCALIZE[208])</visible>
-        </control>
-        <control type="button" id="2008">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[13347]</label>
-          <visible>StringCompare(Control.GetLabel(1008),$LOCALIZE[13347])</visible>
-        </control>
-        <control type="button" id="2008">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[586]</label>
-          <visible>StringCompare(Control.GetLabel(1008),$LOCALIZE[586])</visible>
-        </control>
-        <control type="button" id="2008">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[14076]</label>
-          <visible>StringCompare(Control.GetLabel(1008),$LOCALIZE[14076])</visible>
-        </control>
-        <control type="button" id="2008">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[20351]</label>
-          <visible>StringCompare(Control.GetLabel(1008),$LOCALIZE[20351])</visible>
-        </control>
-        <control type="button" id="2008">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16103]</label>
-          <visible>StringCompare(Control.GetLabel(1008),$LOCALIZE[16103])</visible>
-        </control>
-        <control type="button" id="2008">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16104]</label>
-          <visible>StringCompare(Control.GetLabel(1008),$LOCALIZE[16104])</visible>
-        </control>
-        <control type="button" id="2008">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16105]</label>
-          <visible>StringCompare(Control.GetLabel(1008),$LOCALIZE[16105])</visible>
-        </control>
-        <control type="button" id="2008">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16106]</label>
-          <visible>StringCompare(Control.GetLabel(1008),$LOCALIZE[16106])</visible>
-        </control>
-        <control type="button" id="2008">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16107]</label>
-          <visible>StringCompare(Control.GetLabel(1008),$LOCALIZE[16107])</visible>
-        </control>
-        <control type="button" id="2008">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[646]</label>
-          <visible>StringCompare(Control.GetLabel(1008),$LOCALIZE[646])</visible>
-        </control>
-      </control>
-      <control type="group">
-        <visible>Control.IsVisible(1009)</visible>
-        <control type="button" id="2009">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[208]</label>
-          <visible>StringCompare(Control.GetLabel(1009),$LOCALIZE[208])</visible>
-        </control>
-        <control type="button" id="2009">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[13347]</label>
-          <visible>StringCompare(Control.GetLabel(1009),$LOCALIZE[13347])</visible>
-        </control>
-        <control type="button" id="2009">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[586]</label>
-          <visible>StringCompare(Control.GetLabel(1009),$LOCALIZE[586])</visible>
-        </control>
-        <control type="button" id="2009">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[14076]</label>
-          <visible>StringCompare(Control.GetLabel(1009),$LOCALIZE[14076])</visible>
-        </control>
-        <control type="button" id="2009">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[20351]</label>
-          <visible>StringCompare(Control.GetLabel(1009),$LOCALIZE[20351])</visible>
-        </control>
-        <control type="button" id="2009">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16103]</label>
-          <visible>StringCompare(Control.GetLabel(1009),$LOCALIZE[16103])</visible>
-        </control>
-        <control type="button" id="2009">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16104]</label>
-          <visible>StringCompare(Control.GetLabel(1009),$LOCALIZE[16104])</visible>
-        </control>
-        <control type="button" id="2009">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16105]</label>
-          <visible>StringCompare(Control.GetLabel(1009),$LOCALIZE[16105])</visible>
-        </control>
-        <control type="button" id="2009">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16106]</label>
-          <visible>StringCompare(Control.GetLabel(1009),$LOCALIZE[16106])</visible>
-        </control>
-        <control type="button" id="2009">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16107]</label>
-          <visible>StringCompare(Control.GetLabel(1009),$LOCALIZE[16107])</visible>
-        </control>
-        <control type="button" id="2009">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[646]</label>
-          <visible>StringCompare(Control.GetLabel(1009),$LOCALIZE[646])</visible>
-        </control>
-      </control>
-      <control type="group">
-        <visible>Control.IsVisible(1010)</visible>
-        <control type="button" id="2010">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[208]</label>
-          <visible>StringCompare(Control.GetLabel(1010),$LOCALIZE[208])</visible>
-        </control>
-        <control type="button" id="2010">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[13347]</label>
-          <visible>StringCompare(Control.GetLabel(1010),$LOCALIZE[13347])</visible>
-        </control>
-        <control type="button" id="2010">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[586]</label>
-          <visible>StringCompare(Control.GetLabel(1010),$LOCALIZE[586])</visible>
-        </control>
-        <control type="button" id="2010">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[14076]</label>
-          <visible>StringCompare(Control.GetLabel(1010),$LOCALIZE[14076])</visible>
-        </control>
-        <control type="button" id="2010">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[20351]</label>
-          <visible>StringCompare(Control.GetLabel(1010),$LOCALIZE[20351])</visible>
-        </control>
-        <control type="button" id="2010">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16103]</label>
-          <visible>StringCompare(Control.GetLabel(1010),$LOCALIZE[16103])</visible>
-        </control>
-        <control type="button" id="2010">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16104]</label>
-          <visible>StringCompare(Control.GetLabel(1010),$LOCALIZE[16104])</visible>
-        </control>
-        <control type="button" id="2010">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16105]</label>
-          <visible>StringCompare(Control.GetLabel(1010),$LOCALIZE[16105])</visible>
-        </control>
-        <control type="button" id="2010">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16106]</label>
-          <visible>StringCompare(Control.GetLabel(1010),$LOCALIZE[16106])</visible>
-        </control>
-        <control type="button" id="2010">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16107]</label>
-          <visible>StringCompare(Control.GetLabel(1010),$LOCALIZE[16107])</visible>
-        </control>
-        <control type="button" id="2010">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[646]</label>
-          <visible>StringCompare(Control.GetLabel(1010),$LOCALIZE[646])</visible>
-        </control>
-      </control>
-      <control type="group">
-        <visible>Control.IsVisible(1011)</visible>
-        <control type="button" id="2011">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[208]</label>
-          <visible>StringCompare(Control.GetLabel(1011),$LOCALIZE[208])</visible>
-        </control>
-        <control type="button" id="2011">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[13347]</label>
-          <visible>StringCompare(Control.GetLabel(1011),$LOCALIZE[13347])</visible>
-        </control>
-        <control type="button" id="2011">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[586]</label>
-          <visible>StringCompare(Control.GetLabel(1011),$LOCALIZE[586])</visible>
-        </control>
-        <control type="button" id="2011">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[14076]</label>
-          <visible>StringCompare(Control.GetLabel(1011),$LOCALIZE[14076])</visible>
-        </control>
-        <control type="button" id="2011">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[20351]</label>
-          <visible>StringCompare(Control.GetLabel(1011),$LOCALIZE[20351])</visible>
-        </control>
-        <control type="button" id="2011">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16103]</label>
-          <visible>StringCompare(Control.GetLabel(1011),$LOCALIZE[16103])</visible>
-        </control>
-        <control type="button" id="2011">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16104]</label>
-          <visible>StringCompare(Control.GetLabel(1011),$LOCALIZE[16104])</visible>
-        </control>
-        <control type="button" id="2011">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16105]</label>
-          <visible>StringCompare(Control.GetLabel(1011),$LOCALIZE[16105])</visible>
-        </control>
-        <control type="button" id="2011">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16106]</label>
-          <visible>StringCompare(Control.GetLabel(1011),$LOCALIZE[16106])</visible>
-        </control>
-        <control type="button" id="2011">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16107]</label>
-          <visible>StringCompare(Control.GetLabel(1011),$LOCALIZE[16107])</visible>
-        </control>
-        <control type="button" id="2011">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[646]</label>
-          <visible>StringCompare(Control.GetLabel(1011),$LOCALIZE[646])</visible>
-        </control>
-      </control>
-      <control type="group">
-        <visible>Control.IsVisible(1012)</visible>
-        <control type="button" id="2012">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[208]</label>
-          <visible>StringCompare(Control.GetLabel(1012),$LOCALIZE[208])</visible>
-        </control>
-        <control type="button" id="2012">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[13347]</label>
-          <visible>StringCompare(Control.GetLabel(1012),$LOCALIZE[13347])</visible>
-        </control>
-        <control type="button" id="2012">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[586]</label>
-          <visible>StringCompare(Control.GetLabel(1012),$LOCALIZE[586])</visible>
-        </control>
-        <control type="button" id="2012">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[14076]</label>
-          <visible>StringCompare(Control.GetLabel(1012),$LOCALIZE[14076])</visible>
-        </control>
-        <control type="button" id="2012">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[20351]</label>
-          <visible>StringCompare(Control.GetLabel(1012),$LOCALIZE[20351])</visible>
-        </control>
-        <control type="button" id="2012">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16103]</label>
-          <visible>StringCompare(Control.GetLabel(1012),$LOCALIZE[16103])</visible>
-        </control>
-        <control type="button" id="2012">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16104]</label>
-          <visible>StringCompare(Control.GetLabel(1012),$LOCALIZE[16104])</visible>
-        </control>
-        <control type="button" id="2012">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16105]</label>
-          <visible>StringCompare(Control.GetLabel(1012),$LOCALIZE[16105])</visible>
-        </control>
-        <control type="button" id="2012">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16106]</label>
-          <visible>StringCompare(Control.GetLabel(1012),$LOCALIZE[16106])</visible>
-        </control>
-        <control type="button" id="2012">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16107]</label>
-          <visible>StringCompare(Control.GetLabel(1012),$LOCALIZE[16107])</visible>
-        </control>
-        <control type="button" id="2012">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[646]</label>
-          <visible>StringCompare(Control.GetLabel(1012),$LOCALIZE[646])</visible>
-        </control>
-      </control>
-      <control type="group">
-        <visible>Control.IsVisible(1013)</visible>
-        <control type="button" id="2013">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[208]</label>
-          <visible>StringCompare(Control.GetLabel(1013),$LOCALIZE[208])</visible>
-        </control>
-        <control type="button" id="2013">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[13347]</label>
-          <visible>StringCompare(Control.GetLabel(1013),$LOCALIZE[13347])</visible>
-        </control>
-        <control type="button" id="2013">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[586]</label>
-          <visible>StringCompare(Control.GetLabel(1013),$LOCALIZE[586])</visible>
-        </control>
-        <control type="button" id="2013">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[14076]</label>
-          <visible>StringCompare(Control.GetLabel(1013),$LOCALIZE[14076])</visible>
-        </control>
-        <control type="button" id="2013">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[20351]</label>
-          <visible>StringCompare(Control.GetLabel(1013),$LOCALIZE[20351])</visible>
-        </control>
-        <control type="button" id="2013">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16103]</label>
-          <visible>StringCompare(Control.GetLabel(1013),$LOCALIZE[16103])</visible>
-        </control>
-        <control type="button" id="2013">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16104]</label>
-          <visible>StringCompare(Control.GetLabel(1013),$LOCALIZE[16104])</visible>
-        </control>
-        <control type="button" id="2013">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16105]</label>
-          <visible>StringCompare(Control.GetLabel(1013),$LOCALIZE[16105])</visible>
-        </control>
-        <control type="button" id="2013">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16106]</label>
-          <visible>StringCompare(Control.GetLabel(1013),$LOCALIZE[16106])</visible>
-        </control>
-        <control type="button" id="2013">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16107]</label>
-          <visible>StringCompare(Control.GetLabel(1013),$LOCALIZE[16107])</visible>
-        </control>
-        <control type="button" id="2013">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[646]</label>
-          <visible>StringCompare(Control.GetLabel(1013),$LOCALIZE[646])</visible>
-        </control>
-      </control>
-      <control type="group">
-        <visible>Control.IsVisible(1014)</visible>
-        <control type="button" id="2014">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[208]</label>
-          <visible>StringCompare(Control.GetLabel(1014),$LOCALIZE[208])</visible>
-        </control>
-        <control type="button" id="2014">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[13347]</label>
-          <visible>StringCompare(Control.GetLabel(1014),$LOCALIZE[13347])</visible>
-        </control>
-        <control type="button" id="2014">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[586]</label>
-          <visible>StringCompare(Control.GetLabel(1014),$LOCALIZE[586])</visible>
-        </control>
-        <control type="button" id="2014">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[14076]</label>
-          <visible>StringCompare(Control.GetLabel(1014),$LOCALIZE[14076])</visible>
-        </control>
-        <control type="button" id="2014">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[20351]</label>
-          <visible>StringCompare(Control.GetLabel(1014),$LOCALIZE[20351])</visible>
-        </control>
-        <control type="button" id="2014">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16103]</label>
-          <visible>StringCompare(Control.GetLabel(1014),$LOCALIZE[16103])</visible>
-        </control>
-        <control type="button" id="2014">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16104]</label>
-          <visible>StringCompare(Control.GetLabel(1014),$LOCALIZE[16104])</visible>
-        </control>
-        <control type="button" id="2014">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16105]</label>
-          <visible>StringCompare(Control.GetLabel(1014),$LOCALIZE[16105])</visible>
-        </control>
-        <control type="button" id="2014">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16106]</label>
-          <visible>StringCompare(Control.GetLabel(1014),$LOCALIZE[16106])</visible>
-        </control>
-        <control type="button" id="2014">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[16107]</label>
-          <visible>StringCompare(Control.GetLabel(1014),$LOCALIZE[16107])</visible>
-        </control>
-        <control type="button" id="2014">
-          <include>HiddenControl</include>
-          <label>$LOCALIZE[646]</label>
-          <visible>StringCompare(Control.GetLabel(1014),$LOCALIZE[646])</visible>
-        </control>
-      </control>
-
-      <control type="fixedlist" id="3200">
-        <top>42</top>
-        <left>-330</left>
-        <width>2580</width>
-        <height>104</height>
-        <onup>close</onup>
-        <ondown>close</ondown>
-        <onleft>3200</onleft>
-        <onright>3200</onright>
-        <viewtype>list</viewtype>
-        <focusposition>3</focusposition>
-        <orientation>horizontal</orientation>
-        <!-- <visible allowhiddenfocus="true">Control.HasFocus(3200)</visible> -->
-        <defaultcontrol always="true">1</defaultcontrol>
-        <scrolltime tween="sine" easing="out">320</scrolltime>
-        <itemlayout width="330" height="104">
-          <control type="textbox">
-            <centerleft>50%</centerleft>
-            <width>310</width>
-            <height>104</height>
-            <align>center</align>
-            <aligny>center</aligny>
-            <textcolor>Light</textcolor>
-            <font>Font_Black_Caps_44</font>
-            <label>$INFO[ListItem.Label]</label>
-          </control>
-        </itemlayout>
-        <focusedlayout width="600" height="104">
-          <control type="textbox">
-            <animation type="Focus" reversible="false">
-              <effect type="zoom" center="auto" start="60" end="100" time="320" tween="cubic" easing="out" />
-              <effect type="fade" start="40" end="100" time="320" />
-            </animation>
-            <centerleft>50%</centerleft>
-            <width>580</width>
-            <height>104</height>
-            <align>center</align>
-            <aligny>center</aligny>
-            <textcolor>Heavy</textcolor>
-            <font>Font_Black_Caps_76</font>
-            <label>$INFO[ListItem.Label]</label>
-          </control>
-        </focusedlayout>
-        <content>
-          <item>
-            <label>$INFO[Control.GetLabel(2001)]</label>
-            <onclick>Control.Message(1001,click)</onclick>
-            <visible>Control.IsVisible(2001)</visible>
-          </item>
-          <item>
-            <label>$INFO[Control.GetLabel(2002)]</label>
-            <onclick>Control.Message(1002,click)</onclick>
-            <visible>Control.IsVisible(2002)</visible>
-          </item>
-          <item>
-            <label>$INFO[Control.GetLabel(2003)]</label>
-            <onclick>Control.Message(1003,click)</onclick>
-            <visible>Control.IsVisible(2003)</visible>
-          </item>
-          <item>
-            <label>$INFO[Control.GetLabel(2004)]</label>
-            <onclick>Control.Message(1004,click)</onclick>
-            <visible>Control.IsVisible(2004)</visible>
-          </item>
-          <item>
-            <label>$INFO[Control.GetLabel(2005)]</label>
-            <onclick>Control.Message(1005,click)</onclick>
-            <visible>Control.IsVisible(2005)</visible>
-          </item>
-          <item>
-            <label>$INFO[Control.GetLabel(2006)]</label>
-            <onclick>Control.Message(1006,click)</onclick>
-            <visible>Control.IsVisible(2006)</visible>
-          </item>
-          <item>
-            <label>$INFO[Control.GetLabel(2007)]</label>
-            <onclick>Control.Message(1007,click)</onclick>
-            <visible>Control.IsVisible(2007)</visible>
-          </item>
-          <item>
-            <label>$INFO[Control.GetLabel(2008)]</label>
-            <onclick>Control.Message(1008,click)</onclick>
-            <visible>Control.IsVisible(2008)</visible>
-          </item>
-          <item>
-            <label>$INFO[Control.GetLabel(2009)]</label>
-            <onclick>Control.Message(1009,click)</onclick>
-            <visible>Control.IsVisible(2009)</visible>
-          </item>
-          <item>
-            <label>$INFO[Control.GetLabel(2010)]</label>
-            <onclick>Control.Message(1010,click)</onclick>
-            <visible>Control.IsVisible(2010)</visible>
-          </item>
-          <item>
-            <label>$INFO[Control.GetLabel(2011)]</label>
-            <onclick>Control.Message(1011,click)</onclick>
-            <visible>Control.IsVisible(2011)</visible>
-          </item>
-          <item>
-            <label>$INFO[Control.GetLabel(2012)]</label>
-            <onclick>Control.Message(1012,click)</onclick>
-            <visible>Control.IsVisible(2012)</visible>
-          </item>
-          <item>
-            <label>$INFO[Control.GetLabel(2013)]</label>
-            <onclick>Control.Message(1013,click)</onclick>
-            <visible>Control.IsVisible(2013)</visible>
-          </item>
-          <item>
-            <label>$INFO[Control.GetLabel(2014)]</label>
-            <onclick>Control.Message(1014,click)</onclick>
-            <visible>Control.IsVisible(2014)</visible>
-          </item>
-        </content>
-      </control>
-
-
-      <!--<control type="grouplist">
-        <top>42</top>
+      <control type="grouplist">
         <left>660</left>
-        <width>2580</width>
-        <height>104</height>
-        <onup>close</onup>
-        <ondown>close</ondown>
-        <onleft>3200</onleft>
-        <onright>3200</onright>
-
-        <orientation>horizontal</orientation>
-        <scrolltime tween="sine" easing="out">320</scrolltime>
-        <itemgap>20</itemgap>
-
-        <animation effect="slide" end="0,0" time="320" condition="ControlGroup(996).HasFocus(1001)">Conditional</animation>
-        <animation effect="slide" end="-330,0" time="320" condition="ControlGroup(996).HasFocus(1002)">Conditional</animation>
-        <animation effect="slide" end="-660,0" time="320" condition="ControlGroup(996).HasFocus(1003)">Conditional</animation>
-        <animation effect="slide" end="-990,0" time="320" condition="ControlGroup(996).HasFocus(1004)">Conditional</animation>
-        <animation effect="slide" end="-1320,0" time="320" condition="ControlGroup(996).HasFocus(1005)">Conditional</animation>
-        <animation effect="slide" end="-1650,0" time="320" condition="ControlGroup(996).HasFocus(1006)">Conditional</animation>
-        <animation effect="slide" end="-1980,0" time="320" condition="ControlGroup(996).HasFocus(1007)">Conditional</animation>
-        <animation effect="slide" end="-2310,0" time="320" condition="ControlGroup(996).HasFocus(1008)">Conditional</animation>
-        <animation effect="slide" end="-2640,0" time="320" condition="ControlGroup(996).HasFocus(1009)">Conditional</animation>
-        <animation effect="slide" end="-2970,0" time="320" condition="ControlGroup(996).HasFocus(1010)">Conditional</animation>
-        <animation effect="slide" end="-3300,0" time="320" condition="ControlGroup(996).HasFocus(1011)">Conditional</animation>
-        <animation effect="slide" end="-3630,0" time="320" condition="ControlGroup(996).HasFocus(1012)">Conditional</animation>
-        <animation effect="slide" end="-3960,0" time="320" condition="ControlGroup(996).HasFocus(1013)">Conditional</animation>
-        <animation effect="slide" end="-4290,0" time="320" condition="ControlGroup(996).HasFocus(1014)">Conditional</animation>
-
-
-        <!{1}** <left>160</left>
-        <top>466</top>
-        <width>1600</width>
-        <height>836</height>
+        <top>42</top>
+        <width>1920</width>
+        <height>156</height>
         <itemgap>0</itemgap>
-        <orientation>vertical</orientation>
-        <include>Animation_ContextMenuSlide</include>
-        <scrolltime tween="sine" easing="out">320</scrolltime> **{1}>
-        <!{1}** <control type="label">
-          <include>ContextMenuValue2</include>
-          <label>20410</label>
-          <visible>Control.IsVisible(990)</visible>
-          <animation type="conditional" condition="!ControlGroup(996).HasFocus(990)">
-            <effect type="zoom" center="auto" start="100" end="70" time="320" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="320" />
-          </animation>
-        </control> **{1}>
-        <control type="label">
-          <include>ContextMenuValue2</include>
-          <label>$INFO[Control.GetLabel(1001)]</label>
-          <visible>Control.IsVisible(1001) + !ControlGroup(996).HasFocus(1001)</visible>
-          <!{1}** <animation type="conditional" condition="!ControlGroup(996).HasFocus(1001)">
-            <effect type="zoom" center="auto" start="100" end="70" time="320" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="320" />
-          </animation> **{1}>
-        </control>
-        <control type="label">
-          <include>ContextMenuValue_Focus</include>
-          <label>$INFO[Control.GetLabel(1001)]</label>
-          <visible>Control.IsVisible(1001) + ControlGroup(996).HasFocus(1001)</visible>
-          <animation type="Visible" reversible="false">
-            <effect type="zoom" center="auto" start="60" end="100" time="320" tween="cubic" easing="out" />
-            <effect type="fade" start="40" end="100" time="320" />
-          </animation>
+        <orientation>horizontal</orientation>
+        <!-- <include>Animation_ContextMenuSlide</include> -->
+        <scrolltime tween="sine" easing="out">320</scrolltime>
 
-          <!{1}** <animation type="conditional" condition="!ControlGroup(996).HasFocus(1001)">
-            <effect type="zoom" center="auto" start="100" end="70" time="320" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="320" />
-          </animation> **{1}>
+        <animation effect="slide" end="-330,0" time="0" condition="!ControlGroup(996).HasFocus(1001) + !ControlGroup(996).HasFocus(1002)">Conditional</animation>
+        <animation effect="slide" end="-330,0" time="0" condition="!ControlGroup(996).HasFocus(1001)">Conditional</animation>
+
+
+        <!-- <control type="label">
+          <include>AlaskaB_ContextMenu_LabelNF</include>
+          <label>$INFO[Control.GetLabel(1001)]</label>
+          <visible>Control.IsVisible(1001)</visible>
+          <animation type="conditional" condition="!ControlGroup(996).HasFocus(1001)">
+            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
+            <effect type="fade" start="100" end="50" time="200" />
+          </animation>
+        </control> -->
+
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupNF</include>
+          <visible>Control.IsVisible(1001) + [ControlGroup(996).HasFocus(1002) | ControlGroup(996).HasFocus(1003)]</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelNF</include>
+            <label>$INFO[Control.GetLabel(1001)]</label>
+          </control>
         </control>
-        <control type="label">
-          <include>ContextMenuValue2</include>
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupFO</include>
+          <visible>Control.IsVisible(1001) + ControlGroup(996).HasFocus(1001)</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelFO</include>
+            <label>$INFO[Control.GetLabel(1001)]</label>
+          </control>
+        </control>
+
+        <!-- <control type="label">
+          <include>AlaskaB_ContextMenu_LabelNF</include>
           <label>$INFO[Control.GetLabel(1002)]</label>
           <visible>Control.IsVisible(1002)</visible>
           <animation type="conditional" condition="!ControlGroup(996).HasFocus(1002)">
-            <effect type="zoom" center="auto" start="100" end="70" time="320" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="320" />
+            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
+            <effect type="fade" start="100" end="50" time="200" />
           </animation>
+        </control> -->
+
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupNF</include>
+          <visible>Control.IsVisible(1002) + [ControlGroup(996).HasFocus(1001) | ControlGroup(996).HasFocus(1003) | ControlGroup(996).HasFocus(1004)]</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelNF</include>
+            <label>$INFO[Control.GetLabel(1002)]</label>
+          </control>
         </control>
-        <control type="label">
-          <include>ContextMenuValue2</include>
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupFO</include>
+          <visible>Control.IsVisible(1002) + ControlGroup(996).HasFocus(1002)</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelFO</include>
+            <label>$INFO[Control.GetLabel(1002)]</label>
+          </control>
+        </control>
+
+        <!-- <control type="label">
+          <include>AlaskaB_ContextMenu_LabelNF</include>
           <label>$INFO[Control.GetLabel(1003)]</label>
           <visible>Control.IsVisible(1003)</visible>
           <animation type="conditional" condition="!ControlGroup(996).HasFocus(1003)">
-            <effect type="zoom" center="auto" start="100" end="70" time="320" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="320" />
+            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
+            <effect type="fade" start="100" end="50" time="200" />
           </animation>
+        </control> -->
+
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupNF</include>
+          <visible>Control.IsVisible(1003) + [ControlGroup(996).HasFocus(1001) | ControlGroup(996).HasFocus(1002) | ControlGroup(996).HasFocus(1004) | ControlGroup(996).HasFocus(1005)]</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelNF</include>
+            <label>$INFO[Control.GetLabel(1003)]</label>
+          </control>
         </control>
-        <control type="label">
-          <include>ContextMenuValue2</include>
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupFO</include>
+          <visible>Control.IsVisible(1003) + ControlGroup(996).HasFocus(1003)</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelFO</include>
+            <label>$INFO[Control.GetLabel(1003)]</label>
+          </control>
+        </control>
+
+        <!-- <control type="label">
+          <include>AlaskaB_ContextMenu_LabelNF</include>
           <label>$INFO[Control.GetLabel(1004)]</label>
           <visible>Control.IsVisible(1004)</visible>
           <animation type="conditional" condition="!ControlGroup(996).HasFocus(1004)">
-            <effect type="zoom" center="auto" start="100" end="70" time="320" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="320" />
+            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
+            <effect type="fade" start="100" end="50" time="200" />
           </animation>
+        </control> -->
+
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupNF</include>
+          <visible>Control.IsVisible(1004) + [ControlGroup(996).HasFocus(1002) | ControlGroup(996).HasFocus(1003) | ControlGroup(996).HasFocus(1005) | ControlGroup(996).HasFocus(1006)]</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelNF</include>
+            <label>$INFO[Control.GetLabel(1004)]</label>
+          </control>
         </control>
-        <control type="label">
-          <include>ContextMenuValue2</include>
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupFO</include>
+          <visible>Control.IsVisible(1004) + ControlGroup(996).HasFocus(1004)</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelFO</include>
+            <label>$INFO[Control.GetLabel(1004)]</label>
+          </control>
+        </control>
+
+        <!-- <control type="label">
+          <include>AlaskaB_ContextMenu_LabelNF</include>
           <label>$INFO[Control.GetLabel(1005)]</label>
           <visible>Control.IsVisible(1005)</visible>
           <animation type="conditional" condition="!ControlGroup(996).HasFocus(1005)">
-            <effect type="zoom" center="auto" start="100" end="70" time="320" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="320" />
+            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
+            <effect type="fade" start="100" end="50" time="200" />
           </animation>
+        </control> -->
+
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupNF</include>
+          <visible>Control.IsVisible(1005) + [ControlGroup(996).HasFocus(1003) | ControlGroup(996).HasFocus(1004) | ControlGroup(996).HasFocus(1006) | ControlGroup(996).HasFocus(1007)]</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelNF</include>
+            <label>$INFO[Control.GetLabel(1005)]</label>
+          </control>
         </control>
-        <control type="label">
-          <include>ContextMenuValue2</include>
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupFO</include>
+          <visible>Control.IsVisible(1005) + ControlGroup(996).HasFocus(1005)</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelFO</include>
+            <label>$INFO[Control.GetLabel(1005)]</label>
+          </control>
+        </control>
+
+        <!-- <control type="label">
+          <include>AlaskaB_ContextMenu_LabelNF</include>
           <label>$INFO[Control.GetLabel(1006)]</label>
           <visible>Control.IsVisible(1006)</visible>
           <animation type="conditional" condition="!ControlGroup(996).HasFocus(1006)">
-            <effect type="zoom" center="auto" start="100" end="70" time="320" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="320" />
+            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
+            <effect type="fade" start="100" end="50" time="200" />
           </animation>
+        </control> -->
+
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupNF</include>
+          <visible>Control.IsVisible(1006) + [ControlGroup(996).HasFocus(1004) | ControlGroup(996).HasFocus(1005) | ControlGroup(996).HasFocus(1007) | ControlGroup(996).HasFocus(1008)]</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelNF</include>
+            <label>$INFO[Control.GetLabel(1006)]</label>
+          </control>
         </control>
-        <control type="label">
-          <include>ContextMenuValue2</include>
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupFO</include>
+          <visible>Control.IsVisible(1006) + ControlGroup(996).HasFocus(1006)</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelFO</include>
+            <label>$INFO[Control.GetLabel(1006)]</label>
+          </control>
+        </control>
+
+        <!-- <control type="label">
+          <include>AlaskaB_ContextMenu_LabelNF</include>
           <label>$INFO[Control.GetLabel(1007)]</label>
           <visible>Control.IsVisible(1007)</visible>
           <animation type="conditional" condition="!ControlGroup(996).HasFocus(1007)">
-            <effect type="zoom" center="auto" start="100" end="70" time="320" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="320" />
+            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
+            <effect type="fade" start="100" end="50" time="200" />
           </animation>
+        </control> -->
+
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupNF</include>
+          <visible>Control.IsVisible(1007) + [ControlGroup(996).HasFocus(1005) | ControlGroup(996).HasFocus(1006) | ControlGroup(996).HasFocus(1008) | ControlGroup(996).HasFocus(1009)]</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelNF</include>
+            <label>$INFO[Control.GetLabel(1007)]</label>
+          </control>
         </control>
-        <control type="label">
-          <include>ContextMenuValue2</include>
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupFO</include>
+          <visible>Control.IsVisible(1007) + ControlGroup(996).HasFocus(1007)</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelFO</include>
+            <label>$INFO[Control.GetLabel(1007)]</label>
+          </control>
+        </control>
+
+        <!-- <control type="label">
+          <include>AlaskaB_ContextMenu_LabelNF</include>
           <label>$INFO[Control.GetLabel(1008)]</label>
           <visible>Control.IsVisible(1008)</visible>
           <animation type="conditional" condition="!ControlGroup(996).HasFocus(1008)">
-            <effect type="zoom" center="auto" start="100" end="70" time="320" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="320" />
+            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
+            <effect type="fade" start="100" end="50" time="200" />
           </animation>
+        </control> -->
+
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupNF</include>
+          <visible>Control.IsVisible(1008) + [ControlGroup(996).HasFocus(1006) | ControlGroup(996).HasFocus(1007) | ControlGroup(996).HasFocus(1009) | ControlGroup(996).HasFocus(1010)]</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelNF</include>
+            <label>$INFO[Control.GetLabel(1008)]</label>
+          </control>
         </control>
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupFO</include>
+          <visible>Control.IsVisible(1008) + ControlGroup(996).HasFocus(1008)</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelFO</include>
+            <label>$INFO[Control.GetLabel(1008)]</label>
+          </control>
+        </control>
+
         <control type="label">
-          <include>ContextMenuValue2</include>
+          <include>AlaskaB_ContextMenu_LabelNF</include>
           <label>$INFO[Control.GetLabel(1009)]</label>
           <visible>Control.IsVisible(1009)</visible>
           <animation type="conditional" condition="!ControlGroup(996).HasFocus(1009)">
-            <effect type="zoom" center="auto" start="100" end="70" time="320" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="320" />
+            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
+            <effect type="fade" start="100" end="50" time="200" />
           </animation>
         </control>
         <control type="label">
-          <include>ContextMenuValue2</include>
+          <include>AlaskaB_ContextMenu_LabelNF</include>
           <label>$INFO[Control.GetLabel(1010)]</label>
           <visible>Control.IsVisible(1010)</visible>
           <animation type="conditional" condition="!ControlGroup(996).HasFocus(1010)">
-            <effect type="zoom" center="auto" start="100" end="70" time="320" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="320" />
+            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
+            <effect type="fade" start="100" end="50" time="200" />
           </animation>
         </control>
         <control type="label">
-          <include>ContextMenuValue2</include>
+          <include>AlaskaB_ContextMenu_LabelNF</include>
           <label>$INFO[Control.GetLabel(1011)]</label>
           <visible>Control.IsVisible(1011)</visible>
           <animation type="conditional" condition="!ControlGroup(996).HasFocus(1011)">
-            <effect type="zoom" center="auto" start="100" end="70" time="320" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="320" />
+            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
+            <effect type="fade" start="100" end="50" time="200" />
           </animation>
         </control>
         <control type="label">
-          <include>ContextMenuValue2</include>
+          <include>AlaskaB_ContextMenu_LabelNF</include>
           <label>$INFO[Control.GetLabel(1012)]</label>
           <visible>Control.IsVisible(1012)</visible>
           <animation type="conditional" condition="!ControlGroup(996).HasFocus(1012)">
-            <effect type="zoom" center="auto" start="100" end="70" time="320" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="320" />
+            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
+            <effect type="fade" start="100" end="50" time="200" />
           </animation>
         </control>
         <control type="label">
-          <include>ContextMenuValue2</include>
+          <include>AlaskaB_ContextMenu_LabelNF</include>
           <label>$INFO[Control.GetLabel(1013)]</label>
           <visible>Control.IsVisible(1013)</visible>
           <animation type="conditional" condition="!ControlGroup(996).HasFocus(1013)">
-            <effect type="zoom" center="auto" start="100" end="70" time="320" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="320" />
+            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
+            <effect type="fade" start="100" end="50" time="200" />
           </animation>
         </control>
         <control type="label">
-          <include>ContextMenuValue2</include>
+          <include>AlaskaB_ContextMenu_LabelNF</include>
           <label>$INFO[Control.GetLabel(1014)]</label>
           <visible>Control.IsVisible(1014)</visible>
           <animation type="conditional" condition="!ControlGroup(996).HasFocus(1014)">
-            <effect type="zoom" center="auto" start="100" end="70" time="320" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="320" />
+            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
+            <effect type="fade" start="100" end="50" time="200" />
           </animation>
         </control>
-      </control>-->
+      </control>
 
     </control>
-
-    <!-- Filter -->
-
-    <!-- <control type="group">
-			<include>Animation_CommonFade</include>
-			<include>List_Filter</include>
-		</control> -->
 
     <!-- <control type="image">
 			<include>Dimensions_Fullscreen</include>
 			<texture fallback="special://skin/extras/backgrounds/SKINDEFAULT/background.png">$VAR[Background_Image]</texture>
 			<visible>Window.IsActive(shutdownmenu) | Window.IsActive(FileBrowser) | Window.IsActive(progressdialog) | Window.IsActive(okdialog)</visible>
 			<colordiffuse>FilterDiffuse</colordiffuse>
-			<animation effect="fade" end="100" start="0" time="320">Visible</animation>
+			<animation effect="fade" end="100" start="0" time="200">Visible</animation>
 			<animation effect="fade" end="0" start="100" time="400">Hidden</animation>
 		</control> -->
 

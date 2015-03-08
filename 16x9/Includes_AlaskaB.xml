@@ -782,4 +782,43 @@
     <texturefocus>refocus/dialogs/button-fo.png</texturefocus>
   </include>
 
+  
+  <constant name="AlaskaB_ContextMenu_Height">156</constant>
+
+  <include name="AlaskaB_ContextMenu_GroupNF">
+    <width>330</width>
+    <height>AlaskaB_ContextMenu_Height</height>
+  </include>
+
+  <include name="AlaskaB_ContextMenu_LabelNF">
+    <left>10</left>
+    <width>310</width>
+    <height>AlaskaB_ContextMenu_Height</height>
+    <align>center</align>
+    <aligny>center</aligny>
+    <textcolor>Light</textcolor>
+    <font>Font_Black_Caps_44</font>
+  </include>
+
+  <include name="AlaskaB_ContextMenu_GroupFO">
+    <width>600</width>
+    <height>AlaskaB_ContextMenu_Height</height>
+    <animation type="Visible" reversible="false">
+      <effect type="zoom" center="auto" start="60" end="100" time="320" tween="cubic" easing="out" />
+      <effect type="fade" start="40" end="100" time="320" />
+    </animation>
+  </include>
+
+  <include name="AlaskaB_ContextMenu_LabelFO">
+    <left>15</left>
+    <width>570</width>
+    <height>AlaskaB_ContextMenu_Height</height>
+    <align>center</align>
+    <aligny>center</aligny>
+    <textcolor>Heavy</textcolor>
+    <font>Font_Black_Caps_76</font>
+  </include>
+
+
+
 </includes>
