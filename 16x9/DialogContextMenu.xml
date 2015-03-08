@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="106">
-  <defaultcontrol always="true">1000</defaultcontrol>
+  <defaultcontrol always="true">996</defaultcontrol>
   <onload>Control.Message(7000,close,videolibrary)</onload>
 
   <controls>
-    <!-- Default controls (hidden) -->
     <control type="grouplist" id="996">
       <include>HiddenControl</include>
       <orientation>horizontal</orientation>
+      <scrolltime tween="sine" easing="out">320</scrolltime>
       <control type="button" id="1000">
         <include>HiddenControl</include>
         <onup>close</onup>
@@ -15,7 +15,6 @@
       </control>
     </control>
 
-    <!-- Menu -->
     <control type="group">
       <top>400</top>
       <left>AlaskaB_Menu_Left</left>
@@ -39,30 +38,29 @@
       <control type="grouplist">
         <left>660</left>
         <top>42</top>
-        <width>1920</width>
+        <width>4890</width>
         <height>156</height>
         <itemgap>0</itemgap>
         <orientation>horizontal</orientation>
-        <!-- <include>Animation_ContextMenuSlide</include> -->
-        <scrolltime tween="sine" easing="out">320</scrolltime>
 
-        <animation effect="slide" end="-330,0" time="0" condition="!ControlGroup(996).HasFocus(1001) + !ControlGroup(996).HasFocus(1002)">Conditional</animation>
-        <animation effect="slide" end="-330,0" time="0" condition="!ControlGroup(996).HasFocus(1001)">Conditional</animation>
-
-
-        <!-- <control type="label">
-          <include>AlaskaB_ContextMenu_LabelNF</include>
-          <label>$INFO[Control.GetLabel(1001)]</label>
-          <visible>Control.IsVisible(1001)</visible>
-          <animation type="conditional" condition="!ControlGroup(996).HasFocus(1001)">
-            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="200" />
-          </animation>
-        </control> -->
+        <animation effect="slide" end="0,0" time="200" condition="ControlGroup(996).HasFocus(1001)" reversible="false">Conditional</animation>
+        <animation effect="slide" end="-330,0" time="200" condition="ControlGroup(996).HasFocus(1002)">Conditional</animation>
+        <animation effect="slide" end="-660,0" time="200" condition="ControlGroup(996).HasFocus(1003)">Conditional</animation>
+        <animation effect="slide" end="-990,0" time="200" condition="ControlGroup(996).HasFocus(1004)">Conditional</animation>
+        <animation effect="slide" end="-1320,0" time="200" condition="ControlGroup(996).HasFocus(1005)">Conditional</animation>
+        <animation effect="slide" end="-1650,0" time="200" condition="ControlGroup(996).HasFocus(1006)">Conditional</animation>
+        <animation effect="slide" end="-1980,0" time="200" condition="ControlGroup(996).HasFocus(1007)">Conditional</animation>
+        <animation effect="slide" end="-2310,0" time="200" condition="ControlGroup(996).HasFocus(1008)">Conditional</animation>
+        <animation effect="slide" end="-2640,0" time="200" condition="ControlGroup(996).HasFocus(1009)">Conditional</animation>
+        <animation effect="slide" end="-2970,0" time="200" condition="ControlGroup(996).HasFocus(1010)">Conditional</animation>
+        <animation effect="slide" end="-3300,0" time="200" condition="ControlGroup(996).HasFocus(1011)">Conditional</animation>
+        <animation effect="slide" end="-3630,0" time="200" condition="ControlGroup(996).HasFocus(1012)">Conditional</animation>
+        <animation effect="slide" end="-3960,0" time="200" condition="ControlGroup(996).HasFocus(1013)">Conditional</animation>
+        <animation effect="slide" end="-4290,0" time="200" condition="ControlGroup(996).HasFocus(1014)">Conditional</animation>
 
         <control type="group">
           <include>AlaskaB_ContextMenu_GroupNF</include>
-          <visible>Control.IsVisible(1001) + [ControlGroup(996).HasFocus(1002) | ControlGroup(996).HasFocus(1003)]</visible>
+          <visible>Control.IsVisible(1001) + !ControlGroup(996).HasFocus(1001)</visible>
           <control type="textbox">
             <include>AlaskaB_ContextMenu_LabelNF</include>
             <label>$INFO[Control.GetLabel(1001)]</label>
@@ -76,20 +74,9 @@
             <label>$INFO[Control.GetLabel(1001)]</label>
           </control>
         </control>
-
-        <!-- <control type="label">
-          <include>AlaskaB_ContextMenu_LabelNF</include>
-          <label>$INFO[Control.GetLabel(1002)]</label>
-          <visible>Control.IsVisible(1002)</visible>
-          <animation type="conditional" condition="!ControlGroup(996).HasFocus(1002)">
-            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="200" />
-          </animation>
-        </control> -->
-
         <control type="group">
           <include>AlaskaB_ContextMenu_GroupNF</include>
-          <visible>Control.IsVisible(1002) + [ControlGroup(996).HasFocus(1001) | ControlGroup(996).HasFocus(1003) | ControlGroup(996).HasFocus(1004)]</visible>
+          <visible>Control.IsVisible(1002) + !ControlGroup(996).HasFocus(1002)</visible>
           <control type="textbox">
             <include>AlaskaB_ContextMenu_LabelNF</include>
             <label>$INFO[Control.GetLabel(1002)]</label>
@@ -103,20 +90,9 @@
             <label>$INFO[Control.GetLabel(1002)]</label>
           </control>
         </control>
-
-        <!-- <control type="label">
-          <include>AlaskaB_ContextMenu_LabelNF</include>
-          <label>$INFO[Control.GetLabel(1003)]</label>
-          <visible>Control.IsVisible(1003)</visible>
-          <animation type="conditional" condition="!ControlGroup(996).HasFocus(1003)">
-            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="200" />
-          </animation>
-        </control> -->
-
         <control type="group">
           <include>AlaskaB_ContextMenu_GroupNF</include>
-          <visible>Control.IsVisible(1003) + [ControlGroup(996).HasFocus(1001) | ControlGroup(996).HasFocus(1002) | ControlGroup(996).HasFocus(1004) | ControlGroup(996).HasFocus(1005)]</visible>
+          <visible>Control.IsVisible(1003) + !ControlGroup(996).HasFocus(1003)</visible>
           <control type="textbox">
             <include>AlaskaB_ContextMenu_LabelNF</include>
             <label>$INFO[Control.GetLabel(1003)]</label>
@@ -130,20 +106,9 @@
             <label>$INFO[Control.GetLabel(1003)]</label>
           </control>
         </control>
-
-        <!-- <control type="label">
-          <include>AlaskaB_ContextMenu_LabelNF</include>
-          <label>$INFO[Control.GetLabel(1004)]</label>
-          <visible>Control.IsVisible(1004)</visible>
-          <animation type="conditional" condition="!ControlGroup(996).HasFocus(1004)">
-            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="200" />
-          </animation>
-        </control> -->
-
         <control type="group">
           <include>AlaskaB_ContextMenu_GroupNF</include>
-          <visible>Control.IsVisible(1004) + [ControlGroup(996).HasFocus(1002) | ControlGroup(996).HasFocus(1003) | ControlGroup(996).HasFocus(1005) | ControlGroup(996).HasFocus(1006)]</visible>
+          <visible>Control.IsVisible(1004) + !ControlGroup(996).HasFocus(1004)</visible>
           <control type="textbox">
             <include>AlaskaB_ContextMenu_LabelNF</include>
             <label>$INFO[Control.GetLabel(1004)]</label>
@@ -157,20 +122,9 @@
             <label>$INFO[Control.GetLabel(1004)]</label>
           </control>
         </control>
-
-        <!-- <control type="label">
-          <include>AlaskaB_ContextMenu_LabelNF</include>
-          <label>$INFO[Control.GetLabel(1005)]</label>
-          <visible>Control.IsVisible(1005)</visible>
-          <animation type="conditional" condition="!ControlGroup(996).HasFocus(1005)">
-            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="200" />
-          </animation>
-        </control> -->
-
         <control type="group">
           <include>AlaskaB_ContextMenu_GroupNF</include>
-          <visible>Control.IsVisible(1005) + [ControlGroup(996).HasFocus(1003) | ControlGroup(996).HasFocus(1004) | ControlGroup(996).HasFocus(1006) | ControlGroup(996).HasFocus(1007)]</visible>
+          <visible>Control.IsVisible(1005) + !ControlGroup(996).HasFocus(1005)</visible>
           <control type="textbox">
             <include>AlaskaB_ContextMenu_LabelNF</include>
             <label>$INFO[Control.GetLabel(1005)]</label>
@@ -184,20 +138,9 @@
             <label>$INFO[Control.GetLabel(1005)]</label>
           </control>
         </control>
-
-        <!-- <control type="label">
-          <include>AlaskaB_ContextMenu_LabelNF</include>
-          <label>$INFO[Control.GetLabel(1006)]</label>
-          <visible>Control.IsVisible(1006)</visible>
-          <animation type="conditional" condition="!ControlGroup(996).HasFocus(1006)">
-            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="200" />
-          </animation>
-        </control> -->
-
         <control type="group">
           <include>AlaskaB_ContextMenu_GroupNF</include>
-          <visible>Control.IsVisible(1006) + [ControlGroup(996).HasFocus(1004) | ControlGroup(996).HasFocus(1005) | ControlGroup(996).HasFocus(1007) | ControlGroup(996).HasFocus(1008)]</visible>
+          <visible>Control.IsVisible(1006) + !ControlGroup(996).HasFocus(1006)</visible>
           <control type="textbox">
             <include>AlaskaB_ContextMenu_LabelNF</include>
             <label>$INFO[Control.GetLabel(1006)]</label>
@@ -211,20 +154,9 @@
             <label>$INFO[Control.GetLabel(1006)]</label>
           </control>
         </control>
-
-        <!-- <control type="label">
-          <include>AlaskaB_ContextMenu_LabelNF</include>
-          <label>$INFO[Control.GetLabel(1007)]</label>
-          <visible>Control.IsVisible(1007)</visible>
-          <animation type="conditional" condition="!ControlGroup(996).HasFocus(1007)">
-            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="200" />
-          </animation>
-        </control> -->
-
         <control type="group">
           <include>AlaskaB_ContextMenu_GroupNF</include>
-          <visible>Control.IsVisible(1007) + [ControlGroup(996).HasFocus(1005) | ControlGroup(996).HasFocus(1006) | ControlGroup(996).HasFocus(1008) | ControlGroup(996).HasFocus(1009)]</visible>
+          <visible>Control.IsVisible(1007) + !ControlGroup(996).HasFocus(1007)</visible>
           <control type="textbox">
             <include>AlaskaB_ContextMenu_LabelNF</include>
             <label>$INFO[Control.GetLabel(1007)]</label>
@@ -238,20 +170,9 @@
             <label>$INFO[Control.GetLabel(1007)]</label>
           </control>
         </control>
-
-        <!-- <control type="label">
-          <include>AlaskaB_ContextMenu_LabelNF</include>
-          <label>$INFO[Control.GetLabel(1008)]</label>
-          <visible>Control.IsVisible(1008)</visible>
-          <animation type="conditional" condition="!ControlGroup(996).HasFocus(1008)">
-            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="200" />
-          </animation>
-        </control> -->
-
         <control type="group">
           <include>AlaskaB_ContextMenu_GroupNF</include>
-          <visible>Control.IsVisible(1008) + [ControlGroup(996).HasFocus(1006) | ControlGroup(996).HasFocus(1007) | ControlGroup(996).HasFocus(1009) | ControlGroup(996).HasFocus(1010)]</visible>
+          <visible>Control.IsVisible(1008) + !ControlGroup(996).HasFocus(1008)</visible>
           <control type="textbox">
             <include>AlaskaB_ContextMenu_LabelNF</include>
             <label>$INFO[Control.GetLabel(1008)]</label>
@@ -265,74 +186,104 @@
             <label>$INFO[Control.GetLabel(1008)]</label>
           </control>
         </control>
-
-        <control type="label">
-          <include>AlaskaB_ContextMenu_LabelNF</include>
-          <label>$INFO[Control.GetLabel(1009)]</label>
-          <visible>Control.IsVisible(1009)</visible>
-          <animation type="conditional" condition="!ControlGroup(996).HasFocus(1009)">
-            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="200" />
-          </animation>
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupNF</include>
+          <visible>Control.IsVisible(1009) + !ControlGroup(996).HasFocus(1009)</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelNF</include>
+            <label>$INFO[Control.GetLabel(1009)]</label>
+          </control>
         </control>
-        <control type="label">
-          <include>AlaskaB_ContextMenu_LabelNF</include>
-          <label>$INFO[Control.GetLabel(1010)]</label>
-          <visible>Control.IsVisible(1010)</visible>
-          <animation type="conditional" condition="!ControlGroup(996).HasFocus(1010)">
-            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="200" />
-          </animation>
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupFO</include>
+          <visible>Control.IsVisible(1009) + ControlGroup(996).HasFocus(1009)</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelFO</include>
+            <label>$INFO[Control.GetLabel(1009)]</label>
+          </control>
         </control>
-        <control type="label">
-          <include>AlaskaB_ContextMenu_LabelNF</include>
-          <label>$INFO[Control.GetLabel(1011)]</label>
-          <visible>Control.IsVisible(1011)</visible>
-          <animation type="conditional" condition="!ControlGroup(996).HasFocus(1011)">
-            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="200" />
-          </animation>
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupNF</include>
+          <visible>Control.IsVisible(1010) + !ControlGroup(996).HasFocus(1010)</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelNF</include>
+            <label>$INFO[Control.GetLabel(1010)]</label>
+          </control>
         </control>
-        <control type="label">
-          <include>AlaskaB_ContextMenu_LabelNF</include>
-          <label>$INFO[Control.GetLabel(1012)]</label>
-          <visible>Control.IsVisible(1012)</visible>
-          <animation type="conditional" condition="!ControlGroup(996).HasFocus(1012)">
-            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="200" />
-          </animation>
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupFO</include>
+          <visible>Control.IsVisible(1010) + ControlGroup(996).HasFocus(1010)</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelFO</include>
+            <label>$INFO[Control.GetLabel(1010)]</label>
+          </control>
         </control>
-        <control type="label">
-          <include>AlaskaB_ContextMenu_LabelNF</include>
-          <label>$INFO[Control.GetLabel(1013)]</label>
-          <visible>Control.IsVisible(1013)</visible>
-          <animation type="conditional" condition="!ControlGroup(996).HasFocus(1013)">
-            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="200" />
-          </animation>
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupNF</include>
+          <visible>Control.IsVisible(1011) + !ControlGroup(996).HasFocus(1011)</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelNF</include>
+            <label>$INFO[Control.GetLabel(1011)]</label>
+          </control>
         </control>
-        <control type="label">
-          <include>AlaskaB_ContextMenu_LabelNF</include>
-          <label>$INFO[Control.GetLabel(1014)]</label>
-          <visible>Control.IsVisible(1014)</visible>
-          <animation type="conditional" condition="!ControlGroup(996).HasFocus(1014)">
-            <effect type="zoom" center="auto" start="100" end="70" time="200" tween="cubic" easing="in" />
-            <effect type="fade" start="100" end="50" time="200" />
-          </animation>
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupFO</include>
+          <visible>Control.IsVisible(1011) + ControlGroup(996).HasFocus(1011)</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelFO</include>
+            <label>$INFO[Control.GetLabel(1011)]</label>
+          </control>
+        </control>
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupNF</include>
+          <visible>Control.IsVisible(1012) + !ControlGroup(996).HasFocus(1012)</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelNF</include>
+            <label>$INFO[Control.GetLabel(1012)]</label>
+          </control>
+        </control>
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupFO</include>
+          <visible>Control.IsVisible(1012) + ControlGroup(996).HasFocus(1012)</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelFO</include>
+            <label>$INFO[Control.GetLabel(1012)]</label>
+          </control>
+        </control>
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupNF</include>
+          <visible>Control.IsVisible(1013) + !ControlGroup(996).HasFocus(1013)</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelNF</include>
+            <label>$INFO[Control.GetLabel(1013)]</label>
+          </control>
+        </control>
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupFO</include>
+          <visible>Control.IsVisible(1013) + ControlGroup(996).HasFocus(1013)</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelFO</include>
+            <label>$INFO[Control.GetLabel(1013)]</label>
+          </control>
+        </control>
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupNF</include>
+          <visible>Control.IsVisible(1014) + !ControlGroup(996).HasFocus(1014)</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelNF</include>
+            <label>$INFO[Control.GetLabel(1014)]</label>
+          </control>
+        </control>
+        <control type="group">
+          <include>AlaskaB_ContextMenu_GroupFO</include>
+          <visible>Control.IsVisible(1014) + ControlGroup(996).HasFocus(1014)</visible>
+          <control type="textbox">
+            <include>AlaskaB_ContextMenu_LabelFO</include>
+            <label>$INFO[Control.GetLabel(1014)]</label>
+          </control>
         </control>
       </control>
-
     </control>
-
-    <!-- <control type="image">
-			<include>Dimensions_Fullscreen</include>
-			<texture fallback="special://skin/extras/backgrounds/SKINDEFAULT/background.png">$VAR[Background_Image]</texture>
-			<visible>Window.IsActive(shutdownmenu) | Window.IsActive(FileBrowser) | Window.IsActive(progressdialog) | Window.IsActive(okdialog)</visible>
-			<colordiffuse>FilterDiffuse</colordiffuse>
-			<animation effect="fade" end="100" start="0" time="200">Visible</animation>
-			<animation effect="fade" end="0" start="100" time="400">Hidden</animation>
-		</control> -->
-
   </controls>
 
 </window>
