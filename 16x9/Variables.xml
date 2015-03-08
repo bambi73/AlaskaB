@@ -641,4 +641,12 @@
     <value>$INFO[ListItem.Icon]</value>
   </variable>
 
+  <variable name="AlaskaB_ContextMenu_Button_1001">
+    <value condition="StringCompare(Control.GetLabel(1001),$LOCALIZE[208])">$LOCALIZE[208]</value>
+    <value>PSVZ</value>
+  </variable>
+
+
+
+  
 </includes>

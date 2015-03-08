@@ -143,8 +143,64 @@ if sys.argv[1] == 'prepareShutdownMenu2':
     list = window.getControl(int(sys.argv[2]))
     list.setStaticContent(listItemList)
 
-elif sys.argv[1] == 'processShutdownMenu':    
+if sys.argv[1] == 'processShutdownMenu':    
     xbmc.log('processShutdownMenu')
+
+if sys.argv[1] == 'prepareContextMenu':
+    translationIDs = [ 208, 13347, 586, 14076, 20351, 16103, 16104, 16105, 16106, 16107, 646 ]
+
+    #for buttonId in range(int(sys.argv[2]), int(sys.argv[3]) + 1):
+        #xbmc.log('      <control type="group">')
+        #xbmc.log('        <visible>Control.IsVisible(%i)</visible>' % buttonId)
+        
+        #for translationID in translationIDs:
+          #xbmc.log('        <control type="button" id="%i">' % (buttonId + 1000))
+          #xbmc.log('          <include>HiddenControl</include>')
+          #xbmc.log('          <label>$LOCALIZE[%i]</label>' % translationID)
+          #xbmc.log('          <visible>StringCompare(Control.GetLabel(%i),$LOCALIZE[%i])</visible>' % (buttonId, translationID))
+          #xbmc.log('        </control>')
+
+        #xbmc.log('      </control>')
+
+    for buttonId in range(int(sys.argv[2]), int(sys.argv[3]) + 1):
+        xbmc.log('        <item>')
+        xbmc.log('          <label>$INFO[Control.GetLabel(%i)]</label>' % (buttonId + 1000))
+        xbmc.log('          <onclick>Control.Message(%i,click)</onclick>' % buttonId)
+        xbmc.log('          <visible>Control.IsVisible(%i)</visible>' % (buttonId + 1000))
+        xbmc.log('        </item>')
+        #xbmc.log('        <item>')
+        #xbmc.log('          <label>$INFO[Control.GetLabel(%i)]</label>' % buttonId)
+        #xbmc.log('          <onclick>Control.Message(%i,click)</onclick>' % buttonId)
+        #xbmc.log('          <visible>!Control.IsVisible(%i)</visible>' % (buttonId + 1000))
+        #xbmc.log('        </item>')
+        
+
+    #newButton = xbmcgui.ControlButton(-10, -50, 1, 1, 'XX$LOCALIZE[208]')
+    #newButton.setVisibleCondition('StringCompare(Control.GetLabel(1001),$LOCALIZE[208])')
+    #window.addControl(newButton)
+    
+    #for buttonId in range(int(sys.argv[2]), int(sys.argv[3]) + 1):
+        #if(xbmc.getCondVisibility("Control.IsVisible(%i)" % buttonId)):
+            #button = window.getControl(buttonId)
+            #localizedString = xbmc.getLocalizedString(208)
+            #if(localizedString and localizedString == button.getLabel()):
+                #xbmc.log("localized string matched %s" % localizedString)
+                #xbmc.log("new buttonId %i" % newButton.getId())
+            
+            #buttonDest = window.getControl(buttonId + 1000)
+            #if(buttonDest):
+                #xbmc.log("setting button %i label to %s" % (buttonId + 1000, buttonSrc.getLabel()))
+                #buttonDest.setLabel(buttonSrc.getLabel())
+                #buttonDest.setLabel('PlayXXX')
+                #window.setProperty('AlaskaB.DialogContextMenu.Label_%i' % buttonId, '%s-%s' % (buttonSrc.getLabel(), 'X'))
+            #else:
+                #xbmc.log("not found button %i" % (buttonId + 1000))
+            
+            #listItem = xbmcgui.ListItem(label=button.getLabel())
+            #listItem.setProperty('onClick','Quit()')
+            #listItem.setProperty('buttonId', str(buttonId))
+            #listItemList.append(listItem)
+            #xbmc.log("adding %i" % buttonId)
 
     
 

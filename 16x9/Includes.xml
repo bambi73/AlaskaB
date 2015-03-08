@@ -736,10 +736,20 @@
 		<textcolor>Light</textcolor>
 	</include>
 
-	<include name="ContextMenuValue_Focus">
-		<left>0</left>
+	<include name="ContextMenuValue2">
+		<left>10</left>
 		<top>33</top>
-		<width>1600</width>
+		<width>310</width>
+		<height>76</height>
+		<align>center</align>
+		<font>Font_Black_Caps_44</font>
+		<textcolor>Light</textcolor>
+	</include>
+
+	<include name="ContextMenuValue_Focus">
+		<left>15</left>
+		<top>33</top>
+		<width>570</width>
 		<height>76</height>
 		<align>center</align>
 		<font>Font_Black_Caps_76</font>
