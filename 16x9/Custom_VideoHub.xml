@@ -14,6 +14,7 @@
 
     <control type="group">
       <include>AlaskaB_VideoHub_Background</include>
+      <include>Animation_ZoomedByMenuOrProperty</include>
       <include>Animation_ZoomInZoomOutToHome</include>
       <include>Animation_ZoomOutZoomInToVideoLibrary</include>
 
@@ -34,7 +35,7 @@
             <onleft condition="IntegerGreaterThan(Container(8099).NumItems,1)">SetProperty(AlaskaB.VideoHub.ActiveWidget,8015,54)</onleft>
             <onleft condition="IntegerGreaterThan(Container(8099).NumItems,1)">8016</onleft>
             <onright>8000</onright>
-            <autoscroll time="15000">!Control.HasFocus(8010) + IntegerGreaterThan(Container(8010).NumItems,1)</autoscroll>
+            <autoscroll time="15000">!Control.HasFocus(8010) + IntegerGreaterThan(Container(8010).NumItems,1) + !Window.IsActive(shutdownmenu)</autoscroll>
             <visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8010) + IntegerGreaterThan(Container(8010).NumItems,0)</visible>
             <content target="video">$INFO[Container(8099).ListItem(0).Property(widgetPlaylist)]</content>
           </control>
@@ -54,7 +55,7 @@
             <onleft condition="!IntegerGreaterThan(Container(8099).NumItems,2)">SetProperty(AlaskaB.VideoHub.ActiveWidget,8027,54)</onleft>
             <onleft condition="!IntegerGreaterThan(Container(8099).NumItems,2)">8028</onleft>
             <onright>8000</onright>
-            <autoscroll time="15000">!Control.HasFocus(8020) + IntegerGreaterThan(Container(8020).NumItems,1)</autoscroll>
+            <autoscroll time="15000">!Control.HasFocus(8020) + IntegerGreaterThan(Container(8020).NumItems,1) + !Window.IsActive(shutdownmenu)</autoscroll>
             <visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8020) + IntegerGreaterThan(Container(8020).NumItems,0)</visible>
             <content target="video">$INFO[Container(8099).ListItem(1).Property(widgetPlaylist)]</content>
           </control>
@@ -74,7 +75,7 @@
             <onleft>SetProperty(AlaskaB.VideoHub.ActiveWidget,8035,54)</onleft>
             <onleft>8036</onleft>
             <onright>8000</onright>
-            <autoscroll time="15000">!Control.HasFocus(8030) + IntegerGreaterThan(Container(8030).NumItems,1)</autoscroll>
+            <autoscroll time="15000">!Control.HasFocus(8030) + IntegerGreaterThan(Container(8030).NumItems,1) + !Window.IsActive(shutdownmenu)</autoscroll>
             <visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8030) + IntegerGreaterThan(Container(8030).NumItems,0)</visible>
             <content target="video">$INFO[Container(8099).ListItem(2).Property(widgetPlaylist)]</content>
           </control>

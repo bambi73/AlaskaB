@@ -405,7 +405,7 @@
   </include>
 
   <constant name="AlaskaB_Menu_Left">0</constant>
-  <constant name="AlaskaB_Menu_Top">407</constant>
+  <constant name="AlaskaB_Menu_Top">409</constant>
 
   <include name="AlaskaB_Menu_Base">
     <left>AlaskaB_Menu_Left</left>
@@ -417,18 +417,18 @@
       </control>
       <control type="image">
         <top>14</top>
-        <height>198</height>
+        <height>194</height>
         <include>AlaskaB_Common_Background</include>
       </control>
       <control type="image">
-        <top>212</top>
+        <top>208</top>
         <include>AlaskaB_Common_Background_Border_Down</include>
       </control>
     </control>
   </include>
 
   <include name="AlaskaB_Menu_List">
-    <top>60</top>
+    <top>58</top>
     <left>-330</left>
     <width>2580</width>
     <height>104</height>
@@ -436,6 +436,7 @@
     <ondown>7010</ondown>
     <onleft>7100</onleft>
     <onright>7100</onright>
+    <onback>7010</onback>
     <viewtype>list</viewtype>
     <focusposition>3</focusposition>
     <orientation>horizontal</orientation>

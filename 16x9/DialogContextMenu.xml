@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="106">
-  <defaultcontrol always="true">996</defaultcontrol>
-  <onload>Control.Message(7000,close,videolibrary)</onload>
-
   <controls>
     <control type="grouplist" id="996">
       <include>HiddenControl</include>
@@ -19,6 +16,7 @@
       <top>400</top>
       <left>AlaskaB_Menu_Left</left>
       <include>Animation_ZoomInMenu</include>
+      <include>Animation_ZoomedByShutdownMenu</include>
 
       <control type="group">
         <control type="image">
