@@ -2,8 +2,6 @@
 <includes>
 
   <default type="label">
-    <left>0</left>
-    <top>0</top>
     <label>-</label>
     <height>66</height>
     <align>left</align>
@@ -18,10 +16,8 @@
   </default>
 
   <default type="fadelabel">
-    <left>0</left>
-    <top>0</top>
-    <height>66</height>
     <label>-</label>
+    <height>66</height>
     <align>left</align>
     <aligny>center</aligny>
     <font>Font_Reg_44</font>
