@@ -34,24 +34,26 @@
         <include>AnimationEffect_ZoomedBy</include>
       </animation>
 
-      <control type="group">
+      <!-- <control type="group">
         <control type="image">
           <left>300</left>
           <width>1320</width>
-          <include>AlaskaB_Common_Background_Border_Up</include>
+          <height>14</height>
+          <texture>dialogs/dialog_yn_bg_border5.png</texture>
         </control>
         <control type="image">
           <top>14</top>
           <left>300</left>
           <width>1320</width>
           <height>90</height>
-          <texture>dialogs/dialog_yn_bg5.png</texture>   <!-- 250px border -->
+          <texture>dialogs/dialog_yn_bg5.png</texture>
         </control>
         <control type="image">
           <top>104</top>
           <left>300</left>
           <width>1320</width>
-          <include>AlaskaB_Common_Background_Delimiter</include>
+          <height>3</height>
+          <texture>dialogs/dialog_yn_bg_delimiter5.png</texture>
         </control>
         <control type="image">
           <top>107</top>
@@ -64,7 +66,8 @@
           <top>273</top>
           <left>300</left>
           <width>1320</width>
-          <include>AlaskaB_Common_Background_Delimiter</include>
+          <height>3</height>
+          <texture>dialogs/dialog_yn_bg_delimiter5.png</texture>
         </control>
         <control type="image">
           <top>276</top>
@@ -77,8 +80,16 @@
           <top>386</top>
           <left>300</left>
           <width>1320</width>
-          <include>AlaskaB_Common_Background_Border_Down</include>
+          <height>14</height>
+          <texture flipy="true">dialogs/dialog_yn_bg_border5.png</texture>
         </control>
+      </control> -->
+
+      <control type="image">
+        <left>300</left>
+        <width>1320</width>
+        <height>400</height>
+        <texture>dialogs/dialog_yn_bg.png</texture>
       </control>
 
       <control type="label" id="1">
@@ -145,7 +156,7 @@
           <textcolor>Light</textcolor>
           <label>$INFO[Control.GetLabel(11)]</label>
           <visible>Control.IsVisible(11) + !Control.HasFocus(11)</visible>
-          <animation effect="zoom" center="610,55" start="100" end="70" time="200" tween="cubic" easing="in" condition="!Control.HasFocus(11)" reversible="false">Conditional</animation>
+          <animation effect="zoom" center="610,55" start="100" end="70" time="150" tween="cubic" easing="in" condition="!Control.HasFocus(11)" reversible="false">Conditional</animation>
         </control>
 
         <control type="label">
@@ -170,7 +181,7 @@
           <textcolor>Light</textcolor>
           <label>$INFO[Control.GetLabel(10)]</label>
           <visible>Control.IsVisible(10) + !Control.HasFocus(10)</visible>
-          <animation effect="zoom" center="0,55" start="100" end="70" time="200" tween="cubic" easing="in" condition="!Control.HasFocus(10)" reversible="false">Conditional</animation>
+          <animation effect="zoom" center="0,55" start="100" end="70" time="150" tween="cubic" easing="in" condition="!Control.HasFocus(10)" reversible="false">Conditional</animation>
         </control>
       </control>      
     </control>
