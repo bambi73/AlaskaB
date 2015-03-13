@@ -25,75 +25,23 @@
     </control>
 
     <control type="group" id="5000">
-      <top>320</top>
+      <top>322</top>
       <left>0</left>
       <width>1920</width>
-      <height>1080</height>
+      <height>396</height>
       <include>Animation_ZoomInMenu</include>
       <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog)">
         <include>AnimationEffect_ZoomedBy</include>
       </animation>
 
-      <!-- <control type="group">
-        <control type="image">
-          <left>300</left>
-          <width>1320</width>
-          <height>14</height>
-          <texture>dialogs/dialog_yn_bg_border5.png</texture>
-        </control>
-        <control type="image">
-          <top>14</top>
-          <left>300</left>
-          <width>1320</width>
-          <height>90</height>
-          <texture>dialogs/dialog_yn_bg5.png</texture>
-        </control>
-        <control type="image">
-          <top>104</top>
-          <left>300</left>
-          <width>1320</width>
-          <height>3</height>
-          <texture>dialogs/dialog_yn_bg_delimiter5.png</texture>
-        </control>
-        <control type="image">
-          <top>107</top>
-          <left>300</left>
-          <width>1320</width>
-          <height>166</height>
-          <texture>dialogs/dialog_yn_bg5.png</texture>
-        </control>
-        <control type="image">
-          <top>273</top>
-          <left>300</left>
-          <width>1320</width>
-          <height>3</height>
-          <texture>dialogs/dialog_yn_bg_delimiter5.png</texture>
-        </control>
-        <control type="image">
-          <top>276</top>
-          <left>300</left>
-          <width>1320</width>
-          <height>110</height>
-          <texture>dialogs/dialog_yn_bg5.png</texture>
-        </control>
-        <control type="image">
-          <top>386</top>
-          <left>300</left>
-          <width>1320</width>
-          <height>14</height>
-          <texture flipy="true">dialogs/dialog_yn_bg_border5.png</texture>
-        </control>
-      </control> -->
-
       <control type="image">
         <left>300</left>
         <width>1320</width>
-        <height>400</height>
+        <height>396</height>
         <texture>dialogs/dialog_yn_bg.png</texture>
       </control>
-
       <control type="label" id="1">
-        <top>38</top>
+        <top>37</top>
         <centerleft>50%</centerleft>
         <width>1300</width>
         <height>42</height>
@@ -102,9 +50,8 @@
         <font>Font_Black_Caps_42</font>
         <textcolor>Light</textcolor>
       </control>
-
       <control type="textbox" id="9">
-        <top>131</top>
+        <top>128</top>
         <centerleft>50%</centerleft>
         <width>1300</width>
         <height>130</height>
@@ -113,19 +60,8 @@
         <textcolor>Light</textcolor>
       </control>
 
-      <!-- <control type="textbox">
-        <top>131</top>
-        <centerleft>50%</centerleft>
-        <width>1300</width>
-        <height>130</height>
-        <align>center</align>
-        <font>Font_Light_Caps_34</font>
-        <textcolor>Light</textcolor>
-        <label>Refresh info for all episodes?[CR]Refresh info for all episodes?[CR]Refresh info for all episodes?</label>
-      </control> -->
-
       <control type="grouplist">
-        <top>276</top>
+        <top>272</top>
         <centerleft>50%</centerleft>
         <width>1300</width>
         <height>110</height>
