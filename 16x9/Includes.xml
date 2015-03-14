@@ -816,16 +816,29 @@
 
   <!--Keyboard Buttons No Caps -->
 
-  <include name="KeyboardButtons">
-    <width>66</width>
+  <include name="KeyboardButtonBase">
     <height>66</height>
-    <align>center</align>
     <aligny>center</aligny>
     <textcolor>Light</textcolor>
     <focusedcolor>Heavy</focusedcolor>    
-    <textoffsetx>10</textoffsetx>
     <texturefocus>-</texturefocus>
-    <animation effect="zoom" center="auto" start="100" end="140" time="125" tween="cubic" easing="out">Focus</animation>
+    <alttexturefocus>-</alttexturefocus>
+  </include>
+
+  <include name="KeyboardButtonSystem">
+    <include>KeyboardButtonBase</include>
+    <width>450</width>
+    <align>right</align>
+    <textoffsetx>60</textoffsetx>
+    <animation effect="zoom" center="375,33" start="100" end="125" time="125" tween="cubic" easing="out">Focus</animation>
+  </include>
+
+  <include name="KeyboardButtonAlphanumeric">
+    <include>KeyboardButtonBase</include>
+    <width>66</width>
+    <align>center</align>
+    <textoffsetx>10</textoffsetx>
+    <animation effect="zoom" center="auto" start="100" end="135" time="125" tween="cubic" easing="out">Focus</animation>
   </include>
 
 </includes>

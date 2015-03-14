@@ -99,7 +99,7 @@
 
       <control type="fixedlist" id="7100">
         <include>AlaskaB_Menu_List</include>
-        <visible allowhiddenfocus="true">Control.HasFocus(7100) + !Window.IsActive(shutdownmenu) + !Window.IsActive(DialogYesNo.xml) + !Window.IsActive(progressdialog) + !Window.IsActive(okdialog)</visible>
+        <visible allowhiddenfocus="true">Control.HasFocus(7100) + !Window.IsActive(shutdownmenu) + !Window.IsActive(DialogYesNo.xml) + !Window.IsActive(progressdialog) + !Window.IsActive(okdialog) + !Window.IsActive(virtualkeyboard)</visible>
         <content>
           <!-- Filter -->
           <item id="1">
