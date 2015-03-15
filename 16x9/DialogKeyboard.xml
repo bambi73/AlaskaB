@@ -438,7 +438,7 @@
             <textoffsetx>10</textoffsetx>
             <label>20182</label>
             <include>KeyboardButtonBase</include>
-            <animation effect="zoom" center="auto" start="100" end="125" time="125" tween="cubic" easing="out">Focus</animation>
+            <animation effect="zoom" center="auto" start="100" end="115" time="125" tween="cubic" easing="out">Focus</animation>
           </control>
           <!-- Next -->
           <control type="button" id="306">
@@ -455,7 +455,7 @@
             <textoffsetx>20</textoffsetx>
             <label>20181</label>
             <include>KeyboardButtonBase</include>
-            <animation effect="zoom" center="35,33" start="100" end="125" time="125" tween="cubic" easing="out">Focus</animation>
+            <animation effect="zoom" center="38,33" start="100" end="115" time="125" tween="cubic" easing="out">Focus</animation>
           </control>
         </control>
       </control>

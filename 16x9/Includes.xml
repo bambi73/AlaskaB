@@ -830,7 +830,7 @@
     <width>450</width>
     <align>right</align>
     <textoffsetx>60</textoffsetx>
-    <animation effect="zoom" center="375,33" start="100" end="125" time="125" tween="cubic" easing="out">Focus</animation>
+    <animation effect="zoom" center="380,33" start="100" end="115" time="125" tween="cubic" easing="out">Focus</animation>
   </include>
 
   <include name="KeyboardButtonAlphanumeric">
@@ -838,7 +838,7 @@
     <width>66</width>
     <align>center</align>
     <textoffsetx>10</textoffsetx>
-    <animation effect="zoom" center="auto" start="100" end="135" time="125" tween="cubic" easing="out">Focus</animation>
+    <animation effect="zoom" center="auto" start="100" end="125" time="125" tween="cubic" easing="out">Focus</animation>
   </include>
 
 </includes>
