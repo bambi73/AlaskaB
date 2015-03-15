@@ -6,13 +6,14 @@
   </coordinates>
 
   <controls>
-    <!-- <include>Global_Background</include> -->
-
     <control type="group">
       <top>174</top>
       <centerleft>50%</centerleft>
       <width>1720</width>
       <include>Animation_ZoomInMenu</include>
+      <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog)">
+        <include>AnimationEffect_ZoomedBy</include>
+      </animation>
 
       <control type="image">
         <width>1720</width>
@@ -477,10 +478,7 @@
           <height>110</height>
           <align>right</align>
           <aligny>center</aligny>
-          <textcolor>Light</textcolor>
-          <focusedcolor>Heavy</focusedcolor>    
           <font>Font_Black_Caps_76</font>
-          <texturefocus>-</texturefocus>
           <label>20177</label>
           <animation effect="zoom" center="610,55" start="70" end="100" time="150" tween="cubic" easing="out" condition="Control.HasFocus(300)" reversible="false">Conditional</animation>
           <animation effect="zoom" center="610,55" start="100" end="70" time="125" tween="cubic" easing="in" condition="!Control.HasFocus(300)" reversible="false">Conditional</animation>
@@ -492,10 +490,7 @@
           <height>110</height>
           <align>left</align>
           <aligny>center</aligny>
-          <textcolor>Light</textcolor>
-          <focusedcolor>Heavy</focusedcolor>    
           <font>Font_Black_Caps_76</font>
-          <texturefocus>-</texturefocus>
           <label>222</label>
           <animation effect="zoom" center="0,55" start="70" end="100" time="150" tween="cubic" easing="out" condition="Control.HasFocus(301)" reversible="false">Conditional</animation>
           <animation effect="zoom" center="0,55" start="100" end="70" time="125" tween="cubic" easing="in" condition="!Control.HasFocus(301)" reversible="false">Conditional</animation>

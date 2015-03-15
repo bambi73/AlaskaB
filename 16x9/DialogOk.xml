@@ -6,16 +6,16 @@
   </coordinates>
 
   <controls>
-    <control type="button" id="10">
+    <!-- <control type="button" id="10">
       <include>HiddenControl</include>
       <label>106</label>
       <onclick>Close</onclick>
-    </control>
+    </control> -->
 
     <control type="group" id="5000">
       <top>322</top>
       <left>0</left>
-      <width>1920</width>
+      <width>FullWidth</width>
       <height>396</height>
       <include>Animation_ZoomInMenu</include>
       <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(DialogYesNo.xml)">
@@ -28,6 +28,7 @@
         <height>396</height>
         <texture>dialogs/dialog_yn_bg.png</texture>
       </control>
+      
       <control type="label" id="1">
         <top>37</top>
         <centerleft>50%</centerleft>
@@ -47,41 +48,16 @@
         <font>Font_Light_Caps_34</font>
         <textcolor>Light</textcolor>
       </control>
-
-      <control type="grouplist">
+      <control type="button" id="10">
         <top>272</top>
         <centerleft>50%</centerleft>
         <width>1300</width>
         <height>110</height>
-        <itemgap>80</itemgap>
         <align>center</align>
-        <orientation>horizontal</orientation>
-        <scrolltime tween="sine" easing="out">320</scrolltime>      
-
-        <control type="label">
-          <centerleft>50%</centerleft>
-          <width>610</width>
-          <height>110</height>
-          <align>center</align>
-          <aligny>center</aligny>
-          <font>Font_Black_Caps_76</font>
-          <textcolor>Heavy</textcolor>
-          <label>$INFO[Control.GetLabel(10)]</label>
-          <visible>Control.IsVisible(10) + Control.HasFocus(10)</visible>
-          <animation effect="zoom" center="auto" start="70" end="100" time="200" tween="cubic" easing="out" condition="Control.HasFocus(10)" reversible="false">Conditional</animation>
-        </control>
-        <control type="label">
-          <centerleft>50%</centerleft>
-          <width>610</width>
-          <height>110</height>
-          <align>center</align>
-          <aligny>center</aligny>
-          <font>Font_Black_Caps_76</font>
-          <textcolor>Light</textcolor>
-          <label>$INFO[Control.GetLabel(10)]</label>
-          <visible>Control.IsVisible(10) + !Control.HasFocus(10)</visible>
-          <animation effect="zoom" center="auto" start="100" end="70" time="150" tween="cubic" easing="in" condition="!Control.HasFocus(10)" reversible="false">Conditional</animation>
-        </control>
+        <aligny>center</aligny>
+        <font>Font_Black_Caps_76</font>
+        <animation effect="zoom" center="auto" start="70" end="100" time="150" tween="cubic" easing="out" condition="Control.HasFocus(10)" reversible="false">Conditional</animation>
+        <animation effect="zoom" center="auto" start="100" end="70" time="125" tween="cubic" easing="in" condition="!Control.HasFocus(10)" reversible="false">Conditional</animation>
       </control>
     </control>
 

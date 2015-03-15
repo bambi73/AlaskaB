@@ -41,134 +41,120 @@
   </default>
 
   <default type="button">
-    <left>0</left>
-    <top>0</top>
     <width>400</width>
     <height>66</height>
+    <textoffsetx>20</textoffsetx>
     <aligny>center</aligny>
     <font>Font_Reg_44</font>
     <label>-</label>
-    <textoffsetx>20</textoffsetx>
     <textcolor>Light</textcolor>
+    <focusedcolor>Heavy</focusedcolor>    
     <invalidcolor>DisabledColour</invalidcolor>
-    <focusedcolor>ButtonLabel</focusedcolor>
     <disabledcolor>DisabledColour</disabledcolor>
-    <texturefocus>common/Button_FO.png</texturefocus>
+    <texturefocus>-</texturefocus>
     <texturenofocus>-</texturenofocus>
     <pulseonselect>false</pulseonselect>
   </default>
 
   <default type="togglebutton">
-    <left>0</left>
-    <top>0</top>
     <width>400</width>
     <height>66</height>
-    <label>-</label>
     <textoffsetx>20</textoffsetx>
+    <aligny>center</aligny>
+    <label>-</label>
     <font>Font_Reg_44</font>
     <textcolor>Light</textcolor>
-    <focusedcolor>ButtonLabel</focusedcolor>
+    <focusedcolor>Heavy</focusedcolor>    
     <disabledcolor>DisabledColour</disabledcolor>
+    <texturefocus>-</texturefocus>
     <texturenofocus>-</texturenofocus>
-    <texturefocus>common/Button_FO.png</texturefocus>
+    <alttexturefocus>-</alttexturefocus>
     <alttexturenofocus>-</alttexturenofocus>
-    <alttexturefocus>common/Button_FO.png</alttexturefocus>
-    <aligny>center</aligny>
     <pulseonselect>false</pulseonselect>
   </default>
 
   <default type="radiobutton">
-    <left>0</left>
-    <top>0</top>
     <width>400</width>
     <height>66</height>
+    <textoffsetx>20</textoffsetx>
     <aligny>center</aligny>
     <font>Font_Reg_44</font>
     <label>-</label>
     <textcolor>Light</textcolor>
-    <focusedcolor>ButtonLabel</focusedcolor>
+    <focusedcolor>Heavy</focusedcolor>    
     <disabledcolor>DisabledColour</disabledcolor>
+    <texturenofocus>-</texturenofocus>
+    <texturefocus>-</texturefocus>
     <radiowidth>95</radiowidth>
     <radioheight>66</radioheight>
-    <texturenofocus>-</texturenofocus>
-    <texturefocus>common/Button_FO.png</texturefocus>
     <textureradiofocus>common/Radio_FO.png</textureradiofocus>
     <textureradionofocus>common/Radio_NF.png</textureradionofocus>
-    <textoffsetx>20</textoffsetx>
     <pulseonselect>false</pulseonselect>
   </default>
 
   <default type="spincontrolex">
-    <left>0</left>
-    <top>0</top>
     <width>400</width>
     <height>66</height>
+    <textoffsetx>20</textoffsetx>
+    <aligny>center</aligny>
     <label>-</label>
     <font>Font_Reg_44</font>
+    <textcolor>Light</textcolor>
+    <focusedcolor>Heavy</focusedcolor>    
+    <disabledcolor>DisabledColour</disabledcolor>
+    <texturenofocus>-</texturenofocus>
+    <texturefocus>-</texturefocus>
     <spinwidth>35</spinwidth>
     <spinheight>66</spinheight>
-    <texturenofocus>-</texturenofocus>
-    <texturefocus>common/Button_FO.png</texturefocus>
     <textureup>common/Arrow_Up_NF.png</textureup>
     <texturedown>common/Arrow_Down_NF.png</texturedown>
     <textureupfocus>common/Arrow_Up_FO.png</textureupfocus>
     <texturedownfocus>common/Arrow_Down_FO.png</texturedownfocus>
-    <textcolor>Light</textcolor>
-    <focusedcolor>ButtonLabel</focusedcolor>
-    <disabledcolor>DisabledColour</disabledcolor>
-    <textoffsetx>20</textoffsetx>
-    <aligny>center</aligny>
-    <reverse>yes</reverse>
     <pulseonselect>false</pulseonselect>
+    <reverse>yes</reverse>
   </default>
 
   <default type="spincontrol">
-    <left>0</left>
-    <top>0</top>
     <height>66</height>
     <width>66</width>
+    <textoffsetx>20</textoffsetx>
+    <align>left</align>
+    <aligny>center</aligny>
+    <font>Font_Reg_44</font>
+    <textcolor>Light</textcolor>
+    <focusedcolor>Heavy</focusedcolor>    
+    <disabledcolor>DisabledColour</disabledcolor>
     <spinwidth>43</spinwidth>
     <spinheight>60</spinheight>
     <textureup>common/Arrow_Up_NF.png</textureup>
     <texturedown>common/Arrow_Down_NF.png</texturedown>
     <textureupfocus>common/Arrow_Up_FO.png</textureupfocus>
     <texturedownfocus>common/Arrow_Down_FO.png</texturedownfocus>
-    <font>Font_Reg_44</font>
-    <textcolor>Light</textcolor>
-    <focusedcolor>ButtonLabel</focusedcolor>
-    <disabledcolor>DisabledColour</disabledcolor>
-    <textoffsetx>20</textoffsetx>
-    <align>left</align>
-    <aligny>center</aligny>
-    <reverse>yes</reverse>
     <pulseonselect>false</pulseonselect>
+    <reverse>yes</reverse>
   </default>
 
   <default type="sliderex">
-    <left>0</left>
-    <top>0</top>
     <height>66</height>
     <width>183</width>
+    <textoffsetx>20</textoffsetx>
+    <textoffsety>0</textoffsety>
+    <align>left</align>
+    <aligny>center</aligny>
+    <font>Font_Reg_44</font>
+    <textcolor>Light</textcolor>
+    <focusedcolor>Heavy</focusedcolor>    
+    <disabledcolor>DisabledColour</disabledcolor>
     <texturenofocus>-</texturenofocus>
-    <texturefocus>common/Button_FO.png</texturefocus>
+    <texturefocus>-</texturefocus>
     <sliderwidth>230</sliderwidth>
     <sliderheight>23</sliderheight>
     <texturesliderbar>osd/SliderBack.png</texturesliderbar>
     <textureslidernib border="2">osd/SliderNibNF.png</textureslidernib>
     <textureslidernibfocus border="2">osd/SliderNibFO.png</textureslidernibfocus>
-    <font>Font_Reg_44</font>
-    <textcolor>Light</textcolor>
-    <focusedcolor>ButtonLabel</focusedcolor>
-    <disabledcolor>DisabledColour</disabledcolor>
-    <textoffsetx>20</textoffsetx>
-    <textoffsety>0</textoffsety>
-    <align>left</align>
-    <aligny>center</aligny>
   </default>
 
   <default type="slider">
-    <left>0</left>
-    <top>0</top>
     <width>360</width>
     <height>23</height>
     <texturefocus>-</texturefocus>
@@ -179,8 +165,6 @@
   </default>
 
   <default type="progress">
-    <left>0</left>
-    <top>0</top>
     <height>44</height>
     <texturebg>-</texturebg>
     <lefttexture>-</lefttexture>
