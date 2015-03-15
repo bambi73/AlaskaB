@@ -6,7 +6,7 @@
   </coordinates>
 
   <controls>
-    <control type="group">
+    <control type="group" id="5000">
       <top>174</top>
       <centerleft>50%</centerleft>
       <width>1720</width>
@@ -103,14 +103,10 @@
         <top>208</top>
 
         <control type="grouplist" id="1100">
-          <left>0</left>
           <top>0</top>
-          <width>1520</width>
-          <height>70</height>
-          <itemgap>20</itemgap>
           <onleft>1100</onleft>
           <onright>1100</onright>
-          <orientation>horizontal</orientation>
+          <include>KeyboardButtonGrouplist</include>
 
           <!-- Layout -->
           <control type="button" id="309">
@@ -168,15 +164,11 @@
         </control>
 
         <control type="grouplist" id="1200">
-          <left>0</left>
           <top>70</top>
-          <width>1520</width>
-          <height>70</height>
-          <itemgap>20</itemgap>
           <onleft>1200</onleft>
           <onright>1200</onright>
-          <orientation>horizontal</orientation>
-
+          <include>KeyboardButtonGrouplist</include>
+          
           <!-- Symbols -->
           <control type="togglebutton" id="304">
             <onup>309</onup>
@@ -248,14 +240,10 @@
         </control>
 
         <control type="grouplist" id="1300">
-          <left>0</left>
           <top>140</top>
-          <width>1520</width>
-          <height>70</height>
-          <itemgap>20</itemgap>
-          <onleft>303</onleft>
-          <onright>303</onright>
-          <orientation>horizontal</orientation>
+          <onleft>1300</onleft>
+          <onright>1300</onright>
+          <include>KeyboardButtonGrouplist</include>
 
           <!-- Caps lock -->
           <control type="togglebutton" id="303">
@@ -328,14 +316,10 @@
         </control>
 
         <control type="grouplist" id="1400">
-          <left>0</left>
           <top>210</top>
-          <width>1520</width>
-          <height>70</height>
-          <itemgap>20</itemgap>
           <onleft>1400</onleft>
           <onright>1400</onright>
-          <orientation>horizontal</orientation>
+          <include>KeyboardButtonGrouplist</include>
 
           <!-- Shift -->
           <control type="togglebutton" id="302">
@@ -408,15 +392,11 @@
         </control>
 
         <control type="grouplist" id="1500">
-          <left>0</left>
           <top>280</top>
-          <width>1520</width>
-          <height>70</height>
-          <itemgap>20</itemgap>
           <onleft>1500</onleft>
           <onright>1500</onright>
           <ondown>2000</ondown>
-          <orientation>horizontal</orientation>
+          <include>KeyboardButtonGrouplist</include>
 
           <!-- IP address -->
           <control type="button" id="307">
@@ -463,37 +443,29 @@
 
       <control type="grouplist" id="2000">
         <top>569</top>
-        <centerleft>50%</centerleft>
-        <width>1300</width>
-        <height>110</height>
-        <itemgap>80</itemgap>
-        <align>center</align>
         <onup>32</onup>
-        <orientation>horizontal</orientation>
-        <scrolltime tween="sine" easing="out">320</scrolltime>      
+        <include>DialogButtonGrouplist</include>
         <!-- Done -->
         <control type="button" id="300">
-          <left>0</left>
-          <width>610</width>
-          <height>110</height>
-          <align>right</align>
-          <aligny>center</aligny>
-          <font>Font_Black_Caps_76</font>
           <label>20177</label>
-          <animation effect="zoom" center="610,55" start="70" end="100" time="150" tween="cubic" easing="out" condition="Control.HasFocus(300)" reversible="false">Conditional</animation>
-          <animation effect="zoom" center="610,55" start="100" end="70" time="125" tween="cubic" easing="in" condition="!Control.HasFocus(300)" reversible="false">Conditional</animation>
+          <include>DialogButtonLeft</include>
+          <animation type="Conditional" condition="Control.HasFocus(300)" reversible="false">
+            <include>AnimationEffect_DialogButtonLeftFocus</include>
+          </animation>
+          <animation type="Conditional" condition="!Control.HasFocus(300)" reversible="false">
+            <include>AnimationEffect_DialogButtonLeftUnfocus</include>
+          </animation>
         </control>
         <!-- Cancel Button -->
         <control type="button" id="301">
-          <left>0</left>
-          <width>610</width>
-          <height>110</height>
-          <align>left</align>
-          <aligny>center</aligny>
-          <font>Font_Black_Caps_76</font>
           <label>222</label>
-          <animation effect="zoom" center="0,55" start="70" end="100" time="150" tween="cubic" easing="out" condition="Control.HasFocus(301)" reversible="false">Conditional</animation>
-          <animation effect="zoom" center="0,55" start="100" end="70" time="125" tween="cubic" easing="in" condition="!Control.HasFocus(301)" reversible="false">Conditional</animation>
+          <include>DialogButtonRight</include>
+          <animation type="Conditional" condition="Control.HasFocus(301)" reversible="false">
+            <include>AnimationEffect_DialogButtonRightFocus</include>
+          </animation>
+          <animation type="Conditional" condition="!Control.HasFocus(301)" reversible="false">
+            <include>AnimationEffect_DialogButtonRightUnfocus</include>
+          </animation>
         </control>
       </control>
     </control>

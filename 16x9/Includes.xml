@@ -814,15 +814,58 @@
     <texture>-</texture>
   </include>
 
-  <!--Keyboard Buttons No Caps -->
+  <!-- Dialog Buttons -->
+  <constant name="DialogControlWidth">1300</constant>
+
+  <include name="DialogButtonGrouplist">
+    <centerleft>50%</centerleft>
+    <width>DialogControlWidth</width>
+    <height>110</height>
+    <itemgap>80</itemgap>
+    <align>center</align>
+    <orientation>horizontal</orientation>
+    <scrolltime tween="sine" easing="out">320</scrolltime>
+  </include>
+
+  <include name="DialogButtonLeft">
+    <left>0</left>
+    <width>610</width>
+    <height>110</height>
+    <align>right</align>
+    <aligny>center</aligny>
+    <font>Font_Black_Caps_76</font>
+  </include>
+
+  <include name="DialogButtonRight">
+    <left>0</left>
+    <width>610</width>
+    <height>110</height>
+    <align>left</align>
+    <aligny>center</aligny>
+    <font>Font_Black_Caps_76</font>
+  </include>
+
+  <include name="DialogButtonCenter">
+    <centerleft>50%</centerleft>
+    <width>DialogControlWidth</width>
+    <height>110</height>
+    <align>center</align>
+    <aligny>center</aligny>
+    <font>Font_Black_Caps_76</font>
+  </include>
+
+  <!-- Keyboard Buttons -->
+  <include name="KeyboardButtonGrouplist">
+    <left>0</left>
+    <width>1520</width>
+    <height>70</height>
+    <itemgap>20</itemgap>
+    <orientation>horizontal</orientation>
+  </include>
 
   <include name="KeyboardButtonBase">
     <height>66</height>
     <aligny>center</aligny>
-    <textcolor>Light</textcolor>
-    <focusedcolor>Heavy</focusedcolor>    
-    <texturefocus>-</texturefocus>
-    <alttexturefocus>-</alttexturefocus>
   </include>
 
   <include name="KeyboardButtonSystem">

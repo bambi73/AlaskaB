@@ -31,53 +31,43 @@
       <control type="label" id="1">
         <top>37</top>
         <centerleft>50%</centerleft>
-        <width>1300</width>
+        <width>DialogControlWidth</width>
         <height>42</height>
         <align>center</align>
         <aligny>center</aligny>
         <font>Font_Black_Caps_42</font>
-        <textcolor>Light</textcolor>
       </control>
       <control type="textbox" id="9">
         <top>128</top>
         <centerleft>50%</centerleft>
-        <width>1300</width>
+        <width>DialogControlWidth</width>
         <height>130</height>
         <align>center</align>
         <font>Font_Light_Caps_34</font>
-        <textcolor>Light</textcolor>
       </control>
 
       <control type="grouplist">
         <top>272</top>
-        <centerleft>50%</centerleft>
-        <width>1300</width>
-        <height>110</height>
-        <itemgap>80</itemgap>
-        <align>center</align>
-        <orientation>horizontal</orientation>
-        <scrolltime tween="sine" easing="out">320</scrolltime>
+        <include>DialogButtonGrouplist</include>
         <!-- Yes Button -->
         <control type="button" id="11">
-          <left>0</left>
-          <width>610</width>
-          <height>110</height>
-          <align>right</align>
-          <aligny>center</aligny>
-          <font>Font_Black_Caps_76</font>
-          <animation effect="zoom" center="610,55" start="70" end="100" time="150" tween="cubic" easing="out" condition="Control.HasFocus(11)" reversible="false">Conditional</animation>
-          <animation effect="zoom" center="610,55" start="100" end="70" time="125" tween="cubic" easing="in" condition="!Control.HasFocus(11)" reversible="false">Conditional</animation>
+          <include>DialogButtonLeft</include>
+          <animation type="Conditional" condition="Control.HasFocus(11)" reversible="false">
+            <include>AnimationEffect_DialogButtonLeftFocus</include>
+          </animation>
+          <animation type="Conditional" condition="!Control.HasFocus(11)" reversible="false">
+            <include>AnimationEffect_DialogButtonLeftUnfocus</include>
+          </animation>
         </control>
         <!-- No Button -->
         <control type="button" id="10">
-          <left>0</left>
-          <width>610</width>
-          <height>110</height>
-          <align>left</align>
-          <aligny>center</aligny>
-          <font>Font_Black_Caps_76</font>
-          <animation effect="zoom" center="0,55" start="70" end="100" time="150" tween="cubic" easing="out" condition="Control.HasFocus(10)" reversible="false">Conditional</animation>
-          <animation effect="zoom" center="0,55" start="100" end="70" time="125" tween="cubic" easing="in" condition="!Control.HasFocus(10)" reversible="false">Conditional</animation>
+          <include>DialogButtonRight</include>
+          <animation type="Conditional" condition="Control.HasFocus(10)" reversible="false">
+            <include>AnimationEffect_DialogButtonRightFocus</include>
+          </animation>
+          <animation type="Conditional" condition="!Control.HasFocus(10)" reversible="false">
+            <include>AnimationEffect_DialogButtonRightUnfocus</include>
+          </animation>
         </control>
       </control>
     </control>

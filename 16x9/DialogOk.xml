@@ -6,12 +6,6 @@
   </coordinates>
 
   <controls>
-    <!-- <control type="button" id="10">
-      <include>HiddenControl</include>
-      <label>106</label>
-      <onclick>Close</onclick>
-    </control> -->
-
     <control type="group" id="5000">
       <top>322</top>
       <left>0</left>
@@ -28,39 +22,35 @@
         <height>396</height>
         <texture>dialogs/dialog_yn_bg.png</texture>
       </control>
-      
+
       <control type="label" id="1">
         <top>37</top>
         <centerleft>50%</centerleft>
-        <width>1300</width>
+        <width>DialogControlWidth</width>
         <height>42</height>
         <align>center</align>
         <aligny>center</aligny>
         <font>Font_Black_Caps_42</font>
-        <textcolor>Light</textcolor>
       </control>
       <control type="textbox" id="9">
         <top>128</top>
         <centerleft>50%</centerleft>
-        <width>1300</width>
+        <width>DialogControlWidth</width>
         <height>130</height>
         <align>center</align>
         <font>Font_Light_Caps_34</font>
-        <textcolor>Light</textcolor>
       </control>
       <control type="button" id="10">
         <top>272</top>
-        <centerleft>50%</centerleft>
-        <width>1300</width>
-        <height>110</height>
-        <align>center</align>
-        <aligny>center</aligny>
-        <font>Font_Black_Caps_76</font>
-        <animation effect="zoom" center="auto" start="70" end="100" time="150" tween="cubic" easing="out" condition="Control.HasFocus(10)" reversible="false">Conditional</animation>
-        <animation effect="zoom" center="auto" start="100" end="70" time="125" tween="cubic" easing="in" condition="!Control.HasFocus(10)" reversible="false">Conditional</animation>
+        <include>DialogButtonCenter</include>
+        <animation type="Conditional" condition="Control.HasFocus(10)" reversible="false">
+          <include>AnimationEffect_DialogButtonCenterFocus</include>
+        </animation>
+        <animation type="Conditional" condition="!Control.HasFocus(10)" reversible="false">
+          <include>AnimationEffect_DialogButtonCenterUnfocus</include>
+        </animation>
       </control>
     </control>
-
   </controls>
 
 </window>
