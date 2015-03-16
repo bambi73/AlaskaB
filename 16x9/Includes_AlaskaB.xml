@@ -58,28 +58,28 @@
   <include name="AlaskaB_Common_Background">
     <left>-160</left>
     <width>2240</width>
-    <texture>hub/list_bg4.png</texture>
+    <texture>hub/list_bg5.png</texture>
   </include>
 
   <include name="AlaskaB_Common_Background_Delimiter">
     <left>-160</left>
     <width>2240</width>
     <height>3</height>
-    <texture>hub/list_bg_delimiter4.png</texture>
+    <texture>hub/list_bg_delimiter5.png</texture>
   </include>
 
   <include name="AlaskaB_Common_Background_Border_Up">
     <left>-160</left>
     <width>2240</width>
     <height>14</height>
-    <texture>hub/list_bg_border4.png</texture>
+    <texture>hub/list_bg_border5.png</texture>
   </include>
 
   <include name="AlaskaB_Common_Background_Border_Down">
     <left>-160</left>
     <width>2240</width>
     <height>14</height>
-    <texture flipy="true">hub/list_bg_border4.png</texture>
+    <texture flipy="true">hub/list_bg_border5.png</texture>
   </include>
 
   <include name="AlaskaB_Common_Background_Base">

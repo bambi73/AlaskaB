@@ -21,60 +21,6 @@
         <texture>dialogs/dialog_keybord_bg.png</texture>
       </control>
 
-      <!-- <control type="image">
-        <width>1720</width>
-        <height>14</height>
-        <texture>hub/list_bg_border4.png</texture>
-      </control>
-      <control type="image">
-        <top>14</top>
-        <width>1720</width>
-        <height>88</height>
-        <texture>dialogs/dialog_keybord_bg5.png</texture>
-      </control>
-      <control type="image">
-        <top>102</top>
-        <width>1720</width>
-        <height>3</height>
-        <texture>hub/list_bg_delimiter4.png</texture>
-      </control>      
-      <control type="image">
-        <top>105</top>
-        <width>1720</width>
-        <height>88</height>
-        <texture>dialogs/dialog_keybord_bg5.png</texture>
-      </control>
-      <control type="image">
-        <top>193</top>
-        <width>1720</width>
-        <height>3</height>
-        <texture>hub/list_bg_delimiter4.png</texture>
-      </control>      
-      <control type="image">
-        <top>196</top>
-        <width>1720</width>
-        <height>371</height>
-        <texture>dialogs/dialog_keybord_bg5.png</texture>
-      </control>
-      <control type="image">
-        <top>567</top>
-        <width>1720</width>
-        <height>3</height>
-        <texture>hub/list_bg_delimiter4.png</texture>
-      </control>      
-      <control type="image">
-        <top>570</top>
-        <width>1720</width>
-        <height>109</height>
-        <texture>dialogs/dialog_keybord_bg5.png</texture>
-      </control>
-      <control type="image">
-        <top>679</top>
-        <width>1720</width>
-        <height>14</height>
-        <texture flipy="true">hub/list_bg_border4.png</texture>
-      </control> -->
-
       <control type="label" id="311">
         <top>37</top>
         <centerleft>50%</centerleft>
@@ -85,14 +31,6 @@
         <font>Font_Black_Caps_42</font>
         <textcolor>Light</textcolor>
       </control>
-
-      <!-- <control type="image">
-        <left>200</left>
-        <top>116</top>
-        <width>1320</width>
-        <height>66</height>
-        <texture>common/Button_NF.png</texture>
-      </control> -->
       <control type="edit" id="312">
         <centerleft>50%</centerleft>
         <top>116</top>
@@ -475,7 +413,6 @@
         </control>
       </control>
     </control>
-
   </controls>
 
 </window>
