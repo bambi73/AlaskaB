@@ -17,6 +17,12 @@
 
       <control type="image">
         <width>1720</width>
+        <height>693</height>
+        <texture>dialogs/dialog_keybord_bg.png</texture>
+      </control>
+
+      <!-- <control type="image">
+        <width>1720</width>
         <height>14</height>
         <texture>hub/list_bg_border4.png</texture>
       </control>
@@ -24,7 +30,7 @@
         <top>14</top>
         <width>1720</width>
         <height>88</height>
-        <texture>hub/list_bg4.png</texture>
+        <texture>dialogs/dialog_keybord_bg5.png</texture>
       </control>
       <control type="image">
         <top>102</top>
@@ -36,7 +42,7 @@
         <top>105</top>
         <width>1720</width>
         <height>88</height>
-        <texture>hub/list_bg4.png</texture>
+        <texture>dialogs/dialog_keybord_bg5.png</texture>
       </control>
       <control type="image">
         <top>193</top>
@@ -48,7 +54,7 @@
         <top>196</top>
         <width>1720</width>
         <height>371</height>
-        <texture>hub/list_bg4.png</texture>
+        <texture>dialogs/dialog_keybord_bg5.png</texture>
       </control>
       <control type="image">
         <top>567</top>
@@ -60,14 +66,14 @@
         <top>570</top>
         <width>1720</width>
         <height>109</height>
-        <texture>hub/list_bg4.png</texture>
+        <texture>dialogs/dialog_keybord_bg5.png</texture>
       </control>
       <control type="image">
         <top>679</top>
         <width>1720</width>
         <height>14</height>
         <texture flipy="true">hub/list_bg_border4.png</texture>
-      </control>
+      </control> -->
 
       <control type="label" id="311">
         <top>37</top>
@@ -81,7 +87,7 @@
       </control>
 
       <!-- <control type="image">
-        <left>300</left>
+        <left>200</left>
         <top>116</top>
         <width>1320</width>
         <height>66</height>
@@ -168,7 +174,7 @@
           <onleft>1200</onleft>
           <onright>1200</onright>
           <include>KeyboardButtonGrouplist</include>
-          
+
           <!-- Symbols -->
           <control type="togglebutton" id="304">
             <onup>309</onup>
