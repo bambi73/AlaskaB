@@ -60,7 +60,7 @@
               <width>1428</width>
               <height>36</height>
               <haspath>true</haspath>
-              <font>Font_Light_Caps_36</font>
+              <font>Font_Black_Caps_38</font>
               <textcolor>Light</textcolor>
               <label>$VAR[Global_HeadingCategory]</label>
               <visible>!IsEmpty(Control.GetLabel(8200))</visible>

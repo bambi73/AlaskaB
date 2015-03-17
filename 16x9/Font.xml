@@ -79,6 +79,13 @@
 		</font>
 
 		<font>
+			<name>Font_Black_Caps_38</name>
+			<filename>alaska_black_caps.ttf</filename>
+			<style>uppercase</style>
+			<size>38</size>
+		</font>
+
+		<font>
 			<name>Font_Black_Caps_35</name>
 			<filename>alaska_black_caps.ttf</filename>
 			<style>uppercase</style>

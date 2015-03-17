@@ -884,4 +884,48 @@
     <animation effect="zoom" center="auto" start="100" end="125" time="125" tween="cubic" easing="out">Focus</animation>
   </include>
 
+  <!-- Top-Right corner dialogs -->
+  <include name="DialogTopRightCornerBase">
+    <right>0</right>
+    <top>-134</top>
+    <width>910</width>
+    <animation type="WindowOpen" reversible="false">
+      <effect type="slide" start="0,0" end="0,180" time="400" tween="cubic" easing="out" />
+      <effect type="fade" start="0" end="100" time="400" />
+    </animation>
+    <animation type="WindowClose" reversible="false">
+      <effect type="fade" start="100" end="0" time="100" />
+    </animation>
+    <animation type="Conditional" condition="Window.IsVisible(fullscreeninfo) | Window.IsVisible(seekbar) | [Window.IsVisible(visualisation) + Player.ShowInfo]" reversible="true">
+      <effect type="slide" start="0,0" end="0,95" time="400" tween="cubic" easing="out" />
+    </animation>
+  </include>
+
+  <include name="DialogTopRightCornerImage">
+    <left>792</left>
+    <top>0</top>
+    <width>75</width>
+    <height>75</height>
+  </include>
+
+  <include name="DialogTopRightCornerHeader">
+    <right>140</right>
+    <top>0</top>
+    <width>770</width>
+    <height>40</height>
+    <align>right</align>
+    <wrapmultiline>true</wrapmultiline>
+    <font>Font_Black_Caps_38</font>
+  </include>
+
+  <include name="DialogTopRightCornerDetail">
+    <right>140</right>
+    <top>37</top>
+    <width>770</width>
+    <height>36</height>
+    <align>right</align>
+    <wrapmultiline>true</wrapmultiline>
+    <font>Font_Light_Caps_36</font>
+  </include>
+
 </includes>

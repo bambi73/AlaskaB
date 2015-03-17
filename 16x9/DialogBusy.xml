@@ -4,56 +4,27 @@
 
   <controls>
     <control type="group" id="5000">
-      <right>0</right>
-      <top>-134</top>
-      <width>910</width>
-      <animation type="WindowOpen" reversible="false">
-        <effect type="slide" start="0,0" end="0,180" time="400" tween="cubic" easing="out" />
-        <effect type="fade" start="0" end="100" time="400" />
-      </animation>
-      <animation type="Conditional" condition="Window.IsVisible(fullscreeninfo) | Window.IsVisible(seekbar) | [Window.IsVisible(visualisation) + Player.ShowInfo]" reversible="true">
-        <effect type="slide" start="0,0" end="0,95" time="400" tween="cubic" easing="out" />
-      </animation>
-      <animation type="WindowClose" reversible="false">
-        <effect type="fade" start="100" end="0" time="100" />
-      </animation>
+      <include>DialogTopRightCornerBase</include>
       <animation type="Conditional" condition="Window.IsVisible(infodialog)">
         <effect type="fade" start="100" end="0" time="0" />
       </animation>
 
       <control type="label">
-        <right>140</right>
-        <top>0</top>
-        <width>770</width>
-        <height>40</height>
-        <align>right</align>
-        <font>Font_Black_Caps_42</font>
+        <include>DialogTopRightCornerHeader</include>
         <label>$VAR[Busy_Label]</label>
       </control>
       <control type="label">
-        <right>140</right>
-        <top>38</top>
-        <width>770</width>
-        <height>36</height>
-        <align>right</align>
-        <scroll>true</scroll>
-        <font>Font_Light_Caps_36</font>
+        <include>DialogTopRightCornerDetail</include>
         <label>20186</label>
       </control>
 
       <control type="group">
         <control type="image">
-          <left>792</left>
-          <top>0</top>
-          <width>75</width>
-          <height>75</height>
+          <include>DialogTopRightCornerImage</include>
           <texture>dialogs/Dialog_Background.png</texture>
         </control>
         <control type="image">
-          <left>792</left>
-          <top>0</top>
-          <width>75</width>
-          <height>75</height>
+          <include>DialogTopRightCornerImage</include>
           <texture>dialogs/Busy.png</texture>
           <animation effect="rotate" start="360" end="0" center="auto" time="1200" loop="true" condition="true">conditional</animation>
         </control>
