@@ -1,195 +1,209 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="129">
-	<defaultcontrol always="true">10</defaultcontrol>
+  <defaultcontrol always="true">12</defaultcontrol>
+  <coordinates>
+    <origin x="0" y="0"/>
+  </coordinates>
 
-	<controls>
+  <controls>
+    <control type="group" id="5000">
+      <top>246</top>
+      <centerleft>50%</centerleft>
+      <width>1620</width>
+      <include>Animation_ZoomInMenu</include>
+      <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog)">
+        <include>AnimationEffect_ZoomedBy</include>
+      </animation>
 
-		<!-- Background -->
+      <control type="image">
+        <width>1620</width>
+        <height>14</height>
+        <texture>hub/list_bg_border5.png</texture>
+      </control>
+      <control type="image">
+        <top>14</top>
+        <width>1620</width>
+        <height>88</height>
+        <texture>hub/list_bg5.png</texture>
+      </control>
+      <control type="image">
+        <top>102</top>
+        <width>1620</width>
+        <height>3</height>
+        <texture>hub/list_bg_delimiter5.png</texture>
+      </control>      
+      <control type="image">
+        <top>105</top>
+        <width>1620</width>
+        <height>88</height>
+        <texture>hub/list_bg5.png</texture>
+      </control>
+      <control type="image">
+        <top>193</top>
+        <width>1620</width>
+        <height>3</height>
+        <texture>hub/list_bg_delimiter5.png</texture>
+      </control>      
+      <control type="image">
+        <top>196</top>
+        <width>1620</width>
+        <height>225</height>
+        <texture>hub/list_bg5.png</texture>
+      </control>
+      <control type="image">
+        <top>421</top>
+        <width>1620</width>
+        <height>3</height>
+        <texture>hub/list_bg_delimiter5.png</texture>
+      </control>      
+      <control type="image">
+        <top>424</top>
+        <width>1620</width>
+        <height>109</height>
+        <texture>hub/list_bg5.png</texture>
+      </control>
+      <control type="image">
+        <top>533</top>
+        <width>1620</width>
+        <height>14</height>
+        <texture flipy="true">hub/list_bg_border5.png</texture>
+      </control>
 
-		<include>Global_Background</include>
+      <control type="label" id="2">
+        <top>37</top>
+        <centerleft>50%</centerleft>
+        <width>1420</width>
+        <height>42</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <font>Font_Black_Caps_42</font>
+        <textcolor>Light</textcolor>
+      </control>
+      <control type="edit" id="12">
+        <top>116</top>
+        <centerleft>50%</centerleft>
+        <width>1300</width>
+        <height>66</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <textcolor>Light</textcolor>
+        <ondown>10</ondown>
+      </control>
 
-		<!-- Menu -->
+      <control type="group">
+        <left>75</left>
+        <top>208</top>
 
-		<control type="group">
-			<top>TopOffset</top>
-			<left>LeftOffset</left>
-			<include>Animation_ZoomInMenu</include>
+        <control type="grouplist" id="9000">
+          <width>420</width>
+          <height>210</height>
+          <itemgap>0</itemgap>
+          <onright>10</onright>
+          <onup>noop</onup>
+          <ondown>noop</ondown>
+          <orientation>vertical</orientation>
+          <scrolltime tween="sine" easing="out">320</scrolltime>
+          <!-- Browse -->
+          <control type="button" id="11">
+            <include>DialogLeftMenuButton</include>
+            <label>1024</label>
+          </control>
+          <!-- Add -->
+          <control type="button" id="13">
+            <include>DialogLeftMenuButton</include>
+            <label>15019</label>
+          </control>
+          <!-- Remove -->
+          <control type="button" id="14">
+            <include>DialogLeftMenuButton</include>
+            <label>1210</label>
+          </control>
+        </control>
 
-			<!-- Heading label -->
+        <control type="list" id="10">
+          <left>480</left>
+          <width>850</width>
+          <height>210</height>
+          <onleft>9000</onleft>
+          <onup>12</onup>
+          <ondown>9010</ondown>
+          <orientation>vertical</orientation>
+          <scrolltime tween="sine" easing="out">320</scrolltime>
 
-			<control type="label" id="0">
-				<left>544</left>
-				<top>154</top>
-				<width>1254</width>
-				<height>44</height>
-				<font>Font_Reg_Caps_Bold_44</font>
-				<textcolor>Medium</textcolor>
-				<label>1021</label>
-			</control>
+          <itemlayout width="850" height="66">
+            <control type="label">
+              <width>850</width>
+              <height>66</height>
+              <textcolor>Light</textcolor>
+              <label>$INFO[ListItem.Label]</label>
+            </control>
+          </itemlayout>
+          <focusedlayout width="850" height="66">
+            <control type="label">
+              <width>850</width>
+              <height>66</height>
+              <scroll>true</scroll>
+              <textcolor>Heavy</textcolor>
+              <selectedcolor>Heavy</selectedcolor>
+              <label>$INFO[ListItem.Label]</label>
+              <animation effect="zoom" center="40,33" start="100" end="115" time="125" tween="cubic" easing="out">Focus</animation>
+            </control>
+          </focusedlayout>
+        </control>
+      </control>
 
-			<!-- Left grouplist -->
+      <!-- Right list arrows -->
 
-			<control type="grouplist" id="9000">
-				<left>80</left>
-				<top>228</top>
-				<width>360</width>
-				<height>462</height>
-				<itemgap>0</itemgap>
-				<onleft>noop</onleft>
-				<onright>10</onright>
-				<onup>noop</onup>
-				<ondown>9001</ondown>
-				<orientation>vertical</orientation>
-				<scrolltime tween="sine" easing="out">320</scrolltime>
+      <!--  <control type="image">
+        <left>566</left>
+        <top>206</top>
+        <width>32</width>
+        <height>16</height>
+        <texture>common/Scroll_Up.png</texture>
+        <visible>Container(10).HasPrevious</visible>
+      </control>
 
-				<!-- Browse -->
+      <control type="image">
+        <left>566</left>
+        <top>696</top>
+        <width>32</width>
+        <height>16</height>
+        <texture>common/Scroll_Down.png</texture>
+        <visible>Container(10).HasNext</visible>
+      </control> -->
 
-				<control type="button" id="11">
-					<width>360</width>
-					<label>1024</label>
-				</control>
+      <control type="grouplist" id="9010">
+        <!-- <top>569</top> -->
+        <top>423</top>
+        <onup>10</onup>
+        <include>DialogConfirmButtonGrouplist</include>
+        <!-- OK -->
+        <control type="button" id="18">
+          <!-- <label>186</label> -->
+          <label>20177</label>
+          <include>DialogConfirmButtonLeft</include>
+          <animation type="Conditional" condition="Control.HasFocus(18)" reversible="false">
+            <include>AnimationEffect_DialogConfirmButtonLeftFocus</include>
+          </animation>
+          <animation type="Conditional" condition="!Control.HasFocus(18)" reversible="false">
+            <include>AnimationEffect_DialogConfirmButtonLeftUnfocus</include>
+          </animation>
+        </control>
+        <!-- Cancel -->
+        <control type="button" id="19">
+          <label>222</label>
+          <include>DialogConfirmButtonRight</include>
+          <animation type="Conditional" condition="Control.HasFocus(19)" reversible="false">
+            <include>AnimationEffect_DialogConfirmButtonRightFocus</include>
+          </animation>
+          <animation type="Conditional" condition="!Control.HasFocus(19)" reversible="false">
+            <include>AnimationEffect_DialogConfirmButtonRightUnfocus</include>
+          </animation>
+        </control>
+      </control>
 
-				<!-- Add -->
+    </control>
 
-				<control type="button" id="13">
-					<width>360</width>
-					<label>15019</label>
-				</control>
-
-				<!-- Remove -->
-
-				<control type="button" id="14">
-					<width>360</width>
-					<label>1210</label>
-				</control>
-
-			</control>
-
-			<!-- Right list -->
-
-			<control type="list" id="10">
-				<left>544</left>
-				<top>228</top>
-				<width>1260</width>
-				<height>462</height>
-				<onleft>9000</onleft>
-				<onright>noop</onright>
-				<onup>noop</onup>
-				<ondown>12</ondown>
-				<scrolltime tween="sine" easing="out">320</scrolltime>
-
-				<itemlayout width="1260" height="66">
-					<control type="label">
-						<left>25</left>
-						<width>1210</width>
-						<height>66</height>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
-					</control>
-				</itemlayout>
-
-				<focusedlayout width="1260" height="66">
-					<control type="image">
-						<width>1260</width>
-						<height>66</height>
-						<texture>common/Button_FO.png</texture>
-						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(10)">Conditional</animation>
-					</control>
-					<control type="label">
-						<left>25</left>
-						<width>1210</width>
-						<height>66</height>
-						<scroll>true</scroll>
-						<aligny>center</aligny>
-						<textcolor>ButtonLabel</textcolor>
-						<label>$INFO[ListItem.Label]</label>
-					</control>
-				</focusedlayout>
-
-			</control>
-
-			<!-- Right list arrows -->
-
-			<control type="image">
-				<left>566</left>
-				<top>206</top>
-				<width>32</width>
-				<height>16</height>
-				<texture>common/Scroll_Up.png</texture>
-				<visible>Container(10).HasPrevious</visible>
-			</control>
-
-			<control type="image">
-				<left>566</left>
-				<top>696</top>
-				<width>32</width>
-				<height>16</height>
-				<texture>common/Scroll_Down.png</texture>
-				<visible>Container(10).HasNext</visible>
-			</control>
-
-			<!-- Divider -->
-
-			<control type="image">
-				<left>544</left>
-				<top>906</top>
-				<width>1260</width>
-				<height>1</height>
-				<texture>common/Button_NF.png</texture>
-			</control>
-
-			<!-- Name Label -->
-
-			<control type="label">
-				<left>544</left>
-				<top>756</top>
-				<width>1260</width>
-				<label>1022</label>
-			</control>
-
-			<!-- Name -->
-
-			<control type="button" id="12">
-				<left>544</left>
-				<top>822</top>
-				<width>1260</width>
-				<onup>10</onup>
-				<onleft>9000</onleft>
-				<onright>noop</onright>
-				<ondown>9001</ondown>
-			</control>
-
-			<!-- Button grouplist -->
-
-			<control type="grouplist" id="9001">
-				<left>544</left>
-				<top>926</top>
-				<width>1260</width>
-				<itemgap>0</itemgap>
-				<onleft>9000</onleft>
-				<onright>noop</onright>
-				<onup>12</onup>
-				<ondown>noop</ondown>
-				<orientation>horizontal</orientation>
-
-				<!-- OK Button -->
-
-				<control type="button" id="18">
-					<width>420</width>
-					<label>186</label>
-				</control>
-
-				<!-- Cancel Button -->
-
-				<control type="button" id="19">
-					<width>420</width>
-					<label>222</label>
-				</control>
-
-			</control>
-
-		</control>
-
-	</controls>
+  </controls>
 
 </window>

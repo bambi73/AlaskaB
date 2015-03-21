@@ -814,12 +814,22 @@
     <texture>-</texture>
   </include>
 
-  <!-- Dialog Buttons -->
-  <constant name="DialogControlWidth">1300</constant>
+  <!-- Dialog left menu -->
+  <include name="DialogLeftMenuButton">
+    <include>KeyboardButtonBase</include>
+    <width>420</width>
+    <align>right</align>
+    <animation effect="zoom" center="380,33" start="100" end="115" time="125" tween="cubic" easing="out">Focus</animation>
+  </include>
 
-  <include name="DialogButtonGrouplist">
+
+
+  <!-- Dialog confirm button -->
+  <constant name="DialogConfirmControlWidth">1300</constant>
+
+  <include name="DialogConfirmButtonGrouplist">
     <centerleft>50%</centerleft>
-    <width>DialogControlWidth</width>
+    <width>DialogConfirmControlWidth</width>
     <height>110</height>
     <itemgap>80</itemgap>
     <align>center</align>
@@ -827,7 +837,7 @@
     <scrolltime tween="sine" easing="out">320</scrolltime>
   </include>
 
-  <include name="DialogButtonLeft">
+  <include name="DialogConfirmButtonLeft">
     <left>0</left>
     <width>610</width>
     <height>110</height>
@@ -836,7 +846,7 @@
     <font>Font_Black_Caps_76</font>
   </include>
 
-  <include name="DialogButtonRight">
+  <include name="DialogConfirmButtonRight">
     <left>0</left>
     <width>610</width>
     <height>110</height>
@@ -845,9 +855,9 @@
     <font>Font_Black_Caps_76</font>
   </include>
 
-  <include name="DialogButtonCenter">
+  <include name="DialogConfirmButtonCenter">
     <centerleft>50%</centerleft>
-    <width>DialogControlWidth</width>
+    <width>DialogConfirmControlWidth</width>
     <height>110</height>
     <align>center</align>
     <aligny>center</aligny>

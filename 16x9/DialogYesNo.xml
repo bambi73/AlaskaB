@@ -31,7 +31,7 @@
       <control type="label" id="1">
         <top>37</top>
         <centerleft>50%</centerleft>
-        <width>DialogControlWidth</width>
+        <width>DialogConfirmControlWidth</width>
         <height>42</height>
         <align>center</align>
         <aligny>center</aligny>
@@ -40,7 +40,7 @@
       <control type="textbox" id="9">
         <top>128</top>
         <centerleft>50%</centerleft>
-        <width>DialogControlWidth</width>
+        <width>DialogConfirmControlWidth</width>
         <height>130</height>
         <align>center</align>
         <font>Font_Light_Caps_34</font>
@@ -48,25 +48,25 @@
 
       <control type="grouplist">
         <top>272</top>
-        <include>DialogButtonGrouplist</include>
+        <include>DialogConfirmButtonGrouplist</include>
         <!-- Yes Button -->
         <control type="button" id="11">
-          <include>DialogButtonLeft</include>
+          <include>DialogConfirmButtonLeft</include>
           <animation type="Conditional" condition="Control.HasFocus(11)" reversible="false">
-            <include>AnimationEffect_DialogButtonLeftFocus</include>
+            <include>AnimationEffect_DialogConfirmButtonLeftFocus</include>
           </animation>
           <animation type="Conditional" condition="!Control.HasFocus(11)" reversible="false">
-            <include>AnimationEffect_DialogButtonLeftUnfocus</include>
+            <include>AnimationEffect_DialogConfirmButtonLeftUnfocus</include>
           </animation>
         </control>
         <!-- No Button -->
         <control type="button" id="10">
-          <include>DialogButtonRight</include>
+          <include>DialogConfirmButtonRight</include>
           <animation type="Conditional" condition="Control.HasFocus(10)" reversible="false">
-            <include>AnimationEffect_DialogButtonRightFocus</include>
+            <include>AnimationEffect_DialogConfirmButtonRightFocus</include>
           </animation>
           <animation type="Conditional" condition="!Control.HasFocus(10)" reversible="false">
-            <include>AnimationEffect_DialogButtonRightUnfocus</include>
+            <include>AnimationEffect_DialogConfirmButtonRightUnfocus</include>
           </animation>
         </control>
       </control>

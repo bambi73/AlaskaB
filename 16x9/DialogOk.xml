@@ -26,7 +26,7 @@
       <control type="label" id="1">
         <top>37</top>
         <centerleft>50%</centerleft>
-        <width>DialogControlWidth</width>
+        <width>DialogConfirmControlWidth</width>
         <height>42</height>
         <align>center</align>
         <aligny>center</aligny>
@@ -35,19 +35,19 @@
       <control type="textbox" id="9">
         <top>128</top>
         <centerleft>50%</centerleft>
-        <width>DialogControlWidth</width>
+        <width>DialogConfirmControlWidth</width>
         <height>130</height>
         <align>center</align>
         <font>Font_Light_Caps_34</font>
       </control>
       <control type="button" id="10">
         <top>272</top>
-        <include>DialogButtonCenter</include>
+        <include>DialogConfirmButtonCenter</include>
         <animation type="Conditional" condition="Control.HasFocus(10)" reversible="false">
-          <include>AnimationEffect_DialogButtonCenterFocus</include>
+          <include>AnimationEffect_DialogConfirmButtonCenterFocus</include>
         </animation>
         <animation type="Conditional" condition="!Control.HasFocus(10)" reversible="false">
-          <include>AnimationEffect_DialogButtonCenterUnfocus</include>
+          <include>AnimationEffect_DialogConfirmButtonCenterUnfocus</include>
         </animation>
       </control>
     </control>

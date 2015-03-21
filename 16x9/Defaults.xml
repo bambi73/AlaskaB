@@ -8,7 +8,7 @@
     <aligny>center</aligny>
     <font>Font_Reg_44</font>
     <textcolor>Light</textcolor>
-    <focusedcolor>White</focusedcolor>
+    <focusedcolor>Light</focusedcolor>
     <selectedcolor>SelectedColour</selectedcolor>
     <disabledcolor>DisabledColour</disabledcolor>
     <scrollspeed>40</scrollspeed>
@@ -22,7 +22,7 @@
     <aligny>center</aligny>
     <font>Font_Reg_44</font>
     <textcolor>Light</textcolor>
-    <focusedcolor>White</focusedcolor>
+    <focusedcolor>Light</focusedcolor>
     <selectedcolor>SelectedColour</selectedcolor>
     <disabledcolor>DisabledColour</disabledcolor>
     <scrollout>false</scrollout>
@@ -200,7 +200,7 @@
     <focusedcolor>ButtonLabel</focusedcolor>
     <disabledcolor>DisabledColour</disabledcolor>
     <invalidcolor>DisabledColour</invalidcolor>
-    <texturefocus>common/Button_FO.png</texturefocus>
+    <!-- <texturefocus>common/Button_FO.png</texturefocus> -->
     <pulseonselect>no</pulseonselect>
   </default>
 

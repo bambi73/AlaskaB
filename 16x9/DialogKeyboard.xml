@@ -39,7 +39,7 @@
         <align>center</align>
         <aligny>center</aligny>
         <scroll>true</scroll>
-        <textcolor>ButtonLabel</textcolor>
+        <textcolor>Light</textcolor>
       </control>
 
       <control type="group">
@@ -388,27 +388,27 @@
       <control type="grouplist" id="2000">
         <top>569</top>
         <onup>32</onup>
-        <include>DialogButtonGrouplist</include>
+        <include>DialogConfirmButtonGrouplist</include>
         <!-- Done -->
         <control type="button" id="300">
           <label>20177</label>
-          <include>DialogButtonLeft</include>
+          <include>DialogConfirmButtonLeft</include>
           <animation type="Conditional" condition="Control.HasFocus(300)" reversible="false">
-            <include>AnimationEffect_DialogButtonLeftFocus</include>
+            <include>AnimationEffect_DialogConfirmButtonLeftFocus</include>
           </animation>
           <animation type="Conditional" condition="!Control.HasFocus(300)" reversible="false">
-            <include>AnimationEffect_DialogButtonLeftUnfocus</include>
+            <include>AnimationEffect_DialogConfirmButtonLeftUnfocus</include>
           </animation>
         </control>
         <!-- Cancel Button -->
         <control type="button" id="301">
           <label>222</label>
-          <include>DialogButtonRight</include>
+          <include>DialogConfirmButtonRight</include>
           <animation type="Conditional" condition="Control.HasFocus(301)" reversible="false">
-            <include>AnimationEffect_DialogButtonRightFocus</include>
+            <include>AnimationEffect_DialogConfirmButtonRightFocus</include>
           </animation>
           <animation type="Conditional" condition="!Control.HasFocus(301)" reversible="false">
-            <include>AnimationEffect_DialogButtonRightUnfocus</include>
+            <include>AnimationEffect_DialogConfirmButtonRightUnfocus</include>
           </animation>
         </control>
       </control>
