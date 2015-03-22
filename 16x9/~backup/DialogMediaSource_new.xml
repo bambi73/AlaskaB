@@ -9,24 +9,71 @@
     <control type="group" id="5000">
       <top>246</top>
       <centerleft>50%</centerleft>
-      <width>DialogMediaSourceWidth</width>
+      <width>1620</width>
       <include>Animation_ZoomInMenu</include>
-      <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(virtualkeyboard)">
+      <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog)">
         <include>AnimationEffect_ZoomedBy</include>
       </animation>
 
       <control type="image">
-        <width>DialogMediaSourceWidth</width>
-        <height>DialogMediaSourceHeight</height>
-        <visible>!Control.IsVisible(8800)</visible>
-        <texture>dialogs/media-source-bg.png</texture>
+        <width>1620</width>
+        <height>547</height>
+        <texture>dialogs/dialog-media-source-bg.png</texture>
+      </control>
+
+      <!-- <control type="image">
+        <width>1620</width>
+        <height>14</height>
+        <texture>hub/list_bg_border5.png</texture>
       </control>
       <control type="image">
-        <width>DialogMediaSourceWidth</width>
-        <height>DialogMediaSourceHeight</height>
-        <visible>Control.IsVisible(8800)</visible>
-        <texture>dialogs/media-source-scrollbar-bg.png</texture>
+        <top>14</top>
+        <width>1620</width>
+        <height>88</height>
+        <texture>hub/list_bg5.png</texture>
       </control>
+      <control type="image">
+        <top>102</top>
+        <width>1620</width>
+        <height>3</height>
+        <texture>hub/list_bg_delimiter5.png</texture>
+      </control>      
+      <control type="image">
+        <top>105</top>
+        <width>1620</width>
+        <height>88</height>
+        <texture>hub/list_bg5.png</texture>
+      </control>
+      <control type="image">
+        <top>193</top>
+        <width>1620</width>
+        <height>3</height>
+        <texture>hub/list_bg_delimiter5.png</texture>
+      </control>      
+      <control type="image">
+        <top>196</top>
+        <width>1620</width>
+        <height>225</height>
+        <texture>hub/list_bg5.png</texture>
+      </control>
+      <control type="image">
+        <top>421</top>
+        <width>1620</width>
+        <height>3</height>
+        <texture>hub/list_bg_delimiter5.png</texture>
+      </control>      
+      <control type="image">
+        <top>424</top>
+        <width>1620</width>
+        <height>109</height>
+        <texture>hub/list_bg5.png</texture>
+      </control>
+      <control type="image">
+        <top>533</top>
+        <width>1620</width>
+        <height>14</height>
+        <texture flipy="true">hub/list_bg_border5.png</texture>
+      </control> -->
 
       <control type="label" id="2">
         <top>37</top>
@@ -86,8 +133,6 @@
           <onleft>9000</onleft>
           <onup>12</onup>
           <ondown>9010</ondown>
-          <onright>8800</onright>
-          <pagecontrol>8800</pagecontrol>
           <orientation>vertical</orientation>
           <scrolltime tween="sine" easing="out">320</scrolltime>
 
@@ -111,23 +156,36 @@
             </control>
           </focusedlayout>
         </control>
-
-        <!-- Scrollbar -->
-        <control type="scrollbar" id="8800">
-          <top>15</top>
-          <left>1356</left>
-          <height>170</height>
-          <onleft>10</onleft>
-          <visible>Skin.HasSetting(AlaskaB.Settings.MediaSource.Scrollbar.Enable)</visible>
-        </control>
       </control>
 
+      <!-- Right list arrows -->
+
+      <!--  <control type="image">
+        <left>566</left>
+        <top>206</top>
+        <width>32</width>
+        <height>16</height>
+        <texture>common/Scroll_Up.png</texture>
+        <visible>Container(10).HasPrevious</visible>
+      </control>
+
+      <control type="image">
+        <left>566</left>
+        <top>696</top>
+        <width>32</width>
+        <height>16</height>
+        <texture>common/Scroll_Down.png</texture>
+        <visible>Container(10).HasNext</visible>
+      </control> -->
+
       <control type="grouplist" id="9010">
+        <!-- <top>569</top> -->
         <top>423</top>
         <onup>10</onup>
         <include>DialogConfirmButtonGrouplist</include>
         <!-- OK -->
         <control type="button" id="18">
+          <!-- <label>186</label> -->
           <label>20177</label>
           <include>DialogConfirmButtonLeft</include>
           <animation type="Conditional" condition="Control.HasFocus(18)" reversible="false">
@@ -149,7 +207,9 @@
           </animation>
         </control>
       </control>
+
     </control>
+
   </controls>
 
 </window>

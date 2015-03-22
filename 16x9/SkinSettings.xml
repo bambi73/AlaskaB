@@ -479,15 +479,21 @@
 				</control>
 				<control type="radiobutton" id="146">
 					<width>1260</width>
-					<label>Enable Video hub scrollbar</label>
+					<label>Enable Video info plot scrollbar</label>
 					<onclick>Skin.ToggleSetting(AlaskaB.Settings.VideoInfo.Plot.Scrollbar.Enable)</onclick>
 					<selected>Skin.HasSetting(AlaskaB.Settings.VideoInfo.Plot.Scrollbar.Enable)</selected>
 				</control>
 				<control type="radiobutton" id="147">
 					<width>1260</width>
-					<label>Enable Video hub scrollbar</label>
+					<label>Enable Video info cast scrollbar</label>
 					<onclick>Skin.ToggleSetting(AlaskaB.Settings.VideoInfo.Cast.Scrollbar.Enable)</onclick>
 					<selected>Skin.HasSetting(AlaskaB.Settings.VideoInfo.Cast.Scrollbar.Enable)</selected>
+				</control>
+				<control type="radiobutton" id="148">
+					<width>1260</width>
+					<label>Enable Dialog media source scrollbar</label>
+					<onclick>Skin.ToggleSetting(AlaskaB.Settings.MediaSource.Scrollbar.Enable)</onclick>
+					<selected>Skin.HasSetting(AlaskaB.Settings.MediaSource.Scrollbar.Enable)</selected>
 				</control>
 			</control>
 
