@@ -25,7 +25,7 @@
         <left>300</left>
         <width>1320</width>
         <height>396</height>
-        <texture>dialogs/dialog_yn_bg.png</texture>
+        <texture>dialogs/yesno-ok-bg.png</texture>
       </control>
 
       <control type="label" id="1">

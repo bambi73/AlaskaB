@@ -18,7 +18,7 @@
       <control type="image">
         <width>1720</width>
         <height>693</height>
-        <texture>dialogs/dialog_keybord_bg.png</texture>
+        <texture>dialogs/keybord-bg.png</texture>
       </control>
 
       <control type="label" id="311">
