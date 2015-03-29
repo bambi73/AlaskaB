@@ -8,26 +8,59 @@
 	"buffers":
 	[
 		{
-			"file": "16x9/DialogMediaSource.xml",
+			"contents": "1431, 223 -> 8x 393-223",
 			"settings":
 			{
-				"buffer_size": 5338,
-				"line_ending": "Unix"
+				"buffer_size": 23,
+				"line_ending": "Windows",
+				"name": "1431, 223 -> 8x 393-223"
 			}
 		},
 		{
-			"file": "16x9/Defaults.xml",
+			"file": "16x9/Includes.xml",
 			"settings":
 			{
-				"buffer_size": 6803,
+				"buffer_size": 40089,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "16x9/FileBrowser.xml",
+			"settings":
+			{
+				"buffer_size": 7680,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "16x9/DialogKeyboard.xml",
 			"settings":
 			{
-				"buffer_size": 14975,
+				"buffer_size": 14968,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "16x9/DialogMediaSource.xml",
+			"settings":
+			{
+				"buffer_size": 5557,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "16x9/Includes_AlaskaB.xml",
+			"settings":
+			{
+				"buffer_size": 33057,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "16x9/SkinSettings.xml",
+			"settings":
+			{
+				"buffer_size": 17420,
 				"line_ending": "Windows"
 			}
 		}
@@ -35,9 +68,17 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 332.0,
+		"height": 68.0,
 		"selected_items":
 		[
+			[
+				"inde",
+				"Auto indent"
+			],
+			[
+				"inden",
+				"Indent XML"
+			],
 			[
 				"git diff",
 				"Git: Diff Tool Current File"
@@ -197,13 +238,42 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Bambi/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Bambi/AppData/Roaming/Sublime Text 3/Packages/BracketHighlighter/Example.sublime-keymap",
+		"/C/Users/Bambi/AppData/Roaming/Sublime Text 3/Packages/BracketHighlighter/bh_wrapping.sublime-settings",
+		"/C/Users/Bambi/AppData/Roaming/Sublime Text 3/Packages/BracketHighlighter/bh_swapping.sublime-settings",
+		"/C/Users/Bambi/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/Default (Windows).sublime-keymap",
+		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/MusicKaraokeLyrics.xml",
+		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/DialogKeyboard.xml",
+		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/DialogMediaSource.xml",
+		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/DialogYesNo.xml",
+		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/DialogOk.xml",
+		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/FileBrowser.xml",
+		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/DialogFullScreenInfo.xml",
+		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/Font.xml",
+		"/C/Users/Bambi/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/Bambi/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/LockSettings.xml",
+		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/SettingsSystemInfo.xml",
+		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/SettingsScreenCalibration.xml",
+		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/SettingsProfile.xml",
+		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/SettingsCategory.xml",
+		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/Settings.xml",
+		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/SmartPlaylistEditor.xml",
+		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/Custom_VideoHub.xml",
+		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/Home_AlaskaB.xml",
+		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/AddonBrowser.xml",
+		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/Home.xml",
+		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/Defaults.xml",
+		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/Viewtype_651_Info_List_2.xml",
+		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/Viewtype_650_Info_List.xml",
+		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/Viewtype_510_Songs_List.xml",
+		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/Viewtype_500_List.xml",
 		"/C/Users/Bambi/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/C/Users/Bambi/AppData/Roaming/Sublime Text 3/Packages/Colorsublime - Themes/GrandsonOfObsidian.tmTheme",
-		"/C/Users/Bambi/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/C/Users/Bambi/AppData/Roaming/mIRC/mirc.ini",
 		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/DialogExtendedProgressBar.xml",
 		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/DialogSongInfo.xml",
-		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/Defaults.xml",
 		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/~backup/DialogKeyboard_bak.xml",
 		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/DialogMediaFilter.xml",
 		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/Includes_MediaFlags.xml",
@@ -212,15 +282,12 @@
 		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/kod.sublime-workspace",
 		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/DialogContentSettings.xml",
 		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/DialogAddonInfo.xml",
-		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/Custom_VideoHub.xml",
 		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/Custom_Viewtype_Movie_Watchlist.xml",
 		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/Custom_Viewtype_Music_Watchlist.xml",
 		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/Custom_Viewtype_TV_Watchlist.xml",
 		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/Custom_Overlay_Images.xml",
 		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/Custom_Overlay_Debug.xml",
 		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/Custom_Overlay.xml",
-		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/AddonBrowser.xml",
-		"/C/Users/Bambi/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
 		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/DialogKaraokeSongSelector.xml",
 		"/C/Users/Bambi/AppData/Roaming/Sublime Text 3/Packages/GitGutter/GitGutter.sublime-settings",
 		"/C/Users/Bambi/AppData/Roaming/Sublime Text 3/Packages/GitGutter/Default (Windows).sublime-keymap",
@@ -229,15 +296,10 @@
 		"/C/Users/Bambi/AppData/Roaming/Sublime Text 3/Packages/Super Calculator/Super Calculator.sublime-settings",
 		"/C/Users/Bambi/AppData/Roaming/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
 		"/C/Users/Bambi/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
-		"/C/Users/Bambi/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
 		"/C/Users/Bambi/AppData/Roaming/Sublime Text 3/Packages/User/bh_core.sublime-settings",
 		"/C/Users/Bambi/AppData/Roaming/Sublime Text 3/Packages/BracketHighlighter/bh_core.sublime-settings",
-		"/C/Users/Bambi/AppData/Roaming/Sublime Text 3/Packages/BracketHighlighter/Example.sublime-keymap",
-		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/Home_AlaskaB.xml",
 		"/C/Users/Bambi/AppData/Roaming/Sublime Text 3/Packages/Themr/Default (Windows).sublime-keymap",
 		"/C/Users/Bambi/AppData/Roaming/Sublime Text 3/Packages/SideBarEnhancements/Side Bar.sublime-settings",
-		"/C/Users/Bambi/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/Default (Windows).sublime-keymap",
-		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/DialogMediaSource.xml",
 		"/C/Users/Bambi/AppData/Roaming/Kodi/addons/skin.alaskab/16x9/DialogKaiToast.xml",
 		"/C/Users/Bambi/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings"
 	],
@@ -250,6 +312,7 @@
 		"height": 109.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -257,6 +320,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"dialog_keybord_bg.png",
+			"dialog_yn_bg.png",
+			"AlaskaB_VideoHub_Background",
+			"back",
+			"8800",
+			"control",
 			"entity.other.attribute-name",
 			"b3b689",
 			"font",
@@ -286,6 +355,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"keybord-bg.png",
+			"yesno-ok-bg.png",
+			"yesno_ok_bg.png",
 			"control",
 			""
 		],
@@ -309,24 +381,111 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "16x9/DialogMediaSource.xml",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5338,
+						"buffer_size": 23,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1740,
-								1740
+								23,
+								23
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_name": "1431, 223 -> 8x 393-223",
+							"bh_regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "16x9/Includes.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 40089,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								36297,
+								36297
 							]
 						],
 						"settings":
@@ -334,21 +493,106 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"side_bar_folders_auto_load_folder": 1,
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 318.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "16x9/FileBrowser.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7680,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1824,
+								1824
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
@@ -359,16 +603,26 @@
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
@@ -383,12 +637,7 @@
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
-								"bh_tag_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
+								"bh_tag_content"
 							],
 							"side_bar_folders_auto_load_folder": 1,
 							"syntax": "Packages/XML/XML.tmLanguage",
@@ -396,117 +645,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1620.0,
+						"translation.y": 915.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "16x9/Defaults.xml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6803,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content"
-							],
-							"side_bar_folders_auto_load_folder": 1,
-							"syntax": "Packages/XML/XML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "16x9/DialogKeyboard.xml",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 14975,
+						"buffer_size": 14968,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								561,
-								722
+								715,
+								1024
 							]
 						],
 						"settings":
@@ -514,61 +673,61 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
 								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
-								"bh_square_content"
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
 							],
 							"side_bar_folders_auto_load_folder": 1,
 							"syntax": "Packages/XML/XML.tmLanguage",
@@ -580,6 +739,275 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "16x9/DialogMediaSource.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5557,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								568,
+								568
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"side_bar_folders_auto_load_folder": 1,
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "16x9/Includes_AlaskaB.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 33057,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3981,
+								4023
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"side_bar_folders_auto_load_folder": 1,
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1110.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "16x9/SkinSettings.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17420,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								16779,
+								16779
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"side_bar_folders_auto_load_folder": 1,
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 6603.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -636,16 +1064,44 @@
 		"selected_items":
 		[
 			[
+				"key",
+				"DialogKeyboard.xml"
+			],
+			[
+				"media",
+				"DialogMediaSource.xml"
+			],
+			[
+				"filebr",
+				"FileBrowser.xml"
+			],
+			[
+				"setti",
+				"SkinSettings.xml"
+			],
+			[
+				"inc",
+				"Includes.xml"
+			],
+			[
+				"alaska",
+				"Includes_AlaskaB.xml"
+			],
+			[
+				"hub",
+				"Custom_VideoHub.xml"
+			],
+			[
+				"list",
+				"Viewtype_651_Info_List_2.xml"
+			],
+			[
 				"defa",
 				"Defaults.xml"
 			],
 			[
 				"dikey",
 				"DialogKeyboard.xml"
-			],
-			[
-				"media",
-				"DialogMediaSource.xml"
 			]
 		],
 		"width": 0.0

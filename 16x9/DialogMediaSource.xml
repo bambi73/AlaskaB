@@ -11,7 +11,7 @@
       <centerleft>50%</centerleft>
       <width>DialogMediaSourceWidth</width>
       <include>Animation_ZoomInMenu</include>
-      <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(virtualkeyboard)">
+      <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(virtualkeyboard) | Window.IsActive(filebrowser)">
         <include>AnimationEffect_ZoomedBy</include>
       </animation>
 
@@ -90,7 +90,6 @@
           <pagecontrol>8800</pagecontrol>
           <orientation>vertical</orientation>
           <scrolltime tween="sine" easing="out">320</scrolltime>
-
           <itemlayout width="850" height="66">
             <control type="label">
               <width>850</width>
