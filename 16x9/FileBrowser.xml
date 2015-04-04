@@ -18,51 +18,15 @@
       <control type="image">
         <width>1720</width>
         <height>721</height>
+        <visible>!Control.IsVisible(8800)</visible>
         <texture>dialogs/file-browser-bg.png</texture>
       </control>
-
-
-      <!-- <control type="image">
-        <width>1720</width>
-        <height>14</height>
-        <texture>hub/list_bg_border5.png</texture>
-      </control>
       <control type="image">
-        <top>14</top>
         <width>1720</width>
-        <height>88</height>
-        <texture>hub/list_bg5.png</texture>
+        <height>721</height>
+        <visible>Control.IsVisible(8800)</visible>
+        <texture>dialogs/file-browser-scrollbar-bg.png</texture>
       </control>
-      <control type="image">
-        <top>102</top>
-        <width>1720</width>
-        <height>3</height>
-        <texture>hub/list_bg_delimiter5.png</texture>
-      </control>
-      <control type="image">
-        <top>105</top>
-        <width>1720</width>
-        <height>490</height>
-        <texture>hub/list_bg5.png</texture>
-      </control>
-      <control type="image">
-        <top>595</top>
-        <width>1720</width>
-        <height>3</height>
-        <texture>hub/list_bg_delimiter5.png</texture>
-      </control>
-      <control type="image">
-        <top>598</top>
-        <width>1720</width>
-        <height>109</height>
-        <texture>hub/list_bg5.png</texture>
-      </control>
-      <control type="image">
-        <top>707</top>
-        <width>1720</width>
-        <height>14</height>
-        <texture flipy="true">hub/list_bg_border5.png</texture>
-      </control> -->
 
       <!-- Heading label -->
       <control id="411" type="label">
@@ -166,7 +130,7 @@
           <height>426</height>
           <onleft>450</onleft>
           <onright>9010</onright>
-          <visible>Skin.HasSetting(AlaskaB.Settings.MediaSource.Scrollbar.Enable)</visible> <!-- TODO -->
+          <visible>Skin.HasSetting(AlaskaB.Settings.FileBrowser.Scrollbar.Enable)</visible>
         </control>
       </control>
 
