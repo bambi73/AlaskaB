@@ -837,7 +837,7 @@
   </include>
 
   <include name="DialogFileBrowserImage2">
-    <width>420</width>
+    <width>410</width>
     <bordersize>6,6,8,8</bordersize>
     <aspectratio align="right" aligny="center">keep</aspectratio>
     <bordertexture border="6,6,8,8" colordiffuse="Light">pics/Picture_Panel.png</bordertexture>

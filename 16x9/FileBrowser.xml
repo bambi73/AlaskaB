@@ -17,6 +17,13 @@
 
       <control type="image">
         <width>1720</width>
+        <height>721</height>
+        <texture>dialogs/file-browser-bg.png</texture>
+      </control>
+
+
+      <!-- <control type="image">
+        <width>1720</width>
         <height>14</height>
         <texture>hub/list_bg_border5.png</texture>
       </control>
@@ -55,7 +62,7 @@
         <width>1720</width>
         <height>14</height>
         <texture flipy="true">hub/list_bg_border5.png</texture>
-      </control>
+      </control> -->
 
       <!-- Heading label -->
       <control id="411" type="label">
@@ -76,27 +83,27 @@
         <!-- Image -->
         <control type="group">
           <left>40</left>
-          <top>16</top>
+          <top>24</top>
           <control type="group">  
             <visible>Control.IsEnabled(415)</visible>
             <control type="image">
               <include>DialogFileBrowserImage1</include>
-              <height>368</height>
+              <height>360</height>
             </control>
             <control type="image">
               <include>DialogFileBrowserImage2</include>
-              <height>368</height>
+              <height>360</height>
             </control>
           </control>
           <control type="group">  
             <visible>!Control.IsEnabled(415)</visible>
             <control type="image">
               <include>DialogFileBrowserImage1</include>
-              <height>434</height>
+              <height>418</height>
             </control>
             <control type="image">
               <include>DialogFileBrowserImage2</include>
-              <height>434</height>
+              <height>418</height>
             </control>
           </control>
         </control>
