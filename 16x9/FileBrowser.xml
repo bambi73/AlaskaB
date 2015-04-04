@@ -76,87 +76,58 @@
         <!-- Image -->
         <control type="group">
           <left>40</left>
-          <top>14</top>
-          <width>408</width>
-          <height>307</height>
-          
-          <control type="image">
-            <width>408</width>
-            <height>307</height>
-            <bordersize>6</bordersize>
-            <aspectratio align="right" aligny="center">keep</aspectratio>
-            <texture>$INFO[ListItem.Icon]</texture>
-            <visible>SubString(ListItem.Icon,Default)</visible>
+          <top>16</top>
+          <control type="group">  
+            <visible>Control.IsEnabled(415)</visible>
+            <control type="image">
+              <include>DialogFileBrowserImage1</include>
+              <height>368</height>
+            </control>
+            <control type="image">
+              <include>DialogFileBrowserImage2</include>
+              <height>368</height>
+            </control>
           </control>
-          <control type="image">
-            <width>408</width>
-            <height>307</height>
-            <bordersize>6</bordersize>
-            <aspectratio align="right" aligny="center">keep</aspectratio>
-            <bordertexture border="6">pics/Picture_Panel.png</bordertexture>
-            <texture>$INFO[ListItem.Icon]</texture>
-            <visible>!SubString(ListItem.Icon,Default) + !SubString(Control.GetLabel(416),*)</visible>
-          </control>
-          <control type="image">
-            <width>408</width>
-            <height>307</height>
-            <bordersize>6</bordersize>
-            <aspectratio align="right" aligny="center">keep</aspectratio>
-            <bordertexture border="6">pics/Picture_Panel.png</bordertexture>
-            <texture flipx="true">$INFO[ListItem.Icon]</texture>
-            <visible>!SubString(ListItem.Icon,Default) + SubString(Control.GetLabel(416),*)</visible>
+          <control type="group">  
+            <visible>!Control.IsEnabled(415)</visible>
+            <control type="image">
+              <include>DialogFileBrowserImage1</include>
+              <height>434</height>
+            </control>
+            <control type="image">
+              <include>DialogFileBrowserImage2</include>
+              <height>434</height>
+            </control>
           </control>
         </control>
 
-        <control type="grouplist" id="9000">
-          <top>330</top>
+        <!-- New folder -->
+        <control type="button" id="415">
+          <include>DialogLeftMenuButton</include>
+          <top>396</top>
           <left>40</left>
-          <width>420</width>
-          <height>132</height>
-          <itemgap>0</itemgap>
-          <onright>450</onright>
-          <onup>noop</onup>
-          <ondown>noop</ondown>
-          <orientation>vertical</orientation>
-          <scrolltime tween="sine" easing="out">320</scrolltime>
-          <!-- New folder -->
-          <control type="button" id="415">
-            <include>DialogLeftMenuButton</include>
-            <label>119</label>
-          </control>
-          <!-- Mirror image -->
-          <control type="togglebutton" id="416">
-            <include>DialogLeftMenuButton</include>
-            <label>749</label>
-            <altlabel>[COLOR=Heavy]$LOCALIZE[749][/COLOR]</altlabel>
-          </control>
-        </control>
-
-        <!-- <control id="415" type="button">
-          <width>330</width>
           <label>119</label>
+          <onright>450</onright>
+          <ondown>9010</ondown>
           <visible>Control.IsEnabled(415)</visible>
-        </control> -->
-        <!-- Mirror image -->
-        <!-- <control id="416" type="radiobutton">
-          <width>330</width>
-          <align>left</align>
-          <label>749</label>
-          <visible>Control.IsEnabled(416)</visible> -->
-
-
+        </control>
 
         <control type="list" id="450">
-          <left>540</left>
-          <width>790</width>
+          <left>550</left>
+          <width>780</width>
           <height>462</height>
-          <onleft>9000</onleft>
+          <onleft>415</onleft>
           <ondown>9010</ondown>
           <onright>8800</onright>
           <pagecontrol>8800</pagecontrol>
           <orientation>vertical</orientation>
+          <preloaditems>5</preloaditems>
           <scrolltime tween="sine" easing="out">320</scrolltime>
           <itemlayout width="850" height="66">
+            <control type="image">
+              <include>HiddenControl</include>
+              <texture>$INFO[ListItem.Icon]</texture>
+            </control>
             <control type="label">
               <width>850</width>
               <height>66</height>
@@ -165,6 +136,10 @@
             </control>
           </itemlayout>
           <focusedlayout width="850" height="66">
+            <control type="image">
+              <include>HiddenControl</include>
+              <texture>$INFO[ListItem.Icon]</texture>
+            </control>
             <control type="label">
               <width>850</width>
               <height>66</height>
@@ -180,49 +155,13 @@
         <!-- Scrollbar -->
         <control type="scrollbar" id="8800">
           <top>17</top>
-          <left>1356</left>
+          <left>1419</left>
           <height>426</height>
           <onleft>450</onleft>
           <onright>9010</onright>
           <visible>Skin.HasSetting(AlaskaB.Settings.MediaSource.Scrollbar.Enable)</visible> <!-- TODO -->
         </control>
       </control>
-
-      <!-- Button grouplist -->
-      <!-- <control id="9001" type="grouplist">
-        <left>544</left>
-        <top>400</top>
-        <width>1260</width>
-        <itemgap>0</itemgap>
-        <onleft>noop</onleft>
-        <onright>noop</onright>
-        <onup condition="Control.IsVisible(450)">450</onup>
-        <onup condition="Control.IsVisible(451)">451</onup>
-        <orientation>horizontal</orientation> -->
-        <!-- OK Button -->
-        <!-- <control id="413" type="button">
-          <width>300</width>
-          <label>186</label>
-        </control> -->
-        <!-- Cancel Button -->
-        <!-- <control id="414" type="button">
-          <width>300</width>
-          <label>222</label>
-        </control> -->
-        <!-- New folder -->
-        <!-- <control id="415" type="button">
-          <width>330</width>
-          <label>119</label>
-          <visible>Control.IsEnabled(415)</visible>
-        </control> -->
-        <!-- Mirror image -->
-        <!-- <control id="416" type="radiobutton">
-          <width>330</width>
-          <align>left</align>
-          <label>749</label>
-          <visible>Control.IsEnabled(416)</visible>
-        </control> -->
-
 
       <control type="grouplist" id="9010">
         <top>597</top>
