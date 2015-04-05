@@ -830,13 +830,20 @@
   <include name="DialogFileBrowserImage1">
     <width>420</width>
     <bordersize>20,80,20,80</bordersize>
-    <!-- <bordersize>40</bordersize> -->
     <aspectratio align="right" aligny="center">keep</aspectratio>
     <texture colordiffuse="Light">$INFO[ListItem.Icon]</texture>
-    <visible>SubString(ListItem.Icon,Default)</visible>
+    <visible>SubString(ListItem.Icon,Default) + !SubString(ListItem.Icon,DefaultVideo)</visible>
   </include>
 
   <include name="DialogFileBrowserImage2">
+    <width>420</width>
+    <bordersize>20,80,20,80</bordersize>
+    <aspectratio align="right" aligny="center">keep</aspectratio>
+    <texture colordiffuse="Light">dialogs/no-art.png</texture>
+    <visible>SubString(ListItem.Icon,Default) + SubString(ListItem.Icon,DefaultVideo)</visible>
+  </include>
+
+  <include name="DialogFileBrowserImage3">
     <width>410</width>
     <bordersize>6,6,8,8</bordersize>
     <aspectratio align="right" aligny="center">keep</aspectratio>

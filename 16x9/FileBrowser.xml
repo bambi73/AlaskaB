@@ -58,6 +58,10 @@
               <include>DialogFileBrowserImage2</include>
               <height>360</height>
             </control>
+            <control type="image">
+              <include>DialogFileBrowserImage3</include>
+              <height>360</height>
+            </control>
           </control>
           <control type="group">  
             <visible>!Control.IsEnabled(415)</visible>
@@ -67,6 +71,10 @@
             </control>
             <control type="image">
               <include>DialogFileBrowserImage2</include>
+              <height>418</height>
+            </control>
+            <control type="image">
+              <include>DialogFileBrowserImage3</include>
               <height>418</height>
             </control>
           </control>
@@ -83,6 +91,7 @@
           <visible>Control.IsEnabled(415)</visible>
         </control>
 
+        <!-- File list -->
         <control type="list" id="450">
           <left>550</left>
           <width>780</width>
