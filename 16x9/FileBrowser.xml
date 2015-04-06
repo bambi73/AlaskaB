@@ -7,9 +7,10 @@
 
   <controls>
     <control id="5000" type="group">
-      <top>174</top>
+      <centertop>49%</centertop>
       <centerleft>50%</centerleft>
       <width>1720</width>
+      <height>721</height>
       <include>Animation_ZoomInMenu</include>
       <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(virtualkeyboard)">
         <include>AnimationEffect_ZoomedBy</include>
