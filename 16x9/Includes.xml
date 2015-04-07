@@ -826,28 +826,48 @@
     <animation effect="zoom" center="380,33" start="100" end="115" time="125" tween="cubic" easing="out">Focus</animation>
   </include>
 
-  <!-- Dialog file browser -->
-  <include name="DialogFileBrowserImage1">
+  <!-- Dialog base -->
+  <include name="DialogBaseLeftImage_DefaultIcon">
     <width>420</width>
     <bordersize>20,80,20,80</bordersize>
     <aspectratio align="right" aligny="center">keep</aspectratio>
+  </include>
+
+  <include name="DialogBaseLeftImage_Image">
+    <width>420</width>
+    <bordersize>6,6,8,8</bordersize>
+    <aspectratio align="right" aligny="center">keep</aspectratio>
+    <bordertexture border="6,6,8,8" colordiffuse="Light">pics/Picture_Panel.png</bordertexture>
+  </include>
+
+  <!-- Dialog select -->
+  <include name="DialogSelectImage1">
+    <include>DialogBaseLeftImage_DefaultIcon</include>
+    <texture colordiffuse="Light">$INFO[Container(6).ListItem.Icon]</texture>
+    <visible>SubString(Container(6).ListItem.Icon,Default)</visible>
+  </include>
+
+  <include name="DialogSelectImage2">
+    <include>DialogBaseLeftImage_Image</include>
+    <texture fallback="DefaultAddon.png">$INFO[Container(6).ListItem.Icon]</texture>
+    <visible>!SubString(Container(6).ListItem.Icon,Default)</visible>
+  </include>
+
+  <!-- Dialog file browser -->
+  <include name="DialogFileBrowserImage1">
+    <include>DialogBaseLeftImage_DefaultIcon</include>
     <texture colordiffuse="Light">$INFO[ListItem.Icon]</texture>
     <visible>SubString(ListItem.Icon,Default) + !SubString(ListItem.Icon,DefaultVideo)</visible>
   </include>
 
   <include name="DialogFileBrowserImage2">
-    <width>420</width>
-    <bordersize>20,80,20,80</bordersize>
-    <aspectratio align="right" aligny="center">keep</aspectratio>
+    <include>DialogBaseLeftImage_DefaultIcon</include>
     <texture colordiffuse="Light">dialogs/no-art.png</texture>
     <visible>SubString(ListItem.Icon,Default) + SubString(ListItem.Icon,DefaultVideo)</visible>
   </include>
 
   <include name="DialogFileBrowserImage3">
-    <width>410</width>
-    <bordersize>6,6,8,8</bordersize>
-    <aspectratio align="right" aligny="center">keep</aspectratio>
-    <bordertexture border="6,6,8,8" colordiffuse="Light">pics/Picture_Panel.png</bordertexture>
+    <include>DialogBaseLeftImage_Image</include>
     <texture>$INFO[ListItem.Icon]</texture>
     <visible>!SubString(ListItem.Icon,Default)</visible>
   </include>

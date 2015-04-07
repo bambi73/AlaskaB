@@ -30,7 +30,7 @@
       </control>
 
       <!-- Heading label -->
-      <control id="411" type="label">
+      <control type="label" id="411">
         <top>37</top>
         <centerleft>50%</centerleft>
         <width>1520</width>
