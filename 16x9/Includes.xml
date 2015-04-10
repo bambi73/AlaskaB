@@ -30,6 +30,8 @@
   <include file="Home_OriginalMod.xml" />
   <include file="Home_AlaskaB.xml" />
 
+  <include file="DialogSelectIncludes.xml" />
+
   <include file="script-skinshortcuts-includes.xml"/>
 
   <!-- Global objects -->
@@ -842,8 +844,9 @@
 
   <!-- Dialog select -->
   <include name="DialogSelectImage1">
+    <bordersize>20,78,40,80</bordersize>
     <include>DialogBaseLeftImage_DefaultIcon</include>
-    <texture colordiffuse="Light">$INFO[Container(6).ListItem.Icon]</texture>
+    <texture colordiffuse="Light" fallback="./defaultaddonnone.png">$INFO[Container(6).ListItem.Icon]</texture>
     <visible>SubString(Container(6).ListItem.Icon,Default)</visible>
   </include>
 
@@ -851,6 +854,12 @@
     <include>DialogBaseLeftImage_Image</include>
     <texture fallback="DefaultAddon.png">$INFO[Container(6).ListItem.Icon]</texture>
     <visible>!SubString(Container(6).ListItem.Icon,Default)</visible>
+  </include>
+
+  <include name="DialogSelectScrollbar">
+    <top>17</top>
+    <onright>5</onright>
+    <visible>Skin.HasSetting(AlaskaB.Settings.FileBrowser.Scrollbar.Enable)</visible>
   </include>
 
   <!-- Dialog file browser -->
