@@ -842,7 +842,15 @@
     <bordertexture border="6,6,8,8" colordiffuse="Light">pics/Picture_Panel.png</bordertexture>
   </include>
 
+  <include name="DialogBaseList">
+    <preloaditems>5</preloaditems>
+    <orientation>vertical</orientation>
+    <scrolltime tween="sine" easing="out">320</scrolltime>
+  </include>
+
   <!-- Dialog select -->
+  <constant name="DialogSelectWidth">1720</constant>
+
   <include name="DialogSelectImage1">
     <bordersize>20,78,40,80</bordersize>
     <include>DialogBaseLeftImage_DefaultIcon</include>

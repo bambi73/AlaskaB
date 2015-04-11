@@ -501,6 +501,12 @@
 					<onclick>Skin.ToggleSetting(AlaskaB.Settings.FileBrowser.Scrollbar.Enable)</onclick>
 					<selected>Skin.HasSetting(AlaskaB.Settings.FileBrowser.Scrollbar.Enable)</selected>
 				</control>
+				<control type="radiobutton" id="150">
+					<width>1260</width>
+					<label>Enable Dialog select scrollbar</label>
+					<onclick>Skin.ToggleSetting(AlaskaB.Settings.Select.Scrollbar.Enable)</onclick>
+					<selected>Skin.HasSetting(AlaskaB.Settings.Select.Scrollbar.Enable)</selected>
+				</control>
 			</control>
 
 			<!-- Divider -->

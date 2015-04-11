@@ -10,7 +10,7 @@
       <centertop>49%</centertop>
       <centerleft>50%</centerleft>
       <width>1720</width>
-      <height>721</height>
+      <height>722</height>
       <include>Animation_ZoomInMenu</include>
       <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(virtualkeyboard)">
         <include>AnimationEffect_ZoomedBy</include>
@@ -18,13 +18,13 @@
 
       <control type="image">
         <width>1720</width>
-        <height>721</height>
+        <height>722</height>
         <visible>!Control.IsVisible(8800)</visible>
         <texture>dialogs/file-browser-bg.png</texture>
       </control>
       <control type="image">
         <width>1720</width>
-        <height>721</height>
+        <height>722</height>
         <visible>Control.IsVisible(8800)</visible>
         <texture>dialogs/file-browser-scrollbar-bg.png</texture>
       </control>
@@ -141,7 +141,7 @@
         <control type="scrollbar" id="8800">
           <top>17</top>
           <left>1419</left>
-          <height>426</height>
+          <height>427</height>
           <onleft>450</onleft>
           <onright>9010</onright>
           <visible>Skin.HasSetting(AlaskaB.Settings.FileBrowser.Scrollbar.Enable)</visible>

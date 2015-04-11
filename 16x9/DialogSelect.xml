@@ -9,119 +9,63 @@
     <control type="group" id="5000">
       <centertop>49%</centertop>
       <centerleft>50%</centerleft>
-      <width>1720</width>
-      <height>723</height>
+      <width>DialogSelectWidth</width>
+      <height>722</height>
       <include>Animation_ZoomInMenu</include>
       <animation effect="slide" start="0,0" end="0,56" time="0" condition="Control.IsVisible(3) + !Control.IsVisible(5)">Conditional</animation>
-      <animation effect="slide" start="0,0" end="0,29" time="0" condition="Control.IsVisible(6) + Control.IsVisible(5)">Conditional</animation>
-      <animation effect="slide" start="0,0" end="0,85" time="0" condition="Control.IsVisible(6) + !Control.IsVisible(5)">Conditional</animation>
+      <animation effect="slide" start="0,0" end="0,28" time="0" condition="Control.IsVisible(6) + Control.IsVisible(5)">Conditional</animation>
+      <animation effect="slide" start="0,0" end="0,84" time="0" condition="Control.IsVisible(6) + !Control.IsVisible(5)">Conditional</animation>
       <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(virtualkeyboard)">
         <include>AnimationEffect_ZoomedBy</include>
       </animation>
 
-      <!-- <control type="image">
-        <width>1720</width>
-        <height>723</height>
-        <visible>Control.IsVisible(3) + !Control.IsVisible(8800)</visible>
+      <control type="image">
+        <width>DialogSelectWidth</width>
+        <height>722</height>
+        <visible>Control.IsVisible(3) + Control.IsVisible(5) + !Control.IsVisible(8800)</visible>
         <texture>dialogs/select-3-bg.png</texture>
-      </control> -->
-
-      <control type="image">
-        <width>1720</width>
-        <height>14</height>
-        <texture>hub/list_bg_border5.png</texture>
       </control>
       <control type="image">
-        <top>14</top>
-        <width>1720</width>
-        <height>88</height>
-        <texture>hub/list_bg5.png</texture>
+        <width>DialogSelectWidth</width>
+        <height>722</height>
+        <visible>Control.IsVisible(3) + Control.IsVisible(5) + Control.IsVisible(8800)</visible>
+        <texture>dialogs/select-3-scrollbar-bg.png</texture>
       </control>
       <control type="image">
-        <top>102</top>
-        <width>1720</width>
-        <height>3</height>
-        <texture>hub/list_bg_delimiter5.png</texture>
+        <width>DialogSelectWidth</width>
+        <height>610</height>
+        <visible>Control.IsVisible(3) + !Control.IsVisible(5) + !Control.IsVisible(8800)</visible>
+        <texture>dialogs/select-3-no-button-bg.png</texture>
       </control>
-
-      <control type="group">
-        <visible>Control.IsVisible(3)</visible>
-        <control type="image">
-          <top>105</top>
-          <width>1720</width>
-          <height>492</height>
-          <texture>hub/list_bg5.png</texture>
-        </control>
-        <control type="group">
-          <visible>Control.IsVisible(5)</visible>
-          <control type="image">
-            <top>597</top>
-            <width>1720</width>
-            <height>3</height>
-            <texture>hub/list_bg_delimiter5.png</texture>
-          </control>
-          <control type="image">
-            <top>600</top>
-            <width>1720</width>
-            <height>109</height>
-            <texture>hub/list_bg5.png</texture>
-          </control>
-          <control type="image">
-            <top>709</top>
-            <width>1720</width>
-            <height>14</height>
-            <texture flipy="true">hub/list_bg_border5.png</texture>
-          </control>
-        </control>
-        <control type="group">
-          <visible>!Control.IsVisible(5)</visible>
-          <control type="image">
-            <top>597</top>
-            <width>1720</width>
-            <height>14</height>
-            <texture flipy="true">hub/list_bg_border5.png</texture>
-          </control>
-        </control>
+      <control type="image">
+        <width>DialogSelectWidth</width>
+        <height>610</height>
+        <visible>Control.IsVisible(3) + !Control.IsVisible(5) + Control.IsVisible(8800)</visible>
+        <texture>dialogs/select-3-no-button-scrollbar-bg.png</texture>
       </control>
-
-      <control type="group">
-        <visible>Control.IsVisible(6)</visible>
-        <control type="image">
-          <top>105</top>
-          <width>1720</width>
-          <height>434</height>
-          <texture>hub/list_bg5.png</texture>
-        </control>
-        <control type="group">
-          <visible>Control.IsVisible(5)</visible>
-          <control type="image">
-            <top>539</top>
-            <width>1720</width>
-            <height>3</height>
-            <texture>hub/list_bg_delimiter5.png</texture>
-          </control>
-          <control type="image">
-            <top>542</top>
-            <width>1720</width>
-            <height>109</height>
-            <texture>hub/list_bg5.png</texture>
-          </control>
-          <control type="image">
-            <top>651</top>
-            <width>1720</width>
-            <height>14</height>
-            <texture flipy="true">hub/list_bg_border5.png</texture>
-          </control>
-        </control>
-        <control type="group">
-          <visible>!Control.IsVisible(5)</visible>
-          <control type="image">
-            <top>539</top>
-            <width>1720</width>
-            <height>14</height>
-            <texture flipy="true">hub/list_bg_border5.png</texture>
-          </control>
-        </control>
+      <control type="image">
+        <width>DialogSelectWidth</width>
+        <height>665</height>
+        <visible>Control.IsVisible(6) + Control.IsVisible(5) + !Control.IsVisible(8800)</visible>
+        <texture>dialogs/select-6-bg.png</texture>
+      </control>
+      <control type="image">
+        <width>DialogSelectWidth</width>
+        <height>665</height>
+        <visible>Control.IsVisible(6) + Control.IsVisible(5) + Control.IsVisible(8800)</visible>
+        <texture>dialogs/select-6-scrollbar-bg.png</texture>
+      </control>
+      <control type="image">
+        <width>DialogSelectWidth</width>
+        <height>553</height>
+        <visible>Control.IsVisible(6) + !Control.IsVisible(5) + !Control.IsVisible(8800)</visible>
+        <texture>dialogs/select-6-no-button-bg.png</texture>
+      </control>
+      <control type="image">
+        <width>DialogSelectWidth</width>
+        <height>553</height>
+        <visible>Control.IsVisible(6) + !Control.IsVisible(5) + Control.IsVisible(8800)</visible>
+        <texture>dialogs/select-6-no-button-scrollbar-bg.png</texture>
       </control>
 
       <!-- Heading label -->
@@ -134,14 +78,13 @@
         <aligny>center</aligny>
         <font>Font_Black_Caps_42</font>
         <textcolor>Light</textcolor>
-        <!-- <label>$INFO[Container(6).ListItem.Icon]</label> -->
       </control>
 
       <control type="group">
         <left>125</left>
         <top>118</top>
 
-        <!-- List 1 -->
+        <!-- List 3 -->
         <control type="group">
           <visible>Control.IsVisible(3)</visible>
 
@@ -152,8 +95,7 @@
             <ondown>5</ondown>
             <onright>8800</onright>
             <pagecontrol>8800</pagecontrol>
-            <orientation>vertical</orientation>
-            <scrolltime tween="sine" easing="out">320</scrolltime>
+            <include>DialogBaseList</include>
             <itemlayout width="1150" height="66">
               <control type="label">
                 <width>1150</width>
@@ -186,7 +128,7 @@
           </control>
         </control>
 
-        <!-- List 2 -->
+        <!-- List 6 -->
         <control type="group">
           <visible>Control.IsVisible(6)</visible>
 
@@ -212,9 +154,7 @@
             <ondown>5</ondown>
             <onright>8800</onright>
             <pagecontrol>8800</pagecontrol>
-            <preloaditems>5</preloaditems>
-            <orientation>vertical</orientation>
-            <scrolltime tween="sine" easing="out">320</scrolltime>
+            <include>DialogBaseList</include>
             <itemlayout width="780" height="98">
               <control type="label">
                 <top>22</top>
@@ -290,27 +230,27 @@
 
         <!-- Scrollbar -->
         <control type="scrollbar" id="8800">
-          <left>1371</left>
+          <left>1372</left>
           <height>426</height>
           <onleft>3</onleft>
           <include>DialogSelectScrollbar</include>
-          <visible>Control.IsVisible(3)</visible>
+          <visible>Skin.HasSetting(AlaskaB.Settings.Select.Scrollbar.Enable) + Control.IsVisible(3)</visible>
         </control>
         <control type="scrollbar" id="8800">
-          <left>1419</left>
+          <left>1420</left>
           <height>370</height>
           <onleft>6</onleft>
           <include>DialogSelectScrollbar</include>
-          <visible>Control.IsVisible(6)</visible>
+          <visible>Skin.HasSetting(AlaskaB.Settings.Select.Scrollbar.Enable) + Control.IsVisible(6)</visible>
         </control>
       </control>
 
       <control type="button" id="5">
-        <top>597</top>
+        <top>598</top>
         <onup condition="Control.IsVisible(3)">3</onup>
         <onup condition="Control.IsVisible(6)">6</onup>
         <include>DialogConfirmButtonCenter</include>
-        <animation effect="slide" start="0,0" end="0,-56" time="0" condition="Control.IsVisible(6)">Conditional</animation>
+        <animation effect="slide" start="0,0" end="0,-57" time="0" condition="Control.IsVisible(6)">Conditional</animation>
         <animation type="Conditional" condition="Control.HasFocus(5)" reversible="false">
           <include>AnimationEffect_DialogConfirmButtonCenterFocus</include>
         </animation>
