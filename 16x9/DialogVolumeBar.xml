@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="104">
-	<zorder>2</zorder>
+  <zorder>2</zorder>
 
-	<controls>
+  <controls>
     <control type="group" id="5000">
       <include>DialogTopRightCornerBase</include>
       <animation type="Conditional" condition="Window.IsVisible(mutebug) | Window.IsVisible(infodialog) | Window.IsVisible(busydialog)">
-      	<effect type="fade" start="100" end="0" time="0" />
+        <effect type="fade" start="100" end="0" time="0" />
       </animation>
 
       <control type="label">
@@ -19,7 +19,7 @@
       </control>
       <control type="progress" id="404">
         <include>HiddenControl</include>
-        <info>player.volume</info>
+        <info>Player.Volume</info>
       </control>
 
       <control type="group">

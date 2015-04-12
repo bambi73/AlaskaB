@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="113">
-	<zorder>2</zorder>
+  <zorder>2</zorder>
 
-	<controls>
+  <controls>
     <control type="group" id="5000">
       <include>DialogTopRightCornerBase</include>
-			<animation type="Conditional" condition="Window.IsVisible(extendedprogressdialog) | Window.IsVisible(infodialog) | Window.IsVisible(busydialog)">
-				<effect type="fade" start="100" end="0" time="0" />
-			</animation>
+      <animation type="Conditional" condition="Window.IsVisible(extendedprogressdialog) | Window.IsVisible(infodialog) | Window.IsVisible(busydialog)">
+        <effect type="fade" start="100" end="0" time="0" />
+      </animation>
 
       <control type="label">
         <include>DialogTopRightCornerHeader</include>
@@ -15,7 +15,7 @@
       </control>
       <control type="label">
         <include>DialogTopRightCornerDetail</include>
-        <label>31155</label>
+        <label>$LOCALIZE[31155]</label>
       </control>
 
       <control type="group">
@@ -25,7 +25,7 @@
           <texture colordiffuse="TopRightCornerImageFg">dialogs/top-right-mute-fg.png</texture>
         </control>
       </control>
-		</control>
-	</controls>
+    </control>
+  </controls>
 
 </window>
