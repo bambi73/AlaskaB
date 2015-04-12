@@ -983,6 +983,13 @@
     <height>75</height>
   </include>
 
+  <include name="DialogTopRightCornerImageBg">
+    <control type="image">
+      <include>DialogTopRightCornerImage</include>
+      <texture colordiffuse="TopRightCornerImageBg">dialogs/top-right-bg.png</texture>
+    </control>
+  </include>
+
   <include name="DialogTopRightCornerHeader">
     <right>140</right>
     <top>0</top>

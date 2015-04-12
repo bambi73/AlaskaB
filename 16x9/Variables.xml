@@ -646,7 +646,34 @@
     <value>PSVZ</value>
   </variable>
 
+  <variable name="DialogVolumeProgressImage">
+    <value condition="IntegerGreaterThan(Player.Volume,97)">dialogs/volume/top-right-volume-progress-27.png</value>
+    <value condition="IntegerGreaterThan(Player.Volume,93)">dialogs/volume/top-right-volume-progress-26.png</value>
+    <value condition="IntegerGreaterThan(Player.Volume,89)">dialogs/volume/top-right-volume-progress-25.png</value>
+    <value condition="IntegerGreaterThan(Player.Volume,86)">dialogs/volume/top-right-volume-progress-24.png</value>
+    <value condition="IntegerGreaterThan(Player.Volume,82)">dialogs/volume/top-right-volume-progress-23.png</value>
+    <value condition="IntegerGreaterThan(Player.Volume,78)">dialogs/volume/top-right-volume-progress-22.png</value>
+    <value condition="IntegerGreaterThan(Player.Volume,75)">dialogs/volume/top-right-volume-progress-21.png</value>
+    <value condition="IntegerGreaterThan(Player.Volume,71)">dialogs/volume/top-right-volume-progress-20.png</value>
+    <value condition="IntegerGreaterThan(Player.Volume,67)">dialogs/volume/top-right-volume-progress-19.png</value>
+    <value condition="IntegerGreaterThan(Player.Volume,63)">dialogs/volume/top-right-volume-progress-18.png</value>
+    <value condition="IntegerGreaterThan(Player.Volume,60)">dialogs/volume/top-right-volume-progress-17.png</value>
+    <value condition="IntegerGreaterThan(Player.Volume,56)">dialogs/volume/top-right-volume-progress-16.png</value>
+    <value condition="IntegerGreaterThan(Player.Volume,52)">dialogs/volume/top-right-volume-progress-15.png</value>
+    <value condition="IntegerGreaterThan(Player.Volume,49)">dialogs/volume/top-right-volume-progress-14.png</value>
+    <value condition="IntegerGreaterThan(Player.Volume,45)">dialogs/volume/top-right-volume-progress-13.png</value>
+    <value condition="IntegerGreaterThan(Player.Volume,41)">dialogs/volume/top-right-volume-progress-12.png</value>
+    <value condition="IntegerGreaterThan(Player.Volume,38)">dialogs/volume/top-right-volume-progress-11.png</value>
+    <value condition="IntegerGreaterThan(Player.Volume,34)">dialogs/volume/top-right-volume-progress-10.png</value>
+    <value condition="IntegerGreaterThan(Player.Volume,30)">dialogs/volume/top-right-volume-progress-09.png</value>
+    <value condition="IntegerGreaterThan(Player.Volume,26)">dialogs/volume/top-right-volume-progress-08.png</value>
+    <value condition="IntegerGreaterThan(Player.Volume,23)">dialogs/volume/top-right-volume-progress-07.png</value>
+    <value condition="IntegerGreaterThan(Player.Volume,19)">dialogs/volume/top-right-volume-progress-06.png</value>
+    <value condition="IntegerGreaterThan(Player.Volume,15)">dialogs/volume/top-right-volume-progress-05.png</value>
+    <value condition="IntegerGreaterThan(Player.Volume,12)">dialogs/volume/top-right-volume-progress-04.png</value>
+    <value condition="IntegerGreaterThan(Player.Volume,8)">dialogs/volume/top-right-volume-progress-03.png</value>
+    <value condition="IntegerGreaterThan(Player.Volume,4)">dialogs/volume/top-right-volume-progress-02.png</value>
+    <value>dialogs/volume/top-right-volume-progress-01.png</value>
+  </variable>
 
-
-  
 </includes>
