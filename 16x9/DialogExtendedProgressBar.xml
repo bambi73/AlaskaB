@@ -15,17 +15,16 @@
       <control type="label" id="31">
         <include>DialogTopRightCornerDetail</include>
       </control>
+      <control type="progress" id="32">
+        <include>HiddenControl</include>
+      </control>
 
       <control type="group">
         <include>DialogTopRightCornerImageBg</include>
         <control type="image">
           <include>DialogTopRightCornerImage</include>
-          <texture colordiffuse="TopRightCornerImageFg">dialogs/top-right-extended-progress-fg.png</texture>
+          <texture colordiffuse="TopRightCornerImageFg">$INFO[Control.GetLabel(32),dialogs/extended-progress/top-right-extended-progress-,.png]</texture>
         </control>
-        <!-- <control type="image">
-          <include>DialogTopRightCornerImage</include>
-          <texture colordiffuse="TopRightCornerImageFg">$VAR[DialogVolumeProgressImage]</texture>
-        </control> -->
       </control>
 
 
