@@ -15,23 +15,24 @@
       </control>
 
       <control type="group">
+        <include>DialogTopRightCornerImageBg</include>
         <control type="image" id="400">
           <include>DialogTopRightCornerImage</include>
-          <texture>dialogs/notification-info.png</texture>
+          <texture colordiffuse="TopRightCornerImageFg">dialogs/top-right-notification-info-fg.png</texture>
         </control>
         <control type="image" id="403">
           <include>DialogTopRightCornerImage</include>
-          <texture>dialogs/notification-info.png</texture>
+          <texture colordiffuse="TopRightCornerImageFg">dialogs/top-right-notification-info-fg.png</texture>
           <visible>false</visible>
         </control>
         <control type="image" id="404">
           <include>DialogTopRightCornerImage</include>
-          <texture>dialogs/notification-warning.png</texture>
+          <texture colordiffuse="TopRightCornerImageFg">dialogs/top-right-notification-warning-fg.png</texture>
           <visible>false</visible>
         </control>
         <control type="image" id="405">
           <include>DialogTopRightCornerImage</include>
-          <texture>dialogs/notification-error.png</texture>
+          <texture colordiffuse="TopRightCornerImageFg">dialogs/top-right-notification-error-fg.png</texture>
           <visible>false</visible>
         </control>
       </control>
