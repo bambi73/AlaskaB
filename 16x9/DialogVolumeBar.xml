@@ -30,7 +30,7 @@
         </control>
         <control type="image">
           <include>DialogTopRightCornerImage</include>
-          <texture colordiffuse="TopRightCornerImageFg">$VAR[DialogVolumeProgressImage]</texture>
+          <texture colordiffuse="TopRightCornerImageFg">$INFO[Control.GetLabel(404),dialogs/volume/top-right-volume-progress-,.png]</texture>
         </control>
       </control>
     </control>
