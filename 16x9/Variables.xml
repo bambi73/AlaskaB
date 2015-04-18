@@ -32,26 +32,23 @@
     <value condition="Window.IsVisible(videoplaylist)">$LOCALIZE[20012]</value>
   </variable>
 
-  <variable name="Global_HeadingCategory">
-  </variable>
-
   <variable name="Global_HeadingDetails">
-    <value condition="Window.IsVisible(picturessettings)">[B]$LOCALIZE[1][/B]</value>
-    <value condition="Window.IsVisible(weathersettings)">[B]$LOCALIZE[8][/B]</value>
-    <value condition="Window.IsVisible(musicsettings)">[B]$LOCALIZE[2][/B]</value>
-    <value condition="Window.IsVisible(systemsettings)">[B]$LOCALIZE[13000][/B]</value>
-    <value condition="Window.IsVisible(profiles)">[B]$LOCALIZE[13200][/B]</value>
-    <value condition="Window.IsVisible(videossettings)">[B]$LOCALIZE[157][/B]</value>
-    <value condition="Window.IsVisible(networksettings)">[B]$LOCALIZE[14036][/B]</value>
-    <value condition="Window.IsVisible(appearancesettings)">[B]$LOCALIZE[480][/B]</value>
-    <value condition="Window.IsVisible(addonbrowser) | Window.IsVisible(addonsettings)">[B]$LOCALIZE[24001][/B]</value>
-    <value condition="Window.IsVisible(PVRSettings)">[B]$LOCALIZE[31161][/B]</value>
-    <value condition="Window.IsVisible(systeminfo)">[B]$LOCALIZE[130][/B]</value>
-    <value condition="Window.IsVisible(skinsettings)">[B]ALASKA[/B]</value>
+    <value condition="Window.IsVisible(picturessettings)">$LOCALIZE[1]</value>
+    <value condition="Window.IsVisible(weathersettings)">$LOCALIZE[8]</value>
+    <value condition="Window.IsVisible(musicsettings)">$LOCALIZE[2]</value>
+    <value condition="Window.IsVisible(systemsettings)">$LOCALIZE[13000]</value>
+    <value condition="Window.IsVisible(profiles)">$LOCALIZE[13200]</value>
+    <value condition="Window.IsVisible(videossettings)">$LOCALIZE[157]</value>
+    <value condition="Window.IsVisible(networksettings)">$LOCALIZE[14036]</value>
+    <value condition="Window.IsVisible(appearancesettings)">$LOCALIZE[480]</value>
+    <value condition="Window.IsVisible(addonbrowser) | Window.IsVisible(addonsettings)">$LOCALIZE[24001]</value>
+    <value condition="Window.IsVisible(PVRSettings)">$LOCALIZE[31161]</value>
+    <value condition="Window.IsVisible(systeminfo)">$LOCALIZE[130]</value>
+    <value condition="Window.IsVisible(skinsettings)">ALASKA</value>
 
-    <value condition="Window.IsVisible(musiclibrary) + !SubString(ListItem.Icon,Default) + StringCompare(Container.Viewmode,$LOCALIZE[31121])">[B]$INFO[ListItem.Album][/B]</value>
-    <value condition="Window.IsVisible(weather) + !StringCompare(Weather.Location,$LOCALIZE[503])">[B]$INFO[Window(Weather).Property(Location)][/B]</value>
-    <value condition="Window.IsVisible(weather) + StringCompare(Weather.Location,$LOCALIZE[503])">[B]$LOCALIZE[503][/B]</value>
+    <value condition="Window.IsVisible(musiclibrary) + !SubString(ListItem.Icon,Default) + StringCompare(Container.Viewmode,$LOCALIZE[31121])">$INFO[ListItem.Album]</value>
+    <value condition="Window.IsVisible(weather) + !StringCompare(Weather.Location,$LOCALIZE[503])">$INFO[Window(Weather).Property(Location)]</value>
+    <value condition="Window.IsVisible(weather) + StringCompare(Weather.Location,$LOCALIZE[503])">$LOCALIZE[503]</value>
     
     <value condition="Window.IsVisible(54) + [Control.IsVisible(8010) | Control.IsVisible(8011) | Control.IsVisible(8015)] + IntegerGreaterThan(Container(8010).NumItems,0) + !IntegerGreaterThan(Container(8010).NumItems,1)">$INFO[Container(8099).ListItem(0).Label,, • ]$INFO[Container(8010).NumItems,, $LOCALIZE[31157]]</value>
     <value condition="Window.IsVisible(54) + [Control.IsVisible(8010) | Control.IsVisible(8011) | Control.IsVisible(8015)]">$INFO[Container(8099).ListItem(0).Label,, • ]$INFO[Container(8010).NumItems,, $LOCALIZE[31100]]</value>

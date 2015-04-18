@@ -1010,4 +1010,40 @@
     <font>Font_Light_Caps_36</font>
   </include>
 
+  <!-- Setting category -->
+  <constant name="SettingsCategoryLeft">-160</constant>
+  <constant name="SettingsCategoryWidth">2240</constant>
+  <constant name="SettingsCategoryHeight">723</constant>
+
+  <constant name="SettingsCategoryGLTop">36</constant>
+  <constant name="SettingsCategoryGLHeight">528</constant>
+  <constant name="SettingsCategoryLeftGLLeft">40</constant>
+  <constant name="SettingsCategoryLeftGLWidth">370</constant>
+  <constant name="SettingsCategoryRightGLLeft">520</constant>
+  <constant name="SettingsCategoryRightGLWidth">1180</constant>
+
+  <include name="SettingsCategoryDescription">
+    <left>540</left>
+    <top>608</top>
+    <height>87</height>
+    <width>1160</width>
+    <font>Font_Light_36</font>
+  </include>
+
+  <include name="SettingsCategoryLeftGLTemplate">
+    <width>SettingsCategoryLeftGLWidth</width>
+    <align>right</align>
+    <animation effect="zoom" center="350,33" start="100" end="104" time="100" tween="cubic" easing="out">Focus</animation>
+  </include>
+
+  <include name="SettingsCategoryRightGLTemplate">
+    <width>SettingsCategoryRightGLWidth</width>
+    <animation effect="zoom" center="450,33" start="100" end="104" time="100" tween="cubic" easing="out">Focus</animation>
+  </include>
+
+  <include name="SettingsCategoryRightGLTemplateWithText">
+    <textwidth>1020</textwidth>
+    <include>SettingsCategoryRightGLTemplate</include>
+  </include>
+
 </includes>

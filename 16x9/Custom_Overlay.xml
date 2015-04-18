@@ -38,12 +38,12 @@
         <control type="group">
           <top>36</top>
           <left>46</left>
-          <visible>Window.IsVisible(videolibrary)</visible>
+          <visible>!Window.IsVisible(home)</visible>
           <animation type="Visible" reversible="false">
-            <effect type="slide" start="0,-100" end="0,0" time="400" tween="cubic" easing="out" />
-            <effect type="fade" start="0" end="100" time="400" tween="cubic" easing="out" />
+            <effect type="slide" start="0,-100" end="0,0" delay="200" time="400" tween="cubic" easing="out" />
+            <effect type="fade" start="0" end="100" delay="200" time="400" tween="cubic" easing="out" />
           </animation>
-          <animation type="Hidden">
+          <animation type="Hidden" reversible="false">
             <effect type="fade" start="100" end="0" time="200"/>
           </animation>
           <control type="group">
@@ -55,16 +55,6 @@
               <textcolor>Light</textcolor>
               <label>$VAR[Global_HeadingLabels]</label>
             </control>
-            <control type="label" id="8200">
-              <top>54</top>
-              <width>1428</width>
-              <height>36</height>
-              <haspath>true</haspath>
-              <font>Font_Black_Caps_38</font>
-              <textcolor>Light</textcolor>
-              <label>$VAR[Global_HeadingCategory]</label>
-              <visible>!IsEmpty(Control.GetLabel(8200))</visible>
-            </control>
             <control type="label">
               <top>54</top>
               <width>1428</width>
@@ -73,7 +63,6 @@
               <font>Font_Light_Caps_36</font>
               <textcolor>Light</textcolor>
               <label>$VAR[Global_HeadingDetails]</label>
-              <animation effect="slide" end="0,32" condition="Control.IsVisible(8200)">Conditional</animation>
             </control>
           </control>
           <control type="group">
@@ -85,16 +74,6 @@
               <textcolor>Light</textcolor>
               <label>$VAR[Global_HeadingLabels]</label>
             </control>
-            <control type="label" id="8200">
-              <top>54</top>
-              <width>1428</width>
-              <height>36</height>
-              <haspath>true</haspath>
-              <font>Font_Light_Caps_36</font>
-              <textcolor>Light</textcolor>
-              <label>$VAR[Global_HeadingCategory]</label>
-              <visible>!IsEmpty(Control.GetLabel(8200))</visible>
-            </control>
             <control type="label">
               <top>54</top>
               <width>1120</width>
@@ -103,7 +82,6 @@
               <font>Font_Light_Caps_36</font>
               <textcolor>Light</textcolor>
               <label>$VAR[Global_HeadingDetails]</label>
-              <animation effect="slide" end="0,32" condition="Control.IsVisible(8200)">Conditional</animation>
             </control>
           </control>
         </control>

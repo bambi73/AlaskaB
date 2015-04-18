@@ -85,11 +85,20 @@
     <disabledcolor>DisabledColour</disabledcolor>
     <texturenofocus>-</texturenofocus>
     <texturefocus>-</texturefocus>
-    <radiowidth>95</radiowidth>
+    <radiowidth>45</radiowidth>
+    <radioheight>27</radioheight>
+    <!-- <radioposx>50r</radioposx> -->
+    <textureradioonfocus colordiffuse="Heavy">common/radio.png</textureradioonfocus>
+    <textureradioonnofocus colordiffuse="Light">common/radio.png</textureradioonnofocus>
+    <textureradioofffocus colordiffuse="Heavy">common/radio_off.png</textureradioofffocus>
+    <textureradiooffnofocus colordiffuse="Light">common/radio_off.png</textureradiooffnofocus>    
+    <!-- <radiowidth>95</radiowidth>
     <radioheight>66</radioheight>
     <textureradiofocus>common/Radio_FO.png</textureradiofocus>
-    <textureradionofocus>common/Radio_NF.png</textureradionofocus>
+    <textureradionofocus>common/Radio_NF.png</textureradionofocus> -->
     <pulseonselect>false</pulseonselect>
+    <!-- <animation effect="zoom" center="400,33" start="100" end="110" time="125" tween="cubic" easing="out">Focus</animation> -->
+    <!-- <animation effect="zoom" center="50,33" start="100" end="115" time="125" tween="cubic" easing="out">Focus</animation> -->
   </default>
 
   <default type="spincontrolex">
@@ -104,14 +113,23 @@
     <disabledcolor>DisabledColour</disabledcolor>
     <texturenofocus>-</texturenofocus>
     <texturefocus>-</texturefocus>
-    <spinwidth>35</spinwidth>
-    <spinheight>66</spinheight>
-    <textureup>common/Arrow_Up_NF.png</textureup>
+    <spinwidth>33</spinwidth>
+    <spinheight>18</spinheight>
+    <!-- <spinwidth>33</spinwidth>
+    <spinheight>27</spinheight> -->
+    <textureup colordiffuse="Light">common/arrow_up.png</textureup>
+    <texturedown colordiffuse="Light">common/arrow_down.png</texturedown>
+    <textureupfocus colordiffuse="Heavy">common/arrow_up.png</textureupfocus>
+    <texturedownfocus colordiffuse="Heavy">common/arrow_down.png</texturedownfocus>
+    <!-- <spinposy>50</spinposy> -->
+    <!-- <textureup>common/Arrow_Up_NF.png</textureup>
     <texturedown>common/Arrow_Down_NF.png</texturedown>
     <textureupfocus>common/Arrow_Up_FO.png</textureupfocus>
-    <texturedownfocus>common/Arrow_Down_FO.png</texturedownfocus>
+    <texturedownfocus>common/Arrow_Down_FO.png</texturedownfocus> -->
     <pulseonselect>false</pulseonselect>
-    <reverse>yes</reverse>
+    <!-- <reverse>yes</reverse> -->
+    <!-- <animation effect="zoom" center="400,33" start="100" end="110" time="125" tween="cubic" easing="out">Focus</animation> -->
+    <!-- <animation effect="zoom" center="50,33" start="100" end="108" time="125" tween="cubic" easing="out">Focus</animation> -->
   </default>
 
   <default type="spincontrol">
