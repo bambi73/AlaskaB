@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="12">
-  <!-- <backgroundcolor>0</backgroundcolor> -->
   <defaultcontrol always="true">3</defaultcontrol>
   <coordinates>
     <origin x="0" y="0"/>
@@ -9,21 +8,9 @@
   <controls>
     <include>Global_Background</include>
 
-    <!-- <control type="group">
-      <left>46</left>
-      <include>Animation_SlideDownFadeOut</include>
-      <control type="label">
-        <label>$VAR[Global_HeadingLabels]</label>
-        <include>Global_HeadingSectionVars</include>
-      </control>
-      <control type="label">
-        <label>$VAR[Global_HeadingDetails]</label>
-        <include>Global_HeadingDetailVars</include>
-      </control>
-    </control> -->
-
     <control type="group" id="5000">
       <centertop>50%</centertop>
+      <left>SettingsCategoryLeft</left>
       <width>SettingsCategoryWidth</width>
       <height>SettingsCategoryHeight</height>
 
@@ -32,96 +19,80 @@
       <include>Animation_ZoomInZoomOut</include>
 
       <control type="image">
-        <left>SettingsCategoryLeft</left>
         <width>SettingsCategoryWidth</width>
         <height>SettingsCategoryHeight</height>
-        <!-- <visible>!Control.IsVisible(8800)</visible> -->
+        <visible>!Control.IsVisible(8800)</visible>
         <texture>settings/settings-category-bg.png</texture>
       </control>
-
-
-      <!-- <control type="group">
-        <control type="image">
-          <include>AlaskaB_Common_Background_Border_Up</include>
-        </control>
-        <control type="image">
-          <top>14</top>
-          <height>572</height>
-          <include>AlaskaB_Common_Background</include>
-        </control>
-        <control type="image">
-          <top>586</top>
-          <include>AlaskaB_Common_Background_Delimiter</include>
-        </control>
-        <control type="image">
-          <top>589</top>
-          <height>120</height>
-          <include>AlaskaB_Common_Background</include>
-        </control>
-        <control type="image">
-          <top>709</top>
-          <include>AlaskaB_Common_Background_Border_Down</include>
-        </control>
-      </control> -->
-
-      <!-- Left grouplist -->
-      <control type="grouplist" id="3">
-        <left>SettingsCategoryLeftGLLeft</left>
-        <top>SettingsCategoryGLTop</top>
-        <width>SettingsCategoryLeftGLWidth</width>
-        <height>SettingsCategoryGLHeight</height>
-        <itemgap>0</itemgap>
-        <onright>5</onright>
-        <onup>noop</onup>
-        <ondown>20</ondown>
-        <orientation>vertical</orientation>
-        <scrolltime tween="sine" easing="out">320</scrolltime>
+      <control type="image">
+        <width>SettingsCategoryWidth</width>
+        <height>SettingsCategoryHeight</height>
+        <visible>Control.IsVisible(8800)</visible>
+        <texture>settings/settings-category-scrollbar-bg.png</texture>
       </control>
 
-      <!-- Settings level -->
       <control type="group">
-        <left>SettingsCategoryLeftGLLeft</left>
-        <top>614</top>
-        <control type="button" id="20">
-          <height>66</height>
-          <onup>3</onup>
-          <onclick>SettingsLevelChange</onclick>
-          <include>SettingsCategoryLeftGLTemplate</include>
+        <left>160</left>
+
+        <!-- Left grouplist -->
+        <control type="grouplist" id="3">
+          <left>SettingsCategoryLeftGLLeft</left>
+          <top>SettingsCategoryGLTop</top>
+          <width>SettingsCategoryLeftGLWidth</width>
+          <height>SettingsCategoryGLHeight</height>
+          <itemgap>0</itemgap>
+          <onright>5</onright>
+          <onup>noop</onup>
+          <ondown>20</ondown>
+          <orientation>vertical</orientation>
+          <scrolltime tween="sine" easing="out">320</scrolltime>
         </control>
-      </control>
 
-      <!-- Right grouplist -->
-      <control type="grouplist" id="5">
-        <left>SettingsCategoryRightGLLeft</left>
-        <top>SettingsCategoryGLTop</top>
-        <width>SettingsCategoryRightGLWidth</width>
-        <height>SettingsCategoryGLHeight</height>
-        <itemgap>0</itemgap>
-        <onleft>3</onleft>
-        <onright>8800</onright>
-        <pagecontrol>8800</pagecontrol>
-        <orientation>vertical</orientation>
-        <scrolltime tween="sine" easing="out">320</scrolltime>
-      </control>
+        <!-- Settings level -->
+        <control type="group">
+          <left>SettingsCategoryLeftGLLeft</left>
+          <top>614</top>
+          <control type="button" id="20">
+            <height>66</height>
+            <onup>3</onup>
+            <onclick>SettingsLevelChange</onclick>
+            <include>SettingsCategoryLeftGLTemplate</include>
+          </control>
+        </control>
 
-      <!-- Settings descriptions -->
-      <control type="textbox" id="6">
-        <include>SettingsCategoryDescription</include>
-        <visible>ControlGroup(5).HasFocus</visible>
-      </control>
-      <control type="textbox">
-        <label>10047</label>
-        <include>SettingsCategoryDescription</include>
-        <visible>Control.HasFocus(20)</visible>
-      </control>
+        <!-- Right grouplist -->
+        <control type="grouplist" id="5">
+          <left>SettingsCategoryRightGLLeft</left>
+          <top>SettingsCategoryGLTop</top>
+          <width>SettingsCategoryRightGLWidth</width>
+          <height>SettingsCategoryGLHeight</height>
+          <itemgap>0</itemgap>
+          <onleft>3</onleft>
+          <onright>8800</onright>
+          <pagecontrol>8800</pagecontrol>
+          <orientation>vertical</orientation>
+          <scrolltime tween="sine" easing="out">320</scrolltime>
+        </control>
 
-      <!-- Scrollbar -->
-      <control type="scrollbar" id="8800">
-        <left>1809</left>
-        <top>52</top>
-        <height>496</height>
-        <onleft>5</onleft>
-        <!-- <visible>Skin.HasSetting(AlaskaB.Settings.Select.Scrollbar.Enable) + Control.IsVisible(3)</visible> -->
+        <!-- Settings descriptions -->
+        <control type="textbox" id="6">
+          <include>SettingsCategoryDescription</include>
+          <visible>ControlGroup(5).HasFocus</visible>
+        </control>
+        <control type="textbox">
+          <label>10047</label>
+          <include>SettingsCategoryDescription</include>
+          <visible>Control.HasFocus(20)</visible>
+        </control>
+
+        <!-- Scrollbar -->
+        <control type="scrollbar" id="8800">
+          <left>1809</left>
+          <top>52</top>
+          <height>496</height>
+          <onleft>5</onleft>
+          <visible>Skin.HasSetting(AlaskaB.Settings.SettingsCategory.Scrollbar.Enable)</visible>
+        </control>
       </control>
     </control>
 
@@ -134,15 +105,12 @@
     <control type="edit" id="12">
       <include>SettingsCategoryRightGLTemplate</include>
     </control>
-
     <control type="button" id="7">
       <include>SettingsCategoryRightGLTemplate</include>
     </control>
-
     <control type="radiobutton" id="8">
       <include>SettingsCategoryRightGLTemplateWithText</include>
     </control>
-
     <control type="spincontrolex" id="9">
       <include>SettingsCategoryRightGLTemplateWithText</include>
     </control>
