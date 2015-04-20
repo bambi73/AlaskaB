@@ -195,6 +195,7 @@
       <width>525</width>
       <height>65</height>
       <texture>home/Shade.png</texture>
+      <!-- <texture colordiffuse="Light">home/Shade.png</texture> -->
     </control>
   </include>
 
@@ -205,6 +206,7 @@
       <left>12</left>
       <top>0</top>
       <texture>home/Frame.png</texture>
+      <!-- <texture colordiffuse="Light">home/Frame.png</texture> -->
     </control>
   </include>
 
