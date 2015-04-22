@@ -54,29 +54,43 @@
           <animation effect="slide" end="-440,0" time="200" tween="cubic" easing="inout" condition="Container(60).Column(5)">Conditional</animation>
 
   				<itemlayout height="256" width="256">
+            <control type="image">
+              <width>256</width>
+              <height>256</height>
+              <texture colordiffuse="Heavy">settings/settings-bg.png</texture>
+              <animation type="Conditional" condition="true">
+                <effect type="zoom" start="85" end="85" center="auto" time="200" tween="cubic" easing="in" />
+                <effect type="fade" start="60" end="60" time="200" />
+              </animation>
+            </control>
   					<control type="image">
-  						<left>0</left>
-  						<top>0</top>
   						<width>256</width>
   						<height>256</height>
-  						<texture>$INFO[ListItem.Icon]</texture>
+  						<texture colordiffuse="Light">$INFO[ListItem.Icon]</texture>
   						<animation type="Conditional" condition="true">
   							<effect type="zoom" start="85" end="85" center="auto" time="200" tween="cubic" easing="in" />
-  							<effect type="fade" start="50" end="50" time="200" />
+  							<effect type="fade" start="60" end="60" time="200" />
   						</animation>
   					</control>
   				</itemlayout>
 
   				<focusedlayout height="256" width="256">
+            <control type="image">
+              <width>256</width>
+              <height>256</height>
+              <texture colordiffuse="Heavy">settings/settings-bg.png</texture>
+              <animation type="Focus" reversible="false">
+                <effect type="zoom" start="85" end="100" center="auto" time="200" tween="cubic" easing="in" />
+                <effect type="fade" start="60" end="100" time="200" />
+              </animation>
+            </control>
   					<control type="image">
-  						<left>0</left>
-  						<top>0</top>
   						<width>256</width>
   						<height>256</height>
-  						<texture>$INFO[ListItem.Icon]</texture>
+  						<texture colordiffuse="Light">$INFO[ListItem.Icon]</texture>
   						<animation type="Focus" reversible="false">
   							<effect type="zoom" start="85" end="100" center="auto" time="200" tween="cubic" easing="in" />
-  							<effect type="fade" start="50" end="100" time="200" />
+  							<effect type="fade" start="60" end="100" time="200" />
   						</animation>
   					</control>
   				</focusedlayout>
@@ -85,37 +99,43 @@
   					<item id="1">
               <label>$LOCALIZE[157]</label>
               <label2>$LOCALIZE[31128]</label2>
-  						<icon>settings/Settings_Video.png</icon>
+  						<!-- <icon>settings/Settings_Video.png</icon> -->
+              <icon>settings/settings-video-fg.png</icon>
   						<onclick>ActivateWindow(VideosSettings)</onclick>
   					</item>
   					<item id="2">
               <label>$LOCALIZE[10005]</label>
               <label2>$LOCALIZE[31131]</label2>
-  						<icon>settings/Settings_Music.png</icon>
+  						<!-- <icon>settings/Settings_Music.png</icon> -->
+              <icon>settings/settings-music-fg.png</icon>
   						<onclick>ActivateWindow(MusicSettings)</onclick>
   					</item>
             <item id="3">
               <label>$LOCALIZE[31161]</label>
               <label2>$LOCALIZE[31138]</label2>
-              <icon>settings/Settings_PVR.png</icon>
+              <!-- <icon>settings/Settings_PVR.png</icon> -->
+              <icon>settings/settings-pvr-fg.png</icon>
               <onclick>ActivateWindow(PVRSettings)</onclick>
             </item>
   					<item id="4">
               <label>$LOCALIZE[1213]</label>
               <label2>$LOCALIZE[31134]</label2>
-  						<icon>settings/Settings_Pictures.png</icon>
+              <!-- <icon>settings/Settings_Pictures.png</icon> -->
+  						<icon>settings/settings-pictures-fg.png</icon>
   						<onclick>ActivateWindow(PicturesSettings)</onclick>
   					</item>
             <item id="5">
               <label>$LOCALIZE[8]</label>
               <label2>$LOCALIZE[31132]</label2>
-              <icon>settings/Settings_Weather.png</icon>
+              <!-- <icon>settings/Settings_Weather.png</icon> -->
+              <icon>settings/settings-weather-fg.png</icon>
               <onclick>ActivateWindow(WeatherSettings)</onclick>
             </item>
             <item id="6">
               <label>$LOCALIZE[14036]</label>
               <label2>$LOCALIZE[31135]</label2>
-              <icon>settings/Settings_Network.png</icon>
+              <!-- <icon>settings/Settings_Network.png</icon> -->
+              <icon>settings/settings-service-fg.png</icon>
               <onclick>ActivateWindow(ServiceSettings)</onclick>
             </item>
             <item id="7">
@@ -133,13 +153,15 @@
             <item id="9">
               <label>$LOCALIZE[13000]</label>
               <label2>$LOCALIZE[31130]</label2>
-              <icon>settings/Settings_System.png</icon>
+              <!-- <icon>settings/Settings_System.png</icon> -->
+              <icon>settings/settings-system-fg.png</icon>
               <onclick>ActivateWindow(SystemSettings)</onclick>
             </item>
             <item id="10">
               <label>$LOCALIZE[13200]</label>
               <label2>$LOCALIZE[31137]</label2>
-              <icon>settings/Settings_Profiles.png</icon>
+              <!-- <icon>settings/Settings_Profiles.png</icon> -->
+              <icon>settings/settings-profiles-fg.png</icon>
               <onclick>ActivateWindow(Profiles)</onclick>
             </item>
             <item id="11">

@@ -21,7 +21,8 @@
 	<color name="MediaFlags">FFD9D7AD</color>
 	<color name="MPAARating">FFD9D7AD</color>
 	<color name="StarRating">FFD9D7AD</color>
-	<color name="WatchedTick">FFCF6215</color>
+	<color name="WatchedTick">FFC64F00</color>
+	<!-- <color name="WatchedTick">FFCF6215</color> -->
 	<color name="OSDButtonFO">FFD9D7AD</color>
 	<color name="OSDButtonNF">FFD9D7AD</color>
 	<color name="ButtonLabel">FFD9D7AD</color>
@@ -31,17 +32,20 @@
 	<color name="OSDLabelFO">FFD9D7AD</color>	
 	<color name="OSDLabelNF">FFD9D7AD</color>
 	<color name="OSDDetail">FFD9D7AD</color>
-	<color name="OSDStatus">FFCF6215</color>
+	<color name="OSDStatus">FFC64F00</color>
+	<!-- <color name="OSDStatus">FFCF6215</color> -->
 
 	<!-- Main colours -->
 
-	<color name="Heavy">FFCF6215</color>
+	<!-- <color name="Heavy">FFCF6215</color> -->
+	<color name="Heavy">FFC64F00</color>
 	<color name="Medium">FFB8B8B8</color>
 	<color name="MedLight">FFD9D7AD</color>
 	<color name="Light">FFD9D7AD</color>
 	<color name="Home">FF37485C</color>	
 
-	<color name="TopRightCornerImageBg">FFCF6215</color>	
+	<!-- <color name="TopRightCornerImageBg">FFCF6215</color>	 -->
+	<color name="TopRightCornerImageBg">FFC64F00</color>	
 	<color name="TopRightCornerImageFg">FFD9D7AD</color>	
 	
 	<!--color name="Heavy">ffd1d1d1</color>
