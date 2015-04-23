@@ -141,13 +141,15 @@
             <item id="7">
               <label>$LOCALIZE[480]</label>
               <label2>$LOCALIZE[31133]</label2>
-              <icon>settings/Settings_Appearance.png</icon>
+              <!-- <icon>settings/Settings_Appearance.png</icon> -->
+              <icon>settings/settings-appearance-fg.png</icon>
               <onclick>ActivateWindow(AppearanceSettings)</onclick>
             </item>
             <item id="8">
               <label>$LOCALIZE[24001]</label>
               <label2>$LOCALIZE[31129]</label2>
-              <icon>settings/Settings_Addons.png</icon>
+              <!-- <icon>settings/Settings_Addons.png</icon> -->
+              <icon>settings/settings-addons-fg.png</icon>
               <onclick>ActivateWindow(AddonBrowser)</onclick>
             </item>
             <item id="9">
@@ -196,6 +198,13 @@
           <label>$INFO[Container(60).ListItem.Label2]</label>
         </control>
   		</control>
+
+      <control type="image">
+        <top>14</top>
+        <width>SettingsCategoryWidth</width>
+        <height>572</height>
+        <texture>settings/overlay2.png</texture>
+      </control>
     </control>
 	</controls>
 
