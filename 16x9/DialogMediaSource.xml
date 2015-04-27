@@ -7,9 +7,11 @@
 
   <controls>
     <control type="group" id="5000">
-      <top>246</top>
+      <centertop>49%</centertop>
       <centerleft>50%</centerleft>
       <width>DialogMediaSourceWidth</width>
+      <height>DialogMediaSourceHeight</height>
+
       <include>Animation_ZoomInMenu</include>
       <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(virtualkeyboard) | Window.IsActive(filebrowser)">
         <include>AnimationEffect_ZoomedBy</include>
@@ -25,7 +27,7 @@
         <width>DialogMediaSourceWidth</width>
         <height>DialogMediaSourceHeight</height>
         <visible>Control.IsVisible(8800)</visible>
-        <texture>dialogs/media-source-scrollbar-bg.png</texture>
+        <texture>dialogs/media-source-bg-scrollbar.png</texture>
       </control>
 
       <control type="label" id="2">
@@ -36,7 +38,6 @@
         <align>center</align>
         <aligny>center</aligny>
         <font>Font_Black_Caps_42</font>
-        <textcolor>Light</textcolor>
       </control>
       <control type="edit" id="12">
         <top>116</top>
@@ -45,7 +46,6 @@
         <height>66</height>
         <align>center</align>
         <aligny>center</aligny>
-        <textcolor>Light</textcolor>
         <ondown>10</ondown>
       </control>
 
@@ -64,18 +64,18 @@
           <scrolltime tween="sine" easing="out">320</scrolltime>
           <!-- Browse -->
           <control type="button" id="11">
-            <include>DialogLeftMenuButton</include>
-            <label>1024</label>
+            <include>DialogMediaSourceLeftGLButton</include>
+            <label>$LOCALIZE[1024]</label>
           </control>
           <!-- Add -->
           <control type="button" id="13">
-            <include>DialogLeftMenuButton</include>
-            <label>15019</label>
+            <include>DialogMediaSourceLeftGLButton</include>
+            <label>$LOCALIZE[15019]</label>
           </control>
           <!-- Remove -->
           <control type="button" id="14">
-            <include>DialogLeftMenuButton</include>
-            <label>1210</label>
+            <include>DialogMediaSourceLeftGLButton</include>
+            <label>$LOCALIZE[1210]</label>
           </control>
         </control>
 
@@ -94,7 +94,7 @@
             <control type="label">
               <width>850</width>
               <height>66</height>
-              <textcolor>Light</textcolor>
+              <textcolor>TextLight</textcolor>
               <label>$INFO[ListItem.Label]</label>
             </control>
           </itemlayout>
@@ -103,10 +103,10 @@
               <width>850</width>
               <height>66</height>
               <scroll>true</scroll>
-              <textcolor>Heavy</textcolor>
-              <selectedcolor>Heavy</selectedcolor>
+              <textcolor>TextHeavy</textcolor>
+              <selectedcolor>TextHeavy</selectedcolor>
               <label>$INFO[ListItem.Label]</label>
-              <animation effect="zoom" center="40,33" start="100" end="115" time="125" tween="cubic" easing="out">Focus</animation>
+              <animation effect="zoom" center="50,33" start="100" end="104" time="50" tween="cubic" easing="out">Focus</animation>
             </control>
           </focusedlayout>
         </control>
@@ -127,7 +127,7 @@
         <include>DialogConfirmButtonGrouplist</include>
         <!-- OK -->
         <control type="button" id="18">
-          <label>20177</label>
+          <label>$LOCALIZE[20177]</label>
           <include>DialogConfirmButtonLeft</include>
           <animation type="Conditional" condition="Control.HasFocus(18)" reversible="false">
             <include>AnimationEffect_DialogConfirmButtonLeftFocus</include>
@@ -138,7 +138,7 @@
         </control>
         <!-- Cancel -->
         <control type="button" id="19">
-          <label>222</label>
+          <label>$LOCALIZE[222]</label>
           <include>DialogConfirmButtonRight</include>
           <animation type="Conditional" condition="Control.HasFocus(19)" reversible="false">
             <include>AnimationEffect_DialogConfirmButtonRightFocus</include>

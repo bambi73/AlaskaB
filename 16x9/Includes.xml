@@ -822,12 +822,11 @@
   <constant name="DialogMediaSourceWidth">1620</constant>
   <constant name="DialogMediaSourceHeight">547</constant>
 
-  <!-- Dialog left menu -->
-  <include name="DialogLeftMenuButton">
+  <include name="DialogMediaSourceLeftGLButton">
     <include>DialogKeyboardButtonBase</include>
     <width>420</width>
     <align>right</align>
-    <animation effect="zoom" center="380,33" start="100" end="115" time="125" tween="cubic" easing="out">Focus</animation>
+    <animation effect="zoom" center="350,33" start="100" end="104" time="50" tween="cubic" easing="out">Focus</animation>
   </include>
 
   <!-- Dialog base -->
