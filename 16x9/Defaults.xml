@@ -7,8 +7,8 @@
     <align>left</align>
     <aligny>center</aligny>
     <font>Font_Reg_44</font>
-    <textcolor>Light</textcolor>
-    <focusedcolor>Light</focusedcolor>
+    <textcolor>TextLight</textcolor>
+    <focusedcolor>TextLight</focusedcolor>
     <selectedcolor>SelectedColour</selectedcolor>
     <disabledcolor>DisabledColour</disabledcolor>
     <scrollspeed>40</scrollspeed>
@@ -21,8 +21,8 @@
     <align>left</align>
     <aligny>center</aligny>
     <font>Font_Reg_44</font>
-    <textcolor>Light</textcolor>
-    <focusedcolor>Light</focusedcolor>
+    <textcolor>TextLight</textcolor>
+    <focusedcolor>TextLight</focusedcolor>
     <selectedcolor>SelectedColour</selectedcolor>
     <disabledcolor>DisabledColour</disabledcolor>
     <scrollout>false</scrollout>
@@ -47,8 +47,8 @@
     <aligny>center</aligny>
     <font>Font_Reg_44</font>
     <label>-</label>
-    <textcolor>Light</textcolor>
-    <focusedcolor>Heavy</focusedcolor>    
+    <textcolor>TextLight</textcolor>
+    <focusedcolor>TextHeavy</focusedcolor>    
     <invalidcolor>DisabledColour</invalidcolor>
     <disabledcolor>DisabledColour</disabledcolor>
     <texturefocus>-</texturefocus>
@@ -63,8 +63,8 @@
     <aligny>center</aligny>
     <label>-</label>
     <font>Font_Reg_44</font>
-    <textcolor>Light</textcolor>
-    <focusedcolor>Heavy</focusedcolor>    
+    <textcolor>TextLight</textcolor>
+    <focusedcolor>TextHeavy</focusedcolor>    
     <disabledcolor>DisabledColour</disabledcolor>
     <texturefocus>-</texturefocus>
     <texturenofocus>-</texturenofocus>
@@ -80,25 +80,18 @@
     <aligny>center</aligny>
     <font>Font_Reg_44</font>
     <label>-</label>
-    <textcolor>Light</textcolor>
-    <focusedcolor>Heavy</focusedcolor>    
+    <textcolor>TextLight</textcolor>
+    <focusedcolor>TextHeavy</focusedcolor>    
     <disabledcolor>DisabledColour</disabledcolor>
     <texturenofocus>-</texturenofocus>
     <texturefocus>-</texturefocus>
     <radiowidth>45</radiowidth>
     <radioheight>27</radioheight>
-    <!-- <radioposx>50r</radioposx> -->
-    <textureradioonfocus colordiffuse="Heavy">common/radio.png</textureradioonfocus>
-    <textureradioonnofocus colordiffuse="Light">common/radio.png</textureradioonnofocus>
-    <textureradioofffocus colordiffuse="Heavy">common/radio_off.png</textureradioofffocus>
-    <textureradiooffnofocus colordiffuse="Light">common/radio_off.png</textureradiooffnofocus>    
-    <!-- <radiowidth>95</radiowidth>
-    <radioheight>66</radioheight>
-    <textureradiofocus>common/Radio_FO.png</textureradiofocus>
-    <textureradionofocus>common/Radio_NF.png</textureradionofocus> -->
+    <textureradioonnofocus colordiffuse="TextLight">common/radio.png</textureradioonnofocus>
+    <textureradioonfocus colordiffuse="TextHeavy">common/radio.png</textureradioonfocus>
+    <textureradiooffnofocus colordiffuse="TextLight">common/radio_off.png</textureradiooffnofocus>    
+    <textureradioofffocus colordiffuse="TextHeavy">common/radio_off.png</textureradioofffocus>
     <pulseonselect>false</pulseonselect>
-    <!-- <animation effect="zoom" center="400,33" start="100" end="110" time="125" tween="cubic" easing="out">Focus</animation> -->
-    <!-- <animation effect="zoom" center="50,33" start="100" end="115" time="125" tween="cubic" easing="out">Focus</animation> -->
   </default>
 
   <default type="spincontrolex">
@@ -108,28 +101,18 @@
     <aligny>center</aligny>
     <label>-</label>
     <font>Font_Reg_44</font>
-    <textcolor>Light</textcolor>
-    <focusedcolor>Heavy</focusedcolor>    
+    <textcolor>TextLight</textcolor>
+    <focusedcolor>TextHeavy</focusedcolor>    
     <disabledcolor>DisabledColour</disabledcolor>
     <texturenofocus>-</texturenofocus>
     <texturefocus>-</texturefocus>
     <spinwidth>33</spinwidth>
     <spinheight>18</spinheight>
-    <!-- <spinwidth>33</spinwidth>
-    <spinheight>27</spinheight> -->
-    <textureup colordiffuse="Light">common/arrow_up.png</textureup>
-    <texturedown colordiffuse="Light">common/arrow_down.png</texturedown>
-    <textureupfocus colordiffuse="Heavy">common/arrow_up.png</textureupfocus>
-    <texturedownfocus colordiffuse="Heavy">common/arrow_down.png</texturedownfocus>
-    <!-- <spinposy>50</spinposy> -->
-    <!-- <textureup>common/Arrow_Up_NF.png</textureup>
-    <texturedown>common/Arrow_Down_NF.png</texturedown>
-    <textureupfocus>common/Arrow_Up_FO.png</textureupfocus>
-    <texturedownfocus>common/Arrow_Down_FO.png</texturedownfocus> -->
+    <textureup colordiffuse="TextLight">common/arrow_up.png</textureup>
+    <textureupfocus colordiffuse="TextHeavy">common/arrow_up.png</textureupfocus>
+    <texturedown colordiffuse="TextLight">common/arrow_down.png</texturedown>
+    <texturedownfocus colordiffuse="TextHeavy">common/arrow_down.png</texturedownfocus>
     <pulseonselect>false</pulseonselect>
-    <!-- <reverse>yes</reverse> -->
-    <!-- <animation effect="zoom" center="400,33" start="100" end="110" time="125" tween="cubic" easing="out">Focus</animation> -->
-    <!-- <animation effect="zoom" center="50,33" start="100" end="108" time="125" tween="cubic" easing="out">Focus</animation> -->
   </default>
 
   <default type="spincontrol">
@@ -139,8 +122,8 @@
     <align>left</align>
     <aligny>center</aligny>
     <font>Font_Reg_44</font>
-    <textcolor>Light</textcolor>
-    <focusedcolor>Heavy</focusedcolor>    
+    <textcolor>TextLight</textcolor>
+    <focusedcolor>TextHeavy</focusedcolor>    
     <disabledcolor>DisabledColour</disabledcolor>
     <spinwidth>43</spinwidth>
     <spinheight>60</spinheight>
@@ -160,8 +143,8 @@
     <align>left</align>
     <aligny>center</aligny>
     <font>Font_Reg_44</font>
-    <textcolor>Light</textcolor>
-    <focusedcolor>Heavy</focusedcolor>    
+    <textcolor>TextLight</textcolor>
+    <focusedcolor>TextHeavy</focusedcolor>    
     <disabledcolor>DisabledColour</disabledcolor>
     <texturenofocus>-</texturenofocus>
     <texturefocus>-</texturefocus>
@@ -193,10 +176,10 @@
 
   <default type="scrollbar">
     <width>8</width>
-    <texturesliderbar border="0,4,0,4" colordiffuse="Light">common/scrollbar.png</texturesliderbar>
-    <texturesliderbarfocus border="0,4,0,4" colordiffuse="Heavy">common/scrollbar.png</texturesliderbarfocus>
-    <textureslidernib colordiffuse="Light">common/scrollbar-nib.png</textureslidernib>
-    <textureslidernibfocus colordiffuse="Heavy">common/scrollbar-nib.png</textureslidernibfocus>
+    <texturesliderbar border="0,4,0,4" colordiffuse="TextLight">common/scrollbar.png</texturesliderbar>
+    <texturesliderbarfocus border="0,4,0,4" colordiffuse="TextHeavy">common/scrollbar.png</texturesliderbarfocus>
+    <textureslidernib colordiffuse="TextLight">common/scrollbar-nib.png</textureslidernib>
+    <textureslidernibfocus colordiffuse="TextHeavy">common/scrollbar-nib.png</textureslidernibfocus>
     <showonepage>false</showonepage>
     <orientation>vertical</orientation>
   </default>
@@ -204,7 +187,7 @@
   <default type="textbox">
     <label>-</label>
     <font>Font_Reg_44</font>
-    <textcolor>Light</textcolor>
+    <textcolor>TextLight</textcolor>
     <pagecontrol>61</pagecontrol>
     <autoscroll delay="8000" time="4000" repeat="12000">True</autoscroll>
   </default>
@@ -214,11 +197,10 @@
     <aligny>center</aligny>
     <font>Font_Reg_44</font>
     <textoffsetx>20</textoffsetx>
-    <textcolor>Light</textcolor>
+    <textcolor>TextLight</textcolor>
     <focusedcolor>ButtonLabel</focusedcolor>
     <disabledcolor>DisabledColour</disabledcolor>
     <invalidcolor>DisabledColour</invalidcolor>
-    <!-- <texturefocus>common/Button_FO.png</texturefocus> -->
     <pulseonselect>no</pulseonselect>
   </default>
 

@@ -14,7 +14,6 @@
       <width>SettingsCategoryWidth</width>
       <height>SettingsCategoryHeight</height>
 
-      <!-- <include>Animation_ZoomInMenu</include> -->
       <include>Animation_ZoomedByMenu</include>
       <include>Animation_ZoomInZoomOut</include>
 
@@ -28,7 +27,7 @@
         <width>SettingsCategoryWidth</width>
         <height>SettingsCategoryHeight</height>
         <visible>Control.IsVisible(8800)</visible>
-        <texture>settings/settings-category-scrollbar-bg.png</texture>
+        <texture>settings/settings-category-bg-scrollbar.png</texture>
       </control>
 
       <control type="group">

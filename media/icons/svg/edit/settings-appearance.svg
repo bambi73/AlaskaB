@@ -1,43 +1,63 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 496.173 496.173" style="enable-background:new 0 0 496.173 496.173;" xml:space="preserve">
-<path d="M380.399,55.521h-4.555C372.517,23.726,359.887,0,344.738,0h-237.79l0.008,0.001C89.269,0.039,74.943,32.286,74.943,72.06
-	c0,39.719,14.282,71.927,31.931,72.064l237.864,0.003c15.149,0,27.778-23.734,31.105-55.53h4.555c4.264,0,7.751,3.481,7.751,7.754
-	v76.201c0,4.273-3.488,7.754-7.751,7.754H226.375c-9.139,0-16.537,7.405-16.537,16.538v103.283h-3.872
-	c-7.367,0-13.54,5.563-14.281,12.888L178.326,442.93c-1.404,13.598,3.023,27.149,12.195,37.301
-	c9.157,10.151,22.192,15.943,35.854,15.943c13.669,0,26.716-5.792,35.861-15.943c9.172-10.152,13.598-23.703,12.191-37.301
-	l-13.355-129.914c-0.745-7.326-6.913-12.888-14.281-12.888h-3.872v-86.743h137.479c22.517,0,40.831-18.316,40.831-40.832V96.352
-	C421.23,73.836,402.915,55.521,380.399,55.521z"/>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-</svg>
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Capa_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 496.173 496.173"
+   style="enable-background:new 0 0 496.173 496.173;"
+   xml:space="preserve"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="settings-appearance.svg"
+   inkscape:export-filename="c:\Users\Bambi\AppData\Roaming\Kodi\addons\skin.alaskab\media\settings\settings-appearance-fg.png"
+   inkscape:export-xdpi="22.492109"
+   inkscape:export-ydpi="22.492109"><metadata
+     id="metadata39"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+     id="defs37" /><sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1680"
+     inkscape:window-height="988"
+     id="namedview35"
+     showgrid="false"
+     inkscape:zoom="0.47564055"
+     inkscape:cx="-45.202202"
+     inkscape:cy="248.0865"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Capa_1" /><path
+     d="M380.399,55.521h-4.555C372.517,23.726,359.887,0,344.738,0h-237.79l0.008,0.001C89.269,0.039,74.943,32.286,74.943,72.06  c0,39.719,14.282,71.927,31.931,72.064l237.864,0.003c15.149,0,27.778-23.734,31.105-55.53h4.555c4.264,0,7.751,3.481,7.751,7.754  v76.201c0,4.273-3.488,7.754-7.751,7.754H226.375c-9.139,0-16.537,7.405-16.537,16.538v103.283h-3.872  c-7.367,0-13.54,5.563-14.281,12.888L178.326,442.93c-1.404,13.598,3.023,27.149,12.195,37.301  c9.157,10.151,22.192,15.943,35.854,15.943c13.669,0,26.716-5.792,35.861-15.943c9.172-10.152,13.598-23.703,12.191-37.301  l-13.355-129.914c-0.745-7.326-6.913-12.888-14.281-12.888h-3.872v-86.743h137.479c22.517,0,40.831-18.316,40.831-40.832V96.352  C421.23,73.836,402.915,55.521,380.399,55.521z"
+     id="path3" /><g
+     id="g5" /><g
+     id="g7" /><g
+     id="g9" /><g
+     id="g11" /><g
+     id="g13" /><g
+     id="g15" /><g
+     id="g17" /><g
+     id="g19" /><g
+     id="g21" /><g
+     id="g23" /><g
+     id="g25" /><g
+     id="g27" /><g
+     id="g29" /><g
+     id="g31" /><g
+     id="g33" /></svg>

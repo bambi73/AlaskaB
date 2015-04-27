@@ -39,7 +39,7 @@
 	<string id="31133">Adjust the look and feel of XBMC. Includes skin, theme, sound and font selection, RSS feed control, and localisation settings</string>
 	<string id="31134">Adjust how XBMC displays personal image collections. Includes EXIF information, slideshow options</string>
 	<string id="31135">Set up XBMC's services. Includes UPnP File Sharing, control via UPnP and HTTP, and enabling Zeroconf and Airplay</string>
-	<string id="31136">Move, copy and delete your files with XBMC's built-in file manager</string>
+	<string id="31136">Configure custom AlaskaB settings</string>
 	<string id="31137">Personalise your experience with profiles. Includes enabling login screen, and profile creation and management</string>
 	<string id="31138">Set up XBMC's PVR functions. Includes EPG, OSD, playback, and recording settings along with a channel manager</string>
 	<string id="31139">View your system's information. Includes storage, network, and hardware information</string>

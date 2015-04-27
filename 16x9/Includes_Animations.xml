@@ -48,6 +48,17 @@
   </include>
 
   <include name="Animation_ZoomInZoomOut">
+    <animation type="WindowOpen">
+      <effect type="zoom" time="400" center="CenterX,CenterY" start="50" end="100" tween="cubic" easing="out" />
+      <effect type="fade" time="400" start="0" end="100" tween="cubic" easing="out" />
+    </animation>
+    <animation type="WindowClose">
+      <effect type="zoom" time="400" center="CenterX,CenterY" start="100" end="50" tween="cubic" easing="in" />
+      <effect type="fade" time="400" start="100" end="0" />
+    </animation>
+  </include>
+
+  <!-- <include name="Animation_ZoomInZoomOut">
     <animation type="WindowOpen" condition="Window.Previous(home) | Window.Previous(54) | Window.Previous(videolibrary)">
       <effect type="zoom" time="400" center="CenterX,CenterY" start="50" end="100" tween="cubic" easing="out" />
       <effect type="fade" time="400" start="0" end="100" tween="cubic" easing="out" />
@@ -59,7 +70,7 @@
     <animation type="WindowClose" condition="Window.IsActive(videolibrary) + Window.Next(videolibrary)">
       <effect type="fade" time="0" start="100" end="0" />
     </animation>
-  </include>
+  </include> -->
 
   <include name="AnimationEffect_ZoomedBy">
     <effect type="zoom" time="400" center="CenterX,CenterY" start="100" end="50" tween="cubic" easing="inout" />

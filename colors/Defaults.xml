@@ -21,11 +21,14 @@
 	<color name="MediaFlags">FFD9D7AD</color>
 	<color name="MPAARating">FFD9D7AD</color>
 	<color name="StarRating">FFD9D7AD</color>
-	<color name="WatchedTick">FFC64F00</color>
-	<!-- <color name="WatchedTick">FFCF6215</color> -->
+	<color name="WatchedTick">FFCF6215</color>
 	<color name="OSDButtonFO">FFD9D7AD</color>
 	<color name="OSDButtonNF">FFD9D7AD</color>
 	<color name="ButtonLabel">FFD9D7AD</color>
+
+	<color name="IconHeavy">FFC64F00</color>
+	<color name="IconLight">FFD9D7AD</color>
+
 
 	<!-- OSD colours -->
 
@@ -36,9 +39,10 @@
 	<!-- <color name="OSDStatus">FFCF6215</color> -->
 
 	<!-- Main colours -->
+	<color name="TextHeavy">FFCF6215</color>
+	<color name="TextLight">FFD9D7AD</color>
 
-	<!-- <color name="Heavy">FFCF6215</color> -->
-	<color name="Heavy">FFC64F00</color>
+	<color name="Heavy">FFCF6215</color>
 	<color name="Medium">FFB8B8B8</color>
 	<color name="MedLight">FFD9D7AD</color>
 	<color name="Light">FFD9D7AD</color>
