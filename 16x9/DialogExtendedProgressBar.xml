@@ -23,7 +23,7 @@
         <include>DialogTopRightCornerImageBg</include>
         <control type="image">
           <include>DialogTopRightCornerImage</include>
-          <texture colordiffuse="TopRightCornerImageFg">$INFO[Control.GetLabel(32),dialogs/extended-progress/top-right-extended-progress-,.png]</texture>
+          <texture colordiffuse="IconLight">$INFO[Control.GetLabel(32),dialogs/extended-progress/top-right-extended-progress-,.png]</texture>
         </control>
       </control>
     </control>

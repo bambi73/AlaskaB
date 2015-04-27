@@ -11,7 +11,7 @@
 
       <control type="label">
         <include>DialogTopRightCornerHeader</include>
-        <label>13376</label>
+        <label>$LOCALIZE[13376]</label>
       </control>
       <control type="label">
         <include>DialogTopRightCornerDetail</include>
@@ -26,11 +26,11 @@
         <include>DialogTopRightCornerImageBg</include>
         <control type="image">
           <include>DialogTopRightCornerImage</include>
-          <texture colordiffuse="TopRightCornerImageFg">dialogs/top-right-volume-fg.png</texture>
+          <texture colordiffuse="IconLight">dialogs/top-right-volume-fg.png</texture>
         </control>
         <control type="image">
           <include>DialogTopRightCornerImage</include>
-          <texture colordiffuse="TopRightCornerImageFg">$INFO[Control.GetLabel(404),dialogs/volume/top-right-volume-progress-,.png]</texture>
+          <texture colordiffuse="IconLight">$INFO[Control.GetLabel(404),dialogs/volume/top-right-volume-progress-,.png]</texture>
         </control>
       </control>
     </control>

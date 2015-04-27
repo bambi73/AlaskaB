@@ -11,7 +11,7 @@
 
       <control type="label">
         <include>DialogTopRightCornerHeader</include>
-        <label>13376</label>
+        <label>$LOCALIZE[13376]</label>
       </control>
       <control type="label">
         <include>DialogTopRightCornerDetail</include>
@@ -22,7 +22,7 @@
         <include>DialogTopRightCornerImageBg</include>
         <control type="image">
           <include>DialogTopRightCornerImage</include>
-          <texture colordiffuse="TopRightCornerImageFg">dialogs/top-right-mute-fg.png</texture>
+          <texture colordiffuse="IconLight">dialogs/top-right-mute-fg.png</texture>
         </control>
       </control>
     </control>

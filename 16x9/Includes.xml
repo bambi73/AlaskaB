@@ -841,7 +841,7 @@
     <width>420</width>
     <bordersize>6,6,8,8</bordersize>
     <aspectratio align="right" aligny="center">keep</aspectratio>
-    <bordertexture border="6,6,8,8" colordiffuse="Light">pics/Picture_Panel.png</bordertexture>
+    <bordertexture border="6,6,8,8" colordiffuse="IconLight">pics/Picture_Panel.png</bordertexture>
   </include>
 
   <include name="DialogBaseList">
@@ -856,7 +856,7 @@
   <include name="DialogSelectImage1">
     <bordersize>20,78,40,80</bordersize>
     <include>DialogBaseLeftImage_DefaultIcon</include>
-    <texture colordiffuse="Light" fallback="./defaultaddonnone.png">$INFO[Container(6).ListItem.Icon]</texture>
+    <texture colordiffuse="IconLight" fallback="./defaultaddonnone.png">$INFO[Container(6).ListItem.Icon]</texture>
     <visible>SubString(Container(6).ListItem.Icon,Default)</visible>
   </include>
 
@@ -875,13 +875,13 @@
   <!-- Dialog file browser -->
   <include name="DialogFileBrowserImage1">
     <include>DialogBaseLeftImage_DefaultIcon</include>
-    <texture colordiffuse="Light">$INFO[ListItem.Icon]</texture>
+    <texture colordiffuse="IconLight">$INFO[ListItem.Icon]</texture>
     <visible>SubString(ListItem.Icon,Default) + !SubString(ListItem.Icon,DefaultVideo)</visible>
   </include>
 
   <include name="DialogFileBrowserImage2">
     <include>DialogBaseLeftImage_DefaultIcon</include>
-    <texture colordiffuse="Light">dialogs/no-art.png</texture>
+    <texture colordiffuse="IconLight">dialogs/no-art.png</texture>
     <visible>SubString(ListItem.Icon,Default) + SubString(ListItem.Icon,DefaultVideo)</visible>
   </include>
 
@@ -993,7 +993,7 @@
   <include name="DialogTopRightCornerImageBg">
     <control type="image">
       <include>DialogTopRightCornerImage</include>
-      <texture colordiffuse="TopRightCornerImageBg">dialogs/top-right-bg.png</texture>
+      <texture colordiffuse="IconHeavy">dialogs/top-right-bg.png</texture>
     </control>
   </include>
 

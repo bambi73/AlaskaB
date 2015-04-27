@@ -29,9 +29,7 @@
 	<color name="IconHeavy">FFC64F00</color>
 	<color name="IconLight">FFD9D7AD</color>
 
-
 	<!-- OSD colours -->
-
 	<color name="OSDLabelFO">FFD9D7AD</color>	
 	<color name="OSDLabelNF">FFD9D7AD</color>
 	<color name="OSDDetail">FFD9D7AD</color>
@@ -47,10 +45,6 @@
 	<color name="MedLight">FFD9D7AD</color>
 	<color name="Light">FFD9D7AD</color>
 	<color name="Home">FF37485C</color>	
-
-	<!-- <color name="TopRightCornerImageBg">FFCF6215</color>	 -->
-	<color name="TopRightCornerImageBg">FFC64F00</color>	
-	<color name="TopRightCornerImageFg">FFD9D7AD</color>	
 	
 	<!--color name="Heavy">ffd1d1d1</color>
 	<color name="Medium">ffb8b8b8</color>

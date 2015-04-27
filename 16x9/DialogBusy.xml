@@ -15,14 +15,14 @@
       </control>
       <control type="label">
         <include>DialogTopRightCornerDetail</include>
-        <label>20186</label>
+        <label>$LOCALIZE[20186]</label>
       </control>
 
       <control type="group">
         <include>DialogTopRightCornerImageBg</include>
         <control type="image">
           <include>DialogTopRightCornerImage</include>
-          <texture colordiffuse="TopRightCornerImageFg">dialogs/top-right-busy-fg.png</texture>
+          <texture colordiffuse="IconLight">dialogs/top-right-busy-fg.png</texture>
           <animation effect="rotate" start="360" end="0" center="auto" time="1200" loop="true" condition="true">conditional</animation>
         </control>
       </control>
