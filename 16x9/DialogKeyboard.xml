@@ -7,17 +7,19 @@
 
   <controls>
     <control type="group" id="5000">
-      <top>174</top>
+      <centertop>49%</centertop>
       <centerleft>50%</centerleft>
-      <width>1720</width>
+      <width>DialogKeyboardWidth</width>
+      <height>DialogKeyboardHeight</height>
+
       <include>Animation_ZoomInMenu</include>
       <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog)">
         <include>AnimationEffect_ZoomedBy</include>
       </animation>
 
       <control type="image">
-        <width>1720</width>
-        <height>693</height>
+        <width>DialogKeyboardWidth</width>
+        <height>DialogKeyboardHeight</height>
         <texture>dialogs/keybord-bg.png</texture>
       </control>
 
@@ -29,7 +31,6 @@
         <align>center</align>
         <aligny>center</aligny>
         <font>Font_Black_Caps_42</font>
-        <textcolor>Light</textcolor>
       </control>
       <control type="edit" id="312">
         <centerleft>50%</centerleft>
@@ -39,7 +40,6 @@
         <align>center</align>
         <aligny>center</aligny>
         <scroll>true</scroll>
-        <textcolor>Light</textcolor>
       </control>
 
       <control type="group">
@@ -50,60 +50,60 @@
           <top>0</top>
           <onleft>1100</onleft>
           <onright>1100</onright>
-          <include>KeyboardButtonGrouplist</include>
+          <include>DialogKeyboardButtonGrouplist</include>
 
           <!-- Layout -->
           <control type="button" id="309">
             <ondown>304</ondown>
-            <include>KeyboardButtonSystem</include>
+            <include>DialogKeyboardButtonSystem</include>
           </control>
           <control type="button" id="100">
             <ondown>120</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="101">
             <ondown>121</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="102">
             <ondown>122</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="103">
             <ondown>123</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="104">
             <ondown>124</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="105">
             <ondown>125</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="106">
             <ondown>126</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="107">
             <ondown>127</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="108">
             <ondown>128</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="109">
             <ondown>129</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="110">
             <ondown>130</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="111">
             <ondown>131</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
         </control>
 
@@ -111,75 +111,75 @@
           <top>70</top>
           <onleft>1200</onleft>
           <onright>1200</onright>
-          <include>KeyboardButtonGrouplist</include>
+          <include>DialogKeyboardButtonGrouplist</include>
 
           <!-- Symbols -->
           <control type="togglebutton" id="304">
             <onup>309</onup>
             <ondown>303</ondown>
-            <label>20180</label>
-            <altlabel>[COLOR=Heavy]$LOCALIZE[20180][/COLOR]</altlabel>
-            <include>KeyboardButtonSystem</include>
+            <label>$LOCALIZE[20180]</label>
+            <altlabel>[COLOR=TextHeavy]$LOCALIZE[20180][/COLOR]</altlabel>
+            <include>DialogKeyboardButtonSystem</include>
           </control>
           <control type="button" id="120">
             <onup>100</onup>
             <ondown>140</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="121">
             <onup>101</onup>
             <ondown>141</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="122">
             <onup>102</onup>
             <ondown>142</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="123">
             <onup>103</onup>
             <ondown>143</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="124">
             <onup>104</onup>
             <ondown>144</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="125">
             <onup>105</onup>
             <ondown>145</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="126">
             <onup>106</onup>
             <ondown>146</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="127">
             <onup>107</onup>
             <ondown>147</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="128">
             <onup>108</onup>
             <ondown>148</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="129">
             <onup>109</onup>
             <ondown>149</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="130">
             <onup>110</onup>
             <ondown>150</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="131">
             <onup>111</onup>
             <ondown>151</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
         </control>
 
@@ -187,75 +187,75 @@
           <top>140</top>
           <onleft>1300</onleft>
           <onright>1300</onright>
-          <include>KeyboardButtonGrouplist</include>
+          <include>DialogKeyboardButtonGrouplist</include>
 
           <!-- Caps lock -->
           <control type="togglebutton" id="303">
             <onup>304</onup>
             <ondown>302</ondown>
-            <label>20179</label>
-            <altlabel>[COLOR=Heavy]$LOCALIZE[20179][/COLOR]</altlabel>
-            <include>KeyboardButtonSystem</include>
+            <label>$LOCALIZE[20179]</label>
+            <altlabel>[COLOR=TextHeavy]$LOCALIZE[20179][/COLOR]</altlabel>
+            <include>DialogKeyboardButtonSystem</include>
           </control>
           <control type="button" id="140">
             <onup>120</onup>
             <ondown>160</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="141">
             <onup>121</onup>
             <ondown>161</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="142">
             <onup>122</onup>
             <ondown>162</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="143">
             <onup>123</onup>
             <ondown>163</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="144">
             <onup>124</onup>
             <ondown>164</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="145">
             <onup>125</onup>
             <ondown>165</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="146">
             <onup>126</onup>
             <ondown>166</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="147">
             <onup>127</onup>
             <ondown>167</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="148">
             <onup>128</onup>
             <ondown>168</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="149">
             <onup>129</onup>
             <ondown>169</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="150">
             <onup>130</onup>
             <ondown>170</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="151">
             <onup>131</onup>
             <ondown>171</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
         </control>
 
@@ -263,75 +263,75 @@
           <top>210</top>
           <onleft>1400</onleft>
           <onright>1400</onright>
-          <include>KeyboardButtonGrouplist</include>
+          <include>DialogKeyboardButtonGrouplist</include>
 
           <!-- Shift -->
           <control type="togglebutton" id="302">
             <onup>303</onup>
             <ondown>307</ondown>
-            <label>20178</label>
-            <altlabel>[COLOR=Heavy]$LOCALIZE[20178][/COLOR]</altlabel>
-            <include>KeyboardButtonSystem</include>
+            <label>$LOCALIZE[20178]</label>
+            <altlabel>[COLOR=TextHeavy]$LOCALIZE[20178][/COLOR]</altlabel>
+            <include>DialogKeyboardButtonSystem</include>
           </control>
           <control type="button" id="160">
             <onup>140</onup>
             <ondown>305</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="161">
             <onup>141</onup>
             <ondown>32</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="162">
             <onup>142</onup>
             <ondown>32</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="163">
             <onup>143</onup>
             <ondown>32</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="164">
             <onup>144</onup>
             <ondown>32</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="165">
             <onup>145</onup>
             <ondown>32</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="166">
             <onup>146</onup>
             <ondown>306</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="167">
             <onup>147</onup>
             <ondown>8</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="168">
             <onup>148</onup>
             <ondown>8</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="169">
             <onup>149</onup>
             <ondown>8</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="170">
             <onup>150</onup>
             <ondown>8</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <control type="button" id="171">
             <onup>151</onup>
             <ondown>8</ondown>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
         </control>
 
@@ -340,20 +340,20 @@
           <onleft>1500</onleft>
           <onright>1500</onright>
           <ondown>2000</ondown>
-          <include>KeyboardButtonGrouplist</include>
+          <include>DialogKeyboardButtonGrouplist</include>
 
           <!-- IP address -->
           <control type="button" id="307">
             <onup>302</onup>
-            <label>1006</label>
-            <include>KeyboardButtonSystem</include>
+            <label>$LOCALIZE[1006]</label>
+            <include>DialogKeyboardButtonSystem</include>
           </control>
           <!-- Previous -->
           <control type="button" id="305">
             <onup>160</onup>
             <width>66</width>
             <label>&lt;</label>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <!-- Space -->
           <control type="button" id="32">
@@ -361,16 +361,16 @@
             <width>410</width>
             <align>center</align>
             <textoffsetx>10</textoffsetx>
-            <label>20182</label>
-            <include>KeyboardButtonBase</include>
-            <animation effect="zoom" center="auto" start="100" end="115" time="125" tween="cubic" easing="out">Focus</animation>
+            <label>$LOCALIZE[20182]</label>
+            <include>DialogKeyboardButtonBase</include>
+            <animation effect="zoom" center="auto" start="100" end="104" time="50" tween="cubic" easing="out">Focus</animation>
           </control>
           <!-- Next -->
           <control type="button" id="306">
             <onup>166</onup>
             <width>66</width>
             <label>&gt;</label>
-            <include>KeyboardButtonAlphanumeric</include>
+            <include>DialogKeyboardButtonAlphanumeric</include>
           </control>
           <!-- Backspace -->
           <control type="button" id="8">
@@ -378,9 +378,9 @@
             <width>374</width>
             <align>left</align>
             <textoffsetx>20</textoffsetx>
-            <label>20181</label>
-            <include>KeyboardButtonBase</include>
-            <animation effect="zoom" center="38,33" start="100" end="115" time="125" tween="cubic" easing="out">Focus</animation>
+            <label>$LOCALIZE[20181]</label>
+            <include>DialogKeyboardButtonBase</include>
+            <animation effect="zoom" center="38,33" start="100" end="104" time="50" tween="cubic" easing="out">Focus</animation>
           </control>
         </control>
       </control>
@@ -391,7 +391,7 @@
         <include>DialogConfirmButtonGrouplist</include>
         <!-- Done -->
         <control type="button" id="300">
-          <label>20177</label>
+          <label>$LOCALIZE[20177]</label>
           <include>DialogConfirmButtonLeft</include>
           <animation type="Conditional" condition="Control.HasFocus(300)" reversible="false">
             <include>AnimationEffect_DialogConfirmButtonLeftFocus</include>
@@ -402,7 +402,7 @@
         </control>
         <!-- Cancel Button -->
         <control type="button" id="301">
-          <label>222</label>
+          <label>$LOCALIZE[222]</label>
           <include>DialogConfirmButtonRight</include>
           <animation type="Conditional" condition="Control.HasFocus(301)" reversible="false">
             <include>AnimationEffect_DialogConfirmButtonRightFocus</include>

@@ -824,7 +824,7 @@
 
   <!-- Dialog left menu -->
   <include name="DialogLeftMenuButton">
-    <include>KeyboardButtonBase</include>
+    <include>DialogKeyboardButtonBase</include>
     <width>420</width>
     <align>right</align>
     <animation effect="zoom" center="380,33" start="100" end="115" time="125" tween="cubic" easing="out">Focus</animation>
@@ -931,8 +931,11 @@
     <font>Font_Black_Caps_76</font>
   </include>
 
-  <!-- Keyboard Buttons -->
-  <include name="KeyboardButtonGrouplist">
+  <!-- Dialog Keyboard -->
+  <constant name="DialogKeyboardWidth">1720</constant>
+  <constant name="DialogKeyboardHeight">693</constant>
+
+  <include name="DialogKeyboardButtonGrouplist">
     <left>0</left>
     <width>1520</width>
     <height>70</height>
@@ -940,25 +943,25 @@
     <orientation>horizontal</orientation>
   </include>
 
-  <include name="KeyboardButtonBase">
+  <include name="DialogKeyboardButtonBase">
     <height>66</height>
     <aligny>center</aligny>
   </include>
 
-  <include name="KeyboardButtonSystem">
-    <include>KeyboardButtonBase</include>
+  <include name="DialogKeyboardButtonSystem">
+    <include>DialogKeyboardButtonBase</include>
     <width>450</width>
     <align>right</align>
     <textoffsetx>60</textoffsetx>
-    <animation effect="zoom" center="380,33" start="100" end="115" time="125" tween="cubic" easing="out">Focus</animation>
+    <animation effect="zoom" center="380,33" start="100" end="104" time="50" tween="cubic" easing="out">Focus</animation>
   </include>
 
-  <include name="KeyboardButtonAlphanumeric">
-    <include>KeyboardButtonBase</include>
+  <include name="DialogKeyboardButtonAlphanumeric">
+    <include>DialogKeyboardButtonBase</include>
     <width>66</width>
     <align>center</align>
     <textoffsetx>10</textoffsetx>
-    <animation effect="zoom" center="auto" start="100" end="125" time="125" tween="cubic" easing="out">Focus</animation>
+    <animation effect="zoom" center="auto" start="100" end="112" time="50" tween="cubic" easing="out">Focus</animation>
   </include>
 
   <!-- Top-Right corner dialogs -->
