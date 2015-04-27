@@ -9,24 +9,25 @@
     <control id="5000" type="group">
       <centertop>49%</centertop>
       <centerleft>50%</centerleft>
-      <width>1720</width>
-      <height>722</height>
+      <width>DialogFileBrowserWidth</width>
+      <height>DialogFileBrowserHeight</height>
+
       <include>Animation_ZoomInMenu</include>
       <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(virtualkeyboard)">
         <include>AnimationEffect_ZoomedBy</include>
       </animation>
 
       <control type="image">
-        <width>1720</width>
-        <height>722</height>
+        <width>DialogFileBrowserWidth</width>
+        <height>DialogFileBrowserHeight</height>
         <visible>!Control.IsVisible(8800)</visible>
         <texture>dialogs/file-browser-bg.png</texture>
       </control>
       <control type="image">
-        <width>1720</width>
-        <height>722</height>
+        <width>DialogFileBrowserWidth</width>
+        <height>DialogFileBrowserHeight</height>
         <visible>Control.IsVisible(8800)</visible>
-        <texture>dialogs/file-browser-scrollbar-bg.png</texture>
+        <texture>dialogs/file-browser-bg-scrollbar.png</texture>
       </control>
 
       <!-- Heading label -->
@@ -38,7 +39,6 @@
         <align>center</align>
         <aligny>center</aligny>
         <font>Font_Black_Caps_42</font>
-        <textcolor>Light</textcolor>
       </control>
       
       <control type="group">
@@ -88,11 +88,11 @@
           <control type="button" id="415">
             <width>420</width>
             <align>right</align>
-            <label>119</label>
             <onright>450</onright>
             <ondown>9010</ondown>
+            <label>$LOCALIZE[119]</label>
             <visible>Control.IsEnabled(415)</visible>
-            <animation effect="zoom" center="380,33" start="100" end="115" time="125" tween="cubic" easing="out">Focus</animation>
+            <animation effect="zoom" center="380,33" start="100" end="104" time="50" tween="cubic" easing="out">Focus</animation>
           </control>
         </control>
 
@@ -116,7 +116,7 @@
             <control type="label">
               <width>850</width>
               <height>66</height>
-              <textcolor>Light</textcolor>
+              <textcolor>TextLight</textcolor>
               <label>$INFO[ListItem.Label]</label>
             </control>
           </itemlayout>
@@ -129,10 +129,10 @@
               <width>850</width>
               <height>66</height>
               <scroll>true</scroll>
-              <textcolor>Heavy</textcolor>
-              <selectedcolor>Heavy</selectedcolor>
+              <textcolor>TextHeavy</textcolor>
+              <selectedcolor>TextHeavy</selectedcolor>
               <label>$INFO[ListItem.Label]</label>
-              <animation effect="zoom" center="40,33" start="100" end="115" time="125" tween="cubic" easing="out">Focus</animation>
+              <animation effect="zoom" center="50,33" start="100" end="104" time="50" tween="cubic" easing="out">Focus</animation>
             </control>
           </focusedlayout>
         </control>
@@ -154,7 +154,7 @@
         <include>DialogConfirmButtonGrouplist</include>
         <!-- OK -->
         <control type="button" id="413">
-          <label>20177</label>
+          <label>$LOCALIZE[20177]</label>
           <include>DialogConfirmButtonLeft</include>
           <animation type="Conditional" condition="Control.HasFocus(413)" reversible="false">
             <include>AnimationEffect_DialogConfirmButtonLeftFocus</include>
@@ -165,7 +165,7 @@
         </control>
         <!-- Cancel -->
         <control type="button" id="414">
-          <label>222</label>
+          <label>$LOCALIZE[222]</label>
           <include>DialogConfirmButtonRight</include>
           <animation type="Conditional" condition="Control.HasFocus(414)" reversible="false">
             <include>AnimationEffect_DialogConfirmButtonRightFocus</include>

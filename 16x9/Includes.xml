@@ -772,46 +772,7 @@
     <textcolor>Medium</textcolor>
   </include>
 
-  <!-- Shutdown menu button -->
-
-  <include name="ShutdownMenuValue">
-    <left>0</left>
-    <top>33</top>
-    <width>1600</width>
-    <height>76</height>
-    <align>center</align>
-    <font>Font_Black_Caps_76</font>
-    <textcolor>Light</textcolor>
-  </include>
-
-  <include name="ShutdownMenuValue_Focus">
-    <left>0</left>
-    <top>33</top>
-    <width>1600</width>
-    <height>76</height>
-    <align>center</align>
-    <font>Font_Black_Caps_76</font>
-    <textcolor>Heavy</textcolor>
-  </include>
-
   <!-- Settings objects -->
-
-  <include name="SettingsHeadingVars">
-    <width>450</width>
-    <font>Font_Black_Caps_53</font>
-    <textcolor>MedLight</textcolor>
-  </include>
-
-  <include name="SettingsDetailVars">
-    <width>450</width>
-    <height>180</height>
-    <top>75</top>
-    <aligny>top</aligny>
-    <font>Font_Light_30</font>
-    <textcolor>MedLight</textcolor>
-    <wrapmultiline>true</wrapmultiline>
-  </include>
-
   <include name="osd_padding">
     <height>64</height>
     <width>12</width>
@@ -872,6 +833,9 @@
   </include>
 
   <!-- Dialog file browser -->
+  <constant name="DialogFileBrowserWidth">1720</constant>
+  <constant name="DialogFileBrowserHeight">722</constant>
+
   <include name="DialogFileBrowserImage1">
     <include>DialogBaseLeftImage_DefaultIcon</include>
     <texture colordiffuse="IconLight">$INFO[ListItem.Icon]</texture>
