@@ -7,19 +7,18 @@
 
   <controls>
     <control type="group" id="5000">
-      <top>322</top>
-      <left>0</left>
-      <width>FullWidth</width>
-      <height>396</height>
+      <centertop>49%</centertop>
+      <centerleft>50%</centerleft>
+      <width>DialogConfirmWidth</width>
+      <height>DialogConfirmHeight</height>
       <include>Animation_ZoomInMenu</include>
       <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(DialogYesNo.xml)">
         <include>AnimationEffect_ZoomedBy</include>
       </animation>
 
       <control type="image">
-        <left>300</left>
-        <width>1320</width>
-        <height>396</height>
+        <width>DialogConfirmWidth</width>
+        <height>DialogConfirmHeight</height>
         <texture>dialogs/yesno-ok-bg.png</texture>
       </control>
 
@@ -40,6 +39,7 @@
         <align>center</align>
         <font>Font_Light_Caps_34</font>
       </control>
+      
       <control type="button" id="10">
         <top>272</top>
         <include>DialogConfirmButtonCenter</include>

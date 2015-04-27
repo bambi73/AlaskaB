@@ -892,6 +892,8 @@
   </include>
 
   <!-- Dialog confirm button -->
+  <constant name="DialogConfirmWidth">1320</constant>
+  <constant name="DialogConfirmHeight">396</constant>
   <constant name="DialogConfirmControlWidth">1300</constant>
 
   <include name="DialogConfirmButtonGrouplist">
@@ -1043,12 +1045,12 @@
   <include name="SettingsCategoryLeftGLTemplate">
     <width>SettingsCategoryLeftGLWidth</width>
     <align>right</align>
-    <animation effect="zoom" center="350,33" start="100" end="104" time="100" tween="cubic" easing="out">Focus</animation>
+    <animation effect="zoom" center="350,33" start="100" end="104" time="50" tween="cubic" easing="out">Focus</animation>
   </include>
 
   <include name="SettingsCategoryRightGLTemplate">
     <width>SettingsCategoryRightGLWidth</width>
-    <animation effect="zoom" center="450,33" start="100" end="104" time="100" tween="cubic" easing="out">Focus</animation>
+    <animation effect="zoom" center="450,33" start="100" end="104" time="50" tween="cubic" easing="out">Focus</animation>
   </include>
 
   <include name="SettingsCategoryRightGLTemplateWithText">
