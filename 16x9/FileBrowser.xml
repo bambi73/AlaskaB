@@ -92,7 +92,7 @@
             <ondown>9010</ondown>
             <label>$LOCALIZE[119]</label>
             <visible>Control.IsEnabled(415)</visible>
-            <animation effect="zoom" center="380,33" start="100" end="104" time="50" tween="cubic" easing="out">Focus</animation>
+            <animation effect="zoom" center="380,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
           </control>
         </control>
 
@@ -132,7 +132,7 @@
               <textcolor>TextHeavy</textcolor>
               <selectedcolor>TextHeavy</selectedcolor>
               <label>$INFO[ListItem.Label]</label>
-              <animation effect="zoom" center="50,33" start="100" end="104" time="50" tween="cubic" easing="out">Focus</animation>
+              <animation effect="zoom" center="50,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
             </control>
           </focusedlayout>
         </control>

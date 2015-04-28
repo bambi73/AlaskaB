@@ -30,8 +30,6 @@
   <include file="Home_OriginalMod.xml" />
   <include file="Home_AlaskaB.xml" />
 
-  <include file="DialogSelectIncludes.xml" />
-
   <include file="script-skinshortcuts-includes.xml"/>
 
   <!-- Global objects -->
@@ -787,7 +785,7 @@
     <include>DialogKeyboardButtonBase</include>
     <width>420</width>
     <align>right</align>
-    <animation effect="zoom" center="350,33" start="100" end="104" time="50" tween="cubic" easing="out">Focus</animation>
+    <animation effect="zoom" center="350,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
   </include>
 
   <!-- Dialog base -->
@@ -812,6 +810,10 @@
 
   <!-- Dialog select -->
   <constant name="DialogSelectWidth">1720</constant>
+  <constant name="DialogSelectHeight1">722</constant>
+  <constant name="DialogSelectHeight2">610</constant>
+  <constant name="DialogSelectHeight3">665</constant>
+  <constant name="DialogSelectHeight4">553</constant>
 
   <include name="DialogSelectImage1">
     <bordersize>20,78,40,80</bordersize>
@@ -918,7 +920,7 @@
     <width>450</width>
     <align>right</align>
     <textoffsetx>60</textoffsetx>
-    <animation effect="zoom" center="380,33" start="100" end="104" time="50" tween="cubic" easing="out">Focus</animation>
+    <animation effect="zoom" center="380,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
   </include>
 
   <include name="DialogKeyboardButtonAlphanumeric">
@@ -1008,12 +1010,12 @@
   <include name="SettingsCategoryLeftGLTemplate">
     <width>SettingsCategoryLeftGLWidth</width>
     <align>right</align>
-    <animation effect="zoom" center="350,33" start="100" end="104" time="50" tween="cubic" easing="out">Focus</animation>
+    <animation effect="zoom" center="350,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
   </include>
 
   <include name="SettingsCategoryRightGLTemplate">
     <width>SettingsCategoryRightGLWidth</width>
-    <animation effect="zoom" center="450,33" start="100" end="104" time="50" tween="cubic" easing="out">Focus</animation>
+    <animation effect="zoom" center="450,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
   </include>
 
   <include name="SettingsCategoryRightGLTemplateWithText">

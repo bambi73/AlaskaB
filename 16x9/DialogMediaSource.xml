@@ -106,7 +106,7 @@
               <textcolor>TextHeavy</textcolor>
               <selectedcolor>TextHeavy</selectedcolor>
               <label>$INFO[ListItem.Label]</label>
-              <animation effect="zoom" center="50,33" start="100" end="104" time="50" tween="cubic" easing="out">Focus</animation>
+              <animation effect="zoom" center="50,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
             </control>
           </focusedlayout>
         </control>

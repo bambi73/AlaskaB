@@ -363,7 +363,7 @@
             <textoffsetx>10</textoffsetx>
             <label>$LOCALIZE[20182]</label>
             <include>DialogKeyboardButtonBase</include>
-            <animation effect="zoom" center="auto" start="100" end="104" time="50" tween="cubic" easing="out">Focus</animation>
+            <animation effect="zoom" center="auto" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
           </control>
           <!-- Next -->
           <control type="button" id="306">
@@ -380,7 +380,7 @@
             <textoffsetx>20</textoffsetx>
             <label>$LOCALIZE[20181]</label>
             <include>DialogKeyboardButtonBase</include>
-            <animation effect="zoom" center="38,33" start="100" end="104" time="50" tween="cubic" easing="out">Focus</animation>
+            <animation effect="zoom" center="38,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
           </control>
         </control>
       </control>
