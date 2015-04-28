@@ -78,7 +78,6 @@
         <align>center</align>
         <aligny>center</aligny>
         <font>Font_Black_Caps_42</font>
-        <textcolor>Light</textcolor>
       </control>
 
       <control type="group">
@@ -96,7 +95,7 @@
             <ondown>5</ondown>
             <onright>8800</onright>
             <pagecontrol>8800</pagecontrol>
-            <include>DialogBaseList</include>
+            <include>DialogSelectList</include>
             <itemlayout width="1150" height="66">
               <control type="label">
                 <width>1150</width>
@@ -155,7 +154,7 @@
             <ondown>5</ondown>
             <onright>8800</onright>
             <pagecontrol>8800</pagecontrol>
-            <include>DialogBaseList</include>
+            <include>DialogSelectList</include>
             <itemlayout width="780" height="98">
               <control type="label">
                 <top>22</top>

@@ -802,12 +802,6 @@
     <bordertexture border="6,6,8,8" colordiffuse="IconLight">pics/Picture_Panel.png</bordertexture>
   </include>
 
-  <include name="DialogBaseList">
-    <preloaditems>5</preloaditems>
-    <orientation>vertical</orientation>
-    <scrolltime tween="sine" easing="out">320</scrolltime>
-  </include>
-
   <!-- Dialog select -->
   <constant name="DialogSelectWidth">1720</constant>
   <constant name="DialogSelectHeight1">722</constant>
@@ -826,6 +820,12 @@
     <include>DialogBaseLeftImage_Image</include>
     <texture fallback="DefaultAddon.png">$INFO[Container(6).ListItem.Icon]</texture>
     <visible>!SubString(Container(6).ListItem.Icon,Default)</visible>
+  </include>
+
+  <include name="DialogSelectList">
+    <preloaditems>5</preloaditems>
+    <orientation>vertical</orientation>
+    <scrolltime tween="sine" easing="out">320</scrolltime>
   </include>
 
   <include name="DialogSelectScrollbar">
@@ -1015,7 +1015,7 @@
 
   <include name="SettingsCategoryRightGLTemplate">
     <width>SettingsCategoryRightGLWidth</width>
-    <animation effect="zoom" center="450,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
+    <animation effect="zoom" center="500,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
   </include>
 
   <include name="SettingsCategoryRightGLTemplateWithText">

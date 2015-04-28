@@ -114,7 +114,7 @@
           <left>0</left>
           <width>FullWidth</width>
           <height>96</height>
-          <texture>dialogs/video_info_title_bg.png</texture>
+          <texture>dialogs/video-info-fs-title-bg.png</texture>
         </control>
         <control type="label">
           <top>968</top>
