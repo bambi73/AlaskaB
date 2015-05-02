@@ -1,211 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="10140">
-	<defaultcontrol always="true">9</defaultcontrol>
+  <defaultcontrol always="true">9</defaultcontrol>
+  <coordinates>
+    <origin x="0" y="0"/>
+  </coordinates>
 
-	<controls>
+  <controls>
+    <control type="group" id="5000">
+      <centertop>49%</centertop>
+      <left>DialogAddonSettingsLeft</left>
+      <width>DialogAddonSettingsWidth</width>
+      <height>DialogAddonSettingsHeight</height>
 
-		<!-- Background -->
+      <include>Animation_ZoomInMenu</include>
+      <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(virtualkeyboard) | Window.IsActive(filebrowser) | Window.IsActive(numericinput)">
+        <include>AnimationEffect_ZoomedBy</include>
+      </animation>
 
-		<include>Global_Background</include>
+      <control type="image">
+        <width>DialogAddonSettingsWidth</width>
+        <height>DialogAddonSettingsHeight</height>
+        <texture>dialogs/addon-settings-bg.png</texture>
+        <visible>!Control.IsVisible(8800)</visible>
+      </control>
+      <control type="image">
+        <width>DialogAddonSettingsWidth</width>
+        <height>DialogAddonSettingsHeight</height>
+        <texture>dialogs/addon-settings-bg-scrollbar.png</texture>
+        <visible>Control.IsVisible(8800)</visible>
+      </control>
 
-		<!-- Heading -->
+      <!-- Heading -->
+      <control type="label" id="20">
+        <top>37</top>
+        <centerleft>50%</centerleft>
+        <width>DialogAddonSettingsControlWidth</width>
+        <height>42</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <font>Font_Black_Caps_42</font>
+      </control>
 
-		<control type="group">
-			<left>46</left>
-			<include>Animation_SlideDownFadeOut</include>
-			<control type="label">
-				<label>$VAR[Global_HeadingLabels]</label>
-				<include>Global_HeadingSectionVars</include>
-			</control>
-			<control type="label">
-				<label>$VAR[Global_HeadingDetails]</label>
-				<include>Global_HeadingDetailVars</include>
-			</control>
-		</control>
+      <control type="group">
+        <left>160</left>
+        <top>118</top>
 
-		<!-- Menu -->
+        <!-- Left grouplist -->
+        <control type="grouplist" id="9">
+          <left>DialogAddonSettingsLeftGLLeft</left>
+          <width>DialogAddonSettingsLeftGLWidth</width>
+          <height>DialogAddonSettingsGLHeight</height>
+          <itemgap>0</itemgap>
+          <onright>2</onright>
+          <onleft>9010</onleft>
+          <onup>noop</onup>
+          <ondown>9010</ondown>
+          <orientation>vertical</orientation>
+          <scrolltime tween="sine" easing="out">320</scrolltime>
+        </control>
 
-		<control type="group">
-			<top>TopOffset</top>
-			<left>LeftOffset</left>
-			<include>Animation_ZoomInMenu</include>
+        <!-- Right grouplist -->
+        <control type="grouplist" id="2">
+          <left>DialogAddonSettingsRightGLLeft</left>
+          <width>DialogAddonSettingsRightGLWidth</width>
+          <height>DialogAddonSettingsGLHeight</height>
+          <itemgap>0</itemgap>
+          <onleft>9</onleft>
+          <onright>8800</onright>
+          <onup>noop</onup>
+          <ondown>9010</ondown>
+          <pagecontrol>8800</pagecontrol>
+          <orientation>vertical</orientation>
+          <scrolltime tween="sine" easing="out">320</scrolltime>
+        </control>
 
-			<!-- Heading label -->
+        <!-- Scrollbar -->
+        <control type="scrollbar" id="8800">
+          <left>1809</left>
+          <top>16</top>
+          <height>366</height>
+          <onleft>2</onleft>
+          <onright>9010</onright>
+          <visible>Skin.HasSetting(AlaskaB.Settings.SettingsCategory.Scrollbar.Enable)</visible>
+        </control>
+      </control>
 
-			<control type="label" id="20">
-				<left>544</left>
-				<top>154</top>
-				<width>1254</width>
-				<height>44</height>
-				<font>Font_Reg_Caps_Bold_44</font>
-				<textcolor>Medium</textcolor>
-			</control>
+      <!-- Button grouplist -->
+      <control type="grouplist" id="9010">
+        <include>DialogBottomButtonGrouplist</include>
+        <width>DialogContentSettingsControlWidth</width>
+        <top>537</top>
+        <onup>2</onup>
+        <!-- OK -->
+        <control type="button" id="110">
+          <label>$LOCALIZE[20177]</label>
+          <enable>Control.IsEnabled(10)</enable>
+          <onclick>SendClick(10)</onclick>
+          <include>DialogBottomButton3Left</include>
+          <animation type="Conditional" condition="Control.HasFocus(110)" reversible="false">
+            <include>AnimationEffect_DialogBottomButton3LeftFocus</include>
+          </animation>
+          <animation type="Conditional" condition="!Control.HasFocus(110)" reversible="false">
+            <include>AnimationEffect_DialogBottomButton3LeftUnfocus</include>
+          </animation>
+        </control>
+        <!-- Cancel -->
+        <control type="button" id="11">
+          <label>$LOCALIZE[222]</label>
+          <include>DialogBottomButton3Center</include>
+          <animation type="Conditional" condition="Control.HasFocus(11)" reversible="false">
+            <include>AnimationEffect_DialogBottomButton3CenterFocus</include>
+          </animation>
+          <animation type="Conditional" condition="!Control.HasFocus(11)" reversible="false">
+            <include>AnimationEffect_DialogBottomButton3CenterUnfocus</include>
+          </animation>
+        </control>
+        <!-- Settings -->
+        <control type="button" id="12">
+          <label>$LOCALIZE[409]</label>
+          <include>DialogBottomButton3Right</include>
+          <animation type="Conditional" condition="Control.HasFocus(12)" reversible="false">
+            <include>AnimationEffect_DialogBottomButton3RightFocus</include>
+          </animation>
+          <animation type="Conditional" condition="!Control.HasFocus(12)" reversible="false">
+            <include>AnimationEffect_DialogBottomButton3RightUnfocus</include>
+          </animation>
+        </control>
+      </control>
+    </control>
 
-			<!-- Left grouplist -->
+    <!-- OK Button -->
+    <control type="button" id="10">
+      <include>HiddenControl</include>
+    </control>
 
-			<control type="grouplist" id="9">
-				<left>80</left>
-				<top>228</top>
-				<width>360</width>
-				<height>462</height>
-				<itemgap>0</itemgap>
-				<onleft>noop</onleft>
-				<onright>2</onright>
-				<onup>noop</onup>
-				<ondown>9001</ondown>
-				<orientation>vertical</orientation>
-				<scrolltime tween="sine" easing="out">320</scrolltime>
-			</control>
+    <!-- Left grouplist control template -->
+    <control type="button" id="13">
+      <include>DialogAddonSettingsLeftGLTemplate</include>
+    </control>
 
-			<!-- List arrows -->
-
-			<control type="image">
-				<left>102</left>
-				<top>206</top>
-				<width>32</width>
-				<height>16</height>
-				<texture>common/Scroll_Up.png</texture>
-				<visible>Container(9).HasPrevious</visible>
-			</control>
-
-			<control type="image">
-				<left>102</left>
-				<top>696</top>
-				<width>32</width>
-				<height>16</height>
-				<texture>common/Scroll_Down.png</texture>
-				<visible>Container(9).HasNext</visible>
-			</control>
-
-			<!-- Right grouplist -->
-
-			<control type="grouplist" id="2">
-				<left>544</left>
-				<top>228</top>
-				<width>1260</width>
-				<height>594</height>
-				<itemgap>0</itemgap>
-				<onleft>9</onleft>
-				<onright>noop</onright>
-				<onup>noop</onup>
-				<ondown>9001</ondown>
-				<orientation>vertical</orientation>
-				<scrolltime tween="sine" easing="out">320</scrolltime>
-			</control>
-
-			<!-- List arrows -->
-
-			<control type="image">
-				<left>566</left>
-				<top>206</top>
-				<width>32</width>
-				<height>16</height>
-				<texture>common/Scroll_Up.png</texture>
-				<visible>Container(2).HasPrevious</visible>
-			</control>
-
-			<control type="image">
-				<left>566</left>
-				<top>828</top>
-				<width>32</width>
-				<height>16</height>
-				<texture>common/Scroll_Down.png</texture>
-				<visible>Container(2).HasNext</visible>
-			</control>
-
-			<!-- Left grouplist controls -->
-
-			<control type="button" id="13">
-				<width>360</width>
-			</control>
-
-			<!-- Right grouplist controls -->
-
-			<control type="button" id="3">
-				<left>330</left>
-				<top>0</top>
-				<width>1260</width>
-				<height>66</height>
-			</control>
-
-			<control type="radiobutton" id="4">
-				<left>330</left>
-				<top>0</top>
-				<width>1260</width>
-				<height>66</height>
-				<textwidth>1120</textwidth>
-			</control>
-
-			<control type="spincontrolex" id="5">
-				<left>330</left>
-				<top>0</top>
-				<width>1260</width>
-				<height>66</height>
-				<textwidth>1120</textwidth>
-			</control>
-
-			<control type="label" id="7">
-				<textcolor>MedLight</textcolor>
-			</control>
-
-			<control type="image" id="6">
-				<left>330</left>
-				<width>1260</width>
-				<height>-1</height>
-				<texture>common/Button_NF.png</texture>
-			</control>
-
-			<control type="sliderex" id="8">
-			</control>
-
-			<!-- Divider -->
-
-			<control type="image">
-				<left>544</left>
-				<top>906</top>
-				<width>1260</width>
-				<height>1</height>
-				<texture>common/Button_NF.png</texture>
-			</control>
-
-			<!-- Button grouplist -->
-
-			<control type="grouplist" id="9001">
-				<left>544</left>
-				<top>926</top>
-				<width>1260</width>
-				<itemgap>0</itemgap>
-				<onleft>9</onleft>
-				<onright>noop</onright>
-				<onup>2</onup>
-				<ondown>noop</ondown>
-				<orientation>horizontal</orientation>
-
-				<!-- OK Button -->
-
-				<control type="button" id="10">
-					<width>420</width>
-					<label>186</label>
-				</control>
-
-				<!-- Cancel Button -->
-
-				<control type="button" id="11">
-					<width>420</width>
-					<label>222</label>
-				</control>
-
-				<!-- Defaults Button -->
-
-				<control type="button" id="12">
-					<width>420</width>
-					<label>409</label>
-				</control>
-
-			</control>
-
-		</control>
-
-	</controls>
+    <!-- Right grouplist control templates -->
+    <control type="button" id="3">
+      <include>DialogAddonSettingsRightGLTemplate</include>
+    </control>
+    <control type="radiobutton" id="4">
+      <include>DialogAddonSettingsRightGLTemplateWithText</include>
+    </control>
+    <control type="spincontrolex" id="5">
+      <include>DialogAddonSettingsRightGLTemplateWithText</include>
+    </control>
+    <control type="image" id="6"/>
+    <control type="label" id="7">
+      <include>DialogAddonSettingsRightGLTemplate</include>
+    </control>
+    <control type="sliderex" id="8"/>
+  </controls>
 
 </window>

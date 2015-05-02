@@ -13,7 +13,7 @@
       <height>DialogContentSettingsHeight</height>
 
       <include>Animation_ZoomInMenu</include>
-      <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(virtualkeyboard) | Window.IsActive(filebrowser)">
+      <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(virtualkeyboard) | Window.IsActive(filebrowser) | Window.IsActive(addonsettings)">
         <include>AnimationEffect_ZoomedBy</include>
       </animation>
 

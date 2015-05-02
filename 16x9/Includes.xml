@@ -853,6 +853,35 @@
     <bordertexture border="6,6,8,8" colordiffuse="IconLight">pics/Picture_Panel.png</bordertexture>
   </include>
 
+  <!-- Dialog Addon settings -->
+  <constant name="DialogAddonSettingsLeft">-160</constant>
+  <constant name="DialogAddonSettingsWidth">2240</constant>
+  <constant name="DialogAddonSettingsHeight">661</constant>
+  <constant name="DialogAddonSettingsControlWidth">1820</constant>
+
+  <constant name="DialogAddonSettingsGLHeight">396</constant>
+  <constant name="DialogAddonSettingsLeftGLLeft">40</constant>
+  <constant name="DialogAddonSettingsLeftGLWidth">370</constant>
+  <constant name="DialogAddonSettingsRightGLLeft">520</constant>
+  <constant name="DialogAddonSettingsRightGLWidth">1180</constant>
+
+  <include name="DialogAddonSettingsLeftGLTemplate">
+    <width>DialogAddonSettingsLeftGLWidth</width>
+    <align>right</align>
+    <animation effect="zoom" center="350,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
+  </include>
+
+  <include name="DialogAddonSettingsRightGLTemplate">
+    <width>DialogAddonSettingsRightGLWidth</width>
+    <animation effect="zoom" center="500,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
+  </include>
+
+  <include name="DialogAddonSettingsRightGLTemplateWithText">
+    <textwidth>1020</textwidth>
+    <include>DialogAddonSettingsRightGLTemplate</include>
+  </include>
+
+
   <!-- Dialog Content settings -->
   <constant name="DialogContentSettingsLeft">-160</constant>
   <constant name="DialogContentSettingsWidth">2240</constant>
