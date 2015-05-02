@@ -89,6 +89,7 @@
             <width>420</width>
             <align>right</align>
             <onright>450</onright>
+            <onleft>9010</onleft>
             <ondown>9010</ondown>
             <label>$LOCALIZE[119]</label>
             <visible>Control.IsEnabled(415)</visible>
@@ -101,7 +102,8 @@
           <left>550</left>
           <width>780</width>
           <height>462</height>
-          <onleft>415</onleft>
+          <onleft condition="Control.IsVisible(415)">415</onleft>
+          <onleft condition="!Control.IsVisible(415)">9010</onleft>
           <ondown>9010</ondown>
           <onright>8800</onright>
           <pagecontrol>8800</pagecontrol>

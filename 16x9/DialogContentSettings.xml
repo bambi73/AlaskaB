@@ -65,7 +65,6 @@
               <width>490</width>
               <height>66</height>
               <align>right</align>
-              <textcolor>TextLight</textcolor>
               <label>$INFO[ListItem.Label]</label>
             </control>
           </itemlayout>
@@ -76,9 +75,17 @@
               <scroll>true</scroll>
               <align>right</align>
               <textcolor>TextHeavy</textcolor>
-              <selectedcolor>TextHeavy</selectedcolor>
               <label>$INFO[ListItem.Label]</label>
+              <visible>Control.HasFocus(21)</visible>
               <animation effect="zoom" center="450,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
+            </control>
+            <control type="label">
+              <width>490</width>
+              <height>66</height>
+              <scroll>true</scroll>
+              <align>right</align>
+              <label>$INFO[ListItem.Label]</label>
+              <visible>!Control.HasFocus(21)</visible>
             </control>
           </focusedlayout>
         </control>

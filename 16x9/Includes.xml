@@ -797,7 +797,7 @@
 
   <include name="DialogBottomButton2Left">
     <left>0</left>
-    <width>610</width>
+    <width>520</width>
     <height>110</height>
     <align>right</align>
     <aligny>center</aligny>
@@ -806,7 +806,7 @@
 
   <include name="DialogBottomButton2Right">
     <left>0</left>
-    <width>610</width>
+    <width>520</width>
     <height>110</height>
     <align>left</align>
     <aligny>center</aligny>
@@ -815,7 +815,7 @@
 
   <include name="DialogBottomButton3Left">
     <left>0</left>
-    <width>500</width>
+    <width>520</width>
     <height>110</height>
     <align>right</align>
     <aligny>center</aligny>
@@ -832,7 +832,7 @@
 
   <include name="DialogBottomButton3Right">
     <left>0</left>
-    <width>500</width>
+    <width>520</width>
     <height>110</height>
     <align>left</align>
     <aligny>center</aligny>
@@ -936,7 +936,7 @@
   <!-- Dialog confirm (Ok, Yes/No) -->
   <constant name="DialogConfirmWidth">1320</constant>
   <constant name="DialogConfirmHeight">396</constant>
-  <constant name="DialogConfirmControlWidth">1220</constant>
+  <constant name="DialogConfirmControlWidth">1120</constant>
 
   <!-- Dialog Keyboard -->
   <constant name="DialogKeyboardWidth">1720</constant>

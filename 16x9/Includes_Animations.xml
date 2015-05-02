@@ -209,11 +209,11 @@
   </include>
   
   <include name="AnimationEffect_DialogBottomButton2LeftFocus">
-    <effect type="zoom" center="610,56" start="70" end="100" time="125" tween="cubic" easing="out" />
+    <effect type="zoom" center="520,56" start="70" end="100" time="125" tween="cubic" easing="out" />
   </include>
 
   <include name="AnimationEffect_DialogBottomButton2LeftUnfocus">
-    <effect type="zoom" center="610,56" start="100" end="70" time="100" tween="cubic" easing="in" />
+    <effect type="zoom" center="520,56" start="100" end="70" time="100" tween="cubic" easing="in" />
   </include>
 
   <include name="AnimationEffect_DialogBottomButton2RightFocus">
@@ -225,11 +225,11 @@
   </include>
   
   <include name="AnimationEffect_DialogBottomButton3LeftFocus">
-    <effect type="zoom" center="500,56" start="70" end="100" time="125" tween="cubic" easing="out" />
+    <effect type="zoom" center="520,56" start="70" end="100" time="125" tween="cubic" easing="out" />
   </include>
 
   <include name="AnimationEffect_DialogBottomButton3LeftUnfocus">
-    <effect type="zoom" center="500,56" start="100" end="70" time="100" tween="cubic" easing="in" />
+    <effect type="zoom" center="520,56" start="100" end="70" time="100" tween="cubic" easing="in" />
   </include>
 
   <include name="AnimationEffect_DialogBottomButton3CenterFocus">

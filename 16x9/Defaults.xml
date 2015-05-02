@@ -9,8 +9,8 @@
     <font>Font_Reg_44</font>
     <textcolor>TextLight</textcolor>
     <focusedcolor>TextLight</focusedcolor>
-    <selectedcolor>SelectedColour</selectedcolor>
-    <disabledcolor>DisabledColour</disabledcolor>
+    <selectedcolor>TextHeavy</selectedcolor>
+    <disabledcolor>TextDisabled</disabledcolor>
     <scrollspeed>40</scrollspeed>
     <scrollsuffix>    •    </scrollsuffix>
   </default>
@@ -23,8 +23,8 @@
     <font>Font_Reg_44</font>
     <textcolor>TextLight</textcolor>
     <focusedcolor>TextLight</focusedcolor>
-    <selectedcolor>SelectedColour</selectedcolor>
-    <disabledcolor>DisabledColour</disabledcolor>
+    <selectedcolor>TextHeavy</selectedcolor>
+    <disabledcolor>TextDisabled</disabledcolor>
     <scrollout>false</scrollout>
     <scrollspeed>40</scrollspeed>
     <pauseatend>2000</pauseatend>

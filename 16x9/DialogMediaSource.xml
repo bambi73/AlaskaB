@@ -58,8 +58,9 @@
           <height>210</height>
           <itemgap>0</itemgap>
           <onright>10</onright>
-          <onup>noop</onup>
-          <ondown>noop</ondown>
+          <onup>12</onup>
+          <ondown>9010</ondown>
+          <onleft>9010</onleft>
           <orientation>vertical</orientation>
           <scrolltime tween="sine" easing="out">320</scrolltime>
           <!-- Browse -->
@@ -117,6 +118,7 @@
           <left>1356</left>
           <height>170</height>
           <onleft>10</onleft>
+          <onright>9010</onright>
           <visible>Skin.HasSetting(AlaskaB.Settings.MediaSource.Scrollbar.Enable)</visible>
         </control>
       </control>
