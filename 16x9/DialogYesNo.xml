@@ -46,26 +46,27 @@
       </control>
 
       <control type="grouplist">
+        <include>DialogBottomButtonGrouplist</include>
+        <width>DialogConfirmControlWidth</width>
         <top>272</top>
-        <include>DialogConfirmButtonGrouplist</include>
         <!-- Yes Button -->
         <control type="button" id="11">
-          <include>DialogConfirmButtonLeft</include>
+          <include>DialogBottomButton2Left</include>
           <animation type="Conditional" condition="Control.HasFocus(11)" reversible="false">
-            <include>AnimationEffect_DialogConfirmButtonLeftFocus</include>
+            <include>AnimationEffect_DialogBottomButton2LeftFocus</include>
           </animation>
           <animation type="Conditional" condition="!Control.HasFocus(11)" reversible="false">
-            <include>AnimationEffect_DialogConfirmButtonLeftUnfocus</include>
+            <include>AnimationEffect_DialogBottomButton2LeftUnfocus</include>
           </animation>
         </control>
         <!-- No Button -->
         <control type="button" id="10">
-          <include>DialogConfirmButtonRight</include>
+          <include>DialogBottomButton2Right</include>
           <animation type="Conditional" condition="Control.HasFocus(10)" reversible="false">
-            <include>AnimationEffect_DialogConfirmButtonRightFocus</include>
+            <include>AnimationEffect_DialogBottomButton2RightFocus</include>
           </animation>
           <animation type="Conditional" condition="!Control.HasFocus(10)" reversible="false">
-            <include>AnimationEffect_DialogConfirmButtonRightUnfocus</include>
+            <include>AnimationEffect_DialogBottomButton2RightUnfocus</include>
           </animation>
         </control>
       </control>

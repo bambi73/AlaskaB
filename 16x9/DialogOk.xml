@@ -42,12 +42,13 @@
       
       <control type="button" id="10">
         <top>272</top>
-        <include>DialogConfirmButtonCenter</include>
+        <width>DialogConfirmControlWidth</width>
+        <include>DialogBottomButton1Center</include>
         <animation type="Conditional" condition="Control.HasFocus(10)" reversible="false">
-          <include>AnimationEffect_DialogConfirmButtonCenterFocus</include>
+          <include>AnimationEffect_DialogBottomButton1CenterFocus</include>
         </animation>
         <animation type="Conditional" condition="!Control.HasFocus(10)" reversible="false">
-          <include>AnimationEffect_DialogConfirmButtonCenterUnfocus</include>
+          <include>AnimationEffect_DialogBottomButton1CenterUnfocus</include>
         </animation>
       </control>
     </control>

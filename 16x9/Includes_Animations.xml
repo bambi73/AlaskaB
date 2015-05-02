@@ -90,7 +90,7 @@
   </include>
 
   <include name="Animation_ZoomedByMenuOrProperty">
-    <animation type="Conditional" condition="SubString(Window(home).Property(AlaskaB.VideoNav.Menu),true) | SubString(Window(home).Property(AlaskaB.VideoInfo.Menu),true) | Window.IsActive(contextmenu) | Window.IsActive(shutdownmenu) | Window.IsActive(filebrowser) | Window.IsActive(DialogSelect.xml) | Window.IsActive(DialogYesNo.xml) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(mediasource)">
+    <animation type="Conditional" condition="SubString(Window(home).Property(AlaskaB.VideoNav.Menu),true) | SubString(Window(home).Property(AlaskaB.VideoInfo.Menu),true) | Window.IsActive(contextmenu) | Window.IsActive(shutdownmenu) | Window.IsActive(filebrowser) | Window.IsActive(DialogSelect.xml) | Window.IsActive(DialogYesNo.xml) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(mediasource) | Window.IsActive(contentsettings)">
       <include>AnimationEffect_ZoomedBy</include>
     </animation>
   </include>
@@ -200,28 +200,52 @@
   </include>
 
   <!-- Dialogs animations -->
-  <include name="AnimationEffect_DialogConfirmButtonLeftFocus">
-    <effect type="zoom" center="610,56" start="70" end="100" time="125" tween="cubic" easing="out" />
-  </include>
-
-  <include name="AnimationEffect_DialogConfirmButtonLeftUnfocus">
-    <effect type="zoom" center="610,56" start="100" end="70" time="100" tween="cubic" easing="in" />
-  </include>
-
-  <include name="AnimationEffect_DialogConfirmButtonRightFocus">
-    <effect type="zoom" center="0,56" start="70" end="100" time="125" tween="cubic" easing="out" />
-  </include>
-
-  <include name="AnimationEffect_DialogConfirmButtonRightUnfocus">
-    <effect type="zoom" center="0,56" start="100" end="70" time="100" tween="cubic" easing="in" />
-  </include>
-  
-  <include name="AnimationEffect_DialogConfirmButtonCenterFocus">
+  <include name="AnimationEffect_DialogBottomButton1CenterFocus">
     <effect type="zoom" center="auto" start="70" end="100" time="125" tween="cubic" easing="out" />
   </include>
 
-  <include name="AnimationEffect_DialogConfirmButtonCenterUnfocus">
+  <include name="AnimationEffect_DialogBottomButton1CenterUnfocus">
     <effect type="zoom" center="auto" start="100" end="70" time="100" tween="cubic" easing="in" />
+  </include>
+  
+  <include name="AnimationEffect_DialogBottomButton2LeftFocus">
+    <effect type="zoom" center="610,56" start="70" end="100" time="125" tween="cubic" easing="out" />
+  </include>
+
+  <include name="AnimationEffect_DialogBottomButton2LeftUnfocus">
+    <effect type="zoom" center="610,56" start="100" end="70" time="100" tween="cubic" easing="in" />
+  </include>
+
+  <include name="AnimationEffect_DialogBottomButton2RightFocus">
+    <effect type="zoom" center="0,56" start="70" end="100" time="125" tween="cubic" easing="out" />
+  </include>
+
+  <include name="AnimationEffect_DialogBottomButton2RightUnfocus">
+    <effect type="zoom" center="0,56" start="100" end="70" time="100" tween="cubic" easing="in" />
+  </include>
+  
+  <include name="AnimationEffect_DialogBottomButton3LeftFocus">
+    <effect type="zoom" center="500,56" start="70" end="100" time="125" tween="cubic" easing="out" />
+  </include>
+
+  <include name="AnimationEffect_DialogBottomButton3LeftUnfocus">
+    <effect type="zoom" center="500,56" start="100" end="70" time="100" tween="cubic" easing="in" />
+  </include>
+
+  <include name="AnimationEffect_DialogBottomButton3CenterFocus">
+    <effect type="zoom" center="auto" start="70" end="100" time="125" tween="cubic" easing="out" />
+  </include>
+
+  <include name="AnimationEffect_DialogBottomButton3CenterUnfocus">
+    <effect type="zoom" center="auto" start="100" end="70" time="100" tween="cubic" easing="in" />
+  </include>
+  
+  <include name="AnimationEffect_DialogBottomButton3RightFocus">
+    <effect type="zoom" center="0,56" start="70" end="100" time="125" tween="cubic" easing="out" />
+  </include>
+
+  <include name="AnimationEffect_DialogBottomButton3RightUnfocus">
+    <effect type="zoom" center="0,56" start="100" end="70" time="100" tween="cubic" easing="in" />
   </include>
   
   <!-- Info dialog animations -->

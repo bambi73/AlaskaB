@@ -34,7 +34,7 @@
       <control type="label" id="411">
         <top>37</top>
         <centerleft>50%</centerleft>
-        <width>1520</width>
+        <width>DialogFileBrowserControlWidth</width>
         <height>42</height>
         <align>center</align>
         <aligny>center</aligny>
@@ -149,29 +149,30 @@
       </control>
 
       <control type="grouplist" id="9010">
+        <include>DialogBottomButtonGrouplist</include>
+        <width>DialogFileBrowserControlWidth</width>
         <top>597</top>
         <onup>450</onup>
-        <include>DialogConfirmButtonGrouplist</include>
         <!-- OK -->
         <control type="button" id="413">
           <label>$LOCALIZE[20177]</label>
-          <include>DialogConfirmButtonLeft</include>
+          <include>DialogBottomButton2Left</include>
           <animation type="Conditional" condition="Control.HasFocus(413)" reversible="false">
-            <include>AnimationEffect_DialogConfirmButtonLeftFocus</include>
+            <include>AnimationEffect_DialogBottomButton2LeftFocus</include>
           </animation>
           <animation type="Conditional" condition="!Control.HasFocus(413)" reversible="false">
-            <include>AnimationEffect_DialogConfirmButtonLeftUnfocus</include>
+            <include>AnimationEffect_DialogBottomButton2LeftUnfocus</include>
           </animation>
         </control>
         <!-- Cancel -->
         <control type="button" id="414">
           <label>$LOCALIZE[222]</label>
-          <include>DialogConfirmButtonRight</include>
+          <include>DialogBottomButton2Right</include>
           <animation type="Conditional" condition="Control.HasFocus(414)" reversible="false">
-            <include>AnimationEffect_DialogConfirmButtonRightFocus</include>
+            <include>AnimationEffect_DialogBottomButton2RightFocus</include>
           </animation>
           <animation type="Conditional" condition="!Control.HasFocus(414)" reversible="false">
-            <include>AnimationEffect_DialogConfirmButtonRightUnfocus</include>
+            <include>AnimationEffect_DialogBottomButton2RightUnfocus</include>
           </animation>
         </control>
       </control>

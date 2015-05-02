@@ -1,258 +1,200 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="132">
-  <defaultcontrol always="true">3</defaultcontrol>
+  <defaultcontrol always="true">20</defaultcontrol>
+  <coordinates>
+    <origin x="0" y="0"/>
+  </coordinates>
 
   <controls>
-
-    <!-- Background -->
-
-    <include>Global_Background</include>
-
-    <!-- Menu -->
-
     <control type="group" id="5000">
-      <top>TopOffset</top>
-      <left>LeftOffset</left>
+      <centertop>49%</centertop>
+      <left>DialogContentSettingsLeft</left>
+      <width>DialogContentSettingsWidth</width>
+      <height>DialogContentSettingsHeight</height>
+
       <include>Animation_ZoomInMenu</include>
-
-      <!-- Heading label -->
-
-      <control type="label" id="1">
-        <left>544</left>
-        <top>154</top>
-        <width>1254</width>
-        <height>44</height>
-        <font>Font_Reg_Caps_Bold_44</font>
-        <textcolor>Medium</textcolor>
-        <label>20333</label>
-      </control>
-
-      <!-- Image -->
+      <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(virtualkeyboard) | Window.IsActive(filebrowser)">
+        <include>AnimationEffect_ZoomedBy</include>
+      </animation>
 
       <control type="image">
-        <left>66</left>
-        <top>214</top>
-        <width>278</width>
-        <height>278</height>
-        <texture fallback="DefaultAddonNone.png">$INFO[ListItem.Icon]</texture>
-        <aspectratio aligny="top">scale</aspectratio>
-        <bordertexture border="16">common/Now_Playing_Border.png</bordertexture>
-        <bordersize>16</bordersize>
+        <width>2240</width>
+        <height>14</height>
+        <texture>hub/list_bg_border5.png</texture>
       </control>
-
-      <!-- Content Picker -->
-
-      <control type="spincontrolex" id="3">
-        <left>544</left>
-        <top>228</top>
-        <width>1260</width>
-        <height>66</height>
-        <font>-</font>
-        <label>-</label>
-        <align>right</align>
-        <onup>noop</onup>
-        <ondown>4</ondown>
-        <onleft>noop</onleft>
-        <onright>noop</onright>
-      </control>
-
-      <!-- Content Picker Header -->
-
-      <control type="label">
-        <left>564</left>
-        <top>228</top>
-        <width>1120</width>
-        <height>66</height>
-        <label>$LOCALIZE[20344]</label>
-        <textcolor>ButtonLabel</textcolor>
-        <visible>Control.HasFocus(3)</visible>
-      </control>
-
-      <control type="label">
-        <left>564</left>
-        <top>228</top>
-        <width>1120</width>
-        <height>66</height>
-        <label>$LOCALIZE[20344]</label>
-        <visible>!Control.HasFocus(3)</visible>
-      </control>
-
-      <!-- Content Picker Label -->
-
-      <control type="label">
-        <left>564</left>
-        <top>228</top>
-        <width>1120</width>
-        <align>right</align>
-        <label>$INFO[Control.GetLabel(3)]</label>
-        <textcolor>ButtonLabel</textcolor>
-        <visible>Control.HasFocus(3)</visible>
-      </control>
-
-      <control type="label">
-        <left>564</left>
-        <top>228</top>
-        <width>1120</width>
-        <align>right</align>
-        <label>$INFO[Control.GetLabel(3)]</label>
-        <visible>!Control.HasFocus(3)</visible>
-      </control>
-
-      <!-- Divider -->
-
       <control type="image">
-        <left>544</left>
-        <top>310</top>
-        <width>1260</width>
-        <height>1</height>
-        <texture>common/Button_NF.png</texture>
+        <top>14</top>
+        <width>2240</width>
+        <height>88</height>
+        <texture>hub/list_bg5.png</texture>
+      </control>
+      <control type="image">
+        <top>102</top>
+        <width>2240</width>
+        <height>3</height>
+        <texture>hub/list_bg_delimiter5.png</texture>
+      </control>      
+      <!-- <control type="image">
+        <top>105</top>
+        <width>2240</width>
+        <height>88</height>
+        <texture>hub/list_bg5.png</texture>
+      </control>
+      <control type="image">
+        <top>193</top>
+        <width>2240</width>
+        <height>3</height>
+        <texture>hub/list_bg_delimiter5.png</texture>
+      </control> -->      
+      <control type="image">
+        <top>105</top>
+        <width>2240</width>
+        <height>445</height>
+        <texture>hub/list_bg5.png</texture>
+      </control>
+      <control type="image">
+        <top>550</top>
+        <width>2240</width>
+        <height>3</height>
+        <texture>hub/list_bg_delimiter5.png</texture>
+      </control>      
+      <control type="image">
+        <top>553</top>
+        <width>2240</width>
+        <height>109</height>
+        <texture>hub/list_bg5.png</texture>
+      </control>
+      <control type="image">
+        <top>662</top>
+        <width>2240</width>
+        <height>14</height>
+        <texture flipy="true">hub/list_bg_border5.png</texture>
       </control>
 
-      <!-- Scraper list -->
+      <control type="label">
+        <top>37</top>
+        <centerleft>50%</centerleft>
+        <width>DialogContentSettingsControlWidth</width>
+        <height>42</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <font>Font_Black_Caps_42</font>
+        <label>$LOCALIZE[20333]</label>
+      </control>
 
-      <control type="list" id="4">
-        <left>544</left>
-        <top>327</top>
-        <width>1260</width>
-        <height>594</height>
-        <onleft>noop</onleft>
-        <onright>noop</onright>
-        <onup>3</onup>
-        <ondown>5</ondown>
-        <scrolltime tween="sine" easing="out">320</scrolltime>
+      <control type="group">
+        <left>160</left>
+        <top>117</top>
 
-        <itemlayout width="1260" height="66">
-          <control type="label">
-            <left>25</left>
-            <width>1210</width>
-            <height>66</height>
-            <aligny>center</aligny>
-            <label>$INFO[ListItem.Label]</label>
-          </control>
-        </itemlayout>
+        <!-- Content Picker -->
+        <control type="spincontrolex" id="20">
+          <left>46</left>
+          <width>510</width>
+          <height>66</height>
+          <align>left</align>
+          <onleft>9010</onleft>
+          <onright>5</onright>
+          <ondown>21</ondown>
+        </control>
 
-        <focusedlayout width="1260" height="66">
-          <control type="label">
-            <left>25</left>
-            <width>1210</width>
-            <height>66</height>
-            <scroll>true</scroll>
-            <aligny>center</aligny>
-            <label>$INFO[ListItem.Label]</label>
-            <visible>!Control.HasFocus(4)</visible>
-          </control>
-          <control type="group">
-            <visible>Control.HasFocus(4)</visible>
-            <control type="image">
-              <width>1260</width>
-              <height>66</height>
-              <texture>common/Button_FO.png</texture>
-            </control>
+        <!-- Scraper list -->
+        <control type="list" id="21">
+          <top>84</top>
+          <left>46</left>
+          <width>490</width>
+          <height>330</height>
+          <onright>5</onright>
+          <onup>20</onup>
+          <ondown>9010</ondown>
+          <onleft>9010</onleft>
+          <scrolltime tween="sine" easing="out">320</scrolltime>
+          <itemlayout width="490" height="66">
             <control type="label">
-              <left>25</left>
-              <width>1210</width>
+              <width>490</width>
               <height>66</height>
-              <scroll>true</scroll>
-              <aligny>center</aligny>
-              <textcolor>ButtonLabel</textcolor>
+              <align>right</align>
+              <textcolor>TextLight</textcolor>
               <label>$INFO[ListItem.Label]</label>
             </control>
-          </control>
-        </focusedlayout>
+          </itemlayout>
+          <focusedlayout width="490" height="66">
+            <control type="label">
+              <width>490</width>
+              <height>66</height>
+              <scroll>true</scroll>
+              <align>right</align>
+              <textcolor>TextHeavy</textcolor>
+              <selectedcolor>TextHeavy</selectedcolor>
+              <label>$INFO[ListItem.Label]</label>
+              <animation effect="zoom" center="450,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
+            </control>
+          </focusedlayout>
+        </control>
 
-      </control>
-
-      <!-- Divider -->
-
-      <control type="image">
-        <left>544</left>
-        <top>607</top>
-        <width>1260</width>
-        <height>1</height>
-        <texture>common/Button_NF.png</texture>
-      </control>
-
-      <!-- Control grouplist -->
-
-      <control type="grouplist" id="5">
-        <left>544</left>
-        <top>624</top>
-        <width>1260</width>
-        <height>264</height>
-        <itemgap>0</itemgap>
-        <onleft>noop</onleft>
-        <onright>noop</onright>
-        <onup>4</onup>
-        <ondown>9001</ondown>
-        <orientation>vertical</orientation>
-        <scrolltime tween="sine" easing="out">320</scrolltime>
-      </control>
-
-      <!-- Grouplist controls -->
-
-      <control type="button" id="7">
-        <left>330</left>
-        <top>0</top>
-        <width>1260</width>
-        <height>66</height>
-      </control>
-
-      <control type="radiobutton" id="8">
-        <left>330</left>
-        <top>0</top>
-        <width>1260</width>
-        <height>66</height>
-        <textwidth>1120</textwidth>
-      </control>
-
-      <!-- Divider -->
-
-      <control type="image">
-        <left>544</left>
-        <top>906</top>
-        <width>1260</width>
-        <height>1</height>
-        <texture>common/Button_NF.png</texture>
+        <!-- Control grouplist -->
+        <control type="grouplist" id="5">
+          <left>650</left>
+          <top>84</top>
+          <width>1050</width>
+          <height>330</height>
+          <itemgap>0</itemgap>
+          <onleft condition="!Control.IsVisible(21)">20</onleft>
+          <onleft condition="Control.IsVisible(21)">21</onleft>
+          <onright>9010</onright>
+          <ondown>9010</ondown>
+          <orientation>vertical</orientation>
+          <scrolltime tween="sine" easing="out">320</scrolltime>
+        </control>
+        <control type="button" id="7">
+          <include>DialogContentSettingsRightGLTemplate</include>
+        </control>
+        <control type="radiobutton" id="8">
+          <include>DialogContentSettingsRightGLTemplate</include>
+          <textwidth>910</textwidth>
+        </control>
       </control>
 
       <!-- Button grouplist -->
-
-      <control type="grouplist" id="9001">
-        <left>544</left>
-        <top>926</top>
-        <width>1260</width>
-        <itemgap>0</itemgap>
-        <onleft>noop</onleft>
-        <onright>noop</onright>
+      <control type="grouplist" id="9010">
+        <include>DialogBottomButtonGrouplist</include>
+        <width>DialogContentSettingsControlWidth</width>
+        <top>552</top>
         <onup>5</onup>
-        <ondown>noop</ondown>
-        <orientation>horizontal</orientation>
-
-        <!-- OK Button -->
-
+        <!-- OK -->
         <control type="button" id="28">
-          <width>420</width>
-          <label>186</label>
+          <label>$LOCALIZE[20177]</label>
+          <include>DialogBottomButton3Left</include>
+          <animation type="Conditional" condition="Control.HasFocus(28)" reversible="false">
+            <include>AnimationEffect_DialogBottomButton3LeftFocus</include>
+          </animation>
+          <animation type="Conditional" condition="!Control.HasFocus(28)" reversible="false">
+            <include>AnimationEffect_DialogBottomButton3LeftUnfocus</include>
+          </animation>
         </control>
-
-        <!-- Cancel Button -->
-
+        <!-- Cancel -->
         <control type="button" id="29">
-          <width>420</width>
-          <label>222</label>
+          <label>$LOCALIZE[222]</label>
+          <include>DialogBottomButton3Center</include>
+          <animation type="Conditional" condition="Control.HasFocus(29)" reversible="false">
+            <include>AnimationEffect_DialogBottomButton3CenterFocus</include>
+          </animation>
+          <animation type="Conditional" condition="!Control.HasFocus(29)" reversible="false">
+            <include>AnimationEffect_DialogBottomButton3CenterUnfocus</include>
+          </animation>
         </control>
-
-        <!-- Settings Button -->
-
-        <control type="button" id="6">
-          <width>420</width>
-          <label>5</label>
+        <!-- Settings -->
+        <control type="button" id="22">
+          <label>$LOCALIZE[5]</label>
+          <include>DialogBottomButton3Right</include>
+          <animation type="Conditional" condition="Control.HasFocus(22)" reversible="false">
+            <include>AnimationEffect_DialogBottomButton3RightFocus</include>
+          </animation>
+          <animation type="Conditional" condition="!Control.HasFocus(22)" reversible="false">
+            <include>AnimationEffect_DialogBottomButton3RightUnfocus</include>
+          </animation>
         </control>
-
       </control>
-
     </control>
-
   </controls>
 
 </window>

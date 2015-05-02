@@ -73,7 +73,7 @@
       <control type="label" id="1">
         <top>37</top>
         <centerleft>50%</centerleft>
-        <width>1520</width>
+        <width>DialogSelectControlWidth</width>
         <height>42</height>
         <align>center</align>
         <aligny>center</aligny>
@@ -246,16 +246,17 @@
       </control>
 
       <control type="button" id="5">
+        <include>DialogBottomButton1Center</include>
+        <width>DialogSelectControlWidth</width>
         <top>598</top>
         <onup condition="Control.IsVisible(3)">3</onup>
         <onup condition="Control.IsVisible(6)">6</onup>
-        <include>DialogConfirmButtonCenter</include>
         <animation effect="slide" start="0,0" end="0,-57" time="0" condition="Control.IsVisible(6)">Conditional</animation>
         <animation type="Conditional" condition="Control.HasFocus(5)" reversible="false">
-          <include>AnimationEffect_DialogConfirmButtonCenterFocus</include>
+          <include>AnimationEffect_DialogBottomButton1CenterFocus</include>
         </animation>
         <animation type="Conditional" condition="!Control.HasFocus(5)" reversible="false">
-          <include>AnimationEffect_DialogConfirmButtonCenterUnfocus</include>
+          <include>AnimationEffect_DialogBottomButton1CenterUnfocus</include>
         </animation>
       </control>
 		</control>

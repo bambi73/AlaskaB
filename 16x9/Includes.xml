@@ -759,7 +759,6 @@
   </include>
 
   <!-- Dialog menu button -->
-
   <include name="DialogMenuValue">
     <left>0</left>
     <top>33</top>
@@ -777,15 +776,67 @@
     <texture>-</texture>
   </include>
 
-  <!-- Dialog Media source -->
-  <constant name="DialogMediaSourceWidth">1620</constant>
-  <constant name="DialogMediaSourceHeight">547</constant>
+  <!-- AlaskaB -->
+  <!-- Dialog buttons -->
+  <include name="DialogBottomButtonGrouplist">
+    <centerleft>50%</centerleft>
+    <height>110</height>
+    <itemgap>80</itemgap>
+    <align>center</align>
+    <orientation>horizontal</orientation>
+    <scrolltime tween="sine" easing="out">320</scrolltime>
+  </include>
 
-  <include name="DialogMediaSourceLeftGLButton">
-    <include>DialogKeyboardButtonBase</include>
-    <width>420</width>
+  <include name="DialogBottomButton1Center">
+    <centerleft>50%</centerleft>
+    <height>110</height>
+    <align>center</align>
+    <aligny>center</aligny>
+    <font>Font_Black_Caps_76</font>
+  </include>
+
+  <include name="DialogBottomButton2Left">
+    <left>0</left>
+    <width>610</width>
+    <height>110</height>
     <align>right</align>
-    <animation effect="zoom" center="350,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
+    <aligny>center</aligny>
+    <font>Font_Black_Caps_76</font>
+  </include>
+
+  <include name="DialogBottomButton2Right">
+    <left>0</left>
+    <width>610</width>
+    <height>110</height>
+    <align>left</align>
+    <aligny>center</aligny>
+    <font>Font_Black_Caps_76</font>
+  </include>
+
+  <include name="DialogBottomButton3Left">
+    <left>0</left>
+    <width>500</width>
+    <height>110</height>
+    <align>right</align>
+    <aligny>center</aligny>
+    <font>Font_Black_Caps_76</font>
+  </include>
+
+  <include name="DialogBottomButton3Center">
+    <width>325</width>
+    <height>110</height>
+    <align>center</align>
+    <aligny>center</aligny>
+    <font>Font_Black_Caps_76</font>
+  </include>
+
+  <include name="DialogBottomButton3Right">
+    <left>0</left>
+    <width>500</width>
+    <height>110</height>
+    <align>left</align>
+    <aligny>center</aligny>
+    <font>Font_Black_Caps_76</font>
   </include>
 
   <!-- Dialog base -->
@@ -802,12 +853,37 @@
     <bordertexture border="6,6,8,8" colordiffuse="IconLight">pics/Picture_Panel.png</bordertexture>
   </include>
 
+  <!-- Dialog Content settings -->
+  <constant name="DialogContentSettingsLeft">-160</constant>
+  <constant name="DialogContentSettingsWidth">2240</constant>
+  <constant name="DialogContentSettingsHeight">676</constant>
+  <constant name="DialogContentSettingsControlWidth">1820</constant>
+
+  <include name="DialogContentSettingsRightGLTemplate">
+    <width>1050</width>
+    <height>66</height>
+    <animation effect="zoom" center="350,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
+  </include>
+
+  <!-- Dialog Media source -->
+  <constant name="DialogMediaSourceWidth">1620</constant>
+  <constant name="DialogMediaSourceHeight">547</constant>
+  <constant name="DialogMediaSourceControlWidth">1420</constant>
+
+  <include name="DialogMediaSourceLeftGLButton">
+    <include>DialogKeyboardButtonBase</include>
+    <width>420</width>
+    <align>right</align>
+    <animation effect="zoom" center="350,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
+  </include>
+
   <!-- Dialog select -->
   <constant name="DialogSelectWidth">1720</constant>
   <constant name="DialogSelectHeight1">722</constant>
   <constant name="DialogSelectHeight2">610</constant>
   <constant name="DialogSelectHeight3">665</constant>
   <constant name="DialogSelectHeight4">553</constant>
+  <constant name="DialogSelectControlWidth">1520</constant>
 
   <include name="DialogSelectImage1">
     <bordersize>20,78,40,80</bordersize>
@@ -837,6 +913,7 @@
   <!-- Dialog file browser -->
   <constant name="DialogFileBrowserWidth">1720</constant>
   <constant name="DialogFileBrowserHeight">722</constant>
+  <constant name="DialogFileBrowserControlWidth">1520</constant>
 
   <include name="DialogFileBrowserImage1">
     <include>DialogBaseLeftImage_DefaultIcon</include>
@@ -856,51 +933,15 @@
     <visible>!SubString(ListItem.Icon,Default)</visible>
   </include>
 
-  <!-- Dialog confirm button -->
+  <!-- Dialog confirm (Ok, Yes/No) -->
   <constant name="DialogConfirmWidth">1320</constant>
   <constant name="DialogConfirmHeight">396</constant>
-  <constant name="DialogConfirmControlWidth">1300</constant>
-
-  <include name="DialogConfirmButtonGrouplist">
-    <centerleft>50%</centerleft>
-    <width>DialogConfirmControlWidth</width>
-    <height>110</height>
-    <itemgap>80</itemgap>
-    <align>center</align>
-    <orientation>horizontal</orientation>
-    <scrolltime tween="sine" easing="out">320</scrolltime>
-  </include>
-
-  <include name="DialogConfirmButtonLeft">
-    <left>0</left>
-    <width>610</width>
-    <height>110</height>
-    <align>right</align>
-    <aligny>center</aligny>
-    <font>Font_Black_Caps_76</font>
-  </include>
-
-  <include name="DialogConfirmButtonRight">
-    <left>0</left>
-    <width>610</width>
-    <height>110</height>
-    <align>left</align>
-    <aligny>center</aligny>
-    <font>Font_Black_Caps_76</font>
-  </include>
-
-  <include name="DialogConfirmButtonCenter">
-    <centerleft>50%</centerleft>
-    <width>DialogConfirmControlWidth</width>
-    <height>110</height>
-    <align>center</align>
-    <aligny>center</aligny>
-    <font>Font_Black_Caps_76</font>
-  </include>
+  <constant name="DialogConfirmControlWidth">1220</constant>
 
   <!-- Dialog Keyboard -->
   <constant name="DialogKeyboardWidth">1720</constant>
   <constant name="DialogKeyboardHeight">693</constant>
+  <constant name="DialogKeyboardControlWidth">1520</constant>
 
   <include name="DialogKeyboardButtonGrouplist">
     <left>0</left>
