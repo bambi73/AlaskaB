@@ -95,7 +95,6 @@
             <control type="label">
               <width>850</width>
               <height>66</height>
-              <textcolor>TextLight</textcolor>
               <label>$INFO[ListItem.Label]</label>
             </control>
           </itemlayout>
@@ -105,7 +104,6 @@
               <height>66</height>
               <scroll>true</scroll>
               <textcolor>TextHeavy</textcolor>
-              <selectedcolor>TextHeavy</selectedcolor>
               <label>$INFO[ListItem.Label]</label>
               <animation effect="zoom" center="50,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
             </control>
