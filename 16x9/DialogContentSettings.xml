@@ -18,57 +18,9 @@
       </animation>
 
       <control type="image">
-        <width>2240</width>
-        <height>14</height>
-        <texture>hub/list_bg_border5.png</texture>
-      </control>
-      <control type="image">
-        <top>14</top>
-        <width>2240</width>
-        <height>88</height>
-        <texture>hub/list_bg5.png</texture>
-      </control>
-      <control type="image">
-        <top>102</top>
-        <width>2240</width>
-        <height>3</height>
-        <texture>hub/list_bg_delimiter5.png</texture>
-      </control>      
-      <!-- <control type="image">
-        <top>105</top>
-        <width>2240</width>
-        <height>88</height>
-        <texture>hub/list_bg5.png</texture>
-      </control>
-      <control type="image">
-        <top>193</top>
-        <width>2240</width>
-        <height>3</height>
-        <texture>hub/list_bg_delimiter5.png</texture>
-      </control> -->      
-      <control type="image">
-        <top>105</top>
-        <width>2240</width>
-        <height>445</height>
-        <texture>hub/list_bg5.png</texture>
-      </control>
-      <control type="image">
-        <top>550</top>
-        <width>2240</width>
-        <height>3</height>
-        <texture>hub/list_bg_delimiter5.png</texture>
-      </control>      
-      <control type="image">
-        <top>553</top>
-        <width>2240</width>
-        <height>109</height>
-        <texture>hub/list_bg5.png</texture>
-      </control>
-      <control type="image">
-        <top>662</top>
-        <width>2240</width>
-        <height>14</height>
-        <texture flipy="true">hub/list_bg_border5.png</texture>
+        <width>DialogContentSettingsWidth</width>
+        <height>DialogContentSettingsHeight</height>
+        <texture>dialogs/content-settings-bg.png</texture>
       </control>
 
       <control type="label">
