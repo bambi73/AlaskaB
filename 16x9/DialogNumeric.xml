@@ -1,255 +1,206 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="109">
-	<defaultcontrol always="true">21</defaultcontrol>
+  <defaultcontrol always="true">21</defaultcontrol>
+  <coordinates>
+    <origin x="0" y="0"/>
+  </coordinates>
 
-	<controls>
+  <controls>
+    <control type="group" id="5000">
+      <centertop>49%</centertop>
+      <centerleft>50%</centerleft>
+      <width>DialogNumericWidth</width>
+      <height>DialogNumericHeight</height>
 
-		<!-- Background -->
+      <include>Animation_ZoomInMenu</include>
+      <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog)">
+        <include>AnimationEffect_ZoomedBy</include>
+      </animation>
 
-		<include>Global_Background</include>
+      <control type="image">
+        <width>DialogNumericWidth</width>
+        <height>DialogNumericHeight</height>
+        <texture>dialogs/keybord-bg.png</texture>
+      </control>
 
-		<!-- Menu -->
+      <!-- Heading label -->
+      <control type="label" id="1">
+        <centerleft>50%</centerleft>
+        <top>37</top>
+        <width>520</width>
+        <!-- <width>DialogNumericControlWidth</width> -->
+        <height>42</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <font>Font_Black_Caps_42</font>
+      </control>
+      <!-- Edit Text -->
+      <control type="label" id="4">
+        <centerleft>50%</centerleft>
+        <top>116</top>
+        <width>420</width>
+        <height>66</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <scroll>true</scroll>
+      </control>
 
-		<control type="group">
-			<top>TopOffset</top>
-			<left>LeftOffset</left>
-			<include>Animation_ZoomInMenu</include>
+      <control type="group">
+        <top>208</top>
+        <centerleft>50%</centerleft>
+        <width>DialogNumericKeyboardWidth</width>
 
-			<!-- Heading label -->
+        <control type="grouplist" id="1100">
+          <top>0</top>
+          <onleft>1100</onleft>
+          <onright>1100</onright>
+          <include>DialogNumericButtonGrouplist</include>
 
-			<control type="label" id="1">
-				<left>544</left>
-				<top>154</top>
-				<width>1254</width>
-				<height>44</height>
-				<font>Font_Reg_Caps_Bold_44</font>
-				<textcolor>Medium</textcolor>
-			</control>
+          <control type="button" id="11">
+            <ondown>14</ondown>
+            <label>$LOCALIZE[12311]</label>
+            <include>DialogNumericButtonAlphanumeric</include>
+          </control>
+          <control type="button" id="12">
+            <ondown>15</ondown>
+            <label>$LOCALIZE[12312]</label>
+            <include>DialogNumericButtonAlphanumeric</include>
+          </control>
+          <control type="button" id="13">
+            <ondown>16</ondown>
+            <label>$LOCALIZE[12313]</label>
+            <include>DialogNumericButtonAlphanumeric</include>
+          </control>
+        </control>
 
-			<!-- Keys -->
+        <control type="grouplist" id="1200">
+          <top>70</top>
+          <onleft>1200</onleft>
+          <onright>1200</onright>
+          <include>DialogNumericButtonGrouplist</include>
 
-			<control type="group">
-				<left>544</left>
-				<top>228</top>
+          <control type="button" id="14">
+            <onup>11</onup>
+            <ondown>17</ondown>
+            <label>$LOCALIZE[12314]</label>
+            <include>DialogNumericButtonAlphanumeric</include>
+          </control>
+          <control type="button" id="15">
+            <onup>12</onup>
+            <ondown>18</ondown>
+            <label>$LOCALIZE[12315]</label>
+            <include>DialogNumericButtonAlphanumeric</include>
+          </control>
+          <control type="button" id="16">
+            <onup>13</onup>
+            <ondown>19</ondown>
+            <label>$LOCALIZE[12316]</label>
+            <include>DialogNumericButtonAlphanumeric</include>
+          </control>
+        </control>
 
-				<!-- First row -->
+        <control type="grouplist" id="1300">
+          <top>140</top>
+          <onleft>1300</onleft>
+          <onright>1300</onright>
+          <include>DialogNumericButtonGrouplist</include>
 
-				<control type="grouplist" id="1000">
-					<left>0</left>
-					<top>0</top>
-					<width>1260</width>
-					<height>74</height>
-					<itemgap>26</itemgap>
-					<onup>noop</onup>
-					<orientation>horizontal</orientation>
+          <control type="button" id="17">
+            <onup>14</onup>
+            <ondown>20</ondown>
+            <label>$LOCALIZE[12317]</label>
+            <include>DialogNumericButtonAlphanumeric</include>
+          </control>
+          <control type="button" id="18">
+            <onup>15</onup>
+            <ondown>10</ondown>
+            <label>$LOCALIZE[12318]</label>
+            <include>DialogNumericButtonAlphanumeric</include>
+          </control>
+          <control type="button" id="19">
+            <onup>16</onup>
+            <ondown>22</ondown>
+            <label>$LOCALIZE[12319]</label>
+            <include>DialogNumericButtonAlphanumeric</include>
+          </control>
+        </control>
 
-					<!-- '1' -->
-					<control type="button" id="11">
-						<ondown>14</ondown>
-						<label>12311</label>
-						<include>KeyboardButtons</include>
-					</control>
-					<!-- '2' -->
-					<control type="button" id="12">
-						<ondown>15</ondown>
-						<label>12312</label>
-						<include>KeyboardButtons</include>
-					</control>
-					<!-- '3' -->
-					<control type="button" id="13">
-						<ondown>16</ondown>
-						<label>12313</label>
-						<include>KeyboardButtons</include>
-					</control>
+        <control type="grouplist" id="1400">
+          <top>210</top>
+          <onleft>1400</onleft>
+          <onright>1400</onright>
+          <include>DialogNumericButtonGrouplist</include>
 
-				</control>
+          <control type="button" id="20">
+            <onup>17</onup>
+            <ondown>23</ondown>
+            <label>&lt;</label>
+            <include>DialogNumericButtonAlphanumeric</include>
+          </control>
+          <control type="button" id="10">
+            <onup>18</onup>
+            <ondown>23</ondown>
+            <label>$LOCALIZE[12310]</label>
+            <include>DialogNumericButtonAlphanumeric</include>
+          </control>
+          <control type="button" id="22">
+            <onup>19</onup>
+            <ondown>23</ondown>
+            <label>&gt;</label>
+            <include>DialogNumericButtonAlphanumeric</include>
+          </control>
+        </control>
 
-				<!-- Second row -->
+        <control type="grouplist" id="1500">
+          <top>280</top>
+          <onleft>1500</onleft>
+          <onright>1500</onright>
+          <onup>10</onup>
+          <ondown>9010</ondown>
+          <include>DialogNumericButtonGrouplist</include>
 
-				<control type="grouplist" id="2000">
-					<left>0</left>
-					<top>80</top>
-					<width>1260</width>
-					<height>74</height>
-					<itemgap>26</itemgap>
-					<orientation>horizontal</orientation>
+          <control type="button" id="23">
+            <width>DialogNumericKeyboardWidth</width>
+            <height>66</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <label>$LOCALIZE[20181]</label>
+            <animation effect="zoom" center="auto" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
+          </control>
+        </control>
+      </control>
 
-					<!-- '4' -->
-					<control type="button" id="14">
-						<onup>11</onup>
-						<ondown>17</ondown>
-						<label>12314</label>
-						<include>KeyboardButtons</include>
-					</control>
-					<!-- '5' -->
-					<control type="button" id="15">
-						<onup>12</onup>
-						<ondown>18</ondown>
-						<label>12315</label>
-						<include>KeyboardButtons</include>
-					</control>
-					<!-- '6' -->
-					<control type="button" id="16">
-						<onup>13</onup>
-						<ondown>19</ondown>
-						<label>12316</label>
-						<include>KeyboardButtons</include>
-					</control>
-
-				</control>
-
-				<!-- Third row -->
-
-				<control type="grouplist" id="3000">
-					<left>0</left>
-					<top>160</top>
-					<width>1260</width>
-					<height>74</height>
-					<itemgap>26</itemgap>
-					<orientation>horizontal</orientation>
-
-					<!-- '7' -->
-					<control type="button" id="17">
-						<onup>14</onup>
-						<ondown>20</ondown>
-						<label>12317</label>
-						<include>KeyboardButtons</include>
-					</control>
-					<!-- '8' -->
-					<control type="button" id="18">
-						<onup>15</onup>
-						<ondown>10</ondown>
-						<label>12318</label>
-						<include>KeyboardButtons</include>
-					</control>
-					<!-- '9' -->
-					<control type="button" id="19">
-						<onup>16</onup>
-						<ondown>22</ondown>
-						<label>12319</label>
-						<include>KeyboardButtons</include>
-					</control>
-
-				</control>
-
-				<!-- Forth row -->
-
-				<control type="grouplist" id="4000">
-					<left>0</left>
-					<top>240</top>
-					<width>1260</width>
-					<height>74</height>
-					<itemgap>26</itemgap>
-					<ondown>5000</ondown>
-					<orientation>horizontal</orientation>
-
-					<!-- Previous -->
-					<control type="button" id="20">
-						<onup>17</onup>
-						<label>&lt;</label>
-						<include>KeyboardButtons</include>
-					</control>
-					<!-- '0' -->
-					<control type="button" id="10">
-						<onup>18</onup>
-						<label>12310</label>
-						<include>KeyboardButtons</include>
-					</control>
-					<!-- Next -->
-					<control type="button" id="22">
-						<onup>19</onup>
-						<label>&gt;</label>
-						<include>KeyboardButtons</include>
-					</control>
-
-				</control>
-
-				<!-- Fifth row -->
-
-				<control type="grouplist" id="5000">
-					<left>0</left>
-					<top>320</top>
-					<width>1260</width>
-					<height>74</height>
-					<itemgap>26</itemgap>
-					<onup>4000</onup>
-					<ondown>9001</ondown>
-					<orientation>horizontal</orientation>
-
-					<!-- BACKSPACE -->
-					<control type="button" id="23">
-						<width>274</width>
-						<label>20181</label>
-						<include>KeyboardButtons</include>
-					</control>
-
-				</control>
-
-				<!-- Edit Text background -->
-
-				<control type="image">
-					<top>480</top>
-					<width>364</width>
-					<height>66</height>
-					<texture>common/Button_NF.png</texture>
-				</control>
-
-				<!-- Edit Text -->
-
-				<control type="label" id="4">
-					<left>20</left>
-					<top>480</top>
-					<width>324</width>
-					<height>66</height>
-					<aligny>center</aligny>
-					<scroll>true</scroll>
-					<textcolor>ButtonLabel</textcolor>
-				</control>
-
-			</control>
-
-			<!-- Divider -->
-
-			<control type="image">
-				<left>544</left>
-				<top>840</top>
-				<width>1260</width>
-				<height>1</height>
-				<texture>common/Button_NF.png</texture>
-			</control>
-
-			<!-- Button grouplist -->
-
-			<control type="grouplist" id="9001">
-				<left>544</left>
-				<top>860</top>
-				<width>1260</width>
-				<itemgap>0</itemgap>
-				<onleft>noop</onleft>
-				<onright>noop</onright>
-				<onup>5000</onup>
-				<ondown>noop</ondown>
-				<orientation>horizontal</orientation>
-
-				<!-- Done -->
-
-				<control type="button" id="21">
-					<width>420</width>
-					<label>20177</label>
-				</control>
-
-				<!-- Cancel Button -->
-
-				<control type="button" id="301">
-					<width>420</width>
-					<label>222</label>
-					<onclick>Close</onclick>
-				</control>
-
-			</control>
-
-		</control>
-
-	</controls>
+      <!-- Button grouplist -->
+      <control type="grouplist" id="9010">
+        <include>DialogBottomButtonGrouplist</include>
+        <width>DialogNumericControlWidth</width>
+        <top>569</top>
+        <onup>23</onup>
+        <!-- Done -->
+        <control type="button" id="21">
+          <label>$LOCALIZE[20177]</label>
+          <include>DialogBottomButton2Left</include>
+          <animation type="Conditional" condition="Control.HasFocus(21)" reversible="false">
+            <include>AnimationEffect_DialogBottomButton2LeftFocus</include>
+          </animation>
+          <animation type="Conditional" condition="!Control.HasFocus(21)" reversible="false">
+            <include>AnimationEffect_DialogBottomButton2LeftUnfocus</include>
+          </animation>
+        </control>
+        <!-- Cancel Button -->
+        <control type="button" id="301">
+          <label>$LOCALIZE[222]</label>
+          <onclick>Close</onclick>
+          <include>DialogBottomButton2Right</include>
+          <animation type="Conditional" condition="Control.HasFocus(301)" reversible="false">
+            <include>AnimationEffect_DialogBottomButton2RightFocus</include>
+          </animation>
+          <animation type="Conditional" condition="!Control.HasFocus(301)" reversible="false">
+            <include>AnimationEffect_DialogBottomButton2RightUnfocus</include>
+          </animation>
+        </control>
+      </control>
+    </control>
+  </controls>
 
 </window>

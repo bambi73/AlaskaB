@@ -13,7 +13,7 @@
       <height>DialogKeyboardHeight</height>
 
       <include>Animation_ZoomInMenu</include>
-      <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog)">
+      <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(numericinput)">
         <include>AnimationEffect_ZoomedBy</include>
       </animation>
 
@@ -339,7 +339,7 @@
           <top>280</top>
           <onleft>1500</onleft>
           <onright>1500</onright>
-          <ondown>2000</ondown>
+          <ondown>9010</ondown>
           <include>DialogKeyboardButtonGrouplist</include>
 
           <!-- IP address -->
@@ -385,7 +385,7 @@
         </control>
       </control>
 
-      <control type="grouplist" id="2000">
+      <control type="grouplist" id="9010">
         <include>DialogBottomButtonGrouplist</include>
         <width>DialogKeyboardControlWidth</width>
         <top>569</top>

@@ -30,6 +30,26 @@
     <pauseatend>2000</pauseatend>
   </default>
 
+  <default type="textbox">
+    <label>-</label>
+    <font>Font_Reg_44</font>
+    <textcolor>TextLight</textcolor>
+    <pagecontrol>61</pagecontrol>
+    <autoscroll delay="8000" time="4000" repeat="12000">True</autoscroll>
+  </default>
+
+  <default type="edit">
+    <height>66</height>
+    <aligny>center</aligny>
+    <font>Font_Reg_44</font>
+    <textoffsetx>20</textoffsetx>
+    <textcolor>TextLight</textcolor>
+    <focusedcolor>TextHeavy</focusedcolor>
+    <disabledcolor>TextDisabled</disabledcolor>
+    <invalidcolor>TextDisabled</invalidcolor>
+    <pulseonselect>no</pulseonselect>
+  </default>
+
   <default type="image">
     <left>0</left>
     <top>0</top>
@@ -104,10 +124,10 @@
     <textcolor>TextLight</textcolor>
     <focusedcolor>TextHeavy</focusedcolor>    
     <disabledcolor>TextDisabled</disabledcolor>
-    <texturenofocus>-</texturenofocus>
-    <texturefocus>-</texturefocus>
     <spinwidth>33</spinwidth>
     <spinheight>18</spinheight>
+    <texturefocus>-</texturefocus>
+    <texturenofocus>-</texturenofocus>
     <textureup colordiffuse="TextLight">common/arrow_up.png</textureup>
     <textureupfocus colordiffuse="TextHeavy">common/arrow_up.png</textureupfocus>
     <texturedown colordiffuse="TextLight">common/arrow_down.png</texturedown>
@@ -125,14 +145,15 @@
     <textcolor>TextLight</textcolor>
     <focusedcolor>TextHeavy</focusedcolor>    
     <disabledcolor>TextDisabled</disabledcolor>
-    <spinwidth>43</spinwidth>
-    <spinheight>60</spinheight>
-    <textureup>common/Arrow_Up_NF.png</textureup>
-    <texturedown>common/Arrow_Down_NF.png</texturedown>
-    <textureupfocus>common/Arrow_Up_FO.png</textureupfocus>
-    <texturedownfocus>common/Arrow_Down_FO.png</texturedownfocus>
+    <spinwidth>33</spinwidth>
+    <spinheight>18</spinheight>
+    <texturefocus>-</texturefocus>
+    <texturenofocus>-</texturenofocus>
+    <textureup colordiffuse="TextLight">common/arrow_up.png</textureup>
+    <textureupfocus colordiffuse="TextHeavy">common/arrow_up.png</textureupfocus>
+    <texturedown colordiffuse="TextLight">common/arrow_down.png</texturedown>
+    <texturedownfocus colordiffuse="TextHeavy">common/arrow_down.png</texturedownfocus>
     <pulseonselect>false</pulseonselect>
-    <reverse>yes</reverse>
   </default>
 
   <default type="sliderex">
@@ -182,26 +203,6 @@
     <textureslidernibfocus colordiffuse="TextHeavy">common/scrollbar-nib.png</textureslidernibfocus>
     <showonepage>false</showonepage>
     <orientation>vertical</orientation>
-  </default>
-
-  <default type="textbox">
-    <label>-</label>
-    <font>Font_Reg_44</font>
-    <textcolor>TextLight</textcolor>
-    <pagecontrol>61</pagecontrol>
-    <autoscroll delay="8000" time="4000" repeat="12000">True</autoscroll>
-  </default>
-
-  <default type="edit" id="12">
-    <height>66</height>
-    <aligny>center</aligny>
-    <font>Font_Reg_44</font>
-    <textoffsetx>20</textoffsetx>
-    <textcolor>TextLight</textcolor>
-    <focusedcolor>ButtonLabel</focusedcolor>
-    <disabledcolor>DisabledColour</disabledcolor>
-    <invalidcolor>DisabledColour</invalidcolor>
-    <pulseonselect>no</pulseonselect>
   </default>
 
 </includes>

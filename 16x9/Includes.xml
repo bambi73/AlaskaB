@@ -1001,6 +1001,24 @@
     <animation effect="zoom" center="auto" start="100" end="112" time="50" tween="cubic" easing="out">Focus</animation>
   </include>
 
+  <!-- Dialog Numeric -->
+  <constant name="DialogNumericWidth">1720</constant>
+  <constant name="DialogNumericHeight">693</constant>
+  <constant name="DialogNumericControlWidth">1520</constant>
+  <constant name="DialogNumericKeyboardWidth">278</constant>
+
+  <include name="DialogNumericButtonGrouplist">
+    <left>0</left>
+    <width>DialogNumericKeyboardWidth</width>
+    <height>70</height>
+    <itemgap>40</itemgap>
+    <orientation>horizontal</orientation>
+  </include>
+
+  <include name="DialogNumericButtonAlphanumeric">
+    <include>DialogKeyboardButtonAlphanumeric</include>
+  </include>
+
   <!-- Top-Right corner dialogs -->
   <include name="DialogTopRightCornerBase">
     <right>0</right>

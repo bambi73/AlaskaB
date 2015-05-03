@@ -13,7 +13,7 @@
       <height>DialogAddonSettingsHeight</height>
 
       <include>Animation_ZoomInMenu</include>
-      <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(virtualkeyboard) | Window.IsActive(filebrowser) | Window.IsActive(numericinput)">
+      <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(virtualkeyboard) | Window.IsActive(filebrowser) | Window.IsActive(numericinput) | Window.IsActive(selectdialog)">
         <include>AnimationEffect_ZoomedBy</include>
       </animation>
 
@@ -152,6 +152,7 @@
     <control type="image" id="6"/>
     <control type="label" id="7">
       <include>DialogAddonSettingsRightGLTemplate</include>
+      <textoffsetx>20</textoffsetx>      
     </control>
     <control type="sliderex" id="8"/>
   </controls>

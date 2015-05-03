@@ -14,8 +14,11 @@
       <width>SettingsCategoryWidth</width>
       <height>SettingsCategoryHeight</height>
 
-      <include>Animation_ZoomedByMenu</include>
       <include>Animation_ZoomInZoomOut</include>
+      <include>Animation_ZoomedByMenu</include>
+      <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(virtualkeyboard) | Window.IsActive(filebrowser) | Window.IsActive(numericinput) | Window.IsActive(addonsettings)">
+        <include>AnimationEffect_ZoomedBy</include>
+      </animation>
 
       <control type="image">
         <width>SettingsCategoryWidth</width>
