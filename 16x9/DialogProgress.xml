@@ -6,18 +6,11 @@
   </coordinates>
 
   <controls>
-    <!-- <control type="button" id="10">
-      <include>HiddenControl</include>
-      <label>106</label>
-      <onclick>Close</onclick>
-    </control> -->
-
     <control type="group" id="5000">
       <centertop>49%</centertop>
       <centerleft>50%</centerleft>
-      <width>DialogConfirmWidth</width>
-      <!-- <height>DialogConfirmHeight</height> -->
-      <height>435</height>
+      <width>DialogProgressWidth</width>
+      <height>DialogProgressHeight</height>
 
       <include>Animation_ZoomInMenu</include>
       <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(DialogYesNo.xml)">
@@ -25,69 +18,15 @@
       </animation>
 
       <control type="image">
-        <width>1320</width>
-        <height>14</height>
-        <texture>hub/list_bg_border5.png</texture>
-      </control>
-      <control type="image">
-        <top>14</top>
-        <width>1320</width>
-        <height>88</height>
-        <texture>hub/list_bg5.png</texture>
-      </control>
-      <control type="image">
-        <top>102</top>
-        <width>1320</width>
-        <height>3</height>
-        <texture>hub/list_bg_delimiter5.png</texture>
-      </control>      
-      <control type="image">
-        <top>105</top>
-        <width>1320</width>
-        <height>165</height>
-        <texture>hub/list_bg5.png</texture>
-      </control>
-      <control type="image">
-        <top>270</top>
-        <width>1320</width>
-        <height>3</height>
-        <texture>hub/list_bg_delimiter5.png</texture>
-      </control>      
-      <control type="image">
-        <top>273</top>
-        <width>1320</width>
-        <height>36</height>
-        <texture>hub/list_bg5.png</texture>
-      </control>
-      <control type="image">
-        <top>309</top>
-        <width>1320</width>
-        <height>3</height>
-        <texture>hub/list_bg_delimiter5.png</texture>
-      </control>      
-      <control type="image">
-        <top>312</top>
-        <width>1320</width>
-        <height>109</height>
-        <texture>hub/list_bg5.png</texture>
-      </control>
-      <control type="image">
-        <top>421</top>
-        <width>1320</width>
-        <height>14</height>
-        <texture flipy="true">hub/list_bg_border5.png</texture>
-      </control>
-
-      <!-- <control type="image">
-        <width>DialogConfirmWidth</width>
-        <height>DialogConfirmHeight</height>
+        <width>DialogProgressWidth</width>
+        <height>DialogProgressHeight</height>
         <texture>dialogs/progress-bg.png</texture>
-      </control> -->
+      </control>
 
       <control type="label" id="1">
         <top>37</top>
         <centerleft>50%</centerleft>
-        <width>DialogConfirmControlWidth</width>
+        <width>DialogProgressControlWidth</width>
         <height>42</height>
         <align>center</align>
         <aligny>center</aligny>
@@ -96,7 +35,7 @@
       <control type="textbox" id="9">
         <top>128</top>
         <centerleft>50%</centerleft>
-        <width>DialogConfirmControlWidth</width>
+        <width>DialogProgressControlWidth</width>
         <height>130</height>
         <align>center</align>
         <font>Font_Light_Caps_34</font>
@@ -111,7 +50,7 @@
 
       <control type="button" id="10">
         <top>311</top>
-        <width>DialogConfirmControlWidth</width>
+        <width>DialogProgressControlWidth</width>
         <include>DialogBottomButton1Center</include>
         <animation type="Conditional" condition="Control.HasFocus(10)" reversible="false">
           <include>AnimationEffect_DialogBottomButton1CenterFocus</include>

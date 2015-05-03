@@ -962,6 +962,11 @@
     <visible>!SubString(ListItem.Icon,Default)</visible>
   </include>
 
+  <!-- Dialog Progress -->
+  <constant name="DialogProgressWidth">1320</constant>
+  <constant name="DialogProgressHeight">435</constant>
+  <constant name="DialogProgressControlWidth">1120</constant>
+
   <!-- Dialog confirm (Ok, Yes/No) -->
   <constant name="DialogConfirmWidth">1320</constant>
   <constant name="DialogConfirmHeight">396</constant>
