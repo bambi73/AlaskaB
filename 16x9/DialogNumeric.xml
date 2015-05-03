@@ -20,15 +20,14 @@
       <control type="image">
         <width>DialogNumericWidth</width>
         <height>DialogNumericHeight</height>
-        <texture>dialogs/keybord-bg.png</texture>
+        <texture>dialogs/numeric-bg.png</texture>
       </control>
 
       <!-- Heading label -->
       <control type="label" id="1">
         <centerleft>50%</centerleft>
         <top>37</top>
-        <width>520</width>
-        <!-- <width>DialogNumericControlWidth</width> -->
+        <width>DialogNumericControlWidth</width>
         <height>42</height>
         <align>center</align>
         <aligny>center</aligny>
@@ -38,7 +37,7 @@
       <control type="label" id="4">
         <centerleft>50%</centerleft>
         <top>116</top>
-        <width>420</width>
+        <width>600</width>
         <height>66</height>
         <align>center</align>
         <aligny>center</aligny>
@@ -151,29 +150,23 @@
           </control>
         </control>
 
-        <control type="grouplist" id="1500">
+        <control type="button" id="23">
           <top>280</top>
-          <onleft>1500</onleft>
-          <onright>1500</onright>
+          <width>DialogNumericKeyboardWidth</width>
+          <height>70</height>
+          <align>center</align>
+          <aligny>center</aligny>
           <onup>10</onup>
           <ondown>9010</ondown>
-          <include>DialogNumericButtonGrouplist</include>
-
-          <control type="button" id="23">
-            <width>DialogNumericKeyboardWidth</width>
-            <height>66</height>
-            <align>center</align>
-            <aligny>center</aligny>
-            <label>$LOCALIZE[20181]</label>
-            <animation effect="zoom" center="auto" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
-          </control>
+          <label>$LOCALIZE[20181]</label>
+          <animation effect="zoom" center="auto" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
         </control>
       </control>
 
       <!-- Button grouplist -->
       <control type="grouplist" id="9010">
         <include>DialogBottomButtonGrouplist</include>
-        <width>DialogNumericControlWidth</width>
+        <width>DialogNumericWidth</width>
         <top>569</top>
         <onup>23</onup>
         <!-- Done -->

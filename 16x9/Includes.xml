@@ -1002,9 +1002,9 @@
   </include>
 
   <!-- Dialog Numeric -->
-  <constant name="DialogNumericWidth">1720</constant>
+  <constant name="DialogNumericWidth">1120</constant>
   <constant name="DialogNumericHeight">693</constant>
-  <constant name="DialogNumericControlWidth">1520</constant>
+  <constant name="DialogNumericControlWidth">920</constant>
   <constant name="DialogNumericKeyboardWidth">278</constant>
 
   <include name="DialogNumericButtonGrouplist">
