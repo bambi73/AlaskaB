@@ -187,12 +187,13 @@
   </default>
 
   <default type="progress">
-    <height>44</height>
+    <height>18</height>
     <texturebg>-</texturebg>
     <lefttexture>-</lefttexture>
-    <midtexture border="10">osd/Progress_Bar.png</midtexture>
+    <midtexture border="9,0,9,0" colordiffuse="TextLight">common/progress.png</midtexture>
     <righttexture>-</righttexture>
     <overlaytexture>-</overlaytexture>
+    <reveal>false</reveal>
   </default>
 
   <default type="scrollbar">
