@@ -1125,4 +1125,34 @@
     <include>SettingsCategoryRightGLTemplate</include>
   </include>
 
+  <!-- Settings system info -->
+  <constant name="SettingsSystemInfoLeft">-160</constant>
+  <constant name="SettingsSystemInfoWidth">2240</constant>
+  <constant name="SettingsSystemInfoHeight">723</constant>
+
+  <constant name="SettingsSystemInfoGLTop">36</constant>
+  <constant name="SettingsSystemInfoGLHeight">528</constant>
+  <constant name="SettingsSystemInfoLeftGLLeft">40</constant>
+  <constant name="SettingsSystemInfoLeftGLWidth">370</constant>
+  <constant name="SettingsSystemInfoRightGLLeft">520</constant>
+  <constant name="SettingsSystemInfoRightGLWidth">1180</constant>
+
+  <include name="SettingsSystemInfoBuildInfo">
+    <height>36</height>
+    <width>700</width>
+    <textoffsetx>20</textoffsetx>
+    <font>Font_Light_36</font>
+  </include>
+
+  <include name="SettingsSystemInfoLeftGLTemplate">
+    <width>SettingsSystemInfoLeftGLWidth</width>
+    <align>right</align>
+    <animation effect="zoom" center="350,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
+  </include>
+
+  <include name="SettingsSystemInfoRightGLTemplate">
+    <width>SettingsSystemInfoRightGLWidth</width>
+    <textoffsetx>20</textoffsetx>
+  </include>
+
 </includes>
