@@ -1155,4 +1155,34 @@
     <textoffsetx>20</textoffsetx>
   </include>
 
+  <!-- Settings profile -->
+  <constant name="SettingsProfileLeft">-160</constant>
+  <constant name="SettingsProfileWidth">2240</constant>
+  <constant name="SettingsProfileHeight">723</constant>
+
+  <constant name="SettingsProfileListTop">36</constant>
+  <constant name="SettingsProfileListHeight">528</constant>
+  <constant name="SettingsProfileLeftListLeft">40</constant>
+  <constant name="SettingsProfileLeftListWidth">370</constant>
+  <constant name="SettingsProfileRightListLeft">520</constant>
+  <constant name="SettingsProfileRightListWidth">1130</constant>
+
+  <include name="SettingsProfileBuildInfo">
+    <height>36</height>
+    <width>700</width>
+    <textoffsetx>20</textoffsetx>
+    <font>Font_Light_36</font>
+  </include>
+
+  <include name="SettingsProfileLeftListTemplate">
+    <width>SettingsProfileLeftListWidth</width>
+    <textoffsetx>20</textoffsetx>
+    <align>right</align>
+  </include>
+
+  <include name="SettingsProfileRightListTemplate">
+    <width>SettingsProfileRightListWidth</width>
+    <textoffsetx>20</textoffsetx>
+  </include>
+
 </includes>
