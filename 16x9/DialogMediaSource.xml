@@ -46,6 +46,7 @@
         <height>66</height>
         <align>center</align>
         <aligny>center</aligny>
+        <focusedcolor>TextLight</focusedcolor>
         <ondown>10</ondown>
       </control>
 

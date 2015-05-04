@@ -5,6 +5,11 @@
     <origin x="0" y="0"/>
   </coordinates>
 
+  <onload condition="Window.IsActive(networksetup)">SetProperty(HideNetworkSetup,1,Home)</onload>
+  <onload condition="Window.IsActive(networksetup)">SetProperty(ShowFileBrowser,1)</onload>
+  <onunload>ClearProperty(HideNetworkSetup,Home)</onunload>
+  <onunload>ClearProperty(ShowFileBrowser)</onunload>
+
   <controls>
     <control type="group" id="5000">
       <centertop>49%</centertop>
@@ -13,7 +18,7 @@
       <height>DialogFileBrowserHeight</height>
 
       <include>Animation_ZoomInMenu</include>
-      <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(virtualkeyboard)">
+      <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(virtualkeyboard) | [Window.IsActive(networksetup) + IsEmpty(Window.Property(ShowFileBrowser))]">
         <include>AnimationEffect_ZoomedBy</include>
       </animation>
 

@@ -47,7 +47,7 @@
     <focusedcolor>TextHeavy</focusedcolor>
     <disabledcolor>TextDisabled</disabledcolor>
     <invalidcolor>TextDisabled</invalidcolor>
-    <pulseonselect>no</pulseonselect>
+    <pulseonselect>false</pulseonselect>
   </default>
 
   <default type="image">

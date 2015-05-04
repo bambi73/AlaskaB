@@ -881,6 +881,15 @@
     <include>DialogAddonSettingsRightGLTemplate</include>
   </include>
 
+  <!-- Dialog Network setup -->
+  <constant name="DialogNetworkSetupWidth">1520</constant>
+  <constant name="DialogNetworkSetupHeight">654</constant>
+  <constant name="DialogNetworkSetupControlWidth">1020</constant>
+
+  <include name="DialogNetworkSetupGLTemplate">
+    <width>DialogNetworkSetupControlWidth</width>
+    <animation effect="zoom" center="350,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
+  </include>
 
   <!-- Dialog Content settings -->
   <constant name="DialogContentSettingsLeft">-160</constant>

@@ -1,0 +1,41 @@
+      <control type="image">
+        <width>DialogNetworkSetupWidth</width>
+        <height>14</height>
+        <texture>hub/list_bg_border5.png</texture>
+      </control>
+      <control type="image">
+        <top>14</top>
+        <width>DialogNetworkSetupWidth</width>
+        <height>88</height>
+        <texture>hub/list_bg5.png</texture>
+      </control>
+      <control type="image">
+        <top>102</top>
+        <width>DialogNetworkSetupWidth</width>
+        <height>3</height>
+        <texture>hub/list_bg_delimiter5.png</texture>
+      </control>
+      <control type="image">
+        <top>105</top>
+        <width>DialogNetworkSetupWidth</width>
+        <height>423</height>
+        <texture>hub/list_bg5.png</texture>
+      </control>
+      <control type="image">
+        <top>528</top>
+        <width>DialogNetworkSetupWidth</width>
+        <height>3</height>
+        <texture>hub/list_bg_delimiter5.png</texture>
+      </control>
+      <control type="image">
+        <top>531</top>
+        <width>DialogNetworkSetupWidth</width>
+        <height>109</height>
+        <texture>hub/list_bg5.png</texture>
+      </control>
+      <control type="image">
+        <top>640</top>
+        <width>DialogNetworkSetupWidth</width>
+        <height>14</height>
+        <texture flipy="true">hub/list_bg_border5.png</texture>
+      </control>
