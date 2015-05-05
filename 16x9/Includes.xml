@@ -841,13 +841,11 @@
 
   <!-- Dialog base -->
   <include name="DialogBaseLeftImage_DefaultIcon">
-    <width>420</width>
     <bordersize>20,80,20,80</bordersize>
     <aspectratio align="right" aligny="center">keep</aspectratio>
   </include>
 
   <include name="DialogBaseLeftImage_Image">
-    <width>420</width>
     <bordersize>6,6,8,8</bordersize>
     <aspectratio align="right" aligny="center">keep</aspectratio>
     <bordertexture border="6,6,8,8" colordiffuse="IconLight">pics/Picture_Panel.png</bordertexture>
@@ -924,6 +922,7 @@
   <constant name="DialogSelectControlWidth">1520</constant>
 
   <include name="DialogSelectImage1">
+    <width>420</width>
     <bordersize>20,78,40,80</bordersize>
     <include>DialogBaseLeftImage_DefaultIcon</include>
     <texture colordiffuse="IconLight" fallback="./defaultaddonnone.png">$INFO[Container(6).ListItem.Icon]</texture>
@@ -931,6 +930,7 @@
   </include>
 
   <include name="DialogSelectImage2">
+    <width>420</width>
     <include>DialogBaseLeftImage_Image</include>
     <texture fallback="DefaultAddon.png">$INFO[Container(6).ListItem.Icon]</texture>
     <visible>!SubString(Container(6).ListItem.Icon,Default)</visible>
@@ -954,18 +954,21 @@
   <constant name="DialogFileBrowserControlWidth">1520</constant>
 
   <include name="DialogFileBrowserImage1">
+    <width>420</width>
     <include>DialogBaseLeftImage_DefaultIcon</include>
     <texture colordiffuse="IconLight">$INFO[ListItem.Icon]</texture>
     <visible>SubString(ListItem.Icon,Default) + !SubString(ListItem.Icon,DefaultVideo)</visible>
   </include>
 
   <include name="DialogFileBrowserImage2">
+    <width>420</width>
     <include>DialogBaseLeftImage_DefaultIcon</include>
     <texture colordiffuse="IconLight">dialogs/no-art.png</texture>
     <visible>SubString(ListItem.Icon,Default) + SubString(ListItem.Icon,DefaultVideo)</visible>
   </include>
 
   <include name="DialogFileBrowserImage3">
+    <width>420</width>
     <include>DialogBaseLeftImage_Image</include>
     <texture>$INFO[ListItem.Icon]</texture>
     <visible>!SubString(ListItem.Icon,Default)</visible>
@@ -1165,12 +1168,13 @@
   <constant name="SettingsProfileLeftListLeft">40</constant>
   <constant name="SettingsProfileLeftListWidth">370</constant>
   <constant name="SettingsProfileRightListLeft">520</constant>
-  <constant name="SettingsProfileRightListWidth">1130</constant>
+  <constant name="SettingsProfileRightListWidth">1180</constant>
 
-  <include name="SettingsProfileBuildInfo">
-    <height>36</height>
-    <width>700</width>
-    <textoffsetx>20</textoffsetx>
+  <include name="SettingsProfileDescription">
+    <left>540</left>
+    <top>608</top>
+    <height>87</height>
+    <width>1160</width>
     <font>Font_Light_36</font>
   </include>
 
@@ -1180,7 +1184,12 @@
     <align>right</align>
   </include>
 
-  <include name="SettingsProfileRightListTemplate">
+  <include name="SettingsProfileRightList1Template">
+    <include>SettingsProfileRightList2Template</include>
+    <animation effect="zoom" center="500,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
+  </include>
+
+  <include name="SettingsProfileRightList2Template">
     <width>SettingsProfileRightListWidth</width>
     <textoffsetx>20</textoffsetx>
   </include>

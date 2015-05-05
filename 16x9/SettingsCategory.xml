@@ -82,7 +82,7 @@
           <visible>ControlGroup(5).HasFocus</visible>
         </control>
         <control type="textbox">
-          <label>10047</label>
+          <label>$LOCALIZE[10047]</label>
           <include>SettingsCategoryDescription</include>
           <visible>Control.HasFocus(20)</visible>
         </control>

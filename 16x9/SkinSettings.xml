@@ -513,6 +513,12 @@
           <onclick>Skin.ToggleSetting(AlaskaB.Settings.SettingsCategory.Scrollbar.Enable)</onclick>
           <selected>Skin.HasSetting(AlaskaB.Settings.SettingsCategory.Scrollbar.Enable)</selected>
         </control>
+        <control type="radiobutton" id="152">
+          <width>1260</width>
+          <label>Enable Setting profile scrollbar</label>
+          <onclick>Skin.ToggleSetting(AlaskaB.Settings.SettingsProfile.Scrollbar.Enable)</onclick>
+          <selected>Skin.HasSetting(AlaskaB.Settings.SettingsProfile.Scrollbar.Enable)</selected>
+        </control>
       </control>
 
       <!-- Divider -->

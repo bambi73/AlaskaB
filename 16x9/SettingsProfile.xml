@@ -46,7 +46,6 @@
           <onright>5200</onright>
           <orientation>vertical</orientation>
           <scrolltime tween="sine" easing="out">320</scrolltime>
-
           <itemlayout width="370" height="66">
             <control type="label">
               <label>$INFO[ListItem.Label]</label>
@@ -84,21 +83,20 @@
             <onright>8800</onright>
             <pagecontrol>8800</pagecontrol>
             <orientation>vertical</orientation>
-            <scrolltime tween="sine" easing="out">320</scrolltime>
             <visible>Container(5100).Hasfocus(2)</visible>
-
+            <scrolltime tween="sine" easing="out">320</scrolltime>
             <itemlayout width="1130" height="66">
               <control type="group">
                 <height>66</height>
                 <width>SettingsProfileRightListWidth</width>
                 <control type="label">
                   <label>$INFO[ListItem.Label]</label>
-                  <include>SettingsProfileRightListTemplate</include>
+                  <include>SettingsProfileRightList2Template</include>
                 </control>
                 <control type="label">
                   <align>right</align>
                   <label>$INFO[ListItem.Label2]</label>
-                  <include>SettingsProfileRightListTemplate</include>
+                  <include>SettingsProfileRightList2Template</include>
                   <visible>!IsEmpty(ListItem.Label2)</visible>
                 </control>
               </control>
@@ -107,34 +105,33 @@
               <control type="group">
                 <height>66</height>
                 <width>SettingsProfileRightListWidth</width>
-                <animation effect="zoom" center="450,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
+                <animation effect="zoom" center="500,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
                 <visible>Control.HasFocus(2)</visible>
                 <control type="label">
                   <textcolor>TextHeavy</textcolor>
                   <label>$INFO[ListItem.Label]</label>
-                  <include>SettingsProfileRightListTemplate</include>
+                  <include>SettingsProfileRightList2Template</include>
                 </control>
                 <control type="label">
                   <align>right</align>
                   <textcolor>TextHeavy</textcolor>
                   <label>$INFO[ListItem.Label2]</label>
-                  <include>SettingsProfileRightListTemplate</include>
+                  <include>SettingsProfileRightList2Template</include>
                   <visible>!IsEmpty(ListItem.Label2)</visible>
                 </control>
               </control>
               <control type="group">
                 <height>66</height>
                 <width>SettingsProfileRightListWidth</width>
-                <animation effect="zoom" center="450,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
                 <visible>!Control.HasFocus(2)</visible>
                 <control type="label">
                   <label>$INFO[ListItem.Label]</label>
-                  <include>SettingsProfileRightListTemplate</include>
+                  <include>SettingsProfileRightList2Template</include>
                 </control>
                 <control type="label">
                   <align>right</align>
                   <label>$INFO[ListItem.Label2]</label>
-                  <include>SettingsProfileRightListTemplate</include>
+                  <include>SettingsProfileRightList2Template</include>
                   <visible>!IsEmpty(ListItem.Label2)</visible>
                 </control>
               </control>
@@ -148,19 +145,52 @@
             <height>SettingsProfileListHeight</height>
             <onleft>5100</onleft>
             <orientation>vertical</orientation>
-            <scrolltime tween="sine" easing="out">320</scrolltime>
             <visible>Container(5100).Hasfocus(1)</visible>
-
+            <scrolltime tween="sine" easing="out">320</scrolltime>
             <control type="radiobutton" id="4">
-              <include>SettingsProfileRightListTemplate</include>
+              <include>SettingsProfileRightList1Template</include>
               <label>$LOCALIZE[20096]</label>
             </control>
             <control type="button" id="5">
-              <include>SettingsProfileRightListTemplate</include>
-              <label>$LOCALIZE[33084]: $INFO[System.ProfileAutoLogin]</label>
+              <include>SettingsProfileRightList1Template</include>
+              <label>$LOCALIZE[33084]</label>
+              <label2>$INFO[System.ProfileAutoLogin]</label2>
               <enable>!System.HasLoginScreen</enable>
             </control>
           </control>
+        </control>
+
+        <!-- Profile icon -->
+        <control type="image">
+          <left>100</left>
+          <top>217</top>
+          <width>300</width>
+          <height>300</height>
+          <include>DialogBaseLeftImage_Image</include>
+          <texture fallback="DefaultAddon.png">$INFO[Container(2).ListItem.Icon]</texture>
+          <visible>Control.HasFocus(2) + !IsEmpty(Container(2).ListItem.Icon)</visible>
+        </control>
+
+        <!-- Settings descriptions -->
+        <control type="textbox">
+          <label>$LOCALIZE[31200]</label>
+          <include>SettingsProfileDescription</include>
+          <visible>Control.HasFocus(4)</visible>
+        </control>
+        <control type="textbox">
+          <label>$LOCALIZE[31201]</label>
+          <include>SettingsProfileDescription</include>
+          <visible>Control.HasFocus(5)</visible>
+        </control>
+        <control type="textbox">
+          <label>$INFO[Container(2).ListItem.Label,$LOCALIZE[31202],$LOCALIZE[31203]]</label>
+          <include>SettingsProfileDescription</include>
+          <visible>Control.HasFocus(2) + !StringCompare(Container(2).ListItem.Label,$LOCALIZE[20058])</visible>
+        </control>
+        <control type="textbox">
+          <label>$LOCALIZE[31204]</label>
+          <include>SettingsProfileDescription</include>
+          <visible>Control.HasFocus(2) + StringCompare(Container(2).ListItem.Label,$LOCALIZE[20058])</visible>
         </control>
 
         <!-- Scrollbar -->
@@ -169,45 +199,10 @@
           <top>52</top>
           <height>496</height>
           <onleft>5200</onleft>
-          <visible>Control.IsVisible(2)</visible>
-          <!-- <visible>Skin.HasSetting(AlaskaB.Settings.SettingsProfile.Scrollbar.Enable)</visible> -->
+          <visible>Control.IsVisible(2) + Skin.HasSetting(AlaskaB.Settings.SettingsProfile.Scrollbar.Enable)</visible>
         </control>
       </control>
-
-
-      <!-- Image -->
-
-      <!-- <control type="image">
-        <left>40</left>
-        <top>228</top>
-        <width>360</width>
-        <height>720</height>
-        <bordersize>6</bordersize>
-        <aspectratio align="left" aligny="top">keep</aspectratio>
-        <texture>DefaultUser.png</texture>
-        <visible>IsEmpty(Container(2).ListItem.Icon)</visible>
-      </control> -->
-
-      <!-- <control type="image">
-        <left>40</left>
-        <top>228</top>
-        <width>360</width>
-        <height>720</height>
-        <bordersize>6</bordersize>
-        <aspectratio align="left" aligny="top">keep</aspectratio>
-        <bordertexture border="6">pics/Picture_Panel.png</bordertexture>
-        <texture>$INFO[Container(2).ListItem.Icon]</texture>
-        <visible>!IsEmpty(Container(2).ListItem.Icon)</visible>
-      </control> -->
-
-      <!-- List -->
-
-
-      <!-- Button grouplist -->
-
-
     </control>
-
   </controls>
 
 </window>
