@@ -95,9 +95,15 @@
                 </control>
                 <control type="label">
                   <align>right</align>
-                  <label>$INFO[ListItem.Label2]</label>
+                  <label>$INFO[ListItem.Label2,$LOCALIZE[31205] ,]</label>
                   <include>SettingsProfileRightList2Template</include>
                   <visible>!IsEmpty(ListItem.Label2)</visible>
+                </control>
+                <control type="label">
+                  <align>right</align>
+                  <label>$LOCALIZE[20113]</label>
+                  <include>SettingsProfileRightList2Template</include>
+                  <visible>IsEmpty(ListItem.Label2) + !StringCompare(ListItem.Label,$LOCALIZE[20058])</visible>
                 </control>
               </control>
             </itemlayout>
@@ -115,9 +121,16 @@
                 <control type="label">
                   <align>right</align>
                   <textcolor>TextHeavy</textcolor>
-                  <label>$INFO[ListItem.Label2]</label>
+                  <label>$INFO[ListItem.Label2,$LOCALIZE[31205] ,]</label>
                   <include>SettingsProfileRightList2Template</include>
                   <visible>!IsEmpty(ListItem.Label2)</visible>
+                </control>
+                <control type="label">
+                  <align>right</align>
+                  <textcolor>TextHeavy</textcolor>
+                  <label>$LOCALIZE[20113]</label>
+                  <include>SettingsProfileRightList2Template</include>
+                  <visible>IsEmpty(ListItem.Label2) + !StringCompare(ListItem.Label,$LOCALIZE[20058])</visible>
                 </control>
               </control>
               <control type="group">
@@ -130,9 +143,15 @@
                 </control>
                 <control type="label">
                   <align>right</align>
-                  <label>$INFO[ListItem.Label2]</label>
+                  <label>$INFO[ListItem.Label2,$LOCALIZE[31205] ,]</label>
                   <include>SettingsProfileRightList2Template</include>
                   <visible>!IsEmpty(ListItem.Label2)</visible>
+                </control>
+                <control type="label">
+                  <align>right</align>
+                  <label>$LOCALIZE[20113]</label>
+                  <include>SettingsProfileRightList2Template</include>
+                  <visible>IsEmpty(ListItem.Label2) + !StringCompare(ListItem.Label,$LOCALIZE[20058])</visible>
                 </control>
               </control>
             </focusedlayout>

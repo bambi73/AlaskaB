@@ -44,8 +44,9 @@
           <top>20</top>
           <width>420</width>
           <height>355</height>
+          <texture>no-profile-picture.png</texture>
           <include>DialogBaseLeftImage_Image</include>
-          <visible>!IsEmpty(Control.GetLabel(101))</visible>
+          <visible>!StringCompare(Control.GetLabel(101),no-profile-picture.png)</visible>
         </control>
 
         <control type="grouplist" id="5">
