@@ -16,7 +16,7 @@
 
       <include>Animation_ZoomInZoomOut</include>
       <include>Animation_ZoomedByMenu</include>
-      <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog)">
+      <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(profilesettings)">
         <include>AnimationEffect_ZoomedBy</include>
       </animation>
 
@@ -144,6 +144,7 @@
             <width>SettingsProfileRightListWidth</width>
             <height>SettingsProfileListHeight</height>
             <onleft>5100</onleft>
+            <itemgap>0</itemgap>
             <orientation>vertical</orientation>
             <visible>Container(5100).Hasfocus(1)</visible>
             <scrolltime tween="sine" easing="out">320</scrolltime>
@@ -167,7 +168,7 @@
           <width>300</width>
           <height>300</height>
           <include>DialogBaseLeftImage_Image</include>
-          <texture fallback="DefaultAddon.png">$INFO[Container(2).ListItem.Icon]</texture>
+          <texture>$INFO[Container(2).ListItem.Icon]</texture>
           <visible>Control.HasFocus(2) + !IsEmpty(Container(2).ListItem.Icon)</visible>
         </control>
 

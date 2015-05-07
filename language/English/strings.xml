@@ -81,8 +81,8 @@
   
   <string id="31200">Show or hide the login screen at startup.</string>
   <string id="31201">Select the profile that will be used at startup when the login screen is disabled.</string>
-  <string id="31202">Manage profile '</string>
-  <string id="31203">' settings.</string>
+  <string id="31202">Manage '</string>
+  <string id="31203">' profile settings.</string>
   <string id="31204">Add new profile.</string>
 
   <!-- Used for 'Artwork Downloader' addon -->

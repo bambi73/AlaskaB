@@ -1194,4 +1194,20 @@
     <textoffsetx>20</textoffsetx>
   </include>
 
+  <!-- Profile settings -->
+  <constant name="DialogProfileSettingsWidth">1820</constant>
+  <constant name="DialogProfileSettingsHeight">663</constant>
+  <constant name="DialogProfileSettingsGLWidth">920</constant>
+  <constant name="DialogProfileSettingsControlWidth">1620</constant>
+
+  <include name="DialogProfileSettingsGLTemplate">
+    <width>DialogProfileSettingsGLWidth</width>
+    <animation effect="zoom" center="325,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
+  </include>
+
+  <include name="DialogProfileSettingsGLTemplateWithText">
+    <include>DialogProfileSettingsGLTemplate</include>
+    <textwidth>780</textwidth>
+  </include>
+
 </includes>

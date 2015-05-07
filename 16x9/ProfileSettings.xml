@@ -1,165 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="130">
-	<defaultcontrol always="true">5</defaultcontrol>
+  <defaultcontrol always="true">5</defaultcontrol>
+  <coordinates>
+    <origin x="0" y="0"/>
+  </coordinates>
 
-	<controls>
+  <controls>
+    <control type="group" id="5000">
+      <centertop>49%</centertop>
+      <centerleft>50%</centerleft>
+      <width>DialogProfileSettingsWidth</width>
+      <height>DialogProfileSettingsHeight</height>
 
-		<!-- Background -->
+      <include>Animation_ZoomInMenu</include>
+      <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(virtualkeyboard) | Window.IsActive(filebrowser)">
+        <include>AnimationEffect_ZoomedBy</include>
+      </animation>
 
-		<include>Global_Background</include>
+      <!-- <control type="image">
+        <width>DialogProfileSettingsWidth</width>
+        <height>DialogProfileSettingsHeight</height>
+        <texture>dialogs/file-browser-bg.png</texture>
+      </control> -->
 
-		<!-- Heading -->
+      <control type="image">
+        <width>DialogProfileSettingsWidth</width>
+        <height>14</height>
+        <texture>hub/list_bg_border5.png</texture>
+      </control>
+      <control type="image">
+        <top>14</top>
+        <width>DialogProfileSettingsWidth</width>
+        <height>88</height>
+        <texture>hub/list_bg5.png</texture>
+      </control>
+      <control type="image">
+        <top>102</top>
+        <width>DialogProfileSettingsWidth</width>
+        <height>3</height>
+        <texture>hub/list_bg_delimiter5.png</texture>
+      </control>
+      <control type="image">
+        <top>105</top>
+        <width>DialogProfileSettingsWidth</width>
+        <height>432</height>
+        <texture>hub/list_bg5.png</texture>
+      </control>
+      <control type="image">
+        <top>537</top>
+        <width>DialogProfileSettingsWidth</width>
+        <height>3</height>
+        <texture>hub/list_bg_delimiter5.png</texture>
+      </control>
+      <control type="image">
+        <top>540</top>
+        <width>DialogProfileSettingsWidth</width>
+        <height>109</height>
+        <texture>hub/list_bg5.png</texture>
+      </control>
+      <control type="image">
+        <top>649</top>
+        <width>DialogProfileSettingsWidth</width>
+        <height>14</height>
+        <texture flipy="true">hub/list_bg_border5.png</texture>
+      </control>
 
-		<control type="group">
-			<left>46</left>
-			<include>Animation_SlideDownFadeOut</include>
-			<control type="label" id="1000">
-				<include>Global_HeadingSectionVars</include>
-			</control>
-			<control type="label" id="1001">
-				<include>Global_HeadingDetailVars</include>
-			</control>
-		</control>
+      <!-- Heading label -->
+      <control type="label" id="2">
+        <top>37</top>
+        <centerleft>50%</centerleft>
+        <width>DialogProfileSettingsControlWidth</width>
+        <height>42</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <font>Font_Black_Caps_42</font>
+      </control>
+      
+      <control type="group">
+        <left>125</left>
+        <top>122</top>
 
-		<!-- Menu -->
+        <!-- Image -->
+        <control type="image" id="101">
+          <left>40</left>
+          <top>20</top>
+          <width>420</width>
+          <height>355</height>
+          <include>DialogBaseLeftImage_Image</include>
+          <visible>!IsEmpty(Control.GetLabel(101))</visible>
+        </control>
 
-		<control type="group" id="5000">
-			<top>TopOffset</top>
-			<left>LeftOffset</left>
-			<include>Animation_ZoomInMenu</include>
+        <control type="grouplist" id="5">
+          <left>550</left>
+          <width>DialogProfileSettingsGLWidth</width>
+          <height>396</height>
+          <onleft>9010</onleft>
+          <onright>9010</onright>
+          <onup>noop</onup>
+          <ondown>9010</ondown>
+          <itemgap>0</itemgap>
+          <orientation>vertical</orientation>
+          <scrolltime tween="sine" easing="out">320</scrolltime>
+        </control>
+      </control>
 
-			<!-- Heading label -->
+      <control type="grouplist" id="9010">
+        <include>DialogBottomButtonGrouplist</include>
+        <width>DialogProfileSettingsControlWidth</width>
+        <top>539</top>
+        <onup>5</onup>
+        <!-- OK -->
+        <control type="button" id="28">
+          <label>$LOCALIZE[20177]</label>
+          <include>DialogBottomButton2Left</include>
+          <animation type="Conditional" condition="Control.HasFocus(28)" reversible="false">
+            <include>AnimationEffect_DialogBottomButton2LeftFocus</include>
+          </animation>
+          <animation type="Conditional" condition="!Control.HasFocus(28)" reversible="false">
+            <include>AnimationEffect_DialogBottomButton2LeftUnfocus</include>
+          </animation>
+        </control>
+        <!-- Cancel -->
+        <control type="button" id="29">
+          <label>$LOCALIZE[222]</label>
+          <include>DialogBottomButton2Right</include>
+          <animation type="Conditional" condition="Control.HasFocus(29)" reversible="false">
+            <include>AnimationEffect_DialogBottomButton2RightFocus</include>
+          </animation>
+          <animation type="Conditional" condition="!Control.HasFocus(29)" reversible="false">
+            <include>AnimationEffect_DialogBottomButton2RightUnfocus</include>
+          </animation>
+        </control>
+      </control>
+    </control>
 
-			<control type="label">
-				<left>544</left>
-				<top>154</top>
-				<width>1254</width>
-				<height>44</height>
-				<font>Font_Reg_Caps_Bold_44</font>
-				<textcolor>Medium</textcolor>
-				<label>$INFO[Window.Property(heading)]</label>
-			</control>
-
-			<!-- Image -->
-
-			<control type="image">
-				<left>40</left>
-				<top>228</top>
-				<width>360</width>
-				<height>720</height>
-				<bordersize>6</bordersize>
-				<aspectratio align="left" aligny="top">keep</aspectratio>
-				<texture>DefaultUser.png</texture>
-				<visible>IsEmpty(Control.GetLabel(2))</visible>
-			</control>
-
-			<control type="image" id="2">
-				<left>40</left>
-				<top>228</top>
-				<width>360</width>
-				<height>720</height>
-				<bordersize>6</bordersize>
-				<aspectratio align="left" aligny="top">keep</aspectratio>
-				<bordertexture border="6">pics/Picture_Panel.png</bordertexture>
-				<visible>!IsEmpty(Control.GetLabel(2))</visible>
-			</control>
-
-			<!-- Grouplist -->
-
-			<control type="grouplist" id="5">
-				<left>544</left>
-				<top>228</top>
-				<width>1260</width>
-				<height>594</height>
-				<itemgap>0</itemgap>
-				<onleft>noop</onleft>
-				<onright>9001</onright>
-				<onup>noop</onup>
-				<ondown>9001</ondown>
-				<orientation>vertical</orientation>
-				<scrolltime tween="sine" easing="out">320</scrolltime>
-			</control>
-
-			<!-- List arrows -->
-
-			<control type="image">
-				<left>566</left>
-				<top>206</top>
-				<width>32</width>
-				<height>16</height>
-				<texture>common/Scroll_Up.png</texture>
-				<visible>Container(5).HasPrevious</visible>
-			</control>
-
-			<control type="image">
-				<left>566</left>
-				<top>828</top>
-				<width>32</width>
-				<height>16</height>
-				<texture>common/Scroll_Down.png</texture>
-				<visible>Container(5).HasNext</visible>
-			</control>
-
-			<!-- Divider -->
-
-			<control type="image">
-				<left>544</left>
-				<top>906</top>
-				<width>1260</width>
-				<height>1</height>
-				<texture>common/Button_NF.png</texture>
-			</control>
-
-			<!-- Grouplist controls -->
-
-			<control type="button" id="7">
-				<width>1260</width>
-				<height>66</height>
-			</control>
-
-			<control type="radiobutton" id="8">
-				<width>1260</width>
-				<height>66</height>
-				<textwidth>1120</textwidth>
-			</control>
-
-			<control type="spincontrolex" id="9">
-				<width>1260</width>
-				<height>66</height>
-				<textwidth>1120</textwidth>
-			</control>
-
-			<!-- Button grouplist -->
-
-			<control type="grouplist" id="9001">
-				<left>544</left>
-				<top>926</top>
-				<width>1260</width>
-				<itemgap>0</itemgap>
-				<onleft>noop</onleft>
-				<onright>noop</onright>
-				<onup>5</onup>
-				<ondown>noop</ondown>
-				<orientation>horizontal</orientation>
-
-				<!-- OK Button -->
-
-				<control type="button" id="28">
-					<width>420</width>
-					<label>186</label>
-				</control>
-
-				<!-- Cancel Button -->
-
-				<control type="button" id="29">
-					<width>420</width>
-					<label>222</label>
-				</control>
-
-			</control>
-
-		</control>
-
-	</controls>
+    <control type="button" id="7">
+      <include>DialogProfileSettingsGLTemplate</include>
+    </control>
+    <control type="radiobutton" id="8">
+      <include>DialogProfileSettingsGLTemplateWithText</include>
+    </control>
+    <control type="spincontrolex" id="9">
+      <include>DialogProfileSettingsGLTemplateWithText</include>
+    </control>
+  </controls>
 
 </window>
