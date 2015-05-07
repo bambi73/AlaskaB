@@ -23,48 +23,6 @@
         <texture>dialogs/profile-settings-bg.png</texture>
       </control>
 
-      <!-- <control type="image">
-        <width>DialogProfileSettingsWidth</width>
-        <height>14</height>
-        <texture>hub/list_bg_border5.png</texture>
-      </control>
-      <control type="image">
-        <top>14</top>
-        <width>DialogProfileSettingsWidth</width>
-        <height>88</height>
-        <texture>hub/list_bg5.png</texture>
-      </control>
-      <control type="image">
-        <top>102</top>
-        <width>DialogProfileSettingsWidth</width>
-        <height>3</height>
-        <texture>hub/list_bg_delimiter5.png</texture>
-      </control>
-      <control type="image">
-        <top>105</top>
-        <width>DialogProfileSettingsWidth</width>
-        <height>432</height>
-        <texture>hub/list_bg5.png</texture>
-      </control>
-      <control type="image">
-        <top>537</top>
-        <width>DialogProfileSettingsWidth</width>
-        <height>3</height>
-        <texture>hub/list_bg_delimiter5.png</texture>
-      </control>
-      <control type="image">
-        <top>540</top>
-        <width>DialogProfileSettingsWidth</width>
-        <height>109</height>
-        <texture>hub/list_bg5.png</texture>
-      </control>
-      <control type="image">
-        <top>649</top>
-        <width>DialogProfileSettingsWidth</width>
-        <height>14</height>
-        <texture flipy="true">hub/list_bg_border5.png</texture>
-      </control> -->
-
       <!-- Heading label -->
       <control type="label" id="2">
         <top>37</top>
