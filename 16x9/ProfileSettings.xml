@@ -17,13 +17,13 @@
         <include>AnimationEffect_ZoomedBy</include>
       </animation>
 
-      <!-- <control type="image">
+      <control type="image">
         <width>DialogProfileSettingsWidth</width>
         <height>DialogProfileSettingsHeight</height>
-        <texture>dialogs/file-browser-bg.png</texture>
-      </control> -->
+        <texture>dialogs/profile-settings-bg.png</texture>
+      </control>
 
-      <control type="image">
+      <!-- <control type="image">
         <width>DialogProfileSettingsWidth</width>
         <height>14</height>
         <texture>hub/list_bg_border5.png</texture>
@@ -63,7 +63,7 @@
         <width>DialogProfileSettingsWidth</width>
         <height>14</height>
         <texture flipy="true">hub/list_bg_border5.png</texture>
-      </control>
+      </control> -->
 
       <!-- Heading label -->
       <control type="label" id="2">
