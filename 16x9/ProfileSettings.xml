@@ -41,19 +41,19 @@
         <!-- Image -->
         <control type="image" id="101">
           <left>40</left>
-          <top>20</top>
+          <top>14</top>
           <width>420</width>
-          <height>355</height>
-          <texture>defaultuser.png</texture>
+          <height>368</height>
+          <texture>unknown-user.png</texture>
           <include>DialogBaseLeftImage_Image</include>
-          <visible>!StringCompare(Control.GetLabel(101),defaultuser.png)</visible>
+          <visible>!StringCompare(Control.GetLabel(101),unknown-user.png)</visible>
         </control>
         <control type="image">
-          <left>92</left>
-          <top>50</top>
-          <width>380</width>
-          <height>296</height>
-          <texture colordiffuse="IconLight">defaultuser.png</texture>
+          <left>99</left>
+          <top>19</top>
+          <width>361</width>
+          <height>358</height>
+          <texture colordiffuse="IconLight">dialogs/profile-settings-defaultuser.png</texture>
           <include>DialogBaseLeftImage_DefaultIcon</include>
           <visible>!Control.IsVisible(101)</visible>
         </control>

@@ -850,6 +850,18 @@
     <bordertexture border="6,6,8,8" colordiffuse="IconLight">pics/Picture_Panel.png</bordertexture>
   </include>
 
+  <include name="DialogBaseVerticalList">
+    <preloaditems>5</preloaditems>
+    <orientation>vertical</orientation>
+    <scrolltime tween="sine" easing="out">320</scrolltime>
+  </include>
+
+  <include name="DialogBaseVerticalListWithScrollbar">
+    <onright>8800</onright>
+    <pagecontrol>8800</pagecontrol>
+    <include>DialogBaseVerticalList</include>
+  </include>
+
   <!-- Dialog Addon settings -->
   <constant name="DialogAddonSettingsLeft">-160</constant>
   <constant name="DialogAddonSettingsWidth">2240</constant>

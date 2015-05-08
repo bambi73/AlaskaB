@@ -67,15 +67,14 @@
           <visible>IsEmpty(Container(52).ListItem.Icon) | StringCompare(Container(52).ListItem.Icon,unknown-user.png)</visible>
         </control>
 
+        <!-- Profiles list -->
         <control type="list" id="52">
           <left>560</left>
           <width>LoginScreenListWidth</width>
           <height>392</height>
           <onup>52</onup>
           <ondown>52</ondown>
-          <onright>8800</onright>
-          <pagecontrol>8800</pagecontrol>
-          <include>LoginScreenList</include>
+          <include>DialogBaseVerticalListWithScrollbar</include>
 
           <itemlayout width="780" height="98">
             <control type="label">

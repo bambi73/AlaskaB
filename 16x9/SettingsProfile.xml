@@ -42,10 +42,8 @@
           <top>SettingsProfileListTop</top>
           <width>SettingsProfileLeftListWidth</width>
           <height>SettingsProfileListHeight</height>
-          <itemgap>0</itemgap>
           <onright>5200</onright>
-          <orientation>vertical</orientation>
-          <scrolltime tween="sine" easing="out">320</scrolltime>
+          <include>DialogBaseVerticalList</include>
           <itemlayout width="370" height="66">
             <control type="label">
               <label>$INFO[ListItem.Label]</label>
@@ -80,11 +78,9 @@
             <width>SettingsProfileRightListWidth</width>
             <height>SettingsProfileListHeight</height>
             <onleft>5100</onleft>
-            <onright>8800</onright>
-            <pagecontrol>8800</pagecontrol>
-            <orientation>vertical</orientation>
+            <include>DialogBaseVerticalListWithScrollbar</include>
             <visible>Container(5100).Hasfocus(2)</visible>
-            <scrolltime tween="sine" easing="out">320</scrolltime>
+            
             <itemlayout width="1130" height="66">
               <control type="group">
                 <height>66</height>
