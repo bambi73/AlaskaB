@@ -136,12 +136,19 @@
             <left>40</left>
             <top>18</top>
             <control type="image">
-              <include>DialogSelectImage1</include>
+              <width>420</width>
               <height>374</height>
+              <bordersize>20,78,40,80</bordersize>
+              <include>DialogBaseLeftImage_DefaultIcon</include>
+              <texture colordiffuse="IconLight" fallback="./defaultaddonnone.png">$INFO[Container(6).ListItem.Icon]</texture>
+              <visible>SubString(Container(6).ListItem.Icon,Default)</visible>
             </control>
             <control type="image">
-              <include>DialogSelectImage2</include>
+              <width>420</width>
               <height>374</height>
+              <include>DialogBaseLeftImage_Image</include>
+              <texture fallback="DefaultAddon.png">$INFO[Container(6).ListItem.Icon]</texture>
+              <visible>!SubString(Container(6).ListItem.Icon,Default)</visible>
             </control>
           </control>
 

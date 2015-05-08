@@ -11,9 +11,8 @@
     <control type="group" id="5000">
       <centertop>49%</centertop>
       <centerleft>50%</centerleft>
-      <width>DialogSelectWidth</width>
-      <height>DialogSelectHeight3</height>
-      <!-- <height>665</height> -->
+      <width>LoginScreenWidth</width>
+      <height>LoginScreenHeight</height>
 
       <include>Animation_ZoomInMenu</include>
       <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(contextmenu) | Window.IsActive(profilesettings)">
@@ -21,23 +20,23 @@
       </animation>
 
       <control type="image">
-        <width>DialogSelectWidth</width>
-        <height>DialogSelectHeight3</height>
+        <width>LoginScreenWidth</width>
+        <height>LoginScreenHeight</height>
         <visible>!Control.IsVisible(8800)</visible>
-        <texture>dialogs/select-6-bg.png</texture>
+        <texture>dialogs/login-screen-bg.png</texture>
       </control>
       <control type="image">
-        <width>DialogSelectWidth</width>
-        <height>DialogSelectHeight3</height>
+        <width>LoginScreenWidth</width>
+        <height>LoginScreenHeight</height>
         <visible>Control.IsVisible(8800)</visible>
-        <texture>dialogs/select-6-bg-scrollbar.png</texture>
+        <texture>dialogs/login-screen-bg-scrollbar.png</texture>
       </control>
 
       <!-- Heading label -->
       <control type="label" id="2">
         <top>37</top>
         <centerleft>50%</centerleft>
-        <width>DialogSelectControlWidth</width>
+        <width>LoginScreenControlWidth</width>
         <height>42</height>
         <align>center</align>
         <aligny>center</aligny>
@@ -46,91 +45,74 @@
 
       <control type="group">
         <left>125</left>
-        <top>118</top>
+        <top>116</top>
 
         <!-- Image -->
         <control type="image">
           <left>40</left>
-          <top>18</top>
+          <top>22</top>
           <width>420</width>
-          <height>374</height>
+          <height>365</height>
           <include>DialogBaseLeftImage_Image</include>
           <texture>$INFO[Container(52).ListItem.Icon]</texture>
-          <visible>!IsEmpty(Container(52).ListItem.Icon)</visible>
+          <visible>!IsEmpty(Container(52).ListItem.Icon) + !StringCompare(Container(52).ListItem.Icon,unknown-user.png)</visible>
+        </control>
+        <control type="image">
+          <left>102</left>
+          <top>27</top>
+          <width>358</width>
+          <height>355</height>
+          <include>DialogBaseLeftImage_DefaultIcon</include>
+          <texture colordiffuse="IconLight">dialogs/login-screen-defaultuser.png</texture>
+          <visible>IsEmpty(Container(52).ListItem.Icon) | StringCompare(Container(52).ListItem.Icon,unknown-user.png)</visible>
         </control>
 
         <control type="list" id="52">
           <left>560</left>
-          <width>780</width>
+          <width>LoginScreenListWidth</width>
           <height>392</height>
           <onup>52</onup>
           <ondown>52</ondown>
           <onright>8800</onright>
-          <onleft>ActivateWindow(shutdownmenu)</onleft>
           <pagecontrol>8800</pagecontrol>
-          <include>DialogSelectList</include>
+          <include>LoginScreenList</include>
 
           <itemlayout width="780" height="98">
             <control type="label">
-              <top>22</top>
-              <width>780</width>
-              <height>38</height>
-              <aligny>center</aligny>
+              <include>LoginScreenListItemLine1</include>
               <selectedcolor>TextLight</selectedcolor>
               <label>$INFO[ListItem.Label]</label>
             </control>
             <control type="label">
-              <top>63</top>
-              <width>780</width>
-              <height>30</height>
-              <aligny>center</aligny>
+              <include>LoginScreenListItemLine2</include>
               <selectedcolor>TextLight</selectedcolor>
-              <font>Font_Light_Caps_30</font>
               <label>$INFO[ListItem.Label2]</label>
             </control>
           </itemlayout>
           <focusedlayout width="780" height="98">
             <control type="label">
-              <top>22</top>
-              <width>780</width>
-              <height>38</height>
-              <scroll>true</scroll>
-              <aligny>center</aligny>
+              <include>LoginScreenListItemLine1</include>
               <textcolor>TextHeavy</textcolor>
               <label>$INFO[ListItem.Label]</label>
               <visible>Control.HasFocus(52)</visible>
-              <animation effect="zoom" center="40,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
+              <animation effect="zoom" center="120,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
             </control>
             <control type="label">
-              <top>63</top>
-              <width>780</width>
-              <height>30</height>
-              <scroll>true</scroll>
-              <aligny>center</aligny>
-              <font>Font_Light_Caps_30</font>
+              <include>LoginScreenListItemLine2</include>
               <textcolor>TextHeavy</textcolor>
               <label>$INFO[ListItem.Label2]</label>
               <visible>Control.HasFocus(52)</visible>
-              <animation effect="zoom" center="40,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
+              <animation effect="zoom" center="120,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
             </control>
             <control type="label">
-              <top>22</top>
-              <width>780</width>
-              <height>38</height>
-              <scroll>true</scroll>
-              <aligny>center</aligny>
-              <textcolor>TextHeavy</textcolor>
+              <include>LoginScreenListItemLine1</include>
+              <textcolor>TextLight</textcolor>
               <label>$INFO[ListItem.Label]</label>
               <visible>!Control.HasFocus(52)</visible>
             </control>
             <control type="label">
-              <top>63</top>
-              <width>780</width>
-              <height>30</height>
-              <scroll>true</scroll>
-              <aligny>center</aligny>
-              <font>Font_Light_Caps_30</font>
-              <textcolor>TextHeavy</textcolor>
+              <include>LoginScreenListItemLine2</include>
+              <textcolor>TextLight</textcolor>
               <label>$INFO[ListItem.Label2]</label>
               <visible>!Control.HasFocus(52)</visible>
             </control>
@@ -143,8 +125,7 @@
           <left>1420</left>
           <height>370</height>
           <onleft>52</onleft>
-          <onright>ActivateWindow(shutdownmenu)</onright>
-          <!-- <visible>Skin.HasSetting(AlaskaB.Settings.LoginScreen.Scrollbar.Enable)</visible> -->
+          <visible>Skin.HasSetting(AlaskaB.Settings.LoginScreen.Scrollbar.Enable)</visible>
         </control>
       </control>
     </control>

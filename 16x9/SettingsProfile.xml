@@ -190,6 +190,15 @@
           <texture>$INFO[Container(2).ListItem.Icon]</texture>
           <visible>Control.HasFocus(2) + !IsEmpty(Container(2).ListItem.Icon)</visible>
         </control>
+        <control type="image">
+          <left>105</left>
+          <top>224</top>
+          <width>290</width>
+          <height>287</height>
+          <include>DialogBaseLeftImage_DefaultIcon</include>
+          <texture colordiffuse="IconLight">settings/settings-profile-defaultuser.png</texture>
+          <visible>Control.HasFocus(2) + IsEmpty(Container(2).ListItem.Icon)</visible>
+        </control>
 
         <!-- Settings descriptions -->
         <control type="textbox">

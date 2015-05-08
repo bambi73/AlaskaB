@@ -841,7 +841,6 @@
 
   <!-- Dialog base -->
   <include name="DialogBaseLeftImage_DefaultIcon">
-    <bordersize>20,80,20,80</bordersize>
     <aspectratio align="right" aligny="center">keep</aspectratio>
   </include>
 
@@ -921,21 +920,6 @@
   <constant name="DialogSelectHeight4">553</constant>
   <constant name="DialogSelectControlWidth">1520</constant>
 
-  <include name="DialogSelectImage1">
-    <width>420</width>
-    <bordersize>20,78,40,80</bordersize>
-    <include>DialogBaseLeftImage_DefaultIcon</include>
-    <texture colordiffuse="IconLight" fallback="./defaultaddonnone.png">$INFO[Container(6).ListItem.Icon]</texture>
-    <visible>SubString(Container(6).ListItem.Icon,Default)</visible>
-  </include>
-
-  <include name="DialogSelectImage2">
-    <width>420</width>
-    <include>DialogBaseLeftImage_Image</include>
-    <texture fallback="DefaultAddon.png">$INFO[Container(6).ListItem.Icon]</texture>
-    <visible>!SubString(Container(6).ListItem.Icon,Default)</visible>
-  </include>
-
   <include name="DialogSelectList">
     <preloaditems>5</preloaditems>
     <orientation>vertical</orientation>
@@ -955,6 +939,7 @@
 
   <include name="DialogFileBrowserImage1">
     <width>420</width>
+    <bordersize>20,80,20,80</bordersize>
     <include>DialogBaseLeftImage_DefaultIcon</include>
     <texture colordiffuse="IconLight">$INFO[ListItem.Icon]</texture>
     <visible>SubString(ListItem.Icon,Default) + !SubString(ListItem.Icon,DefaultVideo)</visible>
@@ -962,6 +947,7 @@
 
   <include name="DialogFileBrowserImage2">
     <width>420</width>
+    <bordersize>20,80,20,80</bordersize>
     <include>DialogBaseLeftImage_DefaultIcon</include>
     <texture colordiffuse="IconLight">dialogs/no-art.png</texture>
     <visible>SubString(ListItem.Icon,Default) + SubString(ListItem.Icon,DefaultVideo)</visible>
@@ -1208,6 +1194,37 @@
   <include name="DialogProfileSettingsGLTemplateWithText">
     <include>DialogProfileSettingsGLTemplate</include>
     <textwidth>780</textwidth>
+  </include>
+
+  <!-- Login screen -->
+  <constant name="LoginScreenWidth">1720</constant>
+  <constant name="LoginScreenHeight">553</constant>
+  <constant name="LoginScreenListWidth">780</constant>
+  <constant name="LoginScreenControlWidth">1520</constant>
+
+  <include name="LoginScreenList">
+    <preloaditems>5</preloaditems>
+    <orientation>vertical</orientation>
+    <scrolltime tween="sine" easing="out">320</scrolltime>
+  </include>
+
+  <include name="LoginScreenListItemTemplate">
+    <left>0</left>
+    <width>LoginScreenListWidth</width>
+    <aligny>center</aligny>
+  </include>
+
+  <include name="LoginScreenListItemLine1">
+    <top>22</top>
+    <height>38</height>
+    <include>LoginScreenListItemTemplate</include>
+  </include>
+
+  <include name="LoginScreenListItemLine2">
+    <top>63</top>
+    <height>30</height>
+    <font>Font_Light_Caps_30</font>
+    <include>LoginScreenListItemTemplate</include>
   </include>
 
 </includes>

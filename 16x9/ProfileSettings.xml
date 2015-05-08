@@ -44,9 +44,18 @@
           <top>20</top>
           <width>420</width>
           <height>355</height>
-          <texture>no-profile-picture.png</texture>
+          <texture>defaultuser.png</texture>
           <include>DialogBaseLeftImage_Image</include>
-          <visible>!StringCompare(Control.GetLabel(101),no-profile-picture.png)</visible>
+          <visible>!StringCompare(Control.GetLabel(101),defaultuser.png)</visible>
+        </control>
+        <control type="image">
+          <left>92</left>
+          <top>50</top>
+          <width>380</width>
+          <height>296</height>
+          <texture colordiffuse="IconLight">defaultuser.png</texture>
+          <include>DialogBaseLeftImage_DefaultIcon</include>
+          <visible>!Control.IsVisible(101)</visible>
         </control>
 
         <control type="grouplist" id="5">
