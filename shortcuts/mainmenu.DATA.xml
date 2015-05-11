@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<shortcuts>
+  <shortcut>
+    <label>$LOCALIZE[10002]</label>
+    <label2>Common Shortcut</label2>
+    <defaultID>pictures</defaultID>
+    <icon>DefaultPicture.png</icon>
+    <thumb />
+    <action>ActivateWindow(Pictures)</action>
+  </shortcut>
+  <shortcut>
+    <label>$LOCALIZE[10005]</label>
+    <label2>Common Shortcut</label2>
+    <defaultID>music</defaultID>
+    <icon>DefaultMusicAlbums.png</icon>
+    <thumb />
+    <action>ActivateWindow(Music,root)</action>
+  </shortcut>
+  <shortcut>
+    <label>$LOCALIZE[10006]</label>
+    <label2>Common Shortcut</label2>
+    <defaultID>videos</defaultID>
+    <icon>DefaultVideo.png</icon>
+    <thumb />
+    <action>ActivateWindow(Videos,root)</action>
+  </shortcut>
+  <shortcut>
+    <label>$LOCALIZE[342]</label>
+    <label2>Common Shortcut</label2>
+    <defaultID>movies</defaultID>
+    <icon>DefaultMovies.png</icon>
+    <thumb />
+    <action>ActivateWindow(Videos,MovieTitles,return)</action>
+  </shortcut>
+  <shortcut>
+    <label>$LOCALIZE[20343]</label>
+    <label2>Common Shortcut</label2>
+    <defaultID>tvshows</defaultID>
+    <icon>DefaultTVShows.png</icon>
+    <thumb />
+    <action>ActivateWindow(Videos,TVShowTitles,return)</action>
+  </shortcut>
+  <shortcut>
+    <label>$LOCALIZE[32023]</label>
+    <label2>Common Shortcut</label2>
+    <defaultID>32023</defaultID>
+    <icon>DefaultAddonProgram.png</icon>
+    <thumb />
+    <action>ActivateWindow(Programs,Addons,return)</action>
+  </shortcut>
+  <shortcut>
+    <label>$LOCALIZE[12600]</label>
+    <label2>Common Shortcut</label2>
+    <defaultID>weather</defaultID>
+    <icon>DefaultShortcut.png</icon>
+    <thumb />
+    <action>ActivateWindow(Weather)</action>
+  </shortcut>
+  <shortcut>
+    <label>$LOCALIZE[10004]</label>
+    <label2>Common Shortcut</label2>
+    <defaultID>settings</defaultID>
+    <icon>DefaultShortcut.png</icon>
+    <thumb />
+    <action>ActivateWindow(Settings)</action>
+  </shortcut>
+</shortcuts>

@@ -3,12 +3,14 @@
 	<backgroundcolor>0</backgroundcolor>
 	<include condition="IsEmpty(Skin.String(HomeMenu.Style)) | StringCompare(Skin.String(HomeMenu.Style),Original)">Home_Original_Init</include>
 	<include condition="StringCompare(Skin.String(HomeMenu.Style),OriginalMod)">Home_OriginalMod_Init</include>
+	<include condition="StringCompare(Skin.String(HomeMenu.Style),AlaskaB2)">Home_AlaskaB2_Init</include>
 	<include condition="StringCompare(Skin.String(HomeMenu.Style),AlaskaB)">Home_AlaskaB_Init</include>
 	
 	<controls>
 		<include>Global_Background</include>
 		<include condition="IsEmpty(Skin.String(HomeMenu.Style)) | StringCompare(Skin.String(HomeMenu.Style),Original)">Home_Original_Control</include>
 		<include condition="StringCompare(Skin.String(HomeMenu.Style),OriginalMod)">Home_OriginalMod_Control</include>
+		<include condition="StringCompare(Skin.String(HomeMenu.Style),AlaskaB2)">Home_AlaskaB2_Control</include>
 		<include condition="StringCompare(Skin.String(HomeMenu.Style),AlaskaB)">Home_AlaskaB_Control</include>
 	</controls>
 </window>

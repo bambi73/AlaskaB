@@ -2,7 +2,11 @@
 <window id="56">
   <backgroundcolor>0</backgroundcolor>
   <defaultcontrol always="true">1</defaultcontrol>
-  <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=5000&amp;group=videohub-list|videohub-widgets)</onunload>
+  <!-- <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|powermenu)</onunload> -->
+  <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|videohub-list|videohub-widgets)</onunload>
+  <!-- <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=8000&amp;levels=0&amp;group=mainmenu|videohub-list|videohub-widgets)</onunload> -->
+  <!-- <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=8000&amp;group=mainmenu|videohub-list|videohub-widgets)</onunload> -->
+  <!-- <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=8000)</onunload> -->
 
   <controls>
 
@@ -450,7 +454,7 @@
         <control type="button" id="142">
           <width>1260</width>
           <!-- <height>90</height> -->
-          <textoffsetx>30</textoffsetx>
+          <textoffsetx>50</textoffsetx>
           <label>VideoHub Menu</label>
           <!-- <texturenofocus border="1">separator5.png</texturenofocus> -->
           <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=videohub-list)</onclick>
@@ -459,10 +463,19 @@
         <control type="button" id="143">
           <width>1260</width>
           <!-- <height>90</height> -->
-          <textoffsetx>30</textoffsetx>
+          <textoffsetx>50</textoffsetx>
           <label>VideoHub Widgets</label>
           <!-- <texturenofocus border="1">separator5.png</texturenofocus> -->
           <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=videohub-widgets)</onclick>
+          <visible>System.HasAddon(script.skinshortcuts)</visible>
+        </control>        
+        <control type="button" id="180">
+          <width>1260</width>
+          <!-- <height>90</height> -->
+          <textoffsetx>50</textoffsetx>
+          <label>Main menu</label>
+          <!-- <texturenofocus border="1">separator5.png</texturenofocus> -->
+          <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
           <visible>System.HasAddon(script.skinshortcuts)</visible>
         </control>        
         <control type="radiobutton" id="144">

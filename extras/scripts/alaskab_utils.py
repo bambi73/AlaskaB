@@ -1,206 +1,73 @@
-import sys
-import xbmc, xbmcaddon, xbmcgui, xbmcplugin
+import sys, os, random
+import xbmc, xbmcaddon, xbmcgui, xbmcplugin, xbmcvfs
 
-def movetile():
-    label = xbmc.getInfoLabel("Skin.String(home."+str(i)+".label)")
-    path = xbmc.getInfoLabel("Skin.String(home."+str(i)+".path)")
-    icon = xbmc.getInfoLabel("Skin.String(home."+str(i)+".icon)")
-    bgcolor = xbmc.getInfoLabel("Skin.String(home."+str(i)+".bgcolor)")
-    bgwidget = xbmc.getInfoLabel("Skin.String(home."+str(i)+".bgwidget)")
-    bgwidgettype = xbmc.getInfoLabel("Skin.String(home."+str(i)+".bgwidget.type)")
-    enabled = xbmc.getInfoLabel("Skin.HasSetting(home."+str(i)+".enabled)")
-    
-    # Disable the tile
-    xbmc.executebuiltin("Skin.Reset(home."+str(i)+".enabled)")
-    
-    # Only move info and enable tile if it was enabled before
-    if str(enabled) == "True":
-        xbmc.executebuiltin("Skin.SetBool(home."+str(o)+".enabled)")
-        xbmc.executebuiltin("Skin.SetString(home."+str(o)+".label,"+str(label)+")")
-        xbmc.executebuiltin("Skin.SetString(home."+str(o)+".path,"+str(path)+")")
-        xbmc.executebuiltin("Skin.SetString(home."+str(o)+".icon,"+str(icon)+")")
-        xbmc.executebuiltin("Skin.SetString(home."+str(o)+".bgcolor,"+str(bgcolor)+")")
-        xbmc.executebuiltin("Skin.SetString(home."+str(o)+".bgwidget,"+str(bgwidget)+")")
-        xbmc.executebuiltin("Skin.SetString(home."+str(o)+".bgwidget.type,"+str(bgwidgettype)+")")
+HOME_MENU__PROPERTY_PREFIX             = "AlaskaB.Home.Background.%s"
+HOME_MENU__PROPERTY_CURRENT_BACKGROUND = HOME_MENU__PROPERTY_PREFIX + ".CurrentBackground"
 
-def removetile():
-    xbmc.executebuiltin("Skin.Reset("+str(sys.argv[2])+".enabled)")
-    xbmc.executebuiltin("Skin.Reset("+str(sys.argv[2])+".label)")
-    xbmc.executebuiltin("Skin.Reset("+str(sys.argv[2])+".path)")
-    xbmc.executebuiltin("Skin.Reset("+str(sys.argv[2])+".icon)")
-    xbmc.executebuiltin("Skin.Reset("+str(sys.argv[2])+".bgwidget)")
-    xbmc.executebuiltin("Skin.Reset("+str(sys.argv[2])+".bgwidget.type)")
+HOME_MENU__CONTAINER          = "Container(8000)"
+HOME_MENU__LIST_ITEM          = HOME_MENU__CONTAINER + ".ListItem(%d)"
+HOME_MENU__LIST_ITEM_PROPERTY = HOME_MENU__LIST_ITEM + ".Property(%s)"
 
-def get_class_members(klass):
-    ret = dir(klass)
-    if hasattr(klass,'__bases__'):
-        for base in klass.__bases__:
-            ret = ret + get_class_members(base)
-    return ret
+# ====-------------------====
 
-def uniq( seq ): 
-    """ the 'set()' way ( use dict when there's no set ) """
-    return list(set(seq))
-    
-def get_object_attrs( obj ):
-    # code borrowed from the rlcompleter module ( see the code for Completer::attr_matches() )
-    ret = dir( obj )
-    ## if "__builtins__" in ret:
-    ##    ret.remove("__builtins__")
+def setHomeMenuItemProperty(window, propertyName, propertyValue = None):
+  if propertyValue:
+    window.setProperty(propertyName, propertyValue)    
+  else:
+    window.clearProperty(propertyName)    
 
-    if hasattr( obj, '__class__'):
-        ret.append('__class__')
-        ret.extend( get_class_members(obj.__class__) )
+# ====-------------------====
 
-        ret = uniq( ret )
+def getHomeMenuItemProperty(window, propertyName):
+  return window.getProperty(propertyName)    
 
-    return ret
-    
-def prepareShutdownMenu(window, list, buttonId):
-    if(xbmc.getCondVisibility("Control.IsVisible(%i)" % buttonId)):
-        button = window.getControl(buttonId)
-        listItem = xbmcgui.ListItem(label=button.getLabel())
-        listItem.setPath(path='plugin://plugin.bambi.utils?type=bzzz')
-        #xbmcplugin.addDirectoryItem( int( sys.argv[ 1 ] ), item2[ "file" ], liz, False, self.LIMIT )
-        list.addItem(listItem)
-        xbmc.log("adding %i" % buttonId)
-    
-class Utils:
-    def __init__(self):
-        self._parse_argv()
-        self.WINDOW_10111 = xbmcgui.Window(10111)
+# ====-------------------====
 
-        xbmc.log("self.TYPE: %s" % self.TYPE) 
-        xbmc.log("self.LIST_ID: %i" % self.LIST_ID) 
-        xbmc.log("self.START_BUTTON_ID: %i" % self.START_BUTTON_ID) 
-        xbmc.log("self.END_BUTTON_ID: %i" % self.END_BUTTON_ID) 
-        
-        
-    def _parse_argv( self ):
-        try:
-            params = dict( arg.split( "=" ) for arg in sys.argv[ 2 ].split( "&" ) )
-        except:
-            params = {}
-        self.TYPE = params.get( "?type", "loadShutdownMenu" )
-        self.LIST_ID = params.get( "listId", -1 )
-        self.START_BUTTON_ID = params.get( "startButtonId", -1 )
-        self.END_BUTTON_ID = params.get( "endButtonId", -1 )
-        
-# -----------------------------------------------------------------------   
- 
-#xbmc.log('Starting Alaska utils') 
-#Utils()    
-#xbmc.log('Finished Alaska utils') 
-    
-DIALOGBUTTONMENU_PROPERTY_PREFIX = "AlaskaB.DialogButtonMenu.ListItem_%i."
-DIALOGBUTTONMENU_PROPERTY_LABEL = DIALOGBUTTONMENU_PROPERTY_PREFIX + "Label"
-DIALOGBUTTONMENU_PROPERTY_VISIBLE = DIALOGBUTTONMENU_PROPERTY_PREFIX + "Visible"
-DIALOGBUTTONMENU_PROPERTY_ONCLICK_1 = DIALOGBUTTONMENU_PROPERTY_PREFIX + "OnClick_1"
-DIALOGBUTTONMENU_PROPERTY_ONCLICK_2 = DIALOGBUTTONMENU_PROPERTY_PREFIX + "OnClick_2"
-    
-    
-if sys.argv[1] == 'prepareShutdownMenu':
-    window = xbmcgui.Window(10111)       
-    listItemList = list()
-    
-    for buttonId in range(int(sys.argv[3]), int(sys.argv[4]) + 1):
-        if(xbmc.getCondVisibility("Control.IsVisible(%i)" % buttonId)):
-            button = window.getControl(buttonId)
-            listItem = xbmcgui.ListItem(label=button.getLabel())
-            listItem.setProperty('onClick','Quit()')
-            listItem.setProperty('buttonId', str(buttonId))
-            listItemList.append(listItem)
-            xbmc.log("adding %i" % buttonId)
+def updateHomeMenuItem(offset):
+  backgroundVfs = xbmc.getInfoLabel(HOME_MENU__LIST_ITEM_PROPERTY % (offset, "background"))
 
-    list = window.getControl(int(sys.argv[2]))
-    list.setStaticContent(listItemList)
-    
-    #list.reset()
-    
-    #for buttonId in range(int(sys.argv[3]), int(sys.argv[4]) + 1):
-    #    prepareShutdownMenu(window, list, buttonId)
+  if backgroundVfs and len(backgroundVfs) > 0:
+    background = xbmc.translatePath(backgroundVfs).decode('utf-8')
 
-if sys.argv[1] == 'prepareShutdownMenu2':
-    window = xbmcgui.Window(10111)       
-    listItemList = list()
-    
-    for index in range(int(sys.argv[3]), int(sys.argv[4]) + 1):
-        xbmc.log(str(index))
-        xbmc.log(window.getProperty(DIALOGBUTTONMENU_PROPERTY_LABEL % index))
-        xbmc.log(window.getProperty(DIALOGBUTTONMENU_PROPERTY_VISIBLE % index))
-        xbmc.log(window.getProperty(DIALOGBUTTONMENU_PROPERTY_ONCLICK_1 % index))
-        xbmc.log(window.getProperty(DIALOGBUTTONMENU_PROPERTY_ONCLICK_2 % index))
-    
-        if(xbmc.getCondVisibility(window.getProperty(DIALOGBUTTONMENU_PROPERTY_VISIBLE % index))):
-            listItem = xbmcgui.ListItem(label=window.getProperty(DIALOGBUTTONMENU_PROPERTY_LABEL % index))
-            listItem.setProperty('onClick1',window.getProperty(DIALOGBUTTONMENU_PROPERTY_ONCLICK_1 % index))
-            onClick2 = window.getProperty(DIALOGBUTTONMENU_PROPERTY_ONCLICK_2 % index)
-            if onClick2:
-              listItem.setProperty('onClick2',onClick2)
-            listItemList.append(listItem)
-            xbmc.log("adding %i" % index)
+    if os.path.exists(background):
+      labelID = xbmc.getInfoLabel(HOME_MENU__LIST_ITEM_PROPERTY % (offset, "labelID"))
+      window = xbmcgui.Window(10000)
 
-    list = window.getControl(int(sys.argv[2]))
-    list.setStaticContent(listItemList)
+      if os.path.isdir(background):
+        fileList = list()
 
-if sys.argv[1] == 'processShutdownMenu':    
-    xbmc.log('processShutdownMenu')
+        for file in os.listdir(background):
+          if file.endswith(".jpg") or file.endswith(".png"):
+            fileList.append(file)
 
-if sys.argv[1] == 'prepareContextMenu':
-    translationIDs = [ 208, 13347, 586, 14076, 20351, 16103, 16104, 16105, 16106, 16107, 646 ]
+        if len(fileList) > 0:
+          currentFileName = getHomeMenuItemProperty(window, HOME_MENU__PROPERTY_CURRENT_BACKGROUND % labelID)
+          fileName = None
 
-    #for buttonId in range(int(sys.argv[2]), int(sys.argv[3]) + 1):
-        #xbmc.log('      <control type="group">')
-        #xbmc.log('        <visible>Control.IsVisible(%i)</visible>' % buttonId)
-        
-        #for translationID in translationIDs:
-          #xbmc.log('        <control type="button" id="%i">' % (buttonId + 1000))
-          #xbmc.log('          <include>HiddenControl</include>')
-          #xbmc.log('          <label>$LOCALIZE[%i]</label>' % translationID)
-          #xbmc.log('          <visible>StringCompare(Control.GetLabel(%i),$LOCALIZE[%i])</visible>' % (buttonId, translationID))
-          #xbmc.log('        </control>')
+          while True:
+            fileName = fileList[random.randint(0, len(fileList)-1)]
+            if not currentFileName or currentFileName != fileName:
+              break
 
-        #xbmc.log('      </control>')
+          setHomeMenuItemProperty(window, HOME_MENU__PROPERTY_PREFIX % labelID, os.path.join(background, fileName))
+          setHomeMenuItemProperty(window, HOME_MENU__PROPERTY_CURRENT_BACKGROUND % labelID, fileName)
+        else:
+          setHomeMenuItemProperty(window, HOME_MENU__PROPERTY_PREFIX % labelID)
+          setHomeMenuItemProperty(window, HOME_MENU__PROPERTY_CURRENT_BACKGROUND % labelID)
+      else:
+        setHomeMenuItemProperty(window, HOME_MENU__PROPERTY_PREFIX % labelID, background)
+    else:
+      xbmc.log("Background directory/file '%s' doesn't exists" % background)
 
-    for buttonId in range(int(sys.argv[2]), int(sys.argv[3]) + 1):
-        xbmc.log('        <item>')
-        xbmc.log('          <label>$INFO[Control.GetLabel(%i)]</label>' % (buttonId + 1000))
-        xbmc.log('          <onclick>Control.Message(%i,click)</onclick>' % buttonId)
-        xbmc.log('          <visible>Control.IsVisible(%i)</visible>' % (buttonId + 1000))
-        xbmc.log('        </item>')
-        #xbmc.log('        <item>')
-        #xbmc.log('          <label>$INFO[Control.GetLabel(%i)]</label>' % buttonId)
-        #xbmc.log('          <onclick>Control.Message(%i,click)</onclick>' % buttonId)
-        #xbmc.log('          <visible>!Control.IsVisible(%i)</visible>' % (buttonId + 1000))
-        #xbmc.log('        </item>')
-        
+# ====-------------------====
 
-    #newButton = xbmcgui.ControlButton(-10, -50, 1, 1, 'XX$LOCALIZE[208]')
-    #newButton.setVisibleCondition('StringCompare(Control.GetLabel(1001),$LOCALIZE[208])')
-    #window.addControl(newButton)
-    
-    #for buttonId in range(int(sys.argv[2]), int(sys.argv[3]) + 1):
-        #if(xbmc.getCondVisibility("Control.IsVisible(%i)" % buttonId)):
-            #button = window.getControl(buttonId)
-            #localizedString = xbmc.getLocalizedString(208)
-            #if(localizedString and localizedString == button.getLabel()):
-                #xbmc.log("localized string matched %s" % localizedString)
-                #xbmc.log("new buttonId %i" % newButton.getId())
-            
-            #buttonDest = window.getControl(buttonId + 1000)
-            #if(buttonDest):
-                #xbmc.log("setting button %i label to %s" % (buttonId + 1000, buttonSrc.getLabel()))
-                #buttonDest.setLabel(buttonSrc.getLabel())
-                #buttonDest.setLabel('PlayXXX')
-                #window.setProperty('AlaskaB.DialogContextMenu.Label_%i' % buttonId, '%s-%s' % (buttonSrc.getLabel(), 'X'))
-            #else:
-                #xbmc.log("not found button %i" % (buttonId + 1000))
-            
-            #listItem = xbmcgui.ListItem(label=button.getLabel())
-            #listItem.setProperty('onClick','Quit()')
-            #listItem.setProperty('buttonId', str(buttonId))
-            #listItemList.append(listItem)
-            #xbmc.log("adding %i" % buttonId)
+if sys.argv[1] == 'initHomeMenu':
+  for offset in range(0, int(xbmc.getInfoLabel(HOME_MENU__CONTAINER + ".NumItems"))):
+    updateHomeMenuItem(offset)
 
-    
+# ====-------------------====
 
+if sys.argv[1] == 'updateHomeMenu':
+  updateHomeMenuItem(0)
+
+# ====-------------------====

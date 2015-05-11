@@ -29,6 +29,7 @@
   <include file="Home_Original.xml" />
   <include file="Home_OriginalMod.xml" />
   <include file="Home_AlaskaB.xml" />
+  <include file="Home_AlaskaB2.xml" />
 
   <include file="script-skinshortcuts-includes.xml"/>
 
@@ -176,10 +177,57 @@
 
 
   <include name="Object_MainMenuIconF">
-    <width>525</width>
+    <left>3</left>
+    <top>2</top>
+    <width>528</width>
     <height>384</height>
+    <timeperimage>5000</timeperimage>
+    <!-- <timeperimage>20000</timeperimage> -->
+    <randomize>true</randomize>
+    <fadetime>800</fadetime>
+    <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
+  </include>
+
+  <include name="Object_MainMenuShade">
+    <control type="image">
+      <left>3</left>
+      <top>384</top>
+      <width>527</width>
+      <height>65</height>
+      <texture colordiffuse="IconLight">home/shade.png</texture>
+    </control>
+  </include>
+
+  <include name="Object_MainMenuFrame">
+    <control type="image">
+      <left>0</left>
+      <top>0</top>
+      <width>531</width>
+      <height>450</height>
+      <texture colordiffuse="IconLight">home/frame.png</texture>
+    </control>
+  </include>
+
+  <include name="Object_MainMenuLabel">
+    <left>35</left>
+    <top>393</top>
+    <width>474</width>
+    <height>51</height>
+    <align>right</align>
+    <aligny>center</aligny>
+    <scroll>true</scroll>
+    <scrollout>false</scrollout>
+    <pauseatend>1800</pauseatend>
+    <scrollspeed>48</scrollspeed>
+    <font>Font_Reg_Caps_46</font>
+    <textcolor>Home</textcolor>
+  </include>
+
+  <!-- <include name="Object_MainMenuIconF">
     <left>27</left>
     <top>14</top>
+    <width>525</width>
+    <height>384</height>
     <timeperimage>20000</timeperimage>
     <randomize>true</randomize>
     <fadetime>800</fadetime>
@@ -193,7 +241,6 @@
       <width>525</width>
       <height>65</height>
       <texture>home/Shade.png</texture>
-      <!-- <texture colordiffuse="Light">home/Shade.png</texture> -->
     </control>
   </include>
 
@@ -203,8 +250,7 @@
       <height>480</height>
       <left>12</left>
       <top>0</top>
-      <texture>home/Frame.png</texture>
-      <!-- <texture colordiffuse="Light">home/Frame.png</texture> -->
+      <texture>home/Frame_bak.png</texture>
     </control>
   </include>
 
@@ -221,7 +267,7 @@
     <scrollspeed>48</scrollspeed>
     <font>Font_Reg_Caps_46</font>
     <textcolor>Home</textcolor>
-  </include>
+  </include> -->
 
   <include name="Home_AlaskaB_MenuButton">
     <left>100</left>
@@ -1213,12 +1259,6 @@
   <constant name="LoginScreenHeight">553</constant>
   <constant name="LoginScreenListWidth">780</constant>
   <constant name="LoginScreenControlWidth">1520</constant>
-
-  <include name="LoginScreenList">
-    <preloaditems>5</preloaditems>
-    <orientation>vertical</orientation>
-    <scrolltime tween="sine" easing="out">320</scrolltime>
-  </include>
 
   <include name="LoginScreenListItemTemplate">
     <left>0</left>

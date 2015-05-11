@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <overrides>
-	<!-- <widget label="VideoHub #1">VideoHubWidged1</widget>
-	<widget label="VideoHub #2">VideoHubWidged2</widget>
-	<widget label="VideoHub #3">VideoHubWidged3</widget>
-	<widgetdefault labelID="Label1" group="videohub">VideoHubWidged1</widgetdefault>
-	<widgetdefault labelID="Label2" group="videohub">VideoHubWidged2</widgetdefault>
-	<widgetdefault labelID="Label3" group="videohub">VideoHubWidged3</widgetdefault> -->
-	<widgetPlaylists>True</widgetPlaylists>
+  <!-- <widget label="VideoHub #1">VideoHubWidged1</widget>
+  <widget label="VideoHub #2">VideoHubWidged2</widget>
+  <widget label="VideoHub #3">VideoHubWidged3</widget>
+  <widgetdefault labelID="Label1" group="videohub">VideoHubWidged1</widgetdefault>
+  <widgetdefault labelID="Label2" group="videohub">VideoHubWidged2</widgetdefault>
+  <widgetdefault labelID="Label3" group="videohub">VideoHubWidged3</widgetdefault> -->
+  <widgetPlaylists>True</widgetPlaylists>
+
+  <background label="31800">special://skin/media/home/pictures/</background>
+  <background label="31801">special://skin/media/home/music/</background>
+  <backgrounddefault labelID="pictures">special://skin/media/home/pictures</backgrounddefault>
+  <backgrounddefault labelID="music">special://skin/media/home/music</backgrounddefault>
+  <backgrounddefault labelID="videos">special://skin/media/home/videos</backgrounddefault>
+  <backgrounddefault labelID="movies">special://skin/media/home/movies</backgrounddefault>
+  <backgrounddefault labelID="tvshows">special://skin/media/home/tvshows</backgrounddefault>
+  <backgrounddefault labelID="settings">special://skin/media/home/system</backgrounddefault>
+  <backgroundBrowse default="special://skin">True</backgroundBrowse> 
+
+  <propertydefault labelID="pictures" group="mainmenu" property="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Pictures)]</propertydefault>
+  <propertydefault labelID="music" group="mainmenu" property="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Music)]</propertydefault>
+  <propertydefault labelID="videos" group="mainmenu" property="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Videos)]</propertydefault>
+  <propertydefault labelID="movies" group="mainmenu" property="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Movies)]</propertydefault>
+  <propertydefault labelID="tvshows" group="mainmenu" property="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Tvshows)]</propertydefault>
+  <propertydefault labelID="weather" group="mainmenu" property="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Weather)]</propertydefault>
+  <propertydefault labelID="settings" group="mainmenu" property="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Settings)]</propertydefault>
+
 </overrides>

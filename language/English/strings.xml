@@ -87,6 +87,13 @@
   <string id="31204">Add new profile.</string>
   <string id="31205">Last login:</string>
 
+
+  <!-- Skin shortcuts -->
+  <string id="31800">Default Picture backgrounds</string>
+  <string id="31801">Default Music backgrounds</string>
+
+
+
   <!-- Used for 'Artwork Downloader' addon -->
   
   <string id="31997">Artwork</string>
