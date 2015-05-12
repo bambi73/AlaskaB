@@ -2,11 +2,7 @@
 <window id="56">
   <backgroundcolor>0</backgroundcolor>
   <defaultcontrol always="true">1</defaultcontrol>
-  <!-- <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|powermenu)</onunload> -->
-  <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu|videohub-list|videohub-widgets)</onunload>
-  <!-- <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=8000&amp;levels=0&amp;group=mainmenu|videohub-list|videohub-widgets)</onunload> -->
-  <!-- <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=8000&amp;group=mainmenu|videohub-list|videohub-widgets)</onunload> -->
-  <!-- <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=8000)</onunload> -->
+  <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=8000&amp;group=mainmenu|videohub-list|videohub-widgets)</onunload>
 
   <controls>
 

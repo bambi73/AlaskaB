@@ -175,55 +175,76 @@
 
 
 
+  <constant name="HomeLeft">-367</constant>
+  <constant name="HomeTop">262</constant>
+  <constant name="HomeWidth">2655</constant>
+  <constant name="HomeHeight">450</constant>
+  <constant name="HomeListHeight">450</constant>
 
-  <include name="Object_MainMenuIconF">
-    <left>3</left>
-    <top>2</top>
-    <width>528</width>
-    <height>384</height>
-    <timeperimage>5000</timeperimage>
-    <!-- <timeperimage>20000</timeperimage> -->
-    <randomize>true</randomize>
-    <fadetime>800</fadetime>
-    <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
-  </include>
-
-  <include name="Object_MainMenuShade">
-    <control type="image">
-      <left>3</left>
-      <top>384</top>
-      <width>527</width>
-      <height>65</height>
-      <texture colordiffuse="IconLight">home/shade.png</texture>
-    </control>
-  </include>
-
-  <include name="Object_MainMenuFrame">
+  <include name="HomeMainMenuFrame">
     <control type="image">
       <left>0</left>
       <top>0</top>
       <width>531</width>
       <height>450</height>
-      <texture colordiffuse="IconLight">home/frame.png</texture>
+      <texture colordiffuse="IconLight">home/main-menu-frame.png</texture>
     </control>
   </include>
 
-  <include name="Object_MainMenuLabel">
-    <left>35</left>
+  <include name="HomeMainMenuIcon">
+    <left>3</left>
+    <top>2</top>
+    <width>528</width>
+    <height>383</height>
+    <fadetime>800</fadetime>
+    <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
+  </include>
+
+  <include name="HomeMainMenuLabel">
+    <left>76</left>
     <top>393</top>
-    <width>474</width>
+    <width>432</width>
     <height>51</height>
     <align>right</align>
     <aligny>center</aligny>
     <scroll>true</scroll>
     <scrollout>false</scrollout>
     <pauseatend>1800</pauseatend>
-    <scrollspeed>48</scrollspeed>
-    <font>Font_Reg_Caps_46</font>
     <textcolor>Home</textcolor>
+    <font>Font_Reg_Caps_46</font>
   </include>
 
-  <!-- <include name="Object_MainMenuIconF">
+  <include name="HomeMainMenuLabelShade">
+    <control type="image">
+      <left>3</left>
+      <top>384</top>
+      <width>527</width>
+      <height>65</height>
+      <texture colordiffuse="IconLight">home/main-menu-label-shade.png</texture>
+    </control>
+  </include>
+
+  <include name="HomeMainMenuActionUp">
+    <left>20</left>
+    <top>399</top>
+    <width>36</width>
+    <height>16</height>
+    <texture colordiffuse="Home">home/available_up.png</texture>
+  </include>
+
+  <include name="HomeMainMenuActionDown">
+    <left>20</left>
+    <top>419</top>
+    <width>36</width>
+    <height>16</height>
+    <texture colordiffuse="Home">home/available_down.png</texture>
+  </include>
+
+
+
+
+
+  <include name="Object_MainMenuIconF">
     <left>27</left>
     <top>14</top>
     <width>525</width>
@@ -267,7 +288,9 @@
     <scrollspeed>48</scrollspeed>
     <font>Font_Reg_Caps_46</font>
     <textcolor>Home</textcolor>
-  </include> -->
+  </include>
+
+
 
   <include name="Home_AlaskaB_MenuButton">
     <left>100</left>
