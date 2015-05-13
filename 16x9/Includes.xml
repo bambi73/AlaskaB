@@ -1302,4 +1302,40 @@
     <include>LoginScreenListItemTemplate</include>
   </include>
 
+  <!-- Skin settings -->
+  <constant name="SkinSettingsLeft">-160</constant>
+  <constant name="SkinSettingsWidth">2240</constant>
+  <constant name="SkinSettingsHeight">723</constant>
+
+  <constant name="SkinSettingsGLTop">36</constant>
+  <constant name="SkinSettingsGLHeight">528</constant>
+  <constant name="SkinSettingsLeftGLLeft">40</constant>
+  <constant name="SkinSettingsLeftGLWidth">370</constant>
+  <constant name="SkinSettingsRightGLLeft">520</constant>
+  <constant name="SkinSettingsRightGLWidth">1180</constant>
+
+  <include name="SkinSettingsDescription">
+    <left>540</left>
+    <top>608</top>
+    <height>87</height>
+    <width>1160</width>
+    <font>Font_Light_36</font>
+  </include>
+
+  <include name="SkinSettingsLeftGLTemplate">
+    <width>SkinSettingsLeftGLWidth</width>
+    <align>right</align>
+    <animation effect="zoom" center="350,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
+  </include>
+
+  <include name="SkinSettingsRightGLTemplate">
+    <width>SkinSettingsRightGLWidth</width>
+    <animation effect="zoom" center="500,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
+  </include>
+
+  <include name="SkinSettingsRightGLTemplateWithText">
+    <textwidth>1020</textwidth>
+    <include>SkinSettingsRightGLTemplate</include>
+  </include>
+
 </includes>

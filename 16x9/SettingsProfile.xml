@@ -193,7 +193,7 @@
           <height>287</height>
           <include>DialogBaseLeftImage_DefaultIcon</include>
           <texture colordiffuse="IconLight">settings/settings-profile-defaultuser.png</texture>
-          <visible>Control.HasFocus(2) + IsEmpty(Container(2).ListItem.Icon)</visible>
+          <visible>Control.HasFocus(2) + IsEmpty(Container(2).ListItem.Icon) + !StringCompare(Container(2).ListItem.Label,$LOCALIZE[20058])</visible>
         </control>
 
         <!-- Settings descriptions -->
