@@ -1,324 +1,182 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
   <defaultcontrol always="true">300</defaultcontrol>
-  <include>transition_Dialog</include>
-  <!-- <coordinates>
-    <system>1</system>
-    <left>190</left>
-    <top>28</top>
-  </coordinates> -->
+  <coordinates>
+    <origin x="0" y="0"/>
+  </coordinates>
+
   <controls>
     <include>Global_Background</include>
-    <control type="group">
-      <left>285</left>
-      <top>41</top>
-      <visible>!Window.IsVisible(yesnodialog)</visible>
+
+    <control type="group" id="5000">
+      <centertop>50%</centertop>
+      <left>SkinSettingsLeft</left>
+      <width>SkinSettingsWidth</width>
+      <height>SkinSettingsHeight</height>
+
+      <include>Animation_ZoomInZoomOut</include>
+      <include>Animation_ZoomedByMenu</include>
+      <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(virtualkeyboard) | Window.IsActive(filebrowser) | Window.IsActive(numericinput) | Window.IsActive(addonsettings)">
+        <include>AnimationEffect_ZoomedBy</include>
+      </animation>
+
+      <!-- <control type="image">
+        <width>SkinSettingsWidth</width>
+        <height>SkinSettingsHeight</height>
+        <visible>!Control.IsVisible(8800)</visible>
+        <texture>settings/settings-category-bg.png</texture>
+      </control>
       <control type="image">
-        <width>1350</width>
-        <height>998</height>
-        <colordiffuse>FanartDiffuse</colordiffuse>
-        <texture border="10">refocus/dialogs/frame/window.png</texture>
+        <width>SkinSettingsWidth</width>
+        <height>SkinSettingsHeight</height>
+        <visible>Control.IsVisible(8800)</visible>
+        <texture>settings/settings-category-bg-scrollbar.png</texture>
+      </control> -->
+
+      <control type="image">
+        <width>SkinSettingsWidth</width>
+        <height>14</height>
+        <texture>hub/list_bg_border5.png</texture>
       </control>
+      <control type="image">
+        <top>14</top>
+        <width>SkinSettingsWidth</width>
+        <height>88</height>
+        <texture>hub/list_bg5.png</texture>
+      </control>
+      <control type="image">
+        <top>102</top>
+        <width>SkinSettingsWidth</width>
+        <height>3</height>
+        <texture>hub/list_bg_delimiter5.png</texture>
+      </control>
+      <control type="image">
+        <top>105</top>
+        <width>SkinSettingsWidth</width>
+        <height>423</height>
+        <texture>hub/list_bg5.png</texture>
+      </control>
+      <control type="image">
+        <top>528</top>
+        <width>SkinSettingsWidth</width>
+        <height>3</height>
+        <texture>hub/list_bg_delimiter5.png</texture>
+      </control>
+      <control type="image">
+        <top>531</top>
+        <width>SkinSettingsWidth</width>
+        <height>109</height>
+        <texture>hub/list_bg5.png</texture>
+      </control>
+      <control type="image">
+        <top>640</top>
+        <width>SkinSettingsWidth</width>
+        <height>14</height>
+        <texture flipy="true">hub/list_bg_border5.png</texture>
+      </control>
+
+      <!-- Heading label -->
       <control type="label" id="500">
-        <label>-</label>
-        <!-- <width>1338</width> -->
-        <width>800</width>
-        <left>6</left>
-        <top>8</top>
-        <font>light_Dialog</font>
+        <top>37</top>
+        <centerleft>50%</centerleft>
+        <width>DialogProfileSettingsControlWidth</width>
+        <height>42</height>
         <align>center</align>
         <aligny>center</aligny>
-        <height>75</height>
-        <textcolor>Heavy</textcolor>
-        <scroll>false</scroll>
+        <font>Font_Black_Caps_42</font>
       </control>
-
-      <control type="label">
-        <label>$INFO[Window.Property(AlaskaB.Settings.CurrentWidgetName)]</label>
-        <width>538</width>
-        <left>806</left>
-        <top>8</top>
-        <font>light_Dialog</font>
-        <align>center</align>
-        <aligny>center</aligny>
-        <height>75</height>
-        <textcolor>Heavy</textcolor>
-        <scroll>false</scroll>
-      </control>
-
 
       <control type="group">
-        <left>6</left>
-        <top>90</top>   
-        <control type="image">
-          <width>1338</width>
-          <height>1</height>
-          <texture>refocus/dialogs/separator/horizontal.png</texture>
-        </control>
-        <control type="image">
-          <left>600</left>
-          <height>780</height>
-          <width>1</width>
-          <texture>refocus/dialogs/separator/vertical.png</texture>
-        </control>
-        <control type="image">
-          <top>780</top>
-          <width>1338</width>
-          <height>1</height>
-          <texture>refocus/dialogs/separator/horizontal.png</texture>
-        </control>
-        <!--shortcuts-->  
+        <left>160</left>
+        <top>122</top>
+
+        <!-- Shortcut list -->
         <control type="list" id="211">
-          <width>600</width>
-          <height>780</height>
-          <itemgap>0</itemgap>
-          <onleft>300</onleft>
-          <onright>303</onright>
-          <onup>211</onup>
-          <ondown>211</ondown>
-          <scrolltime tween="Quadratic" easing="Out">300</scrolltime>
-          <itemlayout width="600" height="60">
-            <control type="image">
-              <width>600</width>
-              <height>60</height>
-              <texture border="3">refocus/dialogs/select-nf.png</texture>
-            </control>
+          <left>SettingsProfileLeftListLeft</left>
+          <!-- <top>SettingsProfileListTop</top> -->
+          <width>SettingsProfileLeftListWidth</width>
+          <height>SettingsProfileListHeight</height>
+          <onright>300</onright>
+          <include>DialogBaseVerticalList</include>
+          <itemlayout width="370" height="66">
             <control type="label">
-              <left>23</left>
-              <width>405</width>
-              <height>60</height>
-              <font>regular</font>
-              <textcolor>Light</textcolor>
               <label>$INFO[ListItem.Label]</label>
+              <include>SettingsProfileLeftListTemplate</include>
             </control>
           </itemlayout>
-          <focusedlayout width="600" height="60">
-            <control type="image">
-              <width>422</width>
-              <height>60</height>
-              <texture border="3">refocus/dialogs/select-fo.png</texture>
-              <visible>Control.HasFocus(211)</visible>
-            </control>
-            <control type="image">
-              <width>600</width>
-              <height>60</height>
-              <texture border="3">refocus/dialogs/select-nf.png</texture>
-            </control>
+          <focusedlayout width="370" height="66">
             <control type="label">
-              <left>23</left>
-              <width>405</width>
-              <height>60</height>
-              <font>regular</font>
-              <textcolor>Heavy</textcolor>
+              <textcolor>TextHeavy</textcolor>
               <label>$INFO[ListItem.Label]</label>
-              <visible>Control.HasFocus(211)</visible>
-            </control>
-            <control type="label">
-              <left>23</left>
-              <width>405</width>
-              <height>60</height>
-              <font>regular</font>
-              <textcolor>Heavy</textcolor>
-              <label>$INFO[ListItem.Label]</label>
-              <visible>!Control.HasFocus(211)</visible>
+              <include>SettingsProfileLeftListTemplate</include>
+              <animation effect="zoom" center="350,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
             </control>
           </focusedlayout>
         </control>
-        <!--inline controls-->
-        <control type="group" id="1000">
-          <left>420</left>
-          <animation effect="slide" end="0,60" time="0" condition="Container(211).Row(1)">Conditional</animation>
-          <animation effect="slide" end="0,120" time="0" condition="Container(211).Row(2)">Conditional</animation>
-          <animation effect="slide" end="0,180" time="0" condition="Container(211).Row(3)">Conditional</animation>
-          <animation effect="slide" end="0,240" time="0" condition="Container(211).Row(4)">Conditional</animation>
-          <animation effect="slide" end="0,300" time="0" condition="Container(211).Row(5)">Conditional</animation>
-          <animation effect="slide" end="0,360" time="0" condition="Container(211).Row(6)">Conditional</animation>
-          <animation effect="slide" end="0,420" time="0" condition="Container(211).Row(7)">Conditional</animation>
-          <animation effect="slide" end="0,480" time="0" condition="Container(211).Row(8)">Conditional</animation>
-          <animation effect="slide" end="0,540" time="0" condition="Container(211).Row(9)">Conditional</animation>
-          <animation effect="slide" end="0,600" time="0" condition="Container(211).Row(10)">Conditional</animation>
-          <animation effect="slide" end="0,660" time="0" condition="Container(211).Row(11)">Conditional</animation>
-          <animation effect="slide" end="0,720" time="0" condition="Container(211).Row(12)">Conditional</animation>
-          <animation effect="slide" end="0,780" time="0" condition="Container(211).Row(13)">Conditional</animation>
-          <animation effect="slide" end="0,840" time="0" condition="Container(211).Row(14)">Conditional</animation>
-          <animation effect="slide" end="0,900" time="0" condition="Container(211).Row(15)">Conditional</animation>
-          <animation effect="slide" end="0,960" time="0" condition="Container(211).Row(16)">Conditional</animation>
-          <animation effect="slide" end="0,1020" time="0" condition="Container(211).Row(17)">Conditional</animation>
-          <animation effect="slide" end="0,1080" time="0" condition="Container(211).Row(18)">Conditional</animation>
-          <animation effect="slide" end="0,1140" time="0" condition="Container(211).Row(19)">Conditional</animation>
-          <animation effect="slide" end="0,1200" time="0" condition="Container(211).Row(20)">Conditional</animation>
-          <control type="image">
-            <height>60</height>
-            <width>1</width>
-            <texture>refocus/dialogs/separator/vertical.png</texture>
-          </control>
-          <control type="image">
-            <left>60</left>
-            <height>60</height>
-            <width>1</width>
-            <texture>refocus/dialogs/separator/vertical.png</texture>
-          </control>
-          <control type="image">
-            <left>120</left>
-            <height>60</height>
-            <width>1</width>
-            <texture>refocus/dialogs/separator/vertical.png</texture>
-          </control>
-          <!--move up-->
-          <control type="button" id="303">
-            <label>-</label>
-            <onup>211</onup>
-            <onleft>211</onleft>
-            <onright>304</onright>
-            <ondown>211</ondown>
-            <width>60</width>
-            <height>60</height>
-            <texturenofocus colordiffuse="Light">refocus/dialogs/inline/up-nf.png</texturenofocus>
-            <texturefocus colordiffuse="Heavy">refocus/dialogs/inline/up-fo.png</texturefocus>
-          </control>
-          <!--move down-->
-          <control type="button" id="304">
-            <left>60</left>
-            <label>-</label>
-            <onup>211</onup>
-            <onleft>303</onleft>
-            <onright>302</onright>
-            <ondown>211</ondown>
-            <width>60</width>
-            <height>60</height>
-            <texturenofocus colordiffuse="Light">refocus/dialogs/inline/down-nf.png</texturenofocus>
-            <texturefocus colordiffuse="Heavy">refocus/dialogs/inline/down-fo.png</texturefocus>
-          </control>
-          <!--remove-->
-          <control type="button" id="302">
-            <left>120</left>
-            <label>-</label>
-            <onup>211</onup>
-            <onleft>304</onleft>
-            <onright>300</onright>
-            <ondown>211</ondown>
-            <width>60</width>
-            <height>60</height>
-            <texturenofocus colordiffuse="Light">refocus/dialogs/inline/remove-nf.png</texturenofocus>
-            <texturefocus colordiffuse="Heavy">refocus/dialogs/inline/remove-fo.png</texturefocus>
-          </control>
-        </control>
-        <!---control area-->  
+
+        <!-- Right grouplist -->
         <control type="grouplist" id="300">
-          <left>600</left>
-          <width>738</width>
-          <height>780</height>
-          <onleft>302</onleft>
-          <onright>10</onright>
-          <onup>300</onup>
-          <ondown>300</ondown>
+          <left>SettingsCategoryRightGLLeft</left>
+          <!-- <top>SettingsCategoryGLTop</top> -->
+          <width>SettingsCategoryRightGLWidth</width>
+          <height>SettingsCategoryGLHeight</height>
           <itemgap>0</itemgap>
-          <scrolltime tween="Quadratic" easing="Out">300</scrolltime>
+          <onleft>211</onleft>
+          <!-- <onright>8800</onright>
+          <pagecontrol>8800</pagecontrol> -->
+          <orientation>vertical</orientation>
+          <scrolltime tween="sine" easing="out">320</scrolltime>
+
           <!--change shortcut-->
           <control type="button" id="401">
-            <width>738</width>
-            <height>60</height>
+            <width>SettingsCategoryRightGLWidth</width>
             <label>$ADDON[script.skinshortcuts 32048]</label>
-            <include>dialog_Radio</include>
           </control>
           <!--change label-->
           <control type="button" id="305">
-            <width>738</width>
-            <height>60</height>
+            <width>SettingsCategoryRightGLWidth</width>
             <label>$ADDON[script.skinshortcuts 32025]</label>
             <label2>$INFO[Container(211).ListItem.Label]</label2>
-            <include>dialog_Radio</include>
           </control>      
           <!--change thumbnail-->
           <control type="button" id="306">
-            <width>738</width>
-            <height>60</height>
+            <width>SettingsCategoryRightGLWidth</width>
             <label>$ADDON[script.skinshortcuts 32026]</label>
-            <include>dialog_Radio</include>
           </control>      
           <!--change widget-->
           <control type="button" id="309">
-            <width>738</width>
-            <height>60</height>
+            <width>SettingsCategoryRightGLWidth</width>
             <label>$ADDON[script.skinshortcuts 32044]</label>
-            <include>dialog_Radio</include>
             <onclick>SetProperty(useWidgetNameAsLabel,true)</onclick>
             <!-- <onfocus>ClearProperty(useWidgetNameAsLabel)</onfocus> -->
           </control>      
           <!--change background-->
           <control type="button" id="310">
-            <width>738</width>
-            <height>60</height>
+            <width>SettingsCategoryRightGLWidth</width>
             <label>$ADDON[script.skinshortcuts 32045]</label>
-            <include>dialog_Radio</include>
           </control>      
           <!--change action-->
           <control type="button" id="307">
-            <width>738</width>
-            <height>60</height>
+            <width>SettingsCategoryRightGLWidth</width>
             <label>$ADDON[script.skinshortcuts 32027]</label>
             <label2>$INFO[Container(211).ListItem.Property(displaypath)]</label2>
-            <include>dialog_Radio</include>
           </control>
           <!--edit sub-menu-->
           <control type="button" id="405">
-            <width>738</width>
-            <height>60</height>
+            <width>SettingsCategoryRightGLWidth</width>
             <label>Edit submenu</label>
-            <include>dialog_Radio</include>
             <visible>StringCompare(Window.Property("groupname"),mainmenu)</visible>
           </control>
           <!--add item-->
           <control type="button" id="301">
-            <width>738</width>
-            <height>60</height>
+            <width>SettingsCategoryRightGLWidth</width>
             <label>$ADDON[script.skinshortcuts 32000]</label>
-            <include>dialog_Radio</include>
           </control>
+
+
         </control>
-      </control>
-      <!--reset-->
-      <control type="button" id="308">
-        <left>29</left>
-        <top>900</top>
-        <width>375</width>
-        <label>$ADDON[script.skinshortcuts 32028]</label>
-        <onup>211</onup>
-        <ondown>-</ondown>
-        <onleft>-</onleft>
-        <onright>10</onright>
-        <include>dialog_WindowButton</include>
-      </control>
-      <!--apply-->
-      <control type="button" id="10">
-        <left>1134</left>
-        <top>900</top>
-        <label>$LOCALIZE[186]</label>
-        <onup>301</onup>
-        <onleft>308</onleft>
-        <onright>-</onright>
-        <ondown>401</ondown>
-        <!-- <onback>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=5000&amp;group=videohub-list|videohub-widgets)</onback> -->
-        <!-- <onclick>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=5000&amp;group=videohub-list|videohub-widgets)</onclick> -->
-        <!-- <onback>RunScript(script.skinshortcuts,type=buildxml&amp;mode=single&amp;mainmenuID=9110)</onback> -->
-        <!-- <onclick>RunScript(script.skinshortcuts,type=buildxml&amp;mode=single&amp;mainmenuID=9110)</onclick> -->
-        <onclick>Close</onclick>
-        <include>dialog_WindowButton</include>
-        <visible>StringCompare(Window.Property("groupname"),mainmenu)</visible>
-      </control>
-      <!--close-->
-      <control type="button" id="10">
-        <left>1134</left>
-        <top>900</top>
-        <label>$LOCALIZE[186]</label>
-        <onup>301</onup>
-        <onleft>308</onleft>
-        <onright>-</onright>
-        <ondown>401</ondown>
-        <onclick>Close</onclick>
-        <include>dialog_WindowButton</include>
-        <visible>!StringCompare(Window.Property("groupname"),mainmenu)</visible>
       </control>
     </control>
   </controls>
+
 </window>

@@ -5,7 +5,7 @@
   <controls>
 
     <control type="group">
-      <visible>[!Window.IsVisible(3000) | [Window.IsVisible(3000) + Window.IsVisible(script-videoextras-main.xml)]] + !Window.IsVisible(startup) + !Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation) + !Window.IsVisible(screencalibration) + !Window.IsVisible(screensaver) + !Window.IsVisible(slideshow) + !Window.IsVisible(karaoke)</visible>
+      <visible>[!Window.IsVisible(3000) | [Window.IsVisible(3000) + Window.IsVisible(script-skinshortcuts.xml)]] + !Window.IsVisible(startup) + !Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation) + !Window.IsVisible(screencalibration) + !Window.IsVisible(screensaver) + !Window.IsVisible(slideshow) + !Window.IsVisible(karaoke)</visible>
 
       <!--control type="label">
 				<left>46</left>
