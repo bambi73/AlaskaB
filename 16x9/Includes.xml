@@ -1338,4 +1338,32 @@
     <include>SkinSettingsRightGLTemplate</include>
   </include>
 
+  <!-- Skin-shortcuts -->
+  <constant name="SkinShortcutsLeft">-160</constant>
+  <constant name="SkinShortcutsWidth">2240</constant>
+  <constant name="SkinShortcutsHeight">722</constant>
+  <constant name="SkinShortcutsControlWidth">1720</constant>
+
+  <constant name="SkinShortcutsListHeight">462</constant>
+  <constant name="SkinShortcutsLeftListLeft">40</constant>
+  <constant name="SkinShortcutsLeftListWidth">450</constant>
+  <constant name="SkinShortcutsRightGListLeft">600</constant>
+  <constant name="SkinShortcutsRightGListWidth">1150</constant>
+
+  <include name="SkinShortcutsLeftListTemplate">
+    <width>SkinShortcutsLeftListWidth</width>
+    <textoffsetx>20</textoffsetx>
+    <align>right</align>
+  </include>
+
+  <include name="SkinShortcutsRightGListTemplate">
+    <width>SkinShortcutsRightGListWidth</width>
+    <animation effect="zoom" center="425,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
+  </include>
+
+  <include name="SkinShortcutsRightGListTemplateWithText">
+    <textwidth>750</textwidth>
+    <include>SkinShortcutsRightGListTemplate</include>
+  </include>
+
 </includes>

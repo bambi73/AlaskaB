@@ -10,9 +10,9 @@
 
     <control type="group" id="5000">
       <centertop>50%</centertop>
-      <left>SkinSettingsLeft</left>
-      <width>SkinSettingsWidth</width>
-      <height>SkinSettingsHeight</height>
+      <left>SkinShortcutsLeft</left>
+      <width>SkinShortcutsWidth</width>
+      <height>SkinShortcutsHeight</height>
 
       <include>Animation_ZoomInZoomOut</include>
       <include>Animation_ZoomedByMenu</include>
@@ -21,56 +21,56 @@
       </animation>
 
       <!-- <control type="image">
-        <width>SkinSettingsWidth</width>
-        <height>SkinSettingsHeight</height>
+        <width>SkinShortcutsWidth</width>
+        <height>SkinShortcutsHeight</height>
         <visible>!Control.IsVisible(8800)</visible>
         <texture>settings/settings-category-bg.png</texture>
       </control>
       <control type="image">
-        <width>SkinSettingsWidth</width>
-        <height>SkinSettingsHeight</height>
+        <width>SkinShortcutsWidth</width>
+        <height>SkinShortcutsHeight</height>
         <visible>Control.IsVisible(8800)</visible>
         <texture>settings/settings-category-bg-scrollbar.png</texture>
       </control> -->
 
       <control type="image">
-        <width>SkinSettingsWidth</width>
+        <width>SkinShortcutsWidth</width>
         <height>14</height>
         <texture>hub/list_bg_border5.png</texture>
       </control>
       <control type="image">
         <top>14</top>
-        <width>SkinSettingsWidth</width>
+        <width>SkinShortcutsWidth</width>
         <height>88</height>
         <texture>hub/list_bg5.png</texture>
       </control>
       <control type="image">
         <top>102</top>
-        <width>SkinSettingsWidth</width>
+        <width>SkinShortcutsWidth</width>
         <height>3</height>
         <texture>hub/list_bg_delimiter5.png</texture>
       </control>
       <control type="image">
         <top>105</top>
-        <width>SkinSettingsWidth</width>
-        <height>423</height>
+        <width>SkinShortcutsWidth</width>
+        <height>491</height>
         <texture>hub/list_bg5.png</texture>
       </control>
       <control type="image">
-        <top>528</top>
-        <width>SkinSettingsWidth</width>
+        <top>596</top>
+        <width>SkinShortcutsWidth</width>
         <height>3</height>
         <texture>hub/list_bg_delimiter5.png</texture>
       </control>
       <control type="image">
-        <top>531</top>
-        <width>SkinSettingsWidth</width>
+        <top>599</top>
+        <width>SkinShortcutsWidth</width>
         <height>109</height>
         <texture>hub/list_bg5.png</texture>
       </control>
       <control type="image">
-        <top>640</top>
-        <width>SkinSettingsWidth</width>
+        <top>708</top>
+        <width>SkinShortcutsWidth</width>
         <height>14</height>
         <texture flipy="true">hub/list_bg_border5.png</texture>
       </control>
@@ -79,7 +79,7 @@
       <control type="label" id="500">
         <top>37</top>
         <centerleft>50%</centerleft>
-        <width>DialogProfileSettingsControlWidth</width>
+        <width>SkinShortcutsControlWidth</width>
         <height>42</height>
         <align>center</align>
         <aligny>center</aligny>
@@ -88,93 +88,107 @@
 
       <control type="group">
         <left>160</left>
-        <top>122</top>
+        <top>118</top>
 
         <!-- Shortcut list -->
         <control type="list" id="211">
-          <left>SettingsProfileLeftListLeft</left>
-          <!-- <top>SettingsProfileListTop</top> -->
-          <width>SettingsProfileLeftListWidth</width>
-          <height>SettingsProfileListHeight</height>
+          <left>SkinShortcutsLeftListLeft</left>
+          <width>SkinShortcutsLeftListWidth</width>
+          <height>SkinShortcutsListHeight</height>
           <onright>300</onright>
+          <ondown>308</ondown>
+          <onleft>308</onleft>
           <include>DialogBaseVerticalList</include>
           <itemlayout width="370" height="66">
             <control type="label">
               <label>$INFO[ListItem.Label]</label>
-              <include>SettingsProfileLeftListTemplate</include>
+              <include>SkinShortcutsLeftListTemplate</include>
             </control>
           </itemlayout>
           <focusedlayout width="370" height="66">
             <control type="label">
               <textcolor>TextHeavy</textcolor>
               <label>$INFO[ListItem.Label]</label>
-              <include>SettingsProfileLeftListTemplate</include>
-              <animation effect="zoom" center="350,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
+              <include>SkinShortcutsLeftListTemplate</include>
+              <animation effect="zoom" center="430,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
             </control>
           </focusedlayout>
         </control>
 
         <!-- Right grouplist -->
         <control type="grouplist" id="300">
-          <left>SettingsCategoryRightGLLeft</left>
-          <!-- <top>SettingsCategoryGLTop</top> -->
-          <width>SettingsCategoryRightGLWidth</width>
-          <height>SettingsCategoryGLHeight</height>
+          <left>SkinShortcutsRightGListLeft</left>
+          <width>SkinShortcutsRightGListWidth</width>
+          <height>SkinShortcutsListHeight</height>
           <itemgap>0</itemgap>
           <onleft>211</onleft>
+          <ondown>308</ondown>
           <!-- <onright>8800</onright>
           <pagecontrol>8800</pagecontrol> -->
           <orientation>vertical</orientation>
           <scrolltime tween="sine" easing="out">320</scrolltime>
 
-          <!--change shortcut-->
-          <control type="button" id="401">
-            <width>SettingsCategoryRightGLWidth</width>
-            <label>$ADDON[script.skinshortcuts 32048]</label>
-          </control>
-          <!--change label-->
+          <!-- Set label -->
           <control type="button" id="305">
-            <width>SettingsCategoryRightGLWidth</width>
+            <include>SkinShortcutsRightGListTemplateWithText</include>
             <label>$ADDON[script.skinshortcuts 32025]</label>
             <label2>$INFO[Container(211).ListItem.Label]</label2>
-          </control>      
-          <!--change thumbnail-->
-          <control type="button" id="306">
-            <width>SettingsCategoryRightGLWidth</width>
-            <label>$ADDON[script.skinshortcuts 32026]</label>
-          </control>      
-          <!--change widget-->
-          <control type="button" id="309">
-            <width>SettingsCategoryRightGLWidth</width>
-            <label>$ADDON[script.skinshortcuts 32044]</label>
-            <onclick>SetProperty(useWidgetNameAsLabel,true)</onclick>
-            <!-- <onfocus>ClearProperty(useWidgetNameAsLabel)</onfocus> -->
-          </control>      
-          <!--change background-->
-          <control type="button" id="310">
-            <width>SettingsCategoryRightGLWidth</width>
-            <label>$ADDON[script.skinshortcuts 32045]</label>
-          </control>      
-          <!--change action-->
+          </control>
+          <!-- Custom action -->
           <control type="button" id="307">
-            <width>SettingsCategoryRightGLWidth</width>
+            <include>SkinShortcutsRightGListTemplateWithText</include>
             <label>$ADDON[script.skinshortcuts 32027]</label>
             <label2>$INFO[Container(211).ListItem.Property(displaypath)]</label2>
           </control>
+          <!-- Choose shortcut -->
+          <control type="button" id="401">
+            <include>SkinShortcutsRightGListTemplateWithText</include>
+            <label>$ADDON[script.skinshortcuts 32048]</label>
+          </control>
+          <!--change thumbnail-->
+          <!-- <control type="button" id="306">
+            <include>SkinShortcutsRightGListTemplateWithText</include>
+            <label>$ADDON[script.skinshortcuts 32026]</label>
+          </control> -->
+          <!--change widget-->
+          <control type="button" id="309">
+            <include>SkinShortcutsRightGListTemplateWithText</include>
+            <label>$ADDON[script.skinshortcuts 32044]</label>
+            <onclick>SetProperty(useWidgetNameAsLabel,true)</onclick>
+            <visible>StringCompare(Window.Property(groupname),videohub-widgets)</visible>
+          </control>
+          <!--change background-->
+          <control type="button" id="310">
+            <include>SkinShortcutsRightGListTemplateWithText</include>
+            <label>$ADDON[script.skinshortcuts 32045]</label>
+            <label2>$INFO[Container(211).ListItem.Property(background)]</label2>
+            <visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+          </control>
           <!--edit sub-menu-->
           <control type="button" id="405">
-            <width>SettingsCategoryRightGLWidth</width>
+            <include>SkinShortcutsRightGListTemplateWithText</include>
             <label>Edit submenu</label>
-            <visible>StringCompare(Window.Property("groupname"),mainmenu)</visible>
+            <visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
           </control>
           <!--add item-->
           <control type="button" id="301">
-            <width>SettingsCategoryRightGLWidth</width>
+            <include>SkinShortcutsRightGListTemplateWithText</include>
             <label>$ADDON[script.skinshortcuts 32000]</label>
           </control>
-
-
         </control>
+      </control>
+
+      <control type="button" id="308">
+        <top>597</top>
+        <onup>300</onup>
+        <width>SkinShortcutsControlWidth</width>
+        <include>DialogBottomButton1Center</include>
+        <animation type="Conditional" condition="Control.HasFocus(308)" reversible="false">
+          <include>AnimationEffect_DialogBottomButton1CenterFocus</include>
+        </animation>
+        <animation type="Conditional" condition="!Control.HasFocus(308)" reversible="false">
+          <include>AnimationEffect_DialogBottomButton1CenterUnfocus</include>
+        </animation>
       </control>
     </control>
   </controls>
