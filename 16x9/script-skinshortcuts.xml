@@ -8,6 +8,20 @@
   <controls>
     <include>Global_Background</include>
 
+    <control type="button" id="302">
+      <include>HiddenControl</include>
+      <onclick>SetFocus(922)</onclick>
+    </control>
+    <control type="button" id="303">
+      <include>HiddenControl</include> 
+      <onclick>SetFocus(923)</onclick>
+    </control>
+    <control type="button" id="304">
+      <include>HiddenControl</include>
+      <onclick>SetFocus(924)</onclick>
+      <onfocus>SetFocus(924)</onfocus>
+    </control>
+
     <control type="group" id="5000">
       <centertop>50%</centertop>
       <left>SkinShortcutsLeft</left>
@@ -76,7 +90,7 @@
       </control>
 
       <!-- Heading label -->
-      <control type="label" id="500">
+<!--       <control type="label" id="500">
         <top>37</top>
         <centerleft>50%</centerleft>
         <width>SkinShortcutsControlWidth</width>
@@ -84,6 +98,55 @@
         <align>center</align>
         <aligny>center</aligny>
         <font>Font_Black_Caps_42</font>
+        <visible>![SubString(Window.Property(groupname),videohub) + [SubString(Window.Property(groupname),list) | SubString(Window.Property(groupname),widgets)]]</visible>
+      </control>
+      <control type="label">
+        <top>37</top>
+        <centerleft>50%</centerleft>
+        <width>SkinShortcutsControlWidth</width>
+        <height>42</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <font>Font_Black_Caps_42</font>
+        <label>Configure VideoHub #1 Menu</label>
+        <visible>SubString(Window.Property(groupname),videohub) + SubString(Window.Property(groupname),list)</visible>
+      </control>
+      <control type="label">
+        <top>37</top>
+        <centerleft>50%</centerleft>
+        <width>SkinShortcutsControlWidth</width>
+        <height>42</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <font>Font_Black_Caps_42</font>
+        <label>Configure VideoHub #1 Widgets</label>
+        <visible>SubString(Window.Property(groupname),videohub) + SubString(Window.Property(groupname),widgets)</visible>
+      </control>
+ -->
+      <control type="label">
+        <include>SkinShortcutsHeaderLabel</include>
+        <label>L302</label>
+        <visible>Control.HasFocus(302)</visible>
+      </control>
+      <control type="label">
+        <include>SkinShortcutsHeaderLabel</include>
+        <label>L303</label>
+        <visible>Control.HasFocus(303)</visible>
+      </control>
+      <control type="label">
+        <include>SkinShortcutsHeaderLabel</include>
+        <label>L304</label>
+        <visible>Control.HasFocus(304)</visible>
+      </control>
+      <control type="label">
+        <include>SkinShortcutsHeaderLabel</include>
+        <label>L910</label>
+        <visible>ControlGroup(910).HasFocus</visible>
+      </control>
+      <control type="label">
+        <include>SkinShortcutsHeaderLabel</include>
+        <label>L911</label>
+        <visible>ControlGroup(911).HasFocus</visible>
       </control>
 
       <control type="group">
@@ -97,7 +160,8 @@
           <height>SkinShortcutsListHeight</height>
           <onright>300</onright>
           <ondown>308</ondown>
-          <onleft>308</onleft>
+          <onleft>924</onleft>
+          <onclick>SetFocus(924)</onclick>
           <include>DialogBaseVerticalList</include>
           <itemlayout width="370" height="66">
             <control type="label">
@@ -111,8 +175,47 @@
               <label>$INFO[ListItem.Label]</label>
               <include>SkinShortcutsLeftListTemplate</include>
               <animation effect="zoom" center="430,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
+              <visible>!ControlGroup(900).HasFocus</visible>
             </control>
           </focusedlayout>
+        </control>
+
+        <control type="group" id="900">
+          <control type="grouplist" id="910">
+            <top>0</top>
+            <visible>Container(211).Row(0)</visible>
+            <include>SkinShortcutsLeftControlTemplate</include>
+          </control>
+          <control type="grouplist" id="911">
+            <top>66</top>
+            <visible>Container(211).Row(1)</visible>
+            <include>SkinShortcutsLeftControlTemplate</include>
+          </control>
+          <control type="grouplist" id="912">
+            <top>132</top>
+            <visible>Container(211).Row(2)</visible>
+            <include>SkinShortcutsLeftControlTemplate</include>
+          </control>
+          <control type="grouplist" id="913">
+            <top>198</top>
+            <visible>Container(211).Row(3)</visible>
+            <include>SkinShortcutsLeftControlTemplate</include>
+          </control>
+          <control type="grouplist" id="914">
+            <top>264</top>
+            <visible>Container(211).Row(4)</visible>
+            <include>SkinShortcutsLeftControlTemplate</include>
+          </control>
+          <control type="grouplist" id="915">
+            <top>330</top>
+            <visible>Container(211).Row(5)</visible>
+            <include>SkinShortcutsLeftControlTemplate</include>
+          </control>
+          <control type="grouplist" id="916">
+            <top>396</top>
+            <visible>Container(211).Row(6)</visible>
+            <include>SkinShortcutsLeftControlTemplate</include>
+          </control>
         </control>
 
         <!-- Right grouplist -->
@@ -123,8 +226,7 @@
           <itemgap>0</itemgap>
           <onleft>211</onleft>
           <ondown>308</ondown>
-          <!-- <onright>8800</onright>
-          <pagecontrol>8800</pagecontrol> -->
+          <onright>308</onright>
           <orientation>vertical</orientation>
           <scrolltime tween="sine" easing="out">320</scrolltime>
 
@@ -139,38 +241,36 @@
             <include>SkinShortcutsRightGListTemplateWithText</include>
             <label>$ADDON[script.skinshortcuts 32027]</label>
             <label2>$INFO[Container(211).ListItem.Property(displaypath)]</label2>
+            <visible>SubString(Window.Property(groupname),mainmenu) | SubString(Window.Property(groupname),submenu) | [SubString(Window.Property(groupname),videohub) + SubString(Window.Property(groupname),list)]</visible>
           </control>
           <!-- Choose shortcut -->
           <control type="button" id="401">
             <include>SkinShortcutsRightGListTemplateWithText</include>
             <label>$ADDON[script.skinshortcuts 32048]</label>
+            <visible>SubString(Window.Property(groupname),mainmenu) | SubString(Window.Property(groupname),submenu) | [SubString(Window.Property(groupname),videohub) + SubString(Window.Property(groupname),list)]</visible>
           </control>
-          <!--change thumbnail-->
-          <!-- <control type="button" id="306">
-            <include>SkinShortcutsRightGListTemplateWithText</include>
-            <label>$ADDON[script.skinshortcuts 32026]</label>
-          </control> -->
           <!--change widget-->
           <control type="button" id="309">
             <include>SkinShortcutsRightGListTemplateWithText</include>
             <label>$ADDON[script.skinshortcuts 32044]</label>
+            <label2>$INFO[Container(211).ListItem.Property(widgetPlaylist)]</label2>
             <onclick>SetProperty(useWidgetNameAsLabel,true)</onclick>
-            <visible>StringCompare(Window.Property(groupname),videohub-widgets)</visible>
+            <visible>SubString(Window.Property(groupname),videohub) + SubString(Window.Property(groupname),widgets)</visible>
           </control>
-          <!--change background-->
+          <!-- Select background -->
           <control type="button" id="310">
             <include>SkinShortcutsRightGListTemplateWithText</include>
             <label>$ADDON[script.skinshortcuts 32045]</label>
             <label2>$INFO[Container(211).ListItem.Property(background)]</label2>
-            <visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+            <visible>SubString(Window.Property(groupname),mainmenu)</visible>
           </control>
-          <!--edit sub-menu-->
+          <!-- Edit submenu -->
           <control type="button" id="405">
             <include>SkinShortcutsRightGListTemplateWithText</include>
             <label>Edit submenu</label>
-            <visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+            <visible>SubString(Window.Property(groupname),mainmenu)</visible>
           </control>
-          <!--add item-->
+          <!-- Add -->
           <control type="button" id="301">
             <include>SkinShortcutsRightGListTemplateWithText</include>
             <label>$ADDON[script.skinshortcuts 32000]</label>

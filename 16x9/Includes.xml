@@ -1362,8 +1362,62 @@
   </include>
 
   <include name="SkinShortcutsRightGListTemplateWithText">
-    <textwidth>750</textwidth>
+    <textwidth>700</textwidth>
     <include>SkinShortcutsRightGListTemplate</include>
+  </include>
+
+  <include name="SkinShortcutsLeftControlTemplate">
+    <left>40</left>
+    <width>136</width>
+    <height>66</height>
+    <itemgap>0</itemgap>
+    <onright>211</onright>
+    <onup>211</onup>
+    <onup>Control.Move(211,-1)</onup>
+    <ondown>211</ondown>
+    <ondown>Control.Move(211,1)</ondown>
+    <onleft>noop</onleft>
+    <orientation>horizontal</orientation>
+    <animation type="Conditional" condition="ControlGroup(900).HasFocus">
+      <effect type="zoom" center="auto" start="100" end="115" time="0" tween="cubic" easing="out"/>
+      <!-- <effect type="slide" end="242,0" time="0" tween="cubic" easing="out"/> -->
+      <effect type="slide" end="260,2" time="0" tween="cubic" easing="out"/>
+    </animation>
+
+    <control type="button" id="922">
+      <width>50</width>
+      <height>66</height>
+      <!-- <onclick>SetFocus(922)</onclick> -->
+      <onclick>SendClick(302)</onclick>
+      <texturenofocus colordiffuse="TextLight">settings/skinshortcuts-delete.png</texturenofocus>    
+      <texturefocus colordiffuse="TextHeavy">settings/skinshortcuts-delete.png</texturefocus>
+      <visible>ControlGroup(900).HasFocus</visible>
+    </control>
+    <control type="button" id="923">
+      <width>33</width>
+      <height>66</height>
+      <!-- <onclick>SetFocus(923)</onclick> -->
+      <onclick>SendClick(303)</onclick>
+      <texturenofocus colordiffuse="TextLight">settings/skinshortcuts-move-up.png</texturenofocus>    
+      <texturefocus colordiffuse="TextHeavy">settings/skinshortcuts-move-up.png</texturefocus>
+    </control>
+    <control type="button" id="924">
+      <width>33</width>
+      <height>66</height>
+      <onclick>SendClick(304)</onclick>
+      <texturenofocus colordiffuse="TextLight">settings/skinshortcuts-move-down.png</texturenofocus>    
+      <texturefocus colordiffuse="TextHeavy">settings/skinshortcuts-move-down.png</texturefocus>
+    </control>
+  </include>
+
+  <include name="SkinShortcutsHeaderLabel">
+    <top>37</top>
+    <centerleft>50%</centerleft>
+    <width>SkinShortcutsControlWidth</width>
+    <height>42</height>
+    <align>center</align>
+    <aligny>center</aligny>
+    <font>Font_Black_Caps_42</font>
   </include>
 
 </includes>

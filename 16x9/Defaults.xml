@@ -74,6 +74,7 @@
     <texturefocus>-</texturefocus>
     <texturenofocus>-</texturenofocus>
     <pulseonselect>false</pulseonselect>
+    <scrollsuffix>    •    </scrollsuffix>
   </default>
 
   <default type="togglebutton">
