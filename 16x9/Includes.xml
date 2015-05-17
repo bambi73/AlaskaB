@@ -1351,7 +1351,6 @@
   <constant name="SkinShortcutsRightGListWidth">1150</constant>
 
   <include name="SkinShortcutsLeftListTemplate">
-    <width>SkinShortcutsLeftListWidth</width>
     <textoffsetx>20</textoffsetx>
     <align>right</align>
   </include>
@@ -1366,7 +1365,55 @@
     <include>SkinShortcutsRightGListTemplate</include>
   </include>
 
-  <include name="SkinShortcutsLeftControlTemplate">
+  <include name="SkinShortcutsMoveControlTemplate">
+    <left>-10</left>
+    <width>124</width>
+    <height>66</height>
+    <animation effect="slide" end="355,2" time="0" tween="cubic" easing="out" condition="ControlGroup(900).HasFocus">Conditional</animation>
+
+    <control type="image">
+      <width>31</width>
+      <height>66</height>
+      <texture colordiffuse="TextLight">settings/skinshortcuts-delete.png</texture>    
+      <visible>ControlGroup(900).HasFocus + !Control.HasFocus(302)</visible>
+    </control>
+    <control type="image">
+      <width>31</width>
+      <height>66</height>
+      <texture colordiffuse="TextHeavy">settings/skinshortcuts-delete.png</texture>
+      <visible>ControlGroup(900).HasFocus + Control.HasFocus(302)</visible>
+    </control>
+    <control type="image">
+      <left>50</left>
+      <width>37</width>
+      <height>66</height>
+      <texture colordiffuse="TextLight">settings/skinshortcuts-move-up.png</texture>    
+      <visible>!Control.HasFocus(303)</visible>
+    </control>
+    <control type="image">
+      <left>50</left>
+      <width>37</width>
+      <height>66</height>
+      <texture colordiffuse="TextHeavy">settings/skinshortcuts-move-up.png</texture>
+      <visible>Control.HasFocus(303)</visible>
+    </control>
+    <control type="image">
+      <left>87</left>
+      <width>37</width>
+      <height>66</height>
+      <texture colordiffuse="TextLight">settings/skinshortcuts-move-down.png</texture>    
+      <visible>!Control.HasFocus(304)</visible>
+    </control>
+    <control type="image">
+      <left>87</left>
+      <width>37</width>
+      <height>66</height>
+      <texture colordiffuse="TextHeavy">settings/skinshortcuts-move-down.png</texture>
+      <visible>Control.HasFocus(304)</visible>
+    </control>
+  </include>
+
+  <!-- <include name="SkinShortcutsMoveControlTemplate">
     <left>40</left>
     <width>136</width>
     <height>66</height>
@@ -1380,14 +1427,12 @@
     <orientation>horizontal</orientation>
     <animation type="Conditional" condition="ControlGroup(900).HasFocus">
       <effect type="zoom" center="auto" start="100" end="115" time="0" tween="cubic" easing="out"/>
-      <!-- <effect type="slide" end="242,0" time="0" tween="cubic" easing="out"/> -->
       <effect type="slide" end="260,2" time="0" tween="cubic" easing="out"/>
     </animation>
 
     <control type="button" id="922">
       <width>50</width>
       <height>66</height>
-      <!-- <onclick>SetFocus(922)</onclick> -->
       <onclick>SendClick(302)</onclick>
       <texturenofocus colordiffuse="TextLight">settings/skinshortcuts-delete.png</texturenofocus>    
       <texturefocus colordiffuse="TextHeavy">settings/skinshortcuts-delete.png</texturefocus>
@@ -1396,7 +1441,6 @@
     <control type="button" id="923">
       <width>33</width>
       <height>66</height>
-      <!-- <onclick>SetFocus(923)</onclick> -->
       <onclick>SendClick(303)</onclick>
       <texturenofocus colordiffuse="TextLight">settings/skinshortcuts-move-up.png</texturenofocus>    
       <texturefocus colordiffuse="TextHeavy">settings/skinshortcuts-move-up.png</texturefocus>
@@ -1408,7 +1452,7 @@
       <texturenofocus colordiffuse="TextLight">settings/skinshortcuts-move-down.png</texturenofocus>    
       <texturefocus colordiffuse="TextHeavy">settings/skinshortcuts-move-down.png</texturefocus>
     </control>
-  </include>
+  </include> -->
 
   <include name="SkinShortcutsHeaderLabel">
     <top>37</top>

@@ -41,9 +41,9 @@
     <action>ActivateWindow(Videos,TVShowTitles,return)</action>
   </shortcut>
   <shortcut>
-    <label>$LOCALIZE[32023]</label>
+    <label>$LOCALIZE[24001]</label>
     <label2>Common Shortcut</label2>
-    <defaultID>32023</defaultID>
+    <defaultID>24001</defaultID>
     <icon>DefaultAddonProgram.png</icon>
     <thumb />
     <action>ActivateWindow(Programs,Addons,return)</action>

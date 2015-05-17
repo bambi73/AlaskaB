@@ -22,6 +22,15 @@
   </include>
   
   <include name="Home_AlaskaB_Control">
+    <!-- <control type="label">
+      <top>0</top>
+      <left>0</left>
+      <centerleft>50%</centerleft>
+      <align>center</align>
+      <width>1920</width>
+      <label>$INFO[Container(8000).ListItem.Property(LabelID)]</label>
+    </control> -->
+
     <control type="group" id="5000">
       <left>HomeLeft</left>
       <top>HomeTop</top>
@@ -56,13 +65,6 @@
       <!-- <control type="multiimage" id="8999">
         <include>Object_MainMenuIconF</include>
         <imagepath diffuse="home/Matte.png" background="true">$INFO[Container(8000).ListItem.Property(background)]</imagepath>
-      </control> -->
-      <!-- <control type="label">
-        <left>0</left>
-        <centerleft>50%</centerleft>
-        <align>center</align>
-        <width>1920</width>
-        <label>$INFO[Container(8000).ListItem.Property(backgroundProperty)]</label>
       </control> -->
       <!-- <control type="label" id="8888">
         <left>0</left>
@@ -126,7 +128,7 @@
             <include>HiddenControl</include>
             <onfocus>ClearProperty(AlaskaB.Home.WindowOpen,home)</onfocus>
             <onfocus>SetProperty(AlaskaB.Home.SubsequentWindowOpen,1,home)</onfocus>
-            <onfocus>AlarmClock(AlaskaB.Home.Multiimage.Timer,RunScript(special://skin/extras/scripts/alaskab_utils.py,updateHomeMenu),00:30,silent,loop)</onfocus>
+            <onfocus>AlarmClock(AlaskaB.Home.Multiimage.Timer,RunScript(special://skin/extras/scripts/alaskab_utils.py,updateHomeMenu),00:10,silent,loop)</onfocus>
           </control>
         </focusedlayout>
         <content>

@@ -1,4 +1,3 @@
-<?xml version='1.0' encoding='UTF-8'?>
 <includes>
 	<include name="skinshortcuts-mainmenu">
 		<item id="1">
@@ -14,7 +13,7 @@
 			<property name="submenuVisibility">pictures</property>
 			<property name="group">mainmenu</property>
 			<property name="background">special://skin/media/home/pictures</property>
-			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Pictures)]</property>
+			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.pictures)]</property>
 			<property name="hasSubmenu">True</property>
 		</item>
 		<item id="2">
@@ -84,17 +83,19 @@
 			<property name="hasSubmenu">True</property>
 		</item>
 		<item id="6">
-			<label>Addons</label>
+			<label>Add-ons</label>
 			<label2>Common Shortcut</label2>
 			<icon>DefaultAddonProgram.png</icon>
 			<thumb />
-			<property name="labelID">addons</property>
-			<property name="defaultID">32023</property>
+			<property name="labelID">add-ons</property>
+			<property name="defaultID">24001</property>
 			<onclick>ActivateWindow(Programs,Addons,return)</onclick>
 			<property name="path">ActivateWindow(Programs,Addons,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="submenuVisibility">addons</property>
+			<property name="submenuVisibility">add-ons</property>
 			<property name="group">mainmenu</property>
+			<property name="background">special://skin/media/home/addons</property>
+			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Add-ons)]</property>
 			<property name="hasSubmenu">False</property>
 		</item>
 		<item id="7">
@@ -125,9 +126,8 @@
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">settings</property>
 			<property name="group">mainmenu</property>
-			<property name="background">C:\Users\Bambi\AppData\Roaming\Kodi\addons\skin.alaskab\media\home\system\07.jpg</property>
+			<property name="background">special://skin/media/home/system</property>
 			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Settings)]</property>
-			<property name="backgroundName">C:\Users\Bambi\AppData\Roaming\Kodi\addons\skin.alaskab\media\home\system\07.jpg</property>
 			<property name="hasSubmenu">True</property>
 			<property name="hasSubmenu">True</property>
 			<property name="hasSubmenu">True</property>
@@ -215,17 +215,19 @@
 			<property name="hasSubmenu">True</property>
 		</item>
 		<item id="6">
-			<label>$ADDON[script.skinshortcuts 32023]</label>
+			<label>$LOCALIZE[24001]</label>
 			<label2>Common Shortcut</label2>
 			<icon>DefaultAddonProgram.png</icon>
 			<thumb />
-			<property name="labelID">32023</property>
-			<property name="defaultID">32023</property>
+			<property name="labelID">24001</property>
+			<property name="defaultID">24001</property>
 			<onclick>ActivateWindow(Programs,Addons,return)</onclick>
 			<property name="path">ActivateWindow(Programs,Addons,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
-			<property name="submenuVisibility">num-32023</property>
+			<property name="submenuVisibility">num-24001</property>
 			<property name="group">mainmenu</property>
+			<property name="background">special://skin/media/home/addons</property>
+			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Add-ons)]</property>
 			<property name="hasSubmenu">False</property>
 		</item>
 		<item id="7">
@@ -2312,8 +2314,8 @@
 			<property name="group">tvshows</property>
 		</item>
 	</include>
-	<include name="skinshortcuts-group-addons" />
-	<include name="skinshortcuts-group-alt-addons" />
+	<include name="skinshortcuts-group-add-ons" />
+	<include name="skinshortcuts-group-alt-add-ons" />
 	<include name="skinshortcuts-group-weather" />
 	<include name="skinshortcuts-group-alt-weather" />
 	<include name="skinshortcuts-group-settings">
@@ -3064,6 +3066,6 @@
 			<property name="widgetPlaylist">special://profile/playlists/video/RandomTVShows.xsp</property>
 		</item>
 	</include>
-	<include name="skinshortcuts-group-32023" />
-	<include name="skinshortcuts-group-alt-32023" />
+	<include name="skinshortcuts-group-24001" />
+	<include name="skinshortcuts-group-alt-24001" />
 </includes>
