@@ -44,7 +44,7 @@
     <value condition="Window.IsVisible(addonbrowser) | Window.IsVisible(addonsettings)">$LOCALIZE[24001]</value>
     <value condition="Window.IsVisible(PVRSettings)">$LOCALIZE[31161]</value>
     <value condition="Window.IsVisible(systeminfo)">$LOCALIZE[130]</value>
-    <value condition="Window.IsVisible(skinsettings)">ALASKA</value>
+    <value condition="Window.IsVisible(skinsettings)">ALASKA.B</value>
 
     <value condition="Window.IsVisible(musiclibrary) + !SubString(ListItem.Icon,Default) + StringCompare(Container.Viewmode,$LOCALIZE[31121])">$INFO[ListItem.Album]</value>
     <value condition="Window.IsVisible(weather) + !StringCompare(Weather.Location,$LOCALIZE[503])">$INFO[Window(Weather).Property(Location)]</value>

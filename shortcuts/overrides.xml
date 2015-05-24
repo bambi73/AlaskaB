@@ -19,13 +19,6 @@
   <backgrounddefault labelID="settings">special://skin/media/home/system</backgrounddefault>
   <backgroundBrowse default="special://skin">True</backgroundBrowse> 
 
-  <propertydefault labelID="pictures" group="mainmenu" property="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Pictures)]</propertydefault>
-  <propertydefault labelID="music" group="mainmenu" property="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Music)]</propertydefault>
-  <propertydefault labelID="videos" group="mainmenu" property="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Videos)]</propertydefault>
-  <propertydefault labelID="movies" group="mainmenu" property="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Movies)]</propertydefault>
-  <propertydefault labelID="tvshows" group="mainmenu" property="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Tvshows)]</propertydefault>
-  <propertydefault labelID="24001" group="mainmenu" property="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Add-ons)]</propertydefault>
-  <propertydefault labelID="weather" group="mainmenu" property="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Weather)]</propertydefault>
-  <propertydefault labelID="settings" group="mainmenu" property="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Settings)]</propertydefault>
+  <propertypattern group="mainmenu" property="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.::SUBMENUVISIBILITY::)]</propertypattern>
 
 </overrides>

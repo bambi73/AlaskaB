@@ -5,8 +5,8 @@
     <origin x="0" y="0"/>
   </coordinates>
 
-  <!-- <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=8000&amp;group=mainmenu|videohub-list|videohub-widgets)</onunload> -->
-  <onunload>RunScript(special://skin/extras/scripts/alaskab_utils.py,updateSkinshortcutsInclude,type=buildxml&amp;mainmenuID=8000&amp;group=mainmenu|videohub-list|videohub-widgets)</onunload>
+  <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=8000&amp;group=mainmenu|videohub-list|videohub-widgets)</onunload>
+  <!-- <onunload>RunScript(special://skin/extras/scripts/alaskab_utils.py,updateSkinshortcutsInclude,type=buildxml&amp;mainmenuID=8000&amp;group=mainmenu|videohub-list|videohub-widgets)</onunload> -->
 
   <controls>
     <include>Global_Background</include>

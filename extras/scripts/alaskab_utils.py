@@ -109,10 +109,10 @@ def updateHomeMenuItem(offset):
     background = xbmc.translatePath(backgroundVfs).decode('utf-8')
 
     if os.path.exists(background):
-      labelID = xbmc.getInfoLabel(HOME_MENU__LIST_ITEM_PROPERTY % (offset, "labelID"))
+      submenuVisibility = xbmc.getInfoLabel(HOME_MENU__LIST_ITEM_PROPERTY % (offset, "submenuVisibility"))
       window = xbmcgui.Window(10000)
 
-#      xbmc.log("labelID: %s" % labelID)
+      # xbmc.log("submenuVisibility: %s" % submenuVisibility)
 
       if os.path.isdir(background):
         fileList = list()
@@ -122,7 +122,7 @@ def updateHomeMenuItem(offset):
             fileList.append(file)
 
         if len(fileList) > 0:
-          currentFileName = getHomeMenuItemProperty(window, HOME_MENU__PROPERTY_CURRENT_BACKGROUND % labelID)
+          currentFileName = getHomeMenuItemProperty(window, HOME_MENU__PROPERTY_CURRENT_BACKGROUND % submenuVisibility)
           fileName = None
 
           while True:
@@ -131,15 +131,15 @@ def updateHomeMenuItem(offset):
               break
 
 #          xbmc.log("fileName: %s" % fileName)
-#          xbmc.log("HOME_MENU__PROPERTY_PREFIX: %s" % (HOME_MENU__PROPERTY_PREFIX % labelID))
+#          xbmc.log("HOME_MENU__PROPERTY_PREFIX: %s" % (HOME_MENU__PROPERTY_PREFIX % submenuVisibility))
 
-          setHomeMenuItemProperty(window, HOME_MENU__PROPERTY_PREFIX % labelID, os.path.join(background, fileName))
-          setHomeMenuItemProperty(window, HOME_MENU__PROPERTY_CURRENT_BACKGROUND % labelID, fileName)
+          setHomeMenuItemProperty(window, HOME_MENU__PROPERTY_PREFIX % submenuVisibility, os.path.join(background, fileName))
+          setHomeMenuItemProperty(window, HOME_MENU__PROPERTY_CURRENT_BACKGROUND % submenuVisibility, fileName)
         else:
-          setHomeMenuItemProperty(window, HOME_MENU__PROPERTY_PREFIX % labelID)
-          setHomeMenuItemProperty(window, HOME_MENU__PROPERTY_CURRENT_BACKGROUND % labelID)
+          setHomeMenuItemProperty(window, HOME_MENU__PROPERTY_PREFIX % submenuVisibility)
+          setHomeMenuItemProperty(window, HOME_MENU__PROPERTY_CURRENT_BACKGROUND % submenuVisibility)
       else:
-        setHomeMenuItemProperty(window, HOME_MENU__PROPERTY_PREFIX % labelID, background)
+        setHomeMenuItemProperty(window, HOME_MENU__PROPERTY_PREFIX % submenuVisibility, background)
     else:
       xbmc.log("Background directory/file '%s' doesn't exists" % background)
 

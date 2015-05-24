@@ -1,7 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
 <includes>
 	<include name="skinshortcuts-mainmenu">
 		<item id="1">
-			<label>Pictures</label>
+			<label>$LOCALIZE[10002]</label>
 			<label2>Common Shortcut</label2>
 			<icon>DefaultPicture.png</icon>
 			<thumb />
@@ -29,7 +30,7 @@
 			<property name="submenuVisibility">music</property>
 			<property name="group">mainmenu</property>
 			<property name="background">special://skin/media/home/music</property>
-			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Music)]</property>
+			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.music)]</property>
 			<property name="hasSubmenu">True</property>
 		</item>
 		<item id="3">
@@ -45,7 +46,7 @@
 			<property name="submenuVisibility">videos</property>
 			<property name="group">mainmenu</property>
 			<property name="background">special://skin/media/home/videos</property>
-			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Videos)]</property>
+			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.videos)]</property>
 			<property name="hasSubmenu">True</property>
 		</item>
 		<item id="4">
@@ -62,7 +63,7 @@
 			<property name="submenuVisibility">movies</property>
 			<property name="group">mainmenu</property>
 			<property name="background">special://skin/media/home/movies</property>
-			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Movies)]</property>
+			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.movies)]</property>
 			<property name="hasSubmenu">True</property>
 		</item>
 		<item id="5">
@@ -79,23 +80,23 @@
 			<property name="submenuVisibility">tvshows</property>
 			<property name="group">mainmenu</property>
 			<property name="background">special://skin/media/home/tvshows</property>
-			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Tvshows)]</property>
+			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.tvshows)]</property>
 			<property name="hasSubmenu">True</property>
 		</item>
 		<item id="6">
-			<label>Add-ons</label>
+			<label>$LOCALIZE[24001]</label>
 			<label2>Common Shortcut</label2>
 			<icon>DefaultAddonProgram.png</icon>
 			<thumb />
-			<property name="labelID">add-ons</property>
+			<property name="labelID">24001</property>
 			<property name="defaultID">24001</property>
 			<onclick>ActivateWindow(Programs,Addons,return)</onclick>
 			<property name="path">ActivateWindow(Programs,Addons,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="submenuVisibility">add-ons</property>
+			<property name="submenuVisibility">num-24001</property>
 			<property name="group">mainmenu</property>
 			<property name="background">special://skin/media/home/addons</property>
-			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Add-ons)]</property>
+			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.num-24001)]</property>
 			<property name="hasSubmenu">False</property>
 		</item>
 		<item id="7">
@@ -111,7 +112,7 @@
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">weather</property>
 			<property name="group">mainmenu</property>
-			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Weather)]</property>
+			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.weather)]</property>
 			<property name="hasSubmenu">False</property>
 		</item>
 		<item id="8">
@@ -127,7 +128,7 @@
 			<property name="submenuVisibility">settings</property>
 			<property name="group">mainmenu</property>
 			<property name="background">special://skin/media/home/system</property>
-			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Settings)]</property>
+			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.settings)]</property>
 			<property name="hasSubmenu">True</property>
 			<property name="hasSubmenu">True</property>
 			<property name="hasSubmenu">True</property>
@@ -145,7 +146,7 @@
 			<property name="submenuVisibility">pictures</property>
 			<property name="group">mainmenu</property>
 			<property name="background">special://skin/media/home/pictures</property>
-			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Pictures)]</property>
+			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.pictures)]</property>
 			<property name="hasSubmenu">True</property>
 		</item>
 		<item id="2">
@@ -161,7 +162,7 @@
 			<property name="submenuVisibility">music</property>
 			<property name="group">mainmenu</property>
 			<property name="background">special://skin/media/home/music</property>
-			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Music)]</property>
+			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.music)]</property>
 			<property name="hasSubmenu">True</property>
 		</item>
 		<item id="3">
@@ -177,7 +178,7 @@
 			<property name="submenuVisibility">videos</property>
 			<property name="group">mainmenu</property>
 			<property name="background">special://skin/media/home/videos</property>
-			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Videos)]</property>
+			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.videos)]</property>
 			<property name="hasSubmenu">True</property>
 		</item>
 		<item id="4">
@@ -194,7 +195,7 @@
 			<property name="submenuVisibility">movies</property>
 			<property name="group">mainmenu</property>
 			<property name="background">special://skin/media/home/movies</property>
-			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Movies)]</property>
+			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.movies)]</property>
 			<property name="hasSubmenu">True</property>
 		</item>
 		<item id="5">
@@ -211,7 +212,7 @@
 			<property name="submenuVisibility">tvshows</property>
 			<property name="group">mainmenu</property>
 			<property name="background">special://skin/media/home/tvshows</property>
-			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Tvshows)]</property>
+			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.tvshows)]</property>
 			<property name="hasSubmenu">True</property>
 		</item>
 		<item id="6">
@@ -227,7 +228,7 @@
 			<property name="submenuVisibility">num-24001</property>
 			<property name="group">mainmenu</property>
 			<property name="background">special://skin/media/home/addons</property>
-			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Add-ons)]</property>
+			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.num-24001)]</property>
 			<property name="hasSubmenu">False</property>
 		</item>
 		<item id="7">
@@ -243,7 +244,7 @@
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
 			<property name="submenuVisibility">weather</property>
 			<property name="group">mainmenu</property>
-			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Weather)]</property>
+			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.weather)]</property>
 			<property name="hasSubmenu">False</property>
 		</item>
 		<item id="8">
@@ -259,7 +260,7 @@
 			<property name="submenuVisibility">settings</property>
 			<property name="group">mainmenu</property>
 			<property name="background">special://skin/media/home/system</property>
-			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.Settings)]</property>
+			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.settings)]</property>
 			<property name="hasSubmenu">True</property>
 			<property name="hasSubmenu">True</property>
 			<property name="hasSubmenu">False</property>
@@ -2314,8 +2315,8 @@
 			<property name="group">tvshows</property>
 		</item>
 	</include>
-	<include name="skinshortcuts-group-add-ons" />
-	<include name="skinshortcuts-group-alt-add-ons" />
+	<include name="skinshortcuts-group-24001" />
+	<include name="skinshortcuts-group-alt-24001" />
 	<include name="skinshortcuts-group-weather" />
 	<include name="skinshortcuts-group-alt-weather" />
 	<include name="skinshortcuts-group-settings">
@@ -3066,6 +3067,4 @@
 			<property name="widgetPlaylist">special://profile/playlists/video/RandomTVShows.xsp</property>
 		</item>
 	</include>
-	<include name="skinshortcuts-group-24001" />
-	<include name="skinshortcuts-group-alt-24001" />
 </includes>

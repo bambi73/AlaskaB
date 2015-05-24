@@ -78,7 +78,7 @@
       </control>
 
       <!-- Heading label -->
-      <!-- <control type="label" id="500">
+      <control type="label" id="500">
         <top>37</top>
         <centerleft>50%</centerleft>
         <width>SkinShortcutsControlWidth</width>
@@ -109,13 +109,15 @@
         <font>Font_Black_Caps_42</font>
         <label>Configure VideoHub #1 Widgets</label>
         <visible>SubString(Window.Property(groupname),videohub) + SubString(Window.Property(groupname),widgets)</visible>
-      </control> -->
-
-      <control type="label">
-        <include>SkinShortcutsHeaderLabel</include>
-        <label>$INFO[Container(211).ListItem.Property(LabelID)]</label>
-        <!-- <visible>SubString(Window.Property(groupname),videohub) + SubString(Window.Property(groupname),widgets)</visible> -->
       </control>
+
+      <!-- <control type="label">
+        <include>SkinShortcutsHeaderLabel</include>
+        <label>$INFO[Window.Property(AlaskaB.SkinShortcuts.GroupName)]</label>
+        <label>$INFO[Container(211).ListItem.Property(backgroundProperty)]</label>
+        <label>$INFO[Container(211).ListItem.Property(LabelID)]</label>
+        <visible>SubString(Window.Property(groupname),videohub) + SubString(Window.Property(groupname),widgets)</visible>
+      </control> -->
 
       <control type="group">
         <left>160</left>
@@ -236,19 +238,20 @@
             <include>SkinShortcutsRightGListTemplateWithText</include>
             <label>$ADDON[script.skinshortcuts 32025]</label>
             <label2>$INFO[Container(211).ListItem.Label]</label2>
+            <onfocus>SetProperty(AlaskaB.SkinShortcuts.GroupName,$INFO[Window.Property(groupname)])</onfocus>
           </control>
           <!-- Custom action -->
           <control type="button" id="307">
             <include>SkinShortcutsRightGListTemplateWithText</include>
             <label>$ADDON[script.skinshortcuts 32027]</label>
             <label2>$INFO[Container(211).ListItem.Property(displaypath)]</label2>
-            <visible>SubString(Window.Property(groupname),mainmenu) | SubString(Window.Property(groupname),submenu) | [SubString(Window.Property(groupname),videohub) + SubString(Window.Property(groupname),list)]</visible>
+            <visible>SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),mainmenu) | SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),submenu) | [SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),videohub) + SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),list)]</visible>
           </control>
           <!-- Choose shortcut -->
           <control type="button" id="401">
             <include>SkinShortcutsRightGListTemplateWithText</include>
             <label>$ADDON[script.skinshortcuts 32048]</label>
-            <visible>SubString(Window.Property(groupname),mainmenu) | SubString(Window.Property(groupname),submenu) | [SubString(Window.Property(groupname),videohub) + SubString(Window.Property(groupname),list)]</visible>
+            <visible>SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),mainmenu) | SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),submenu) | [SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),videohub) + SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),list)]</visible>
           </control>
           <!--change widget-->
           <control type="button" id="309">
@@ -256,25 +259,26 @@
             <label>$ADDON[script.skinshortcuts 32044]</label>
             <label2>$INFO[Container(211).ListItem.Property(widgetPlaylist)]</label2>
             <onclick>SetProperty(useWidgetNameAsLabel,true)</onclick>
-            <visible>SubString(Window.Property(groupname),videohub) + SubString(Window.Property(groupname),widgets)</visible>
+            <visible>SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),videohub) + SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),widgets)</visible>
           </control>
           <!-- Select background -->
           <control type="button" id="310">
             <include>SkinShortcutsRightGListTemplateWithText</include>
             <label>$ADDON[script.skinshortcuts 32045]</label>
             <label2>$INFO[Container(211).ListItem.Property(background)]</label2>
-            <visible>SubString(Window.Property(groupname),mainmenu)</visible>
+            <visible>SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),mainmenu)</visible>
           </control>
           <!-- Edit submenu -->
           <control type="button" id="405">
             <include>SkinShortcutsRightGListTemplateWithText</include>
             <label>Edit submenu</label>
-            <visible>SubString(Window.Property(groupname),mainmenu)</visible>
+            <visible>SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),mainmenu)</visible>
           </control>
           <!-- Add -->
           <control type="button" id="301">
             <include>SkinShortcutsRightGListTemplateWithText</include>
             <label>$ADDON[script.skinshortcuts 32000]</label>
+            <!-- <enabled>![</enabled> -->
           </control>
         </control>
       </control>
