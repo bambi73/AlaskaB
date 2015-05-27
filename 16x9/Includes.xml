@@ -1350,6 +1350,16 @@
   <constant name="SkinShortcutsRightGListLeft">600</constant>
   <constant name="SkinShortcutsRightGListWidth">1150</constant>
 
+  <include name="SkinShortcutsHeaderLabel">
+    <top>37</top>
+    <centerleft>50%</centerleft>
+    <width>SkinShortcutsControlWidth</width>
+    <height>42</height>
+    <align>center</align>
+    <aligny>center</aligny>
+    <font>Font_Black_Caps_42</font>
+  </include>
+
   <include name="SkinShortcutsLeftListTemplate">
     <textoffsetx>20</textoffsetx>
     <align>right</align>
@@ -1453,15 +1463,5 @@
       <texturefocus colordiffuse="TextHeavy">settings/skinshortcuts-move-down.png</texturefocus>
     </control>
   </include> -->
-
-  <include name="SkinShortcutsHeaderLabel">
-    <top>37</top>
-    <centerleft>50%</centerleft>
-    <width>SkinShortcutsControlWidth</width>
-    <height>42</height>
-    <align>center</align>
-    <aligny>center</aligny>
-    <font>Font_Black_Caps_42</font>
-  </include>
 
 </includes>

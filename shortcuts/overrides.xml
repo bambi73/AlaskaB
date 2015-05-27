@@ -8,6 +8,9 @@
   <widgetdefault labelID="Label3" group="videohub">VideoHubWidged3</widgetdefault> -->
   <widgetPlaylists>True</widgetPlaylists>
 
+  <thumbnail label="None thumb">special://skin/media/defaultaddonnone.png</thumbnail>
+  <thumbnail label="Folder thumb">special://skin/media/defaultfolder.png</thumbnail>
+
   <background label="31800">special://skin/media/home/pictures/</background>
   <background label="31801">special://skin/media/home/music/</background>
   <backgrounddefault labelID="pictures">special://skin/media/home/pictures</backgrounddefault>
@@ -17,7 +20,7 @@
   <backgrounddefault labelID="tvshows">special://skin/media/home/tvshows</backgrounddefault>
   <backgrounddefault labelID="24001">special://skin/media/home/addons</backgrounddefault>
   <backgrounddefault labelID="settings">special://skin/media/home/system</backgrounddefault>
-  <backgroundBrowse default="special://skin">True</backgroundBrowse> 
+  <backgroundBrowse default="special://skin/">True</backgroundBrowse> 
 
   <propertypattern group="mainmenu" property="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.::SUBMENUVISIBILITY::)]</propertypattern>
 

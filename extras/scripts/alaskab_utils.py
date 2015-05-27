@@ -168,3 +168,22 @@ if sys.argv[1] == 'updateSkinshortcutsInclude':
   updateSkinshortcutsInclude()
 
 # ====-------------------====
+
+if sys.argv[1] == 'updateDirectionShortcut':
+  windowid = xbmcgui.getCurrentWindowDialogId()
+  xbmc.log("WindowId: %s" % windowid)
+
+  window = xbmcgui.Window(windowid)
+  controlList = window.getControl(211)
+
+  xbmc.log("getX(): %s" % controlList.getX())  
+  xbmc.log("size(): %s" % controlList.size())  
+
+  listIten = controlList.getSelectedItem()
+
+  xbmc.log("label: %s" % listIten.getLabel())  
+  listIten.setLabel("Bambik")
+  xbmc.log("label: %s" % listIten.getLabel())  
+
+
+# ====-------------------====

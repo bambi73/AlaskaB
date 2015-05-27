@@ -5,7 +5,7 @@
     <origin x="0" y="0"/>
   </coordinates>
 
-  <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=8000&amp;group=mainmenu|videohub-list|videohub-widgets)</onunload>
+  <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=8000&amp;levels=4&amp;group=mainmenu|videohub-list|videohub-widgets)</onunload>
   <!-- <onunload>RunScript(special://skin/extras/scripts/alaskab_utils.py,updateSkinshortcutsInclude,type=buildxml&amp;mainmenuID=8000&amp;group=mainmenu|videohub-list|videohub-widgets)</onunload> -->
 
   <controls>
@@ -401,6 +401,14 @@
               <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
               <visible>System.HasAddon(script.skinshortcuts)</visible>
             </control>        
+            <control type="button" id="1415">
+              <include>SkinSettingsRightGLTemplate</include>
+              <textoffsetx>50</textoffsetx>
+              <label>Reset all</label>
+              <onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
+              <visible>System.HasAddon(script.skinshortcuts)</visible>
+            </control>        
+
             <control type="radiobutton" id="1420">
               <include>SkinSettingsRightGLTemplateWithText</include>
               <label>Enable Video library scrollbar</label>

@@ -5,7 +5,8 @@
     <origin x="0" y="0"/>
   </coordinates>
 
-  <!-- <onunload>Notification(onunload,$INFO[Container(211).ListItem.Label])</onunload> -->
+  <!-- <onload>SetProperty(AlaskaB.SkinShortcuts.SubMenuType,$INFO[Window(Home).Property(AlaskaB.SkinShortcuts.SubMenuType)])</onload> -->
+  <!-- <onunload>ClearProperty(AlaskaB.SkinShortcuts.SubMenuType,Home)</onunload> -->
 
   <controls>
     <include>Global_Background</include>
@@ -77,46 +78,35 @@
         <texture flipy="true">hub/list_bg_border5.png</texture>
       </control>
 
-      <!-- Heading label -->
+      <!-- Header label -->
       <control type="label" id="500">
-        <top>37</top>
-        <centerleft>50%</centerleft>
-        <width>SkinShortcutsControlWidth</width>
-        <height>42</height>
-        <align>center</align>
-        <aligny>center</aligny>
-        <font>Font_Black_Caps_42</font>
-        <visible>![SubString(Window.Property(groupname),videohub) + [SubString(Window.Property(groupname),list) | SubString(Window.Property(groupname),widgets)]]</visible>
+        <include>SkinShortcutsHeaderLabel</include>
+        <visible>StringCompare(Window.Property(GroupName),mainmenu) | StringCompare(Window.Property(AlaskaB.SkinShortcuts.GroupName),mainmenu)</visible>
       </control>
-      <control type="label">
-        <top>37</top>
-        <centerleft>50%</centerleft>
-        <width>SkinShortcutsControlWidth</width>
-        <height>42</height>
-        <align>center</align>
-        <aligny>center</aligny>
-        <font>Font_Black_Caps_42</font>
+      <!-- <control type="label">
+        <include>SkinShortcutsHeaderLabel</include>
         <label>Configure VideoHub #1 Menu</label>
         <visible>SubString(Window.Property(groupname),videohub) + SubString(Window.Property(groupname),list)</visible>
-      </control>
-      <control type="label">
-        <top>37</top>
-        <centerleft>50%</centerleft>
-        <width>SkinShortcutsControlWidth</width>
-        <height>42</height>
-        <align>center</align>
-        <aligny>center</aligny>
-        <font>Font_Black_Caps_42</font>
+      </control> -->
+      <!-- <control type="label">
+        <include>SkinShortcutsHeaderLabel</include>
         <label>Configure VideoHub #1 Widgets</label>
         <visible>SubString(Window.Property(groupname),videohub) + SubString(Window.Property(groupname),widgets)</visible>
+      </control> -->
+      <control type="label">
+        <include>SkinShortcutsHeaderLabel</include>
+        <label>Customize $INFO[Window.Property(groupDisplayName)] Up shortcut</label>
+        <visible>SubString(Window.Property(GroupName),.3,right) | SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),.3,right)</visible>
+      </control>
+      <control type="label">
+        <include>SkinShortcutsHeaderLabel</include>
+        <label>Customize $INFO[Window.Property(groupDisplayName)] Down shortcut</label>
+        <visible>SubString(Window.Property(GroupName),.4,right) | SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),.4,right)</visible>
       </control>
 
       <!-- <control type="label">
         <include>SkinShortcutsHeaderLabel</include>
         <label>$INFO[Window.Property(AlaskaB.SkinShortcuts.GroupName)]</label>
-        <label>$INFO[Container(211).ListItem.Property(backgroundProperty)]</label>
-        <label>$INFO[Container(211).ListItem.Property(LabelID)]</label>
-        <visible>SubString(Window.Property(groupname),videohub) + SubString(Window.Property(groupname),widgets)</visible>
       </control> -->
 
       <control type="group">
@@ -138,6 +128,7 @@
               <width>370</width>
               <label>$INFO[ListItem.Label]</label>
               <include>SkinShortcutsLeftListTemplate</include>
+              <visible>!SubString(Window.Property(GroupName),.3,right) + !SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),.3,right) + !SubString(Window.Property(GroupName),.4,right) + !SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),.4,right)</visible>
             </control>
           </itemlayout>
           <focusedlayout width="450" height="66">
@@ -148,13 +139,15 @@
               <label>$INFO[ListItem.Label]</label>
               <include>SkinShortcutsLeftListTemplate</include>
               <animation effect="zoom" center="430,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
-              <visible>!ControlGroup(900).HasFocus</visible>
+              <visible>!ControlGroup(900).HasFocus + !SubString(Window.Property(GroupName),.3,right) + !SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),.3,right) + !SubString(Window.Property(GroupName),.4,right) + !SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),.4,right)</visible>
             </control>
           </focusedlayout>
         </control>
 
         <!-- Move/Delete menu -->
         <control type="group">
+          <visible>!SubString(Window.Property(GroupName),.3,right) + !SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),.3,right) + !SubString(Window.Property(GroupName),.4,right) + !SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),.4,right)</visible>
+
           <control type="grouplist" id="900">
             <include>HiddenControl</include>
             <itemgap>0</itemgap>
@@ -215,43 +208,44 @@
           </control>
         </control>
 
-        <!-- Custom properties hidden button -->
-        <control type="button" id="404">
-          <include>HiddenControl</include>
-        </control>
-
         <!-- Right grouplist -->
         <control type="grouplist" id="300">
           <left>SkinShortcutsRightGListLeft</left>
           <width>SkinShortcutsRightGListWidth</width>
           <height>SkinShortcutsListHeight</height>
           <itemgap>0</itemgap>
-          <onleft>211</onleft>
+          <onleft condition="!SubString(Window.Property(GroupName),.3,right) + !SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),.3,right) + !SubString(Window.Property(GroupName),.4,right) + !SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),.4,right)">211</onleft>
+          <onleft condition="SubString(Window.Property(GroupName),.3,right) | SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),.3,right) | SubString(Window.Property(GroupName),.4,right) | SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),.4,right)">308</onleft>
           <onright>308</onright>
           <onup>noop</onup>
           <ondown>308</ondown>
           <orientation>vertical</orientation>
           <scrolltime tween="sine" easing="out">320</scrolltime>
 
+          <animation effect="slide" end="-215,0" time="0" tween="cubic" easing="out" condition="SubString(Window.Property(GroupName),.3,right) | SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),.3,right) | SubString(Window.Property(GroupName),.4,right) | SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),.4,right)">Conditional</animation>
+
           <!-- Set label -->
           <control type="button" id="305">
             <include>SkinShortcutsRightGListTemplateWithText</include>
             <label>$ADDON[script.skinshortcuts 32025]</label>
             <label2>$INFO[Container(211).ListItem.Label]</label2>
-            <onfocus>SetProperty(AlaskaB.SkinShortcuts.GroupName,$INFO[Window.Property(groupname)])</onfocus>
+            <onfocus>SetProperty(AlaskaB.SkinShortcuts.GroupName,$INFO[Window.Property(GroupName)])</onfocus>
+            <visible>!SubString(Window.Property(GroupName),.3,right) + !SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),.3,right) + !SubString(Window.Property(GroupName),.4,right) + !SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),.4,right)</visible>
           </control>
           <!-- Custom action -->
           <control type="button" id="307">
             <include>SkinShortcutsRightGListTemplateWithText</include>
             <label>$ADDON[script.skinshortcuts 32027]</label>
             <label2>$INFO[Container(211).ListItem.Property(displaypath)]</label2>
-            <visible>SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),mainmenu) | SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),submenu) | [SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),videohub) + SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),list)]</visible>
+            <onfocus>SetProperty(AlaskaB.SkinShortcuts.GroupName,$INFO[Window.Property(GroupName)])</onfocus>
+            <visible>!SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),widgets,right)</visible>
           </control>
           <!-- Choose shortcut -->
           <control type="button" id="401">
             <include>SkinShortcutsRightGListTemplateWithText</include>
             <label>$ADDON[script.skinshortcuts 32048]</label>
-            <visible>SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),mainmenu) | SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),submenu) | [SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),videohub) + SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),list)]</visible>
+            <onfocus>SetProperty(AlaskaB.SkinShortcuts.GroupName,$INFO[Window.Property(GroupName)])</onfocus>
+            <visible>!SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),widgets,right)</visible>
           </control>
           <!--change widget-->
           <control type="button" id="309">
@@ -259,26 +253,46 @@
             <label>$ADDON[script.skinshortcuts 32044]</label>
             <label2>$INFO[Container(211).ListItem.Property(widgetPlaylist)]</label2>
             <onclick>SetProperty(useWidgetNameAsLabel,true)</onclick>
-            <visible>SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),videohub) + SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),widgets)</visible>
+            <onfocus>SetProperty(AlaskaB.SkinShortcuts.GroupName,$INFO[Window.Property(GroupName)])</onfocus>
+            <visible>SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),widgets,right)</visible>
           </control>
+
+          <!-- <control type="button" id="311">
+            <include>SkinShortcutsRightGListTemplateWithText</include>
+            <label>$ADDON[script.skinshortcuts 32026]</label>
+            <label2>$INFO[Container(211).ListItem.Thumbnail]</label2>
+            <onfocus>SetProperty(AlaskaB.SkinShortcuts.GroupName,$INFO[Window.Property(GroupName)])</onfocus>
+            <visible>StringCompare(Window.Property(AlaskaB.SkinShortcuts.GroupName),mainmenu)</visible>
+          </control> -->
+
           <!-- Select background -->
           <control type="button" id="310">
             <include>SkinShortcutsRightGListTemplateWithText</include>
             <label>$ADDON[script.skinshortcuts 32045]</label>
             <label2>$INFO[Container(211).ListItem.Property(background)]</label2>
-            <visible>SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),mainmenu)</visible>
+            <onfocus>SetProperty(AlaskaB.SkinShortcuts.GroupName,$INFO[Window.Property(GroupName)])</onfocus>
+            <visible>StringCompare(Window.Property(AlaskaB.SkinShortcuts.GroupName),mainmenu)</visible>
           </control>
-          <!-- Edit submenu -->
-          <control type="button" id="405">
+          <!-- Edit submenu 3 -->
+          <control type="button" id="408">
             <include>SkinShortcutsRightGListTemplateWithText</include>
-            <label>Edit submenu</label>
-            <visible>SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),mainmenu)</visible>
+            <label>Customize Up shortcut</label>
+            <onfocus>SetProperty(AlaskaB.SkinShortcuts.GroupName,$INFO[Window.Property(GroupName)])</onfocus>
+            <visible>StringCompare(Window.Property(AlaskaB.SkinShortcuts.GroupName),mainmenu)</visible>
+          </control>
+          <!-- Edit submenu 4 -->
+          <control type="button" id="409">
+            <include>SkinShortcutsRightGListTemplateWithText</include>
+            <label>Customize Down shortcut</label>
+            <onfocus>SetProperty(AlaskaB.SkinShortcuts.GroupName,$INFO[Window.Property(GroupName)])</onfocus>
+            <visible>StringCompare(Window.Property(AlaskaB.SkinShortcuts.GroupName),mainmenu)</visible>
           </control>
           <!-- Add -->
           <control type="button" id="301">
             <include>SkinShortcutsRightGListTemplateWithText</include>
             <label>$ADDON[script.skinshortcuts 32000]</label>
-            <!-- <enabled>![</enabled> -->
+            <onfocus>SetProperty(AlaskaB.SkinShortcuts.GroupName,$INFO[Window.Property(GroupName)])</onfocus>
+            <visible>!SubString(Window.Property(GroupName),.3,right) + !SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),.3,right) + !SubString(Window.Property(GroupName),.4,right) + !SubString(Window.Property(AlaskaB.SkinShortcuts.GroupName),.4,right)</visible>
           </control>
         </control>
       </control>

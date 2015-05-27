@@ -81,8 +81,8 @@
       <control type="fixedlist" id="8000">
         <width>HomeWidth</width>
         <height>HomeListHeight</height>
-        <onup condition="!IsEmpty(Container(8100).ListItemNoWrap(0).Property(path))">$INFO[Container(8100).ListItemNoWrap(0).Property(path)]</onup>
-        <ondown condition="!IsEmpty(Container(8100).ListItemNoWrap(1).Property(path))">$INFO[Container(8100).ListItemNoWrap(1).Property(path)]</ondown>
+        <onup condition="IntegerGreaterThan(Container(8300).NumItems,0) + !IsEmpty(Container(8300).ListItem(0).Property(path)) + !StringCompare(Container(8300).ListItem(0).Property(path),noop)">$INFO[Container(8300).ListItem(0).Property(path)]</onup>
+        <ondown condition="IntegerGreaterThan(Container(8400).NumItems,0) + !IsEmpty(Container(8400).ListItem(0).Property(path)) + !StringCompare(Container(8400).ListItem(0).Property(path),noop)">$INFO[Container(8400).ListItem(0).Property(path)]</ondown>
         <focusposition>2</focusposition>
         <orientation>horizontal</orientation>
         <scrolltime tween="sine" easing="inout">350</scrolltime>
@@ -117,11 +117,11 @@
             <include>HomeMainMenuLabelShade</include>
             <control type="image">
               <include>HomeMainMenuActionUp</include>
-              <visible>!IsEmpty(Container(8100).ListItemNoWrap(0).Property(path))</visible>
+              <visible>IntegerGreaterThan(Container(8300).NumItems,0) + !IsEmpty(Container(8300).ListItem(0).Property(path)) + !StringCompare(Container(8300).ListItem(0).Property(path),noop)</visible>
             </control>
             <control type="image">
               <include>HomeMainMenuActionDown</include>
-              <visible>!IsEmpty(Container(8100).ListItemNoWrap(1).Property(path))</visible>
+              <visible>IntegerGreaterThan(Container(8400).NumItems,0) + !IsEmpty(Container(8400).ListItem(0).Property(path)) + !StringCompare(Container(8400).ListItem(0).Property(path),noop)</visible>
             </control>
           </control>
           <control type="button">
@@ -137,10 +137,16 @@
       </control>
     </control>
 
-    <control type="list" id="8100">
+    <control type="list" id="8300">
       <include>HiddenControl</include>
       <content>
-        <include>skinshortcuts-submenu</include>
+        <include>skinshortcuts-submenu-3</include>
+      </content>
+    </control>
+    <control type="list" id="8400">
+      <include>HiddenControl</include>
+      <content>
+        <include>skinshortcuts-submenu-4</include>
       </content>
     </control>
   </include>
