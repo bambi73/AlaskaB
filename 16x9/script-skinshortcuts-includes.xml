@@ -130,6 +130,21 @@
 			<property name="background">special://skin/media/home/system</property>
 			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.settings)]</property>
 			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="9">
+			<label>YT Search</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://C%3a%5cUsers%5cBambi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.video.youtube%5cresources%5cmedia%5csearch.png/</thumb>
+			<property name="labelID">plugin.video.youtube/kodion/search/list/</property>
+			<property name="defaultID">plugin.video.youtube/kodion/search/list/</property>
+			<onclick>ActivateWindow(10025,"plugin://plugin.video.youtube/kodion/search/list/",return)</onclick>
+			<property name="path">ActivateWindow(10025,"plugin://plugin.video.youtube/kodion/search/list/",return)</property>
+			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">plugin-video-youtube-kodion-search-list</property>
+			<property name="group">mainmenu</property>
+			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.plugin-video-youtube-kodion-search-list)]</property>
+			<property name="hasSubmenu">False</property>
 			<property name="hasSubmenu">True</property>
 			<property name="hasSubmenu">False</property>
 		</item>
@@ -751,6 +766,16 @@
 	<include name="skinshortcuts-group-alt-settings-3" />
 	<include name="skinshortcuts-group-settings-4" />
 	<include name="skinshortcuts-group-alt-settings-4" />
+	<include name="skinshortcuts-group-plugin-video-youtube-kodion-search-list" />
+	<include name="skinshortcuts-group-alt-plugin-video-youtube-kodion-search-list" />
+	<include name="skinshortcuts-group-plugin-video-youtube-kodion-search-list-1" />
+	<include name="skinshortcuts-group-alt-plugin-video-youtube-kodion-search-list-1" />
+	<include name="skinshortcuts-group-plugin-video-youtube-kodion-search-list-2" />
+	<include name="skinshortcuts-group-alt-plugin-video-youtube-kodion-search-list-2" />
+	<include name="skinshortcuts-group-plugin-video-youtube-kodion-search-list-3" />
+	<include name="skinshortcuts-group-alt-plugin-video-youtube-kodion-search-list-3" />
+	<include name="skinshortcuts-group-plugin-video-youtube-kodion-search-list-4" />
+	<include name="skinshortcuts-group-alt-plugin-video-youtube-kodion-search-list-4" />
 	<include name="skinshortcuts-group-videohub-list">
 		<item id="1">
 			<label>Recenty added</label>

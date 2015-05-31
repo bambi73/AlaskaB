@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+  <defaultcontrol always="true">300</defaultcontrol>
+  <coordinates>
+    <origin x="0" y="0"/>
+  </coordinates>
+
+  <!-- <onload>SetProperty(AlaskaB.SkinShortcuts.SubMenuType,$INFO[Window(Home).Property(AlaskaB.SkinShortcuts.SubMenuType)])</onload> -->
+  <!-- <onunload>ClearProperty(AlaskaB.SkinShortcuts.SubMenuType,Home)</onunload> -->
+
+  <controls>
+    <include>Global_Background</include>
+
+    <control type="group" id="5000">
+      <centertop>49%</centertop>
+      <left>SkinShortcutsLeft</left>
+      <width>SkinShortcutsWidth</width>
+      <height>SkinShortcutsHeight</height>
+
+      <include>Animation_ZoomInZoomOut</include>
+      <include>Animation_ZoomedByMenu</include>
+      <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(virtualkeyboard) | Window.IsActive(filebrowser) | !IsEmpty(Window.Property(additionalDialog))">
+        <include>AnimationEffect_ZoomedBy</include>
+      </animation>
+      <!-- <animation effect="slide" end="0,131" time="0" condition="SubString(Window.Property(GroupName),.3,right) | SubString(Window.Property(GroupName),.3,right) | SubString(Window.Property(GroupName),.4,right) | SubString(Window.Property(GroupName),.4,right)">Conditional</animation> -->
+
+      <!-- <control type="image">
+        <width>SkinShortcutsWidth</width>
+        <height>SkinShortcutsHeight</height>
+        <visible>!Control.IsVisible(8800)</visible>
+        <texture>settings/settings-category-bg.png</texture>
+      </control>
+      <control type="image">
+        <width>SkinShortcutsWidth</width>
+        <height>SkinShortcutsHeight</height>
+        <visible>Control.IsVisible(8800)</visible>
+        <texture>settings/settings-category-bg-scrollbar.png</texture>
+      </control> -->
+
+      <!-- <control type="group">
+        <visible>!SubString(Window.Property(GroupName),.3,right) + !SubString(Window.Property(GroupName),.3,right) + !SubString(Window.Property(GroupName),.4,right) + !SubString(Window.Property(GroupName),.4,right)</visible> -->
+        
+        <control type="image">
+          <width>SkinShortcutsWidth</width>
+          <height>14</height>
+          <texture>hub/list_bg_border5.png</texture>
+        </control>
+        <control type="image">
+          <top>14</top>
+          <width>SkinShortcutsWidth</width>
+          <height>88</height>
+          <texture>hub/list_bg5.png</texture>
+        </control>
+        <control type="image">
+          <top>102</top>
+          <width>SkinShortcutsWidth</width>
+          <height>3</height>
+          <texture>hub/list_bg_delimiter5.png</texture>
+        </control>
+        <control type="image">
+          <top>105</top>
+          <width>SkinShortcutsWidth</width>
+          <height>491</height>
+          <texture>hub/list_bg5.png</texture>
+        </control>
+        <control type="image">
+          <top>596</top>
+          <width>SkinShortcutsWidth</width>
+          <height>3</height>
+          <texture>hub/list_bg_delimiter5.png</texture>
+        </control>
+        <control type="image">
+          <top>599</top>
+          <width>SkinShortcutsWidth</width>
+          <height>109</height>
+          <texture>hub/list_bg5.png</texture>
+        </control>
+        <control type="image">
+          <top>708</top>
+          <width>SkinShortcutsWidth</width>
+          <height>14</height>
+          <texture flipy="true">hub/list_bg_border5.png</texture>
+        </control>
+      <!-- </control> -->
+      <!-- <control type="group">
+        <visible>SubString(Window.Property(GroupName),.3,right) | SubString(Window.Property(GroupName),.3,right) | SubString(Window.Property(GroupName),.4,right) | SubString(Window.Property(GroupName),.4,right)</visible>
+
+        <control type="image">
+          <left>210</left>
+          <width>SkinShortcutsWidth2</width>
+          <height>14</height>
+          <texture>hub/list_bg_border5.png</texture>
+        </control>
+        <control type="image">
+          <top>14</top>
+          <left>210</left>
+          <width>SkinShortcutsWidth2</width>
+          <height>88</height>
+          <texture>hub/list_bg5.png</texture>
+        </control>
+        <control type="image">
+          <top>102</top>
+          <left>210</left>
+          <width>SkinShortcutsWidth2</width>
+          <height>3</height>
+          <texture>hub/list_bg_delimiter5.png</texture>
+        </control>
+        <control type="image">
+          <top>105</top>
+          <left>210</left>
+          <width>SkinShortcutsWidth2</width>
+          <height>229</height>
+          <texture>hub/list_bg5.png</texture>
+        </control>
+        <control type="image">
+          <top>334</top>
+          <left>210</left>
+          <width>SkinShortcutsWidth2</width>
+          <height>3</height>
+          <texture>hub/list_bg_delimiter5.png</texture>
+        </control>
+        <control type="image">
+          <top>337</top>
+          <left>210</left>
+          <width>SkinShortcutsWidth2</width>
+          <height>109</height>
+          <texture>hub/list_bg5.png</texture>
+        </control>
+        <control type="image">
+          <top>446</top>
+          <left>210</left>
+          <width>SkinShortcutsWidth2</width>
+          <height>14</height>
+          <texture flipy="true">hub/list_bg_border5.png</texture>
+        </control>
+      </control> -->
+
+      <!-- Header label -->
+      <control type="label" id="500">
+        <include>SkinShortcutsHeaderLabel</include>
+        <visible>StringCompare(Window.Property(GroupName),mainmenu)</visible>
+      </control>
+      <!-- <control type="label">
+        <include>SkinShortcutsHeaderLabel</include>
+        <label>Configure VideoHub #1 Menu</label>
+        <visible>SubString(Window.Property(groupname),videohub) + SubString(Window.Property(groupname),list)</visible>
+      </control> -->
+      <!-- <control type="label">
+        <include>SkinShortcutsHeaderLabel</include>
+        <label>Configure VideoHub #1 Widgets</label>
+        <visible>SubString(Window.Property(groupname),videohub) + SubString(Window.Property(groupname),widgets)</visible>
+      </control> -->
+      <!-- <control type="label">
+        <include>SkinShortcutsHeaderLabel</include>
+        <label>Customize $INFO[Window.Property(groupDisplayName)] shortcut - UP</label>
+        <visible>SubString(Window.Property(GroupName),.3,right) | SubString(Window.Property(GroupName),.3,right)</visible>
+      </control>
+      <control type="label">
+        <include>SkinShortcutsHeaderLabel</include>
+        <label>Customize $INFO[Window.Property(groupDisplayName)] shortcut - DOWN</label>
+        <visible>SubString(Window.Property(GroupName),.4,right) | SubString(Window.Property(GroupName),.4,right)</visible>
+      </control> -->
+
+      <!-- <control type="label">
+        <include>SkinShortcutsHeaderLabel</include>
+        <label>$INFO[Window.Property(GroupName)]</label>
+      </control> -->
+
+      <control type="group">
+        <left>160</left>
+        <top>118</top>
+
+        <!-- Shortcut list -->
+        <control type="list" id="211">
+          <left>SkinShortcutsLeftListLeft</left>
+          <width>SkinShortcutsLeftListWidth</width>
+          <height>SkinShortcutsListHeight</height>
+          <onright condition="IsEmpty(Window.Property(actionEdit))">300</onright>
+          <onright condition="!IsEmpty(Window.Property(actionEdit))">450</onright>
+          <ondown>308</ondown>
+          <onleft>304</onleft>
+          <include>DialogBaseVerticalList</include>
+          <itemlayout width="450" height="66">
+            <control type="label">
+              <left>80</left>
+              <width>370</width>
+              <label>$INFO[ListItem.Label]</label>
+              <include>SkinShortcutsLeftListTemplate</include>
+            </control>
+          </itemlayout>
+          <focusedlayout width="450" height="66">
+            <control type="label">
+              <left>94</left>
+              <width>356</width>
+              <textcolor>TextHeavy</textcolor>
+              <label>$INFO[ListItem.Label]</label>
+              <include>SkinShortcutsLeftListTemplate</include>
+              <animation effect="zoom" center="430,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
+              <visible>!ControlGroup(900).HasFocus</visible>
+            </control>
+          </focusedlayout>
+        </control>
+
+        <!-- Move/Delete menu -->
+        <control type="group">
+          <control type="grouplist" id="900">
+            <include>HiddenControl</include>
+            <itemgap>0</itemgap>
+            <onleft>308</onleft>
+            <onright>211</onright>
+            <onup>211</onup>
+            <onup>Control.Move(211,-1)</onup>
+            <ondown>211</ondown>
+            <ondown>Control.Move(211,1)</ondown>
+            <orientation>horizontal</orientation>
+            <scrolltime tween="sine" easing="out">320</scrolltime>
+
+            <control type="button" id="302">
+              <include>HiddenControl</include>
+            </control>
+            <control type="button" id="303">
+              <include>HiddenControl</include> 
+            </control>
+            <control type="button" id="304">
+              <include>HiddenControl</include>
+            </control>
+          </control>
+
+          <control type="group" id="910">
+            <top>0</top>
+            <visible>Container(211).Row(0)</visible>
+            <include>SkinShortcutsMoveControlTemplate</include>
+          </control>
+          <control type="group" id="911">
+            <top>66</top>
+            <visible>Container(211).Row(1)</visible>
+            <include>SkinShortcutsMoveControlTemplate</include>
+          </control>
+          <control type="group" id="912">
+            <top>132</top>
+            <visible>Container(211).Row(2)</visible>
+            <include>SkinShortcutsMoveControlTemplate</include>
+          </control>
+          <control type="group" id="913">
+            <top>198</top>
+            <visible>Container(211).Row(3)</visible>
+            <include>SkinShortcutsMoveControlTemplate</include>
+          </control>
+          <control type="group" id="914">
+            <top>264</top>
+            <visible>Container(211).Row(4)</visible>
+            <include>SkinShortcutsMoveControlTemplate</include>
+          </control>
+          <control type="group" id="915">
+            <top>330</top>
+            <visible>Container(211).Row(5)</visible>
+            <include>SkinShortcutsMoveControlTemplate</include>
+          </control>
+          <control type="group" id="916">
+            <top>396</top>
+            <visible>Container(211).Row(6)</visible>
+            <include>SkinShortcutsMoveControlTemplate</include>
+          </control>
+        </control>
+
+        <!-- Right grouplist #1 -->
+        <control type="grouplist" id="300">
+          <left>SkinShortcutsRightGListLeft</left>
+          <width>SkinShortcutsRightGListWidth</width>
+          <height>SkinShortcutsListHeight</height>
+          <itemgap>0</itemgap>
+          <onleft>211</onleft>
+          <onup>noop</onup>
+          <ondown>noop</ondown>
+          <orientation>vertical</orientation>
+          <scrolltime tween="sine" easing="out">320</scrolltime>
+          <visible allowhiddenfocus="true">IsEmpty(Window.Property(actionEdit))</visible>
+
+          <!-- Set label -->
+          <control type="button" id="305">
+            <include>SkinShortcutsRightGListTemplateWithText</include>
+            <label>Label</label>
+            <label2>$INFO[Container(211).ListItem.Label]</label2>
+            <!-- <onfocus>SetProperty(GroupName,$INFO[Window.Property(GroupName)])</onfocus> -->
+          </control>
+          <!-- Custom action -->
+          <!-- <control type="button" id="307">
+            <include>SkinShortcutsRightGListTemplateWithText</include>
+            <label>$ADDON[script.skinshortcuts 32027]</label>
+            <label2>$INFO[Container(211).ListItem.Property(displaypath)]</label2>
+            <visible>!SubString(Window.Property(GroupName),widgets,right)</visible>
+          </control> -->
+          <!-- Choose shortcut -->
+          <!-- <control type="button" id="401">
+            <include>SkinShortcutsRightGListTemplateWithText</include>
+            <label>$ADDON[script.skinshortcuts 32048]</label>
+            <visible>!SubString(Window.Property(GroupName),widgets,right)</visible>
+          </control> -->
+
+          <control type="button" id="451">
+            <include>SkinShortcutsRightGListTemplateWithText</include>
+            <label>Main action</label>
+            <label2>$INFO[Container(211).ListItem.Property(displaypath)]</label2>
+            <visible>StringCompare(Window.Property(GroupName),mainmenu)</visible>
+            <onclick>SetFocus(460)</onclick>
+          </control>
+          <control type="button" id="452">
+            <include>SkinShortcutsRightGListTemplateWithText</include>
+            <label>Up action</label>
+            <label2>$INFO[Container(211).ListItem.Property(upAction)]</label2>
+            <visible>StringCompare(Window.Property(GroupName),mainmenu)</visible>
+            <onclick>SetFocus(460)</onclick>
+          </control>
+          <control type="button" id="453">
+            <include>SkinShortcutsRightGListTemplateWithText</include>
+            <label>Down action</label>
+            <label2>$INFO[Container(211).ListItem.Property(downAction)]</label2>
+            <visible>StringCompare(Window.Property(GroupName),mainmenu)</visible>
+            <onclick>SetFocus(460)</onclick>
+          </control>
+
+
+
+          <!--change widget-->
+          <control type="button" id="309">
+            <include>SkinShortcutsRightGListTemplateWithText</include>
+            <label>$ADDON[script.skinshortcuts 32044]</label>
+            <label2>$INFO[Container(211).ListItem.Property(widgetPlaylist)]</label2>
+            <onclick>SetProperty(useWidgetNameAsLabel,true)</onclick>
+            <visible>SubString(Window.Property(GroupName),widgets,right)</visible>
+          </control>
+
+          <!-- <control type="button" id="306">
+            <include>SkinShortcutsRightGListTemplateWithText</include>
+            <label>$ADDON[script.skinshortcuts 32026]</label>
+            <label2>$INFO[Container(211).ListItem.Thumbnail]</label2>
+            <visible>StringCompare(Window.Property(GroupName),mainmenu)</visible>
+          </control> -->
+
+          <!-- Select background -->
+          <control type="button" id="310">
+            <include>SkinShortcutsRightGListTemplateWithText</include>
+            <label>$ADDON[script.skinshortcuts 32045]</label>
+            <label2>$INFO[Container(211).ListItem.Property(background)]</label2>
+            <visible>StringCompare(Window.Property(GroupName),mainmenu)</visible>
+          </control>
+          <!-- Edit submenu 3 -->
+          <!-- <control type="button" id="408">
+            <include>SkinShortcutsRightGListTemplateWithText</include>
+            <label>Customize Up shortcut</label>
+            <visible>StringCompare(Window.Property(GroupName),mainmenu)</visible>
+          </control> -->
+          <!-- Edit submenu 4 -->
+          <!-- <control type="button" id="409">
+            <include>SkinShortcutsRightGListTemplateWithText</include>
+            <label>Customize Down shortcut</label>
+            <visible>StringCompare(Window.Property(GroupName),mainmenu)</visible>
+          </control> -->
+          <!-- Add -->
+          <control type="button" id="301">
+            <include>SkinShortcutsRightGListTemplateWithText</include>
+            <label>$ADDON[script.skinshortcuts 32000]</label>
+            <!-- <visible>!SubString(Window.Property(GroupName),.3,right) + !SubString(Window.Property(GroupName),.3,right) + !SubString(Window.Property(GroupName),.4,right) + !SubString(Window.Property(GroupName),.4,right)</visible> -->
+          </control>
+        </control>
+
+        <!-- Right grouplist #2 -->
+        <control type="grouplist" id="450">
+          <left>SkinShortcutsRightGListLeft</left>
+          <width>SkinShortcutsRightGListWidth</width>
+          <height>SkinShortcutsListHeight</height>
+          <itemgap>0</itemgap>
+          <onleft>211</onleft>
+          <onup>noop</onup>
+          <ondown>noop</ondown>
+          <onback condition="StringCompare(Window.Property(actionEditDirection),Main)">SetFocus(451)</onback>
+          <onback condition="StringCompare(Window.Property(actionEditDirection),Up)">SetFocus(452)</onback>
+          <onback condition="StringCompare(Window.Property(actionEditDirection),Down)">SetFocus(453)</onback>
+          <orientation>vertical</orientation>
+          <scrolltime tween="sine" easing="out">320</scrolltime>
+          <visible>!IsEmpty(Window.Property(actionEdit))</visible>
+
+          <!-- Header label -->
+          <control type="button" id="460">
+            <include>SkinShortcutsRightGListTemplateWithText</include>
+            <label>Header label</label>
+            <label2>$VAR[SkinShortcuts_ActionHeaderLabel2]</label2>
+            <visible allowhiddenfocus="true"/>
+          </control>
+          <!-- SubHeader label -->
+          <control type="button" id="461">
+            <include>SkinShortcutsRightGListTemplateWithText</include>
+            <label>SubHeader label</label>
+            <label2>$VAR[SkinShortcuts_ActionSubHeaderLabel2]</label2>
+          </control>
+          <!-- Action -->
+          <control type="button" id="462">
+            <include>SkinShortcutsRightGListTemplateWithText</include>
+            <label>Action</label>
+            <label2>$VAR[SkinShortcuts_ActionLabel2]</label2>
+          </control>
+          <!-- Action2 -->
+          <control type="button" id="464">
+            <include>SkinShortcutsRightGListTemplateWithText</include>
+            <label>Action #2</label>
+            <label2>$VAR[SkinShortcuts_Action2Label2]</label2>
+            <enable>[StringCompare(Window.Property(actionEditDirection),Main) + !IsEmpty(Container(211).ListItem.Property(mainAction))] | 
+             [StringCompare(Window.Property(actionEditDirection),Up) + !IsEmpty(Container(211).ListItem.Property(upAction))] |
+             [StringCompare(Window.Property(actionEditDirection),Down) + !IsEmpty(Container(211).ListItem.Property(downAction))]</enable>
+           </control>
+          <!-- Action3 -->
+          <control type="button" id="466">
+            <include>SkinShortcutsRightGListTemplateWithText</include>
+            <label>Action #3</label>
+            <label2>$VAR[SkinShortcuts_Action3Label2]</label2>
+            <enable>[StringCompare(Window.Property(actionEditDirection),Main) + !IsEmpty(Container(211).ListItem.Property(mainAction2))] | 
+             [StringCompare(Window.Property(actionEditDirection),Up) + !IsEmpty(Container(211).ListItem.Property(upAction2))] |
+             [StringCompare(Window.Property(actionEditDirection),Down) + !IsEmpty(Container(211).ListItem.Property(downAction2))]</enable>
+          </control>
+
+          <!-- Back -->
+          <control type="button" id="469">
+            <include>SkinShortcutsRightGListTemplateWithText</include>
+            <label>Back</label>
+            <onclick condition="StringCompare(Window.Property(actionEditDirection),Main)">SetFocus(451)</onclick>
+            <onclick condition="StringCompare(Window.Property(actionEditDirection),Up)">SetFocus(452)</onclick>
+            <onclick condition="StringCompare(Window.Property(actionEditDirection),Down)">SetFocus(453)</onclick>
+          </control>
+        </control>
+      </control>
+
+      <control type="button" id="308">
+        <top>597</top>
+        <onup>300</onup>
+        <width>SkinShortcutsControlWidth</width>
+        <include>DialogBottomButton1Center</include>
+        <animation type="Conditional" condition="Control.HasFocus(308)" reversible="false">
+          <include>AnimationEffect_DialogBottomButton1CenterFocus</include>
+        </animation>
+        <animation type="Conditional" condition="!Control.HasFocus(308)" reversible="false">
+          <include>AnimationEffect_DialogBottomButton1CenterUnfocus</include>
+        </animation>
+      </control>
+    </control>
+  </controls>
+
+</window>

@@ -1380,7 +1380,7 @@
     <left>-10</left>
     <width>124</width>
     <height>66</height>
-    <animation effect="slide" end="355,2" time="0" tween="cubic" easing="out" condition="ControlGroup(900).HasFocus">Conditional</animation>
+    <animation effect="slide" end="355,2" time="0" condition="ControlGroup(900).HasFocus">Conditional</animation>
 
     <control type="image">
       <width>31</width>

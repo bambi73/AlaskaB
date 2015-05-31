@@ -643,4 +643,35 @@
     <value>PSVZ</value>
   </variable>
 
+  <!-- Tady je Bambiho #2 -->
+  <variable name="SkinShortcuts_ActionLabel2">
+    <value condition="StringCompare(Window.Property(actionEditDirection),Main)">$INFO[Container(211).ListItem.Property(mainAction)]</value>
+    <value condition="StringCompare(Window.Property(actionEditDirection),Up)">$INFO[Container(211).ListItem.Property(upAction)]</value>
+    <value condition="StringCompare(Window.Property(actionEditDirection),Down)">$INFO[Container(211).ListItem.Property(downAction)]</value>
+  </variable>
+
+  <variable name="SkinShortcuts_Action2Label2">
+    <value condition="StringCompare(Window.Property(actionEditDirection),Main)">$INFO[Container(211).ListItem.Property(mainAction2)]</value>
+    <value condition="StringCompare(Window.Property(actionEditDirection),Up)">$INFO[Container(211).ListItem.Property(upAction2)]</value>
+    <value condition="StringCompare(Window.Property(actionEditDirection),Down)">$INFO[Container(211).ListItem.Property(downAction2)]</value>
+  </variable>
+
+  <variable name="SkinShortcuts_Action3Label2">
+    <value condition="StringCompare(Window.Property(actionEditDirection),Main)">$INFO[Container(211).ListItem.Property(mainAction3)]</value>
+    <value condition="StringCompare(Window.Property(actionEditDirection),Up)">$INFO[Container(211).ListItem.Property(upAction3)]</value>
+    <value condition="StringCompare(Window.Property(actionEditDirection),Down)">$INFO[Container(211).ListItem.Property(downAction3)]</value>
+  </variable>
+
+  <variable name="SkinShortcuts_ActionHeaderLabel2">
+    <value condition="StringCompare(Window.Property(actionEditDirection),Main)">$INFO[Container(211).ListItem.Property(mainActionHeader)]</value>
+    <value condition="StringCompare(Window.Property(actionEditDirection),Up)">$INFO[Container(211).ListItem.Property(upActionHeader)]</value>
+    <value condition="StringCompare(Window.Property(actionEditDirection),Down)">$INFO[Container(211).ListItem.Property(downActionHeader)]</value>
+  </variable>
+
+  <variable name="SkinShortcuts_ActionSubHeaderLabel2">
+    <value condition="StringCompare(Window.Property(actionEditDirection),Main)">$INFO[Container(211).ListItem.Property(mainActionSubHeader)]</value>
+    <value condition="StringCompare(Window.Property(actionEditDirection),Up)">$INFO[Container(211).ListItem.Property(upActionSubHeader)]</value>
+    <value condition="StringCompare(Window.Property(actionEditDirection),Down)">$INFO[Container(211).ListItem.Property(downActionSubHeader)]</value>
+  </variable>
+
 </includes>
