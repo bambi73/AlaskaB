@@ -187,3 +187,6 @@ if sys.argv[1] == 'updateDirectionShortcut':
 
 
 # ====-------------------====
+
+#xbmc.log(xbmc.getLocalizedString(31128))
+

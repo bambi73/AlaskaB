@@ -10,6 +10,7 @@
 
   <thumbnail label="None thumb">special://skin/media/defaultaddonnone.png</thumbnail>
   <thumbnail label="Folder thumb">special://skin/media/defaultfolder.png</thumbnail>
+  <thumbnailBrowseDefault>special://skin/extras/studio/</thumbnailBrowseDefault>
 
   <background label="31800">special://skin/media/home/pictures/</background>
   <background label="31801">special://skin/media/home/music/</background>

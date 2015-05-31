@@ -1341,6 +1341,7 @@
   <!-- Skin-shortcuts -->
   <constant name="SkinShortcutsLeft">-160</constant>
   <constant name="SkinShortcutsWidth">2240</constant>
+  <constant name="SkinShortcutsWidth2">1820</constant>
   <constant name="SkinShortcutsHeight">722</constant>
   <constant name="SkinShortcutsControlWidth">1720</constant>
 

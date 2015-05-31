@@ -397,7 +397,14 @@
             <control type="button" id="1414">
               <include>SkinSettingsRightGLTemplate</include>
               <textoffsetx>50</textoffsetx>
-              <label>Main menu</label>
+              <label>Main menu (script.alaskab.utils)</label>
+              <onclick>RunScript(script.alaskab.utils,type=manage&amp;group=mainmenu)</onclick>
+              <visible>System.HasAddon(script.alaskab.utils)</visible>
+            </control>        
+            <control type="button" id="1416">
+              <include>SkinSettingsRightGLTemplate</include>
+              <textoffsetx>50</textoffsetx>
+              <label>Main menu (script.skinshortcuts)</label>
               <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
               <visible>System.HasAddon(script.skinshortcuts)</visible>
             </control>        

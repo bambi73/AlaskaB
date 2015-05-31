@@ -1,0 +1,933 @@
+# Kodi Media Center language file
+# Addon Name: Alaska.B
+# Addon id: skin.alaskab
+# Addon Provider: Bambi73
+msgid ""
+msgstr ""
+"Project-Id-Version: XBMC Skins\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kodi Translation Team\n"
+"Language-Team: English (http://www.transifex.com/projects/p/xbmc-skins/language/en/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#31100"
+msgid "Items"
+msgstr ""
+
+msgctxt "#31101"
+msgid "Addons"
+msgstr ""
+
+msgctxt "#31102"
+msgid "Eject disc"
+msgstr ""
+
+msgctxt "#31103"
+msgid "Random Album"
+msgstr ""
+
+msgctxt "#31104"
+msgid "Recent Albums"
+msgstr ""
+
+msgctxt "#31105"
+msgid "Random Movie"
+msgstr ""
+
+msgctxt "#31106"
+msgid "Recent Movies"
+msgstr ""
+
+msgctxt "#31107"
+msgid "Random Episode"
+msgstr ""
+
+msgctxt "#31108"
+msgid "Recent Episodes"
+msgstr ""
+
+msgctxt "#31109"
+msgid "Master Mode"
+msgstr ""
+
+msgctxt "#31110"
+msgid "Sort By"
+msgstr ""
+
+msgctxt "#31111"
+msgid "Order"
+msgstr ""
+
+msgctxt "#31112"
+msgid "A-Z"
+msgstr ""
+
+msgctxt "#31113"
+msgid "Z-A"
+msgstr ""
+
+msgctxt "#31114"
+msgid "Hide"
+msgstr ""
+
+msgctxt "#31115"
+msgid "Title"
+msgstr ""
+
+msgctxt "#31116"
+msgid "Stacking"
+msgstr ""
+
+msgctxt "#31117"
+msgid "Aired"
+msgstr ""
+
+msgctxt "#31118"
+msgid "Mins"
+msgstr ""
+
+msgctxt "#31119"
+msgid "View"
+msgstr ""
+
+msgctxt "#31120"
+msgid "Poster"
+msgstr ""
+
+msgctxt "#31121"
+msgid "Wall"
+msgstr ""
+
+msgctxt "#31122"
+msgid "TV WATCHLIST"
+msgstr ""
+
+msgctxt "#31123"
+msgid "Landscape"
+msgstr ""
+
+msgctxt "#31124"
+msgid "Premiered"
+msgstr ""
+
+msgctxt "#31125"
+msgid "Show"
+msgstr ""
+
+msgctxt "#31126"
+msgid "Next Aired"
+msgstr ""
+
+msgctxt "#31127"
+msgid "Alaska"
+msgstr ""
+
+msgctxt "#31128"
+msgid "Adjust how XBMC handles video content. Includes library database options, subtitles, rendering, and playback options."
+msgstr ""
+
+msgctxt "#31129"
+msgid "Manage XBMC Add-ons. Includes browsing, searching, installing, and configuring Add-ons."
+msgstr ""
+
+msgctxt "#31130"
+msgid "Control core hardware and software functions. Includes video and audio hardware setup, internet access, power saving options, and parental master lock functions."
+msgstr ""
+
+msgctxt "#31131"
+msgid "Adjust how XBMC handles audio content. Includes browsing options for file and database library modes, song submissions to Last.FM and Libre.FM, together with karaoke setup."
+msgstr ""
+
+msgctxt "#31132"
+msgid "Set up Weather for XBMC Choose your Weather addon and location."
+msgstr ""
+
+msgctxt "#31133"
+msgid "Adjust the look and feel of XBMC. Includes skin, theme, sound and font selection, RSS feed control, and localisation settings."
+msgstr ""
+
+msgctxt "#31134"
+msgid "Adjust how XBMC displays personal image collections. Includes EXIF information, slideshow options."
+msgstr ""
+
+msgctxt "#31135"
+msgid "Set up XBMC's services. Includes UPnP File Sharing, control via UPnP and HTTP, and enabling Zeroconf and Airplay."
+msgstr ""
+
+msgctxt "#31136"
+msgid "Configure custom AlaskaB settings."
+msgstr ""
+
+msgctxt "#31137"
+msgid "Personalise your experience with profiles. Includes enabling login screen, and profile creation and management."
+msgstr ""
+
+msgctxt "#31138"
+msgid "Set up XBMC's PVR functions. Includes EPG, OSD, playback, and recording settings along with a channel manager."
+msgstr ""
+
+msgctxt "#31139"
+msgid "View your system's information. Includes storage, network, and hardware information."
+msgstr ""
+
+msgctxt "#31140"
+msgid "Movie Set"
+msgstr ""
+
+msgctxt "#31141"
+msgid "Set up"
+msgstr ""
+
+msgctxt "#31142"
+msgid "Stop"
+msgstr ""
+
+msgctxt "#31143"
+msgid "Watchlist"
+msgstr ""
+
+msgctxt "#31144"
+msgid "Runtime Not[CR]Available"
+msgstr ""
+
+msgctxt "#31145"
+msgid "Directed by:"
+msgstr ""
+
+msgctxt "#31146"
+msgid "Written by:"
+msgstr ""
+
+msgctxt "#31147"
+msgid "Starring:"
+msgstr ""
+
+msgctxt "#31148"
+msgid "Show"
+msgstr ""
+
+msgctxt "#31149"
+msgid "Information"
+msgstr ""
+
+msgctxt "#31150"
+msgid "Get"
+msgstr ""
+
+msgctxt "#31151"
+msgid "Images"
+msgstr ""
+
+msgctxt "#31152"
+msgid "Cinema"
+msgstr ""
+
+msgctxt "#31153"
+msgid "Experience"
+msgstr ""
+
+msgctxt "#31154"
+msgid "More by"
+msgstr ""
+
+msgctxt "#31155"
+msgid "Muted"
+msgstr ""
+
+msgctxt "#31156"
+msgid "Master Mode"
+msgstr ""
+
+msgctxt "#31157"
+msgid "Item"
+msgstr ""
+
+msgctxt "#31158"
+msgid "MOVIE WATCHLIST"
+msgstr ""
+
+msgctxt "#31159"
+msgid "ALBUM WATCHLIST"
+msgstr ""
+
+msgctxt "#31160"
+msgid "BANNER"
+msgstr ""
+
+msgctxt "#31161"
+msgid "Live TV"
+msgstr ""
+
+msgctxt "#31162"
+msgid "Addon"
+msgstr ""
+
+msgctxt "#31163"
+msgid "Change"
+msgstr ""
+
+msgctxt "#31164"
+msgid "Extras"
+msgstr ""
+
+msgctxt "#31165"
+msgid "Thumb"
+msgstr ""
+
+msgctxt "#31166"
+msgid "Press Up or Down to change song rating"
+msgstr ""
+
+msgctxt "#31167"
+msgid "Click to get thumb"
+msgstr ""
+
+msgctxt "#31168"
+msgid "Local subtitle found"
+msgstr ""
+
+msgctxt "#31169"
+msgid "Peripheral settings"
+msgstr ""
+
+msgctxt "#31170"
+msgid "Current Selected"
+msgstr ""
+
+msgctxt "#31171"
+msgid "System music files"
+msgstr ""
+
+msgctxt "#31172"
+msgid "Current playlist"
+msgstr ""
+
+msgctxt "#31173"
+msgid "Playlist Options"
+msgstr ""
+
+msgctxt "#31174"
+msgid "Visualisation Presets"
+msgstr ""
+
+  <!-- SettingsProfile.xml -->
+msgctxt "#31200"
+msgid "Show or hide the login screen at startup."
+msgstr ""
+
+msgctxt "#31201"
+msgid "Select the profile that will be used at startup when the login screen is disabled."
+msgstr ""
+
+msgctxt "#31202"
+msgid "Manage '"
+msgstr ""
+
+msgctxt "#31203"
+msgid "' profile settings."
+msgstr ""
+
+msgctxt "#31204"
+msgid "Add new profile."
+msgstr ""
+
+msgctxt "#31205"
+msgid "Last login:"
+msgstr ""
+
+  <!-- Skin shortcuts -->
+msgctxt "#31800"
+msgid "Default Picture backgrounds"
+msgstr ""
+
+msgctxt "#31801"
+msgid "Default Music backgrounds"
+msgstr ""
+
+  <!-- Used for 'Artwork Downloader' addon -->
+msgctxt "#31997"
+msgid "Artwork"
+msgstr ""
+
+msgctxt "#31998"
+msgid "Downloader"
+msgstr ""
+
+  <!-- Do not translate used for skin condition only -->
+msgctxt "#31999"
+msgid "SEASONS"
+msgstr ""
+
+  <!-- Foundation -->
+msgctxt "#31000"
+msgid "Finishes at"
+msgstr ""
+
+msgctxt "#31001"
+msgid "Files Mode"
+msgstr ""
+
+msgctxt "#31002"
+msgid "PROGRAMS"
+msgstr ""
+
+msgctxt "#31003"
+msgid "VIDEOS"
+msgstr ""
+
+msgctxt "#31004"
+msgid "MUSIC"
+msgstr ""
+
+msgctxt "#31005"
+msgid "PICTURES"
+msgstr ""
+
+msgctxt "#31006"
+msgid "MOVIES"
+msgstr ""
+
+msgctxt "#31007"
+msgid "TV SHOWS"
+msgstr ""
+
+msgctxt "#31008"
+msgid "FAVOURITES"
+msgstr ""
+
+msgctxt "#31009"
+msgid "PROFILES"
+msgstr ""
+
+msgctxt "#31010"
+msgid "WEATHER"
+msgstr ""
+
+msgctxt "#31011"
+msgid "FILE MANAGER"
+msgstr ""
+
+msgctxt "#31012"
+msgid "SETTINGS"
+msgstr ""
+
+msgctxt "#31013"
+msgid "SHUTDOWN"
+msgstr ""
+
+msgctxt "#31014"
+msgid "PLAY DISC"
+msgstr ""
+
+msgctxt "#31015"
+msgid "Player Controls"
+msgstr ""
+
+msgctxt "#31016"
+msgid "Background Visuals"
+msgstr ""
+
+msgctxt "#31017"
+msgid "Lyrics/Subtitles"
+msgstr ""
+
+msgctxt "#31018"
+msgid "Current Selected"
+msgstr ""
+
+msgctxt "#31019"
+msgid "Open playlist"
+msgstr ""
+
+msgctxt "#31020"
+msgid "Save playlist"
+msgstr ""
+
+msgctxt "#31021"
+msgid "Close playlist"
+msgstr ""
+
+msgctxt "#31022"
+msgid "System music files"
+msgstr ""
+
+msgctxt "#31023"
+msgid "Disable Background Visualiser"
+msgstr ""
+
+msgctxt "#31024"
+msgid "Disable Background Video"
+msgstr ""
+
+msgctxt "#31025"
+msgid "Click to change default Lyrics script"
+msgstr ""
+
+msgctxt "#31026"
+msgid "Click to change default Subtitles script"
+msgstr ""
+
+msgctxt "#31027"
+msgid "Items"
+msgstr ""
+
+msgctxt "#31028"
+msgid "Page"
+msgstr ""
+
+msgctxt "#31029"
+msgid "Current playlist"
+msgstr ""
+
+msgctxt "#31030"
+msgid "Memory Used"
+msgstr ""
+
+msgctxt "#31031"
+msgid "Karaoke Song Selector"
+msgstr ""
+
+msgctxt "#31032"
+msgid "Visualization Presets"
+msgstr ""
+
+msgctxt "#31033"
+msgid "Debug"
+msgstr ""
+
+msgctxt "#31034"
+msgid "Enable Debug Grid"
+msgstr ""
+
+msgctxt "#31035"
+msgid "Enable Debug Info"
+msgstr ""
+
+msgctxt "#31036"
+msgid "Rewind"
+msgstr ""
+
+msgctxt "#31037"
+msgid "Pause"
+msgstr ""
+
+msgctxt "#31038"
+msgid "Stop"
+msgstr ""
+
+msgctxt "#31039"
+msgid "Fast Forward"
+msgstr ""
+
+msgctxt "#31040"
+msgid "Visualisation Presets"
+msgstr ""
+
+msgctxt "#31041"
+msgid "DVD Menu"
+msgstr ""
+
+
+# Skinshortcuts translations
+
+msgctxt "#32000"
+msgid "Add"
+msgstr ""
+
+msgctxt "#32001"
+msgid "Delete"
+msgstr ""
+
+msgctxt "#32002"
+msgid "Move Up"
+msgstr ""
+
+msgctxt "#32003"
+msgid "Move Down"
+msgstr ""
+
+msgctxt "#32004"
+msgid "Video Playlist"
+msgstr ""
+
+msgctxt "#32005"
+msgid "Music Playlist"
+msgstr ""
+
+msgctxt "#32006"
+msgid "Favourite"
+msgstr ""
+
+msgctxt "#32007"
+msgid "Add-On"
+msgstr ""
+
+msgctxt "#32008"
+msgid "Mixed Playlist"
+msgstr ""
+
+msgctxt "#32009"
+msgid "Program"
+msgstr ""
+
+msgctxt "#32010"
+msgid "Video Add-On"
+msgstr ""
+
+msgctxt "#32011"
+msgid "Music Add-On"
+msgstr ""
+
+msgctxt "#32012"
+msgid "Picture Add-On"
+msgstr ""
+
+msgctxt "#32013"
+msgid "<None>"
+msgstr ""
+
+msgctxt "#32014"
+msgid "Videos"
+msgstr ""
+
+msgctxt "#32015"
+msgid "Movies"
+msgstr ""
+
+msgctxt "#32016"
+msgid "TV Shows"
+msgstr ""
+
+msgctxt "#32017"
+msgid "Live TV"
+msgstr ""
+
+msgctxt "#32018"
+msgid "Music Videos"
+msgstr ""
+
+msgctxt "#32019"
+msgid "Music"
+msgstr ""
+
+msgctxt "#32020"
+msgid "Pictures"
+msgstr ""
+
+msgctxt "#32021"
+msgid "Programs"
+msgstr ""
+
+msgctxt "#32022"
+msgid "Live TV"
+msgstr ""
+
+msgctxt "#32023"
+msgid "Timers"
+msgstr ""
+
+msgctxt "#32024"
+msgid "Custom shortcut"
+msgstr ""
+
+msgctxt "#32025"
+msgid "Set label"
+msgstr ""
+
+msgctxt "#32026"
+msgid "Set thumbail"
+msgstr ""
+
+msgctxt "#32027"
+msgid "Custom action"
+msgstr ""
+
+msgctxt "#32028"
+msgid "Reset shortcuts"
+msgstr ""
+
+msgctxt "#32029"
+msgid "Common"
+msgstr ""
+
+msgctxt "#32030"
+msgid "Video Library"
+msgstr ""
+
+msgctxt "#32031"
+msgid "Music Library"
+msgstr ""
+
+msgctxt "#32032"
+msgid "Play DVD"
+msgstr ""
+
+msgctxt "#32033"
+msgid "Eject tray"
+msgstr ""
+
+msgctxt "#32034"
+msgid "Common Shortcut"
+msgstr ""
+
+msgctxt "#32035"
+msgid "Choose which items to display on the Main Menu"
+msgstr ""
+
+#. ::MENUNAME:: is used internally and should NOT be translated :)
+
+msgctxt "#32036"
+msgid "Choose shortcuts for ::MENUNAME::"
+msgstr ""
+
+msgctxt "#32037"
+msgid "Reset all shortcuts"
+msgstr ""
+
+msgctxt "#32038"
+msgid "Are you sure you want to reset all shortcuts back to default?"
+msgstr ""
+
+#. ::MENUNAME:: is used internally and should NOT be translated :)
+
+msgctxt "#32039"
+msgid "Pick widget for ::MENUNAME::"
+msgstr ""
+
+msgctxt "#32040"
+msgid "Playlist"
+msgstr ""
+
+msgctxt "#32041"
+msgid "Action"
+msgstr ""
+
+msgctxt "#32042"
+msgid "Unknown video node"
+msgstr ""
+
+msgctxt "#32043"
+msgid "Choose shortcut category"
+msgstr ""
+
+msgctxt "#32044"
+msgid "Select widget"
+msgstr ""
+
+msgctxt "#32045"
+msgid "Select background"
+msgstr ""
+
+msgctxt "#32046"
+msgid "Update video library"
+msgstr ""
+
+msgctxt "#32047"
+msgid "Update audio library"
+msgstr ""
+
+msgctxt "#32048"
+msgid "Choose shortcut"
+msgstr ""
+
+msgctxt "#32049"
+msgid "Building menu..."
+msgstr ""
+
+msgctxt "#32050"
+msgid "Default"
+msgstr ""
+
+msgctxt "#32051"
+msgid "Single image"
+msgstr ""
+
+msgctxt "#32052"
+msgid "Multi-image"
+msgstr ""
+
+msgctxt "#32053"
+msgid "None"
+msgstr ""
+
+msgctxt "#32054"
+msgid "Kodi Command"
+msgstr ""
+
+msgctxt "#32055"
+msgid "Clean video library"
+msgstr ""
+
+msgctxt "#32056"
+msgid "Clean audio library"
+msgstr ""
+
+msgctxt "#32057"
+msgid "Kodi Commands"
+msgstr ""
+
+msgctxt "#32058"
+msgid "Create shortcut to here"
+msgstr ""
+
+msgctxt "#32059"
+msgid "Skin Playlist"
+msgstr ""
+
+msgctxt "#32060"
+msgid "Do you want to play this playlist, or display it?"
+msgstr ""
+
+msgctxt "#32061"
+msgid "Display"
+msgstr ""
+
+msgctxt "#32062"
+msgid "Play"
+msgstr ""
+
+msgctxt "#32063"
+msgid "Getting directory listing..."
+msgstr ""
+
+msgctxt "#32064"
+msgid "No Shortcuts"
+msgstr ""
+
+msgctxt "#32065"
+msgid "There are no shortcuts available for the category that you choose."
+msgstr ""
+
+msgctxt "#32066"
+msgid "Last TV channel"
+msgstr ""
+
+msgctxt "#32067"
+msgid "Last radio channel"
+msgstr ""
+
+msgctxt "#32068"
+msgid "Last channel"
+msgstr ""
+
+msgctxt "#32069"
+msgid "Video Source"
+msgstr ""
+
+msgctxt "#32070"
+msgid "UPnP"
+msgstr ""
+
+msgctxt "#32071"
+msgid "Customize Main Menu"
+msgstr ""
+
+msgctxt "#32072"
+msgid "Customize Submenu"
+msgstr ""
+
+msgctxt "#32073"
+msgid "Music Source"
+msgstr ""
+
+msgctxt "#32074"
+msgid "Library Sources"
+msgstr ""
+
+msgctxt "#32075"
+msgid "Sources"
+msgstr ""
+
+msgctxt "#32076"
+msgid "TV Channel"
+msgstr ""
+
+msgctxt "#32077"
+msgid "Radio Channel"
+msgstr ""
+
+msgctxt "#32078"
+msgid "Display..."
+msgstr ""
+
+msgctxt "#32079"
+msgid "Files view"
+msgstr ""
+
+#. ::MENUNAME:: is used internally and should NOT be translated :)
+
+msgctxt "#32080"
+msgid "Edit ::MENUNAME:: Submenu"
+msgstr ""
+
+msgctxt "#32081"
+msgid "Movies not in this source"
+msgstr ""
+
+msgctxt "#32082"
+msgid "TV Shows not in this source"
+msgstr ""
+
+msgctxt "#32083"
+msgid "Music Videos not in this source"
+msgstr ""
+
+msgctxt "#32084"
+msgid "Songs not in this source"
+msgstr ""
+
+msgctxt "#32085"
+msgid "Albums not in this source"
+msgstr ""
+
+msgctxt "#32086"
+msgid "Mixed content not in this source"
+msgstr ""
+
+msgctxt "#32087"
+msgid "Radio"
+msgstr ""
+
+msgctxt "#32088"
+msgid "Channels"
+msgstr ""
+
+msgctxt "#32089"
+msgid "Picture Source"
+msgstr ""
+
+msgctxt "#32090"
+msgid "The item has been added to the menu"
+msgstr ""
+
+msgctxt "#32091"
+msgid "Unable to add item to the menu. Please check log for errors."
+msgstr ""
+
+msgctxt "#32092"
+msgid "Unable to build menu."
+msgstr ""
+
+msgctxt "#32093"
+msgid "Upload debug log?"
+msgstr ""
+
+msgctxt "#32094"
+msgid "Install Log Uploader to easily provide a debug log."
+msgstr ""
+
+msgctxt "#32095"
+msgid "Choose default action for main menu item"
+msgstr ""
+
+msgctxt "#32096"
+msgid "Browse..."
+msgstr ""
+
+
