@@ -138,7 +138,22 @@
       <!-- Header label -->
       <control type="label" id="500">
         <include>SkinShortcutsHeaderLabel</include>
-        <visible>StringCompare(Window.Property(GroupName),mainmenu)</visible>
+        <visible>StringCompare(Window.Property(GroupName),mainmenu) + IsEmpty(Window.Property(actionEditDirection))</visible>
+      </control>
+      <control type="label">
+        <include>SkinShortcutsHeaderLabel</include>
+        <label>$ADDON[script.alaskab.utils 32071] - Main action</label>
+        <visible>StringCompare(Window.Property(GroupName),mainmenu) + StringCompare(Window.Property(actionEditDirection),Main)</visible>
+      </control>
+      <control type="label">
+        <include>SkinShortcutsHeaderLabel</include>
+        <label>$ADDON[script.alaskab.utils 32071] - Up action</label>
+        <visible>StringCompare(Window.Property(GroupName),mainmenu) + StringCompare(Window.Property(actionEditDirection),Up)</visible>
+      </control>
+      <control type="label">
+        <include>SkinShortcutsHeaderLabel</include>
+        <label>$ADDON[script.alaskab.utils 32071] - Down action</label>
+        <visible>StringCompare(Window.Property(GroupName),mainmenu) + StringCompare(Window.Property(actionEditDirection),Down)</visible>
       </control>
       <!-- <control type="label">
         <include>SkinShortcutsHeaderLabel</include>
@@ -286,14 +301,14 @@
           <!-- Custom action -->
           <!-- <control type="button" id="307">
             <include>SkinShortcutsRightGListTemplateWithText</include>
-            <label>$ADDON[script.skinshortcuts 32027]</label>
+            <label>$ADDON[script.alaskab.utils 32027]</label>
             <label2>$INFO[Container(211).ListItem.Property(displaypath)]</label2>
             <visible>!SubString(Window.Property(GroupName),widgets,right)</visible>
           </control> -->
           <!-- Choose shortcut -->
           <!-- <control type="button" id="401">
             <include>SkinShortcutsRightGListTemplateWithText</include>
-            <label>$ADDON[script.skinshortcuts 32048]</label>
+            <label>$ADDON[script.alaskab.utils 32048]</label>
             <visible>!SubString(Window.Property(GroupName),widgets,right)</visible>
           </control> -->
 
@@ -324,7 +339,7 @@
           <!--change widget-->
           <control type="button" id="309">
             <include>SkinShortcutsRightGListTemplateWithText</include>
-            <label>$ADDON[script.skinshortcuts 32044]</label>
+            <label>$ADDON[script.alaskab.utils 32044]</label>
             <label2>$INFO[Container(211).ListItem.Property(widgetPlaylist)]</label2>
             <onclick>SetProperty(useWidgetNameAsLabel,true)</onclick>
             <visible>SubString(Window.Property(GroupName),widgets,right)</visible>
@@ -332,7 +347,7 @@
 
           <!-- <control type="button" id="306">
             <include>SkinShortcutsRightGListTemplateWithText</include>
-            <label>$ADDON[script.skinshortcuts 32026]</label>
+            <label>$ADDON[script.alaskab.utils 32026]</label>
             <label2>$INFO[Container(211).ListItem.Thumbnail]</label2>
             <visible>StringCompare(Window.Property(GroupName),mainmenu)</visible>
           </control> -->
@@ -340,7 +355,7 @@
           <!-- Select background -->
           <control type="button" id="310">
             <include>SkinShortcutsRightGListTemplateWithText</include>
-            <label>$ADDON[script.skinshortcuts 32045]</label>
+            <label>$ADDON[script.alaskab.utils 32045]</label>
             <label2>$INFO[Container(211).ListItem.Property(background)]</label2>
             <visible>StringCompare(Window.Property(GroupName),mainmenu)</visible>
           </control>
@@ -359,7 +374,7 @@
           <!-- Add -->
           <control type="button" id="301">
             <include>SkinShortcutsRightGListTemplateWithText</include>
-            <label>$ADDON[script.skinshortcuts 32000]</label>
+            <label>$ADDON[script.alaskab.utils 32000]</label>
             <!-- <visible>!SubString(Window.Property(GroupName),.3,right) + !SubString(Window.Property(GroupName),.3,right) + !SubString(Window.Property(GroupName),.4,right) + !SubString(Window.Property(GroupName),.4,right)</visible> -->
           </control>
         </control>
