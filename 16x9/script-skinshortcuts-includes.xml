@@ -2,19 +2,24 @@
 <includes>
 	<include name="skinshortcuts-mainmenu">
 		<item id="1">
-			<label>Pictures</label>
+			<label>Profiles</label>
 			<label2>Common Shortcut</label2>
-			<icon>DefaultPicture.png</icon>
+			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<property name="labelID">pictures</property>
-			<property name="defaultID">pictures</property>
-			<onclick>ActivateWindow(Pictures)</onclick>
-			<property name="path">ActivateWindow(Pictures)</property>
+			<property name="labelID">profiles</property>
+			<property name="defaultID">13200</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Profiles,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
+			<onclick>ActivateWindow(Profiles)</onclick>
+			<property name="path">ActivateWindow(Profiles)</property>
+			<property name="upHeading">File manager</property>
+			<property name="upAction">ActivateWindow(FileManager)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="submenuVisibility">pictures</property>
+			<property name="submenuVisibility">profiles</property>
 			<property name="group">mainmenu</property>
-			<property name="background">special://skin/media/home/pictures</property>
-			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.pictures)]</property>
+			<property name="background">special://skin/media/home/pictures/</property>
+			<property name="backgroundName">Default Picture backgrounds</property>
+			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.profiles)]</property>
 			<property name="hasSubmenu">False</property>
 		</item>
 		<item id="2">
@@ -24,6 +29,8 @@
 			<thumb />
 			<property name="labelID">music</property>
 			<property name="defaultID">music</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Music,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Music,root)</onclick>
 			<property name="path">ActivateWindow(Music,root)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
@@ -40,8 +47,12 @@
 			<thumb />
 			<property name="labelID">videos</property>
 			<property name="defaultID">videos</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Videos,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,root)</onclick>
-			<property name="path">ActivateWindow(Videos,root)</property>
+			<onclick>ActivateWindow(Videos)</onclick>
+			<property name="path">ActivateWindow(Videos)</property>
+			<property name="downAction">ActivateWindow(Videos,root,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">videos</property>
 			<property name="group">mainmenu</property>
@@ -57,6 +68,8 @@
 			<property name="labelID">movies</property>
 			<property name="defaultID">movies</property>
 			<visible>Library.HasContent(Movies)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Movies #2,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
 			<property name="path">ActivateWindow(Videos,MovieTitles,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
@@ -67,6 +80,29 @@
 			<property name="hasSubmenu">False</property>
 		</item>
 		<item id="5">
+			<label>Anime</label>
+			<label2>Skin Playlist</label2>
+			<icon>DefaultPlaylist.png</icon>
+			<thumb />
+			<property name="labelID">anime</property>
+			<property name="defaultID">anime-titles</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Anime,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
+			<onclick>ActivateWindow(VideoLibrary,special://skin/playlists/Anime-Titles.xsp,return)</onclick>
+			<property name="path">ActivateWindow(VideoLibrary,special://skin/playlists/Anime-Titles.xsp,return)</property>
+			<property name="upHeading">Anime Studios</property>
+			<property name="upAction">ActivateWindow(VideoLibrary,special://skin/playlists/Anime-Studios.xsp,return)</property>
+			<property name="downHeading">Anime Years</property>
+			<property name="downAction">ActivateWindow(VideoLibrary,special://skin/playlists/Anime-Years.xsp,return)</property>
+			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">anime</property>
+			<property name="group">mainmenu</property>
+			<property name="background">special://skin/media/home/anime/</property>
+			<property name="backgroundName">special://skin/media/home/anime/</property>
+			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.anime)]</property>
+			<property name="hasSubmenu">False</property>
+		</item>
+		<item id="6">
 			<label>$LOCALIZE[20343]</label>
 			<label2>Common Shortcut</label2>
 			<icon>DefaultTVShows.png</icon>
@@ -74,8 +110,12 @@
 			<property name="labelID">tvshows</property>
 			<property name="defaultID">tvshows</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Anime,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TVShowTitles,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TVShowTitles,return)</property>
+			<property name="upHeading">TvShows (Studios)</property>
+			<property name="upAction">ActivateWindow(VideoLibrary,C:\Users\Bambi\AppData\Roaming\Kodi\addons\skin.alaskab\playlists\TvShows-Studios.xsp,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">tvshows</property>
 			<property name="group">mainmenu</property>
@@ -83,13 +123,15 @@
 			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.tvshows)]</property>
 			<property name="hasSubmenu">False</property>
 		</item>
-		<item id="6">
+		<item id="7">
 			<label>$LOCALIZE[24001]</label>
 			<label2>Common Shortcut</label2>
 			<icon>DefaultAddonProgram.png</icon>
 			<thumb />
 			<property name="labelID">24001</property>
 			<property name="defaultID">24001</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Add-ons,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Programs,Addons,return)</onclick>
 			<property name="path">ActivateWindow(Programs,Addons,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
@@ -99,7 +141,7 @@
 			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.num-24001)]</property>
 			<property name="hasSubmenu">False</property>
 		</item>
-		<item id="7">
+		<item id="8">
 			<label>$LOCALIZE[12600]</label>
 			<label2>Common Shortcut</label2>
 			<icon>DefaultShortcut.png</icon>
@@ -107,6 +149,8 @@
 			<property name="labelID">weather</property>
 			<property name="defaultID">weather</property>
 			<visible>!IsEmpty(Weather.Plugin)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Weather,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Weather)</onclick>
 			<property name="path">ActivateWindow(Weather)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
@@ -115,13 +159,15 @@
 			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.weather)]</property>
 			<property name="hasSubmenu">False</property>
 		</item>
-		<item id="8">
+		<item id="9">
 			<label>$LOCALIZE[10004]</label>
 			<label2>Common Shortcut</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
 			<property name="labelID">settings</property>
 			<property name="defaultID">settings</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Settings,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Settings)</onclick>
 			<property name="path">ActivateWindow(Settings)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
@@ -129,21 +175,6 @@
 			<property name="group">mainmenu</property>
 			<property name="background">special://skin/media/home/system</property>
 			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.settings)]</property>
-			<property name="hasSubmenu">False</property>
-		</item>
-		<item id="9">
-			<label>YT Search</label>
-			<label2>Video Add-On</label2>
-			<icon>DefaultShortcut.png</icon>
-			<thumb>image://C%3a%5cUsers%5cBambi%5cAppData%5cRoaming%5cKodi%5caddons%5cplugin.video.youtube%5cresources%5cmedia%5csearch.png/</thumb>
-			<property name="labelID">plugin.video.youtube/kodion/search/list/</property>
-			<property name="defaultID">plugin.video.youtube/kodion/search/list/</property>
-			<onclick>ActivateWindow(10025,"plugin://plugin.video.youtube/kodion/search/list/",return)</onclick>
-			<property name="path">ActivateWindow(10025,"plugin://plugin.video.youtube/kodion/search/list/",return)</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="submenuVisibility">plugin-video-youtube-kodion-search-list</property>
-			<property name="group">mainmenu</property>
-			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.plugin-video-youtube-kodion-search-list)]</property>
 			<property name="hasSubmenu">False</property>
 			<property name="hasSubmenu">True</property>
 			<property name="hasSubmenu">False</property>
@@ -155,6 +186,8 @@
 			<thumb />
 			<property name="labelID">pictures</property>
 			<property name="defaultID">pictures</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Pictures,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Pictures)</onclick>
 			<property name="path">ActivateWindow(Pictures)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
@@ -171,6 +204,8 @@
 			<thumb />
 			<property name="labelID">music</property>
 			<property name="defaultID">music</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Music,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Music,root)</onclick>
 			<property name="path">ActivateWindow(Music,root)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
@@ -187,6 +222,8 @@
 			<thumb />
 			<property name="labelID">videos</property>
 			<property name="defaultID">videos</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Videos,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,root)</onclick>
 			<property name="path">ActivateWindow(Videos,root)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
@@ -204,6 +241,8 @@
 			<property name="labelID">movies</property>
 			<property name="defaultID">movies</property>
 			<visible>Library.HasContent(Movies)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Movies,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
 			<property name="path">ActivateWindow(Videos,MovieTitles,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
@@ -221,6 +260,8 @@
 			<property name="labelID">tvshows</property>
 			<property name="defaultID">tvshows</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,TV shows,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TVShowTitles,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TVShowTitles,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
@@ -237,6 +278,8 @@
 			<thumb />
 			<property name="labelID">24001</property>
 			<property name="defaultID">24001</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Add-ons,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Programs,Addons,return)</onclick>
 			<property name="path">ActivateWindow(Programs,Addons,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
@@ -254,6 +297,8 @@
 			<property name="labelID">weather</property>
 			<property name="defaultID">weather</property>
 			<visible>!IsEmpty(Weather.Plugin)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Weather,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Weather)</onclick>
 			<property name="path">ActivateWindow(Weather)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
@@ -269,6 +314,8 @@
 			<thumb />
 			<property name="labelID">settings</property>
 			<property name="defaultID">settings</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Settings,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Settings)</onclick>
 			<property name="path">ActivateWindow(Settings)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
@@ -291,6 +338,8 @@
 			<property name="labelID">recentyadded</property>
 			<property name="defaultID">recentyadded</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Recenty added,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<property name="path">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
@@ -305,6 +354,8 @@
 			<property name="labelID">recentyupdated</property>
 			<property name="defaultID">recentyupdated</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Recenty updated,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<property name="path">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
@@ -318,6 +369,8 @@
 			<thumb />
 			<property name="labelID">playlists</property>
 			<property name="defaultID">136</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Playlists,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(videos,special://videoplaylists/,return)</onclick>
 			<property name="path">ActivateWindow(videos,special://videoplaylists/,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
@@ -331,6 +384,8 @@
 			<thumb />
 			<property name="labelID">titles</property>
 			<property name="defaultID">titles</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Titles,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)</onclick>
 			<property name="path">ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
@@ -345,6 +400,8 @@
 			<property name="labelID">genres</property>
 			<property name="defaultID">135</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Genres,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowGenres,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowGenres,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
@@ -359,6 +416,8 @@
 			<property name="labelID">studios</property>
 			<property name="defaultID">20388</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Studios,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowStudios,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowStudios,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
@@ -373,6 +432,8 @@
 			<property name="labelID">actors</property>
 			<property name="defaultID">344</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Actors,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowActors,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowActors,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
@@ -387,6 +448,8 @@
 			<property name="labelID">years</property>
 			<property name="defaultID">652</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Years,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowYears,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowYears,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
@@ -400,6 +463,8 @@
 			<thumb />
 			<property name="labelID">files</property>
 			<property name="defaultID">1214</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Files,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,Files,return)</onclick>
 			<property name="path">ActivateWindow(Videos,Files,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
@@ -413,6 +478,8 @@
 			<thumb />
 			<property name="labelID">updatelibrary</property>
 			<property name="defaultID">653</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Update library,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>UpdateLibrary(video)</onclick>
 			<property name="path">UpdateLibrary(video)</property>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
@@ -427,6 +494,8 @@
 			<property name="labelID">recentyadded</property>
 			<property name="defaultID">recentyadded</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Recenty added,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<property name="path">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
@@ -441,6 +510,8 @@
 			<property name="labelID">recentyupdated</property>
 			<property name="defaultID">recentyupdated</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Recenty updated,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<property name="path">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
@@ -454,6 +525,8 @@
 			<thumb />
 			<property name="labelID">playlists</property>
 			<property name="defaultID">136</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Playlists,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(videos,special://videoplaylists/,return)</onclick>
 			<property name="path">ActivateWindow(videos,special://videoplaylists/,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
@@ -467,6 +540,8 @@
 			<thumb />
 			<property name="labelID">titles</property>
 			<property name="defaultID">titles</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Titles,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)</onclick>
 			<property name="path">ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
@@ -481,6 +556,8 @@
 			<property name="labelID">genres</property>
 			<property name="defaultID">135</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Genres,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowGenres,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowGenres,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
@@ -495,6 +572,8 @@
 			<property name="labelID">studios</property>
 			<property name="defaultID">20388</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Studios,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowStudios,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowStudios,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
@@ -509,6 +588,8 @@
 			<property name="labelID">actors</property>
 			<property name="defaultID">344</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Actors,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowActors,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowActors,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
@@ -523,6 +604,8 @@
 			<property name="labelID">years</property>
 			<property name="defaultID">652</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Years,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowYears,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowYears,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
@@ -536,6 +619,8 @@
 			<thumb />
 			<property name="labelID">files</property>
 			<property name="defaultID">1214</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Files,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,Files,return)</onclick>
 			<property name="path">ActivateWindow(Videos,Files,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
@@ -549,6 +634,8 @@
 			<thumb />
 			<property name="labelID">updatelibrary</property>
 			<property name="defaultID">653</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Update library,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>UpdateLibrary(video)</onclick>
 			<property name="path">UpdateLibrary(video)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
@@ -556,226 +643,24 @@
 			<property name="group">videohub-list</property>
 		</item>
 	</include>
-	<include />
-	<include name="skinshortcuts-submenu-1" />
-	<include />
-	<include name="skinshortcuts-submenu-2" />
-	<include />
-	<include name="skinshortcuts-submenu-3">
-		<item id="1">
-			<label>$LOCALIZE[7]</label>
-			<label2>Common Shortcut</label2>
-			<icon>DefaultFolder.png</icon>
-			<thumb />
-			<property name="labelID">7</property>
-			<property name="defaultID">7</property>
-			<onclick>ActivateWindow(FileManager)</onclick>
-			<property name="path">ActivateWindow(FileManager)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),pictures)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">pictures.3</property>
-		</item>
-		<item id="1">
-			<label>Random Anime</label>
-			<label2>Video Playlist</label2>
-			<icon>DefaultPlaylist.png</icon>
-			<thumb />
-			<property name="labelID">randomanime</property>
-			<property name="defaultID">randomanime</property>
-			<onclick>ActivateWindow(VideoLibrary,special://profile/playlists/video/Random Anime.xsp,return)</onclick>
-			<property name="path">ActivateWindow(VideoLibrary,special://profile/playlists/video/Random Anime.xsp,return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),tvshows)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">tvshows.3</property>
-		</item>
-	</include>
-	<include />
-	<include name="skinshortcuts-submenu-4">
-		<item id="1">
-			<label>$LOCALIZE[626]</label>
-			<label2>item</label2>
-			<icon>DefaultShortcut.png</icon>
-			<thumb />
-			<property name="labelID">626</property>
-			<property name="defaultID">626</property>
-			<onclick>ActivateWindow(10025,library://video/inprogressshows.xml,Return)</onclick>
-			<property name="path">ActivateWindow(10025,library://video/inprogressshows.xml,Return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),tvshows)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">tvshows.4</property>
-		</item>
-	</include>
-	<include name="skinshortcuts-group-pictures" />
-	<include name="skinshortcuts-group-alt-pictures" />
-	<include name="skinshortcuts-group-pictures-1" />
-	<include name="skinshortcuts-group-alt-pictures-1" />
-	<include name="skinshortcuts-group-pictures-2" />
-	<include name="skinshortcuts-group-alt-pictures-2" />
-	<include name="skinshortcuts-group-pictures-3">
-		<item id="1">
-			<label>$LOCALIZE[7]</label>
-			<label2>Common Shortcut</label2>
-			<icon>DefaultFolder.png</icon>
-			<thumb />
-			<property name="labelID">7</property>
-			<property name="defaultID">7</property>
-			<onclick>ActivateWindow(FileManager)</onclick>
-			<property name="path">ActivateWindow(FileManager)</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="group">pictures.3</property>
-		</item>
-	</include>
-	<include name="skinshortcuts-group-alt-pictures-3">
-		<item id="1">
-			<label>$LOCALIZE[7]</label>
-			<label2>Common Shortcut</label2>
-			<icon>DefaultFolder.png</icon>
-			<thumb />
-			<property name="labelID">7</property>
-			<property name="defaultID">7</property>
-			<onclick>ActivateWindow(FileManager)</onclick>
-			<property name="path">ActivateWindow(FileManager)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),pictures)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">pictures.3</property>
-		</item>
-	</include>
-	<include name="skinshortcuts-group-pictures-4" />
-	<include name="skinshortcuts-group-alt-pictures-4" />
+	<include name="skinshortcuts-group-profiles" />
+	<include name="skinshortcuts-group-alt-profiles" />
 	<include name="skinshortcuts-group-music" />
 	<include name="skinshortcuts-group-alt-music" />
-	<include name="skinshortcuts-group-music-1" />
-	<include name="skinshortcuts-group-alt-music-1" />
-	<include name="skinshortcuts-group-music-2" />
-	<include name="skinshortcuts-group-alt-music-2" />
-	<include name="skinshortcuts-group-music-3" />
-	<include name="skinshortcuts-group-alt-music-3" />
-	<include name="skinshortcuts-group-music-4" />
-	<include name="skinshortcuts-group-alt-music-4" />
 	<include name="skinshortcuts-group-videos" />
 	<include name="skinshortcuts-group-alt-videos" />
-	<include name="skinshortcuts-group-videos-1" />
-	<include name="skinshortcuts-group-alt-videos-1" />
-	<include name="skinshortcuts-group-videos-2" />
-	<include name="skinshortcuts-group-alt-videos-2" />
-	<include name="skinshortcuts-group-videos-3" />
-	<include name="skinshortcuts-group-alt-videos-3" />
-	<include name="skinshortcuts-group-videos-4" />
-	<include name="skinshortcuts-group-alt-videos-4" />
 	<include name="skinshortcuts-group-movies" />
 	<include name="skinshortcuts-group-alt-movies" />
-	<include name="skinshortcuts-group-movies-1" />
-	<include name="skinshortcuts-group-alt-movies-1" />
-	<include name="skinshortcuts-group-movies-2" />
-	<include name="skinshortcuts-group-alt-movies-2" />
-	<include name="skinshortcuts-group-movies-3" />
-	<include name="skinshortcuts-group-alt-movies-3" />
-	<include name="skinshortcuts-group-movies-4" />
-	<include name="skinshortcuts-group-alt-movies-4" />
+	<include name="skinshortcuts-group-anime" />
+	<include name="skinshortcuts-group-alt-anime" />
 	<include name="skinshortcuts-group-tvshows" />
 	<include name="skinshortcuts-group-alt-tvshows" />
-	<include name="skinshortcuts-group-tvshows-1" />
-	<include name="skinshortcuts-group-alt-tvshows-1" />
-	<include name="skinshortcuts-group-tvshows-2" />
-	<include name="skinshortcuts-group-alt-tvshows-2" />
-	<include name="skinshortcuts-group-tvshows-3">
-		<item id="1">
-			<label>Random Anime</label>
-			<label2>Video Playlist</label2>
-			<icon>DefaultPlaylist.png</icon>
-			<thumb />
-			<property name="labelID">randomanime</property>
-			<property name="defaultID">randomanime</property>
-			<onclick>ActivateWindow(VideoLibrary,special://profile/playlists/video/Random Anime.xsp,return)</onclick>
-			<property name="path">ActivateWindow(VideoLibrary,special://profile/playlists/video/Random Anime.xsp,return)</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="group">tvshows.3</property>
-		</item>
-	</include>
-	<include name="skinshortcuts-group-alt-tvshows-3">
-		<item id="1">
-			<label>Random Anime</label>
-			<label2>Video Playlist</label2>
-			<icon>DefaultPlaylist.png</icon>
-			<thumb />
-			<property name="labelID">randomanime</property>
-			<property name="defaultID">randomanime</property>
-			<onclick>ActivateWindow(VideoLibrary,special://profile/playlists/video/Random Anime.xsp,return)</onclick>
-			<property name="path">ActivateWindow(VideoLibrary,special://profile/playlists/video/Random Anime.xsp,return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),tvshows)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">tvshows.3</property>
-		</item>
-	</include>
-	<include name="skinshortcuts-group-tvshows-4">
-		<item id="1">
-			<label>$LOCALIZE[626]</label>
-			<label2>item</label2>
-			<icon>DefaultShortcut.png</icon>
-			<thumb />
-			<property name="labelID">626</property>
-			<property name="defaultID">626</property>
-			<onclick>ActivateWindow(10025,library://video/inprogressshows.xml,Return)</onclick>
-			<property name="path">ActivateWindow(10025,library://video/inprogressshows.xml,Return)</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="group">tvshows.4</property>
-		</item>
-	</include>
-	<include name="skinshortcuts-group-alt-tvshows-4">
-		<item id="1">
-			<label>$LOCALIZE[626]</label>
-			<label2>item</label2>
-			<icon>DefaultShortcut.png</icon>
-			<thumb />
-			<property name="labelID">626</property>
-			<property name="defaultID">626</property>
-			<onclick>ActivateWindow(10025,library://video/inprogressshows.xml,Return)</onclick>
-			<property name="path">ActivateWindow(10025,library://video/inprogressshows.xml,Return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),tvshows)]</visible>
-			<property name="isSubmenu">True</property>
-			<property name="group">tvshows.4</property>
-		</item>
-	</include>
 	<include name="skinshortcuts-group-24001" />
 	<include name="skinshortcuts-group-alt-24001" />
-	<include name="skinshortcuts-group-24001-1" />
-	<include name="skinshortcuts-group-alt-24001-1" />
-	<include name="skinshortcuts-group-24001-2" />
-	<include name="skinshortcuts-group-alt-24001-2" />
-	<include name="skinshortcuts-group-24001-3" />
-	<include name="skinshortcuts-group-alt-24001-3" />
-	<include name="skinshortcuts-group-24001-4" />
-	<include name="skinshortcuts-group-alt-24001-4" />
 	<include name="skinshortcuts-group-weather" />
 	<include name="skinshortcuts-group-alt-weather" />
-	<include name="skinshortcuts-group-weather-1" />
-	<include name="skinshortcuts-group-alt-weather-1" />
-	<include name="skinshortcuts-group-weather-2" />
-	<include name="skinshortcuts-group-alt-weather-2" />
-	<include name="skinshortcuts-group-weather-3" />
-	<include name="skinshortcuts-group-alt-weather-3" />
-	<include name="skinshortcuts-group-weather-4" />
-	<include name="skinshortcuts-group-alt-weather-4" />
 	<include name="skinshortcuts-group-settings" />
 	<include name="skinshortcuts-group-alt-settings" />
-	<include name="skinshortcuts-group-settings-1" />
-	<include name="skinshortcuts-group-alt-settings-1" />
-	<include name="skinshortcuts-group-settings-2" />
-	<include name="skinshortcuts-group-alt-settings-2" />
-	<include name="skinshortcuts-group-settings-3" />
-	<include name="skinshortcuts-group-alt-settings-3" />
-	<include name="skinshortcuts-group-settings-4" />
-	<include name="skinshortcuts-group-alt-settings-4" />
-	<include name="skinshortcuts-group-plugin-video-youtube-kodion-search-list" />
-	<include name="skinshortcuts-group-alt-plugin-video-youtube-kodion-search-list" />
-	<include name="skinshortcuts-group-plugin-video-youtube-kodion-search-list-1" />
-	<include name="skinshortcuts-group-alt-plugin-video-youtube-kodion-search-list-1" />
-	<include name="skinshortcuts-group-plugin-video-youtube-kodion-search-list-2" />
-	<include name="skinshortcuts-group-alt-plugin-video-youtube-kodion-search-list-2" />
-	<include name="skinshortcuts-group-plugin-video-youtube-kodion-search-list-3" />
-	<include name="skinshortcuts-group-alt-plugin-video-youtube-kodion-search-list-3" />
-	<include name="skinshortcuts-group-plugin-video-youtube-kodion-search-list-4" />
-	<include name="skinshortcuts-group-alt-plugin-video-youtube-kodion-search-list-4" />
 	<include name="skinshortcuts-group-videohub-list">
 		<item id="1">
 			<label>Recenty added</label>
@@ -785,6 +670,8 @@
 			<property name="labelID">recentyadded</property>
 			<property name="defaultID">recentyadded</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Recenty added,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<property name="path">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
@@ -798,6 +685,8 @@
 			<property name="labelID">recentyupdated</property>
 			<property name="defaultID">recentyupdated</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Recenty updated,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<property name="path">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
@@ -810,6 +699,8 @@
 			<thumb />
 			<property name="labelID">playlists</property>
 			<property name="defaultID">136</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Playlists,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(videos,special://videoplaylists/,return)</onclick>
 			<property name="path">ActivateWindow(videos,special://videoplaylists/,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
@@ -822,6 +713,8 @@
 			<thumb />
 			<property name="labelID">titles</property>
 			<property name="defaultID">titles</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Titles,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)</onclick>
 			<property name="path">ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
@@ -835,6 +728,8 @@
 			<property name="labelID">genres</property>
 			<property name="defaultID">135</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Genres,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowGenres,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowGenres,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
@@ -848,6 +743,8 @@
 			<property name="labelID">studios</property>
 			<property name="defaultID">20388</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Studios,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowStudios,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowStudios,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
@@ -861,6 +758,8 @@
 			<property name="labelID">actors</property>
 			<property name="defaultID">344</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Actors,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowActors,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowActors,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
@@ -874,6 +773,8 @@
 			<property name="labelID">years</property>
 			<property name="defaultID">652</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Years,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowYears,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowYears,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
@@ -886,6 +787,8 @@
 			<thumb />
 			<property name="labelID">files</property>
 			<property name="defaultID">1214</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Files,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,Files,return)</onclick>
 			<property name="path">ActivateWindow(Videos,Files,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
@@ -898,6 +801,8 @@
 			<thumb />
 			<property name="labelID">updatelibrary</property>
 			<property name="defaultID">653</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Update library,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>UpdateLibrary(video)</onclick>
 			<property name="path">UpdateLibrary(video)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
@@ -911,6 +816,8 @@
 			<property name="labelID">recentyadded</property>
 			<property name="defaultID">recentyadded</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Recenty added,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<property name="path">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
@@ -924,6 +831,8 @@
 			<property name="labelID">recentyupdated</property>
 			<property name="defaultID">recentyupdated</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Recenty updated,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<property name="path">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
@@ -936,6 +845,8 @@
 			<thumb />
 			<property name="labelID">playlists</property>
 			<property name="defaultID">136</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Playlists,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(videos,special://videoplaylists/,return)</onclick>
 			<property name="path">ActivateWindow(videos,special://videoplaylists/,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
@@ -948,6 +859,8 @@
 			<thumb />
 			<property name="labelID">titles</property>
 			<property name="defaultID">titles</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Titles,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)</onclick>
 			<property name="path">ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
@@ -961,6 +874,8 @@
 			<property name="labelID">genres</property>
 			<property name="defaultID">135</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Genres,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowGenres,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowGenres,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
@@ -974,6 +889,8 @@
 			<property name="labelID">studios</property>
 			<property name="defaultID">20388</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Studios,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowStudios,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowStudios,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
@@ -987,6 +904,8 @@
 			<property name="labelID">actors</property>
 			<property name="defaultID">344</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Actors,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowActors,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowActors,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
@@ -1000,6 +919,8 @@
 			<property name="labelID">years</property>
 			<property name="defaultID">652</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Years,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowYears,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowYears,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
@@ -1012,6 +933,8 @@
 			<thumb />
 			<property name="labelID">files</property>
 			<property name="defaultID">1214</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Files,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,Files,return)</onclick>
 			<property name="path">ActivateWindow(Videos,Files,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
@@ -1024,6 +947,8 @@
 			<thumb />
 			<property name="labelID">updatelibrary</property>
 			<property name="defaultID">653</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Update library,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>UpdateLibrary(video)</onclick>
 			<property name="path">UpdateLibrary(video)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
@@ -1039,6 +964,8 @@
 			<property name="labelID">recentyadded</property>
 			<property name="defaultID">recentyadded</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Recenty added,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<property name="path">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
@@ -1053,6 +980,8 @@
 			<property name="labelID">recentyupdated</property>
 			<property name="defaultID">recentyupdated</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Recenty updated,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<property name="path">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
@@ -1066,6 +995,8 @@
 			<thumb />
 			<property name="labelID">playlists</property>
 			<property name="defaultID">136</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Playlists,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(videos,special://videoplaylists/,return)</onclick>
 			<property name="path">ActivateWindow(videos,special://videoplaylists/,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
@@ -1079,6 +1010,8 @@
 			<thumb />
 			<property name="labelID">titles</property>
 			<property name="defaultID">titles</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Titles,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)</onclick>
 			<property name="path">ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
@@ -1093,6 +1026,8 @@
 			<property name="labelID">genres</property>
 			<property name="defaultID">135</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Genres,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowGenres,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowGenres,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
@@ -1107,6 +1042,8 @@
 			<property name="labelID">studios</property>
 			<property name="defaultID">20388</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Studios,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowStudios,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowStudios,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
@@ -1121,6 +1058,8 @@
 			<property name="labelID">actors</property>
 			<property name="defaultID">344</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Actors,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowActors,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowActors,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
@@ -1135,6 +1074,8 @@
 			<property name="labelID">years</property>
 			<property name="defaultID">652</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Years,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowYears,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowYears,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
@@ -1148,6 +1089,8 @@
 			<thumb />
 			<property name="labelID">files</property>
 			<property name="defaultID">1214</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Files,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,Files,return)</onclick>
 			<property name="path">ActivateWindow(Videos,Files,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
@@ -1161,6 +1104,8 @@
 			<thumb />
 			<property name="labelID">updatelibrary</property>
 			<property name="defaultID">653</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Update library,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>UpdateLibrary(video)</onclick>
 			<property name="path">UpdateLibrary(video)</property>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
@@ -1175,6 +1120,8 @@
 			<property name="labelID">recentyadded</property>
 			<property name="defaultID">recentyadded</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Recenty added,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<property name="path">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
@@ -1189,6 +1136,8 @@
 			<property name="labelID">recentyupdated</property>
 			<property name="defaultID">recentyupdated</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Recenty updated,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<property name="path">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
@@ -1202,6 +1151,8 @@
 			<thumb />
 			<property name="labelID">playlists</property>
 			<property name="defaultID">136</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Playlists,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(videos,special://videoplaylists/,return)</onclick>
 			<property name="path">ActivateWindow(videos,special://videoplaylists/,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
@@ -1215,6 +1166,8 @@
 			<thumb />
 			<property name="labelID">titles</property>
 			<property name="defaultID">titles</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Titles,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)</onclick>
 			<property name="path">ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
@@ -1229,6 +1182,8 @@
 			<property name="labelID">genres</property>
 			<property name="defaultID">135</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Genres,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowGenres,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowGenres,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
@@ -1243,6 +1198,8 @@
 			<property name="labelID">studios</property>
 			<property name="defaultID">20388</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Studios,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowStudios,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowStudios,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
@@ -1257,6 +1214,8 @@
 			<property name="labelID">actors</property>
 			<property name="defaultID">344</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Actors,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowActors,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowActors,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
@@ -1271,6 +1230,8 @@
 			<property name="labelID">years</property>
 			<property name="defaultID">652</property>
 			<visible>Library.HasContent(TVShows)</visible>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Years,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowYears,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowYears,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
@@ -1284,6 +1245,8 @@
 			<thumb />
 			<property name="labelID">files</property>
 			<property name="defaultID">1214</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Files,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,Files,return)</onclick>
 			<property name="path">ActivateWindow(Videos,Files,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
@@ -1297,6 +1260,8 @@
 			<thumb />
 			<property name="labelID">updatelibrary</property>
 			<property name="defaultID">653</property>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Update library,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>UpdateLibrary(video)</onclick>
 			<property name="path">UpdateLibrary(video)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
@@ -1304,22 +1269,8 @@
 			<property name="group">videohub-list</property>
 		</item>
 	</include>
-	<include name="skinshortcuts-group-videohub-list-1" />
-	<include name="skinshortcuts-group-alt-videohub-list-1" />
-	<include name="skinshortcuts-group-videohub-list-2" />
-	<include name="skinshortcuts-group-alt-videohub-list-2" />
-	<include name="skinshortcuts-group-videohub-list-3" />
-	<include name="skinshortcuts-group-alt-videohub-list-3" />
-	<include name="skinshortcuts-group-videohub-list-4" />
-	<include name="skinshortcuts-group-alt-videohub-list-4" />
 	<include name="skinshortcuts-group-videohub-widgets" />
 	<include name="skinshortcuts-group-alt-videohub-widgets" />
-	<include name="skinshortcuts-group-videohub-widgets-1" />
-	<include name="skinshortcuts-group-alt-videohub-widgets-1" />
-	<include name="skinshortcuts-group-videohub-widgets-2" />
-	<include name="skinshortcuts-group-alt-videohub-widgets-2" />
-	<include name="skinshortcuts-group-videohub-widgets-3" />
-	<include name="skinshortcuts-group-alt-videohub-widgets-3" />
-	<include name="skinshortcuts-group-videohub-widgets-4" />
-	<include name="skinshortcuts-group-alt-videohub-widgets-4" />
+	<include name="skinshortcuts-group-pictures" />
+	<include name="skinshortcuts-group-alt-pictures" />
 </includes>

@@ -28,7 +28,7 @@
       <centerleft>50%</centerleft>
       <align>center</align>
       <width>1920</width>
-      <label>$INFO[Container(8000).ListItem.Property(LabelID)]</label>
+      <label>$INFO[Container(8000).ListItem.Property(upAction)]</label>
     </control> -->
 
     <control type="group" id="5000">
@@ -72,7 +72,7 @@
         <centerleft>50%</centerleft>
         <align>center</align>
         <width>1920</width>
-        <label>$INFO[Control.GetLabel(8999)]</label>
+        <label>$INFO[Window.Property(AlaskaB.Home.UpActionCondition)]</label>
       </control> -->
 
 
@@ -81,8 +81,27 @@
       <control type="fixedlist" id="8000">
         <width>HomeWidth</width>
         <height>HomeListHeight</height>
-        <onup condition="IntegerGreaterThan(Container(8300).NumItems,0) + !IsEmpty(Container(8300).ListItem(0).Property(path)) + !StringCompare(Container(8300).ListItem(0).Property(path),noop)">$INFO[Container(8300).ListItem(0).Property(path)]</onup>
-        <ondown condition="IntegerGreaterThan(Container(8400).NumItems,0) + !IsEmpty(Container(8400).ListItem(0).Property(path)) + !StringCompare(Container(8400).ListItem(0).Property(path),noop)">$INFO[Container(8400).ListItem(0).Property(path)]</ondown>
+        <onup condition="!IsEmpty(Container(8000).ListItem.Property(upHeading))">SetProperty(AlaskaB.HeadingLabel,$INFO[Container(8000).ListItem.Property(upHeading)],home)</onup>
+        <onup condition="!IsEmpty(Container(8000).ListItem.Property(upSubheading))">SetProperty(AlaskaB.SubheadingLabel,$INFO[Container(8000).ListItem.Property(upSubheading)],home)</onup>
+        <onup condition="IsEmpty(Container(8000).ListItem.Property(upHeading))">ClearProperty(AlaskaB.HeadingLabel,home)</onup>
+        <onup condition="IsEmpty(Container(8000).ListItem.Property(upSubheading))">ClearProperty(AlaskaB.SubheadingLabel,home)</onup>
+        <onup condition="!IsEmpty(Container(8000).ListItem.Property(upAction))">$INFO[Container(8000).ListItem.Property(upAction)]</onup>
+        <onup condition="!IsEmpty(Container(8000).ListItem.Property(upAction2))">$INFO[Container(8000).ListItem.Property(upAction2)]</onup>
+        <onup condition="!IsEmpty(Container(8000).ListItem.Property(upAction3))">$INFO[Container(8000).ListItem.Property(upAction3)]</onup>
+        <ondown condition="!IsEmpty(Container(8000).ListItem.Property(downHeading))">SetProperty(AlaskaB.HeadingLabel,$INFO[Container(8000).ListItem.Property(downHeading)],home)</ondown>
+        <ondown condition="!IsEmpty(Container(8000).ListItem.Property(downSubheading))">SetProperty(AlaskaB.SubheadingLabel,$INFO[Container(8000).ListItem.Property(downSubheading)],home)</ondown>
+        <ondown condition="IsEmpty(Container(8000).ListItem.Property(downHeading))">ClearProperty(AlaskaB.HeadingLabel,home)</ondown>
+        <ondown condition="IsEmpty(Container(8000).ListItem.Property(downSubheading))">ClearProperty(AlaskaB.SubheadingLabel,home)</ondown>
+        <ondown condition="!IsEmpty(Container(8000).ListItem.Property(downAction))">$INFO[Container(8000).ListItem.Property(downAction)]</ondown>
+        <ondown condition="!IsEmpty(Container(8000).ListItem.Property(downAction2))">$INFO[Container(8000).ListItem.Property(downAction2)]</ondown>
+        <ondown condition="!IsEmpty(Container(8000).ListItem.Property(downAction3))">$INFO[Container(8000).ListItem.Property(downAction3)]</ondown>
+        
+        <onclick condition="!IsEmpty(Container(8000).ListItem.Property(mainHeading))">SetProperty(AlaskaB.HeadingLabel,$INFO[Container(8000).ListItem.Property(mainHeading)],home)</onclick>
+        <onclick condition="!IsEmpty(Container(8000).ListItem.Property(mainSubheading))">SetProperty(AlaskaB.SubheadingLabel,$INFO[Container(8000).ListItem.Property(mainSubheading)],home)</onclick>
+        <onclick condition="IsEmpty(Container(8000).ListItem.Property(mainHeading))">ClearProperty(AlaskaB.HeadingLabel,home)</onclick>
+        <onclick condition="IsEmpty(Container(8000).ListItem.Property(mainSubheading))">ClearProperty(AlaskaB.SubheadingLabel,home)</onclick>
+        <onclick>Notification(XXX,BBB)</onclick>
+
         <focusposition>2</focusposition>
         <orientation>horizontal</orientation>
         <scrolltime tween="sine" easing="inout">350</scrolltime>
@@ -100,6 +119,14 @@
               <label>$INFO[ListItem.Label]</label>
             </control>
             <include>HomeMainMenuLabelShade</include>
+            <control type="image">
+              <include>HomeMainMenuActionUp</include>
+              <visible>!IsEmpty(ListItem.Property(upAction))</visible>
+            </control>
+            <control type="image">
+              <include>HomeMainMenuActionDown</include>
+              <visible>!IsEmpty(ListItem.Property(downAction))</visible>
+            </control>
           </control>
         </itemlayout>
         <focusedlayout width="531" height="450">
@@ -117,11 +144,11 @@
             <include>HomeMainMenuLabelShade</include>
             <control type="image">
               <include>HomeMainMenuActionUp</include>
-              <visible>IntegerGreaterThan(Container(8300).NumItems,0) + !IsEmpty(Container(8300).ListItem(0).Property(path)) + !StringCompare(Container(8300).ListItem(0).Property(path),noop)</visible>
+              <visible>!IsEmpty(ListItem.Property(upAction))</visible>
             </control>
             <control type="image">
               <include>HomeMainMenuActionDown</include>
-              <visible>IntegerGreaterThan(Container(8400).NumItems,0) + !IsEmpty(Container(8400).ListItem(0).Property(path)) + !StringCompare(Container(8400).ListItem(0).Property(path),noop)</visible>
+              <visible>!IsEmpty(ListItem.Property(downAction))</visible>
             </control>
           </control>
           <control type="button">
@@ -137,18 +164,33 @@
       </control>
     </control>
 
-    <control type="list" id="8300">
+    <!-- <control type="list" id="8300">
+      <include>HiddenControl</include>
+      <content>
+        <item id="1">
+          <label>$LOCALIZE[7]</label>
+          <onclick>ActivateWindow(FileManager)</onclick>
+          <visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),pictures)]</visible>
+        </item>
+        <item id="1">
+          <label>Random Anime</label>
+          <onclick>ActivateWindow(VideoLibrary,special://profile/playlists/video/Random Anime.xsp,return)</onclick>
+          <visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),tvshows)]</visible>
+        </item>
+      </content>
+    </control> -->
+    <!-- <control type="list" id="8300">
       <include>HiddenControl</include>
       <content>
         <include>skinshortcuts-submenu-3</include>
       </content>
-    </control>
-    <control type="list" id="8400">
+    </control> -->
+    <!-- <control type="list" id="8400">
       <include>HiddenControl</include>
       <content>
         <include>skinshortcuts-submenu-4</include>
       </content>
-    </control>
+    </control> -->
   </include>
 
 </includes>

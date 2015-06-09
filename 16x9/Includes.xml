@@ -224,6 +224,9 @@
     </control>
   </include>
 
+
+
+
   <include name="HomeMainMenuActionUp">
     <left>20</left>
     <top>399</top>
@@ -1372,7 +1375,7 @@
   </include>
 
   <include name="SkinShortcutsRightGListTemplateWithText">
-    <textwidth>700</textwidth>
+    <textwidth>775</textwidth>
     <include>SkinShortcutsRightGListTemplate</include>
   </include>
 

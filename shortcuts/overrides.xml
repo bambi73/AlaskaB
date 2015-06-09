@@ -25,4 +25,13 @@
 
   <propertypattern group="mainmenu" property="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.::SUBMENUVISIBILITY::)]</propertypattern>
 
+  <groupoverride group="mainmenu" condition="StringCompare(Container(8000).ListItem.Property(labelID),movies)">Notification(XXX,BBB)</groupoverride>
+
+  <override action="ActivateWindow(Videos,root)" group="mainmenu">
+    <action>ActivateWindow(Videos,root1)</action>
+    <action>ActivateWindow(Videos,root2)</action>
+    <action>ActivateWindow(Videos,root3)</action>
+    <action>ActivateWindow(Videos,root4)</action>
+  </override>
+
 </overrides>

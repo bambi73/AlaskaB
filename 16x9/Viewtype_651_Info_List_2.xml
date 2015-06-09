@@ -47,7 +47,8 @@
           <viewtype label="Info List 2">list</viewtype>
           <scrolltime tween="sine" easing="out">200</scrolltime>
           <include>Animation_HiddenByInfo</include>
-          <visible>[Container.Content(movies) + SubString(Container.FolderPath,videodb://movies/)] | [[Container.Content(tvshows) | Container.Content(seasons)] + [SubString(Container.FolderPath,videodb://tvshows/) | SubString(Container.FolderPath,special://skin/extras/playlists/)]]</visible>
+          <visible>Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons) | [Container.Content(files) + !substring(Container.FolderPath,plugin://,left)]</visible>
+          <!-- <visible>[Container.Content(movies) + SubString(Container.FolderPath,videodb://movies/)] | [[Container.Content(tvshows) | Container.Content(seasons)] + [SubString(Container.FolderPath,videodb://tvshows/) | SubString(Container.FolderPath,special://skin/extras/playlists/)]]</visible> -->
           <itemlayout width="1006" height="86">
             <control type="group">
               <top>2</top>

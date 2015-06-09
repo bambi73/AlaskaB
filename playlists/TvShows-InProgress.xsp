@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="tvshows">
+    <name>TvShows (In progress)</name>
+    <match>all</match>
+    <limit>25</limit>
+    <rule field="inprogress" operator="true" />
+    <rule field="lastplayed" operator="inthelast">14 Days</rule>
+    <rule field="tag" operator="doesnotcontain">Anime</rule>
+    <order direction="descending">lastplayed</order>
+</smartplaylist>

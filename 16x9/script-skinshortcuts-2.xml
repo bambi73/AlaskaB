@@ -315,7 +315,7 @@
           <control type="button" id="451">
             <include>SkinShortcutsRightGListTemplateWithText</include>
             <label>Main action</label>
-            <label2>$INFO[Container(211).ListItem.Property(displaypath)]</label2>
+            <label2>$INFO[Container(211).ListItem.Property(mainAction)]</label2>
             <visible>StringCompare(Window.Property(GroupName),mainmenu)</visible>
             <onclick>SetFocus(460)</onclick>
           </control>
@@ -355,7 +355,7 @@
           <!-- Select background -->
           <control type="button" id="310">
             <include>SkinShortcutsRightGListTemplateWithText</include>
-            <label>$ADDON[script.alaskab.utils 32045]</label>
+            <label>Background</label>
             <label2>$INFO[Container(211).ListItem.Property(background)]</label2>
             <visible>StringCompare(Window.Property(GroupName),mainmenu)</visible>
           </control>
@@ -395,18 +395,18 @@
           <scrolltime tween="sine" easing="out">320</scrolltime>
           <visible>!IsEmpty(Window.Property(actionEdit))</visible>
 
-          <!-- Header label -->
+          <!-- Heading label -->
           <control type="button" id="460">
             <include>SkinShortcutsRightGListTemplateWithText</include>
-            <label>Header label</label>
-            <label2>$VAR[SkinShortcuts_ActionHeaderLabel2]</label2>
+            <label>Heading label</label>
+            <label2>$VAR[SkinShortcuts_ActionHeadingLabel2]</label2>
             <visible allowhiddenfocus="true"/>
           </control>
-          <!-- SubHeader label -->
+          <!-- SubHeading label -->
           <control type="button" id="461">
             <include>SkinShortcutsRightGListTemplateWithText</include>
-            <label>SubHeader label</label>
-            <label2>$VAR[SkinShortcuts_ActionSubHeaderLabel2]</label2>
+            <label>Subheading label</label>
+            <label2>$VAR[SkinShortcuts_ActionSubheadingLabel2]</label2>
           </control>
           <!-- Action -->
           <control type="button" id="462">

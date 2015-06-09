@@ -662,16 +662,16 @@
     <value condition="StringCompare(Window.Property(actionEditDirection),Down)">$INFO[Container(211).ListItem.Property(downAction3)]</value>
   </variable>
 
-  <variable name="SkinShortcuts_ActionHeaderLabel2">
-    <value condition="StringCompare(Window.Property(actionEditDirection),Main)">$INFO[Container(211).ListItem.Property(mainActionHeader)]</value>
-    <value condition="StringCompare(Window.Property(actionEditDirection),Up)">$INFO[Container(211).ListItem.Property(upActionHeader)]</value>
-    <value condition="StringCompare(Window.Property(actionEditDirection),Down)">$INFO[Container(211).ListItem.Property(downActionHeader)]</value>
+  <variable name="SkinShortcuts_ActionHeadingLabel2">
+    <value condition="StringCompare(Window.Property(actionEditDirection),Main)">$INFO[Container(211).ListItem.Property(mainActionHeading)]</value>
+    <value condition="StringCompare(Window.Property(actionEditDirection),Up)">$INFO[Container(211).ListItem.Property(upActionHeading)]</value>
+    <value condition="StringCompare(Window.Property(actionEditDirection),Down)">$INFO[Container(211).ListItem.Property(downActionHeading)]</value>
   </variable>
 
-  <variable name="SkinShortcuts_ActionSubHeaderLabel2">
-    <value condition="StringCompare(Window.Property(actionEditDirection),Main)">$INFO[Container(211).ListItem.Property(mainActionSubHeader)]</value>
-    <value condition="StringCompare(Window.Property(actionEditDirection),Up)">$INFO[Container(211).ListItem.Property(upActionSubHeader)]</value>
-    <value condition="StringCompare(Window.Property(actionEditDirection),Down)">$INFO[Container(211).ListItem.Property(downActionSubHeader)]</value>
+  <variable name="SkinShortcuts_ActionSubheadingLabel2">
+    <value condition="StringCompare(Window.Property(actionEditDirection),Main)">$INFO[Container(211).ListItem.Property(mainActionSubheading)]</value>
+    <value condition="StringCompare(Window.Property(actionEditDirection),Up)">$INFO[Container(211).ListItem.Property(upActionSubheading)]</value>
+    <value condition="StringCompare(Window.Property(actionEditDirection),Down)">$INFO[Container(211).ListItem.Property(downActionSubheading)]</value>
   </variable>
 
 </includes>
