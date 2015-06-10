@@ -413,6 +413,7 @@
             <include>SkinShortcutsRightGListTemplateWithText</include>
             <label>Action</label>
             <label2>$VAR[SkinShortcuts_ActionLabel2]</label2>
+            <onright>SendClick(463)</onright>
           </control>
           <!-- Action2 -->
           <control type="button" id="464">
@@ -422,6 +423,7 @@
             <enable>[StringCompare(Window.Property(actionEditDirection),Main) + !IsEmpty(Container(211).ListItem.Property(mainAction))] | 
              [StringCompare(Window.Property(actionEditDirection),Up) + !IsEmpty(Container(211).ListItem.Property(upAction))] |
              [StringCompare(Window.Property(actionEditDirection),Down) + !IsEmpty(Container(211).ListItem.Property(downAction))]</enable>
+            <onright>SendClick(465)</onright>
            </control>
           <!-- Action3 -->
           <control type="button" id="466">
@@ -431,8 +433,8 @@
             <enable>[StringCompare(Window.Property(actionEditDirection),Main) + !IsEmpty(Container(211).ListItem.Property(mainAction2))] | 
              [StringCompare(Window.Property(actionEditDirection),Up) + !IsEmpty(Container(211).ListItem.Property(upAction2))] |
              [StringCompare(Window.Property(actionEditDirection),Down) + !IsEmpty(Container(211).ListItem.Property(downAction2))]</enable>
+            <onright>SendClick(467)</onright>
           </control>
-
           <!-- Back -->
           <control type="button" id="469">
             <include>SkinShortcutsRightGListTemplateWithText</include>
@@ -441,6 +443,47 @@
             <onclick condition="StringCompare(Window.Property(actionEditDirection),Up)">SetFocus(452)</onclick>
             <onclick condition="StringCompare(Window.Property(actionEditDirection),Down)">SetFocus(453)</onclick>
           </control>
+        </control>
+
+        <control type="image">
+          <top>132</top>
+          <include>SkinShortcutsRightGListEditArrowNF</include>
+          <visible>Control.IsVisible(450) + Control.IsEnabled(462) + !Control.HasFocus(462)</visible>
+        </control>
+        <control type="image">
+          <top>132</top>
+          <include>SkinShortcutsRightGListEditArrowFO</include>
+          <visible>Control.IsVisible(450) + Control.HasFocus(462)</visible>
+        </control>
+        <control type="image">
+          <top>198</top>
+          <include>SkinShortcutsRightGListEditArrowNF</include>
+          <visible>Control.IsVisible(450) + Control.IsEnabled(464) + !Control.HasFocus(464)</visible>
+        </control>
+        <control type="image">
+          <top>198</top>
+          <include>SkinShortcutsRightGListEditArrowFO</include>
+          <visible>Control.IsVisible(450) + Control.HasFocus(464)</visible>
+        </control>
+        <control type="image">
+          <top>264</top>
+          <include>SkinShortcutsRightGListEditArrowNF</include>
+          <visible>Control.IsVisible(450) + Control.IsEnabled(466) + !Control.HasFocus(466)</visible>
+        </control>
+        <control type="image">
+          <top>264</top>
+          <include>SkinShortcutsRightGListEditArrowFO</include>
+          <visible>Control.IsVisible(450) + Control.HasFocus(466)</visible>
+        </control>
+
+        <control type="button" id="463">
+          <include>HiddenControl</include>
+        </control>
+        <control type="button" id="465">
+          <include>HiddenControl</include>
+        </control>
+        <control type="button" id="467">
+          <include>HiddenControl</include>
         </control>
       </control>
 

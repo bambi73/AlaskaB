@@ -3,7 +3,7 @@
 	<include name="skinshortcuts-mainmenu">
 		<item id="1">
 			<label>Profiles</label>
-			<label2>Common Shortcut</label2>
+			<label2>Custom shortcut</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
 			<property name="labelID">profiles</property>
@@ -90,8 +90,8 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(VideoLibrary,special://skin/playlists/Anime-Titles.xsp,return)</onclick>
 			<property name="path">ActivateWindow(VideoLibrary,special://skin/playlists/Anime-Titles.xsp,return)</property>
-			<property name="upHeading">Anime Studios</property>
-			<property name="upAction">ActivateWindow(VideoLibrary,special://skin/playlists/Anime-Studios.xsp,return)</property>
+			<property name="upHeading">Anime</property>
+			<property name="upAction">ActivateWindow(54,return)</property>
 			<property name="downHeading">Anime Years</property>
 			<property name="downAction">ActivateWindow(VideoLibrary,special://skin/playlists/Anime-Years.xsp,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>

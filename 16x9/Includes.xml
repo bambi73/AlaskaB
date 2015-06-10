@@ -1379,6 +1379,20 @@
     <include>SkinShortcutsRightGListTemplate</include>
   </include>
 
+  <include name="SkinShortcutsRightGListEditArrowNF">
+    <left>1765</left>
+    <width>18</width>
+    <height>66</height>
+    <texture colordiffuse="TextLight">settings/skinshortcuts-edit-nf.png</texture>
+  </include>
+
+  <include name="SkinShortcutsRightGListEditArrowFO">
+    <left>1798</left>
+    <width>18</width>
+    <height>66</height>
+    <texture colordiffuse="TextHeavy">settings/skinshortcuts-edit-fo.png</texture>
+  </include>
+
   <include name="SkinShortcutsMoveControlTemplate">
     <left>-10</left>
     <width>124</width>
