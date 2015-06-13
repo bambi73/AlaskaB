@@ -11,18 +11,27 @@
   <controls>
     <include>Global_Background</include>
 
+    <control type="button" id="463">
+      <include>HiddenControl</include>
+    </control>
+    <control type="button" id="465">
+      <include>HiddenControl</include>
+    </control>
+    <control type="button" id="467">
+      <include>HiddenControl</include>
+    </control>
+
     <control type="group" id="5000">
-      <centertop>49%</centertop>
+      <centertop>50%</centertop>
       <left>SkinShortcutsLeft</left>
       <width>SkinShortcutsWidth</width>
       <height>SkinShortcutsHeight</height>
 
       <include>Animation_ZoomInZoomOut</include>
       <include>Animation_ZoomedByMenu</include>
-      <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(virtualkeyboard) | Window.IsActive(filebrowser) | !IsEmpty(Window.Property(additionalDialog))">
+      <animation type="Conditional" condition="Window.IsActive(shutdownmenu) | Window.IsActive(progressdialog) | Window.IsActive(okdialog) | Window.IsActive(virtualkeyboard) | Window.IsActive(filebrowser)">
         <include>AnimationEffect_ZoomedBy</include>
       </animation>
-      <!-- <animation effect="slide" end="0,131" time="0" condition="SubString(Window.Property(GroupName),.3,right) | SubString(Window.Property(GroupName),.3,right) | SubString(Window.Property(GroupName),.4,right) | SubString(Window.Property(GroupName),.4,right)">Conditional</animation> -->
 
       <!-- <control type="image">
         <width>SkinShortcutsWidth</width>
@@ -37,103 +46,47 @@
         <texture>settings/settings-category-bg-scrollbar.png</texture>
       </control> -->
 
-      <!-- <control type="group">
-        <visible>!SubString(Window.Property(GroupName),.3,right) + !SubString(Window.Property(GroupName),.3,right) + !SubString(Window.Property(GroupName),.4,right) + !SubString(Window.Property(GroupName),.4,right)</visible> -->
-        
-        <control type="image">
-          <width>SkinShortcutsWidth</width>
-          <height>14</height>
-          <texture>hub/list_bg_border5.png</texture>
-        </control>
-        <control type="image">
-          <top>14</top>
-          <width>SkinShortcutsWidth</width>
-          <height>88</height>
-          <texture>hub/list_bg5.png</texture>
-        </control>
-        <control type="image">
-          <top>102</top>
-          <width>SkinShortcutsWidth</width>
-          <height>3</height>
-          <texture>hub/list_bg_delimiter5.png</texture>
-        </control>
-        <control type="image">
-          <top>105</top>
-          <width>SkinShortcutsWidth</width>
-          <height>491</height>
-          <texture>hub/list_bg5.png</texture>
-        </control>
-        <control type="image">
-          <top>596</top>
-          <width>SkinShortcutsWidth</width>
-          <height>3</height>
-          <texture>hub/list_bg_delimiter5.png</texture>
-        </control>
-        <control type="image">
-          <top>599</top>
-          <width>SkinShortcutsWidth</width>
-          <height>109</height>
-          <texture>hub/list_bg5.png</texture>
-        </control>
-        <control type="image">
-          <top>708</top>
-          <width>SkinShortcutsWidth</width>
-          <height>14</height>
-          <texture flipy="true">hub/list_bg_border5.png</texture>
-        </control>
-      <!-- </control> -->
-      <!-- <control type="group">
-        <visible>SubString(Window.Property(GroupName),.3,right) | SubString(Window.Property(GroupName),.3,right) | SubString(Window.Property(GroupName),.4,right) | SubString(Window.Property(GroupName),.4,right)</visible>
-
-        <control type="image">
-          <left>210</left>
-          <width>SkinShortcutsWidth2</width>
-          <height>14</height>
-          <texture>hub/list_bg_border5.png</texture>
-        </control>
-        <control type="image">
-          <top>14</top>
-          <left>210</left>
-          <width>SkinShortcutsWidth2</width>
-          <height>88</height>
-          <texture>hub/list_bg5.png</texture>
-        </control>
-        <control type="image">
-          <top>102</top>
-          <left>210</left>
-          <width>SkinShortcutsWidth2</width>
-          <height>3</height>
-          <texture>hub/list_bg_delimiter5.png</texture>
-        </control>
-        <control type="image">
-          <top>105</top>
-          <left>210</left>
-          <width>SkinShortcutsWidth2</width>
-          <height>229</height>
-          <texture>hub/list_bg5.png</texture>
-        </control>
-        <control type="image">
-          <top>334</top>
-          <left>210</left>
-          <width>SkinShortcutsWidth2</width>
-          <height>3</height>
-          <texture>hub/list_bg_delimiter5.png</texture>
-        </control>
-        <control type="image">
-          <top>337</top>
-          <left>210</left>
-          <width>SkinShortcutsWidth2</width>
-          <height>109</height>
-          <texture>hub/list_bg5.png</texture>
-        </control>
-        <control type="image">
-          <top>446</top>
-          <left>210</left>
-          <width>SkinShortcutsWidth2</width>
-          <height>14</height>
-          <texture flipy="true">hub/list_bg_border5.png</texture>
-        </control>
-      </control> -->
+      <control type="image">
+        <width>SkinShortcutsWidth</width>
+        <height>14</height>
+        <texture>hub/list_bg_border5.png</texture>
+      </control>
+      <control type="image">
+        <top>14</top>
+        <width>SkinShortcutsWidth</width>
+        <height>88</height>
+        <texture>hub/list_bg5.png</texture>
+      </control>
+      <control type="image">
+        <top>102</top>
+        <width>SkinShortcutsWidth</width>
+        <height>3</height>
+        <texture>hub/list_bg_delimiter5.png</texture>
+      </control>
+      <control type="image">
+        <top>105</top>
+        <width>SkinShortcutsWidth</width>
+        <height>491</height>
+        <texture>hub/list_bg5.png</texture>
+      </control>
+      <control type="image">
+        <top>596</top>
+        <width>SkinShortcutsWidth</width>
+        <height>3</height>
+        <texture>hub/list_bg_delimiter5.png</texture>
+      </control>
+      <control type="image">
+        <top>599</top>
+        <width>SkinShortcutsWidth</width>
+        <height>120</height>
+        <texture>hub/list_bg5.png</texture>
+      </control>
+      <control type="image">
+        <top>719</top>
+        <width>SkinShortcutsWidth</width>
+        <height>14</height>
+        <texture flipy="true">hub/list_bg_border5.png</texture>
+      </control>
 
       <!-- Header label -->
       <control type="label" id="500">
@@ -275,6 +228,21 @@
             <top>396</top>
             <visible>Container(211).Row(6)</visible>
             <include>SkinShortcutsMoveControlTemplate</include>
+          </control>
+        </control>
+
+        <!-- Reset shortcuts -->
+        <control type="group">
+          <left>SkinShortcutsLeftListLeft</left>
+          <top>506</top>
+          <control type="button" id="308">
+            <width>SkinShortcutsLeftListWidth</width>
+            <height>66</height>
+            <align>right</align>
+            <onup>211</onup>
+            <onright condition="IsEmpty(Window.Property(actionEdit))">300</onright>
+            <onright condition="!IsEmpty(Window.Property(actionEdit))">450</onright>
+            <animation effect="zoom" center="430,33" start="100" end="105" time="50" tween="cubic" easing="out">Focus</animation>
           </control>
         </control>
 
@@ -476,18 +444,20 @@
           <visible>Control.IsVisible(450) + Control.HasFocus(466)</visible>
         </control>
 
-        <control type="button" id="463">
-          <include>HiddenControl</include>
-        </control>
-        <control type="button" id="465">
-          <include>HiddenControl</include>
-        </control>
-        <control type="button" id="467">
-          <include>HiddenControl</include>
+        <control type="textbox">
+          <left>600</left>
+          <top>500</top>
+          <height>87</height>
+          <width>1130</width>
+          <font>Font_Light_36</font>
+          <label>$VAR[SkinShortcuts_DescriptionTextbox]</label>
+          <!-- <label>$LOCALIZE[31128]</label> -->
         </control>
       </control>
 
-      <control type="button" id="308">
+
+
+      <!-- <control type="button" id="308">
         <top>597</top>
         <onup>300</onup>
         <width>SkinShortcutsControlWidth</width>
@@ -498,7 +468,7 @@
         <animation type="Conditional" condition="!Control.HasFocus(308)" reversible="false">
           <include>AnimationEffect_DialogBottomButton1CenterUnfocus</include>
         </animation>
-      </control>
+      </control> -->
     </control>
   </controls>
 

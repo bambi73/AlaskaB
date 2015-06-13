@@ -52,6 +52,7 @@
 			<onclick>ActivateWindow(Videos,root)</onclick>
 			<onclick>ActivateWindow(Videos)</onclick>
 			<property name="path">ActivateWindow(Videos)</property>
+			<property name="downSubheading">aaa</property>
 			<property name="downAction">ActivateWindow(Videos,root,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">videos</property>
@@ -115,7 +116,7 @@
 			<onclick>ActivateWindow(Videos,TVShowTitles,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TVShowTitles,return)</property>
 			<property name="upHeading">TvShows (Studios)</property>
-			<property name="upAction">ActivateWindow(VideoLibrary,C:\Users\Bambi\AppData\Roaming\Kodi\addons\skin.alaskab\playlists\TvShows-Studios.xsp,return)</property>
+			<property name="upAction">ActivateWindow(VideoLibrary,special://skin/playlists/TvShows-Studios.xsp,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">tvshows</property>
 			<property name="group">mainmenu</property>

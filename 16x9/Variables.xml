@@ -674,4 +674,31 @@
     <value condition="StringCompare(Window.Property(actionEditDirection),Down)">$INFO[Container(211).ListItem.Property(downActionSubheading)]</value>
   </variable>
 
+  <variable name="SkinShortcuts_DescriptionMainActionLabel">
+    <value condition="!IsEmpty(Container(211).ListItem.Property(mainActionHeading))">$INFO[Container(211).ListItem.Property(mainActionHeading)]$INFO[Container(211).ListItem.Property(mainActionSubheading), • ]$INFO[Container(211).ListItem.Property(mainAction), • ]$INFO[Container(211).ListItem.Property(mainAction2), • ]$INFO[Container(211).ListItem.Property(mainAction3), • ]</value>
+    <value condition="!IsEmpty(Container(211).ListItem.Property(mainActionSubheading))">$INFO[Container(211).ListItem.Property(mainActionSubheading)]$INFO[Container(211).ListItem.Property(mainAction), • ]$INFO[Container(211).ListItem.Property(mainAction2), • ]$INFO[Container(211).ListItem.Property(mainAction3), • ]</value>
+    <value>$INFO[Container(211).ListItem.Property(mainAction)]$INFO[Container(211).ListItem.Property(mainAction2), • ]$INFO[Container(211).ListItem.Property(mainAction3), • ]</value>
+  </variable>
+
+  <variable name="SkinShortcuts_DescriptionUpActionLabel">
+    <value condition="!IsEmpty(Container(211).ListItem.Property(upActionHeading))">$INFO[Container(211).ListItem.Property(upActionHeading)]$INFO[Container(211).ListItem.Property(upActionSubheading), • ]$INFO[Container(211).ListItem.Property(upAction), • ]$INFO[Container(211).ListItem.Property(upAction2), • ]$INFO[Container(211).ListItem.Property(upAction3), • ]</value>
+    <value condition="!IsEmpty(Container(211).ListItem.Property(upActionSubheading))">$INFO[Container(211).ListItem.Property(upActionSubheading)]$INFO[Container(211).ListItem.Property(upAction), • ]$INFO[Container(211).ListItem.Property(upAction2), • ]$INFO[Container(211).ListItem.Property(upAction3), • ]</value>
+    <value>$INFO[Container(211).ListItem.Property(upAction)]$INFO[Container(211).ListItem.Property(upAction2), • ]$INFO[Container(211).ListItem.Property(upAction3), • ]</value>
+  </variable>
+
+  <variable name="SkinShortcuts_DescriptionDownActionLabel">
+    <value condition="!IsEmpty(Container(211).ListItem.Property(downActionHeading))">$INFO[Container(211).ListItem.Property(downActionHeading)]$INFO[Container(211).ListItem.Property(downActionSubheading), • ]$INFO[Container(211).ListItem.Property(downAction), • ]$INFO[Container(211).ListItem.Property(downAction2), • ]$INFO[Container(211).ListItem.Property(downAction3), • ]</value>
+    <value condition="!IsEmpty(Container(211).ListItem.Property(downActionSubheading))">$INFO[Container(211).ListItem.Property(downActionSubheading)]$INFO[Container(211).ListItem.Property(downAction), • ]$INFO[Container(211).ListItem.Property(downAction2), • ]$INFO[Container(211).ListItem.Property(downAction3), • ]</value>
+    <value>$INFO[Container(211).ListItem.Property(downAction)]$INFO[Container(211).ListItem.Property(downAction2), • ]$INFO[Container(211).ListItem.Property(downAction3), • ]</value>
+  </variable>
+
+  <variable name="SkinShortcuts_DescriptionTextbox">
+    <value condition="ControlGroup(300).HasFocus + ControlGroup(300).HasFocus(305)">Edit $INFO[Window.Property(GroupDisplayName)] label</value>
+    <value condition="ControlGroup(300).HasFocus + ControlGroup(300).HasFocus(451)">Customize $INFO[Window.Property(GroupDisplayName)] main action[CR]$VAR[SkinShortcuts_DescriptionMainActionLabel]</value>
+    <value condition="ControlGroup(300).HasFocus + ControlGroup(300).HasFocus(452)">Customize $INFO[Window.Property(GroupDisplayName)] up action[CR]$VAR[SkinShortcuts_DescriptionUpActionLabel]</value>
+    <value condition="ControlGroup(300).HasFocus + ControlGroup(300).HasFocus(453)">Customize $INFO[Window.Property(GroupDisplayName)] down action[CR]$VAR[SkinShortcuts_DescriptionDownActionLabel]</value>
+    <value condition="ControlGroup(300).HasFocus + ControlGroup(300).HasFocus(310)">Select $INFO[Window.Property(GroupDisplayName)] background[CR]$INFO[Container(211).ListItem.Property(background)]</value>
+    <value condition="ControlGroup(300).HasFocus + ControlGroup(300).HasFocus(301)">Add new $INFO[Window.Property(GroupDisplayName)] shortcut</value>
+  </variable>
+
 </includes>

@@ -1345,7 +1345,7 @@
   <constant name="SkinShortcutsLeft">-160</constant>
   <constant name="SkinShortcutsWidth">2240</constant>
   <constant name="SkinShortcutsWidth2">1820</constant>
-  <constant name="SkinShortcutsHeight">722</constant>
+  <constant name="SkinShortcutsHeight">733</constant>
   <constant name="SkinShortcutsControlWidth">1720</constant>
 
   <constant name="SkinShortcutsListHeight">462</constant>
@@ -1440,46 +1440,5 @@
       <visible>Control.HasFocus(304)</visible>
     </control>
   </include>
-
-  <!-- <include name="SkinShortcutsMoveControlTemplate">
-    <left>40</left>
-    <width>136</width>
-    <height>66</height>
-    <itemgap>0</itemgap>
-    <onright>211</onright>
-    <onup>211</onup>
-    <onup>Control.Move(211,-1)</onup>
-    <ondown>211</ondown>
-    <ondown>Control.Move(211,1)</ondown>
-    <onleft>noop</onleft>
-    <orientation>horizontal</orientation>
-    <animation type="Conditional" condition="ControlGroup(900).HasFocus">
-      <effect type="zoom" center="auto" start="100" end="115" time="0" tween="cubic" easing="out"/>
-      <effect type="slide" end="260,2" time="0" tween="cubic" easing="out"/>
-    </animation>
-
-    <control type="button" id="922">
-      <width>50</width>
-      <height>66</height>
-      <onclick>SendClick(302)</onclick>
-      <texturenofocus colordiffuse="TextLight">settings/skinshortcuts-delete.png</texturenofocus>    
-      <texturefocus colordiffuse="TextHeavy">settings/skinshortcuts-delete.png</texturefocus>
-      <visible>ControlGroup(900).HasFocus</visible>
-    </control>
-    <control type="button" id="923">
-      <width>33</width>
-      <height>66</height>
-      <onclick>SendClick(303)</onclick>
-      <texturenofocus colordiffuse="TextLight">settings/skinshortcuts-move-up.png</texturenofocus>    
-      <texturefocus colordiffuse="TextHeavy">settings/skinshortcuts-move-up.png</texturefocus>
-    </control>
-    <control type="button" id="924">
-      <width>33</width>
-      <height>66</height>
-      <onclick>SendClick(304)</onclick>
-      <texturenofocus colordiffuse="TextLight">settings/skinshortcuts-move-down.png</texturenofocus>    
-      <texturefocus colordiffuse="TextHeavy">settings/skinshortcuts-move-down.png</texturefocus>
-    </control>
-  </include> -->
 
 </includes>
