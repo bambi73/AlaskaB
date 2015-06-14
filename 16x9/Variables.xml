@@ -699,6 +699,23 @@
     <value condition="ControlGroup(300).HasFocus + ControlGroup(300).HasFocus(453)">Customize $INFO[Window.Property(GroupDisplayName)] down action[CR]$VAR[SkinShortcuts_DescriptionDownActionLabel]</value>
     <value condition="ControlGroup(300).HasFocus + ControlGroup(300).HasFocus(310)">Select $INFO[Window.Property(GroupDisplayName)] background[CR]$INFO[Container(211).ListItem.Property(background)]</value>
     <value condition="ControlGroup(300).HasFocus + ControlGroup(300).HasFocus(301)">Add new $INFO[Window.Property(GroupDisplayName)] shortcut</value>
+    <value condition="ControlGroup(450).HasFocus + ControlGroup(450).HasFocus(460) + StringCompare(Window.Property(actionEditDirection),Main)">Edit $INFO[Window.Property(GroupDisplayName)] main action heading label</value>
+    <value condition="ControlGroup(450).HasFocus + ControlGroup(450).HasFocus(460) + StringCompare(Window.Property(actionEditDirection),Up)">Edit $INFO[Window.Property(GroupDisplayName)] up action heading label</value>
+    <value condition="ControlGroup(450).HasFocus + ControlGroup(450).HasFocus(460) + StringCompare(Window.Property(actionEditDirection),Down)">Edit $INFO[Window.Property(GroupDisplayName)] down action heading label</value>
+    <value condition="ControlGroup(450).HasFocus + ControlGroup(450).HasFocus(461) + StringCompare(Window.Property(actionEditDirection),Main)">Edit $INFO[Window.Property(GroupDisplayName)] main action subheading label</value>
+    <value condition="ControlGroup(450).HasFocus + ControlGroup(450).HasFocus(461) + StringCompare(Window.Property(actionEditDirection),Up)">Edit $INFO[Window.Property(GroupDisplayName)] up action subheading label</value>
+    <value condition="ControlGroup(450).HasFocus + ControlGroup(450).HasFocus(461) + StringCompare(Window.Property(actionEditDirection),Down)">Edit $INFO[Window.Property(GroupDisplayName)] down action subheading label</value>
+    <value condition="ControlGroup(450).HasFocus + ControlGroup(450).HasFocus(462) + StringCompare(Window.Property(actionEditDirection),Main)">Choose or edit $INFO[Window.Property(GroupDisplayName)] main action shortcut[CR]$VAR[SkinShortcuts_ActionLabel2]</value>
+    <value condition="ControlGroup(450).HasFocus + ControlGroup(450).HasFocus(462) + StringCompare(Window.Property(actionEditDirection),Up)">Choose or edit $INFO[Window.Property(GroupDisplayName)] up action shortcut[CR]$VAR[SkinShortcuts_ActionLabel2]</value>
+    <value condition="ControlGroup(450).HasFocus + ControlGroup(450).HasFocus(462) + StringCompare(Window.Property(actionEditDirection),Down)">Choose or edit $INFO[Window.Property(GroupDisplayName)] down action shortcut[CR]$VAR[SkinShortcuts_ActionLabel2]</value>
+    <value condition="ControlGroup(450).HasFocus + ControlGroup(450).HasFocus(464) + StringCompare(Window.Property(actionEditDirection),Main)">Choose or edit $INFO[Window.Property(GroupDisplayName)] main action #2 shortcut[CR]$VAR[SkinShortcuts_Action2Label2]</value>
+    <value condition="ControlGroup(450).HasFocus + ControlGroup(450).HasFocus(464) + StringCompare(Window.Property(actionEditDirection),Up)">Choose or edit $INFO[Window.Property(GroupDisplayName)] up action #2 shortcut[CR]$VAR[SkinShortcuts_Action2Label2]</value>
+    <value condition="ControlGroup(450).HasFocus + ControlGroup(450).HasFocus(464) + StringCompare(Window.Property(actionEditDirection),Down)">Choose or edit $INFO[Window.Property(GroupDisplayName)] down action #2 shortcut[CR]$VAR[SkinShortcuts_Action2Label2]</value>
+    <value condition="ControlGroup(450).HasFocus + ControlGroup(450).HasFocus(466) + StringCompare(Window.Property(actionEditDirection),Main)">Choose or edit $INFO[Window.Property(GroupDisplayName)] main action #3 shortcut[CR]$VAR[SkinShortcuts_Action3Label2]</value>
+    <value condition="ControlGroup(450).HasFocus + ControlGroup(450).HasFocus(466) + StringCompare(Window.Property(actionEditDirection),Up)">Choose or edit $INFO[Window.Property(GroupDisplayName)] up action #3 shortcut[CR]$VAR[SkinShortcuts_Action3Label2]</value>
+    <value condition="ControlGroup(450).HasFocus + ControlGroup(450).HasFocus(466) + StringCompare(Window.Property(actionEditDirection),Down)">Choose or edit $INFO[Window.Property(GroupDisplayName)] down action #3 shortcut[CR]$VAR[SkinShortcuts_Action3Label2]</value>
+    <value condition="ControlGroup(450).HasFocus + ControlGroup(450).HasFocus(469)">Return back</value>
+    <value condition="Control.HasFocus(308)">Reset $INFO[Window.Property(GroupDisplayName)] shortcuts</value>
   </variable>
 
 </includes>

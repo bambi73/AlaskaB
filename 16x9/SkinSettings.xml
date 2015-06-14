@@ -385,14 +385,14 @@
               <include>SkinSettingsRightGLTemplate</include>
               <textoffsetx>50</textoffsetx>
               <label>VideoHub Menu</label>
-              <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=videohub-list)</onclick>
+              <onclick>RunScript(script.alaskab.utils,type=manage&amp;group=videohub-list&amp;groupname=Video Hub Menu)</onclick>
               <visible>System.HasAddon(script.skinshortcuts)</visible>
             </control>        
             <control type="button" id="1413">
               <include>SkinSettingsRightGLTemplate</include>
               <textoffsetx>50</textoffsetx>
               <label>VideoHub Widgets</label>
-              <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=videohub-widgets)</onclick>
+              <onclick>RunScript(script.alaskab.utils,type=manage&amp;group=videohub-widgets&amp;groupname=Video Hub Widgets)</onclick>
               <visible>System.HasAddon(script.skinshortcuts)</visible>
             </control>        
             <control type="button" id="1414">

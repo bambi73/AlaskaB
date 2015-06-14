@@ -1,67 +1,119 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <shortcuts>
-  <shortcut>
-    <label>$LOCALIZE[10002]</label>
-    <label2>Common Shortcut</label2>
-    <defaultID>pictures</defaultID>
-    <icon>DefaultPicture.png</icon>
-    <thumb />
-    <action>ActivateWindow(Pictures)</action>
-  </shortcut>
-  <shortcut>
-    <label>$LOCALIZE[10005]</label>
-    <label2>Common Shortcut</label2>
-    <defaultID>music</defaultID>
-    <icon>DefaultMusicAlbums.png</icon>
-    <thumb />
-    <action>ActivateWindow(Music,root)</action>
-  </shortcut>
-  <shortcut>
-    <label>$LOCALIZE[10006]</label>
-    <label2>Common Shortcut</label2>
-    <defaultID>videos</defaultID>
-    <icon>DefaultVideo.png</icon>
-    <thumb />
-    <action>ActivateWindow(Videos,root)</action>
-  </shortcut>
-  <shortcut>
-    <label>$LOCALIZE[342]</label>
-    <label2>Common Shortcut</label2>
-    <defaultID>movies</defaultID>
-    <icon>DefaultMovies.png</icon>
-    <thumb />
-    <action>ActivateWindow(Videos,MovieTitles,return)</action>
-  </shortcut>
-  <shortcut>
-    <label>$LOCALIZE[20343]</label>
-    <label2>Common Shortcut</label2>
-    <defaultID>tvshows</defaultID>
-    <icon>DefaultTVShows.png</icon>
-    <thumb />
-    <action>ActivateWindow(Videos,TVShowTitles,return)</action>
-  </shortcut>
-  <shortcut>
-    <label>$LOCALIZE[24001]</label>
-    <label2>Common Shortcut</label2>
-    <defaultID>24001</defaultID>
-    <icon>DefaultAddonProgram.png</icon>
-    <thumb />
-    <action>ActivateWindow(Programs,Addons,return)</action>
-  </shortcut>
-  <shortcut>
-    <label>$LOCALIZE[12600]</label>
-    <label2>Common Shortcut</label2>
-    <defaultID>weather</defaultID>
-    <icon>DefaultShortcut.png</icon>
-    <thumb />
-    <action>ActivateWindow(Weather)</action>
-  </shortcut>
-  <shortcut>
-    <label>$LOCALIZE[10004]</label>
-    <label2>Common Shortcut</label2>
-    <defaultID>settings</defaultID>
-    <icon>DefaultShortcut.png</icon>
-    <thumb />
-    <action>ActivateWindow(Settings)</action>
-  </shortcut>
+	<shortcut>
+		<defaultID>pictures</defaultID>
+		<label>10002</label>
+		<label2>Common Shortcut</label2>
+		<icon>DefaultPicture.png</icon>
+		<thumb />
+		<action>ActivateWindow(Pictures)</action>
+		<mainAction>
+			<action>ActivateWindow(Pictures)</action>
+			<heading>Pictures</heading>
+		</mainAction>
+	</shortcut>
+	<shortcut>
+		<defaultID>music</defaultID>
+		<label>10005</label>
+		<label2>Common Shortcut</label2>
+		<icon>DefaultMusicAlbums.png</icon>
+		<thumb />
+		<action>ActivateWindow(Music,root)</action>
+		<mainAction>
+			<action>ActivateWindow(Music,root)</action>
+			<heading>Music</heading>
+		</mainAction>
+	</shortcut>
+	<shortcut>
+		<defaultID>videos</defaultID>
+		<label>10006</label>
+		<label2>Common Shortcut</label2>
+		<icon>DefaultVideo.png</icon>
+		<thumb />
+		<action>ActivateWindow(Videos,root)</action>
+		<mainAction>
+			<action>ActivateWindow(Videos,root)</action>
+			<heading>Videos</heading>
+		</mainAction>
+	</shortcut>
+	<shortcut>
+		<defaultID>movies</defaultID>
+		<label>342</label>
+		<label2>Common Shortcut</label2>
+		<icon>DefaultMovies.png</icon>
+		<thumb />
+		<action>ActivateWindow(Videos,MovieTitles,return)</action>
+		<mainAction>
+			<action>ActivateWindow(Videos,MovieTitles,return)</action>
+			<heading>Movies</heading>
+		</mainAction>
+	</shortcut>
+	<shortcut>
+		<defaultID>tvshows</defaultID>
+		<label>20343</label>
+		<label2>Common Shortcut</label2>
+		<icon>DefaultTVShows.png</icon>
+		<thumb />
+		<action>ActivateWindow(Videos,special://skin/extras/playlists/TvShows-Titles.xsp,return)</action>
+		<mainAction>
+			<action>ActivateWindow(Videos,special://skin/extras/playlists/TvShows-Titles.xsp,return)</action>
+			<heading>TV shows</heading>
+		</mainAction>
+	</shortcut>
+	<shortcut>
+		<defaultID>anime</defaultID>
+		<label>Anime</label>
+		<label2>Skin Playlist</label2>
+		<icon>DefaultPlaylist.png</icon>
+		<thumb />
+		<action>ActivateWindow(Videos,special://skin/playlists/Anime-Titles.xsp,return)</action>
+		<mainAction>
+			<action>ActivateWindow(Videos,special://skin/playlists/Anime-Titles.xsp,return)</action>
+			<heading>Anime</heading>
+		</mainAction>
+		<upAction>
+			<action>ActivateWindow(54,return)</action>
+			<heading>Anime Hub</heading>
+		</upAction>
+	</shortcut>
+	<shortcut>
+		<defaultID>24001</defaultID>
+		<label>24001</label>
+		<label2>Common Shortcut</label2>
+		<icon>DefaultAddonProgram.png</icon>
+		<thumb />
+		<action>ActivateWindow(Programs,Addons,return)</action>
+		<mainAction>
+			<action>ActivateWindow(Programs,Addons,return)</action>
+			<heading>Add-ons</heading>
+		</mainAction>
+	</shortcut>
+	<shortcut>
+		<defaultID>weather</defaultID>
+		<label>12600</label>
+		<label2>Common Shortcut</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>ActivateWindow(Weather)</action>
+		<mainAction>
+			<action>ActivateWindow(Weather)</action>
+			<heading>Weather</heading>
+		</mainAction>
+	</shortcut>
+	<shortcut>
+		<defaultID>settings</defaultID>
+		<label>10004</label>
+		<label2>Common Shortcut</label2>
+		<icon>DefaultShortcut.png</icon>
+		<thumb />
+		<action>ActivateWindow(Settings)</action>
+		<mainAction>
+			<action>ActivateWindow(Settings)</action>
+			<heading>Settings</heading>
+		</mainAction>
+		<downAction>
+			<action>ActivateWindow(skinsettings)</action>
+			<heading>Skin settings</heading>
+		</downAction>
+	</shortcut>
 </shortcuts>
