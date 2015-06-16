@@ -8,6 +8,8 @@
   <include file="Includes_MediaFlags.xml" />
   <include file="Includes_Resolution_Diffs.xml" />
   <include file="Includes_Widgets.xml" />
+  <include file="Includes_VideoHub.xml" />
+
   <include file="Viewtype_500_List.xml" />
   <include file="Viewtype_501_Poster_No_Wrap.xml" />
   <include file="Viewtype_502_Poster_Wrap.xml" />

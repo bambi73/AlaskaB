@@ -5,7 +5,7 @@
     <origin x="0" y="0"/>
   </coordinates>
 
-  <onunload>RunScript(script.alaskab.utils,type=buildxml&amp;mainmenuID=8000&amp;group=mainmenu|videohub-list|videohub-widgets)</onunload>
+  <onunload>RunScript(script.alaskab.utils,type=buildxml&amp;mainmenuID=8000&amp;group=mainmenu|videohub-1-list|videohub-1-widgets|videohub-2-list|videohub-2-widgets)</onunload>
   <!-- <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=8000&amp;levels=4&amp;group=mainmenu|videohub-list|videohub-widgets)</onunload> -->
   <!-- <onunload>RunScript(special://skin/extras/scripts/alaskab_utils.py,updateSkinshortcutsInclude,type=buildxml&amp;mainmenuID=8000&amp;group=mainmenu|videohub-list|videohub-widgets)</onunload> -->
 
@@ -384,32 +384,46 @@
             <control type="button" id="1412">
               <include>SkinSettingsRightGLTemplate</include>
               <textoffsetx>50</textoffsetx>
-              <label>VideoHub Menu</label>
-              <onclick>RunScript(script.alaskab.utils,type=manage&amp;group=videohub-list&amp;groupname=Video Hub Menu)</onclick>
+              <label>VideoHub #1 Menu</label>
+              <onclick>RunScript(script.alaskab.utils,type=manage&amp;group=videohub-1-list&amp;groupname=Video Hub #1 Menu)</onclick>
               <visible>System.HasAddon(script.skinshortcuts)</visible>
             </control>        
             <control type="button" id="1413">
               <include>SkinSettingsRightGLTemplate</include>
               <textoffsetx>50</textoffsetx>
-              <label>VideoHub Widgets</label>
-              <onclick>RunScript(script.alaskab.utils,type=manage&amp;group=videohub-widgets&amp;groupname=Video Hub Widgets)</onclick>
+              <label>VideoHub #1 Widgets</label>
+              <onclick>RunScript(script.alaskab.utils,type=manage&amp;group=videohub-1-widgets&amp;groupname=Video Hub #1 Widgets)</onclick>
               <visible>System.HasAddon(script.skinshortcuts)</visible>
             </control>        
             <control type="button" id="1414">
+              <include>SkinSettingsRightGLTemplate</include>
+              <textoffsetx>50</textoffsetx>
+              <label>VideoHub #2 Menu</label>
+              <onclick>RunScript(script.alaskab.utils,type=manage&amp;group=videohub-2-list&amp;groupname=Video Hub #2 Menu)</onclick>
+              <visible>System.HasAddon(script.skinshortcuts)</visible>
+            </control>        
+            <control type="button" id="1415">
+              <include>SkinSettingsRightGLTemplate</include>
+              <textoffsetx>50</textoffsetx>
+              <label>VideoHub #2 Widgets</label>
+              <onclick>RunScript(script.alaskab.utils,type=manage&amp;group=videohub-2-widgets&amp;groupname=Video Hub #2 Widgets)</onclick>
+              <visible>System.HasAddon(script.skinshortcuts)</visible>
+            </control>        
+            <control type="button" id="1454">
               <include>SkinSettingsRightGLTemplate</include>
               <textoffsetx>50</textoffsetx>
               <label>Main menu (script.alaskab.utils)</label>
               <onclick>RunScript(script.alaskab.utils,type=manage&amp;group=mainmenu&amp;groupname=Main Menu)</onclick>
               <visible>System.HasAddon(script.alaskab.utils)</visible>
             </control>        
-            <control type="button" id="1416">
+            <control type="button" id="1456">
               <include>SkinSettingsRightGLTemplate</include>
               <textoffsetx>50</textoffsetx>
               <label>Main menu (script.skinshortcuts)</label>
               <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
               <visible>System.HasAddon(script.skinshortcuts)</visible>
             </control>        
-            <control type="button" id="1415">
+            <control type="button" id="1455">
               <include>SkinSettingsRightGLTemplate</include>
               <textoffsetx>50</textoffsetx>
               <label>Reset all</label>
@@ -417,67 +431,67 @@
               <visible>System.HasAddon(script.skinshortcuts)</visible>
             </control>        
 
-            <control type="radiobutton" id="1420">
+            <control type="radiobutton" id="1520">
               <include>SkinSettingsRightGLTemplateWithText</include>
               <label>Enable Video library scrollbar</label>
               <onclick>Skin.ToggleSetting(AlaskaB.Settings.VideoNav.Scrollbar.Enable)</onclick>
               <selected>Skin.HasSetting(AlaskaB.Settings.VideoNav.Scrollbar.Enable)</selected>
             </control>
-            <control type="radiobutton" id="1421">
+            <control type="radiobutton" id="1521">
               <include>SkinSettingsRightGLTemplateWithText</include>
               <label>Enable Video hub scrollbar</label>
               <onclick>Skin.ToggleSetting(AlaskaB.Settings.VideoHub.Scrollbar.Enable)</onclick>
               <selected>Skin.HasSetting(AlaskaB.Settings.VideoHub.Scrollbar.Enable)</selected>
             </control>
-            <control type="radiobutton" id="1422">
+            <control type="radiobutton" id="1522">
               <include>SkinSettingsRightGLTemplateWithText</include>
               <label>Enable Video info plot scrollbar</label>
               <onclick>Skin.ToggleSetting(AlaskaB.Settings.VideoInfo.Plot.Scrollbar.Enable)</onclick>
               <selected>Skin.HasSetting(AlaskaB.Settings.VideoInfo.Plot.Scrollbar.Enable)</selected>
             </control>
-            <control type="radiobutton" id="1423">
+            <control type="radiobutton" id="1523">
               <include>SkinSettingsRightGLTemplateWithText</include>
               <label>Enable Video info cast scrollbar</label>
               <onclick>Skin.ToggleSetting(AlaskaB.Settings.VideoInfo.Cast.Scrollbar.Enable)</onclick>
               <selected>Skin.HasSetting(AlaskaB.Settings.VideoInfo.Cast.Scrollbar.Enable)</selected>
             </control>
-            <control type="radiobutton" id="1424">
+            <control type="radiobutton" id="1524">
               <include>SkinSettingsRightGLTemplateWithText</include>
               <label>Enable Dialog media source scrollbar</label>
               <onclick>Skin.ToggleSetting(AlaskaB.Settings.MediaSource.Scrollbar.Enable)</onclick>
               <selected>Skin.HasSetting(AlaskaB.Settings.MediaSource.Scrollbar.Enable)</selected>
             </control>
-            <control type="radiobutton" id="1425">
+            <control type="radiobutton" id="1525">
               <include>SkinSettingsRightGLTemplateWithText</include>
               <label>Enable Dialog file browser scrollbar</label>
               <onclick>Skin.ToggleSetting(AlaskaB.Settings.FileBrowser.Scrollbar.Enable)</onclick>
               <selected>Skin.HasSetting(AlaskaB.Settings.FileBrowser.Scrollbar.Enable)</selected>
             </control>
-            <control type="radiobutton" id="1426">
+            <control type="radiobutton" id="1526">
               <include>SkinSettingsRightGLTemplateWithText</include>
               <label>Enable Dialog select scrollbar</label>
               <onclick>Skin.ToggleSetting(AlaskaB.Settings.Select.Scrollbar.Enable)</onclick>
               <selected>Skin.HasSetting(AlaskaB.Settings.Select.Scrollbar.Enable)</selected>
             </control>
-            <control type="radiobutton" id="1427">
+            <control type="radiobutton" id="1527">
               <include>SkinSettingsRightGLTemplateWithText</include>
               <label>Enable Setting category scrollbar</label>
               <onclick>Skin.ToggleSetting(AlaskaB.Settings.SettingsCategory.Scrollbar.Enable)</onclick>
               <selected>Skin.HasSetting(AlaskaB.Settings.SettingsCategory.Scrollbar.Enable)</selected>
             </control>
-            <control type="radiobutton" id="1428">
+            <control type="radiobutton" id="1528">
               <include>SkinSettingsRightGLTemplateWithText</include>
               <label>Enable Setting profile scrollbar</label>
               <onclick>Skin.ToggleSetting(AlaskaB.Settings.SettingsProfile.Scrollbar.Enable)</onclick>
               <selected>Skin.HasSetting(AlaskaB.Settings.SettingsProfile.Scrollbar.Enable)</selected>
             </control>
-            <control type="radiobutton" id="1429">
+            <control type="radiobutton" id="1529">
               <include>SkinSettingsRightGLTemplateWithText</include>
               <label>Enable Login screen scrollbar</label>
               <onclick>Skin.ToggleSetting(AlaskaB.Settings.LoginScreen.Scrollbar.Enable)</onclick>
               <selected>Skin.HasSetting(AlaskaB.Settings.LoginScreen.Scrollbar.Enable)</selected>
             </control>
-            <control type="radiobutton" id="1430">
+            <control type="radiobutton" id="1530">
               <include>SkinSettingsRightGLTemplateWithText</include>
               <label>Enable AlaskaB setting scrollbar</label>
               <onclick>Skin.ToggleSetting(AlaskaB.Settings.SkinSettings.Scrollbar.Enable)</onclick>

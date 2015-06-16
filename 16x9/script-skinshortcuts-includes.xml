@@ -85,6 +85,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,special://skin/extras/playlists/TvShows-Titles.xsp,return)</onclick>
 			<property name="path">ActivateWindow(Videos,special://skin/extras/playlists/TvShows-Titles.xsp,return)</property>
+			<property name="upHeading">Hub #2</property>
+			<property name="upSubheading">Hubik</property>
+			<property name="upAction">ActivateWindow(1102,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">tvshows</property>
 			<property name="group">mainmenu</property>
@@ -104,7 +107,7 @@
 			<onclick>ActivateWindow(Videos,special://skin/playlists/Anime-Titles.xsp,return)</onclick>
 			<property name="path">ActivateWindow(Videos,special://skin/playlists/Anime-Titles.xsp,return)</property>
 			<property name="upHeading">Anime Hub</property>
-			<property name="upAction">ActivateWindow(54,return)</property>
+			<property name="upAction">ActivateWindow(1101,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="submenuVisibility">anime</property>
 			<property name="group">mainmenu</property>
@@ -168,6 +171,8 @@
 			<property name="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.settings)]</property>
 			<property name="hasSubmenu">False</property>
 			<property name="hasSubmenu">True</property>
+			<property name="hasSubmenu">True</property>
+			<property name="hasSubmenu">False</property>
 			<property name="hasSubmenu">True</property>
 		</item>
 		<item id="1">
@@ -338,6 +343,8 @@
 			<property name="hasSubmenu">True</property>
 			<property name="hasSubmenu">True</property>
 			<property name="hasSubmenu">False</property>
+			<property name="hasSubmenu">False</property>
+			<property name="hasSubmenu">False</property>
 		</item>
 	</include>
 	<include />
@@ -354,9 +361,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<property name="path">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="2">
 			<label>Recenty updated</label>
@@ -370,9 +377,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<property name="path">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="3">
 			<label>Playlists</label>
@@ -385,9 +392,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(videos,special://videoplaylists/,return)</onclick>
 			<property name="path">ActivateWindow(videos,special://videoplaylists/,return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="4">
 			<label>Titles</label>
@@ -400,9 +407,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)</onclick>
 			<property name="path">ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="5">
 			<label>Genres</label>
@@ -416,9 +423,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowGenres,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowGenres,return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="6">
 			<label>Studios</label>
@@ -432,9 +439,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowStudios,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowStudios,return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="7">
 			<label>Actors</label>
@@ -448,9 +455,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowActors,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowActors,return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="8">
 			<label>Years</label>
@@ -464,9 +471,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowYears,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowYears,return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="9">
 			<label>Files</label>
@@ -479,9 +486,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,Files,return)</onclick>
 			<property name="path">ActivateWindow(Videos,Files,return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="10">
 			<label>Update library</label>
@@ -494,42 +501,42 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>UpdateLibrary(video)</onclick>
 			<property name="path">UpdateLibrary(video)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="1">
-			<label>Random Anime</label>
+			<label>Random</label>
 			<label2>Custom shortcut</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<property name="labelID">randomanime</property>
+			<property name="labelID">random</property>
 			<property name="defaultID" />
-			<onclick>SetProperty(AlaskaB.HeadingLabel,Random Anime,Home)</onclick>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Random,Home)</onclick>
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>noop</onclick>
 			<property name="path">noop</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-widgets)]</visible>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-1-widgets)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-widgets</property>
+			<property name="group">videohub-1-widgets</property>
 			<property name="widget">Playlist</property>
 			<property name="widgetName">Random Anime</property>
 			<property name="widgetPlaylist">special://skin/playlists/RandomTVShows.xsp</property>
 		</item>
 		<item id="2">
-			<label>Random Anime 2</label>
+			<label>Random 2</label>
 			<label2>Custom shortcut</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<property name="labelID">randomanime2</property>
+			<property name="labelID">random2</property>
 			<property name="defaultID" />
-			<onclick>SetProperty(AlaskaB.HeadingLabel,Random Anime 2,Home)</onclick>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Random 2,Home)</onclick>
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>noop</onclick>
 			<property name="path">noop</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-widgets)]</visible>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-1-widgets)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-widgets</property>
+			<property name="group">videohub-1-widgets</property>
 			<property name="widget">Playlist</property>
 			<property name="widgetName">Random Anime 2</property>
 			<property name="widgetPlaylist">special://skin/playlists/RandomAnime.xsp</property>
@@ -545,12 +552,66 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>noop</onclick>
 			<property name="path">noop</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-widgets)]</visible>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-1-widgets)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-widgets</property>
+			<property name="group">videohub-1-widgets</property>
 			<property name="widget">Playlist</property>
 			<property name="widgetName">Anime (In progress)</property>
 			<property name="widgetPlaylist">special://skin/playlists/Anime-InProgress.xsp</property>
+		</item>
+		<item id="1">
+			<label>Anime (In progress)</label>
+			<label2>Custom shortcut</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">anime-inprogress</property>
+			<property name="defaultID" />
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Anime (In progress),Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
+			<onclick>noop</onclick>
+			<property name="path">noop</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-2-widgets)]</visible>
+			<property name="isSubmenu">True</property>
+			<property name="group">videohub-2-widgets</property>
+			<property name="widget">Playlist</property>
+			<property name="widgetName">Anime (In progress)</property>
+			<property name="widgetPlaylist">special://skin/playlists/Anime-InProgress.xsp</property>
+		</item>
+		<item id="2">
+			<label>Random Anime 2</label>
+			<label2>Custom shortcut</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">randomanime2</property>
+			<property name="defaultID" />
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Random Anime 2,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
+			<onclick>noop</onclick>
+			<property name="path">noop</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-2-widgets)]</visible>
+			<property name="isSubmenu">True</property>
+			<property name="group">videohub-2-widgets</property>
+			<property name="widget">Playlist</property>
+			<property name="widgetName">Random Anime 2</property>
+			<property name="widgetPlaylist">special://skin/playlists/RandomAnime.xsp</property>
+		</item>
+		<item id="3">
+			<label>TvShows (In progress)</label>
+			<label2>Custom shortcut</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">tvshows-inprogress</property>
+			<property name="defaultID" />
+			<onclick>SetProperty(AlaskaB.HeadingLabel,TvShows (In progress),Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
+			<onclick>noop</onclick>
+			<property name="path">noop</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-2-widgets)]</visible>
+			<property name="isSubmenu">True</property>
+			<property name="group">videohub-2-widgets</property>
+			<property name="widget">Playlist</property>
+			<property name="widgetName">TvShows (In progress)</property>
+			<property name="widgetPlaylist">special://skin/playlists/TvShows-InProgress.xsp</property>
 		</item>
 		<item id="1">
 			<label>$LOCALIZE[1039]</label>
@@ -932,9 +993,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<property name="path">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</property>
-			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="2">
 			<label>Recenty updated</label>
@@ -948,9 +1009,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<property name="path">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</property>
-			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="3">
 			<label>Playlists</label>
@@ -963,9 +1024,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(videos,special://videoplaylists/,return)</onclick>
 			<property name="path">ActivateWindow(videos,special://videoplaylists/,return)</property>
-			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="4">
 			<label>Titles</label>
@@ -978,9 +1039,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)</onclick>
 			<property name="path">ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)</property>
-			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="5">
 			<label>Genres</label>
@@ -994,9 +1055,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowGenres,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowGenres,return)</property>
-			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="6">
 			<label>Studios</label>
@@ -1010,9 +1071,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowStudios,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowStudios,return)</property>
-			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="7">
 			<label>Actors</label>
@@ -1026,9 +1087,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowActors,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowActors,return)</property>
-			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="8">
 			<label>Years</label>
@@ -1042,9 +1103,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowYears,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowYears,return)</property>
-			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="9">
 			<label>Files</label>
@@ -1057,9 +1118,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,Files,return)</onclick>
 			<property name="path">ActivateWindow(Videos,Files,return)</property>
-			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="10">
 			<label>Update library</label>
@@ -1072,9 +1133,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>UpdateLibrary(video)</onclick>
 			<property name="path">UpdateLibrary(video)</property>
-			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 	</include>
 	<include name="skinshortcuts-group-pictures">
@@ -1819,7 +1880,7 @@
 			<property name="group">settings</property>
 		</item>
 	</include>
-	<include name="skinshortcuts-group-videohub-list">
+	<include name="skinshortcuts-group-videohub-1-list">
 		<item id="1">
 			<label>Recenty added</label>
 			<label2 />
@@ -1833,7 +1894,7 @@
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<property name="path">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="2">
 			<label>Recenty updated</label>
@@ -1848,7 +1909,7 @@
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<property name="path">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="3">
 			<label>Playlists</label>
@@ -1862,7 +1923,7 @@
 			<onclick>ActivateWindow(videos,special://videoplaylists/,return)</onclick>
 			<property name="path">ActivateWindow(videos,special://videoplaylists/,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="4">
 			<label>Titles</label>
@@ -1876,7 +1937,7 @@
 			<onclick>ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)</onclick>
 			<property name="path">ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="5">
 			<label>Genres</label>
@@ -1891,7 +1952,7 @@
 			<onclick>ActivateWindow(Videos,TvShowGenres,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowGenres,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="6">
 			<label>Studios</label>
@@ -1906,7 +1967,7 @@
 			<onclick>ActivateWindow(Videos,TvShowStudios,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowStudios,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="7">
 			<label>Actors</label>
@@ -1921,7 +1982,7 @@
 			<onclick>ActivateWindow(Videos,TvShowActors,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowActors,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="8">
 			<label>Years</label>
@@ -1936,7 +1997,7 @@
 			<onclick>ActivateWindow(Videos,TvShowYears,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowYears,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="9">
 			<label>Files</label>
@@ -1950,7 +2011,7 @@
 			<onclick>ActivateWindow(Videos,Files,return)</onclick>
 			<property name="path">ActivateWindow(Videos,Files,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="10">
 			<label>Update library</label>
@@ -1964,7 +2025,7 @@
 			<onclick>UpdateLibrary(video)</onclick>
 			<property name="path">UpdateLibrary(video)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="1">
 			<label>Recenty added</label>
@@ -1979,7 +2040,7 @@
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<property name="path">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="2">
 			<label>Recenty updated</label>
@@ -1994,7 +2055,7 @@
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<property name="path">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="3">
 			<label>Playlists</label>
@@ -2008,7 +2069,7 @@
 			<onclick>ActivateWindow(videos,special://videoplaylists/,return)</onclick>
 			<property name="path">ActivateWindow(videos,special://videoplaylists/,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="4">
 			<label>Titles</label>
@@ -2022,7 +2083,7 @@
 			<onclick>ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)</onclick>
 			<property name="path">ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="5">
 			<label>Genres</label>
@@ -2037,7 +2098,7 @@
 			<onclick>ActivateWindow(Videos,TvShowGenres,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowGenres,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="6">
 			<label>Studios</label>
@@ -2052,7 +2113,7 @@
 			<onclick>ActivateWindow(Videos,TvShowStudios,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowStudios,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="7">
 			<label>Actors</label>
@@ -2067,7 +2128,7 @@
 			<onclick>ActivateWindow(Videos,TvShowActors,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowActors,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="8">
 			<label>Years</label>
@@ -2082,7 +2143,7 @@
 			<onclick>ActivateWindow(Videos,TvShowYears,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowYears,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="9">
 			<label>Files</label>
@@ -2096,7 +2157,7 @@
 			<onclick>ActivateWindow(Videos,Files,return)</onclick>
 			<property name="path">ActivateWindow(Videos,Files,return)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="10">
 			<label>Update library</label>
@@ -2110,10 +2171,10 @@
 			<onclick>UpdateLibrary(video)</onclick>
 			<property name="path">UpdateLibrary(video)</property>
 			<visible>StringCompare(System.ProfileName,Karlicek)</visible>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 	</include>
-	<include name="skinshortcuts-group-alt-videohub-list">
+	<include name="skinshortcuts-group-alt-videohub-1-list">
 		<item id="1">
 			<label>Recenty added</label>
 			<label2 />
@@ -2126,9 +2187,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<property name="path">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="2">
 			<label>Recenty updated</label>
@@ -2142,9 +2203,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<property name="path">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="3">
 			<label>Playlists</label>
@@ -2157,9 +2218,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(videos,special://videoplaylists/,return)</onclick>
 			<property name="path">ActivateWindow(videos,special://videoplaylists/,return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="4">
 			<label>Titles</label>
@@ -2172,9 +2233,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)</onclick>
 			<property name="path">ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="5">
 			<label>Genres</label>
@@ -2188,9 +2249,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowGenres,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowGenres,return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="6">
 			<label>Studios</label>
@@ -2204,9 +2265,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowStudios,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowStudios,return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="7">
 			<label>Actors</label>
@@ -2220,9 +2281,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowActors,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowActors,return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="8">
 			<label>Years</label>
@@ -2236,9 +2297,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowYears,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowYears,return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="9">
 			<label>Files</label>
@@ -2251,9 +2312,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,Files,return)</onclick>
 			<property name="path">ActivateWindow(Videos,Files,return)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="10">
 			<label>Update library</label>
@@ -2266,9 +2327,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>UpdateLibrary(video)</onclick>
 			<property name="path">UpdateLibrary(video)</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="1">
 			<label>Recenty added</label>
@@ -2282,9 +2343,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<property name="path">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</property>
-			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="2">
 			<label>Recenty updated</label>
@@ -2298,9 +2359,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<property name="path">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</property>
-			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="3">
 			<label>Playlists</label>
@@ -2313,9 +2374,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(videos,special://videoplaylists/,return)</onclick>
 			<property name="path">ActivateWindow(videos,special://videoplaylists/,return)</property>
-			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="4">
 			<label>Titles</label>
@@ -2328,9 +2389,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)</onclick>
 			<property name="path">ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)</property>
-			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="5">
 			<label>Genres</label>
@@ -2344,9 +2405,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowGenres,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowGenres,return)</property>
-			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="6">
 			<label>Studios</label>
@@ -2360,9 +2421,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowStudios,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowStudios,return)</property>
-			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="7">
 			<label>Actors</label>
@@ -2376,9 +2437,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowActors,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowActors,return)</property>
-			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="8">
 			<label>Years</label>
@@ -2392,9 +2453,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,TvShowYears,return)</onclick>
 			<property name="path">ActivateWindow(Videos,TvShowYears,return)</property>
-			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="9">
 			<label>Files</label>
@@ -2407,9 +2468,9 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,Files,return)</onclick>
 			<property name="path">ActivateWindow(Videos,Files,return)</property>
-			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 		<item id="10">
 			<label>Update library</label>
@@ -2422,42 +2483,42 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>UpdateLibrary(video)</onclick>
 			<property name="path">UpdateLibrary(video)</property>
-			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-list)]</visible>
+			<visible>StringCompare(System.ProfileName,Karlicek) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-1-list)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-list</property>
+			<property name="group">videohub-1-list</property>
 		</item>
 	</include>
-	<include name="skinshortcuts-group-videohub-widgets">
+	<include name="skinshortcuts-group-videohub-1-widgets">
 		<item id="1">
-			<label>Random Anime</label>
+			<label>Random</label>
 			<label2>Custom shortcut</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<property name="labelID">randomanime</property>
+			<property name="labelID">random</property>
 			<property name="defaultID" />
-			<onclick>SetProperty(AlaskaB.HeadingLabel,Random Anime,Home)</onclick>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Random,Home)</onclick>
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>noop</onclick>
 			<property name="path">noop</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="group">videohub-widgets</property>
+			<property name="group">videohub-1-widgets</property>
 			<property name="widget">Playlist</property>
 			<property name="widgetName">Random Anime</property>
 			<property name="widgetPlaylist">special://skin/playlists/RandomTVShows.xsp</property>
 		</item>
 		<item id="2">
-			<label>Random Anime 2</label>
+			<label>Random 2</label>
 			<label2>Custom shortcut</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<property name="labelID">randomanime2</property>
+			<property name="labelID">random2</property>
 			<property name="defaultID" />
-			<onclick>SetProperty(AlaskaB.HeadingLabel,Random Anime 2,Home)</onclick>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Random 2,Home)</onclick>
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>noop</onclick>
 			<property name="path">noop</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="group">videohub-widgets</property>
+			<property name="group">videohub-1-widgets</property>
 			<property name="widget">Playlist</property>
 			<property name="widgetName">Random Anime 2</property>
 			<property name="widgetPlaylist">special://skin/playlists/RandomAnime.xsp</property>
@@ -2474,45 +2535,45 @@
 			<onclick>noop</onclick>
 			<property name="path">noop</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="group">videohub-widgets</property>
+			<property name="group">videohub-1-widgets</property>
 			<property name="widget">Playlist</property>
 			<property name="widgetName">Anime (In progress)</property>
 			<property name="widgetPlaylist">special://skin/playlists/Anime-InProgress.xsp</property>
 		</item>
 	</include>
-	<include name="skinshortcuts-group-alt-videohub-widgets">
+	<include name="skinshortcuts-group-alt-videohub-1-widgets">
 		<item id="1">
-			<label>Random Anime</label>
+			<label>Random</label>
 			<label2>Custom shortcut</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<property name="labelID">randomanime</property>
+			<property name="labelID">random</property>
 			<property name="defaultID" />
-			<onclick>SetProperty(AlaskaB.HeadingLabel,Random Anime,Home)</onclick>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Random,Home)</onclick>
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>noop</onclick>
 			<property name="path">noop</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-widgets)]</visible>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-1-widgets)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-widgets</property>
+			<property name="group">videohub-1-widgets</property>
 			<property name="widget">Playlist</property>
 			<property name="widgetName">Random Anime</property>
 			<property name="widgetPlaylist">special://skin/playlists/RandomTVShows.xsp</property>
 		</item>
 		<item id="2">
-			<label>Random Anime 2</label>
+			<label>Random 2</label>
 			<label2>Custom shortcut</label2>
 			<icon>DefaultShortcut.png</icon>
 			<thumb />
-			<property name="labelID">randomanime2</property>
+			<property name="labelID">random2</property>
 			<property name="defaultID" />
-			<onclick>SetProperty(AlaskaB.HeadingLabel,Random Anime 2,Home)</onclick>
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Random 2,Home)</onclick>
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>noop</onclick>
 			<property name="path">noop</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-widgets)]</visible>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-1-widgets)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-widgets</property>
+			<property name="group">videohub-1-widgets</property>
 			<property name="widget">Playlist</property>
 			<property name="widgetName">Random Anime 2</property>
 			<property name="widgetPlaylist">special://skin/playlists/RandomAnime.xsp</property>
@@ -2528,12 +2589,123 @@
 			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
 			<onclick>noop</onclick>
 			<property name="path">noop</property>
-			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-widgets)]</visible>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-1-widgets)]</visible>
 			<property name="isSubmenu">True</property>
-			<property name="group">videohub-widgets</property>
+			<property name="group">videohub-1-widgets</property>
 			<property name="widget">Playlist</property>
 			<property name="widgetName">Anime (In progress)</property>
 			<property name="widgetPlaylist">special://skin/playlists/Anime-InProgress.xsp</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-videohub-2-list" />
+	<include name="skinshortcuts-group-alt-videohub-2-list" />
+	<include name="skinshortcuts-group-videohub-2-widgets">
+		<item id="1">
+			<label>Anime (In progress)</label>
+			<label2>Custom shortcut</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">anime-inprogress</property>
+			<property name="defaultID" />
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Anime (In progress),Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
+			<onclick>noop</onclick>
+			<property name="path">noop</property>
+			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<property name="group">videohub-2-widgets</property>
+			<property name="widget">Playlist</property>
+			<property name="widgetName">Anime (In progress)</property>
+			<property name="widgetPlaylist">special://skin/playlists/Anime-InProgress.xsp</property>
+		</item>
+		<item id="2">
+			<label>Random Anime 2</label>
+			<label2>Custom shortcut</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">randomanime2</property>
+			<property name="defaultID" />
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Random Anime 2,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
+			<onclick>noop</onclick>
+			<property name="path">noop</property>
+			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<property name="group">videohub-2-widgets</property>
+			<property name="widget">Playlist</property>
+			<property name="widgetName">Random Anime 2</property>
+			<property name="widgetPlaylist">special://skin/playlists/RandomAnime.xsp</property>
+		</item>
+		<item id="3">
+			<label>TvShows (In progress)</label>
+			<label2>Custom shortcut</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">tvshows-inprogress</property>
+			<property name="defaultID" />
+			<onclick>SetProperty(AlaskaB.HeadingLabel,TvShows (In progress),Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
+			<onclick>noop</onclick>
+			<property name="path">noop</property>
+			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<property name="group">videohub-2-widgets</property>
+			<property name="widget">Playlist</property>
+			<property name="widgetName">TvShows (In progress)</property>
+			<property name="widgetPlaylist">special://skin/playlists/TvShows-InProgress.xsp</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-alt-videohub-2-widgets">
+		<item id="1">
+			<label>Anime (In progress)</label>
+			<label2>Custom shortcut</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">anime-inprogress</property>
+			<property name="defaultID" />
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Anime (In progress),Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
+			<onclick>noop</onclick>
+			<property name="path">noop</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-2-widgets)]</visible>
+			<property name="isSubmenu">True</property>
+			<property name="group">videohub-2-widgets</property>
+			<property name="widget">Playlist</property>
+			<property name="widgetName">Anime (In progress)</property>
+			<property name="widgetPlaylist">special://skin/playlists/Anime-InProgress.xsp</property>
+		</item>
+		<item id="2">
+			<label>Random Anime 2</label>
+			<label2>Custom shortcut</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">randomanime2</property>
+			<property name="defaultID" />
+			<onclick>SetProperty(AlaskaB.HeadingLabel,Random Anime 2,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
+			<onclick>noop</onclick>
+			<property name="path">noop</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-2-widgets)]</visible>
+			<property name="isSubmenu">True</property>
+			<property name="group">videohub-2-widgets</property>
+			<property name="widget">Playlist</property>
+			<property name="widgetName">Random Anime 2</property>
+			<property name="widgetPlaylist">special://skin/playlists/RandomAnime.xsp</property>
+		</item>
+		<item id="3">
+			<label>TvShows (In progress)</label>
+			<label2>Custom shortcut</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">tvshows-inprogress</property>
+			<property name="defaultID" />
+			<onclick>SetProperty(AlaskaB.HeadingLabel,TvShows (In progress),Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.SubheadingLabel,Home)</onclick>
+			<onclick>noop</onclick>
+			<property name="path">noop</property>
+			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-2-widgets)]</visible>
+			<property name="isSubmenu">True</property>
+			<property name="group">videohub-2-widgets</property>
+			<property name="widget">Playlist</property>
+			<property name="widgetName">TvShows (In progress)</property>
+			<property name="widgetPlaylist">special://skin/playlists/TvShows-InProgress.xsp</property>
 		</item>
 	</include>
 </includes>
