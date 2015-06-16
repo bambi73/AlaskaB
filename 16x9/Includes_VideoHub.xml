@@ -1,0 +1,370 @@
+<includes>
+  <include name="AlaskaB_VideoHub">
+    <backgroundcolor>0</backgroundcolor>
+    <defaultcontrol always="true">8000</defaultcontrol>
+    <onunload>CancelAlarm(ReturnToMenu,true)</onunload>
+
+    <controls>
+      <include>Global_Background</include>
+      <control type="group">
+        <include>Fanart</include>
+      </control>
+      <include>AlaskaB_Overlay_Heading</include>
+
+      <control type="group">
+        <include>AlaskaB_VideoHub_Background</include>
+        <include>Animation_ZoomedByMenuOrProperty</include>
+        <include>Animation_ZoomInZoomOutToHome</include>
+        <include>Animation_ZoomOutZoomInToVideoLibrary</include>
+
+        <control type="group">
+          <left>135</left>
+          <top>63</top>
+          <width>1030</width>
+          <control type="group">
+            <control type="list" id="8099">
+              <include>HiddenControl</include>
+              <content>
+                <include condition="StringCompare(Window(Home).Property(AlaskaB.VideoHub.Nr),1)">skinshortcuts-group-videohub-1-widgets</include>
+                <include condition="StringCompare(Window(Home).Property(AlaskaB.VideoHub.Nr),2)">skinshortcuts-group-videohub-2-widgets</include>
+                <include condition="StringCompare(Window(Home).Property(AlaskaB.VideoHub.Nr),3)">skinshortcuts-group-videohub-3-widgets</include>
+                <include condition="StringCompare(Window(Home).Property(AlaskaB.VideoHub.Nr),4)">skinshortcuts-group-videohub-4-widgets</include>
+                <include condition="StringCompare(Window(Home).Property(AlaskaB.VideoHub.Nr),5)">skinshortcuts-group-videohub-5-widgets</include>
+                <include condition="StringCompare(Window(Home).Property(AlaskaB.VideoHub.Nr),6)">skinshortcuts-group-videohub-6-widgets</include>
+              </content>
+            </control>
+
+            <control type="wraplist" id="8010">
+              <include>AlaskaB_VideoHub_Widget</include>
+              <onleft condition="IntegerGreaterThan(Container(8099).NumItems,1)">SetProperty(AlaskaB.VideoHub.ActiveWidget,8015)</onleft>
+              <onleft condition="IntegerGreaterThan(Container(8099).NumItems,1)">8016</onleft>
+              <onright>8000</onright>
+              <autoscroll time="15000">!Control.HasFocus(8010) + IntegerGreaterThan(Container(8010).NumItems,1) + !Window.IsActive(shutdownmenu)</autoscroll>
+              <visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8010) + IntegerGreaterThan(Container(8010).NumItems,0)</visible>
+              <content target="video">$INFO[Container(8099).ListItem(0).Property(widgetPlaylist)]</content>
+            </control>
+
+            <control type="fixedlist" id="8011">
+              <include>AlaskaB_VideoHub_WidgetEmpty</include>
+              <onleft condition="IntegerGreaterThan(Container(8099).NumItems,1)">SetProperty(AlaskaB.VideoHub.ActiveWidget,8015)</onleft>
+              <onleft condition="IntegerGreaterThan(Container(8099).NumItems,1)">8016</onleft>
+              <onright>8000</onright>
+              <visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8010) + !IntegerGreaterThan(Container(8010).NumItems,0)</visible>
+            </control>
+
+            <control type="wraplist" id="8020">
+              <include>AlaskaB_VideoHub_Widget</include>
+              <onleft condition="IntegerGreaterThan(Container(8099).NumItems,2)">SetProperty(AlaskaB.VideoHub.ActiveWidget,8025)</onleft>
+              <onleft condition="IntegerGreaterThan(Container(8099).NumItems,2)">8026</onleft>
+              <onleft condition="!IntegerGreaterThan(Container(8099).NumItems,2)">SetProperty(AlaskaB.VideoHub.ActiveWidget,8027)</onleft>
+              <onleft condition="!IntegerGreaterThan(Container(8099).NumItems,2)">8028</onleft>
+              <onright>8000</onright>
+              <autoscroll time="15000">!Control.HasFocus(8020) + IntegerGreaterThan(Container(8020).NumItems,1) + !Window.IsActive(shutdownmenu)</autoscroll>
+              <visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8020) + IntegerGreaterThan(Container(8020).NumItems,0)</visible>
+              <content target="video">$INFO[Container(8099).ListItem(1).Property(widgetPlaylist)]</content>
+            </control>
+
+            <control type="fixedlist" id="8021">
+              <include>AlaskaB_VideoHub_WidgetEmpty</include>
+              <onleft condition="IntegerGreaterThan(Container(8099).NumItems,2)">SetProperty(AlaskaB.VideoHub.ActiveWidget,8025)</onleft>
+              <onleft condition="IntegerGreaterThan(Container(8099).NumItems,2)">8026</onleft>
+              <onleft condition="!IntegerGreaterThan(Container(8099).NumItems,2)">SetProperty(AlaskaB.VideoHub.ActiveWidget,8027)</onleft>
+              <onleft condition="!IntegerGreaterThan(Container(8099).NumItems,2)">8028</onleft>
+              <onright>8000</onright>
+              <visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8020) + !IntegerGreaterThan(Container(8020).NumItems,0)</visible>
+            </control>
+
+            <control type="wraplist" id="8030">
+              <include>AlaskaB_VideoHub_Widget</include>
+              <onleft>SetProperty(AlaskaB.VideoHub.ActiveWidget,8035)</onleft>
+              <onleft>8036</onleft>
+              <onright>8000</onright>
+              <autoscroll time="15000">!Control.HasFocus(8030) + IntegerGreaterThan(Container(8030).NumItems,1) + !Window.IsActive(shutdownmenu)</autoscroll>
+              <visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8030) + IntegerGreaterThan(Container(8030).NumItems,0)</visible>
+              <content target="video">$INFO[Container(8099).ListItem(2).Property(widgetPlaylist)]</content>
+            </control>
+
+            <control type="fixedlist" id="8031">
+              <include>AlaskaB_VideoHub_WidgetEmpty</include>
+              <onleft>SetProperty(AlaskaB.VideoHub.ActiveWidget,8035)</onleft>
+              <onleft>8036</onleft>
+              <onright>8000</onright>
+              <visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8030) + !IntegerGreaterThan(Container(8030).NumItems,0)</visible>
+            </control>
+
+            <control type="wraplist" id="8015">
+              <include>AlaskaB_VideoHub_WidgetSlide</include>
+              <visible>SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8015)</visible>
+              <content>
+                <item id="1">
+                  <visible>IntegerGreaterThan(Container(8010).NumItems,0)</visible>
+                  <include>AlaskaB_VideoHub_WidgetSlide_Content8010</include>
+                </item>
+                <item id="1">
+                  <visible>!IntegerGreaterThan(Container(8010).NumItems,0)</visible>
+                  <include>AlaskaB_VideoHub_WidgetSlide_Content8011</include>
+                </item>
+                <item id="2">
+                  <visible>IntegerGreaterThan(Container(8020).NumItems,0)</visible>
+                  <include>AlaskaB_VideoHub_WidgetSlide_Content8020</include>
+                </item>
+                <item id="2">
+                  <visible>!IntegerGreaterThan(Container(8020).NumItems,0)</visible>
+                  <include>AlaskaB_VideoHub_WidgetSlide_Content8021</include>
+                </item>
+              </content>
+            </control>
+
+            <control type="fixedlist" id="8016">
+              <include>AlaskaB_VideoHub_WidgetSlideControl</include>
+              <visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8015)</visible>
+              <focusedlayout width="1024" height="576">
+                <control type="button">
+                  <include>HiddenControl</include>
+                  <onfocus condition="Container(8016).HasFocus(1)">Control.Move(8015,-1)</onfocus>
+                  <onfocus condition="Container(8016).HasFocus(2)">SetProperty(AlaskaB.VideoHub.ActiveWidget,8020)</onfocus>
+                  <onfocus condition="Container(8016).HasFocus(2)">Control.Move(8015,-1)</onfocus>
+                  <onfocus condition="Container(8016).HasFocus(2) + IntegerGreaterThan(Container(8020).NumItems,0)">SetFocus(8020)</onfocus>
+                  <onfocus condition="Container(8016).HasFocus(2) + !IntegerGreaterThan(Container(8020).NumItems,0)">SetFocus(8021)</onfocus>
+                </control>
+              </focusedlayout>
+            </control>
+
+            <control type="wraplist" id="8025">
+              <include>AlaskaB_VideoHub_WidgetSlide</include>
+              <visible>SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8025)</visible>
+              <content>
+                <item id="1">
+                  <visible>IntegerGreaterThan(Container(8020).NumItems,0)</visible>
+                  <include>AlaskaB_VideoHub_WidgetSlide_Content8020</include>
+                </item>
+                <item id="1">
+                  <visible>!IntegerGreaterThan(Container(8020).NumItems,0)</visible>
+                  <include>AlaskaB_VideoHub_WidgetSlide_Content8021</include>
+                </item>
+                <item id="2">
+                  <visible>IntegerGreaterThan(Container(8030).NumItems,0)</visible>
+                  <include>AlaskaB_VideoHub_WidgetSlide_Content8030</include>
+                </item>
+                <item id="2">
+                  <visible>!IntegerGreaterThan(Container(8030).NumItems,0)</visible>
+                  <include>AlaskaB_VideoHub_WidgetSlide_Content8031</include>
+                </item>
+              </content>
+            </control>
+
+            <control type="fixedlist" id="8026">
+              <include>AlaskaB_VideoHub_WidgetSlideControl</include>
+              <visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8025)</visible>
+              <focusedlayout width="1024" height="576">
+                <control type="button">
+                  <include>HiddenControl</include>
+                  <onfocus condition="Container(8026).HasFocus(1)">Control.Move(8025,-1)</onfocus>
+                  <onfocus condition="Container(8026).HasFocus(2)">SetProperty(AlaskaB.VideoHub.ActiveWidget,8030)</onfocus>
+                  <onfocus condition="Container(8026).HasFocus(2)">Control.Move(8025,-1)</onfocus>
+                  <onfocus condition="Container(8026).HasFocus(2) + IntegerGreaterThan(Container(8030).NumItems,0)">SetFocus(8030)</onfocus>
+                  <onfocus condition="Container(8026).HasFocus(2) + !IntegerGreaterThan(Container(8030).NumItems,0)">SetFocus(8031)</onfocus>
+                </control>
+              </focusedlayout>
+            </control>
+
+            <control type="wraplist" id="8027">
+              <include>AlaskaB_VideoHub_WidgetSlide</include>
+              <visible>SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8027)</visible>
+              <content>
+                <item id="1">
+                  <visible>IntegerGreaterThan(Container(8020).NumItems,0)</visible>
+                  <include>AlaskaB_VideoHub_WidgetSlide_Content8020</include>
+                </item>
+                <item id="1">
+                  <visible>!IntegerGreaterThan(Container(8020).NumItems,0)</visible>
+                  <include>AlaskaB_VideoHub_WidgetSlide_Content8021</include>
+                </item>
+                <item id="2">
+                  <visible>IntegerGreaterThan(Container(8010).NumItems,0)</visible>
+                  <include>AlaskaB_VideoHub_WidgetSlide_Content8010</include>
+                </item>
+                <item id="2">
+                  <visible>!IntegerGreaterThan(Container(8010).NumItems,0)</visible>
+                  <include>AlaskaB_VideoHub_WidgetSlide_Content8011</include>
+                </item>
+              </content>
+            </control>
+
+            <control type="fixedlist" id="8028">
+              <include>AlaskaB_VideoHub_WidgetSlideControl</include>
+              <visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8027)</visible>
+              <focusedlayout width="1024" height="576">
+                <control type="button">
+                  <include>HiddenControl</include>
+                  <onfocus condition="Container(8028).HasFocus(1)">Control.Move(8027,-1)</onfocus>
+                  <onfocus condition="Container(8028).HasFocus(2)">SetProperty(AlaskaB.VideoHub.ActiveWidget,8010)</onfocus>
+                  <onfocus condition="Container(8028).HasFocus(2)">Control.Move(8027,-1)</onfocus>
+                  <onfocus condition="Container(8028).HasFocus(2) + IntegerGreaterThan(Container(8010).NumItems,0)">SetFocus(8010)</onfocus>
+                  <onfocus condition="Container(8028).HasFocus(2) + !IntegerGreaterThan(Container(8010).NumItems,0)">SetFocus(8011)</onfocus>
+                </control>
+              </focusedlayout>
+            </control>
+
+            <control type="wraplist" id="8035">
+              <include>AlaskaB_VideoHub_WidgetSlide</include>
+              <visible>SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8035)</visible>
+              <content>
+                <item id="1">
+                  <visible>IntegerGreaterThan(Container(8030).NumItems,0)</visible>
+                  <include>AlaskaB_VideoHub_WidgetSlide_Content8030</include>
+                </item>
+                <item id="1">
+                  <visible>!IntegerGreaterThan(Container(8030).NumItems,0)</visible>
+                  <include>AlaskaB_VideoHub_WidgetSlide_Content8031</include>
+                </item>
+                <item id="2">
+                  <visible>IntegerGreaterThan(Container(8010).NumItems,0)</visible>
+                  <include>AlaskaB_VideoHub_WidgetSlide_Content8010</include>
+                </item>
+                <item id="2">
+                  <visible>!IntegerGreaterThan(Container(8010).NumItems,0)</visible>
+                  <include>AlaskaB_VideoHub_WidgetSlide_Content8011</include>
+                </item>
+              </content>
+            </control>
+
+            <control type="fixedlist" id="8036">
+              <include>AlaskaB_VideoHub_WidgetSlideControl</include>
+              <visible allowhiddenfocus="true">SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8035)</visible>
+              <focusedlayout width="1024" height="576">
+                <control type="button">
+                  <include>HiddenControl</include>
+                  <onfocus condition="Container(8036).HasFocus(1)">Control.Move(8035,-1)</onfocus>
+                  <onfocus condition="Container(8036).HasFocus(2)">SetProperty(AlaskaB.VideoHub.ActiveWidget,8010)</onfocus>
+                  <onfocus condition="Container(8036).HasFocus(2)">Control.Move(8035,-1)</onfocus>
+                  <onfocus condition="Container(8036).HasFocus(2) + IntegerGreaterThan(Container(8010).NumItems,0)">SetFocus(8010)</onfocus>
+                  <onfocus condition="Container(8036).HasFocus(2) + !IntegerGreaterThan(Container(8010).NumItems,0)">SetFocus(8011)</onfocus>
+                </control>
+              </focusedlayout>
+            </control>
+
+            <control type="image">
+              <width>1030</width>
+              <height>582</height>
+              <texture>hub/video/fanart_frame_fo.png</texture>
+              <visible>Control.HasFocus(8010) | Control.HasFocus(8011) | Control.HasFocus(8016) | Control.HasFocus(8020) | Control.HasFocus(8021) | Control.HasFocus(8026) | Control.HasFocus(8028) | Control.HasFocus(8030) | Control.HasFocus(8031) | Control.HasFocus(8036)</visible>
+            </control>
+            <control type="image">
+              <width>1030</width>
+              <height>582</height>
+              <texture>hub/video/fanart_frame_nf.png</texture>
+              <visible>![Control.HasFocus(8010) | Control.HasFocus(8011) | Control.HasFocus(8016) | Control.HasFocus(8020) | Control.HasFocus(8021) | Control.HasFocus(8026) | Control.HasFocus(8028) | Control.HasFocus(8030) | Control.HasFocus(8031) | Control.HasFocus(8036)]</visible>
+            </control>
+          </control>
+        </control>          
+
+        <control type="fixedlist" id="8000">
+          <left>1240</left>
+          <top>81</top>
+          <width>585</width>
+          <height>546</height>
+          <onleft condition="SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8010) + IntegerGreaterThan(Container(8010).NumItems,0)">8010</onleft>
+          <onleft condition="SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8010) + !IntegerGreaterThan(Container(8010).NumItems,0)">8011</onleft>
+          <onleft condition="IntegerGreaterThan(Container(8099).NumItems,1) + SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8020) + IntegerGreaterThan(Container(8020).NumItems,0)">8020</onleft>
+          <onleft condition="IntegerGreaterThan(Container(8099).NumItems,1) + SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8020) + !IntegerGreaterThan(Container(8020).NumItems,0)">8021</onleft>
+          <onleft condition="IntegerGreaterThan(Container(8099).NumItems,2) + SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8030) + IntegerGreaterThan(Container(8030).NumItems,0)">8030</onleft>
+          <onleft condition="IntegerGreaterThan(Container(8099).NumItems,2) + SubString(Window.Property(AlaskaB.VideoHub.ActiveWidget),8030) + !IntegerGreaterThan(Container(8030).NumItems,0)">8031</onleft>
+          <onright condition="Control.IsVisible(8800)">8800</onright>
+          <onup>8000</onup>
+          <ondown>8000</ondown>
+          <scrolltime tween="sine" easing="out">200</scrolltime>
+          <pagecontrol>8800</pagecontrol>
+          <focusposition>3</focusposition>
+          <orientation>vertical</orientation>
+          <itemlayout width="585" height="75">
+            <control type="image">
+              <left>12</left>
+              <top>1</top>
+              <width>80</width>
+              <height>80</height>
+              <texture colordiffuse="MedLight">$INFO[ListItem.Icon]</texture>
+            </control>
+            <control type="label">
+              <left>102</left>
+              <top>18</top>
+              <width>470</width>
+              <height>44</height>
+              <align>left</align>
+              <aligny>center</aligny>
+              <textcolor>Light</textcolor>
+              <font>Font_Black_Caps_44</font>
+              <label>$INFO[ListItem.Label]</label>
+            </control>
+          </itemlayout>
+          <focusedlayout width="585" height="93">
+            <control type="image">
+              <top>9</top>
+              <width>585</width>
+              <height>80</height>
+              <aligny>center</aligny>
+              <texture colordiffuse="D0FFFFFF">hub/hub_button.png</texture>
+            </control>
+            <control type="group">
+              <visible>Control.HasFocus(8000)</visible>
+              <control type="image">
+                <left>12</left>
+                <top>9</top>
+                <width>80</width>
+                <height>80</height>
+                <texture colordiffuse="Heavy">$INFO[ListItem.Icon]</texture>
+              </control>
+              <control type="label">
+                <left>102</left>
+                <top>22</top>
+                <width>470</width>
+                <height>53</height>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>Heavy</textcolor>
+                <font>Font_Black_Caps_44</font>
+                <label>$INFO[ListItem.Label]</label>
+              </control>
+            </control>
+            <control type="group">
+              <visible>!Control.HasFocus(8000)</visible>
+              <control type="image">
+                <left>12</left>
+                <top>9</top>
+                <width>80</width>
+                <height>80</height>
+                <texture colordiffuse="Light">$INFO[ListItem.Icon]</texture>
+              </control>
+              <control type="label">
+                <left>102</left>
+                <top>22</top>
+                <width>470</width>
+                <height>53</height>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>Light</textcolor>
+                <font>Font_Black_Caps_44</font>
+                <label>$INFO[ListItem.Label]</label>
+              </control>
+            </control>
+            <control type="button">
+              <include>HiddenControl</include>
+              <onfocus>CancelAlarm(ReturnToMenu,true)</onfocus>
+            </control>
+          </focusedlayout>
+          <content>
+            <include>skinshortcuts-group-videohub-1-list</include>
+          </content>
+        </control>
+        <control type="scrollbar" id="8800">
+          <left>1902</left>
+          <top>96</top>
+          <height>516</height>
+          <onleft>8000</onleft>
+          <visible>Skin.HasSetting(AlaskaB.Settings.VideoHub.Scrollbar.Enable)</visible>
+        </control>
+      </control>
+    </controls>
+
+  </include>
+</includes>
