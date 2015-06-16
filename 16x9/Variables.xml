@@ -2,9 +2,12 @@
 <includes>
 
   <variable name="Global_HeadingLabels">
+    <value condition="Window.IsVisible(settings) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(skinsettings) | Window.IsVisible(addonbrowser) | Window.IsVisible(profiles) | Window.IsVisible(systeminfo)">$LOCALIZE[5]</value>
+
+
     <value condition="!IsEmpty(Window(Home).Property(AlaskaB.HeadingLabel)) + [Container.Content(seasons) | Container.Content(episodes)]">$INFO[Window(Home).Property(AlaskaB.HeadingLabel)]$INFO[ListItem.TVShowTitle,: ]</value>
-    <value condition="!IsEmpty(Window(Home).Property(AlaskaB.HeadingLabel)) + Window.IsVisible(54)">$INFO[Window(Home).Property(AlaskaB.HeadingLabel)] Hub</value>
     <value condition="!IsEmpty(Window(Home).Property(AlaskaB.HeadingLabel))">$INFO[Window(Home).Property(AlaskaB.HeadingLabel)]</value>
+
     <value condition="SubString(Container.FolderPath,plugin://)">$INFO[Container.FolderName]</value>
     <value condition="Container.Content(movies)">$LOCALIZE[342]</value>
     <value condition="Container.Content(tvshows)">$LOCALIZE[20343]</value>
@@ -22,7 +25,6 @@
     <value condition="Window.IsVisible(myprograms)">$LOCALIZE[24001]</value>
     <value condition="Window.IsVisible(favourites)">$LOCALIZE[1036]</value>
     <value condition="Window.IsVisible(weather)">$LOCALIZE[8]</value>
-    <value condition="Window.IsVisible(settings) | Window.IsVisible(addonbrowser) | Window.IsVisible(addonsettings) | Window.IsVisible(skinsettings) | Window.IsVisible(systeminfo) | Window.IsVisible(profiles) | Window.IsVisible(SettingsCategory.xml)">$LOCALIZE[5]</value>
     <value condition="Window.IsVisible(weather)">$INFO[Window(Weather).Property(WeatherProvider)]</value>
     <value condition="Window.IsVisible(51)">$LOCALIZE[31122]</value>
     <value condition="Window.IsVisible(52)">$LOCALIZE[31158]</value>
@@ -41,7 +43,7 @@
     <value condition="Window.IsVisible(videossettings)">$LOCALIZE[157]</value>
     <value condition="Window.IsVisible(networksettings)">$LOCALIZE[14036]</value>
     <value condition="Window.IsVisible(appearancesettings)">$LOCALIZE[480]</value>
-    <value condition="Window.IsVisible(addonbrowser) | Window.IsVisible(addonsettings)">$LOCALIZE[24001]</value>
+    <value condition="Window.IsVisible(addonbrowser)">$LOCALIZE[24001]</value>
     <value condition="Window.IsVisible(PVRSettings)">$LOCALIZE[31161]</value>
     <value condition="Window.IsVisible(systeminfo)">$LOCALIZE[130]</value>
     <value condition="Window.IsVisible(skinsettings)">ALASKA.B</value>
@@ -50,12 +52,13 @@
     <value condition="Window.IsVisible(weather) + !StringCompare(Weather.Location,$LOCALIZE[503])">$INFO[Window(Weather).Property(Location)]</value>
     <value condition="Window.IsVisible(weather) + StringCompare(Weather.Location,$LOCALIZE[503])">$LOCALIZE[503]</value>
     
-    <value condition="Window.IsVisible(54) + [Control.IsVisible(8010) | Control.IsVisible(8011) | Control.IsVisible(8015)] + IntegerGreaterThan(Container(8010).NumItems,0) + !IntegerGreaterThan(Container(8010).NumItems,1)">$INFO[Container(8099).ListItem(0).Label,, • ]$INFO[Container(8010).NumItems,, $LOCALIZE[31157]]</value>
-    <value condition="Window.IsVisible(54) + [Control.IsVisible(8010) | Control.IsVisible(8011) | Control.IsVisible(8015)]">$INFO[Container(8099).ListItem(0).Label,, • ]$INFO[Container(8010).NumItems,, $LOCALIZE[31100]]</value>
-    <value condition="Window.IsVisible(54) + [Control.IsVisible(8020) | Control.IsVisible(8021) | Control.IsVisible(8025) | Control.IsVisible(8027)] + IntegerGreaterThan(Container(8020).NumItems,0) + !IntegerGreaterThan(Container(8020).NumItems,1)">$INFO[Container(8099).ListItem(1).Label,, • ]$INFO[Container(8020).NumItems,, $LOCALIZE[31157]]</value>
-    <value condition="Window.IsVisible(54) + [Control.IsVisible(8020) | Control.IsVisible(8021) | Control.IsVisible(8025) | Control.IsVisible(8027)]">$INFO[Container(8099).ListItem(1).Label,, • ]$INFO[Container(8020).NumItems,, $LOCALIZE[31100]]</value>
-    <value condition="Window.IsVisible(54) + [Control.IsVisible(8030) | Control.IsVisible(8031) | Control.IsVisible(8035)] + IntegerGreaterThan(Container(8030).NumItems,0) + !IntegerGreaterThan(Container(8030).NumItems,1)">$INFO[Container(8099).ListItem(2).Label,, • ]$INFO[Container(8030).NumItems,, $LOCALIZE[31157]]</value>
-    <value condition="Window.IsVisible(54) + [Control.IsVisible(8030) | Control.IsVisible(8031) | Control.IsVisible(8035)]">$INFO[Container(8099).ListItem(2).Label,, • ]$INFO[Container(8030).NumItems,, $LOCALIZE[31100]]</value>
+    <!-- VideoHub - $LOCALIZE[31157] = Item, $LOCALIZE[31100] = Items -->
+    <value condition="Window.IsVisible(54) + [Control.IsVisible(8010) | Control.IsVisible(8011) | Control.IsVisible(8015)] + IntegerGreaterThan(Container(8010).NumItems,0) + !IntegerGreaterThan(Container(8010).NumItems,1)">$INFO[Window(Home).Property(AlaskaB.SubheadingLabel),, • ]$INFO[Container(8099).ListItem(0).Label,, • ]$INFO[Container(8010).NumItems,, $LOCALIZE[31157]]</value>
+    <value condition="Window.IsVisible(54) + [Control.IsVisible(8010) | Control.IsVisible(8011) | Control.IsVisible(8015)]">$INFO[Window(Home).Property(AlaskaB.SubheadingLabel),, • ]$INFO[Container(8099).ListItem(0).Label,, • ]$INFO[Container(8010).NumItems,, $LOCALIZE[31100]]</value>
+    <value condition="Window.IsVisible(54) + [Control.IsVisible(8020) | Control.IsVisible(8021) | Control.IsVisible(8025) | Control.IsVisible(8027)] + IntegerGreaterThan(Container(8020).NumItems,0) + !IntegerGreaterThan(Container(8020).NumItems,1)">$INFO[Window(Home).Property(AlaskaB.SubheadingLabel),, • ]$INFO[Container(8099).ListItem(1).Label,, • ]$INFO[Container(8020).NumItems,, $LOCALIZE[31157]]</value>
+    <value condition="Window.IsVisible(54) + [Control.IsVisible(8020) | Control.IsVisible(8021) | Control.IsVisible(8025) | Control.IsVisible(8027)]">$INFO[Window(Home).Property(AlaskaB.SubheadingLabel),, • ]$INFO[Container(8099).ListItem(1).Label,, • ]$INFO[Container(8020).NumItems,, $LOCALIZE[31100]]</value>
+    <value condition="Window.IsVisible(54) + [Control.IsVisible(8030) | Control.IsVisible(8031) | Control.IsVisible(8035)] + IntegerGreaterThan(Container(8030).NumItems,0) + !IntegerGreaterThan(Container(8030).NumItems,1)">$INFO[Window(Home).Property(AlaskaB.SubheadingLabel),, • ]$INFO[Container(8099).ListItem(2).Label,, • ]$INFO[Container(8030).NumItems,, $LOCALIZE[31157]]</value>
+    <value condition="Window.IsVisible(54) + [Control.IsVisible(8030) | Control.IsVisible(8031) | Control.IsVisible(8035)]">$INFO[Window(Home).Property(AlaskaB.SubheadingLabel),, • ]$INFO[Container(8099).ListItem(2).Label,, • ]$INFO[Container(8030).NumItems,, $LOCALIZE[31100]]</value>
     <value condition="Window.IsVisible(54)"/>
 
     <!-- $LOCALIZE[20373] = Season, $LOCALIZE[20359] = Episode, $LOCALIZE[20360] = Episodes -->

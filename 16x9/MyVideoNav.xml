@@ -19,6 +19,7 @@
 
     <!-- Background -->
     <include>Global_Background</include>
+    <include>AlaskaB_Overlay_Heading</include>
 
     <!-- <control type="label">
       <left>46</left>

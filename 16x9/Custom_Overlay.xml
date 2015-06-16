@@ -39,6 +39,7 @@
           <top>36</top>
           <left>46</left>
           <visible>!Window.IsVisible(home)</visible>
+          <visible>false</visible>
           <animation type="Visible" reversible="false">
             <effect type="slide" start="0,-100" end="0,0" delay="200" time="400" tween="cubic" easing="out" />
             <effect type="fade" start="0" end="100" delay="200" time="400" tween="cubic" easing="out" />
@@ -177,7 +178,7 @@
           <itemgap>24</itemgap>
           <orientation>horizontal</orientation>
           <usecontrolcoords>true</usecontrolcoords>
-          <visible>[SubString(Container.FolderPath,videodb://) | SubString(Container.FolderPath,special://) | SubString(Container.FolderPath,library://)] + ![IsEmpty(ListItem.Rating) + IsEmpty(ListItem.VideoResolution) + IsEmpty(ListItem.VideoCodec) + IsEmpty(ListItem.AudioCodec) + IsEmpty(ListItem.AudioChannels) + IsEmpty(ListItem.Studio)] + !Window.IsActive(shutdownmenu) + !Window.IsActive(contextmenu) + !SubString(Window(home).Property(AlaskaB.Overlay.MediaFlags.Hide),true) + !SubString(Window(home).Property(AlaskaB.VideoNav.ShowHub),true)</visible>
+          <visible>[SubString(Container.FolderPath,videodb://) | SubString(Container.FolderPath,special://) | SubString(Container.FolderPath,library://)] + ![IsEmpty(ListItem.Rating) + IsEmpty(ListItem.VideoResolution) + IsEmpty(ListItem.VideoCodec) + IsEmpty(ListItem.AudioCodec) + IsEmpty(ListItem.AudioChannels) + IsEmpty(ListItem.Studio)] + !Window.IsActive(shutdownmenu) + !Window.IsActive(contextmenu) + !SubString(Window(home).Property(AlaskaB.Overlay.MediaFlags.Hide),true) + !SubString(Window(home).Property(AlaskaB.VideoNav.ShowHub),true) + !Window.Next(Home)</visible>
           <animation effect="Conditional" condition="Player.HasAudio | Player.HasVideo | ListItem.IsFolder">
             <effect type="slide" start="0,0" end="474,0" time="0" tween="cubic" easing="out" />
           </animation>

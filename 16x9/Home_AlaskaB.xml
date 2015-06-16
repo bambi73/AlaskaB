@@ -81,6 +81,7 @@
       <control type="fixedlist" id="8000">
         <width>HomeWidth</width>
         <height>HomeListHeight</height>
+
         <onup condition="!IsEmpty(Container(8000).ListItem.Property(upHeading))">SetProperty(AlaskaB.HeadingLabel,$INFO[Container(8000).ListItem.Property(upHeading)],home)</onup>
         <onup condition="!IsEmpty(Container(8000).ListItem.Property(upSubheading))">SetProperty(AlaskaB.SubheadingLabel,$INFO[Container(8000).ListItem.Property(upSubheading)],home)</onup>
         <onup condition="IsEmpty(Container(8000).ListItem.Property(upHeading))">ClearProperty(AlaskaB.HeadingLabel,home)</onup>
@@ -95,12 +96,6 @@
         <ondown condition="!IsEmpty(Container(8000).ListItem.Property(downAction))">$INFO[Container(8000).ListItem.Property(downAction)]</ondown>
         <ondown condition="!IsEmpty(Container(8000).ListItem.Property(downAction2))">$INFO[Container(8000).ListItem.Property(downAction2)]</ondown>
         <ondown condition="!IsEmpty(Container(8000).ListItem.Property(downAction3))">$INFO[Container(8000).ListItem.Property(downAction3)]</ondown>
-        
-        <onclick condition="!IsEmpty(Container(8000).ListItem.Property(mainHeading))">SetProperty(AlaskaB.HeadingLabel,$INFO[Container(8000).ListItem.Property(mainHeading)],home)</onclick>
-        <onclick condition="!IsEmpty(Container(8000).ListItem.Property(mainSubheading))">SetProperty(AlaskaB.SubheadingLabel,$INFO[Container(8000).ListItem.Property(mainSubheading)],home)</onclick>
-        <onclick condition="IsEmpty(Container(8000).ListItem.Property(mainHeading))">ClearProperty(AlaskaB.HeadingLabel,home)</onclick>
-        <onclick condition="IsEmpty(Container(8000).ListItem.Property(mainSubheading))">ClearProperty(AlaskaB.SubheadingLabel,home)</onclick>
-        <onclick>Notification(XXX,BBB)</onclick>
 
         <focusposition>2</focusposition>
         <orientation>horizontal</orientation>
@@ -163,34 +158,6 @@
         </content>
       </control>
     </control>
-
-    <!-- <control type="list" id="8300">
-      <include>HiddenControl</include>
-      <content>
-        <item id="1">
-          <label>$LOCALIZE[7]</label>
-          <onclick>ActivateWindow(FileManager)</onclick>
-          <visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),pictures)]</visible>
-        </item>
-        <item id="1">
-          <label>Random Anime</label>
-          <onclick>ActivateWindow(VideoLibrary,special://profile/playlists/video/Random Anime.xsp,return)</onclick>
-          <visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),tvshows)]</visible>
-        </item>
-      </content>
-    </control> -->
-    <!-- <control type="list" id="8300">
-      <include>HiddenControl</include>
-      <content>
-        <include>skinshortcuts-submenu-3</include>
-      </content>
-    </control> -->
-    <!-- <control type="list" id="8400">
-      <include>HiddenControl</include>
-      <content>
-        <include>skinshortcuts-submenu-4</include>
-      </content>
-    </control> -->
   </include>
 
 </includes>

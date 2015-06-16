@@ -19,19 +19,11 @@
   <backgrounddefault labelID="videos">special://skin/media/home/videos</backgrounddefault>
   <backgrounddefault labelID="movies">special://skin/media/home/movies</backgrounddefault>
   <backgrounddefault labelID="tvshows">special://skin/media/home/tvshows</backgrounddefault>
+  <backgrounddefault labelID="anime">special://skin/media/home/anime</backgrounddefault>
   <backgrounddefault labelID="24001">special://skin/media/home/addons</backgrounddefault>
   <backgrounddefault labelID="settings">special://skin/media/home/system</backgrounddefault>
   <backgroundBrowse default="special://skin/">True</backgroundBrowse> 
 
   <propertypattern group="mainmenu" property="backgroundProperty">$INFO[Window(Home).Property(AlaskaB.Home.Background.::SUBMENUVISIBILITY::)]</propertypattern>
-
-  <groupoverride group="mainmenu" condition="StringCompare(Container(8000).ListItem.Property(labelID),movies)">Notification(XXX,BBB)</groupoverride>
-
-  <override action="ActivateWindow(Videos,root)" group="mainmenu">
-    <action>ActivateWindow(Videos,root1)</action>
-    <action>ActivateWindow(Videos,root2)</action>
-    <action>ActivateWindow(Videos,root3)</action>
-    <action>ActivateWindow(Videos,root4)</action>
-  </override>
 
 </overrides>
