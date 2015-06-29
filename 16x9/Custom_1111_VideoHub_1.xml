@@ -2,6 +2,13 @@
 <window type="window" id="1111">
   <onload condition="!IsEmpty(Window(Home).Property(AlaskaB.VideoHub-1.ActiveWidget))">SetProperty(AlaskaB.VideoHub.ActiveWidget,$INFO[Window(Home).Property(AlaskaB.VideoHub-1.ActiveWidget)])</onload>
   <onload condition="IsEmpty(Window(Home).Property(AlaskaB.VideoHub-1.ActiveWidget))">SetProperty(AlaskaB.VideoHub.ActiveWidget,8010)</onload>
+  
+  <onload condition="!IsEmpty(Window(Home).Property(AlaskaB.OnClick.HeadingChanged))">SetProperty(AlaskaB.VideoHub-1.HeadingLabel,$INFO[Window(Home).Property(AlaskaB.OnClick.HeadingLabel)],Home)</onload>
+  <onload condition="!IsEmpty(Window(Home).Property(AlaskaB.OnClick.HeadingChanged))">SetProperty(AlaskaB.VideoHub-1.SubheadingLabel,$INFO[Window(Home).Property(AlaskaB.OnClick.SubheadingLabel)],Home)</onload>
+  <onload condition="IsEmpty(Window(Home).Property(AlaskaB.OnClick.HeadingChanged))">SetProperty(AlaskaB.HeadingLabel,$INFO[Window(Home).Property(AlaskaB.VideoHub-1.HeadingLabel)],Home)</onload>
+  <onload condition="IsEmpty(Window(Home).Property(AlaskaB.OnClick.HeadingChanged))">SetProperty(AlaskaB.SubheadingLabel,$INFO[Window(Home).Property(AlaskaB.VideoHub-1.SubheadingLabel)],Home)</onload>
+
   <onunload>SetProperty(AlaskaB.VideoHub-1.ActiveWidget,$INFO[Window.Property(AlaskaB.VideoHub.ActiveWidget)],Home)</onunload>
+  
   <include>AlaskaB_VideoHub</include>
 </window>

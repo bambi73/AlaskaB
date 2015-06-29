@@ -567,10 +567,12 @@
   <include name="ViewTypeButton_FillHeadingCategory">
     <control type="button">
       <include>HiddenControl</include>
-      <visible>!Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + !Container.Content(musicvideos)</visible>
+      <include>MyVideoNavHeadingSelection</include>
+
+      <!-- <visible>!Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + !Container.Content(musicvideos)</visible>
       <onfocus condition="SubString(Window(home).Property(AlaskaB.IsHeadingCategorySelection),true) + ![SubString(ListItem.Label,$LOCALIZE[20386]) | SubString(ListItem.Label,$LOCALIZE[20387]) | SubString(ListItem.Label,$LOCALIZE[20390]) | SubString(ListItem.Label,$LOCALIZE[626])]">SetProperty(AlaskaB.HeadingCategory,$INFO[ListItem.Label],home)</onfocus>
       <onfocus condition="SubString(Window(home).Property(AlaskaB.IsHeadingCategorySelection),true) + [SubString(ListItem.Label,$LOCALIZE[20386]) | SubString(ListItem.Label,$LOCALIZE[20387]) | SubString(ListItem.Label,$LOCALIZE[20390])]">SetProperty(AlaskaB.HeadingCategory,Recently added,home)</onfocus>
-      <onfocus condition="SubString(Window(home).Property(AlaskaB.IsHeadingCategorySelection),true) + SubString(ListItem.Label,$LOCALIZE[626])">SetProperty(AlaskaB.HeadingCategory,$LOCALIZE[575],home)</onfocus>
+      <onfocus condition="SubString(Window(home).Property(AlaskaB.IsHeadingCategorySelection),true) + SubString(ListItem.Label,$LOCALIZE[626])">SetProperty(AlaskaB.HeadingCategory,$LOCALIZE[575],home)</onfocus> -->
     </control>
   </include>
 

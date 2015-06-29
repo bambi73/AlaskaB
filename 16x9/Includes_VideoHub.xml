@@ -2,13 +2,13 @@
   <include name="AlaskaB_VideoHub">
     <backgroundcolor>0</backgroundcolor>
     <defaultcontrol always="true">8000</defaultcontrol>
+
+    <include>GlobalWindowHeadingSetting</include>
     <onunload>CancelAlarm(ReturnToMenu,true)</onunload>
 
     <controls>
       <include>Global_Background</include>
-      <control type="group">
-        <include>Fanart</include>
-      </control>
+      <include>Global_Fanart</include>
       <include>AlaskaB_Overlay_Heading</include>
 
       <control type="group">

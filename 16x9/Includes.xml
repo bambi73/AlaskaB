@@ -44,7 +44,7 @@
     </control>
   </include>
 
-  <include name="Fanart">
+  <include name="Global_Fanart">
     <control type="image">
       <include>Dimensions_Fullscreen</include>
       <fadetime>400</fadetime>
@@ -851,6 +851,19 @@
   </include>
 
   <!-- AlaskaB -->
+  <!-- Global -->
+  <include name="GlobalWindowHeadingSetting">
+    <onload condition="!IsEmpty(Window(Home).Property(AlaskaB.OnClick.HeadingChanged))">SetProperty(AlaskaB.HeadingLabel,$INFO[Window(Home).Property(AlaskaB.OnClick.HeadingLabel)],Home)</onload>
+    <onload condition="!IsEmpty(Window(Home).Property(AlaskaB.OnClick.HeadingChanged))">SetProperty(AlaskaB.SubheadingLabel,$INFO[Window(Home).Property(AlaskaB.OnClick.SubheadingLabel)],Home)</onload>
+    <onload>ClearProperty(AlaskaB.OnClick.HeadingChanged,Home)</onload>
+  </include>
+
+  <!-- MyVideoNav -->
+  <include name="MyVideoNavHeadingSelection">
+    <onfocus condition="[SubString(Container.FolderPath,/genres/) | SubString(Container.FolderPath,/studios/) | SubString(Container.FolderPath,/actors/) | SubString(Container.FolderPath,/years/)] + IsEmpty(Window(Home).Property(AlaskaB.SubheadingLabel.Selection))">SetProperty(AlaskaB.SubheadingLabel.Selection,$INFO[Container.FolderName],Home)</onfocus>
+    <onfocus condition="![SubString(Container.FolderPath,/genres/) | SubString(Container.FolderPath,/studios/) | SubString(Container.FolderPath,/actors/) | SubString(Container.FolderPath,/years/)]">ClearProperty(AlaskaB.SubheadingLabel.Selection,Home)</onfocus>
+  </include> -->
+
   <!-- Dialog buttons -->
   <include name="DialogBottomButtonGrouplist">
     <centerleft>50%</centerleft>
@@ -1355,16 +1368,6 @@
   <constant name="SkinShortcutsLeftListWidth">450</constant>
   <constant name="SkinShortcutsRightGListLeft">600</constant>
   <constant name="SkinShortcutsRightGListWidth">1150</constant>
-
-  <include name="SkinShortcutsHeaderLabel">
-    <top>37</top>
-    <centerleft>50%</centerleft>
-    <width>SkinShortcutsControlWidth</width>
-    <height>42</height>
-    <align>center</align>
-    <aligny>center</aligny>
-    <font>Font_Black_Caps_42</font>
-  </include>
 
   <include name="SkinShortcutsLeftListTemplate">
     <textoffsetx>20</textoffsetx>

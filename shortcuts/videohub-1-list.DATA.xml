@@ -30,7 +30,7 @@
     <defaultID>titles</defaultID>
     <icon>hub/icons/titles.png</icon>
     <thumb />
-    <action>ActivateWindow(Videos,special://skin/extras/playlists/Anime-Titles.xsp,return)</action>
+    <action>ActivateWindow(Videos,special://skin/playlists/Anime-Titles.xsp,return)</action>
   </shortcut>
   <shortcut>
     <label>Genres</label>
@@ -38,7 +38,7 @@
     <defaultID>135</defaultID>
     <icon>hub/icons/genres.png</icon>
     <thumb />
-    <action>ActivateWindow(Videos,TvShowGenres,return)</action>
+    <action>ActivateWindow(Videos,special://skin/playlists/Anime-Genres.xsp,return)</action>
   </shortcut>
   <shortcut>
     <label>Studios</label>
@@ -46,7 +46,7 @@
     <defaultID>20388</defaultID>
     <icon>hub/icons/studios.png</icon>
     <thumb />
-    <action>ActivateWindow(Videos,TvShowStudios,return)</action>
+    <action>ActivateWindow(Videos,special://skin/playlists/Anime-Studios.xsp,return)</action>
   </shortcut>
   <shortcut>
     <label>Actors</label>
@@ -54,7 +54,7 @@
     <defaultID>344</defaultID>
     <icon>hub/icons/actors.png</icon>
     <thumb />
-    <action>ActivateWindow(Videos,TvShowActors,return)</action>
+    <action>ActivateWindow(Videos,special://skin/playlists/Anime-Seiyuu.xsp,return)</action>
   </shortcut>
   <shortcut>
     <label>Years</label>
@@ -62,7 +62,7 @@
     <defaultID>652</defaultID>
     <icon>hub/icons/years.png</icon>
     <thumb />
-    <action>ActivateWindow(Videos,TvShowYears,return)</action>
+    <action>ActivateWindow(Videos,special://skin/playlists/Anime-Years.xsp,return)</action>
   </shortcut>
   <shortcut>
     <label>Files</label>

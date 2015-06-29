@@ -20,7 +20,7 @@
 		<include>Global_Background</include>
 
 		<control type="group">
-			<include>Fanart</include>
+			<include>Global_Fanart</include>
 		</control>
 
 		<!-- Browser -->

@@ -9,6 +9,11 @@
     <onload>ClearProperty(AlaskaB.IsHeadingCategorySelection,home)</onload>
     <onload>ClearProperty(AlaskaB.VideoNav.ShowHub,home)</onload>
 
+    <onload>ClearProperty(AlaskaB.HeadingChanged,Home)</onload>
+    
+    <onload>ClearProperty(AlaskaB.VideoHub-1.HeadingLabel,Home)</onload>      <!-- TODO: Delete -->
+    <onload>ClearProperty(AlaskaB.VideoHub-1.SubheadingLabel,Home)</onload>   <!-- TODO: Delete -->
+ 
     <onload>SetProperty(AlaskaB.Home.WindowOpen,1,home)</onload>
     <onload condition="IsEmpty(Window(Home).Property(AlaskaB.Home.SubsequentWindowOpen))">RunScript(special://skin/extras/scripts/alaskab_utils.py,initHomeMenu)</onload>
 
@@ -82,17 +87,20 @@
         <width>HomeWidth</width>
         <height>HomeListHeight</height>
 
-        <onup condition="!IsEmpty(Container(8000).ListItem.Property(upHeading))">SetProperty(AlaskaB.HeadingLabel,$INFO[Container(8000).ListItem.Property(upHeading)],home)</onup>
-        <onup condition="!IsEmpty(Container(8000).ListItem.Property(upSubheading))">SetProperty(AlaskaB.SubheadingLabel,$INFO[Container(8000).ListItem.Property(upSubheading)],home)</onup>
-        <onup condition="IsEmpty(Container(8000).ListItem.Property(upHeading))">ClearProperty(AlaskaB.HeadingLabel,home)</onup>
-        <onup condition="IsEmpty(Container(8000).ListItem.Property(upSubheading))">ClearProperty(AlaskaB.SubheadingLabel,home)</onup>
+        <onup>SetProperty(AlaskaB.OnClick.HeadingChanged,1,Home)</onup>
+        <onup condition="!IsEmpty(Container(8000).ListItem.Property(upHeading))">SetProperty(AlaskaB.OnClick.HeadingLabel,$INFO[Container(8000).ListItem.Property(upHeading)],Home)</onup>
+        <onup condition="!IsEmpty(Container(8000).ListItem.Property(upSubheading))">SetProperty(AlaskaB.OnClick.SubheadingLabel,$INFO[Container(8000).ListItem.Property(upSubheading)],Home)</onup>
+        <onup condition="IsEmpty(Container(8000).ListItem.Property(upHeading))">ClearProperty(AlaskaB.OnClick.HeadingLabel,Home)</onup>
+        <onup condition="IsEmpty(Container(8000).ListItem.Property(upSubheading))">ClearProperty(AlaskaB.OnClick.SubheadingLabel,Home)</onup>
         <onup condition="!IsEmpty(Container(8000).ListItem.Property(upAction))">$INFO[Container(8000).ListItem.Property(upAction)]</onup>
         <onup condition="!IsEmpty(Container(8000).ListItem.Property(upAction2))">$INFO[Container(8000).ListItem.Property(upAction2)]</onup>
         <onup condition="!IsEmpty(Container(8000).ListItem.Property(upAction3))">$INFO[Container(8000).ListItem.Property(upAction3)]</onup>
-        <ondown condition="!IsEmpty(Container(8000).ListItem.Property(downHeading))">SetProperty(AlaskaB.HeadingLabel,$INFO[Container(8000).ListItem.Property(downHeading)],home)</ondown>
-        <ondown condition="!IsEmpty(Container(8000).ListItem.Property(downSubheading))">SetProperty(AlaskaB.SubheadingLabel,$INFO[Container(8000).ListItem.Property(downSubheading)],home)</ondown>
-        <ondown condition="IsEmpty(Container(8000).ListItem.Property(downHeading))">ClearProperty(AlaskaB.HeadingLabel,home)</ondown>
-        <ondown condition="IsEmpty(Container(8000).ListItem.Property(downSubheading))">ClearProperty(AlaskaB.SubheadingLabel,home)</ondown>
+        
+        <ondown>SetProperty(AlaskaB.OnClick.HeadingChanged,1,Home)</ondown>
+        <ondown condition="!IsEmpty(Container(8000).ListItem.Property(downHeading))">SetProperty(AlaskaB.OnClick.HeadingLabel,$INFO[Container(8000).ListItem.Property(downHeading)],Home)</ondown>
+        <ondown condition="!IsEmpty(Container(8000).ListItem.Property(downSubheading))">SetProperty(AlaskaB.OnClick.SubheadingLabel,$INFO[Container(8000).ListItem.Property(downSubheading)],Home)</ondown>
+        <ondown condition="IsEmpty(Container(8000).ListItem.Property(downHeading))">ClearProperty(AlaskaB.OnClick.HeadingLabel,Home)</ondown>
+        <ondown condition="IsEmpty(Container(8000).ListItem.Property(downSubheading))">ClearProperty(AlaskaB.OnClick.SubheadingLabel,Home)</ondown>
         <ondown condition="!IsEmpty(Container(8000).ListItem.Property(downAction))">$INFO[Container(8000).ListItem.Property(downAction)]</ondown>
         <ondown condition="!IsEmpty(Container(8000).ListItem.Property(downAction2))">$INFO[Container(8000).ListItem.Property(downAction2)]</ondown>
         <ondown condition="!IsEmpty(Container(8000).ListItem.Property(downAction3))">$INFO[Container(8000).ListItem.Property(downAction3)]</ondown>

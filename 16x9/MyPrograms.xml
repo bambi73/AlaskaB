@@ -11,7 +11,7 @@
 		<include>Global_Background</include>
 
 		<control type="group">
-			<include>Fanart</include>
+			<include>Global_Fanart</include>
 			<visible>!Skin.HasSetting(Disable_Addon_Fanart)</visible>
 		</control>
 

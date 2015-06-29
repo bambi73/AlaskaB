@@ -116,6 +116,7 @@
             </control>
             <control type="button">
               <include>HiddenControl</include>
+              <include>MyVideoNavHeadingSelection</include>
               <onfocus>SetProperty(AlaskaB.ListItem.SourceName,$ESCINFO[ListItem.FolderName],home)</onfocus>
               <onfocus condition="Container.Content(seasons)">SetProperty(ListItem.AlaskaB.Season,$INFO[ListItem.Season],movieinformation)</onfocus>
               <onfocus condition="!Container.Content(seasons)">ClearProperty(ListItem.AlaskaB.Season,movieinformation)</onfocus>

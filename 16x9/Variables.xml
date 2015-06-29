@@ -34,6 +34,12 @@
     <value condition="Window.IsVisible(videoplaylist)">$LOCALIZE[20012]</value>
   </variable>
 
+  <variable name="Global_SubheadingLabelSelection">
+    <value condition="!IsEmpty(Window(Home).Property(AlaskaB.SubheadingLabel)) + !IsEmpty(Window(Home).Property(AlaskaB.SubheadingLabel.Selection))">$INFO[Window(Home).Property(AlaskaB.SubheadingLabel),,: ]$INFO[Window(Home).Property(AlaskaB.SubheadingLabel.Selection),, • ]</value>
+    <value condition="!IsEmpty(Window(Home).Property(AlaskaB.SubheadingLabel))">$INFO[Window(Home).Property(AlaskaB.SubheadingLabel),, • ]</value>
+    <value condition="!IsEmpty(Window(Home).Property(AlaskaB.SubheadingLabel.Selection))">$INFO[Window(Home).Property(AlaskaB.SubheadingLabel.Selection),, • ]</value>
+  </variable>
+
   <variable name="Global_HeadingDetails">
     <value condition="Window.IsVisible(picturessettings)">$LOCALIZE[1]</value>
     <value condition="Window.IsVisible(weathersettings)">$LOCALIZE[8]</value>
@@ -53,29 +59,27 @@
     <value condition="Window.IsVisible(weather) + StringCompare(Weather.Location,$LOCALIZE[503])">$LOCALIZE[503]</value>
     
     <!-- VideoHub - $LOCALIZE[31157] = Item, $LOCALIZE[31100] = Items -->
-    <value condition="[Window.IsVisible(1111) | Window.IsVisible(1112) | Window.IsVisible(1113) | Window.IsVisible(1114) | Window.IsVisible(1115) | Window.IsVisible(1116)] + [Control.IsVisible(8010) | Control.IsVisible(8011) | Control.IsVisible(8015)] + IntegerGreaterThan(Container(8010).NumItems,0) + !IntegerGreaterThan(Container(8010).NumItems,1)">$INFO[Window(Home).Property(AlaskaB.SubheadingLabel),, • ]$INFO[Container(8099).ListItem(0).Label,, • ]$INFO[Container(8010).NumItems,, $LOCALIZE[31157]]</value>
-    <value condition="[Window.IsVisible(1111) | Window.IsVisible(1112) | Window.IsVisible(1113) | Window.IsVisible(1114) | Window.IsVisible(1115) | Window.IsVisible(1116)] + [Control.IsVisible(8010) | Control.IsVisible(8011) | Control.IsVisible(8015)]">$INFO[Window(Home).Property(AlaskaB.SubheadingLabel),, • ]$INFO[Container(8099).ListItem(0).Label,, • ]$INFO[Container(8010).NumItems,, $LOCALIZE[31100]]</value>
-    <value condition="[Window.IsVisible(1111) | Window.IsVisible(1112) | Window.IsVisible(1113) | Window.IsVisible(1114) | Window.IsVisible(1115) | Window.IsVisible(1116)] + [Control.IsVisible(8020) | Control.IsVisible(8021) | Control.IsVisible(8025) | Control.IsVisible(8027)] + IntegerGreaterThan(Container(8020).NumItems,0) + !IntegerGreaterThan(Container(8020).NumItems,1)">$INFO[Window(Home).Property(AlaskaB.SubheadingLabel),, • ]$INFO[Container(8099).ListItem(1).Label,, • ]$INFO[Container(8020).NumItems,, $LOCALIZE[31157]]</value>
-    <value condition="[Window.IsVisible(1111) | Window.IsVisible(1112) | Window.IsVisible(1113) | Window.IsVisible(1114) | Window.IsVisible(1115) | Window.IsVisible(1116)] + [Control.IsVisible(8020) | Control.IsVisible(8021) | Control.IsVisible(8025) | Control.IsVisible(8027)]">$INFO[Window(Home).Property(AlaskaB.SubheadingLabel),, • ]$INFO[Container(8099).ListItem(1).Label,, • ]$INFO[Container(8020).NumItems,, $LOCALIZE[31100]]</value>
-    <value condition="[Window.IsVisible(1111) | Window.IsVisible(1112) | Window.IsVisible(1113) | Window.IsVisible(1114) | Window.IsVisible(1115) | Window.IsVisible(1116)] + [Control.IsVisible(8030) | Control.IsVisible(8031) | Control.IsVisible(8035)] + IntegerGreaterThan(Container(8030).NumItems,0) + !IntegerGreaterThan(Container(8030).NumItems,1)">$INFO[Window(Home).Property(AlaskaB.SubheadingLabel),, • ]$INFO[Container(8099).ListItem(2).Label,, • ]$INFO[Container(8030).NumItems,, $LOCALIZE[31157]]</value>
-    <value condition="[Window.IsVisible(1111) | Window.IsVisible(1112) | Window.IsVisible(1113) | Window.IsVisible(1114) | Window.IsVisible(1115) | Window.IsVisible(1116)] + [Control.IsVisible(8030) | Control.IsVisible(8031) | Control.IsVisible(8035)]">$INFO[Window(Home).Property(AlaskaB.SubheadingLabel),, • ]$INFO[Container(8099).ListItem(2).Label,, • ]$INFO[Container(8030).NumItems,, $LOCALIZE[31100]]</value>
+    <value condition="[Window.IsVisible(1111) | Window.IsVisible(1112) | Window.IsVisible(1113) | Window.IsVisible(1114) | Window.IsVisible(1115) | Window.IsVisible(1116)] + [Control.IsVisible(8010) | Control.IsVisible(8011) | Control.IsVisible(8015)] + IntegerGreaterThan(Container(8010).NumItems,0) + !IntegerGreaterThan(Container(8010).NumItems,1)">$VAR[Global_SubheadingLabelSelection]$INFO[Container(8099).ListItem(0).Label,, • ]$INFO[Container(8010).NumItems,, $LOCALIZE[31157]]</value>
+    <value condition="[Window.IsVisible(1111) | Window.IsVisible(1112) | Window.IsVisible(1113) | Window.IsVisible(1114) | Window.IsVisible(1115) | Window.IsVisible(1116)] + [Control.IsVisible(8010) | Control.IsVisible(8011) | Control.IsVisible(8015)]">$VAR[Global_SubheadingLabelSelection]$INFO[Container(8099).ListItem(0).Label,, • ]$INFO[Container(8010).NumItems,, $LOCALIZE[31100]]</value>
+    <value condition="[Window.IsVisible(1111) | Window.IsVisible(1112) | Window.IsVisible(1113) | Window.IsVisible(1114) | Window.IsVisible(1115) | Window.IsVisible(1116)] + [Control.IsVisible(8020) | Control.IsVisible(8021) | Control.IsVisible(8025) | Control.IsVisible(8027)] + IntegerGreaterThan(Container(8020).NumItems,0) + !IntegerGreaterThan(Container(8020).NumItems,1)">$VAR[Global_SubheadingLabelSelection]$INFO[Container(8099).ListItem(1).Label,, • ]$INFO[Container(8020).NumItems,, $LOCALIZE[31157]]</value>
+    <value condition="[Window.IsVisible(1111) | Window.IsVisible(1112) | Window.IsVisible(1113) | Window.IsVisible(1114) | Window.IsVisible(1115) | Window.IsVisible(1116)] + [Control.IsVisible(8020) | Control.IsVisible(8021) | Control.IsVisible(8025) | Control.IsVisible(8027)]">$VAR[Global_SubheadingLabelSelection]$INFO[Container(8099).ListItem(1).Label,, • ]$INFO[Container(8020).NumItems,, $LOCALIZE[31100]]</value>
+    <value condition="[Window.IsVisible(1111) | Window.IsVisible(1112) | Window.IsVisible(1113) | Window.IsVisible(1114) | Window.IsVisible(1115) | Window.IsVisible(1116)] + [Control.IsVisible(8030) | Control.IsVisible(8031) | Control.IsVisible(8035)] + IntegerGreaterThan(Container(8030).NumItems,0) + !IntegerGreaterThan(Container(8030).NumItems,1)">$VAR[Global_SubheadingLabelSelection]$INFO[Container(8099).ListItem(2).Label,, • ]$INFO[Container(8030).NumItems,, $LOCALIZE[31157]]</value>
+    <value condition="[Window.IsVisible(1111) | Window.IsVisible(1112) | Window.IsVisible(1113) | Window.IsVisible(1114) | Window.IsVisible(1115) | Window.IsVisible(1116)] + [Control.IsVisible(8030) | Control.IsVisible(8031) | Control.IsVisible(8035)]">$VAR[Global_SubheadingLabelSelection]$INFO[Container(8099).ListItem(2).Label,, • ]$INFO[Container(8030).NumItems,, $LOCALIZE[31100]]</value>
     <value condition="[Window.IsVisible(1111) | Window.IsVisible(1112) | Window.IsVisible(1113) | Window.IsVisible(1114) | Window.IsVisible(1115) | Window.IsVisible(1116)]"/>
 
     <!-- $LOCALIZE[20373] = Season, $LOCALIZE[20359] = Episode, $LOCALIZE[20360] = Episodes -->
-    <value condition="Container.Content(episodes) + SubString(Container.FolderName,$LOCALIZE[20373]) + !IntegerGreaterThan(Container.NumItems,1)">$INFO[Window(Home).Property(AlaskaB.HeadingCategory),, • ]$INFO[Container.FolderName] • $INFO[Container.NumItems,, $LOCALIZE[20359]]</value>
-    <value condition="Container.Content(episodes) + SubString(Container.FolderName,$LOCALIZE[20373]) + IntegerGreaterThan(Container.NumItems,1)">$INFO[Window(Home).Property(AlaskaB.HeadingCategory),, • ]$INFO[Container.FolderName] • $INFO[Container.NumItems,, $LOCALIZE[20360]]</value>
-    <value condition="Container.Content(episodes) + !IntegerGreaterThan(Container.NumItems,1)">$INFO[Window(Home).Property(AlaskaB.HeadingCategory),, • ]$INFO[Container.NumItems,, $LOCALIZE[20359]]</value>
-    <value condition="Container.Content(episodes) + IntegerGreaterThan(Container.NumItems,1)">$INFO[Window(Home).Property(AlaskaB.HeadingCategory),, • ]$INFO[Container.NumItems,, $LOCALIZE[20360]]</value>
+    <value condition="Container.Content(episodes) + SubString(Container.FolderName,$LOCALIZE[20373]) + !IntegerGreaterThan(Container.NumItems,1)">$VAR[Global_SubheadingLabelSelection]$INFO[Container.FolderName] • $INFO[Container.NumItems,, $LOCALIZE[20359]]</value>
+    <value condition="Container.Content(episodes) + SubString(Container.FolderName,$LOCALIZE[20373]) + IntegerGreaterThan(Container.NumItems,1)">$VAR[Global_SubheadingLabelSelection]$INFO[Container.FolderName] • $INFO[Container.NumItems,, $LOCALIZE[20360]]</value>
+    <value condition="Container.Content(episodes) + !IntegerGreaterThan(Container.NumItems,1)">$VAR[Global_SubheadingLabelSelection]$INFO[Container.NumItems,, $LOCALIZE[20359]]</value>
+    <value condition="Container.Content(episodes) + IntegerGreaterThan(Container.NumItems,1)">$VAR[Global_SubheadingLabelSelection]$INFO[Container.NumItems,, $LOCALIZE[20360]]</value>
 
     <!-- $LOCALIZE[20373] = Season, $LOCALIZE[33054] = Seasons -->
-    <value condition="Container.Content(seasons) + !IntegerGreaterThan(Container.NumItems,1)">$INFO[Window(Home).Property(AlaskaB.HeadingCategory),, • ]$INFO[Container.NumItems,, $LOCALIZE[20373]]</value>
-    <value condition="Container.Content(seasons) + IntegerGreaterThan(Container.NumItems,1)">$INFO[Window(Home).Property(AlaskaB.HeadingCategory),, • ]$INFO[Container.NumItems,, $LOCALIZE[33054]]</value>
+    <value condition="Container.Content(seasons) + !IntegerGreaterThan(Container.NumItems,1)">$VAR[Global_SubheadingLabelSelection]$INFO[Container.NumItems,, $LOCALIZE[20373]]</value>
+    <value condition="Container.Content(seasons) + IntegerGreaterThan(Container.NumItems,1)">$VAR[Global_SubheadingLabelSelection]$INFO[Container.NumItems,, $LOCALIZE[33054]]</value>
 
     <!-- $LOCALIZE[31157] = Item, $LOCALIZE[31100] = Items -->
-    <value condition="[Container.Content(movies) | Container.Content(tvshows) | Container.Content(musicvideos)] + !IntegerGreaterThan(Container.NumItems,1)">$INFO[Window(Home).Property(AlaskaB.HeadingCategory),, • ]$INFO[Container.NumItems,, $LOCALIZE[31157]]</value>
-    <value condition="[Container.Content(movies) | Container.Content(tvshows) | Container.Content(musicvideos)] + IntegerGreaterThan(Container.NumItems,1)">$INFO[Window(Home).Property(AlaskaB.HeadingCategory),, • ]$INFO[Container.NumItems,, $LOCALIZE[31100]]</value>
-    <value condition="!IntegerGreaterThan(Container.NumItems,1)">$INFO[Container.NumItems,, $LOCALIZE[31157]]</value>
-    <value condition="IntegerGreaterThan(Container.NumItems,1)">$INFO[Container.NumItems,, $LOCALIZE[31100]]</value>
+    <value condition="!IntegerGreaterThan(Container.NumItems,1)">$VAR[Global_SubheadingLabelSelection]$INFO[Container.NumItems,, $LOCALIZE[31157]]</value>
+    <value condition="IntegerGreaterThan(Container.NumItems,1)">$VAR[Global_SubheadingLabelSelection]$INFO[Container.NumItems,, $LOCALIZE[31100]]</value>
   </variable>
 
   <!--variable name="Global_HeadingDetails">
@@ -647,6 +651,13 @@
   </variable>
 
   <!-- Tady je Bambiho #2 -->
+  <variable name="SkinShortcuts_Heading">
+    <value condition="StringCompare(Window.Property(actionEditDirection),Main)">Customize $INFO[Window.Property(groupDisplayName)] - Main action</value>
+    <value condition="StringCompare(Window.Property(actionEditDirection),Up)">Customize $INFO[Window.Property(groupDisplayName)] - Up action</value>
+    <value condition="StringCompare(Window.Property(actionEditDirection),Down)">Customize $INFO[Window.Property(groupDisplayName)] - Down action</value>
+    <value>Customize $INFO[Window.Property(groupDisplayName)]</value>
+  </variable>
+
   <variable name="SkinShortcuts_ActionLabel2">
     <value condition="StringCompare(Window.Property(actionEditDirection),Main)">$INFO[Container(211).ListItem.Property(mainAction)]</value>
     <value condition="StringCompare(Window.Property(actionEditDirection),Up)">$INFO[Container(211).ListItem.Property(upAction)]</value>

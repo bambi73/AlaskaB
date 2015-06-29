@@ -5,21 +5,30 @@
   <views>503,501,502,514,504,508,500,603,650,651</views>
 
   <!-- <onload condition="System.HasAddon(script.tv.show.next.aired) + Container.Content(tvshows)">RunScript(script.tv.show.next.aired,backend=True)</onload> -->
-  <onunload>ClearProperty(AlaskaB.Overlay.MediaFlags.Hide,home)</onunload>
-  <onunload>ClearProperty(AlaskaB.Overlay.NowPlaying.Hide,home)</onunload>
-  <!--onunload>ClearProperty(AlaskaB.HeadingLabel,home)</onunload-->
+  <onunload>ClearProperty(AlaskaB.Overlay.MediaFlags.Hide,Home)</onunload>
+  <onunload>ClearProperty(AlaskaB.Overlay.NowPlaying.Hide,Home)</onunload>
+  <!--onunload>ClearProperty(AlaskaB.HeadingLabel,Home)</onunload-->
 
-  <onload>ClearProperty(AlaskaB.VideoNav.Menu,home)</onload>
-  <onunload>ClearProperty(AlaskaB.VideoNav.Menu,home)</onunload>
+  <onload>ClearProperty(AlaskaB.VideoNav.Menu,Home)</onload>
+  <onunload>ClearProperty(AlaskaB.VideoNav.Menu,Home)</onunload>
+
+  <onload>ClearProperty(AlaskaB.SubheadingLabel.Selection,Home)</onload>
+  <onunload>ClearProperty(AlaskaB.SubheadingLabel.Selection,Home)</onunload>
+
+  <include>GlobalWindowHeadingSetting</include>
 
   <!--onunload condition="!IsEmpty(Window(movieinformation).Property(IsSeason)">ClearProperty(IsSeason,movieinformation)</onunload>
   <onunload condition="!IsEmpty(Window(movieinformation).Property(IsSpecial)">ClearProperty(IsSpecial,movieinformation)</onunload-->
 
   <controls>
-
-    <!-- Background -->
     <include>Global_Background</include>
+    <control type="group">
+      <include>Global_Fanart</include>
+      <visible>[[!Skin.HasSetting(Disable_Movie_Fanart) + Container.Content(Movies)] | [!Skin.HasSetting(Disable_TV_Fanart) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] | [!Skin.HasSetting(Disable_Music_Fanart) + Container.Content(Music)] | [!Skin.HasSetting(Disable_Addon_Fanart) + Container.Content(Addons)]]</visible>
+    </control>
     <include>AlaskaB_Overlay_Heading</include>
+
+
 
     <!-- <control type="label">
       <left>46</left>
@@ -56,11 +65,6 @@
     </control>  --> 
 
     <control type="group">
-      <include>Fanart</include>
-      <visible>[[!Skin.HasSetting(Disable_Movie_Fanart) + Container.Content(Movies)] | [!Skin.HasSetting(Disable_TV_Fanart) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]] | [!Skin.HasSetting(Disable_Music_Fanart) + Container.Content(Music)] | [!Skin.HasSetting(Disable_Addon_Fanart) + Container.Content(Addons)]]</visible>
-    </control>
-
-    <control type="group">
       <include>AlaskaB_VideoNav_Background</include>
       <include>Animation_ZoomInZoomOut</include>
       <include>Animation_ZoomedByMenuOrProperty</include>
@@ -80,16 +84,16 @@
     <control type="group">
       <control type="button" id="7000">
         <include>HiddenControl</include>
-        <onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,true,home)</onfocus>
-        <onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,true,home)</onfocus>
-        <onfocus>SetProperty(AlaskaB.VideoNav.Menu,true,home)</onfocus>
+        <onfocus>SetProperty(AlaskaB.Overlay.NowPlaying.Hide,true,Home)</onfocus>
+        <onfocus>SetProperty(AlaskaB.Overlay.MediaFlags.Hide,true,Home)</onfocus>
+        <onfocus>SetProperty(AlaskaB.VideoNav.Menu,true,Home)</onfocus>
         <onfocus>SetFocus(7100)</onfocus>
       </control>
       <control type="button" id="7010">
         <include>HiddenControl</include>
-        <onfocus>ClearProperty(AlaskaB.Overlay.NowPlaying.Hide,home)</onfocus>
-        <onfocus>ClearProperty(AlaskaB.Overlay.MediaFlags.Hide,home)</onfocus>
-        <onfocus>ClearProperty(AlaskaB.VideoNav.Menu,home)</onfocus>
+        <onfocus>ClearProperty(AlaskaB.Overlay.NowPlaying.Hide,Home)</onfocus>
+        <onfocus>ClearProperty(AlaskaB.Overlay.MediaFlags.Hide,Home)</onfocus>
+        <onfocus>ClearProperty(AlaskaB.VideoNav.Menu,Home)</onfocus>
         <onfocus>SetFocus(500)</onfocus>
       </control>
     </control>

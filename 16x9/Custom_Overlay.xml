@@ -7,28 +7,28 @@
     <control type="group">
       <visible>!Window.IsVisible(startup) + !Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation) + !Window.IsVisible(screencalibration) + !Window.IsVisible(screensaver) + !Window.IsVisible(slideshow) + !Window.IsVisible(karaoke)</visible>
 
-      <!--control type="label">
+      <!-- <control type="label">
 				<left>46</left>
-				<top>100</top>
+				<top>36</top>
 				<width>1900</width>
 				<height>72</height>
+        <align>center</align>
 				<aligny>center</aligny>
 				<font>Font_Reg_Caps_52</font>
 				<textcolor>MedLight</textcolor>
-				<label>Window.IsVisible(videolibrary) + Control.IsEnabled(7000)</label>
-				<visible>Window.IsVisible(videolibrary) + Control.IsEnabled(7000)</visible>
-			</control>
-			<control type="label">
+        <label>$INFO[Window(Home).Property(AlaskaB.SubheadingLabel.Selection)]</label>
+			</control> -->
+			<!-- <control type="label">
 				<left>46</left>
-				<top>150</top>
+				<top>86</top>
 				<width>1900</width>
 				<height>72</height>
+        <align>center</align>
 				<aligny>center</aligny>
 				<font>Font_Reg_Caps_52</font>
 				<textcolor>MedLight</textcolor>
-				<label>Window.IsVisible(videolibrary)</label>
-				<visible>Window.IsVisible(videolibrary)</visible>
-			</control-->
+				<label>$INFO[Window(Home).Property(AlaskaB.VideoHub-1.HeadingLabel)]</label>
+			</control> -->
 
       <control type="group">
         <visible>!SubString(Window(home).Property(AlaskaB.Overlay.Hide),true)</visible>
