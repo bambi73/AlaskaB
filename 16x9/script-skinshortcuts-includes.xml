@@ -109,7 +109,7 @@
 			<property name="defaultID">anime</property>
 			<onclick>SetProperty(AlaskaB.OnClick.HeadingChanged,1,Home)</onclick>
 			<onclick>SetProperty(AlaskaB.OnClick.HeadingLabel,Anime,Home)</onclick>
-			<onclick>SetProperty(AlaskaB.OnClick.SubheadingLabel,Titles,Home)</onclick>
+			<onclick>ClearProperty(AlaskaB.OnClick.SubheadingLabel,Home)</onclick>
 			<onclick>ActivateWindow(Videos,special://skin/playlists/Anime-Titles.xsp,return)</onclick>
 			<property name="path">ActivateWindow(Videos,special://skin/playlists/Anime-Titles.xsp,return)</property>
 			<property name="upHeading">Anime Hub</property>
@@ -393,8 +393,8 @@
 			<property name="defaultID">recentyupdated</property>
 			<visible>Library.HasContent(TVShows)</visible>
 			<onclick>SetProperty(AlaskaB.OnClick.HeadingChanged,1,Home)</onclick>
-			<onclick>SetProperty(AlaskaB.OnClick.HeadingLabel,Recenty updated,Home)</onclick>
-			<onclick>ClearProperty(AlaskaB.OnClick.SubheadingLabel,Home)</onclick>
+			<onclick>SetProperty(AlaskaB.OnClick.HeadingLabel,Anime,Home)</onclick>
+			<onclick>SetProperty(AlaskaB.OnClick.SubheadingLabel,Recently updated,Home)</onclick>
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<property name="path">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Container(8000).ListItem.Property(submenuVisibility),videohub-1-list)]</visible>
@@ -2014,8 +2014,8 @@
 			<property name="defaultID">recentyupdated</property>
 			<visible>Library.HasContent(TVShows)</visible>
 			<onclick>SetProperty(AlaskaB.OnClick.HeadingChanged,1,Home)</onclick>
-			<onclick>SetProperty(AlaskaB.OnClick.HeadingLabel,Recenty updated,Home)</onclick>
-			<onclick>ClearProperty(AlaskaB.OnClick.SubheadingLabel,Home)</onclick>
+			<onclick>SetProperty(AlaskaB.OnClick.HeadingLabel,Anime,Home)</onclick>
+			<onclick>SetProperty(AlaskaB.OnClick.SubheadingLabel,Recently updated,Home)</onclick>
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<property name="path">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
@@ -2321,8 +2321,8 @@
 			<property name="defaultID">recentyupdated</property>
 			<visible>Library.HasContent(TVShows)</visible>
 			<onclick>SetProperty(AlaskaB.OnClick.HeadingChanged,1,Home)</onclick>
-			<onclick>SetProperty(AlaskaB.OnClick.HeadingLabel,Recenty updated,Home)</onclick>
-			<onclick>ClearProperty(AlaskaB.OnClick.SubheadingLabel,Home)</onclick>
+			<onclick>SetProperty(AlaskaB.OnClick.HeadingLabel,Anime,Home)</onclick>
+			<onclick>SetProperty(AlaskaB.OnClick.SubheadingLabel,Recently updated,Home)</onclick>
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
 			<property name="path">ActivateWindow(Videos,RecentlyAddedEpisodes,return)</property>
 			<visible>StringCompare(System.ProfileName,Master user) + [StringCompare(Window(10000).Property(submenuVisibility),videohub-1-list)]</visible>

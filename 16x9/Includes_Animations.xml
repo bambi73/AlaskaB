@@ -25,8 +25,8 @@
 
   <!-- Window transition animations -->
 
-  <include name="Animation_ZoomInZoomOutToHome">
-    <animation type="WindowOpen" condition="Window.Previous(home)">
+  <include name="Animation_VideoHubZoomInZoomOutToHome">
+    <animation type="WindowOpen" condition="Window.Previous(1101) | Window.Previous(1102) | Window.Previous(1103) | Window.Previous(1104) | Window.Previous(1105) |  Window.Previous(1106)">
       <effect type="zoom" time="400" center="CenterX,CenterY" start="50" end="100" tween="cubic" easing="out" />
       <effect type="fade" time="400" start="0" end="100" />
     </animation>
