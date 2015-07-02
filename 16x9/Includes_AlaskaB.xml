@@ -324,6 +324,8 @@
   <include name="AlaskaB_VideoNav_Poster_TopLeft">
     <left>270</left>
     <top>29</top>
+    <width>500</width>
+    <height>718</height>
   </include>
 
   <include name="AlaskaB_VideoNav_Poster_VisibilityLabel">
