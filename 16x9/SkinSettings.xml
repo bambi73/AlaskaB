@@ -497,6 +497,13 @@
               <onclick>Skin.ToggleSetting(AlaskaB.Settings.SkinSettings.Scrollbar.Enable)</onclick>
               <selected>Skin.HasSetting(AlaskaB.Settings.SkinSettings.Scrollbar.Enable)</selected>
             </control>
+
+            <control type="radiobutton" id="1540">
+              <include>SkinSettingsRightGLTemplateWithText</include>
+              <label>Show TV Show episode plot</label>
+              <onclick>Skin.ToggleSetting(AlaskaB.VideoNav.Episode.Plot.Enable)</onclick>
+              <selected>Skin.HasSetting(AlaskaB.VideoNav.Episode.Plot.Enable)</selected>
+            </control>
           </control>
 
           <!-- Scrollbar -->

@@ -185,6 +185,33 @@
             <label2>16041</label2>
             <visible>!Skin.HasSetting(Disable_Addon_Fanart) + Container.Content(Addons)</visible>
           </item>
+
+          <item id="9">
+            <label>Show Plot</label>
+            <label2>Enabled</label2>
+            <onclick>Skin.ToggleSetting(AlaskaB.VideoNav.Episode.Plot.Enable)</onclick>
+            <visible>Skin.HasSetting(AlaskaB.VideoNav.Episode.Plot.Enable) + Container.Content(Episodes)</visible>
+          </item>
+          <item id="9">
+            <label>Show Plot</label>
+            <label2>Disabled</label2>
+            <onclick>Skin.ToggleSetting(AlaskaB.VideoNav.Episode.Plot.Enable)</onclick>
+            <visible>!Skin.HasSetting(AlaskaB.VideoNav.Episode.Plot.Enable) + Container.Content(Episodes)</visible>
+          </item>
+
+          <item id="10">
+            <label>Plot AutoScroll</label>
+            <label2>Enabled</label2>
+            <onclick>Skin.ToggleSetting(AlaskaB.VideoNav.Episode.Plot.AutoScroll.Enable)</onclick>
+            <visible>Skin.HasSetting(AlaskaB.VideoNav.Episode.Plot.Enable) + Skin.HasSetting(AlaskaB.VideoNav.Episode.Plot.AutoScroll.Enable) + Container.Content(Episodes)</visible>
+          </item>
+          <item id="10">
+            <label>Plot AutoScroll</label>
+            <label2>Disabled</label2>
+            <onclick>Skin.ToggleSetting(AlaskaB.VideoNav.Episode.Plot.AutoScroll.Enable)</onclick>
+            <visible>Skin.HasSetting(AlaskaB.VideoNav.Episode.Plot.Enable) + !Skin.HasSetting(AlaskaB.VideoNav.Episode.Plot.AutoScroll.Enable) + Container.Content(Episodes)</visible>
+          </item>
+
           <!-- Viewmode -->
           <item id="7">
             <onclick>Container.NextViewMode</onclick>

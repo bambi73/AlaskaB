@@ -293,15 +293,13 @@
     <animation effect="slide" end="0,0" time="200" condition="Container(603).Row(2)">Conditional</animation>
     <animation effect="slide" end="0,-6" time="200" condition="Container(603).Row(3)">Conditional</animation>
     <animation effect="slide" end="0,-12" time="200" condition="Container(603).Row(4)">Conditional</animation>
-    <animation effect="slide" end="0,-18" time="200" condition="Container(603).Row(5)">Conditional</animation>
   </include>
 
   <include name="Animation_EpisodePlot_2">
-    <animation effect="slide" end="0,88" time="0" condition="Container(603).Row(1)">Conditional</animation>
-    <animation effect="slide" end="0,176" time="0" condition="Container(603).Row(2)">Conditional</animation>
-    <animation effect="slide" end="0,264" time="0" condition="Container(603).Row(3)">Conditional</animation>
-    <animation effect="slide" end="0,352" time="0" condition="Container(603).Row(4)">Conditional</animation>
-    <animation effect="slide" end="0,440" time="0" condition="Container(603).Row(5)">Conditional</animation>
+    <animation effect="slide" end="0,94" time="0" condition="Container(603).Row(1)">Conditional</animation>
+    <animation effect="slide" end="0,188" time="0" condition="Container(603).Row(2)">Conditional</animation>
+    <animation effect="slide" end="0,282" time="0" condition="Container(603).Row(3)">Conditional</animation>
+    <animation effect="slide" end="0,376" time="0" condition="Container(603).Row(4)">Conditional</animation>
   </include>
 
   <include name="Animation_PictureGridFloat">

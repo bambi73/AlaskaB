@@ -34,7 +34,6 @@
     <label>-</label>
     <font>Font_Reg_44</font>
     <textcolor>TextLight</textcolor>
-    <pagecontrol>61</pagecontrol>
     <autoscroll delay="8000" time="4000" repeat="12000">True</autoscroll>
   </default>
 
