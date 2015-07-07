@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-
   <include name="Viewtype_603_Episode_Title_FO">
     <height>46</height>
     <textcolor>TextHeavy</textcolor>
     <font>Font_Black_Caps_53</font>
-    <label>$INFO[Container(603).ListItem.Title]</label>
+    <label>$VAR[Title_Detail_603]</label>
   </include>
 
   <include name="Viewtype_603_Episode_Aired_FO">
@@ -14,7 +13,7 @@
       <height>34</height>
       <textcolor>TextLight</textcolor>
       <font>Font_Light_Caps_34</font>
-      <label>$LOCALIZE[31117]: $INFO[Container(603).ListItem.Date]$VAR[Episode_Insert]$INFO[Container(603).ListItem.Duration,, $LOCALIZE[31118]]</label>
+      <label>$INFO[Container(603).ListItem.Date,$LOCALIZE[31117]: ]$VAR[Episode_Insert_603]$INFO[Container(603).ListItem.Duration,, $LOCALIZE[31118]]</label>
       <visible>!Skin.HasSetting(AlaskaB.VideoNav.Episode.Plot.Enable) | IsEmpty(Container(603).ListItem.Plot)</visible>
     </control>
   </include>
@@ -34,236 +33,182 @@
     <control type="group">
       <visible>Control.IsVisible(603)</visible>
 
-      <!-- <control type="label">
-        <left>46</left>
-        <top>100</top>
-        <width>1900</width>
-        <height>72</height>
-        <aligny>center</aligny>
-        <font>Font_Reg_Caps_52</font>
-        <textcolor>MedLight</textcolor>
-        <label>-$INFO[Container.FolderPath]-</label>
-        <visible>true</visible>
-      </control>
-      <control type="label">
-        <left>46</left>
-        <top>150</top>
-        <width>1900</width>
-        <height>72</height>
-        <aligny>center</aligny>
-        <font>Font_Reg_Caps_52</font>
-        <textcolor>MedLight</textcolor>
-        <label>+$INFO[Container.FolderName]+</label>
-        <visible>true</visible>
-      </control>  -->
-      
-      <!-- Browser -->
       <control type="group" id="5000">
         <include>AlaskaB_VideoNav_Region_TopLeft</include>
         <include>Animation_HiddenByInfo</include>
-        <include>Animation_EpisodeFloat_2</include>
 
-        <control type="list" id="603">
-          <left>200</left>
-          <top>66</top>
-          <width>1520</width>
-          <height>624</height>
-          <onup>603</onup>
-          <ondown>603</ondown>
-          <onleft>7000</onleft>
-          <onright>7000</onright>
-          <scrolltime>0</scrolltime>
-          <pagecontrol>61</pagecontrol>
-          <orientation>vertical</orientation>
-          <viewtype label="Episode 2">list</viewtype>
-          <scrolltime tween="sine" easing="out">200</scrolltime>
-          <visible>Container.Content(episodes) | Container.Content(musicvideos)</visible>
+        <control type="group">
+          <animation effect="slide" end="0,12" time="200" condition="Container(603).Row(0)">Conditional</animation>
+          <animation effect="slide" end="0,6" time="200" condition="Container(603).Row(1)">Conditional</animation>
+          <animation effect="slide" end="0,0" time="200" condition="Container(603).Row(2)">Conditional</animation>
+          <animation effect="slide" end="0,-6" time="200" condition="Container(603).Row(3)">Conditional</animation>
+          <animation effect="slide" end="0,-12" time="200" condition="Container(603).Row(4)">Conditional</animation>
 
-          <itemlayout width="1520" height="94">
-            <control type="label">
-              <top>24</top>
-              <width>250</width>
-              <height>66</height>
-              <align>right</align>
-              <label>$VAR[Episode_Number,,.]</label>
-              <font>Font_Black_Caps_66</font>
-              <textcolor>MedLight</textcolor>
-            </control>
-            <control type="label">
-              <left>270</left>
-              <top>20</top>
-              <width>1250</width>
-              <height>42</height>
-              <label>$VAR[Title_Detail]</label>
-              <font>Font_Black_Caps_42</font>
-              <textcolor>MedLight</textcolor>
-              <animation effect="slide" end="0,14" condition="IsEmpty(ListItem.Date) + IsEmpty(ListItem.Duration)">Conditional</animation>
-            </control>
-            <control type="label">
-              <left>270</left>
-              <top>60</top>
-              <width>1250</width>
-              <height>32</height>
-              <label>$VAR[Date_Prefix]$INFO[ListItem.Date]$VAR[Episode_Insert]$INFO[ListItem.Duration,, $LOCALIZE[31118]]</label>
-              <font>Font_Light_Caps_32</font>
-              <textcolor>MedLight</textcolor>
-            </control>
-          </itemlayout>
+          <control type="list" id="603">
+            <left>200</left>
+            <top>66</top>
+            <width>1520</width>
+            <height>624</height>
+            <onup>603</onup>
+            <ondown>603</ondown>
+            <onleft>7000</onleft>
+            <onright condition="Control.IsVisible(8800)">8800</onright>
+            <onright condition="!Control.IsVisible(8800)">7000</onright>
+            <pagecontrol>8800</pagecontrol>
+            <scrolltime>0</scrolltime>
+            <orientation>vertical</orientation>
+            <viewtype label="Episode 2">list</viewtype>
+            <visible>Container.Content(episodes) | Container.Content(musicvideos)</visible>
 
-          <focusedlayout width="1520" height="248">
-            <control type="image">
-              <left>38</left>
-              <top>30</top>
-              <width>379</width>
-              <height>208</height>
-              <visible>SubString(ListItem.Icon,Default)</visible>
-              <animation type="Focus" reversible="false">
-                <effect type="zoom" center="208,123" start="94" end="100" time="125" tween="cubic" easing="out" />
-                <effect type="fade" start="90" end="100" time="125" />
-              </animation>
-              <texture>$INFO[ListItem.ActualIcon]</texture>
-              <aspectratio align="center">keep</aspectratio>
-            </control>
-            <control type="group">
-              <visible>!SubString(ListItem.Icon,Default)</visible>
-              <animation type="Focus" reversible="false">
-                <effect type="zoom" center="208,123" start="94" end="100" time="125" tween="cubic" easing="out" />
-                <effect type="fade" start="90" end="100" time="125" />
-              </animation>
-              <control type="image">
-                <left>19</left>
-                <top>11</top>
-                <width>419</width>
-                <height>248</height>
-                <texture>episode/Episode_Frame.png</texture>
-                </control>
+            <itemlayout width="1520" height="94">
+              <control type="label">
+                <top>24</top>
+                <width>250</width>
+                <height>66</height>
+                <align>right</align>
+                <textcolor>TextLight</textcolor>
+                <font>Font_Black_Caps_66</font>
+                <label>$VAR[Episode_Number,,.]</label>
+              </control>
+              <control type="label">
+                <left>270</left>
+                <top>20</top>
+                <width>1250</width>
+                <height>42</height>
+                <textcolor>TextLight</textcolor>
+                <font>Font_Black_Caps_42</font>
+                <label>$VAR[Title_Detail]</label>
+                <animation effect="slide" end="0,14" condition="IsEmpty(ListItem.Date) + IsEmpty(ListItem.Duration)">Conditional</animation>
+              </control>
+              <control type="label">
+                <left>270</left>
+                <top>60</top>
+                <width>1250</width>
+                <height>32</height>
+                <textcolor>TextLight</textcolor>
+                <font>Font_Light_Caps_32</font>
+                <label>$INFO[ListItem.Date,$LOCALIZE[31117]: ]$VAR[Episode_Insert]$INFO[ListItem.Duration,, $LOCALIZE[31118]]</label>
+              </control>
+            </itemlayout>
+
+            <focusedlayout width="1520" height="248">
               <control type="image">
                 <left>38</left>
                 <top>30</top>
                 <width>379</width>
                 <height>208</height>
-                <texture diffuse="episode/Episode_Matte.png">$INFO[ListItem.Icon]</texture>
-                <aspectratio scalediffuse="false">scale</aspectratio>
+                <visible>SubString(ListItem.Icon,Default)</visible>
+                <animation type="Focus" reversible="false">
+                  <effect type="zoom" center="208,123" start="94" end="100" time="125" tween="cubic" easing="out" />
+                  <effect type="fade" start="90" end="100" time="125" />
+                </animation>
+                <texture>$INFO[ListItem.ActualIcon]</texture>
+                <aspectratio align="center">keep</aspectratio>
               </control>
+              <control type="group">
+                <visible>!SubString(ListItem.Icon,Default)</visible>
+                <animation type="Focus" reversible="false">
+                  <effect type="zoom" center="208,123" start="94" end="100" time="125" tween="cubic" easing="out" />
+                  <effect type="fade" start="90" end="100" time="125" />
+                </animation>
+                <control type="image">
+                  <left>19</left>
+                  <top>11</top>
+                  <width>419</width>
+                  <height>248</height>
+                  <texture>episode/Episode_Frame.png</texture>
+                  </control>
+                <control type="image">
+                  <left>38</left>
+                  <top>30</top>
+                  <width>379</width>
+                  <height>208</height>
+                  <aspectratio scalediffuse="false">scale</aspectratio>
+                  <texture diffuse="episode/Episode_Matte.png">$INFO[ListItem.Icon]</texture>
+                </control>
+              </control>
+              <control type="button">
+                <include>HiddenControl</include>
+                <onfocus>SetProperty(AlaskaB.ListItem.SourceName,$ESCINFO[ListItem.FileName],home)</onfocus>
+              </control>
+            </focusedlayout>
+          </control>
+
+          <!-- Focus details -->
+          <control type="grouplist">
+            <left>666</left>
+            <top>117</top>
+            <width>1104</width>
+            <itemgap>20</itemgap>
+            <orientation>horizontal</orientation>
+            <usecontrolcoords>true</usecontrolcoords>
+            <animation effect="slide" end="0,94" time="0" condition="Container(603).Row(1)">Conditional</animation>
+            <animation effect="slide" end="0,188" time="0" condition="Container(603).Row(2)">Conditional</animation>
+            <animation effect="slide" end="0,282" time="0" condition="Container(603).Row(3)">Conditional</animation>
+            <animation effect="slide" end="0,376" time="0" condition="Container(603).Row(4)">Conditional</animation>
+            <animation effect="slide" end="0,40" time="0" condition="!Skin.HasSetting(AlaskaB.VideoNav.Episode.Plot.Enable) | IsEmpty(Container(603).ListItem.Plot)">Conditional</animation>
+
+            <control type="label">
+              <top>8</top>
+              <width>auto</width>
+              <height>66</height>
+              <align>right</align>
+              <textcolor>TextHeavy</textcolor>
+              <font>Font_Black_Caps_66</font>
+              <label>$INFO[Container(603).ListItem.Episode,,.]</label>
             </control>
-            <!-- <control type="group">
-              <animation type="Focus" reversible="false">
-                <effect type="fade" start="0" end="100" time="200" />
-              </animation>
+            <control type="group">
+              <visible>!SubString(Container(603).ListItem.Episode,S,left) + !IntegerGreaterThan(Container(603).ListItem.Episode,9)</visible> 
               <control type="fadelabel">
-                <left>466</left>
-                <top>43</top>
-                <width>1054</width>
-                <height>46</height>
-                <label>$VAR[Episode_Number,,.  ]$VAR[Title_Detail]</label>
-                <font>Font_Black_Caps_53</font>
-                <textcolor>Heavy</textcolor>
-                <animation effect="slide" end="0,68" condition="Skin.HasSetting(AlaskaB.VideoNav.Episode.Plot.Enable) + IsEmpty(ListItem.Plot)">Conditional</animation>
-                <animation effect="slide" end="0,51" condition="!Skin.HasSetting(AlaskaB.VideoNav.Episode.Plot.Enable)">Conditional</animation>
+                <width>980</width>
+                <include>Viewtype_603_Episode_Title_FO</include>
               </control>
-              <control type="label">
-                <left>466</left>
-                <top>142</top>
-                <width>1054</width>
-                <height>34</height>
-                <label>$VAR[Date_Prefix]$INFO[ListItem.Date]$VAR[Episode_Insert]$INFO[ListItem.Duration,, $LOCALIZE[31118]]</label>
-                <font>Font_Light_Caps_34</font>
-                <textcolor>MedLight</textcolor>
+              <include>Viewtype_603_Episode_Aired_FO</include>
+              <control type="textbox">
+                <width>980</width>
+                <include>Viewtype_603_Episode_Plot_FO</include>
               </control>
-            </control> -->
-            <control type="button">
-              <include>HiddenControl</include>
-              <onfocus>SetProperty(AlaskaB.ListItem.SourceName,$ESCINFO[ListItem.FileName],home)</onfocus>
             </control>
-          </focusedlayout>
-
-        </control>
-
-        <control type="grouplist">
-          <left>666</left>
-          <top>117</top>
-          <width>1104</width>
-
-          <itemgap>20</itemgap>
-          <orientation>horizontal</orientation>
-          <usecontrolcoords>true</usecontrolcoords>
-
-          <animation effect="slide" end="0,94" time="0" condition="Container(603).Row(1)">Conditional</animation>
-          <animation effect="slide" end="0,188" time="0" condition="Container(603).Row(2)">Conditional</animation>
-          <animation effect="slide" end="0,282" time="0" condition="Container(603).Row(3)">Conditional</animation>
-          <animation effect="slide" end="0,376" time="0" condition="Container(603).Row(4)">Conditional</animation>
-          <animation effect="slide" end="0,40" time="0" condition="!Skin.HasSetting(AlaskaB.VideoNav.Episode.Plot.Enable) | IsEmpty(Container(603).ListItem.Plot)">Conditional</animation>
-
-          <control type="label">
-            <top>8</top>
-            <width>auto</width>
-            <height>66</height>
-            <align>right</align>
-            <label>$INFO[Container(603).ListItem.Episode].</label>
-            <font>Font_Black_Caps_66</font>
-            <textcolor>TextHeavy</textcolor>
-          </control>
-          <control type="group">
-            <visible>!SubString(Container(603).ListItem.Episode,S,left) + !IntegerGreaterThan(Container(603).ListItem.Episode,9)</visible> 
-            <control type="fadelabel">
-              <width>980</width>
-              <include>Viewtype_603_Episode_Title_FO</include>
+            <control type="group">
+              <visible>SubString(Container(603).ListItem.Episode,S,left) | [IntegerGreaterThan(Container(603).ListItem.Episode,9) + !IntegerGreaterThan(Container(603).ListItem.Episode,99)]</visible> 
+              <control type="fadelabel">
+                <width>940</width>
+                <include>Viewtype_603_Episode_Title_FO</include>
+              </control>
+              <include>Viewtype_603_Episode_Aired_FO</include>
+              <control type="textbox">
+                <width>940</width>
+                <include>Viewtype_603_Episode_Plot_FO</include>
+              </control>
             </control>
-            <include>Viewtype_603_Episode_Aired_FO</include>
-            <control type="textbox">
-              <width>980</width>
-              <include>Viewtype_603_Episode_Plot_FO</include>
-            </control>
-          </control>
-          <control type="group">
-            <visible>SubString(Container(603).ListItem.Episode,S,left) | [IntegerGreaterThan(Container(603).ListItem.Episode,9) + !IntegerGreaterThan(Container(603).ListItem.Episode,99)]</visible> 
-            <control type="fadelabel">
-              <width>940</width>
-              <include>Viewtype_603_Episode_Title_FO</include>
-            </control>
-            <include>Viewtype_603_Episode_Aired_FO</include>
-            <control type="textbox">
-              <width>940</width>
-              <include>Viewtype_603_Episode_Plot_FO</include>
-            </control>
-          </control>
-          <control type="group">
-            <visible>!SubString(Container(603).ListItem.Episode,S,left) + IntegerGreaterThan(Container(603).ListItem.Episode,99)</visible> 
-            <control type="fadelabel">
-              <width>900</width>
-              <include>Viewtype_603_Episode_Title_FO</include>
-            </control>
-            <include>Viewtype_603_Episode_Aired_FO</include>
-            <control type="textbox">
-              <width>900</width>
-              <include>Viewtype_603_Episode_Plot_FO</include>
+            <control type="group">
+              <visible>!SubString(Container(603).ListItem.Episode,S,left) + IntegerGreaterThan(Container(603).ListItem.Episode,99)</visible> 
+              <control type="fadelabel">
+                <width>900</width>
+                <include>Viewtype_603_Episode_Title_FO</include>
+              </control>
+              <include>Viewtype_603_Episode_Aired_FO</include>
+              <control type="textbox">
+                <width>900</width>
+                <include>Viewtype_603_Episode_Plot_FO</include>
+              </control>
             </control>
           </control>
         </control>
 
-        <!-- Plot label -->
-        <!-- <control type="textbox">
-          <left>666</left>
-          <top>166</top>
-          <width>1054</width>
-          <height>120</height>
-          <align>left</align>
-          <label>$INFO[Container(603).ListItem.Plot]</label>
-          <font>Font_Light_34</font>
-          <textcolor>MedLight</textcolor>
-          <include>Animation_EpisodePlot_2</include>
-          <visible>!IsEmpty(Container(603).ListItem.Plot) + Skin.HasSetting(AlaskaB.VideoNav.Episode.Plot.Enable) + !Container(603).OnNext + !Container(603).OnPrevious</visible>
-          <animation type="Visible" reversible="false">
-            <effect type="fade" start="0" end="100" time="200" />
-          </animation>
-          <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
-        </control> -->
-
+        <!-- Scrollbar -->
+        <control type="scrollbar" id="8800">
+          <description>InfoList scrollbar</description>
+          <left>1902</left>
+          <top>63</top>
+          <height>650</height>
+          <onleft>500</onleft>
+          <onright>7000</onright>
+          <include>Animation_HiddenByInfo</include>
+          <visible>Skin.HasSetting(AlaskaB.Settings.VideoNav.Scrollbar.Enable)</visible>
+        </control>
       </control>
-
     </control>
-
   </include>
-
 </includes>
 

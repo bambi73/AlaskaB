@@ -287,21 +287,6 @@
     <animation effect="slide" end="0,400" time="0" condition="Container(503).Row(5)">Conditional</animation>
   </include>
 
-  <include name="Animation_EpisodeFloat_2">
-    <animation effect="slide" end="0,12" time="200" condition="Container(603).Row(0)">Conditional</animation>
-    <animation effect="slide" end="0,6" time="200" condition="Container(603).Row(1)">Conditional</animation>
-    <animation effect="slide" end="0,0" time="200" condition="Container(603).Row(2)">Conditional</animation>
-    <animation effect="slide" end="0,-6" time="200" condition="Container(603).Row(3)">Conditional</animation>
-    <animation effect="slide" end="0,-12" time="200" condition="Container(603).Row(4)">Conditional</animation>
-  </include>
-
-  <include name="Animation_EpisodePlot_2">
-    <animation effect="slide" end="0,94" time="0" condition="Container(603).Row(1)">Conditional</animation>
-    <animation effect="slide" end="0,188" time="0" condition="Container(603).Row(2)">Conditional</animation>
-    <animation effect="slide" end="0,282" time="0" condition="Container(603).Row(3)">Conditional</animation>
-    <animation effect="slide" end="0,376" time="0" condition="Container(603).Row(4)">Conditional</animation>
-  </include>
-
   <include name="Animation_PictureGridFloat">
     <animation effect="slide" end="0,-15" time="400" tween="cubic" easing="inout" condition="Container(505).Row(1) | Container(506).Row(1) | Container(507).Row(1)">Conditional</animation>
     <animation effect="slide" end="0,-30" time="400" tween="cubic" easing="inout" condition="Container(505).Row(2) | Container(506).Row(2) | Container(507).Row(2)">Conditional</animation>

@@ -307,6 +307,13 @@
     <value>$INFO[ListItem.Label]</value>
   </variable>
 
+  <variable name="Title_Detail_603">
+    <value condition="!IsEmpty(Container(603).ListItem.Title) + !Skin.HasSetting(HideWatchedOverlays) + StringCompare(Container(603).ListItem.Overlay,OverlayWatched.png)">$INFO[Container(603).ListItem.Title]   [COLOR=WatchedTick]‡[/COLOR]</value>
+    <value condition="!Skin.HasSetting(HideWatchedOverlays) + StringCompare(Container(603).ListItem.Overlay,OverlayWatched.png)">$INFO[Container(603).ListItem.Label]   [COLOR=WatchedTick]‡[/COLOR]</value>
+    <value condition="!IsEmpty(Container(603).ListItem.Title)">$INFO[Container(603).ListItem.Title]</value>
+    <value>$INFO[Container(603).ListItem.Label]</value>
+  </variable>
+
   <variable name="Info_Detail">
     <value condition="[Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons)] + !IsEmpty(ListItem.Genre)">$INFO[ListItem.Genre]</value>
     <value condition="Container.Content(Episodes) + !IsEmpty(ListItem.Date) + !IsEmpty(ListItem.Duration)">$LOCALIZE[31124]: $INFO[ListItem.Date] • $INFO[ListItem.Duration] $LOCALIZE[31118]</value>
@@ -335,6 +342,12 @@
 
   <variable name="Episode_Insert">
     <value condition="!IsEmpty(ListItem.Date) + !IsEmpty(ListItem.Duration)"> • </value>
+    <value condition="!IsEmpty(ListItem.Duration)">Duration: </value>
+  </variable>
+
+  <variable name="Episode_Insert_603">
+    <value condition="!IsEmpty(Container(603).ListItem.Date) + !IsEmpty(Container(603).ListItem.Duration)"> • </value>
+    <value condition="!IsEmpty(Container(603).ListItem.Duration)">Duration: </value>
   </variable>
 
   <variable name="Album_Insert">
