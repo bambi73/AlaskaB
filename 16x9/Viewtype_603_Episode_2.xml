@@ -97,24 +97,18 @@
                 <top>27</top>
                 <width>378</width>
                 <height>213</height>
-                <visible>SubString(ListItem.Icon,Default)</visible>
-                <animation type="Focus" reversible="false">
-                  <effect type="zoom" center="208,123" start="94" end="100" time="125" tween="cubic" easing="out" />
-                  <effect type="fade" start="90" end="100" time="125" />
-                </animation>
-                <texture>$INFO[ListItem.ActualIcon]</texture>
                 <aspectratio align="center">keep</aspectratio>
+                <texture>$INFO[ListItem.ActualIcon]</texture>
+                <include>Animation_View603EpisodeFocus</include>
+                <visible>SubString(ListItem.Icon,Default)</visible>
               </control>
               <control type="group">
                 <left>28</left>
                 <top>21</top>
                 <width>390</width>
                 <height>225</height>
+                <include>Animation_View603EpisodeFocus</include>
                 <visible>!SubString(ListItem.Icon,Default)</visible>
-                <animation type="Focus" reversible="false">
-                  <effect type="zoom" center="auto" start="94" end="100" time="125" tween="cubic" easing="out" />
-                  <effect type="fade" start="90" end="100" time="125" />
-                </animation>
                 <control type="image">
                   <width>390</width>
                   <height>225</height>

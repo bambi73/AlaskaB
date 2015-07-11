@@ -373,4 +373,13 @@
     <animation effect="slide" end="0,-760" time="200" condition="Container(3200).Position(10)">Conditional</animation>
   </include>
 
+
+  <!-- Tady je Bambiho -->
+  <include name="Animation_View603EpisodeFocus">
+    <animation type="Focus" reversible="false">
+      <effect type="zoom" center="208,123" start="94" end="100" time="125" tween="cubic" easing="out" />
+      <effect type="fade" start="90" end="100" time="125" />
+    </animation>
+  </include>
+
 </includes>
